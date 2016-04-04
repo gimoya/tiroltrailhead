@@ -1,5 +1,5 @@
 cd ~
-cd tiroltrail-webmap/
+cd tiroltrailhead/
 
 git status
 sleep.exe 10
