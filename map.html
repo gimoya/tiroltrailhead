@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8"/>
-		<meta name="title" content="Tirol Trail Webmap">
+		<meta name="title" content="tiroltrailhead web map">
 		<meta name="author" content="gimoya">
 		<meta name="publisher" content="gimoya">
 		<meta name="copyright" content="gimoya">
@@ -12,7 +12,7 @@
 		<meta name="date" content="2014-10-27">
 		<meta name="revisit-after" content="30 days">
 		<meta name="revisit" content="after 30 days">
-		<meta name="DC.Title" content="Tirol Trail Webmap">
+		<meta name="DC.Title" content="tiroltrailhead web map">
 		<meta name="DC.Creator" content="gimoya">
 		<meta name="DC.Rights" content="gimoya">
 		<meta name="DC.Publisher" content="gimoya">
@@ -22,7 +22,7 @@
 		<meta name="DC.Description" content="online tracks/routen für trial/enduro/mountainbike-touren/touren download/tourenvorschläge/webmap/trailmap/KML/GPX/mtb-routen">
 		<meta name="DC.Language" content="de">
 		
-		<title>TIROL TRAIL WEBMAP</title>
+		<title>tiroltrailhead web map</title>
 	
 		<link rel="shortcut icon" type="image/x-icon" href="images/icon.png" />
 		<link rel="stylesheet" href="customstyle.css" type="text/css" />  
@@ -36,28 +36,28 @@
 				return str.replace(/^\s+|\s+$/g, '');  
 			}
 			
-			var pw_prompt = prompt('Bitte Passwort eingeben, um auf **Tirol Trail Webmap** zu gelangen..',' ');
+			var pw_prompt = prompt('Bitte Passwort eingeben, um auf **tiroltrailhead web map** zu gelangen..',' ');
 			var pw = 'rideon';
 			// if prompt is cancelled the pw_prompt var will be null!
 			if (pw_prompt == null) {
-				alert('Kein Passwort wurde angegeben, **Tirol Trail Webmap** wird nicht geladen.. Zugang? Schicke ein Mail an: tiroltrail.webmap@gmail.com');
+				alert('Kein Passwort wurde angegeben, **tiroltrailhead web map** wird nicht geladen.. Zugang? Schicke ein Mail an: tiroltrail.webmap@gmail.com');
 				if (bowser.msie) {
 					document.execCommand('Stop');
 				} else {
 					window.stop();
 				}
-				window.location='http://gimoya.github.io/tiroltrailhead/kodex-skala.html';
+				window.location='http://gimoya.github.io/tiroltrailhead/info.html';
 			}
 			if (trim(pw_prompt) == pw ) {
 				alert('Passwort richtig, klicke auf OK um fortzufahren!');
 			} else {
-				alert('Falsches Passwort, **Tirol Trail Webmap** wird nicht geladen.. Zugang? Schicke ein Mail an: tiroltrail.webmap@gmail.com');
+				alert('Falsches Passwort, **tiroltrailhead web map** wird nicht geladen.. Zugang? Schicke ein Mail an: tiroltrail.webmap@gmail.com');
 				if (bowser.msie) {
 					document.execCommand('Stop');
 				} else {
 					window.stop();
 				}
-				window.location='http://gimoya.github.io/tiroltrail-webmap/kodex-skala.html';
+				window.location='http://gimoya.github.io/tiroltrailhead/info.html';
 			}
 			
 			/*
@@ -101,14 +101,14 @@
 		<!-- LOADING PAGE END -->
 		<!-- NAV only used for SITELINKS / display: none; is set in custom-css! -->
 		<nav>
-			<a id="sitelinks-1" alt="menu-kodex" href="/kodex-skala.html" alt="Kodex-Skala"></a>
-			<a id="sitelinks-2" alt="menu-region-1" href="http://gimoya.github.io/tiroltrail-webmap/map.html#zoom=12&amp;lat=47.39659&amp;lon=11.43351&amp;layers=TF0B0TT" alt="Region1"></a>
-			<a id="sitelinks-3" alt="menu-region-2" href="http://gimoya.github.io/tiroltrail-webmap/map.html#zoom=12&amp;lat=47.32885&amp;lon=10.95385&amp;layers=TF0B0TT" alt="Region2"></a>
+			<a id="sitelinks-1" alt="menu-kodex" href="/info.html" alt="info"></a>
+			<a id="sitelinks-2" alt="menu-region-1" href="http://gimoya.github.io/tiroltrailhead/map.html#zoom=12&amp;lat=47.39659&amp;lon=11.43351&amp;layers=TF0B0TT" alt="Region1"></a>
+			<a id="sitelinks-3" alt="menu-region-2" href="http://gimoya.github.io/tiroltrailhead/map.html#zoom=12&amp;lat=47.32885&amp;lon=10.95385&amp;layers=TF0B0TT" alt="Region2"></a>
 		</nav>
 		<div id="container">
 			<div id="explanation-and-list">
 				<div id="explanation">
-					<p class="H1"> TIROLTRAIL <img src="http://gimoya.github.io/tiroltrail-webmap/images/logo_4.png" width="120" style="vertical-align:middle;"> WEBMAP </p>
+					<p class="H1"> TIROLTRAIL <img src="http://gimoya.github.io/tiroltrailhead/images/logo_5_1.png" width="120" style="vertical-align:middle;"> WEBMAP </p>
 					<p class="box3">
 						<span class="H2">Basiskarten</span> 	
 						</br><strong>OSM:</strong> OpenStreetMap
@@ -125,8 +125,8 @@
 					</p>
 					<p class="box3">
 						<span class="H2">Infos</span>
-						</br>Die <strong>TWM</strong> beinhaltet aktuell: <span id="nr_trails"></span> 
-						</br><strong>Weiterführende Infos, Skala & Kodex</strong> etc. findet man</br><input type="button" class="Link" value="hier.." onclick="window.open('kodex-skala.html')">
+						</br>Die <strong>web map</strong> beinhaltet aktuell: <span id="nr_trails"></span> 
+						</br><strong>Weiterführende Infos, Skala & Kodex</strong> etc. findet man</br><input type="button" class="Link" value="hier.." onclick="window.open('info.html')">
 					</p>
 				</div>			
 				<div id="list-wrapper">
