@@ -754,11 +754,12 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 #kodex-skala-head  
 {
 	font-family: 'Fredoka One';
-	font-size: 45px; 
+	font-size: 2.5em; 
 	text-align: center; 
 	background: white; 
 	border-radius: 5px; 
 	padding: 5px;
+	overvlow: auto;
 }
 
 #skala, #kodex
