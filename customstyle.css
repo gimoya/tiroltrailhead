@@ -762,6 +762,14 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	overflow: auto;
 }
 
+#kodex-skala-head > img {
+	transition: all .2s ease-in-out;
+}
+
+#kodex-skala-head > img:hover { 
+	transform: scale(2); 
+}
+
 #skala, #kodex
 {	
 	font-size: 20px; 
