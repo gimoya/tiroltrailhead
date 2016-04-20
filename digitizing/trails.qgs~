@@ -47,10 +47,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1258492.94484695116989315</xmin>
-      <ymin>5985406.28244112525135279</ymin>
-      <xmax>1271569.90076868911273777</xmax>
-      <ymax>5990888.61858746316283941</ymax>
+      <xmin>1287973.77088705846108496</xmin>
+      <ymin>5980920.244883774779737</ymin>
+      <xmax>1293452.27701091975905001</xmax>
+      <ymax>5983217.03416184056550264</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -647,10 +647,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
