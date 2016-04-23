@@ -512,7 +512,7 @@
 			 * <results> is returned by the parent function addElevPlot and <ID>
 			 * refers to the id of the point in the results array which is also 
 			 * the row-id in the data-table of the chart by which the array-id will be chosen
-			 */
+			 */			
 			function makeElevTipMarkers(results, ID) {	
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
@@ -520,7 +520,7 @@
 				// new LonLat Keys change every now and then in Google Api!!
 				// by Object.keys method we can get the key names and use them for referencing LonLat
 				var XY_keys = Object.keys(results[ID].location);
-				console.log("check keys:\n"XY_keys[0] + "\n" + XY_keys[1] + "\n" + XY_keys[2] + "\n" + XY_keys[3]);
+				console.log("check keys:\n" + XY_keys[0] + "\n" + XY_keys[1] + "\n" + XY_keys[2] + "\n" + XY_keys[3]);
 				console.log("check locations:\nX:" + results[ID].location[XY_keys[1]] + "\nY:" + results[ID].location[XY_keys[0]]);
 				var currVertex = new OpenLayers.LonLat(results[ID].location[XY_keys[1]], results[ID].location[XY_keys[0]]).transform(proj4326, proj900913);
 				map.addLayer(markersElevTip);
@@ -534,7 +534,6 @@
 						}, time
 					);
 				}
-				console.log(markersElevTip);
 				window.setTimeout(function() {map.removeLayer(markersElevTip);}, time+8000);
 			}
 			
@@ -644,6 +643,7 @@
 							text: 'Auf Karte zeigen..',
 							action: function() {
 								selection = chart.getSelection();
+								console.log(data.getValue(selection[0], 1));
 								makeElevTipMarkers(results, selection[0].row);
 							}
 						});							
