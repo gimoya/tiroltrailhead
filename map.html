@@ -593,7 +593,7 @@
 				elevator.getElevationAlongPath(pathRequest, function(results, status) {
 				    console.log('check results length: ', results.length);
 					console.log('check results: ', results);
-					console.log('check latLon: ', pathRequest.path);
+					console.log('check latLon: ', pathRequest.samples);
 					if (status == google.maps.ElevationStatus.OK) {
 						var data = new google.visualization.DataTable();
 						data.addColumn('number', 'Strecke');
