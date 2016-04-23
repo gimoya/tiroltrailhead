@@ -520,6 +520,7 @@
 				// new LonLat Keys change every now and then in Google Api!!
 				// by Object.keys method we can get the key names and use them for referencing LonLat
 				var XY_keys = Object.keys(results[ID].location);
+				console.log("check keys:\n"XY_keys[0] + "\n" + XY_keys[1] + "\n" + XY_keys[2] + "\n" + XY_keys[3]);
 				console.log("check locations:\nX:" + results[ID].location[XY_keys[1]] + "\nY:" + results[ID].location[XY_keys[0]]);
 				var currVertex = new OpenLayers.LonLat(results[ID].location[XY_keys[1]], results[ID].location[XY_keys[0]]).transform(proj4326, proj900913);
 				map.addLayer(markersElevTip);
@@ -540,6 +541,7 @@
 			// Load package for Elevation profile visualization and elevation service
 			google.load('visualization', '1', {packages: ['corechart']});
 			elevator = new google.maps.ElevationService();
+			
 			function addElevPlot(feature) {
 			
 				var ft = feature.clone();
@@ -592,6 +594,7 @@
 				elevator.getElevationAlongPath(pathRequest, function(results, status) {
 				    console.log('check results length: ', results.length);
 					console.log('check results: ', results);
+					console.log('check latLon: ', pathRequest.latLon);
 					if (status == google.maps.ElevationStatus.OK) {
 						var data = new google.visualization.DataTable();
 						data.addColumn('number', 'Strecke');

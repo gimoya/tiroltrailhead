@@ -27,7 +27,7 @@
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20151015083505882" name="OpenCycleMap">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenLayers_plugin_layer20150812120332605" name="OEK50 Bergfex">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20150812120332605" name="OEK50 Bergfex">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20141207160718249" name="OCM Landscape">
@@ -39,7 +39,7 @@
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20150607211134534" name="OpenStreetMap">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Image_CIR20151228222551509" name="Image_CIR">
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="Image_CIR20151228222551509" name="Image_CIR">
       <customproperties/>
     </layer-tree-layer>
   </layer-tree-group>
@@ -47,10 +47,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1287973.77088705846108496</xmin>
-      <ymin>5980920.244883774779737</ymin>
-      <xmax>1293452.27701091975905001</xmax>
-      <ymax>5983217.03416184056550264</ymax>
+      <xmin>1318906.03808090253733099</xmin>
+      <ymin>6006285.00750606041401625</ymin>
+      <xmax>1319283.4741596810054034</xmax>
+      <ymax>6006707.41247725207358599</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -288,9 +288,9 @@
         <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20151015083505882" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OEK50 Bergfex" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OEK50 Bergfex" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20150812120332605" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20150812120332605" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OCM Landscape" showFeatureCount="0">
@@ -308,9 +308,9 @@
         <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20150607211134534" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Image_CIR" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Image_CIR" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Image_CIR20151228222551509" visible="0"/>
+        <legendlayerfile isInOverview="0" layerid="Image_CIR20151228222551509" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
