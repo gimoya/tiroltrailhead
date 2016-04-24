@@ -544,6 +544,8 @@
 			
 				var ft = feature.clone();
 				var vertices = ft.geometry.getVertices();
+				// ft length needed for google chart scaling
+				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);	
 				// make array with googleLatLon for later API request
 				// initialize with first vertex
 				var latLon = [];
@@ -630,7 +632,7 @@
 						    // use altitude range (max - min) as proportional factor for chart height
 							// and trail length for width
 							height: height,
-							width: lineLength/50+120,
+							width: ftGeoLength/50+120,
 							legend: 'none',
 							titleY: 'Seehöhe (m)',
 							titleX: 'Strecke (km)',
