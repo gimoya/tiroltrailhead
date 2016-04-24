@@ -553,7 +553,7 @@
 				var distance = [0];
 				
 				// start with second segment, first already in latLon array
-				for(var i = 1; j < vertices.length; i++) {
+				for(var i = 1; i < vertices.length; i++) {
 					var pt1 = vertices[i-1].transform(proj900913, proj4326);
 					var pt2 = vertices[i].transform(proj900913, proj4326);
 					var segment = new OpenLayers.Geometry.LineString([new OpenLayers.Geometry.pt1, new OpenLayers.Geometry.pt2]);
@@ -567,6 +567,10 @@
 					 */
 					latLon.push(new google.maps.LatLng(+pt2.y.toFixed(5), +pt2.x.toFixed(5)));
 				}
+				
+				// check length of requested array --> should be < 512 per request
+				// 2500 requests perday 
+				console.log("positionalRequest Array Length: " + latLon.length);				
 				if (latLon.length > 300) {
 					// new latLon array
 					latLonShort = [];
@@ -578,10 +582,10 @@
 					// replace latLon by latLonShort
 					latLon = latLonShort;
 					}
-				}
-				// check length of requested array --> should be < 512 per request
+				// check length of requested array AGAIN --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("positionalRequest Array Length: " + latLon.length);
+				console.log("NEW positionalRequest Array Length: " + latLon.length);					
+				}
 				
 				var positionalRequest = {
 					'locations': latLon
