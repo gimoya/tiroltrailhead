@@ -549,19 +549,16 @@
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);	
 				// make array with googlelocations for later API request
 				// initialize with first vertex
-				var locations = [];
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				
-				console.log(Number(pt0.x.toFixed(5)));
-				
-				var LL = new google.maps.LatLng(Number(pt0.y.toFixed(5)), Number(pt0.x.toFixed(5)));
-				locations.push(LL);
-													 
+				var lat = Number(pt0.y.toFixed(5));
+				var lon = Number(pt0.x.toFixed(5));
+				var locations = [new google.maps.LatLng(lat, lon)];
+												 
 				console.log("vertex: " + pt0);													 
 				console.log("locations: " + locations[0]);	
 												 
 				// cumulative segment distances between start-node and vertex[i]
-				var distance = [0]; 
+				var distance = [Number(0.00)]; 
 				
 				// start with second segment, first already in locations array
 				for(var i = 1; i < vertices.length; i++) {
@@ -576,9 +573,10 @@
 					 * the Google API has a limit on URI character length 
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
-					 */
-					LL = new google.maps.LatLng(Number(pt2.y.toFixed(5)), Number(pt2.x.toFixed(5)));
-					locations.push(LL);
+					*/
+					var lat = Number(pt2.y.toFixed(5));
+					var lon = Number(pt2.x.toFixed(5));					 
+					locations.push(new google.maps.LatLng(lat, lon));
 				}
 				
 				// check length of requested array --> should be < 512 per request
