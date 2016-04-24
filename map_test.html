@@ -552,9 +552,9 @@
 				var locations = [];
 				var pt0 = vertices[0].transform(proj900913, proj4326);
 				var LL = new google.maps.LatLng(pt0.y, pt0.x);
-				locations.push(LL);
+				locations.push(Number(LL.toFixed(5)));
 													 
-				console.log("vertex: " + vertices[0]);													 
+				console.log("vertex: " + pt0);													 
 				console.log("locations: " + locations[0]);	
 												 
 				// cumulative segment distances between start-node and vertex[i]
@@ -564,7 +564,7 @@
 				for(var i = 1; i < vertices.length; i++) {
 					// first element is 0, add segment length to the last element in array to get cumm. length
 					var segment = new OpenLayers.Geometry.LineString([vertices[i-1], vertices[i]]);
-					var dist = segment.getGeodesicLength(proj900913);		
+					var dist = Number(segment.getGeodesicLength(proj900913).toFixed(2));		
 					distance.push(distance[i-1]+dist);
 					
 					var pt1 = vertices[i-1].transform(proj900913, proj4326);
@@ -575,7 +575,7 @@
 					 * which will avoid ERRORs on API requests
 					 */
 					LL = new google.maps.LatLng(pt2.y, pt2.x); 
-					locations.push(LL);
+					locations.push(Number(LL.toFixed(5)));
 				}
 				
 				// check length of requested array --> should be < 512 per request
