@@ -101,7 +101,7 @@
 		<!-- LOADING PAGE END -->
 		<!-- NAV only used for SITELINKS / display: none; is set in custom-css! -->
 		<nav>
-			<a id="sitelinks-1" alt="menu-kodex" href="/info.html" alt="info"></a>
+			<a id="sitelinks-1" alt="menu-info" href="/info.html" alt="info"></a>
 			<a id="sitelinks-2" alt="menu-region-1" href="http://gimoya.github.io/tiroltrailhead/map.html#zoom=12&amp;lat=47.39659&amp;lon=11.43351&amp;layers=TF0B0TT" alt="Region1"></a>
 			<a id="sitelinks-3" alt="menu-region-2" href="http://gimoya.github.io/tiroltrailhead/map.html#zoom=12&amp;lat=47.32885&amp;lon=10.95385&amp;layers=TF0B0TT" alt="Region2"></a>
 		</nav>
@@ -565,12 +565,12 @@
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
 					 */
-					latLon.push(new google.maps.LatLng(+pt2.y.toFixed(5), +pt2.x.toFixed(5)));
+					latLon.push(new google.maps.LatLng(pt2.y.toFixed(5), pt2.x.toFixed(5)));
 				}
 				
 				// check length of requested array --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("positionalRequest Array Length: " + latLon.length);				
+				console.log("positionalRequest Array:\n" + latLon);				
 				if (latLon.length > 300) {
 					// new latLon array
 					latLonShort = [];
