@@ -553,10 +553,11 @@
 				var pt0 = vertices[0].transform(proj900913, proj4326);
 				latLon.push(new google.maps.LatLng(+pt0.y.toFixed(5), +pt0.x.toFixed(5)));
 													 
-				console.log(vertices);													 
+				console.log(vertices[0]);													 
 												 
 				// cumulative segment distances between start-node and vertex[i]
-				var distance = [0]; 
+				var distance = []; 
+				distance.push(0);
 				
 				// start with second segment, first already in latLon array
 				for(var i = 1; i < vertices.length; i++) {
