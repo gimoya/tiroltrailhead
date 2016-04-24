@@ -557,15 +557,13 @@
 				console.log("latLon: " + latLon[0]);	
 												 
 				// cumulative segment distances between start-node and vertex[i]
-				var distance = []; 
-				distance.push(0);
+				var distance = [0]; 
 				
 				// start with second segment, first already in latLon array
 				for(var i = 1; i < vertices.length; i++) {
 					var pt1 = vertices[i-1].transform(proj900913, proj4326);
 					var pt2 = vertices[i].transform(proj900913, proj4326);
 					var segment = new OpenLayers.Geometry.LineString([pt1, pt2]);
-					console.log(segment);
 					var dist = segment.getGeodesicLength(proj4326);
 					// first element is 0, add segment length to the last element in array to get cumm. length
 					distance.push(distance[i-1]+dist);
@@ -580,7 +578,7 @@
 				// check length of requested array --> should be < 512 per request
 				// 2500 requests perday 
 				console.log("positionalRequest Array:\n" + latLon);				
-				//console.log("Distance Array:\n" + distance);
+				console.log("Distance Array:\n" + distance);
 				
 				if (latLon.length > 300) {
 					// new latLon array
@@ -604,7 +602,6 @@
 				
 				// get and plot elevations
 				elevator.getElevationForLocations(positionalRequest, function(results, status) {
-				
 					// CENTER map here!!
 					// infowindow.setPosition(location);
 					if (status === google.maps.ElevationStatus.OK) {
