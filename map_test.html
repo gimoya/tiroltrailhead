@@ -565,7 +565,7 @@
 				for(var i = 1; i < vertices.length; i++) {
 					// first element is 0, add segment length to the last element in array to get cumm. length
 					var segment = new OpenLayers.Geometry.LineString([vertices[i-1], vertices[i]]);
-					var dist = Number(segment.getGeodesicLength(proj4236).toFixed(2));		
+					var dist = Number(segment.getGeodesicLength(proj4326).toFixed(2));	// ???? why not proj900913	
 					distance.push(distance[i-1]+dist);
 					
 					var pt1 = vertices[i-1].transform(proj900913, proj4326);
