@@ -562,12 +562,13 @@
 				
 				// start with second segment, first already in locations array
 				for(var i = 1; i < vertices.length; i++) {
+					// first element is 0, add segment length to the last element in array to get cumm. length
+					var segment = new OpenLayers.Geometry.LineString([vertices[i-1], vertices[i]]);
+					var dist = segment.getGeodesicLength(proj900913);		
+					distance.push(distance[i-1]+dist);
+					
 					var pt1 = vertices[i-1].transform(proj900913, proj4326);
 					var pt2 = vertices[i].transform(proj900913, proj4326);
-					var segment = new OpenLayers.Geometry.LineString([pt1, pt2]);
-					var dist = segment.getGeodesicLength(proj4326);
-					// first element is 0, add segment length to the last element in array to get cumm. length
-					distance.push(distance[i-1]+dist);
 					/*  
 					 * the Google API has a limit on URI character length 
 					 * thus rounding coordinates will sign. shorten the URI,
