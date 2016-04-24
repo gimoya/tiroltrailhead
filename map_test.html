@@ -32,6 +32,7 @@
 		<script src="scripts/bowser.js"></script>
 		
 		<script type="text/javascript">	
+			/*
 			function trim(str) {
 				return str.replace(/^\s+|\s+$/g, '');  
 			}
@@ -59,7 +60,7 @@
 				}
 				window.location='http://gimoya.github.io/tiroltrailhead/info.html';
 			}
-			
+			*/
 			/*
 			 * Check Browser and exit if not compatible
 			 * using bowser library
@@ -549,8 +550,8 @@
 				// make array with googleLatLon for later API request
 				// initialize with first vertex
 				var latLon = [];
-				latLon.push(new google.maps.LatLng(vertices[0].transform(proj900913, proj4326).y.toFixed(5), 
-												   vertices[0].transform(proj900913, proj4326).x.toFixed(5)));
+				latLon.push(new google.maps.LatLng(+vertices[0].transform(proj900913, proj4326).y.toFixed(5), 
+												   +vertices[0].transform(proj900913, proj4326).x.toFixed(5)));
 													 
 				console.log(vertices[0].transform(proj900913, proj4326).x.toFixed(5));													 
 				console.log(vertices[1].transform(proj900913, proj4326).x.toFixed(5));													 
@@ -570,7 +571,7 @@
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
 					 */
-					latLon.push(new google.maps.LatLng(pt2.y.toFixed(5), pt2.x.toFixed(5)));
+					latLon.push(new google.maps.LatLng(+pt2.y.toFixed(5), +pt2.x.toFixed(5)));
 				}
 				
 				// check length of requested array --> should be < 512 per request
