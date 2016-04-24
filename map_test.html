@@ -551,22 +551,20 @@
 				// make array with googlelocations for later API request
 				// initialize with first vertex
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				var lat = Number(pt0.y.toFixed(6));
-				var lon = Number(pt0.x.toFixed(6));
-				var locations = [new google.maps.LatLng(lat, lon)];
+				var locations = [new google.maps.LatLng(pt0.y, pt0.x)];
 												 
 				console.log("vertex: " + pt0);													 
 				console.log("locations: " + locations[0]);	
 												 
 				// cumulative segment distances between start-node and vertex[i]
-				var distance = [Number(0.00)]; 
+				var distance = [0]; 
 				
 				// start with second segment, first already in locations array
 				for(var i = 1; i < vertices.length; i++) {
 					// first element is 0, add segment length to the last element in array to get cumm. length
 					var segment = new OpenLayers.Geometry.LineString([vertices[i-1], vertices[i]]);
-					var dist = Number(segment.getGeodesicLength(proj4326).toFixed(2));	// ???? why not proj900913	
-					distance.push(distance[i-1]+dist);
+					var dist = Number(segment.getGeodesicLength(proj900913).toFixed(2));	// ???? why not proj900913	
+					distance.push(Number((distance[i-1]+dist).toFixed(2)));
 					
 					var pt1 = vertices[i-1].transform(proj900913, proj4326);
 					var pt2 = vertices[i].transform(proj900913, proj4326);
@@ -574,10 +572,8 @@
 					 * the Google API has a limit on URI character length 
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
-					*/
-					var lat = Number(pt2.y.toFixed(5));
-					var lon = Number(pt2.x.toFixed(5));					 
-					locations.push(new google.maps.LatLng(lat, lon));
+					*/			 
+					locations.push(new google.maps.LatLng(pt2.y, pt2.x));
 				}
 				
 				// check length of requested array --> should be < 512 per request
