@@ -546,8 +546,10 @@
 				var vertices = ft.geometry.getVertices();
 				// make array with googleLatLon for later API request
 				// initialize with first vertex
-				var latLon = [new google.maps.LatLng(vertices[0].transform(proj900913, proj4326).y.toFixed(5), 
-													 vertices[0].transform(proj900913, proj4326).x.toFixed(5))];
+				var latLon = [];
+				latLon.push(new google.maps.LatLng(vertices[0].transform(proj900913, proj4326).y.toFixed(5), 
+												   vertices[0].transform(proj900913, proj4326).x.toFixed(5));
+													 
 				console.log(vertices[0].transform(proj900913, proj4326).x.toFixed(5));													 
 				console.log(vertices[1].transform(proj900913, proj4326).x.toFixed(5));													 
 				// cumulative segment distances between start-node and vertex[i]
