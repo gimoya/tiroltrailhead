@@ -551,7 +551,7 @@
 				// initialize with first vertex
 				var locations = [];
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				LL = new google.maps.LatLng(+pt0.y.toFixed(5), +pt0.x.toFixed(5));
+				var LL = new google.maps.LatLng(pt0.y.toFixed(5), pt0.x.toFixed(5));
 				locations.push(LL);
 													 
 				console.log("vertex: " + vertices[0]);													 
@@ -573,7 +573,7 @@
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
 					 */
-					LL = new google.maps.LatLng(+pt2.y.toFixed(5), +pt2.x.toFixed(5)); 
+					LL = new google.maps.LatLng(pt2.y.toFixed(5), pt2.x.toFixed(5)); 
 					locations.push(LL);
 				}
 				
