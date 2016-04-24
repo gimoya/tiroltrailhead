@@ -546,12 +546,13 @@
 				var ft = feature.clone();
 				var vertices = ft.geometry.getVertices();
 				// ft length needed for google chart scaling
-				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);	
+				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
+				console.log("Feature LEngth (m): " + ftGeoLength);
 				// make array with googlelocations for later API request
 				// initialize with first vertex
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				var lat = Number(pt0.y.toFixed(5));
-				var lon = Number(pt0.x.toFixed(5));
+				var lat = Number(pt0.y.toFixed(6));
+				var lon = Number(pt0.x.toFixed(6));
 				var locations = [new google.maps.LatLng(lat, lon)];
 												 
 				console.log("vertex: " + pt0);													 
