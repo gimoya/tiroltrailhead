@@ -551,7 +551,7 @@
 				// initialize with first vertex
 				var locations = [];
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				var LL = new google.maps.LatLng(pt0.y.toFixed(5), pt0.x.toFixed(5));
+				var LL = new google.maps.LatLng(Math.round(pt0.y, 5), Math.round(pt0.x, 5));
 				locations.push(LL);
 													 
 				console.log("vertex: " + vertices[0]);													 
@@ -567,13 +567,13 @@
 					var segment = new OpenLayers.Geometry.LineString([pt1, pt2]);
 					var dist = segment.getGeodesicLength(proj4326);
 					// first element is 0, add segment length to the last element in array to get cumm. length
-					distance.push(distance[i-1]+dist);
+					distance.push(Math.round(distance[i-1]+dist, 3));
 					/*  
 					 * the Google API has a limit on URI character length 
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
 					 */
-					LL = new google.maps.LatLng(pt2.y.toFixed(5), pt2.x.toFixed(5)); 
+					LL = new google.maps.LatLng(Math.round(pt2.y, 5), Math.round(pt2.x, 5)); 
 					locations.push(LL);
 				}
 				
@@ -581,17 +581,19 @@
 				// 2500 requests perday 
 				console.log("positionalRequest Array:\n" + locations);				
 				console.log("Distance Array:\n" + distance);
-				/*
 				if (locations.length > 300) {
 					// new locations array
 					locationsShort = [];
+					distanceShort = [];
 					for(var i = 0; i < vertices.length; i++) {
 						// i modulo x == 0 will keep only every x-th coordinate
 						if (i%3 == 0) {
 							locationsShort.push(locations[i]);
+							distanceShort.push(distance[i]);
 						}
 					// replace locations by locationsShort
 					locations = locationsShort;
+					distance = distanceShort;
 					}
 				// check length of requested array AGAIN --> should be < 512 per request
 				// 2500 requests perday 
