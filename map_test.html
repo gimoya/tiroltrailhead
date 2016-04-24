@@ -513,15 +513,13 @@
 			 * refers to the id of the point in the results array which is also 
 			 * the row-id in the data-table of the chart by which the array-id will be chosen
 			 */			
-			function makeElevTipMarkers(results, ID) {	
+			function makeElevTipMarkers(results, ID) {	/*
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
 				// new LonLat Keys change every now and then in Google Api!!
 				// by Object.keys method we can get the key names and use them for referencing LonLat
 				var XY_keys = Object.keys(results[ID].location);
-				console.log("check keys:\n" + XY_keys[0] + "\n" + XY_keys[1] + "\n" + XY_keys[2] + "\n" + XY_keys[3]);
-				console.log("check locations:\nX:" + results[ID].location[XY_keys[1]] + "\nY:" + results[ID].location[XY_keys[0]]);
 				var currVertex = new OpenLayers.LonLat(results[ID].location[XY_keys[1]], results[ID].location[XY_keys[0]]).transform(proj4326, proj900913);
 				map.addLayer(markersElevTip);
 
@@ -535,66 +533,66 @@
 					);
 				}
 				window.setTimeout(function() {map.removeLayer(markersElevTip);}, time+8000);
+				*/
 			}
 			
 			// Load package for Elevation profile visualization and elevation service
 			google.load('visualization', '1', {packages: ['corechart']});
 			elevator = new google.maps.ElevationService();
-			
+				
 			function addElevPlot(feature) {
 			
 				var ft = feature.clone();
-				var pts = ft.geometry.getVertices();
+				var vertices = ft.geometry.getVertices();
 				// make array with googleLatLon for later API request
-				var latLon = [];
-				var lineLength = ft.geometry.getGeodesicLength(proj900913);	
-				if (pts.length < 200) {
-					for(var j = 0; j < pts.length; j++) {
-						var pt = pts[j].transform(proj900913, proj4326);
-						/*  
-						 * the Google API has a limit on URI character length 
-						 * thus rounding coordinates will sign. shorten the URI,
-						 * which will avoid ERRORs on API requests
-						 */
-						latLon.push(new google.maps.LatLng(+pt.y.toFixed(5), +pt.x.toFixed(5)));
-					}
-				} else {
-					for(var j = 0; j < pts.length; j++) {
-						// j modulo x == 0 will keep only every x-th coordinate
-						if (j%3 == 0) {
-							var pt = pts[j].transform(proj900913, proj4326);
-							latLon.push(new google.maps.LatLng(+pt.y.toFixed(5), +pt.x.toFixed(5)));
-						}
-					}
-				}		
+				// initialize with first vertex
+				var latLon = [new google.maps.LatLng(vertices[0].transform(proj900913, proj4326).y.toFixed(5), 
+													 vertices[0].transform(proj900913, proj4326).x.toFixed(5))];
+													 
+				// cumulative segment distances between start-node and vertex[i]
+				var distance = [0];
 				
-				// distance between elevation samples
-				var distance = 100;
-				/* 
-				 * limit segments to max. <limit>, 
-				 * <limit> * <distance> will be max trail length, for which distance of 100 m 
-				 * inbetween sampling points is used
-				 */
-				var limit = 200;
-				// calculate no. of segments
-				var segments = Math.floor(lineLength/distance);
-				segments = (segments > limit) ? limit : segments;
-				// we need to recalculate the distance to its actual length 
-				// after defining no. of segments
-				distance = lineLength/segments;
-					
-				// set up request along path, sample every <distance> m
-				var pathRequest = {
-					'path': latLon,
-					'samples': segments+1
+				// start with second segment, first already in latLon array
+				for(var i = 1; j < vertices.length; i++) {
+					var pt1 = vertices[i-1].transform(proj900913, proj4326);
+					var pt2 = vertices[i].transform(proj900913, proj4326);
+					var segment = new OpenLayers.Geometry.LineString([new OpenLayers.Geometry.pt1, new OpenLayers.Geometry.pt2]);
+					var dist = segment.getGeodesicLength(proj4326).toFixed(3);
+					// first element is 0, add segment length to the last element in array to get cumm. length
+					distance.push(distance[i-1]+dist);
+					/*  
+					 * the Google API has a limit on URI character length 
+					 * thus rounding coordinates will sign. shorten the URI,
+					 * which will avoid ERRORs on API requests
+					 */
+					latLon.push(new google.maps.LatLng(+pt2.y.toFixed(5), +pt2.x.toFixed(5)));
 				}
-				// console.log('check segments length: ', segments);
+				if (latLon.length > 300) {
+					// new latLon array
+					latLonShort = [];
+					for(var i = 0; i < vertices.length; i++) {
+						// i modulo x == 0 will keep only every x-th coordinate
+						if (i%3 == 0) {
+							latLonShort.push(latLon[i]);
+						}
+					// replace latLon by latLonShort
+					latLon = latLonShort;
+					}
+				}
+				// check length of requested array --> should be < 512 per request
+				// 2500 requests perday 
+				console.log("positionalRequest Array Length: " + latLon.length);
+				
+				var positionalRequest = {
+					'locations': latLon
+				}				
+				
 				// get and plot elevations
-				elevator.getElevationAlongPath(pathRequest, function(results, status) {
-				    console.log('check results length: ', results.length);
-					console.log('check results: ', results);
-					console.log('check latLon: ', pathRequest.path);
-					if (status == google.maps.ElevationStatus.OK) {
+				elevator.getElevationForLocations(positionRequest, function(results, status) {
+				
+					// CENTER map here!!
+					// infowindow.setPosition(location);
+					if (status === google.maps.ElevationStatus.OK) {
 						var data = new google.visualization.DataTable();
 						data.addColumn('number', 'Strecke');
 						data.addColumn('number', 'Seehöhe');
@@ -606,11 +604,11 @@
 						for (var i = 0; i < results.length; i++) {
 							var elev = results[i].elevation;
 							elevArr.push(elev); 
-							data.addRow([distance*i/1000,
+							data.addRow([distance[i]/1000,
 							             Math.round(elev, 0),
 										 // tooltip string in 3rd column
 										 // 'Punkt: ' + (i+1) + '\n' +
-										 'Strecke: ' + (distance*i/1000).toFixed(1) + ' km\n' +
+										 'Strecke: ' + (distance[i]/1000).toFixed(1) + ' km\n' +
 										 'Seehöhe: ' + elev.toFixed(0) + ' m ']
 							);
 						}
@@ -648,8 +646,10 @@
 							}
 						});							
 						chart.draw(data, options);
+					} else {
+						console.log('Elevation service failed due to: ' + status);
 					}
-				});	
+				}); 				
 			}		
 			
 			/* 
@@ -838,11 +838,9 @@
                 trigger: function(e) {
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
 					var locations = [new google.maps.LatLng(lonlat.lat, lonlat.lon)];
-					// set up request along path, sample every <distance> m
 					var positionalRequest = {
 						'locations': locations
 					}
-					// console.log('check segments length: ', segments);
 					// get and plot elevations
 					elevator.getElevationForLocations(positionalRequest, function(results, status) {
 						if (status == google.maps.ElevationStatus.OK) {
