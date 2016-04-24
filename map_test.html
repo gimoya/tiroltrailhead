@@ -551,7 +551,7 @@
 				// initialize with first vertex
 				var latLon = [];
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				latLon.push(new google.maps.LatLng(+pt0.y.toFixed(5), +pt0.x.toFixed(5)));
+				latLon.push(new google.maps.LatLng(pt0.y.toFixed(5), pt0.x.toFixed(5)));
 													 
 				console.log("vertex: " + vertices[0]);													 
 				console.log("latLon: " + latLon[0]);	
@@ -566,15 +566,15 @@
 					var pt2 = vertices[i].transform(proj900913, proj4326);
 					var segment = new OpenLayers.Geometry.LineString([new OpenLayers.Geometry.Point(pt1), new OpenLayers.Geometry.Point(pt2)]);
 					console.log(segment);
-					var dist = segment.getGeodesicLength(proj4326).toFixed(3);
+					var dist = segment.getGeodesicLength(proj4326);
 					// first element is 0, add segment length to the last element in array to get cumm. length
-					distance.push(distance[i-1]+dist);
+					distance.push(distance[i-1]+dist.toFixed(3));
 					/*  
 					 * the Google API has a limit on URI character length 
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
 					 */
-					latLon.push(new google.maps.LatLng(+pt2.y.toFixed(5), +pt2.x.toFixed(5)));
+					latLon.push(new google.maps.LatLng(pt2.y.toFixed(5), pt2.x.toFixed(5)));
 				}
 				
 				// check length of requested array --> should be < 512 per request
