@@ -550,8 +550,8 @@
 				// make array with googleLatLon for later API request
 				// initialize with first vertex
 				var latLon = [];
-				latLon.push(new google.maps.LatLng(+vertices[0].transform(proj900913, proj4326).y.toFixed(5), 
-												   +vertices[0].transform(proj900913, proj4326).x.toFixed(5)));
+				var pt0 = vertices[i-1].transform(proj900913, proj4326);
+				latLon.push(new google.maps.LatLng(+pt0.y.toFixed(5), pt0.x.toFixed(5)));
 													 
 				console.log(vertices[0].transform(proj900913, proj4326).x.toFixed(5));													 
 				console.log(vertices[1].transform(proj900913, proj4326).x.toFixed(5));													 
