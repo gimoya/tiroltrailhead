@@ -547,19 +547,20 @@
 				var vertices = ft.geometry.getVertices();
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);	
-				// make array with googleLatLon for later API request
+				// make array with googlelocations for later API request
 				// initialize with first vertex
-				var latLon = [];
+				var locations = [];
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				latLon.push(new google.maps.LatLng(pt0.y.toFixed(5), pt0.x.toFixed(5)));
+				LL = new google.maps.LatLng(+pt0.y.toFixed(5), +pt0.x.toFixed(5));
+				locations.push(LL);
 													 
 				console.log("vertex: " + vertices[0]);													 
-				console.log("latLon: " + latLon[0]);	
+				console.log("locations: " + locations[0]);	
 												 
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
 				
-				// start with second segment, first already in latLon array
+				// start with second segment, first already in locations array
 				for(var i = 1; i < vertices.length; i++) {
 					var pt1 = vertices[i-1].transform(proj900913, proj4326);
 					var pt2 = vertices[i].transform(proj900913, proj4326);
@@ -572,32 +573,33 @@
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
 					 */
-					latLon.push(new google.maps.LatLng(pt2.y.toFixed(5), pt2.x.toFixed(5)));
+					LL = new google.maps.LatLng(+pt2.y.toFixed(5), +pt2.x.toFixed(5)); 
+					locations.push(LL);
 				}
 				
 				// check length of requested array --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("positionalRequest Array:\n" + latLon);				
+				console.log("positionalRequest Array:\n" + locations);				
 				console.log("Distance Array:\n" + distance);
 				
-				if (latLon.length > 300) {
-					// new latLon array
-					latLonShort = [];
+				if (locations.length > 300) {
+					// new locations array
+					locationsShort = [];
 					for(var i = 0; i < vertices.length; i++) {
 						// i modulo x == 0 will keep only every x-th coordinate
 						if (i%3 == 0) {
-							latLonShort.push(latLon[i]);
+							locationsShort.push(locations[i]);
 						}
-					// replace latLon by latLonShort
-					latLon = latLonShort;
+					// replace locations by locationsShort
+					locations = locationsShort;
 					}
 				// check length of requested array AGAIN --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("NEW positionalRequest Array Length: " + latLon.length);					
+				console.log("NEW positionalRequest Array Length: " + locations.length);					
 				}
 				
 				var positionalRequest = {
-					'locations': latLon
+					'locations': locations
 				}				
 				
 				// get and plot elevations
