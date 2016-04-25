@@ -568,18 +568,19 @@
 					var segment = new OpenLayers.Geometry.LineString([verticesMapProj[i-1], verticesMapProj[i]]);
 					var dist = segment.getGeodesicLength(proj900913);
 					distSum += dist;
-					// vertices.length - 1 will skip conditional testing of dist at last vertex,
+					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
-					if ( i < vertices.length - 1 && dist > 100 ) {
+					if ( i == vertices.length - 1 || dist > 100 ) {
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 					} else {
 						verticesMapProj.splice(i, 1);
 					}
-					distance.push(distSum);
-					locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 				}
-				
+				// push last element
+				distance.push(distSum);
+				locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
+					
 				// check length of requested array --> should be < 512 per request
 				// 2500 requests perday 
 				console.log("positionalRequest Array:\n" + locs);				
