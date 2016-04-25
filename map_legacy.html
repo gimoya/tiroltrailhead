@@ -32,7 +32,6 @@
 		<script src="scripts/bowser.js"></script>
 		
 		<script type="text/javascript">	
-			/*
 			function trim(str) {
 				return str.replace(/^\s+|\s+$/g, '');  
 			}
@@ -60,7 +59,7 @@
 				}
 				window.location='http://gimoya.github.io/tiroltrailhead/info.html';
 			}
-			*/
+			
 			/*
 			 * Check Browser and exit if not compatible
 			 * using bowser library
@@ -102,7 +101,7 @@
 		<!-- LOADING PAGE END -->
 		<!-- NAV only used for SITELINKS / display: none; is set in custom-css! -->
 		<nav>
-			<a id="sitelinks-1" alt="menu-info" href="/info.html" alt="info"></a>
+			<a id="sitelinks-1" alt="menu-kodex" href="/info.html" alt="info"></a>
 			<a id="sitelinks-2" alt="menu-region-1" href="http://gimoya.github.io/tiroltrailhead/map.html#zoom=12&amp;lat=47.39659&amp;lon=11.43351&amp;layers=TF0B0TT" alt="Region1"></a>
 			<a id="sitelinks-3" alt="menu-region-2" href="http://gimoya.github.io/tiroltrailhead/map.html#zoom=12&amp;lat=47.32885&amp;lon=10.95385&amp;layers=TF0B0TT" alt="Region2"></a>
 		</nav>
@@ -173,7 +172,7 @@
 		<!-- OPENLAYERS PART -->
 		<!-- I'll load large scripts here, with loading page being called before..-->
 		<script src="http://dev.openlayers.org/releases/OpenLayers-2.13.1/lib/OpenLayers.js"></script>
-		<script src="http://maps.google.com/maps/api/js?v=3.2"></script>
+		<script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
 		<script src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript">
 					
@@ -513,18 +512,19 @@
 			 * <results> is returned by the parent function addElevPlot and <ID>
 			 * refers to the id of the point in the results array which is also 
 			 * the row-id in the data-table of the chart by which the array-id will be chosen
-			 */			
-			function makeElevTipMarkers(ft_locs, ID) {
+			 */
+			function makeElevTipMarkers(results, ID) {	
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
-				var pos = new OpenLayers.LonLat(ft_locs[ID].x, ft_locs[ID].y);
+				// new LonLat Keys change every now and then in Google Api!!
+				// by Object.keys method we can get the key names and use them for referencing LonLat
+				var XY_keys = Object.keys(results[ID].location);
+				console.log("check locations:\nX:" + results[ID].location[XY_keys[1]] + "\nY:" + results[ID].location[XY_keys[0]]);
+				var currVertex = new OpenLayers.LonLat(results[ID].location[XY_keys[1]], results[ID].location[XY_keys[0]]).transform(proj4326, proj900913);
 				map.addLayer(markersElevTip);
-				markersElevTip.addMarker(new OpenLayers.Marker(pos, iconElev));
-				// should be alerted at click event on chart
-				console.log(markersElevTip);
-				// center map on marker at current zoom level
-				map.setCenter(pos, map.getZoom());
+
+				markersElevTip.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(currVertex.lon, currVertex.lat), iconElev));
 				//zooming:
 				for ( var t = 1; t < 40; t++) {
 					var time = t*80; 
@@ -533,134 +533,68 @@
 						}, time
 					);
 				}
+				console.log(markersElevTip);
 				window.setTimeout(function() {map.removeLayer(markersElevTip);}, time+8000);
 			}
 			
 			// Load package for Elevation profile visualization and elevation service
 			google.load('visualization', '1', {packages: ['corechart']});
 			elevator = new google.maps.ElevationService();
-				
+			
 			function addElevPlot(feature) {
 			
 				var ft = feature.clone();
+				var pts = ft.geometry.getVertices();
+				// make array with googleLatLon for later API request
+				var latLon = [];
+				var lineLength = ft.geometry.getGeodesicLength(proj900913);	
+				if (pts.length < 200) {
+					for(var j = 0; j < pts.length; j++) {
+						var pt = pts[j].transform(proj900913, proj4326);
+						/*  
+						 * the Google API has a limit on URI character length 
+						 * thus rounding coordinates will sign. shorten the URI,
+						 * which will avoid ERRORs on API requests
+						 */
+						latLon.push(new google.maps.LatLng(+pt.y.toFixed(5), +pt.x.toFixed(5)));
+					}
+				} else {
+					for(var j = 0; j < pts.length; j++) {
+						// j modulo x == 0 will keep only every x-th coordinate
+						if (j%3 == 0) {
+							var pt = pts[j].transform(proj900913, proj4326);
+							latLon.push(new google.maps.LatLng(+pt.y.toFixed(5), +pt.x.toFixed(5)));
+						}
+					}
+				}		
 				
-				// ft length needed for google chart scaling
-				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
-				console.log("Feature Length (m): " + ftGeoLength);
-				
-				var verticesMapProj = ft.geometry.getVertices();
-				var vertices = [];
-				for(var i = 0; i < verticesMapProj.length; i++){
-					// clone()!!! otherwise original geometry also transformed!!!
-					vertices.push(verticesMapProj[i].clone().transform(proj900913, proj4326));
-				}
-
-				// make array with googlelocations for later API request
-				// initialize with first vertex
-				var pt0 = vertices[0];
-				var locs = [new google.maps.LatLng(Number(pt0.y.toFixed(6)), Number(pt0.x.toFixed(6)))];
-												 
-				console.log("vertices[0]: " + vertices[0]);													 
-				console.log("locations: " + locs[0]);	
-												 
-				// cumulative segment distances between start-node and vertex[i]
-				var distance = [0]; 
-				
-				// start with second segment, first already in locations array
-				for(var i = 1; i < vertices.length; i++) {
-					// first element is 0, add segment length to the element before to get cumm. length
-					var segment = new OpenLayers.Geometry.LineString([vertices[i-1], vertices[i]]);
+				// distance between elevation samples
+				var distance = 100;
+				/* 
+				 * limit segments to max. <limit>, 
+				 * <limit> * <distance> will be max trail length, for which distance of 100 m 
+				 * inbetween sampling points is used
+				 */
+				var limit = 200;
+				// calculate no. of segments
+				var segments = Math.floor(lineLength/distance);
+				segments = (segments > limit) ? limit : segments;
+				// we need to recalculate the distance to its actual length 
+				// after defining no. of segments
+				distance = lineLength/segments;
 					
-					console.log("seg length: " + segment.getGeodesicLength(proj4326));
-					var dist = segment.getGeodesicLength(proj4326);
-					var distSum = Number((distance[i-1]+dist).toFixed(2));
-					distance.push(distSum);
-					
-					var pt = vertices[i];
-					/*  
-					 * the Google API has a limit on URI character length 
-					 * thus rounding coordinates will sign. shorten the URI,
-					 * which will avoid ERRORs on API requests
-					*/			 
-					locs.push(new google.maps.LatLng(Number(pt.y.toFixed(6)), Number(pt.x.toFixed(6))));
+				// set up request along path, sample every <distance> m
+				var pathRequest = {
+					'path': latLon,
+					'samples': segments+1
 				}
-				
-				// check length of requested array --> should be < 512 per request
-				// 2500 requests perday 
-				console.log("positionalRequest Array:\n" + locs);				
-				console.log("Distance Array:\n" + distance);
-				
-				// shorten length, always keeping 1st and last element
-				if (locs.length > 1200) {
-					// will keep 1/4 of locations
-					for(var i = 1; i < locs.length-1; i++) {
-						// i modulo x != 0 will be true at every i other than 4, 8, 12, 16
-						// thus every xth element will be removed
-						if (i%4 != 0) {
-							locs.splice(i,1);
-							distance.splice(i,1);
-							verticesMapProj.splice(i,1);
-						}
-					}
-					// check length of requested array AGAIN --> should be < 512 per request
-					// 2500 requests per day 
-					console.log("NEW positionalRequest Array Length: " + locs.length);					
-				}				
-				if (locs.length > 800) {
-					for(var i = 1; i < locs.length-1; i++) {
-						// i modulo x == 0 will be true at every xth i
-						// thus every xth element will be removed
-						// will keep 1/2 of locations
-						if (i%2 == 0) {
-							locs.splice(i,1);
-							distance.splice(i,1);
-							verticesMapProj.splice(i,1);
-						}
-					}
-					// check length of requested array AGAIN --> should be < 512 per request
-					// 2500 requests per day 
-					console.log("NEW positionalRequest Array Length: " + locs.length);					
-				}
-				if (locs.length > 600) {
-					for(var i = 1; i < locs.length-1; i++) {
-						// i modulo x == 0 will be true at every xth i
-						// thus every xth element will be removed
-						// will keep 2/3 of locations
-						if (i%3 == 0) {
-							locs.splice(i,1);
-							distance.splice(i,1);
-							verticesMapProj.splice(i,1);
-						}
-					}
-					// check length of requested array AGAIN --> should be < 512 per request
-					// 2500 requests per day 
-					console.log("NEW positionalRequest Array Length: " + locs.length);					
-				}
-				
-				if (locs.length > 450) {
-					for(var i = 1; i < locs.length-1; i++) {
-						// i modulo x == 0 will be true at every xth i
-						// thus every xth element will be removed
-						// will keep 3/4 of locations
-						if (i%4 == 0) {
-							locs.splice(i,1);
-							distance.splice(i,1);
-							verticesMapProj.splice(i,1);
-						}
-					}
-					// check length of requested array AGAIN --> should be < 512 per request
-					// 2500 requests per day 
-					console.log("NEW positionalRequest Array Length: " + locs.length);					
-				}
-				
-				var positionalRequest = {
-					'locations': locs
-				}				
-				
+				// console.log('check segments length: ', segments);
 				// get and plot elevations
-				elevator.getElevationForLocations(positionalRequest, function(results, status) {
-				
-					if (status === google.maps.ElevationStatus.OK) {
+				elevator.getElevationAlongPath(pathRequest, function(results, status) {
+				    console.log('check results length: ', results.length);
+					console.log('check results: ', results);
+					console.log('check latLon: ', pathRequest.samples);
+					if (status == google.maps.ElevationStatus.OK) {
 						var data = new google.visualization.DataTable();
 						data.addColumn('number', 'Strecke');
 						data.addColumn('number', 'Seehöhe');
@@ -672,11 +606,11 @@
 						for (var i = 0; i < results.length; i++) {
 							var elev = results[i].elevation;
 							elevArr.push(elev); 
-							data.addRow([distance[i]/1000,
+							data.addRow([distance*i/1000,
 							             Math.round(elev, 0),
 										 // tooltip string in 3rd column
 										 // 'Punkt: ' + (i+1) + '\n' +
-										 'Strecke: ' + (distance[i]/1000).toFixed(0) + ' km\n' +
+										 'Strecke: ' + (distance*i/1000).toFixed(1) + ' km\n' +
 										 'Seehöhe: ' + elev.toFixed(0) + ' m ']
 							);
 						}
@@ -691,7 +625,7 @@
 						    // use altitude range (max - min) as proportional factor for chart height
 							// and trail length for width
 							height: height,
-							width: ftGeoLength/50+120,
+							width: lineLength/50+120,
 							legend: 'none',
 							titleY: 'Seehöhe (m)',
 							titleX: 'Strecke (km)',
@@ -700,7 +634,7 @@
 							series:{
 								0:{
 									areaOpacity: 0.4,
-									color: 'blue'
+									color: 'green'
 								}
 							}
 						};
@@ -709,14 +643,12 @@
 							text: 'Auf Karte zeigen..',
 							action: function() {
 								selection = chart.getSelection();
-								makeElevTipMarkers(verticesMapProj, selection[0].row);
+								makeElevTipMarkers(results, selection[0].row);
 							}
 						});							
 						chart.draw(data, options);
-					} else {
-						console.log('Elevation service failed due to: ' + status);
 					}
-				}); 				
+				});	
 			}		
 			
 			/* 
@@ -905,10 +837,11 @@
                 trigger: function(e) {
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
 					var locations = [new google.maps.LatLng(lonlat.lat, lonlat.lon)];
-					console.log(lonlat);
+					// set up request along path, sample every <distance> m
 					var positionalRequest = {
 						'locations': locations
 					}
+					// console.log('check segments length: ', segments);
 					// get and plot elevations
 					elevator.getElevationForLocations(positionalRequest, function(results, status) {
 						if (status == google.maps.ElevationStatus.OK) {
