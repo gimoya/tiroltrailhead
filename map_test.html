@@ -544,7 +544,8 @@
 			function addElevPlot(feature) {
 			
 				var ft = feature.clone();
-				var vertices = ft.geometry.getVertices().transform(proj900913, proj4326);
+				var verticesMapProj = ft.geometry.getVertices();
+				var vertices = verticesMapProj.transform(proj900913, proj4326);
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
 				console.log("Feature Length (m): " + ftGeoLength);
