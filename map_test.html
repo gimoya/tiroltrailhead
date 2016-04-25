@@ -514,12 +514,12 @@
 			 * refers to the id of the point in the results array which is also 
 			 * the row-id in the data-table of the chart by which the array-id will be chosen
 			 */			
-			function makeElevTipMarkers(vertices, ID) {
+			function makeElevTipMarkers(ft_locs, ID) {
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
 				map.addLayer(markersElevTip);
-				markersElevTip.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(vertices[ID].x, vertices[ID].y), iconElev));
+				markersElevTip.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(ft_locs[ID].x, ft_locs[ID].y), iconElev));
 				// should be alerted at click event on chart
 				console.log(markersElevTip);
 				
