@@ -587,19 +587,52 @@
 				// 2500 requests perday 
 				console.log("positionalRequest Array:\n" + locs);				
 				console.log("Distance Array:\n" + distance);
-				if (locs.length > 400) {
-					for(var i = 0; i < locs.length; i++) {
+				
+				// shorten length, always keeping 1st and last element
+				if (locs.length > 1200) {
+					// will keep 1/4 of locations
+					for(var i = 1; i < locs.length-1; i++) {
+						// i modulo x != 0 will be true at every i other than 4, 8, 12, 16
+						// thus every xth element will be removed
+						if (i%4 != 0) {
+							locs.splice(i,1);
+							distance.splice(i,1);
+							verticesMapProj.splice(i,1);
+						}
+					}
+					// check length of requested array AGAIN --> should be < 512 per request
+					// 2500 requests per day 
+					console.log("NEW positionalRequest Array Length: " + locs.length);					
+				}				
+				if (locs.length > 800) {
+					for(var i = 1; i < locs.length-1; i++) {
 						// i modulo x == 0 will be true at every xth i
 						// thus every xth element will be removed
+						// will keep 1/2 of locations
 						if (i%2 == 0) {
 							locs.splice(i,1);
 							distance.splice(i,1);
 							verticesMapProj.splice(i,1);
 						}
 					}
-				// check length of requested array AGAIN --> should be < 512 per request
-				// 2500 requests per day 
-				console.log("NEW positionalRequest Array Length: " + locs.length);					
+					// check length of requested array AGAIN --> should be < 512 per request
+					// 2500 requests per day 
+					console.log("NEW positionalRequest Array Length: " + locs.length);					
+				}
+				if (locs.length > 600) {
+					for(var i = 1; i < locs.length-1; i++) {
+						// i modulo x == 0 will be true at every xth i
+						// thus every xth element will be removed
+						// will keep 2/3 of locations
+						if (i%3 == 0) {
+							locs.splice(i,1);
+							distance.splice(i,1);
+							verticesMapProj.splice(i,1);
+						}
+					}
+					// check length of requested array AGAIN --> should be < 512 per request
+					// 2500 requests per day 
+					console.log("NEW positionalRequest Array Length: " + locs.length);					
 				}
 				
 				var positionalRequest = {
@@ -650,7 +683,7 @@
 							series:{
 								0:{
 									areaOpacity: 0.4,
-									color: 'green'
+									color: 'blue'
 								}
 							}
 						};
