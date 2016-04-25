@@ -547,13 +547,13 @@
 				var vertices = ft.geometry.getVertices();
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
-				console.log("Feature LEngth (m): " + ftGeoLength);
+				console.log("Feature Length (m): " + ftGeoLength);
 				// make array with googlelocations for later API request
 				// initialize with first vertex
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				var locations = [new google.maps.LatLng(pt0.y, pt0.x)];
+				var locations = [new google.maps.LatLng(pt0.y.toFixed(6)), Number(pt0.x.toFixed(6)))];
 												 
-				console.log("vertex: " + pt0);													 
+				console.log("verteices[0]: " + pt0);													 
 				console.log("locations: " + locations[0]);	
 												 
 				// cumulative segment distances between start-node and vertex[i]
@@ -568,14 +568,13 @@
 					var dist = segment.getGeodesicLength(proj900913);
 					distance.push(Number((distance[i-1]+dist).toFixed(2)));
 					
-					var pt1 = vertices[i-1].transform(proj900913, proj4326);
-					var pt2 = vertices[i].transform(proj900913, proj4326);
+					var pt = vertices[i-1].transform(proj900913, proj4326);
 					/*  
 					 * the Google API has a limit on URI character length 
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
 					*/			 
-					locations.push(new google.maps.LatLng(pt2.y, pt2.x));
+					locations.push(new google.maps.LatLng(Number(pt.y.toFixed(6)), Number(pt.x.toFixed(6))));
 				}
 				
 				// check length of requested array --> should be < 512 per request
