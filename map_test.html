@@ -545,7 +545,10 @@
 			
 				var ft = feature.clone();
 				var verticesMapProj = ft.geometry.getVertices();
-				var vertices = verticesMapProj.geometry.transform(proj900913, proj4326);
+				var vertices = [];
+				for(var i = 0; i < verticesMapProj.length; i++){
+					vertices.push(vertices[i].transform(proj900913, proj4326));
+				}
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
 				console.log("Feature Length (m): " + ftGeoLength);
