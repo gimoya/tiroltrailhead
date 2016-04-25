@@ -551,7 +551,7 @@
 				// make array with googlelocations for later API request
 				// initialize with first vertex
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				var locs = [new google.maps.LatLng(pt0.y.toFixed(6)), Number(pt0.x.toFixed(6)))];
+				var locs = [new google.maps.LatLng(pt0.y.toFixed(6), Number(pt0.x.toFixed(6)))];
 												 
 				console.log("vertices[0]: " + pt0);													 
 				console.log("locations: " + locs[0]);	
