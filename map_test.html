@@ -545,7 +545,7 @@
 				
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
-				//console.log("Feature Length (m): " + ftGeoLength);
+				console.log("Feature Length (m): " + ftGeoLength);
 				
 				var verticesMapProj = ft.geometry.getVertices();
 				var vertices = [];
@@ -577,10 +577,12 @@
 						verticesMapProj.splice(i, 1);
 					}
 				}	
+				
 				// check length of requested array --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("positionalRequest Array:\n" + locs);				
-				console.log("Distance Array:\n" + distance);			
+				console.log("positionalRequest ArrayL:\n" + locs.length);				
+				console.log("Distance ArrayL:\n" + distance.length);			
+				console.log("VerticeMapProj ArrayL:\n" + VerticeMapProj.length);			
 				
 				var positionalRequest = {
 					'locations': locs
