@@ -32,7 +32,7 @@
 		<script src="scripts/bowser.js"></script>
 		
 		<script type="text/javascript">	
-			
+			/*
 			function trim(str) {
 				return str.replace(/^\s+|\s+$/g, '');  
 			}
@@ -60,7 +60,7 @@
 				}
 				window.location='http://gimoya.github.io/tiroltrailhead/info.html';
 			}
-			
+			*/
 			/*
 			 * Check Browser and exit if not compatible
 			 * using bowser library
@@ -545,9 +545,11 @@
 				
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
-				//console.log("Feature Length (m): " + ftGeoLength);
+				console.log("Feature Length (m): " + ftGeoLength);
 				
 				var verticesMapProj = ft.geometry.getVertices();
+				console.log("Vertices contained at start: " + verticesMapProj.length);
+				var vertices_kept = [verticesMapProj[0]];
 				var vertices = [];
 				for(var i = 0; i < verticesMapProj.length; i++){
 					// clone()!!! otherwise original geometry also transformed!!!
@@ -556,101 +558,36 @@
 
 				// make array with googlelocations for later API request
 				// initialize with first vertex
-				var pt0 = vertices[0];
-				var locs = [new google.maps.LatLng(Number(pt0.y.toFixed(6)), Number(pt0.x.toFixed(6)))];
-												 
-				//console.log("vertices[0]: " + vertices[0]);													 
-				//console.log("locations: " + locs[0]);	
+				var locs = [new google.maps.LatLng(vertices[0].y, vertices[0].x)];
 												 
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
-				
+				var distSum = 0;
+				var j = 0;
+				var k = 0;
 				// start with second segment, first already in locations array
 				for(var i = 1; i < vertices.length; i++) {
 					// first element is 0, add segment length to the element before to get cumm. length
-					var segment = new OpenLayers.Geometry.LineString([vertices[i-1], vertices[i]]);
-					
-					//console.log("seg length: " + segment.getGeodesicLength(proj4326));
-					var dist = segment.getGeodesicLength(proj4326);
-					var distSum = Number((distance[i-1]+dist).toFixed(2));
-					distance.push(distSum);
-					
-					var pt = vertices[i];
-					/*  
-					 * the Google API has a limit on URI character length 
-					 * thus rounding coordinates will sign. shorten the URI,
-					 * which will avoid ERRORs on API requests
-					*/			 
-					locs.push(new google.maps.LatLng(Number(pt.y.toFixed(6)), Number(pt.x.toFixed(6))));
-				}
+					var segment = new OpenLayers.Geometry.LineString([verticesMapProj[i-1], verticesMapProj[i]]);
+					var dist = segment.getGeodesicLength(proj900913);
+					distSum += dist;
+					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
+					// which should always be kept and not possibly excluded!
+					if ( i == vertices.length - 1 || dist > 20 ) {
+					    j += 1;
+						console.log("pushed " + j + "times..");
+					    console.log("segment Length at [" + i + "]" + "is: " + distSum);
+						distance.push(distSum);
+						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
+						vertices_kept.push(verticesMapProj[i]);
+					}
+				}	
 				
 				// check length of requested array --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("positionalRequest Array:\n" + locs);				
-				console.log("Distance Array:\n" + distance);
-				
-				// shorten length, always keeping 1st and last element
-				if (locs.length > 1200) {
-					// will keep 1/4 of locations
-					for(var i = 1; i < locs.length-1; i++) {
-						// i modulo x != 0 will be true at every i other than 4, 8, 12, 16
-						// thus every xth element will be removed
-						if (i%4 != 0) {
-							locs.splice(i,1);
-							distance.splice(i,1);
-							verticesMapProj.splice(i,1);
-						}
-					}
-					// check length of requested array AGAIN --> should be < 512 per request
-					// 2500 requests per day 
-					console.log("NEW positionalRequest Array Length: " + locs.length);					
-				}				
-				if (locs.length > 800) {
-					for(var i = 1; i < locs.length-1; i++) {
-						// i modulo x == 0 will be true at every xth i
-						// thus every xth element will be removed
-						// will keep 1/2 of locations
-						if (i%2 == 0) {
-							locs.splice(i,1);
-							distance.splice(i,1);
-							verticesMapProj.splice(i,1);
-						}
-					}
-					// check length of requested array AGAIN --> should be < 512 per request
-					// 2500 requests per day 
-					console.log("NEW positionalRequest Array Length: " + locs.length);					
-				}
-				if (locs.length > 600) {
-					for(var i = 1; i < locs.length-1; i++) {
-						// i modulo x == 0 will be true at every xth i
-						// thus every xth element will be removed
-						// will keep 2/3 of locations
-						if (i%3 == 0) {
-							locs.splice(i,1);
-							distance.splice(i,1);
-							verticesMapProj.splice(i,1);
-						}
-					}
-					// check length of requested array AGAIN --> should be < 512 per request
-					// 2500 requests per day 
-					console.log("NEW positionalRequest Array Length: " + locs.length);					
-				}
-				
-				if (locs.length > 450) {
-					for(var i = 1; i < locs.length-1; i++) {
-						// i modulo x == 0 will be true at every xth i
-						// thus every xth element will be removed
-						// will keep 3/4 of locations
-						if (i%4 == 0) {
-							locs.splice(i,1);
-							distance.splice(i,1);
-							verticesMapProj.splice(i,1);
-						}
-					}
-					// check length of requested array AGAIN --> should be < 512 per request
-					// 2500 requests per day 
-					console.log("NEW positionalRequest Array Length: " + locs.length);					
-				}
+				console.log("positionalRequest ArrayL:\n" + locs.length);				
+				console.log("Distance ArrayL:\n" + distance.length);			
+				console.log("vertices_kept ArrayL:\n" + vertices_kept.length);			
 				
 				var positionalRequest = {
 					'locations': locs
@@ -709,7 +646,7 @@
 							action: function() {
 								selection = chart.getSelection();
 								var ID = selection[0].row;
-								makeElevTipMarkers(new OpenLayers.LonLat(verticesMapProj[ID].x, verticesMapProj[ID].y));
+								makeElevTipMarkers(new OpenLayers.LonLat(vertices_kept[ID].x, vertices_kept[ID].y));
 							}
 						});							
 						chart.draw(data, options);
