@@ -657,8 +657,7 @@
 				
 				// get and plot elevations
 				elevator.getElevationForLocations(positionalRequest, function(results, status) {
-					// CENTER map here!!
-					// infowindow.setPosition(location);
+				
 					if (status === google.maps.ElevationStatus.OK) {
 						var data = new google.visualization.DataTable();
 						data.addColumn('number', 'Strecke');
@@ -709,6 +708,7 @@
 							action: function() {
 								selection = chart.getSelection();
 								makeElevTipMarkers(verticesMapProj, selection[0].row);
+								map.setCenter(verticesMapProj[selection[0].row], 14);
 							}
 						});							
 						chart.draw(data, options);
