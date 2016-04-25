@@ -50,10 +50,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1251301.88684448762796819</xmin>
-      <ymin>5973026.93140638805925846</ymin>
-      <xmax>1253718.61072571133263409</xmax>
-      <ymax>5978839.9302304070442915</ymax>
+      <xmin>1285627.94643550040200353</xmin>
+      <ymin>5993997.81640163995325565</ymin>
+      <xmax>1286790.89025109028443694</xmax>
+      <ymax>5994604.84751417301595211</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -658,10 +658,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -1576,6 +1576,7 @@
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">1</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
+        <value>Paff_Krist20160421221425326</value>
         <value>Rumer_Alm___Wendelin_Steig20160209104954251</value>
         <value>multilinestrings_any20151228222636004</value>
         <value>regions_utm_utf820141118153216780</value>
@@ -1586,10 +1587,12 @@
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
+        <value>enabled</value>
       </LayerSnappingEnabledList>
       <SnappingMode type="QString">advanced</SnappingMode>
       <AvoidIntersectionsList type="QStringList"/>
       <LayerSnappingToleranceUnitList type="QStringList">
+        <value>1</value>
         <value>1</value>
         <value>1</value>
         <value>1</value>
@@ -1600,10 +1603,12 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
       </LayerSnapToList>
       <DefaultSnapType type="QString">off</DefaultSnapType>
       <DefaultSnapTolerance type="double">5</DefaultSnapTolerance>
       <LayerSnappingToleranceList type="QStringList">
+        <value>5.000000</value>
         <value>5.000000</value>
         <value>5.000000</value>
         <value>5.000000</value>
