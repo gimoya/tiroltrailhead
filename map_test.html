@@ -588,21 +588,15 @@
 				console.log("positionalRequest Array:\n" + locs);				
 				console.log("Distance Array:\n" + distance);
 				if (locs.length > 300) {
-					// new locations array
-					locsShort = [];
-					distanceShort = [];
-					for(var i = 0; i < vertices.length; i++) {
+					for(var i = 0; i < locs.length; i++) {
 						// i modulo x == 0 will keep only every x-th coordinate
-						if (i%3 == 0) {
-							locsShort.push(locs[i]);
-							distanceShort.push(distance[i]);
+						if (i%3 != 0) {
+							locs[i].delete;
+							distance[i].delete;
 						}
-					// replace locations by locationsShort
-					locs = locsShort;
-					distance = distanceShort;
 					}
 				// check length of requested array AGAIN --> should be < 512 per request
-				// 2500 requests perday 
+				// 2500 requests per day 
 				console.log("NEW positionalRequest Array Length: " + locs.length);					
 				}
 				
