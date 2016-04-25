@@ -662,7 +662,6 @@
 							text: 'Auf Karte zeigen..',
 							action: function() {
 								selection = chart.getSelection();
-								console.log(data.getValue(selection[0], 1));
 								makeElevTipMarkers(verticesMapProj, selection[0].row);
 							}
 						});							
