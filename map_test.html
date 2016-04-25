@@ -518,7 +518,7 @@
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
-				var currVertex = verticesMapProj[ID];
+				var currVertex = vertices[ID];
 				map.addLayer(markersElevTip);
 
 				markersElevTip.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(currVertex.lon, currVertex.lat), iconElev));
@@ -663,7 +663,7 @@
 							action: function() {
 								selection = chart.getSelection();
 								console.log(data.getValue(selection[0], 1));
-								makeElevTipMarkers(results, selection[0].row);
+								makeElevTipMarkers(verticesMapProj, selection[0].row);
 							}
 						});							
 						chart.draw(data, options);
