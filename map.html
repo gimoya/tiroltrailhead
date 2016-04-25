@@ -518,6 +518,7 @@
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
+				console.log(ft_locs[ID]);
 				var pos = new OpenLayers.LonLat(ft_locs[ID].x, ft_locs[ID].y);
 				map.addLayer(markersElevTip);
 				markersElevTip.addMarker(new OpenLayers.Marker(pos, iconElev));
@@ -709,7 +710,7 @@
 							text: 'Auf Karte zeigen..',
 							action: function() {
 								selection = chart.getSelection();
-								makeElevTipMarkers(verticesMapProj, selection[0].row);
+								makeElevTipMarkers(verticesMapProj.clone(), selection[0].row);
 							}
 						});							
 						chart.draw(data, options);
