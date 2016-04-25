@@ -545,7 +545,7 @@
 			
 				var ft = feature.clone();
 				var verticesMapProj = ft.geometry.getVertices();
-				var vertices = verticesMapProj.transform(proj900913, proj4326);
+				var vertices = verticesMapProj.geometry.transform(proj900913, proj4326);
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
 				console.log("Feature Length (m): " + ftGeoLength);
@@ -857,7 +857,7 @@
                 trigger: function(e) {
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
 					var locations = [new google.maps.LatLng(lonlat.lat, lonlat.lon)];
-					console.log(locations);
+					console.log(lonLat);
 					var positionalRequest = {
 						'locations': locations
 					}
