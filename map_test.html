@@ -860,7 +860,7 @@
                 trigger: function(e) {
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
 					var locations = [new google.maps.LatLng(lonlat.lat, lonlat.lon)];
-					console.log(lonLat);
+					console.log(lonlat);
 					var positionalRequest = {
 						'locations': locations
 					}
