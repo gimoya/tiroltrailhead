@@ -637,12 +637,12 @@
 					console.log("NEW positionalRequest Array Length: " + locs.length);					
 				}
 				
-				if (locs.length > 500) {
+				if (locs.length > 450) {
 					for(var i = 1; i < locs.length-1; i++) {
 						// i modulo x == 0 will be true at every xth i
 						// thus every xth element will be removed
-						// will keep 4/5 of locations
-						if (i%5 == 0) {
+						// will keep 3/4 of locations
+						if (i%4 == 0) {
 							locs.splice(i,1);
 							distance.splice(i,1);
 							verticesMapProj.splice(i,1);
