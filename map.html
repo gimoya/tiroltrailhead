@@ -518,11 +518,11 @@
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
-				var pos = new OpenLayers.LonLat(ft_locs[ID].y, ft_locs[ID].x);
+				var pos = new OpenLayers.LonLat(ft_locs[ID].x, ft_locs[ID].y);
 				map.addLayer(markersElevTip);
 				markersElevTip.addMarker(new OpenLayers.Marker(pos, iconElev));
 				// should be alerted at click event on chart
-				console.log(markersElevTip);
+				// console.log(markersElevTip);
 				// center map on marker at current zoom level
 				map.setCenter(pos, map.getZoom());
 				//zooming:
@@ -546,7 +546,7 @@
 				
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
-				console.log("Feature Length (m): " + ftGeoLength);
+				//console.log("Feature Length (m): " + ftGeoLength);
 				
 				var verticesMapProj = ft.geometry.getVertices();
 				var vertices = [];
@@ -560,8 +560,8 @@
 				var pt0 = vertices[0];
 				var locs = [new google.maps.LatLng(Number(pt0.y.toFixed(6)), Number(pt0.x.toFixed(6)))];
 												 
-				console.log("vertices[0]: " + vertices[0]);													 
-				console.log("locations: " + locs[0]);	
+				//console.log("vertices[0]: " + vertices[0]);													 
+				//console.log("locations: " + locs[0]);	
 												 
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
@@ -571,7 +571,7 @@
 					// first element is 0, add segment length to the element before to get cumm. length
 					var segment = new OpenLayers.Geometry.LineString([vertices[i-1], vertices[i]]);
 					
-					console.log("seg length: " + segment.getGeodesicLength(proj4326));
+					//console.log("seg length: " + segment.getGeodesicLength(proj4326));
 					var dist = segment.getGeodesicLength(proj4326);
 					var distSum = Number((distance[i-1]+dist).toFixed(2));
 					distance.push(distSum);
@@ -905,7 +905,7 @@
                 trigger: function(e) {
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
 					var locations = [new google.maps.LatLng(lonlat.lat, lonlat.lon)];
-					console.log(lonlat);
+					//console.log(lonlat);
 					var positionalRequest = {
 						'locations': locations
 					}
