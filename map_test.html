@@ -546,9 +546,10 @@
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
 				console.log("Feature Length (m): " + ftGeoLength);
-				console.log("Vertices contained at start: " + verticesMapProj.length);
 				
 				var verticesMapProj = ft.geometry.getVertices();
+				console.log("Vertices contained at start: " + verticesMapProj.length);
+				
 				var vertices = [];
 				for(var i = 0; i < verticesMapProj.length; i++){
 					// clone()!!! otherwise original geometry also transformed!!!
