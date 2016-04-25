@@ -708,6 +708,7 @@
 							text: 'Auf Karte zeigen..',
 							action: function() {
 								selection = chart.getSelection();
+								var ID = selection[0].row;
 								makeElevTipMarkers(new OpenLayers.LonLat(verticesMapProj[ID].x, verticesMapProj[ID].y));
 							}
 						});							
