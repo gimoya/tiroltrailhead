@@ -571,6 +571,7 @@
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
 					if ( i == vertices.length - 1 || dist > 30 ) {
+					    console.log("Segment Length is: " + dist);
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 					} else {
@@ -582,7 +583,7 @@
 				// 2500 requests perday 
 				console.log("positionalRequest ArrayL:\n" + locs.length);				
 				console.log("Distance ArrayL:\n" + distance.length);			
-				console.log("VerticeMapProj ArrayL:\n" + verticesMapProj.length);			
+				console.log("verticesMapProj ArrayL:\n" + verticesMapProj.length);			
 				
 				var positionalRequest = {
 					'locations': locs
