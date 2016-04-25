@@ -549,7 +549,7 @@
 				
 				var verticesMapProj = ft.geometry.getVertices();
 				console.log("Vertices contained at start: " + verticesMapProj.length);
-				
+				var vertices_kept = [verticesMapProj[0]];
 				var vertices = [];
 				for(var i = 0; i < verticesMapProj.length; i++){
 					// clone()!!! otherwise original geometry also transformed!!!
@@ -579,10 +579,7 @@
 					    console.log("segment Length at [" + i + "]" + "is: " + distSum);
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
-					} else {
-						k += 1;
-					    console.log("spliced " + k + " times..");
-						verticesMapProj.splice(i, 1);
+						vertices_kept.push(verticesMapProj[i]);
 					}
 				}	
 				
@@ -590,7 +587,7 @@
 				// 2500 requests perday 
 				console.log("positionalRequest ArrayL:\n" + locs.length);				
 				console.log("Distance ArrayL:\n" + distance.length);			
-				console.log("verticesMapProj ArrayL:\n" + verticesMapProj.length);			
+				console.log("vertices_kept ArrayL:\n" + vertices_kept.length);			
 				
 				var positionalRequest = {
 					'locations': locs
@@ -649,7 +646,7 @@
 							action: function() {
 								selection = chart.getSelection();
 								var ID = selection[0].row;
-								makeElevTipMarkers(new OpenLayers.LonLat(verticesMapProj[ID].x, verticesMapProj[ID].y));
+								makeElevTipMarkers(new OpenLayers.LonLat(vertices_kept[ID].x, vertices_kept[ID].y));
 							}
 						});							
 						chart.draw(data, options);
