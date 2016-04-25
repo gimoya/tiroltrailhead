@@ -518,11 +518,13 @@
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
+				var pos = new OpenLayers.LonLat(ft_locs[ID].x, ft_locs[ID].y);
 				map.addLayer(markersElevTip);
-				markersElevTip.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(ft_locs[ID].x, ft_locs[ID].y), iconElev));
+				markersElevTip.addMarker(new OpenLayers.Marker(pos, iconElev));
 				// should be alerted at click event on chart
 				console.log(markersElevTip);
-				
+				// center map on marker at current zoom level
+				map.setCenter(pos, map.getZoom());
 				//zooming:
 				for ( var t = 1; t < 40; t++) {
 					var time = t*80; 
@@ -708,7 +710,6 @@
 							action: function() {
 								selection = chart.getSelection();
 								makeElevTipMarkers(verticesMapProj, selection[0].row);
-								map.setCenter(verticesMapProj[selection[0].row], 14);
 							}
 						});							
 						chart.draw(data, options);
