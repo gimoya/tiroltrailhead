@@ -518,9 +518,8 @@
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
-				var currVertex = vertices[ID];
 				map.addLayer(markersElevTip);
-				markersElevTip.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(currVertex.lon, currVertex.lat), iconElev));
+				markersElevTip.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(vertices[ID].x, vertices[ID].y), iconElev));
 				// should be alerted at click event on chart
 				console.log(markersElevTip);
 				
