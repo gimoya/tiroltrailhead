@@ -32,7 +32,7 @@
 		<script src="scripts/bowser.js"></script>
 		
 		<script type="text/javascript">	
-			
+			/*
 			function trim(str) {
 				return str.replace(/^\s+|\s+$/g, '');  
 			}
@@ -60,7 +60,7 @@
 				}
 				window.location='http://gimoya.github.io/tiroltrailhead/info.html';
 			}
-			
+			*/
 			/*
 			 * Check Browser and exit if not compatible
 			 * using bowser library
@@ -560,16 +560,23 @@
 												 
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
+				var distSum = 0;
 				
 				// start with second segment, first already in locations array
 				for(var i = 1; i < vertices.length; i++) {
 					// first element is 0, add segment length to the element before to get cumm. length
 					var segment = new OpenLayers.Geometry.LineString([verticesMapProj[i-1], verticesMapProj[i]]);
 					var dist = segment.getGeodesicLength(proj900913);
-					
-					var distSum = Number((distance[i-1]+dist).toFixed(2));
+					distSum += dist;
+					// vertices.length - 1 will skip conditional testing of dist at last vertex,
+					// which should always be kept and not possibly excluded!
+					if ( i < vertices.length - 1 && dist > 100 ) {
+						distance.push(distSum);
+						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
+					} else {
+						verticesMapProj.splice(i, 1);
+					}
 					distance.push(distSum);
-								 
 					locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 				}
 				
