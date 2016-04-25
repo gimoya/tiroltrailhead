@@ -544,13 +544,13 @@
 			function addElevPlot(feature) {
 			
 				var ft = feature.clone();
-				var vertices = ft.geometry.getVertices();
+				var vertices = ft.geometry.getVertices().transform(proj900913, proj4326);
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
 				console.log("Feature Length (m): " + ftGeoLength);
 				// make array with googlelocations for later API request
 				// initialize with first vertex
-				var pt0 = vertices[0].transform(proj900913, proj4326);
+				var pt0 = vertices[0];
 				var locs = [new google.maps.LatLng(Number(pt0.y.toFixed(6)), Number(pt0.x.toFixed(6)))];
 												 
 				console.log("vertices[0]: " + vertices[0]);													 
@@ -564,12 +564,12 @@
 					// first element is 0, add segment length to the element before to get cumm. length
 					var segment = new OpenLayers.Geometry.LineString([vertices[i-1], vertices[i]]);
 					
-					console.log("seg length: " + segment.getGeodesicLength(proj900913));
-					var dist = segment.getGeodesicLength(proj900913);
+					console.log("seg length: " + segment.getGeodesicLength(proj4326));
+					var dist = segment.getGeodesicLength(proj4326);
 					var distSum = Number((distance[i-1]+dist).toFixed(2));
 					distance.push(distSum);
 					
-					var pt = vertices[i].transform(proj900913, proj4326);
+					var pt = vertices[i];
 					/*  
 					 * the Google API has a limit on URI character length 
 					 * thus rounding coordinates will sign. shorten the URI,
