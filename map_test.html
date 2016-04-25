@@ -570,7 +570,7 @@
 					distSum += dist;
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
-					if ( i == vertices.length - 1 || dist >=0 ) {
+					if ( i == vertices.length - 1 || dist > 10 ) {
 					    console.log("Cum Segment Length at [" + i + "]" + "is: " + dist);
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
