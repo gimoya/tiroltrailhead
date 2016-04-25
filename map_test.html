@@ -563,7 +563,7 @@
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
 				var distSum = 0;
-				
+				var j = 1;
 				// start with second segment, first already in locations array
 				for(var i = 1; i < vertices.length; i++) {
 					// first element is 0, add segment length to the element before to get cumm. length
@@ -573,7 +573,9 @@
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
 					if ( i == vertices.length - 1 || dist > 10 ) {
-					    console.log("howdy..");
+					    j += 1;
+						console.log("pushed " + j + "times..");
+					    console.log("segment Length at [" + i + "]" + "is: " + distSum);
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 					} else {
