@@ -551,10 +551,10 @@
 				// make array with googlelocations for later API request
 				// initialize with first vertex
 				var pt0 = vertices[0].transform(proj900913, proj4326);
-				var locations = [new google.maps.LatLng(pt0.y.toFixed(6)), Number(pt0.x.toFixed(6)))];
+				var locs = [new google.maps.LatLng(pt0.y.toFixed(6)), Number(pt0.x.toFixed(6)))];
 												 
 				console.log("verteices[0]: " + pt0);													 
-				console.log("locations: " + locations[0]);	
+				console.log("locations: " + locs[0]);	
 												 
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
@@ -574,35 +574,35 @@
 					 * thus rounding coordinates will sign. shorten the URI,
 					 * which will avoid ERRORs on API requests
 					*/			 
-					locations.push(new google.maps.LatLng(Number(pt.y.toFixed(6)), Number(pt.x.toFixed(6))));
+					locs.push(new google.maps.LatLng(Number(pt.y.toFixed(6)), Number(pt.x.toFixed(6))));
 				}
 				
 				// check length of requested array --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("positionalRequest Array:\n" + locations);				
+				console.log("positionalRequest Array:\n" + locs);				
 				console.log("Distance Array:\n" + distance);
 				/*
-				if (locations.length > 300) {
+				if (locs.length > 300) {
 					// new locations array
-					locationsShort = [];
+					locsShort = [];
 					distanceShort = [];
 					for(var i = 0; i < vertices.length; i++) {
 						// i modulo x == 0 will keep only every x-th coordinate
 						if (i%3 == 0) {
-							locationsShort.push(locations[i]);
+							locsShort.push(locs[i]);
 							distanceShort.push(distance[i]);
 						}
 					// replace locations by locationsShort
-					locations = locationsShort;
+					locs = locsShort;
 					distance = distanceShort;
 					}
 				// check length of requested array AGAIN --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("NEW positionalRequest Array Length: " + locations.length);					
+				console.log("NEW positionalRequest Array Length: " + locs.length);					
 				}*/
 				
 				var positionalRequest = {
-					'locations': locations
+					'locations': locs
 				}				
 				
 				// get and plot elevations
