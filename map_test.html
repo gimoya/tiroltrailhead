@@ -591,8 +591,8 @@
 					for(var i = 0; i < locs.length; i++) {
 						// i modulo x == 0 will keep only every x-th coordinate
 						if (i%3 != 0) {
-							locs[i].delete;
-							distance[i].delete;
+							locs.splice(i,1);
+							distance.splice(i,1);
 						}
 					}
 				// check length of requested array AGAIN --> should be < 512 per request
