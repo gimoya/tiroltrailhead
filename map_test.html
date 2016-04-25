@@ -573,7 +573,7 @@
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
 					if ( i == vertices.length - 1 || dist > 10 ) {
-					    cconsole.log("howdy..");
+					    console.log("howdy..");
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 					} else {
