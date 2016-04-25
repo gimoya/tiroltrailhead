@@ -514,14 +514,11 @@
 			 * refers to the id of the point in the results array which is also 
 			 * the row-id in the data-table of the chart by which the array-id will be chosen
 			 */			
-			function makeElevTipMarkers(results, ID) {	/*
+			function makeElevTipMarkers(vertices, ID) {
 				var markersElevTip = new OpenLayers.Layer.Markers( "Markers" );
 				var size = new OpenLayers.Size(50,55);
 				var iconElev =  new OpenLayers.Icon('icons/hand-pointer.png', size, null, calculateOffset);
-				// new LonLat Keys change every now and then in Google Api!!
-				// by Object.keys method we can get the key names and use them for referencing LonLat
-				var XY_keys = Object.keys(results[ID].location);
-				var currVertex = new OpenLayers.LonLat(results[ID].location[XY_keys[1]], results[ID].location[XY_keys[0]]).transform(proj4326, proj900913);
+				var currVertex = verticesMapProj[ID];
 				map.addLayer(markersElevTip);
 
 				markersElevTip.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(currVertex.lon, currVertex.lat), iconElev));
@@ -534,7 +531,6 @@
 					);
 				}
 				window.setTimeout(function() {map.removeLayer(markersElevTip);}, time+8000);
-				*/
 			}
 			
 			// Load package for Elevation profile visualization and elevation service
