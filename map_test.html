@@ -563,7 +563,8 @@
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
 				var distSum = 0;
-				var j = 1;
+				var j = 0;
+				var k = 0;
 				// start with second segment, first already in locations array
 				for(var i = 1; i < vertices.length; i++) {
 					// first element is 0, add segment length to the element before to get cumm. length
@@ -579,7 +580,8 @@
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 					} else {
-					    console.log("coockoo..");
+						k += 1;
+					    console.log("spliced " + k + " times..");
 						verticesMapProj.splice(i, 1);
 					}
 				}	
