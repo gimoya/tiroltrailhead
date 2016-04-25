@@ -549,7 +549,7 @@
 				var verticesMapProj = ft.geometry.getVertices();
 				var vertices = [];
 				for(var i = 0; i < verticesMapProj.length; i++){
-					vertices.push(verticesMapProj[i].transform(proj900913, proj4326));
+					vertices.push(verticesMapProj[i].clone().transform(proj900913, proj4326));
 				}
 
 				// make array with googlelocations for later API request
