@@ -576,7 +576,7 @@
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
 					console.log("Min segment Length at [" + i + "]" + "is: " + distMin);
-					if ( i == vertices.length - 1 || distMin > 50 ) {
+					if ( i == vertices.length - 1 || distMin > 100 ) {
 					    j += 1;
 						distMin = 0;
 						console.log("pushed " + j + "times..");
