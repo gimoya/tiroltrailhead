@@ -563,6 +563,7 @@
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
 				var distSum = 0;
+				var distMin = 0;
 				var j = 0;
 				var k = 0;
 				// start with second segment, first already in locations array
@@ -571,12 +572,14 @@
 					var segment = new OpenLayers.Geometry.LineString([verticesMapProj[i-1], verticesMapProj[i]]);
 					var dist = segment.getGeodesicLength(proj900913);
 					distSum += dist;
+					distMin += dist;
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
-					if ( i == vertices.length - 1 || dist > 20 ) {
+					if ( i == vertices.length - 1 || distMin > 50 ) {
 					    j += 1;
+						distMin = 0;
 						console.log("pushed " + j + "times..");
-					    console.log("segment Length at [" + i + "]" + "is: " + distSum);
+					    console.log("Min segment Length at [" + i + "]" + "is: " + distMin);
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 						vertices_kept.push(verticesMapProj[i]);

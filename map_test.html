@@ -565,11 +565,11 @@
 				for(var i = 1; i < verticesMapProj.length; i++) {
 					// first element is 0, add segment length to the element before to get cumm. length
 					var v1 = verticesMapProj[i-1].clone();
-					v1.transform(proj900913, proj4326);
 					var v2 = verticesMapProj[i].clone();
-					v2.transform(proj900913, proj4326);
 					var segment = new OpenLayers.Geometry.LineString([v1, v2]);
 					var dist = segment.getGeodesicLength(proj900913);
+					v2_LL <- v2.transform(proj900913, proj4326);
+
 					distSum += dist;
 					distMin += dist;
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
@@ -580,7 +580,7 @@
 						console.log("pushed " + j + " times..");
 					    console.log("segment Length at [" + i + "]" + "is: " + distSum);
 						distance.push(distSum);
-						locs.push(new google.maps.LatLng(v2[i].y, v2[i].x));
+						locs.push(new google.maps.LatLng(v2_LL[i].y, v2_LL[i].x));
 						vertices_kept.push(verticesMapProj[i]);
 					}
 				}	
