@@ -572,10 +572,10 @@
 					distMin += dist;
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
-					if ( i == verticesMapProj.length - 1 || 25 ) {
+					if ( i == verticesMapProj.length - 1 || dist > 25 ) {
 					    j += 1;
 						distMin = 0;
-						console.log("pushed " + j + "times..");
+						console.log("pushed " + j + " times..");
 					    console.log("segment Length at [" + i + "]" + "is: " + distSum);
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(v2[i].y, v2[i].x));
