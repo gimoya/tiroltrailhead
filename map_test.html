@@ -567,7 +567,7 @@
 					var v1 = verticesMapProj[i-1].clone();
 					v1.transform(proj900913, proj4326);
 					var v2 = verticesMapProj[i].clone();
-					v3.transform(proj900913, proj4326);
+					v2.transform(proj900913, proj4326);
 					var segment = new OpenLayers.Geometry.LineString([v1, v2]);
 					var dist = segment.getGeodesicLength(proj900913);
 					distSum += dist;
