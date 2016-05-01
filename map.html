@@ -670,7 +670,7 @@
 				
 					var name = features[i].attributes.name;
 					
-					if ( Number(str.match(/\d+/)) > trailNrMax) {
+					if ( Number(name.match(/\d+/)) > trailNrMax) {
 						trailNrMax = Number(str.match(/\d+/));
 						newestTrail = name;
 					}
@@ -804,7 +804,7 @@
 				/* put number of covered trails
 				 * to the HTML
 			 	*/
-				document.getElementById("span_new_trail").innerHTML = newestTrail;
+				document.getElementById("span_new_trail").innerHTML = newestTrail + "&nbsp;";
 			});
 			
 			/*
