@@ -671,7 +671,7 @@
 					var name = features[i].attributes.name;
 					
 					if ( Number(name.match(/\d+/)) > trailNrMax) {
-						trailNrMax = Number(str.match(/\d+/));
+						trailNrMax = Number(name.match(/\d+/));
 						newestTrail = name;
 					}
 					
