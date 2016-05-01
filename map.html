@@ -662,9 +662,10 @@
 			/* 
 			 * add clickable trails list to region-group DIVs 
 			 */ 
+			var newestTrail; 
 			function addTrailsList () {
 				var features = KMLtrails.features;
-				var newestTrail = features[0];
+				newestTrail = features[0];
 				var trailNrMax = 0;
 				for(var i = 0; i < features.length; i++) {
 				
