@@ -126,8 +126,8 @@
 					</p>
 					<p class="box3">
 						<span class="H2">Infos</span>
-						</br>Die <strong>web map</strong> beinhaltet aktuell: <span id="nr_trails"></span> 
-						</br><strong>Weiterführende Infos, Skala & Kodex</strong> etc. findet man</br><input type="button" class="Link" value="hier.." onclick="window.open('info.html')">
+						</br>Der <strong>neueste Trail - </strong><span id="newestTrail"></span> 
+						</br><strong>Infos </br><input type="button" class="Link" value="hier.." onclick="window.open('info.html')">
 					</p>
 				</div>			
 				<div id="list-wrapper">
@@ -664,8 +664,17 @@
 			 */ 
 			function addTrailsList () {
 				var features = KMLtrails.features;
+				var newestTrail = features[0];
+				var trailNrMax = 0;
 				for(var i = 0; i < features.length; i++) {
+				
 					var name = features[i].attributes.name;
+					
+					if ( Number(str.match(/\d+/)) > trailNrMax) {
+						trailNrMax = Number(str.match(/\d+/));
+						newestTrail = name;
+					}
+					
 					var descr =  features[i].attributes.description;
 					// check for region in description string and if found put to the according DIV
 					
