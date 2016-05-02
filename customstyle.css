@@ -645,7 +645,7 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	height: auto;
 	}
 	
-#new_trail {    
+#new {    
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: steps(10, start);
