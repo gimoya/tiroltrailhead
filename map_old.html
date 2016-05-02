@@ -32,7 +32,7 @@
 		<script src="scripts/bowser.js"></script>
 		
 		<script type="text/javascript">	
-			
+			/*
 			function trim(str) {
 				return str.replace(/^\s+|\s+$/g, '');  
 			}
@@ -60,7 +60,7 @@
 				}
 				window.location='http://gimoya.github.io/tiroltrailhead/info.html';
 			}
-			
+			*/
 			/*
 			 * Check Browser and exit if not compatible
 			 * using bowser library
@@ -126,8 +126,8 @@
 					</p>
 					<p class="box3">
 						<span class="H2">Infos</span>
-						</br>Der neueste Trail: <span id="span_new_trail"></span> 
-						</br><strong>INFOS zur tiroltrailhead web map findet ihr<input type="button" class="Link" value="hier.." onclick="window.open('info.html')">
+						</br>Die <strong>web map</strong> beinhaltet aktuell: <span id="nr_trails"></span> 
+						</br><strong>Weiterführende Infos, Skala & Kodex</strong> etc. findet man</br><input type="button" class="Link" value="hier.." onclick="window.open('info.html')">
 					</p>
 				</div>			
 				<div id="list-wrapper">
@@ -549,16 +549,11 @@
 				
 				var verticesMapProj = ft.geometry.getVertices();
 				console.log("Vertices contained at start: " + verticesMapProj.length);
-				var vertices_kept = [verticesMapProj[0]];
-				var vertices = [];
-				for(var i = 0; i < verticesMapProj.length; i++){
-					// clone()!!! otherwise original geometry also transformed!!!
-					vertices.push(verticesMapProj[i].clone().transform(proj900913, proj4326));
-				}
-
+				
 				// make array with googlelocations for later API request
 				// initialize with first vertex
-				var locs = [new google.maps.LatLng(vertices[0].y, vertices[0].x)];
+				var vertices_kept = [verticesMapProj[0].clone().transform(proj900913, proj4326)];
+				var locs = [new google.maps.LatLng(vertices_kept[0].y, vertices_kept[0].x)];
 												 
 				// cumulative segment distances between start-node and vertex[i]
 				var distance = [0]; 
@@ -567,21 +562,25 @@
 				var j = 0;
 				var k = 0;
 				// start with second segment, first already in locations array
-				for(var i = 1; i < vertices.length; i++) {
+				for(var i = 1; i < verticesMapProj.length; i++) {
 					// first element is 0, add segment length to the element before to get cumm. length
-					var segment = new OpenLayers.Geometry.LineString([verticesMapProj[i-1], verticesMapProj[i]]);
+					var v1 = verticesMapProj[i-1].clone();
+					var v2 = verticesMapProj[i].clone();
+					var segment = new OpenLayers.Geometry.LineString([v1, v2]);
 					var dist = segment.getGeodesicLength(proj900913);
+					v2_LL <- v2.transform(proj900913, proj4326);
+
 					distSum += dist;
 					distMin += dist;
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
-					console.log("Min segment Length at [" + i + "]" + "is: " + distMin);
-					if ( i == vertices.length - 1 || distMin > 100 ) {
+					if ( i == verticesMapProj.length - 1 || dist > 25 ) {
 					    j += 1;
 						distMin = 0;
-						console.log("pushed " + j + "times..");
+						console.log("pushed " + j + " times..");
+					    console.log("segment Length at [" + i + "]" + "is: " + distSum);
 						distance.push(distSum);
-						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
+						locs.push(new google.maps.LatLng(v2_LL[i].y, v2_LL[i].x));
 						vertices_kept.push(verticesMapProj[i]);
 					}
 				}	
@@ -630,7 +629,7 @@
 						    // use altitude range (max - min) as proportional factor for chart height
 							// and trail length for width
 							height: height,
-							width: ftGeoLength/50+140,
+							width: ftGeoLength/50+120,
 							legend: 'none',
 							titleY: 'Seehöhe (m)',
 							titleX: 'Strecke (km)',
@@ -662,20 +661,10 @@
 			/* 
 			 * add clickable trails list to region-group DIVs 
 			 */ 
-			var newestTrail; 
 			function addTrailsList () {
 				var features = KMLtrails.features;
-				newestTrail = features[0];
-				var trailNrMax = 0;
 				for(var i = 0; i < features.length; i++) {
-				
 					var name = features[i].attributes.name;
-					
-					if ( Number(name.match(/\d+/)) > trailNrMax) {
-						trailNrMax = Number(name.match(/\d+/));
-						newestTrail = name;
-					}
-					
 					var descr =  features[i].attributes.description;
 					// check for region in description string and if found put to the according DIV
 					
@@ -805,7 +794,7 @@
 				/* put number of covered trails
 				 * to the HTML
 			 	*/
-				document.getElementById("span_new_trail").innerHTML = newestTrail + "&nbsp;";
+				document.getElementById("nr_trails").innerHTML = "&nbsp;" + KMLtrails.features.length + " Trails&nbsp;";
 			});
 			
 			/*
