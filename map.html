@@ -661,12 +661,16 @@
 			
 			/* 
 			 * add clickable trails list to region-group DIVs 
+			 * and save highest trail nr to global var for putting
+			 * trail name as 'newest trail' in explanation header
 			 */ 
 			var newestTrail; 
 			function addTrailsList () {
+			
 				var features = KMLtrails.features;
 				newestTrail = features[0];
 				var trailNrMax = 0;
+				
 				for(var i = 0; i < features.length; i++) {
 				
 					var name = features[i].attributes.name;
