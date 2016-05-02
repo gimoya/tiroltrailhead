@@ -616,7 +616,6 @@ input[class="Link"]:focus, input[class="Basemap"]:focus {
 }
 
 input[class="Link"], input[class="Basemap"] {
-	padding: 3px;
 	margin: 3px;
 	font-family: Exo;
 	font-size: 14px;
@@ -646,11 +645,7 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	height: auto;
 	}
 	
-#span_new_trail {
-	
-    border-radius: 2px;
-    font-weight: bold;
-    
+#new {    
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: steps(10, start);
