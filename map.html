@@ -103,8 +103,8 @@
 		<!-- NAV only used for SITELINKS / display: none; is set in custom-css! -->
 		<nav>
 			<a id="sitelinks-1" alt="menu-info" href="/info.html" alt="info"></a>
-			<a id="sitelinks-2" alt="menu-region-1" href="http://gimoya.github.io/tiroltrailhead/map.html#zoom=12&amp;lat=47.39659&amp;lon=11.43351&amp;layers=TF0B0TT" alt="Region1"></a>
-			<a id="sitelinks-3" alt="menu-region-2" href="http://gimoya.github.io/tiroltrailhead/map.html#zoom=12&amp;lat=47.32885&amp;lon=10.95385&amp;layers=TF0B0TT" alt="Region2"></a>
+			<a id="sitelinks-2" alt="menu-region-1" href="/map.html#zoom=12&amp;lat=47.39659&amp;lon=11.43351&amp;layers=TF0B0TT" alt="Region1"></a>
+			<a id="sitelinks-3" alt="menu-region-2" href="/map.html#zoom=12&amp;lat=47.32885&amp;lon=10.95385&amp;layers=TF0B0TT" alt="Region2"></a>
 		</nav>
 		<div id="container">
 			<div id="explanation-and-list">
@@ -126,8 +126,8 @@
 					</p>
 					<p class="box3">
 						<span class="H2">Infos</span>
-						</br>Der neueste Trail:</br><span id="span_new_trail"></span> 
-						</br>Details zur <strong>Web Map</strong> und zu den <strong>Trail-Skalen</strong> gibt's hier:</br><input type="button" class="Link" value="info-page" onclick="window.open('info.html')">
+						</br>Der neueste Trail:</br><span id="new_trail"></span> 
+						</br><input type="button" class="Link" value="INFO-Page" onclick="window.open('info.html')">
 					</p>
 				</div>			
 				<div id="list-wrapper">
@@ -173,8 +173,8 @@
 		<!-- OPENLAYERS PART -->
 		<!-- I'll load large scripts here, with loading page being called before..-->
 		<script src="http://dev.openlayers.org/releases/OpenLayers-2.13.1/lib/OpenLayers.js"></script>
-		<script src="https://maps.google.com/maps/api/js?v=3.2"></script>
-		<script src="http://www.google.com/jsapi"></script>
+		<script src="http://maps.google.com/maps/api/js?v=3.2"></script>
+		<script src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript">
 					
 			OpenLayers.Util.onImageLoadError = function() {this.style.display="none";}
@@ -681,7 +681,7 @@
 					
 					if ( nr > trailNrMax) {
 						trailNrMax = nr;
-						newestTrail = name;
+						newestTrail = '<input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
 					}
 					
 					var descr =  features[i].attributes.description;
@@ -813,7 +813,7 @@
 				/* put number of covered trails
 				 * to the HTML
 			 	*/
-				document.getElementById("span_new_trail").innerHTML = newestTrail + "&nbsp;";
+				document.getElementById("new_trail").innerHTML = newestTrail;
 			});
 			
 			/*
