@@ -521,7 +521,7 @@
 				map.addLayer(markersElevTip);
 				markersElevTip.addMarker(new OpenLayers.Marker(pos, iconElev));
 				// should be alerted at click event on chart
-				console.log(markersElevTip);
+				// console.log(markersElevTip);
 				// center map on marker at current zoom level
 				map.setCenter(pos, map.getZoom());
 				//zooming:
@@ -545,10 +545,10 @@
 				
 				// ft length needed for google chart scaling
 				var ftGeoLength = ft.geometry.getGeodesicLength(proj900913);
-				console.log("Feature Length (m): " + ftGeoLength);
+				// console.log("Feature Length (m): " + ftGeoLength);
 				
 				var verticesMapProj = ft.geometry.getVertices();
-				console.log("Vertices contained at start: " + verticesMapProj.length);
+				// console.log("Vertices contained at start: " + verticesMapProj.length);
 				var vertices_kept = [verticesMapProj[0]];
 				var vertices = [];
 				for(var i = 0; i < verticesMapProj.length; i++){
@@ -575,11 +575,11 @@
 					distMin += dist;
 					// OR (vertices.length - 1) will skip conditional testing of dist at last vertex,
 					// which should always be kept and not possibly excluded!
-					console.log("Min segment Length at [" + i + "]" + "is: " + distMin);
+					// console.log("Min segment Length at [" + i + "]" + "is: " + distMin);
 					if ( i == vertices.length - 1 || distMin > 100 ) {
 					    j += 1;
 						distMin = 0;
-						console.log("pushed " + j + "times..");
+						// console.log("pushed " + j + "times..");
 						distance.push(distSum);
 						locs.push(new google.maps.LatLng(vertices[i].y, vertices[i].x));
 						vertices_kept.push(verticesMapProj[i]);
@@ -588,9 +588,9 @@
 				
 				// check length of requested array --> should be < 512 per request
 				// 2500 requests perday 
-				console.log("positionalRequest ArrayL:\n" + locs.length);				
-				console.log("Distance ArrayL:\n" + distance.length);			
-				console.log("vertices_kept ArrayL:\n" + vertices_kept.length);			
+				// console.log("positionalRequest ArrayL:\n" + locs.length);				
+				// console.log("Distance ArrayL:\n" + distance.length);			
+				// console.log("vertices_kept ArrayL:\n" + vertices_kept.length);			
 				
 				var positionalRequest = {
 					'locations': locs
