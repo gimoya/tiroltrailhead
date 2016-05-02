@@ -761,12 +761,8 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	transition: all .5s ease-in-out;
 }
 
-#kodex-skala-head > img:hover { 
+.H1 > img:hover, #kodex-skala-head > img:hover { 
 	transform: scale(2); 
-}
-
-.H1 > img:hover {
-    transform: scale(2.5);
 }
 
 #skala, #kodex
