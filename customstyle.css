@@ -638,6 +638,7 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 #input-div, #explanation-and-list , #output-wrapper, #onscreen-trails {
 	font-family: Exo;
 	font-size: 13px;
+	font-weight: normal;
 	background-color: rgba(241, 241, 241, 0.9);
 }
 
@@ -645,7 +646,7 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	height: auto;
 	}
 	
-#nr_trails{
+#span_new_trail {
 	
     border-radius: 2px;
     font-weight: bold;
