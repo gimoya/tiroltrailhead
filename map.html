@@ -122,12 +122,12 @@
 						</br>Klick auf Trails für Infos und H&ouml;henprofil
 						</br>Klick in Karte gibt Koordinaten & Seehöhe
 						</br>URL mit #Parameter leitet zurück zur aktuellen Ansicht
-						</br><strong>Tracks f&uuml;r's GPS-f&auml;hige Smartphone</strong></strong><a href="https://www.youtube.com/embed/1sloHSF3e_g?autoplay=1" target="_blank"><i class="fa fa-youtube-play"></i></a>
+						</br><strong>GPS-Tracks</strong><a href="https://www.youtube.com/embed/1sloHSF3e_g?autoplay=1" target="_blank"><i class="fa fa-youtube-play"></i></a>
 					</p>
 					<p class="box3">
 						<span class="H2">Infos</span>
 						</br>Der neueste Trail: <span id="span_new_trail"></span> 
-						</br><strong>INFOS zur web map und zu den vewendeten Skalen findet man <input type="button" class="Link" value="hier.." onclick="window.open('info.html')">
+						</br>Details zur <strong>Web Map</strong> und zu den <strong>Trail-Skalen</strong> gibt's hier: <input type="button" class="Link" value="info-page" onclick="window.open('info.html')">
 					</p>
 				</div>			
 				<div id="list-wrapper">
@@ -674,9 +674,13 @@
 				for(var i = 0; i < features.length; i++) {
 				
 					var name = features[i].attributes.name;
+					// regex will extract a number surrounded by round brackets and 
+					// return an array with 2 elements, the first with the brackets 
+					// the second without
+					var nr = Number(name.match(/\((\d+)\)/)[1]);
 					
-					if ( Number(name.match(/\d+/)) > trailNrMax) {
-						trailNrMax = Number(name.match(/\d+/));
+					if ( nr > trailNrMax) {
+						trailNrMax = nr;
 						newestTrail = name;
 					}
 					
