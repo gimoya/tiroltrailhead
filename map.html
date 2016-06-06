@@ -41,7 +41,7 @@
 			var pw = 'keepit';
 			// if prompt is cancelled the pw_prompt var will be null!
 			if (pw_prompt == null) {
-				alert('Kein Passwort wurde angegeben, **tiroltrailhead web map** wird nicht geladen.. Zugang? Schicke ein Mail an: tiroltrail.webmap@gmail.com');
+				alert('Kein Passwort wurde angegeben, **tiroltrailhead web map** wird nicht geladen...');
 				if (bowser.msie) {
 					document.execCommand('Stop');
 				} else {
@@ -52,7 +52,7 @@
 			if (trim(pw_prompt) == pw ) {
 				alert('Passwort richtig! Mit dem Klicken auf OK stimmst Du dem TIROLTRAILHEAD Kodex (s. http://gimoya.github.io/tiroltrailhead/info.html) und dem Haftungsausschluss zu!');
 			} else {
-				alert('Falsches Passwort, **tiroltrailhead web map** wird nicht geladen.. Zugang? Schicke ein Mail an: tiroltrail.webmap@gmail.com');
+				alert('Falsches Passwort, **tiroltrailhead web map** wird nicht geladen..');
 				if (bowser.msie) {
 					document.execCommand('Stop');
 				} else {
