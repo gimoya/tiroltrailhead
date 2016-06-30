@@ -17,14 +17,14 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="brouter__22_20160619230850775" name="Paths">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="brouter__20_20160531213240919" name="Paths">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="brouter__20_20160531213240919" name="Paths">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="GeoSearch20160531213157195" name="GeoSearch">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="GeoSearch20160531213157195" name="GeoSearch">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="OsmQuery20160623153922451" name="OsmQuery">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OsmQuery20160623153922451" name="OsmQuery">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" checked="Qt::Checked" id="OsmQuery20160623153920545" name="OsmQuery">
@@ -32,10 +32,10 @@
     </layer-tree-layer>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="Trailmap">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="regions_utm_utf820141118153216780" name="regions_utm_utf8">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="trails_utm_utf820141118153222040" name="trails_utm_utf8">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="trails_utm_utf820141118153222040" name="trails_utm_utf8">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="regions_utm_utf820141118153216780" name="regions_utm_utf8">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -65,10 +65,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1275029.56307659740559757</xmin>
-      <ymin>5975093.50598276406526566</ymin>
-      <xmax>1279245.77868806081824005</xmax>
-      <ymax>5977294.2778678685426712</ymax>
+      <xmin>1256268.66044437233358622</xmin>
+      <ymin>5938814.88147051632404327</ymin>
+      <xmax>1314053.66050332318991423</xmax>
+      <ymax>5968977.38150128722190857</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -333,20 +333,20 @@
           <legendlayerfile isInOverview="0" layerid="brouter__22_20160619230850775" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Paths" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Paths" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="brouter__20_20160531213240919" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="brouter__20_20160531213240919" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="GeoSearch" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="GeoSearch" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="GeoSearch20160531213157195" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="GeoSearch20160531213157195" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OsmQuery" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OsmQuery" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="OsmQuery20160623153922451" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="OsmQuery20160623153922451" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OsmQuery" showFeatureCount="0">
@@ -355,14 +355,14 @@
       </filegroup>
     </legendlayer>
     <legendgroup open="true" checked="Qt::Checked" name="Trailmap">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="regions_utm_utf8" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="regions_utm_utf820141118153216780" visible="1"/>
-        </filegroup>
-      </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="trails_utm_utf8" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="trails_utm_utf820141118153222040" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="regions_utm_utf8" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="regions_utm_utf820141118153216780" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
@@ -603,11 +603,7 @@
       <map-layer-style-manager current="">
         <map-layer-style name=""/>
       </map-layer-style-manager>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="elevation">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-      </edittypes>
+      <edittypes/>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol">
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
@@ -662,10 +658,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -674,11 +670,7 @@
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="elevation">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-      </edittypes>
+      <edittypes/>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>GeoSearch20160531213157195</id>
@@ -1111,10 +1103,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -1413,10 +1405,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -1864,10 +1856,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -2553,27 +2545,27 @@
       <DefaultSnapToleranceUnit type="int">1</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
         <value>Elevation_Plugin_Results20160619232102875</value>
-        <value>GeoSearch20160531213157195</value>
-        <value>brouter__20_20160531213240919</value>
-        <value>brouter__22_20160619230850775</value>
-        <value>regions_utm_utf820141118153216780</value>
-        <value>trails_utm_utf820141118153222040</value>
-        <value>brouter__23_20160623142912883</value>
         <value>Elevation_Plugin_Results20160623143143569</value>
+        <value>GeoSearch20160531213157195</value>
         <value>OsmQuery20160623153920545</value>
         <value>OsmQuery20160623153922451</value>
+        <value>brouter__20_20160531213240919</value>
+        <value>brouter__22_20160619230850775</value>
+        <value>brouter__23_20160623142912883</value>
+        <value>regions_utm_utf820141118153216780</value>
+        <value>trails_utm_utf820141118153222040</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
       </LayerSnappingEnabledList>
       <SnappingMode type="QString">advanced</SnappingMode>
       <AvoidIntersectionsList type="QStringList"/>
@@ -2593,25 +2585,25 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
       </LayerSnapToList>
       <DefaultSnapType type="QString">off</DefaultSnapType>
       <DefaultSnapTolerance type="double">5</DefaultSnapTolerance>
       <LayerSnappingToleranceList type="QStringList">
         <value>5.000000</value>
-        <value>5.000000</value>
-        <value>5.000000</value>
-        <value>5.000000</value>
-        <value>5.000000</value>
-        <value>5.000000</value>
-        <value>5.000000</value>
         <value>0.000000</value>
+        <value>5.000000</value>
+        <value>5.000000</value>
+        <value>5.000000</value>
+        <value>5.000000</value>
+        <value>5.000000</value>
+        <value>5.000000</value>
         <value>5.000000</value>
         <value>5.000000</value>
       </LayerSnappingToleranceList>
