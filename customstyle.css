@@ -525,9 +525,13 @@ html, body {
 	float: left; 
 	width: 32.333%;   /* for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 */
 	margin: 0.5%;
-	padding: 0.15em 0em;
+	padding: 0.3em 0em;
 	border-radius: 10px;
 }
+
+p.box3 {
+	height-min: 8em;
+	}
 
 #list-wrapper, #explanation p, .H1, .H3 {
 	background-color: rgba(255, 255, 255, 0.5);
@@ -640,10 +644,6 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	font-weight: normal;
 	background-color: rgba(241, 241, 241, 0.9);
 }
-
-.box3 {
-	height: auto;
-	}
 	
 #new {    
     -webkit-animation-name: blinker;
