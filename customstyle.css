@@ -530,7 +530,7 @@ html, body {
 }
 
 p.box3 {
-	height-min: 8em;
+	min-height: 8em;
 	}
 
 #list-wrapper, #explanation p, .H1, .H3 {
