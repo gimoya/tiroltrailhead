@@ -158,8 +158,8 @@
 				<a id="ToggleButton"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
 				<input type="button" class="Basemap" value="OSM" onclick="map.setBaseLayer(osm);">
 				<input type="button" class="Basemap" value="Google" onclick="map.setBaseLayer(ghyb);">
-				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(osmSpecial);">
-				<!--input type="button" class="Basemap" value="OEK50" onclick="(map.getZoom() > 15) ? alert('OEK50 in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(osmSpecial);"-->
+				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(mapSpecial);">
+				<!--input type="button" class="Basemap" value="OEK50" onclick="(map.getZoom() > 15) ? alert('OEK50 in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(mapSpecial);"-->
 			</div>
 			
 			<div id="map"></div>
@@ -232,22 +232,22 @@
 			var osm = new OpenLayers.Layer.OSM({numZoomLevels: 20});
 			
 			/*
-		    var osmSpecial = new OpenLayers.Layer.XYZ("4UMaps", "http://4umaps.eu/${z}/${x}/${y}.png", { numZoomLevels: 16, alpha: true, isBaseLayer: false, attribution: "&#169 4UMaps.eu <a href='http://4Umaps.eu/' target='_parent'>4UMaps</a> <br>Data CC-By-SA by OpenStreetMap" });   
+		    var mapSpecial = new OpenLayers.Layer.XYZ("4UMaps", "http://4umaps.eu/${z}/${x}/${y}.png", { numZoomLevels: 16, alpha: true, isBaseLayer: false, attribution: "&#169 4UMaps.eu <a href='http://4Umaps.eu/' target='_parent'>4UMaps</a> <br>Data CC-By-SA by OpenStreetMap" });   
 			
-			var osmSpecial = new OpenLayers.Layer.OSM("OpenCycleMap",
+			var mapSpecial = new OpenLayers.Layer.OSM("OpenCycleMap",
 				  ["http://a.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
 				   "http://b.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
 				   "http://c.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png"]);
 
-			var osmSpecial = new OpenLayers.Layer.OSM(
+			var mapSpecial = new OpenLayers.Layer.OSM(
               "OpenCyclemapMap",
 			  "http://tile3.opencyclemap.org/landscape/${z}/${x}/${y}.png")
 				   
-			var osmSpecial = new OpenLayers.Layer.XYZ("OpenMTBMap",
+			var mapSpecial = new OpenLayers.Layer.XYZ("OpenMTBMap",
 				  "http://tile.mtbmap.cz/mtbmap_tiles/${z}/${x}/${y}.png");
 			
 			
-			var osmSpecial = new OpenLayers.Layer.XYZ( "OEK50",
+			var mapSpecial = new OpenLayers.Layer.XYZ( "OEK50",
 				"http://static5.bergfex.at/images/amap/${z}$folder/${z}_${x}_${y}.png",
 				{
 					sphericalMercator: true,
@@ -263,7 +263,7 @@
 					}
 				} );	
 			*/
-			var osmSpecial = new OpenLayers.Layer.XYZ( "Kompass",
+			var mapSpecial = new OpenLayers.Layer.XYZ( "Kompass",
 			    "http://ec2.cdn.ecmaps.de/WmsGateway.ashx.jpg?Experience=kompass&MapStyle=KOMPASS%20Touristik&TileX=${x}&TileY=${y}&ZoomLevel=${z}",
 				{
 					sphericalMercator: true,
@@ -773,7 +773,7 @@
 				selectCtrl.unselectAll();
 			}
 			
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, osm, osmSpecial, ghyb]);
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, osm, mapSpecial, ghyb]);
 			map.raiseLayer(pointLayer, map.layers.length);
 						
 			/*
