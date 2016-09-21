@@ -3,7 +3,7 @@
   <title></title>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Routing">
+    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Routing">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Checked" id="Venet_Plattenrain_Pitzeklamm20160725212358763" name="Venet-Plattenrain-Pitzeklamm">
         <customproperties/>
@@ -74,7 +74,7 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20150607211704092" name="Google Hybrid">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenLayers_plugin_layer20141207160718249" name="OCM Landscape">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenLayers_plugin_layer20141207160718249" name="OCM Landscape">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenLayers_plugin_layer20150812120332605" name="OEK50 Bergfex">
@@ -89,10 +89,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1199828.71972536575049162</xmin>
-      <ymin>5974714.80900157988071442</ymin>
-      <xmax>1207051.8447327334433794</xmax>
-      <ymax>5978485.12150538712739944</ymax>
+      <xmin>1185304.89457589061930776</xmin>
+      <ymin>5965358.10378318931907415</ymin>
+      <xmax>1189451.34763803146779537</xmax>
+      <ymax>5967522.46115079056471586</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -355,7 +355,7 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Routing">
+    <legendgroup open="false" checked="Qt::PartiallyChecked" name="Routing">
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Venet-Plattenrain-Pitzeklamm" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="Venet_Plattenrain_Pitzeklamm20160725212358763" visible="1"/>
@@ -465,9 +465,9 @@
           <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20150607211704092" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OCM Landscape" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OCM Landscape" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20141207160718249" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="OpenLayers_plugin_layer20141207160718249" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OEK50 Bergfex" showFeatureCount="0">
@@ -1686,10 +1686,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
