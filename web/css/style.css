@@ -1739,7 +1739,7 @@ ul.social-icons li a.youtube:hover {
 		line-height: 28px;
 	}
 	.about-grid {
-		width: 50%;
+		width: 100%;
 		float: left;
 		padding: 15px 30px;
 	}
@@ -2006,7 +2006,6 @@ ul.social-icons li a.youtube:hover {
 		padding: 40px 0;
 	}
 	.about-grid {
-		width: 100%;
 		padding: 10px 0;
 	}
 	.agency-grid {
