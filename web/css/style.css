@@ -948,8 +948,8 @@ figure.effect-apollo:hover figcaption::before {
 }
 
 .pic {
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 400px;
+	max-height: 400px;
 	position: relative;
 	overflow: hidden;
 	display: inline-block;
@@ -1155,6 +1155,10 @@ ul.social-icons li a.youtube:hover {
 	background-position: -135px -33px;
 }
 
+/* inserted to overrule left float of single team member */
+.col-md-3.col-sm-3.team-grid {
+    width: 100%;
+}
 /*-- //Team --*/
 
 
