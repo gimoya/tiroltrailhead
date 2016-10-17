@@ -2145,12 +2145,12 @@ ul.social-icons li a.youtube:hover {
 	.about-grid p {
 		line-height: 25px;
 	}
-	/*.video button.btn.btn-primary {
+	.video button.btn.btn-primary {
 		width: 68%;   
 		font-size: 16px;
-	}*/
+	}
 	.video span.glyphicon.glyphicon-play-circle {
-		left: -30%; 
+		left: -60%; 
 	}
 	.clients .container {
 		width: 300px;
