@@ -2150,7 +2150,7 @@ ul.social-icons li a.youtube:hover {
 		font-size: 16px;
 	}
 	.video span.glyphicon.glyphicon-play-circle {
-		left: -60%;
+		left: -59%; /*  60% changed because not centered with this value */
 	}
 	.clients .container {
 		width: 300px;
