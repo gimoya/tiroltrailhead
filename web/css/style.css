@@ -102,7 +102,7 @@ a:focus, a:hover {
 .navbar-default .navbar-brand {
 	color: #fff200;
 	font-family: 'Sigmar One', cursive;
-	font-size: 40px;
+	font-size: 7ex;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -1371,7 +1371,7 @@ ul.social-icons li a.youtube:hover {
 		padding: 20px 0 10px;
 	}
 	.navbar-default .navbar-brand {
-		font-size: 35px;
+		font-size: 5ex;
 	}
 	.hover-effect span {
 		letter-spacing: 2px;
@@ -1629,7 +1629,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:853px) {
 	.navbar-default .navbar-brand {
-		font-size: 30px;
+		font-size: 4.5ex;
 	}
 	.callbacks_nav, .callbacks_nav.next {
 		top: 52.5%;
@@ -1693,7 +1693,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:768px) {
 	.navbar-default .navbar-brand {
-		font-size: 25px;
+		font-size: 3.5ex;
 	}
 	.slider .caption {
 		padding-top: 180px;
@@ -1751,7 +1751,7 @@ ul.social-icons li a.youtube:hover {
 		padding-bottom: 35px;
 	}
 	.agency-grid {
-		width: 50%;
+		width: 100%;
 		float: left;
 		padding: 20px 20px;
 	}
@@ -2070,6 +2070,9 @@ ul.social-icons li a.youtube:hover {
 }
 
 @media screen and (max-width:375px) {
+	.navbar-default .navbar-brand {
+		font-size: 2.5ex;
+	}
 	.slider .caption h3 {
 		font-size: 28px;
 	}
@@ -2147,7 +2150,7 @@ ul.social-icons li a.youtube:hover {
 		font-size: 16px;
 	}
 	.video span.glyphicon.glyphicon-play-circle {
-		left: -60%;
+		left: -60%; 
 	}
 	.clients .container {
 		width: 300px;
