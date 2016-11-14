@@ -679,7 +679,8 @@
 			 * and save highest trail nr to global var for putting
 			 * trail name as 'newest trail' in explanation header
 			 */ 
-			var newestTrail; 
+			var name_newest; 
+			var name_2ndNewest
 			function addTrailsList () {
 			
 				var features = KMLtrails.features;				
@@ -695,7 +696,7 @@
 					
 					if ( nr > trailNrMax) {
 						trailNrMax = nr;
-						name_Newest = name;
+						name_newest = name;
 						name_2ndNewest = features[i-1].attributes.name;
 					}
 					
@@ -828,8 +829,8 @@
 				/* put number of covered trails
 				 * to the HTML
 			 	*/
-				document.getElementById("newest_trail").innerHTML = '<input type="button" class="Link" class="new" value="' + name_NewestTrail + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
-				document.getElementById("2nd_newest_trail").innerHTML = '<input type="button" class="Link" class="new" value="' + name_2ndNewestTrail + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
+				document.getElementById("newest_trail").innerHTML = '<input type="button" class="Link" class="new" value="' + name_newest + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
+				document.getElementById("2nd_newest_trail").innerHTML = '<input type="button" class="Link" class="new" value="' + name_2ndNewest + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
 			});
 			
 			/*
