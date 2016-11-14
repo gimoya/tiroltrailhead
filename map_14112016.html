@@ -128,7 +128,8 @@
 					<p class="box3">
 						<span class="H2">Infos</span>
 						</br><input type="button" class="Link" value="README" onclick="window.open('info.html')">
-						</br>**neu <span id="newest_trail"></span> neu**</br>**neu <span id="2nd_newest_trail"></span> neu**</br>
+						</br>Der neueste Trail:</br><span id="new_trail"></span> 
+						</br>
 					</p>
 				</div>			
 				<div id="list-wrapper">
@@ -678,12 +679,12 @@
 			 * and save highest trail nr to global var for putting
 			 * trail name as 'newest trail' in explanation header
 			 */ 
-			var name_newest; 
-			var name_2ndNewest;
+			var newestTrail; 
 			function addTrailsList () {
 			
-				var features = KMLtrails.features;				
-				var trailNrMax = 1;
+				var features = KMLtrails.features;
+				newestTrail = features[0];
+				var trailNrMax = 0;
 				
 				for(var i = 0; i < features.length; i++) {
 				
@@ -695,8 +696,7 @@
 					
 					if ( nr > trailNrMax) {
 						trailNrMax = nr;
-						name_2ndNewest = name_newest;
-						name_newest = name;
+						newestTrail = '<input type="button" class="Link" id="new_trail" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
 					}
 					
 					var descr =  features[i].attributes.description;
@@ -828,8 +828,7 @@
 				/* put number of covered trails
 				 * to the HTML
 			 	*/
-				document.getElementById("newest_trail").innerHTML = '<input type="button" class="Link" id="new_trail" value="' + name_newest + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
-				document.getElementById("2nd_newest_trail").innerHTML = '<input type="button" class="Link" id="new_trail" value="' + name_2ndNewest + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
+				document.getElementById("new_trail").innerHTML = newestTrail;
 			});
 			
 			/*
