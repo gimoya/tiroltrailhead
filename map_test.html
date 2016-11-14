@@ -695,7 +695,9 @@
 					var nr = Number(name.match(/\((\d+)\)/)[1]);
 					
 					if ( nr > trailNrMax) {
-						trailNrMax = nr;					
+						trailNrMax = nr;
+						name_2ndNewest = name_newest;
+						name_newest = name;
 					}
 					
 					var descr =  features[i].attributes.description;
@@ -758,8 +760,6 @@
 						console.log('Caution: Feature with name: "' + name + '" could not be assigned and will be missing in Trails list!!');
 					}
 				}
-				name_newest = features[trailNrMax-1].attributes.name;
-				name_2ndNewest = features[trailNrMax-2].attributes.name;	
 			}
 			
 			/* 
