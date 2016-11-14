@@ -645,7 +645,7 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	background-color: rgba(241, 241, 241, 0.9);
 }
 	
-#new, #newest_trail, #2nd_newest_trail{     /* as class in updated map_test - delete id #new if new version works! */ 
+#new, #newest_trail, #2nd_newest_trail {     /* as class in updated map_test - delete id #new if new version works! */ 
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: steps(10, start);
