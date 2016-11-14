@@ -620,12 +620,19 @@ input[class="Link"]:focus, input[class="Basemap"]:focus {
 }
 
 input[class="Link"], input[class="Basemap"] {
-	margin: 3px;
 	font-family: Exo;
 	font-size: 14px;
 	border: none;
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.8);
+}
+
+input[class="Link"] {
+	margin: 2px;
+}
+
+input[class="Basemap"] {
+	margin: 3px;
 }
 
 input[class="Link"]:hover, input[class="Basemap"]:hover {
