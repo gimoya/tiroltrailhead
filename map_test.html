@@ -695,7 +695,7 @@
 					var nr = Number(name.match(/\((\d+)\)/)[1]);
 					
 					if ( nr > trailNrMax) {
-						trailNrMax = nr;
+						trailNrMax = nr;					
 					}
 					
 					var descr =  features[i].attributes.description;
@@ -759,7 +759,8 @@
 					}
 				}
 				name_newest = features[trailNrMax].attributes.name;
-				name_2ndNewest = features[trailNrMax-1].attributes.name;
+				console.log(name_newest);
+				name_2ndNewest = features[trailNrMax-1].attributes.name;	
 			}
 			
 			/* 
