@@ -404,15 +404,14 @@
 						kmlLink.download = name + ".kml";
 						gpxLink.download = name + ".gpx";
 						kmlLink.innerHTML = "KML";
-						gpxLink.innerHTML = "GPX";
-						kmlLink.onclick = function() { alert('blah'); };
+						gpxLink.innerHTML ,= "GPX";
+						kmlLink.id = "kml";
 						document.getElementById("topic-text").appendChild(kmlLink);
 						document.getElementById("topic-text").appendChild(document.createTextNode(" | "));
 						document.getElementById("topic-text").appendChild(gpxLink);
 					} else {
 						document.getElementById("topic-text").innerHTML += "..Sorry, Download nicht von allen Browsern untersützt!";
 					}	
-					
 					// add elevation plot
 					addElevPlot(feature);
 					//map.zoomToExtent(event.feature.geometry.getBounds(), closest=false);
