@@ -170,7 +170,7 @@
 			</div>
 			<div id="onscreen-trails"></div>
 			<div id="click-info"></div>
-			
+			<div id="paypal"></div>	
 		</div>
 
 		<!-- OPENLAYERS PART -->
@@ -405,7 +405,35 @@
 						gpxLink.download = name + ".gpx";
 						kmlLink.innerHTML = "KML";
 						gpxLink.innerHTML ,= "GPX";
-						kmlLink.onclick = function () { alert('blah'); };
+						kmlLink.onclick = function () { 		
+							var f = document.createElement("form");
+							f.setAttribute('target',"_top");
+							f.setAttribute('method',"post");
+							f.setAttribute('action',"https://www.paypal.com/cgi-bin/webscr");
+
+							var c = document.createElement("input");
+							c.setAttribute("type","hidden");
+							c.setAttribute("name","cmd");
+							c.setAttribute("value","_s-xclick");
+
+							var h = document.createElement("input");
+							h.setAttribute("type","hidden");
+							h.setAttribute("name","hosted_button_id");
+							h.setAttribute("value","XKB32LVVQMQRQ");
+
+							var i = document.createElement("input");
+							i.setAttribute("type","image");
+							i.setAttribute("src","http://gimoya.bplaced.net/Paypal//Beer_Paypal.jpg");
+							i.setAttribute("name","submit");
+							i.setAttribute("alt","PayPal – The safer, easier way to pay online.");
+							i.setAttribute("style", "border-radius:5px; width:100%; display:block; margin-left:auto; margin-right:auto;");
+
+							f.appendChild(c);
+							f.appendChild(h);
+							f.appendChild(i);
+
+							document.getElementById("paypal").appendChild(f);
+						};
 						document.getElementById("topic-text").appendChild(kmlLink);
 						document.getElementById("topic-text").appendChild(document.createTextNode(" | "));
 						document.getElementById("topic-text").appendChild(gpxLink);
