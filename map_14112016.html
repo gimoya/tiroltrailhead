@@ -405,7 +405,7 @@
 						gpxLink.download = name + ".gpx";
 						kmlLink.innerHTML = "KML";
 						gpxLink.innerHTML ,= "GPX";
-						kmlLink.id = "kml";
+						kmlLink.onclick = function () { alert('blah'); };
 						document.getElementById("topic-text").appendChild(kmlLink);
 						document.getElementById("topic-text").appendChild(document.createTextNode(" | "));
 						document.getElementById("topic-text").appendChild(gpxLink);
