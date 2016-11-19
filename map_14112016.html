@@ -170,7 +170,7 @@
 			</div>
 			<div id="onscreen-trails"></div>
 			<div id="click-info"></div>
-			<div id="paypal" style="width: 100%; height: 10%;"></div>	
+			<div id="paypal" style="postion: fixed; top: 0; width: 60%;"></div>	
 		</div>
 
 		<!-- OPENLAYERS PART -->
@@ -433,6 +433,7 @@
 							f.appendChild(i);
 
 							document.getElementById("paypal").appendChild(f);
+							$("#paypal").fadeIn("slow");
 						};
 						document.getElementById("topic-text").appendChild(kmlLink);
 						document.getElementById("topic-text").appendChild(document.createTextNode(" | "));
