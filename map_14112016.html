@@ -170,7 +170,7 @@
 			</div>
 			<div id="onscreen-trails"></div>
 			<div id="click-info"></div>
-			<div id="paypal" style="postion: fixed; top: 0; width: 60%;"></div>	
+			<div id="paypal" style="postion: fixed; top: 0; width: 60%; display: block;"></div>	
 		</div>
 
 		<!-- OPENLAYERS PART -->
@@ -407,7 +407,7 @@
 						gpxLink.innerHTML = "GPX";
 						kmlLink.onclick = function () { 		
 							var f = document.createElement("form");
-							f.setAttribute('target',"_top");
+							f.setAttribute('target',"_blank");
 							f.setAttribute('method',"post");
 							f.setAttribute('action',"https://www.paypal.com/cgi-bin/webscr");
 
@@ -448,6 +448,7 @@
 				featureunselected: function(event) { 
 					$("#output-wrapper").fadeOut("slow");
 					$("#elevation-wrapper").fadeOut("slow");
+					$("#paypal").fadeOut("slow");
 				} 
 			});
 			
