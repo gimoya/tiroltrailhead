@@ -442,7 +442,10 @@
 						kmlLink.innerHTML = "KML";
 						gpxLink.innerHTML = "GPX";
 						kmlLink.onclick = function () { 		
-							$("#paypal").css("display", "block;");
+							$("#paypal").css("display", "block");
+						};
+						gpxLink.onclick = function () { 		
+							$("#paypal").css("display", "block");
 						};
 						document.getElementById("topic-text").appendChild(kmlLink);
 						document.getElementById("topic-text").appendChild(document.createTextNode(" | "));
@@ -457,7 +460,7 @@
 				featureunselected: function(event) { 
 					$("#output-wrapper").fadeOut("slow");
 					$("#elevation-wrapper").fadeOut("slow");
-					$("#paypal").css("display:none;");
+					$("#paypal").css("display", "none");
 				} 
 			});
 			
