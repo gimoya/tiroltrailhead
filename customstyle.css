@@ -788,12 +788,14 @@ PAYPAL SECTION
 	display: none;
 	z-index: 5000;
 	position: fixed;
-	top: 0px;
-	right: 0px;
+	top: 40%;
+	right: 35%;
+	background-color: white;
+	border-radius: 5px;
 }
 
 #svg_container {
-  width: 25%;
+  width: 60%;
   display: block;
   margin: auto;
   padding: 12px;
