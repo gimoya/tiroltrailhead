@@ -29,8 +29,7 @@
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>	
 		<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>	
-		<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="scripts/bowser.js"></script>
 		<script type="text/javascript">	
 			
@@ -99,24 +98,15 @@
 			* Paypal button functionality
 			*/
 			$("#x").click(function() {
-				  if ($("#paypal").hasClass("fadeSlow")) {
-				    $("#paypal").removeClass("fadeSlow");
-				  } else {
-				    $("#paypal").addClass("fadeSlow");
-				  }
-				    if ($("#svg_container").hasClass("pulse2")) {
-				    $("#svg_container").removeClass("pulse2");
-				  }
+			  if ($("#svg_container").hasClass("pulse2")) {
+			    $("#svg_container").removeClass("pulse2");
+			  }
+			  $("#paypal").fadeOut("slow");
 			});
 
-			$("#support").click(function() {
-				  if ($("#paypal").hasClass("fadeSlow")) {
-				    $("#paypal").removeClass("fadeSlow");
-				  } else {
-				    $("#paypal").addClass("fadeSlow");
-				  }
+			$("#yes").click(function() {
+			  $("#paypal").fadeOut("slow");
 			});
-
 		</script>
 	</head>
   
@@ -442,10 +432,10 @@
 						kmlLink.innerHTML = "KML";
 						gpxLink.innerHTML = "GPX";
 						kmlLink.onclick = function () { 		
-							$("#paypal").css("display", "block");
-						};
+							$("#paypal").fadeIn("fast");
+						});
 						gpxLink.onclick = function () { 		
-							$("#paypal").css("display", "block");
+							$("#paypal").fadeIn("fast");
 						};
 						document.getElementById("topic-text").appendChild(kmlLink);
 						document.getElementById("topic-text").appendChild(document.createTextNode(" | "));
