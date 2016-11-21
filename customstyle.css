@@ -585,6 +585,8 @@ PAYPAL SECTION
 */
 
 #paypal {
+  position: fixed;
+  z-index: 9999;
   text-align: center;
   padding: 20px;
   top: 40%;
@@ -595,7 +597,7 @@ PAYPAL SECTION
 }
 
 #svg_container {
-  width: 30%;
+  width: 60%;
   display: block;
   margin: auto;
   padding: 12px;
