@@ -93,7 +93,30 @@
 				$(".loader").fadeOut("slow");
 				$("#trails-list").animate({scrollTop:300}, 5000);
 				$("#trails-list").animate({scrollTop:0}, 2500);				
-			});		
+			});
+			
+			/*
+			* Paypal button functionality
+			*/
+			$("#x").click(function() {
+				  if ($("#paypal").hasClass("fadeSlow")) {
+				    $("#paypal").removeClass("fadeSlow");
+				  } else {
+				    $("#paypal").addClass("fadeSlow");
+				  }
+				    if ($("#svg_container").hasClass("pulse2")) {
+				    $("#svg_container").removeClass("pulse2");
+				  }
+			});
+
+			$("#support").click(function() {
+				  if ($("#paypal").hasClass("fadeSlow")) {
+				    $("#paypal").removeClass("fadeSlow");
+				  } else {
+				    $("#paypal").addClass("fadeSlow");
+				  }
+			});
+
 		</script>
 	</head>
   
