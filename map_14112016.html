@@ -81,7 +81,20 @@
 					$("#output-wrapper").fadeOut("slow");
 					$("#onscreen-trails").fadeOut("slow");
 					$("#elevation-wrapper").fadeOut("slow");
-			  });
+			  	});		
+			/*
+			* Paypal button disapearing after pressing one of the two buttons..
+			*/
+				$("#x").click(function() {
+				  if ($("#svg_container").hasClass("pulse2")) {
+				    $("#svg_container").removeClass("pulse2");
+				  }
+				  $("#paypal").fadeOut("slow");
+				});
+
+				$("#yes").click(function() {
+				  $("#paypal").fadeOut("slow");
+				});
 			});
 			
 			/* 
@@ -92,20 +105,6 @@
 				$(".loader").fadeOut("slow");
 				$("#trails-list").animate({scrollTop:300}, 5000);
 				$("#trails-list").animate({scrollTop:0}, 2500);				
-			});
-			
-			/*
-			* Paypal button functionality
-			*/
-			$("#x").click(function() {
-			  if ($("#svg_container").hasClass("pulse2")) {
-			    $("#svg_container").removeClass("pulse2");
-			  }
-			  $("#paypal").fadeOut("slow");
-			});
-
-			$("#yes").click(function() {
-			  $("#paypal").fadeOut("slow");
 			});
 		</script>
 	</head>
@@ -453,7 +452,6 @@
 				featureunselected: function(event) { 
 					$("#output-wrapper").fadeOut("slow");
 					$("#elevation-wrapper").fadeOut("slow");
-					$("#paypal").css("display", "none");
 				} 
 			});
 			
