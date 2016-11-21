@@ -586,6 +586,7 @@ PAYPAL SECTION
 
 #paypal {
   position: fixed;
+  width: 20%;
   z-index: 9999;
   text-align: center;
   padding: 20px;
