@@ -94,10 +94,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1225776.68104497413150966</xmin>
-      <ymin>5925683.34098835289478302</ymin>
-      <xmax>1235518.96769501292146742</xmax>
-      <ymax>5936126.0980360209941864</ymax>
+      <xmin>1270904.65361390821635723</xmin>
+      <ymin>5989232.419212706387043</ymin>
+      <xmax>1274875.25287126796320081</xmax>
+      <ymax>5991889.97239293158054352</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -592,7 +592,7 @@
   <projectlayers>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>Elevation_Plugin_Results20161113213623572</id>
-      <datasource>memory?geometry=Point&amp;crs=EPSG:4326&amp;field=elevation:(0,0)</datasource>
+      <datasource>memory?geometry=Point&amp;crs=EPSG:4326&amp;field=elevation:(0,0):string(255,0)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -618,7 +618,7 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="elevation">
+        <edittype widgetv2type="TextEdit" name="elevation:(0,0)">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
@@ -655,7 +655,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield></displayfield>
+      <displayfield>elevation:(0,0)</displayfield>
       <label>1</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -677,17 +677,17 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -817,17 +817,17 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="1919433790">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -3773,7 +3773,7 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="OGC_FID"/>
-          <column width="178" hidden="0" type="field" name="name"/>
+          <column width="268" hidden="0" type="field" name="name"/>
           <column width="-1" hidden="0" type="field" name="region"/>
           <column width="-1" hidden="0" type="field" name="altitude"/>
           <column width="-1" hidden="0" type="field" name="difficulty"/>
