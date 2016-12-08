@@ -213,7 +213,7 @@
 				displayProjection: proj4326,
 				// AUSTRIA: restrictedExtent: new OpenLayers.Bounds(1050550.516554,5839177.463709,1912760.195457,6283123.72391),
 				// restrictedExtent: new OpenLayers.Bounds(1183960,5892930,1443020,6047520),
-				restrictedExtent: new OpenLayers.Bounds(1182000,5891000,1444000,6065000),
+				restrictedExtent: new OpenLayers.Bounds(1180000,5890000,1445000,6066000),
 				controls: [new OpenLayers.Control.Navigation(), 
 						   // the permalink itself is not used in map, but we need the anchors which it sets to the window location
 						   // mind to add the permalink after the ArgParser!!
@@ -252,23 +252,18 @@
 				{type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
 			);
 							   
-			var osm = new OpenLayers.Layer.OSM({numZoomLevels: 20});
+			/* var osm = new OpenLayers.Layer.OSM({numZoomLevels: 20}); 
 			
-			/*
-		    var mapSpecial = new OpenLayers.Layer.XYZ("4UMaps", "http://4umaps.eu/${z}/${x}/${y}.png", { numZoomLevels: 16, alpha: true, isBaseLayer: false, attribution: "&#169 4UMaps.eu <a href='http://4Umaps.eu/' target='_parent'>4UMaps</a> <br>Data CC-By-SA by OpenStreetMap" });   
+			
+		   	var mapSpecial = new OpenLayers.Layer.XYZ("4UMaps", "http://4umaps.eu/${z}/${x}/${y}.png", { numZoomLevels: 16, alpha: true, isBaseLayer: false, attribution: "&#169 4UMaps.eu <a href='http://4Umaps.eu/' target='_parent'>4UMaps</a> <br>Data CC-By-SA by OpenStreetMap" });   
 			
 			var mapSpecial = new OpenLayers.Layer.OSM("OpenCycleMap",
 				  ["http://a.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
 				   "http://b.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
 				   "http://c.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png"]);
 
-			var mapSpecial = new OpenLayers.Layer.OSM(
-              "OpenCyclemapMap",
+			var mapSpecial = new OpenLayers.Layer.OSM("OpenCyclemapMap",
 			  "http://tile3.opencyclemap.org/landscape/${z}/${x}/${y}.png")
-				   
-			var mapSpecial = new OpenLayers.Layer.XYZ("OpenMTBMap",
-				  "http://tile.mtbmap.cz/mtbmap_tiles/${z}/${x}/${y}.png");
-			
 			
 			var mapSpecial = new OpenLayers.Layer.XYZ( "OEK50",
 				"http://static5.bergfex.at/images/amap/${z}$folder/${z}_${x}_${y}.png",
@@ -286,6 +281,7 @@
 					}
 				} );	
 			*/
+			var osm = new OpenLayers.Layer.XYZ("OpenMTBMap", "http://tile.mtbmap.cz/mtbmap_tiles/${z}/${x}/${y}.png");
 			var mapSpecial = new OpenLayers.Layer.XYZ( "Kompass",
 			    "http://ec2.cdn.ecmaps.de/WmsGateway.ashx.jpg?Experience=kompass&MapStyle=KOMPASS%20Touristik&TileX=${x}&TileY=${y}&ZoomLevel=${z}",
 				{
@@ -297,8 +293,6 @@
 						return path;
 					}
 				} );					
-
-			
 			/* 
 			 * default styles for trails 
 			 */
