@@ -122,7 +122,7 @@
 					<p class="H1"><img src="http://gimoya.github.io/tiroltrailhead/images/logo_trails_5_1.png" width="120" style="vertical-align:middle; padding: 5px;">T I R O L  T R A I L H E A D</p>
 					<p class="box3">
 						<span class="H2">Basiskarten</span> 	
-						</br><strong>OSM:</strong> OpenStreetMap
+						</br><strong>OSM:</strong> Open MTB-Map
 						</br><strong>Google:</strong> Google Hybrid
 						</br><strong>Wanderkarte:</strong> M 1:50000, bis Zoom 16!
 						</br>
@@ -281,18 +281,23 @@
 					}
 				} );	
 			*/
-			var osm = new OpenLayers.Layer.XYZ("OpenMTBMap", "http://tile.mtbmap.cz/mtbmap_tiles/${z}/${x}/${y}.png");
-			var mapSpecial = new OpenLayers.Layer.XYZ( "Kompass",
-			    "http://ec2.cdn.ecmaps.de/WmsGateway.ashx.jpg?Experience=kompass&MapStyle=KOMPASS%20Touristik&TileX=${x}&TileY=${y}&ZoomLevel=${z}",
+			var osm = new OpenLayers.Layer.XYZ("OpenMTBMap", 
+				"http://tile.mtbmap.cz/mtbmap_tiles/${z}/${x}/${y}.png",
 				{
-					sphericalMercator: true,
-					buffer: 0,
-					attribution: "&copy; <a href='http://www.kompass.de'>Kompass Wanderkarten</a>",
-					getURL: function(bounds) {
-						var path = OpenLayers.Layer.XYZ.prototype.getURL.apply(this, arguments);
-						return path;
+				attribution: "&copy; <a href='http://mtbmap.cz/'>MTB Map of Europe</a>"
+				});
+			
+			var mapSpecial = new OpenLayers.Layer.XYZ( "Kompass",
+				"http://ec2.cdn.ecmaps.de/WmsGateway.ashx.jpg?Experience=kompass&MapStyle=KOMPASS%20Touristik&TileX=${x}&TileY=${y}&ZoomLevel=${z}",
+				{
+				sphericalMercator: true,
+				buffer: 0,
+				attribution: "&copy; <a href='http://www.kompass.de'>Kompass Wanderkarten</a>",
+				getURL: function(bounds) {
+					var path = OpenLayers.Layer.XYZ.prototype.getURL.apply(this, arguments);
+					return path;
 					}
-				} );					
+				});					
 			/* 
 			 * default styles for trails 
 			 */
@@ -797,7 +802,7 @@
 				selectCtrl.unselectAll();
 			}
 			
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, osm, mapSpecial, ghyb]);
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, mapSpecial, osm, ghyb]);
 			map.raiseLayer(pointLayer, map.layers.length);
 						
 			/*
