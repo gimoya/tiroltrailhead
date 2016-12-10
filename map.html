@@ -412,7 +412,7 @@
 					// append kmlLink for download, as last line in output
 					document.getElementById("topic").appendChild(document.createElement("br"));
 					document.getElementById("topic-text").appendChild(document.createElement("br"));
-					document.getElementById("topic").innerHTML += "Download:";
+					document.getElementById("topic").innerHTML += "Track:";
 					
 					if (bowser.firefox || bowser.chrome) {
 						// create kmlLink
@@ -443,8 +443,9 @@
 					document.getElementById("topic-text").appendChild(document.createElement("br"));
 					document.getElementById("topic").innerHTML += "Fotos:";
 					var instaLink = document.createElement("a");
-					instaLink.href = 'instagram.com/explore/tags/tiroltrailheadtour' + Number(name.match(/\((\d+)\)/)[1]);
-					instaLink.innerHTML = "Instagram.com";					
+					instaLink.href = 'https://instagram.com/explore/tags/tiroltrailheadtour' + Number(name.match(/\((\d+)\)/)[1]);
+					instaLink.innerHTML = "Instagram";		
+					instaLink.target = '_blank';
 					document.getElementById("topic-text").appendChild(instaLink);
 					// add elevation plot
 					addElevPlot(feature);
