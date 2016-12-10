@@ -439,6 +439,7 @@
 					} else {
 						document.getElementById("topic-text").innerHTML += "..Sorry, Download nicht von allen Browsern untersützt!";
 					}	
+					document.getElementById("topic").appendChild(document.createElement("br"));					
 					document.getElementById("topic-text").appendChild(document.createElement("br"));
 					document.getElementById("topic").innerHTML += "IG-Fotos:";
 					var instalink = 'instagram.com/explore/tags/tiroltrailheadtour' + Number(name.match(/\((\d+)\)/)[1]);
