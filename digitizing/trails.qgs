@@ -5,7 +5,7 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Routing">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Routing">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Wörgl_Kragenjoch_Kundl_tracks20161227230708015" name="Wörgl Kragenjoch Kundl tracks">
         <customproperties/>
@@ -46,15 +46,15 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="brouter__7_20161215151807335" name="brouter (7) Paths LineString">
         <customproperties/>
       </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Kragenjoch_Zaubersteig20161228010102856" name="Kragenjoch-Zaubersteig Paths LineString">
+        <customproperties/>
+      </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Elevation_Plugin_Results20161113213623572" name="Elevation Plugin Results">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="Trailmap">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Kragenjoch_Zaubersteig20161228010102856" name="Kragenjoch-Zaubersteig Paths LineString">
-        <customproperties/>
-      </layer-tree-layer>
       <layer-tree-layer expanded="0" checked="Qt::Checked" id="trails_utm_utf820141118153222040" name="trails_utm_utf8">
         <customproperties/>
       </layer-tree-layer>
@@ -91,10 +91,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1311926.53089813096448779</xmin>
-      <ymin>6009220.82659824006259441</ymin>
-      <xmax>1332075.28457369981333613</xmax>
-      <ymax>6020533.10072066448628902</ymax>
+      <xmin>1308625.43607111624442041</xmin>
+      <ymin>6012685.2636586744338274</ymin>
+      <xmax>1317287.74064065306447446</xmax>
+      <ymax>6017548.60981895960867405</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -142,8 +142,8 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_network20141125103214042"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="OSM_Network20150519221755285"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="clipped_network20141125100011317"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Toaster_Course__12_20150807212433920"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="QuickWKT20161228002203768"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Toaster_Course__12_20150807212433920"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__12_20161211224740884"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__11_20161208204117538"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Judenstein_Katzenleiter_Kienberg20160501104754131"/>
@@ -417,7 +417,7 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendgroup open="true" checked="Qt::Unchecked" name="Routing">
+    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Routing">
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Wörgl Kragenjoch Kundl tracks" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="Wörgl_Kragenjoch_Kundl_tracks20161227230708015" visible="0"/>
@@ -483,6 +483,11 @@
           <legendlayerfile isInOverview="0" layerid="brouter__7_20161215151807335" visible="0"/>
         </filegroup>
       </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Kragenjoch-Zaubersteig Paths LineString" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="Kragenjoch_Zaubersteig20161228010102856" visible="1"/>
+        </filegroup>
+      </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Elevation Plugin Results" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="Elevation_Plugin_Results20161113213623572" visible="0"/>
@@ -490,11 +495,6 @@
       </legendlayer>
     </legendgroup>
     <legendgroup open="true" checked="Qt::Checked" name="Trailmap">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Kragenjoch-Zaubersteig Paths LineString" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Kragenjoch_Zaubersteig20161228010102856" visible="1"/>
-        </filegroup>
-      </legendlayer>
       <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="trails_utm_utf8" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="trails_utm_utf820141118153222040" visible="1"/>
@@ -909,7 +909,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -929,10 +929,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="571255416">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -1069,7 +1069,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -1089,10 +1089,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="557907336">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -1758,7 +1758,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="name" index="0" name=""/>
         <alias field="cmt" index="1" name=""/>
@@ -1779,10 +1779,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="1251737600">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -1929,7 +1929,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="name" index="0" name=""/>
         <alias field="cmt" index="1" name=""/>
@@ -1950,10 +1950,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="558123832">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
