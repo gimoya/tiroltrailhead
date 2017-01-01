@@ -6,7 +6,7 @@ read yesno
 if [ "$yesno" = "y" ] 
 then
 	cd ~
-	cd C:/Users/Kay/tiroltrailhead/digitizing/
+	cd C:/Users/Kay/tiroltrailhead/digitizing/webmap/
 	ogr2ogr -sql "SELECT name, description, geometry FROM 'trails_utm_utf8' ORDER BY name ASC" -f KML Trails.kml trails_utm_utf8.sqlite -s_srs EPSG:900913 -t_srs EPSG:4326
 	ogr2ogr -sql "SELECT * FROM 'regions_utm_utf8' ORDER BY Name ASC" -f "KML" Regions.kml regions_utm_utf8.sqlite -s_srs EPSG:900913 -t_srs EPSG:4326
 	echo -e "\n  ..export to KML, reprojection and reordering done!\n---\n"
