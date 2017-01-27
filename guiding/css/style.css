@@ -727,7 +727,6 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 .video .modal-content {
 	background-color: #333;
-	height: 500px;
 }
 
 .modal-header {
@@ -743,10 +742,12 @@ ul.callbacks_tabs.callbacks1_tabs {
 	outline: none;
 }
 
+/*
 .video iframe {
 	height:100%;
 	width:100%;
 }
+*/
 
 /*-- //Video --*/
 
