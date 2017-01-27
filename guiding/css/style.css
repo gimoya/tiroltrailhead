@@ -744,7 +744,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 .video iframe {
 	width: 60%;
-	height: 380px;
+	height: auto; /*changed*/
 }
 
 /*-- //Video --*/
@@ -2146,11 +2146,12 @@ ul.social-icons li a.youtube:hover {
 		line-height: 25px;
 	}
 	.video button.btn.btn-primary {
-		width: 68%;
-		font-size: 16px;
+		width: 48%; /*changed!*/
+		font-size: 28px; /*changed!*/
 	}
 	.video span.glyphicon.glyphicon-play-circle {
-		left: -60%; 
+
+		left: -60%;
 	}
 	.clients .container {
 		width: 300px;
@@ -2175,10 +2176,3 @@ ul.social-icons li a.youtube:hover {
 
 
 /*-- //Responsive-Code --*/
-
-
-/* additional stuff */
-.lightwidget--columns .lightwidget__caption {
-    padding: 2%;
-    background: white;
-}
