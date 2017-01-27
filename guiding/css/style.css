@@ -742,12 +742,11 @@ ul.callbacks_tabs.callbacks1_tabs {
 	outline: none;
 }
 
-/*
+
 .video iframe {
-	height:100%;
-	width:100%;
+	max-width:90%;
 }
-*/
+
 
 /*-- //Video --*/
 
