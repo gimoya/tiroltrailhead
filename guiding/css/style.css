@@ -2178,4 +2178,7 @@ ul.social-icons li a.youtube:hover {
 
 
 /* additional stuff */
-.lightwidget__caption {background: white;}
+.lightwidget--columns .lightwidget__caption {
+    padding: 2%;
+    background: white;
+}
