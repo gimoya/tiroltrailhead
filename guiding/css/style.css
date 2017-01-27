@@ -744,19 +744,12 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 
 .video iframe {
-	max-width:90%;
+	max-width:100%;
 }
-
 
 /*-- //Video --*/
 
-
-
 /*-- Gallery --*/
-
-.gallery-grids-left-sub, .gallery-grid-sub {
-	margin: 2em 0 0;
-}
 
 .gallery-grids-left-subl,.gallery-grids-left {
 	padding-left: 0;
@@ -1334,6 +1327,10 @@ ul.social-icons li a.youtube:hover {
 @media screen and (max-width:1920px) {
 	.slider .caption {
 		padding-top: 495px;
+	}
+	
+	.video iframe {
+		height:500px;
 	}
 }
 
@@ -2151,7 +2148,6 @@ ul.social-icons li a.youtube:hover {
 		font-size: 28px; /*changed!*/
 	}
 	.video span.glyphicon.glyphicon-play-circle {
-
 		left: -60%;
 	}
 	.clients .container {
