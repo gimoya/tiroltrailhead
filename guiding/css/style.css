@@ -743,8 +743,8 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 
 .video iframe {
-	width: 60%;
-	height: auto; /*changed*/
+	height:100%;
+	width:100%;
 }
 
 /*-- //Video --*/
