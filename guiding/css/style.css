@@ -691,7 +691,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 .tab-info p {
 	line-height: 30px;
-	padding-top: 15px;
+	padding-top: 25px;
 }
 
 /*-- //Services --*/
@@ -1648,10 +1648,6 @@ ul.social-icons li a.youtube:hover {
 	.nav-tabs>li>a {
 		padding: 10px 42px;
 	}
-	.tab-info p {
-		padding-top: 0;
-		margin-top: -10px;
-	}
 	.clients .container {
 		width: 835px;
 	}
@@ -1708,7 +1704,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	.tab-info p {
 		line-height: 24px;
-		margin-top: -8px;
 	}
 	.clients .container {
 		width: 750px;
