@@ -2059,10 +2059,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:375px) {
 	.navbar-default .navbar-brand {
-		font-size: 2.5ex;
-	}
-	.slider .caption h3 {
-		font-size: 28px;
+		font-size: 1.83ex;
 	}
 	.video button.btn.btn-primary {
 		width: 71%;
@@ -2079,9 +2076,6 @@ ul.social-icons li a.youtube:hover {
 }
 
 @media screen and (max-width:360px) {
-	.slider .caption h3 {
-		font-size: 27px;
-	}
 	.video button.btn.btn-primary {
 		width: 78%;
 	}
