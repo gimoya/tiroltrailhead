@@ -43,7 +43,7 @@ input[type="button"], input[type="submit"] {
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
-	padding: 0;
+	padding: 18px;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
 }
@@ -1675,9 +1675,6 @@ ul.social-icons li a.youtube:hover {
 	.nav-tabs>li>a {
 		padding: 10px 36px;
 	}
-	.tab-info p {
-		line-height: 28px;
-	}
 	.clients .container {
 		width: 780px;
 	}
@@ -1701,9 +1698,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	.nav-tabs>li>a {
 		padding: 10px 33px;
-	}
-	.tab-info p {
-		line-height: 24px;
 	}
 	.clients .container {
 		width: 750px;
@@ -1759,10 +1753,10 @@ ul.social-icons li a.youtube:hover {
 	.nav-tabs>li>a {
 		padding: 10px 30px;
 	}
-	.tab-image, .tab-info {
+	/*.tab-image, .tab-info {
 		width: 50%;
 		float: left;
-	}
+	}*/
 	.video iframe {
 		height: 400px;
 	}
