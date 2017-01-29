@@ -102,7 +102,7 @@ a:focus, a:hover {
 .navbar-default .navbar-brand {
 	color: #fff200;
 	font-family: 'Sigmar One', cursive;
-	font-size: 6ex;
+	font-size: 5.5ex;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -1685,7 +1685,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:768px) {
 	.navbar-default .navbar-brand {
-		font-size: 2.5ex;
+		font-size: 3.5ex;
 	}
 	.slider .caption {
 		padding-top: 180px;
@@ -2007,6 +2007,9 @@ ul.social-icons li a.youtube:hover {
 	.nav-tabs>li>a {
 		padding: 10px 9px;
 		font-size: 13px;
+	}
+	.navbar-default .navbar-brand {
+		font-size: 2.5ex;
 	}
 	.video button.btn.btn-primary {
 		padding: 50px 0 0 0px;
