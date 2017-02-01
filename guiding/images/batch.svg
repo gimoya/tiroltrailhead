@@ -2311,7 +2311,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2322,7 +2322,7 @@
      transform="translate(-72.092762,-404.85635)">
     <path
        sodipodi:type="star"
-       style="fill:#552200;fill-opacity:1;stroke:#d4aa00;stroke-width:9.38263416;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#338000;fill-opacity:1;stroke:#7fff2a;stroke-width:9.38263416000000030;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="path4036"
        sodipodi:sides="20"
        sodipodi:cx="-14.285714"
@@ -2536,12 +2536,14 @@
            y="-54.274525" /></flowRegion><flowPara
          id="flowPara4814">Guea</flowPara></flowRoot>    <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:153.99999619000002000%;letter-spacing:0px;word-spacing:0px;fill:#e3e2db;fill-opacity:1;stroke:#484537;font-family:Sans"
        id="text4816"
-       sodipodi:linespacing="125%"><textPath
+       sodipodi:linespacing="154%"
+       transform="matrix(1.0000331,0,0,0.99718174,-0.00350081,-4.1922395)"><textPath
          xlink:href="#path4806"
          id="textPath4820"
-         style="font-size:28px;fill:#c8beb7;font-family:Script MT Bold;-inkscape-font-specification:Script MT Bold">                                  Guaranteed </textPath></text>
+         style="font-size:28px;line-height:0%;fill:#e3e2db;font-family:Script MT Bold;-inkscape-font-specification:Script MT Bold;stroke:#484537"
+         dy="1.08">                                  Guaranteed </textPath></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -2549,7 +2551,7 @@
        sodipodi:linespacing="125%"><textPath
          xlink:href="#path4806"
          id="textPath4827"
-         style="font-size:32px;fill:#c8beb7;fill-rule:nonzero;font-family:Script MT Bold;-inkscape-font-specification:Script MT Bold" /></text>
+         style="font-size:32px;fill:#c8beb7;fill-rule:nonzero;font-family:Script MT Bold;-inkscape-font-specification:Script MT Bold"></textPath></text>
     <path
        inkscape:connector-curvature="0"
        style="fill:none;stroke:none"
@@ -2557,12 +2559,13 @@
        id="path4806-6" />
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:60.00000237999999800%;letter-spacing:0px;word-spacing:0px;fill:#e3e2db;fill-opacity:1;stroke:#24221c;font-family:Sans"
        id="text4849"
-       sodipodi:linespacing="125%"><textPath
+       sodipodi:linespacing="60.000002%"
+       transform="matrix(0.99170538,0,0,0.98607195,1.0417623,3.1533191)"><textPath
          xlink:href="#path4806-6"
          id="textPath4857"
-         style="fill:#c8beb7;stroke:none;stroke-opacity:1;font-family:Script MT Bold;-inkscape-font-specification:Script MT Bold">                             Awesomness!</textPath></text>
+         style="font-size:32px;line-height:49.00000392999999800%;fill:#e3e2db;stroke:#24221c;font-family:Script MT Bold;-inkscape-font-specification:Script MT Bold">                                        awesomness!</textPath></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
