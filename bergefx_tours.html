@@ -1,0 +1,69 @@
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous">
+</script>
+<script type="text/javascript">
+/*  YQL STATEMENT:
+SELECT * FROM yql.query.multi WHERE queries='
+SELECT src FROM html WHERE url="http://www.bergfex.at/sommer/filzmoos/touren/skitour/?gps=on&search=1&page=1" and xpath="//*[@id=\'detail\']/div/table/tbody/tr/td/div/a/img"; 
+SELECT src FROM html WHERE url="http://www.bergfex.at/sommer/filzmoos/touren/skitour/?gps=on&search=1&page=2" and xpath="//*[@id=\'detail\']/div/table/tbody/tr/td/div/a/img";
+SELECT src FROM html WHERE url="http://www.bergfex.at/sommer/filzmoos/touren/skitour/?gps=on&search=1&page=3" and xpath="//*[@id=\'detail\']/div/table/tbody/tr/td/div/a/img"
+';
+*/
+function getPlace() {
+  var place = document.getElementById("placeInput").value;
+  //var place = "sportgastein";
+  var yql = "https://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20yql.query.multi%20WHERE%20queries%3D'SELECT%20src%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F" + place + "%2Ftouren%2Fskitour%2F%3Fgps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%2Fimg%22%3B%20SELECT%20src%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F" + place + "%2Ftouren%2Fskitour%2F%3Fgps%3Don%26search%3D1%26page%3D2%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%2Fimg%22'&format=json&diagnostics=true&callback=";
+
+  /* yql.query.multi resturn nested result <query>..<results><results>..</query> 
+     which need to be eytracted!
+     the results are arrays put to the array "arr" and flattened in the variable "result"
+  */
+  $.getJSON(yql, function(res) {
+    // check if first result item is empty or undefined and exit if so
+    var test = res.query.results.results[0];
+    if (typeof test === 'undefined' || !test) {
+      alert("Region '" + place + "' existiert nicht auf Bergfex - Bitte andere Region versuchen!")
+    } else {
+      var arrs = res.query.results.results.map(function(d) {
+        return d.img;
+      });
+      var result = [].concat.apply([], arrs);
+
+      var urls = result.map(function(e) {
+        var dl_url = 'http://www.bergfex.at/downloads/gps/?type=&id=';
+        var filetype = '&fileType=kml';
+        return dl_url + e.src.replace(/\D/g, '') + filetype;
+      });
+      urls.map(function(e) {
+        $("#bergfex").append('<li><a href="' + e + '">' + e + '</a></li>');
+      });
+    }
+    //downloadAll(urls);
+  }, "jsonp");
+}
+
+document.getElementById('searchbutton').addEventListener('click', getPlace);
+document.getElementById('download').addEventListener('click', downloadALL);
+
+function downloadALL() {
+  var items = document.getElementsByTagName('a');
+  for (var i = 0; i < items.length; i++) {
+    //console.log(items[i]);
+    items[i].setAttribute('download', null);
+    items[i].click();
+  }
+}
+</script>
+</head>
+<body>
+<input id="placeInput" type="text">
+<input id="searchbutton" type="button" value="Abfrage">
+<input id="download" type="button" value="Alle herunterladen">
+<ul id="bergfex">
+</ul>
+</body>
+<html>
