@@ -13,7 +13,7 @@ SELECT src FROM html WHERE url="http://www.bergfex.at/sommer/filzmoos/touren/ski
 SELECT src FROM html WHERE url="http://www.bergfex.at/sommer/filzmoos/touren/skitour/?gps=on&search=1&page=3" and xpath="//*[@id=\'detail\']/div/table/tbody/tr/td/div/a/img"
 ';
 */
-document.onload = function(){
+$( document ).ready(function() {
 	function getPlace() {
 	  var place = document.getElementById("placeInput").value;
 	  //var place = "sportgastein";
