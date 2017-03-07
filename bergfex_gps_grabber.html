@@ -14,7 +14,7 @@
 	$( document ).ready(function() {
 		function getPlace() {
 		  $("#bergfex").empty();
-		  var place = $("#placeInput").val();
+		  var place = $("#placeInput").val().toLowerCase();
 		  var yql = "https://query.yahooapis.com/v1/public/yql?q=%0ASELECT%20*%20FROM%20yql.query.multi%20WHERE%20queries%3D'%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Fgps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Fgps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Fgps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Ftype%3D5%26gps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Ftype%3D5%26gps%3Don%26search%3D1%26page%3D2%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Ftype%3D5%26gps%3Don%26search%3D1%26page%3D3%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0A'&format=json&diagnostics=true&callback=";
 		  /* yql.query.multi resturn nested result <query>..<results><results>..</query> 
 			 which need to be eytracted!
@@ -38,8 +38,8 @@
 						var name = tour_str.substring(tour_str.lastIndexOf(",")+1, tour_str.lastIndexOf("/"));
 						var num = tour_str.substring(tour_str.lastIndexOf(",")-5, tour_str.lastIndexOf(","));
 						if ( !$('#bergfex li:contains("' + tour_str + '")').length ) {
-							//name does not exist in list
-							$("#bergfex").append('<li><a href="' + dl_url + num + filetype +'">' + name + '</a></li>');
+							//name does not yet exist in list
+							$("#bergfex").append('<li><a href="' + dl_url + num + filetype +'">' + tour_str + '</a></li>');
 						}
 				  }
 			  });
