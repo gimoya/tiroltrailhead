@@ -1,0 +1,96 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	/*  YQL STATEMENT:
+	SELECT * FROM yql.query.multi WHERE queries='
+	SELECT href FROM html WHERE url="http://www.bergfex.at/sommer/filzmoos/touren/skitour/?gps=on&search=1&page=1" and xpath="//*[@id=\'detail\']/div/table/tbody/tr/td/div/a"; 
+	SELECT href FROM html WHERE url="http://www.bergfex.at/sommer/filzmoos/touren/skitour/?gps=on&search=1&page=2" and xpath="//*[@id=\'detail\']/div/table/tbody/tr/td/div/a";
+	SELECT href FROM html WHERE url="http://www.bergfex.at/sommer/filzmoos/touren/skitour/?gps=on&search=1&page=3" and xpath="//*[@id=\'detail\']/div/table/tbody/tr/td/div/a"
+	';
+	*/
+	$( document ).ready(function() {
+		function getPlace() {
+		  $("#bergfex").empty();
+		  var place = $("#placeInput").val();
+		  var yql = "https://query.yahooapis.com/v1/public/yql?q=%0ASELECT%20*%20FROM%20yql.query.multi%20WHERE%20queries%3D'%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Fgps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Fgps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Fgps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Ftype%3D5%26gps%3Don%26search%3D1%26page%3D1%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Ftype%3D5%26gps%3Don%26search%3D1%26page%3D2%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0ASELECT%20href%20FROM%20html%20WHERE%20url%3D%22http%3A%2F%2Fwww.bergfex.at%2Fsommer%2F"  + place + "%2Ftouren%2Fskitour%2F%3Ftype%3D5%26gps%3Don%26search%3D1%26page%3D3%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D%5C'detail%5C'%5D%2Fdiv%2Ftable%2Ftbody%2Ftr%2Ftd%2Fdiv%2Fa%5B%40class%3D%5C'bold%5C'%5D%22%3B%0A'&format=json&diagnostics=true&callback=";
+		  /* yql.query.multi resturn nested result <query>..<results><results>..</query> 
+			 which need to be eytracted!
+			 the results are arrays put to the array "arr" and flattened in the variable "result"
+		  */
+		  $.getJSON(yql, function(res) {
+			// check if first result item is empty or undefined and exit if so
+			var test = res.query.results.results[0];
+			if (typeof test === 'undefined' || !test) {
+			  alert("Region '" + place + "' existiert nicht auf Bergfex - Bitte andere Region versuchen! ..Oder Download Kontingent wurde überschritten!");
+			} else {
+			  var arrs = res.query.results.results.map(function(d) {
+				  if (d) {return d.a;}
+			  });
+			  var result = [].concat.apply([], arrs);
+			  result.map(function(e) {
+				  if(e) {
+						var dl_url = 'http://www.bergfex.at/downloads/gps/?type=&id=';
+						var filetype = '&fileType=kml';
+						var tour_str = e.href;
+						var name = tour_str.substring(tour_str.lastIndexOf(",")+1, tour_str.lastIndexOf("/"));
+						var num = tour_str.substring(tour_str.lastIndexOf(",")-5, tour_str.lastIndexOf(","));
+						if ( !$('#bergfex li:contains("' + tour_str + '")').length ) {
+							//name does not exist in list
+							$("#bergfex").append('<li><a href="' + dl_url + num + filetype +'">' + name + '</a></li>');
+						}
+				  }
+			  });
+			}
+		  }, "jsonp");
+		}
+
+		function downloadALL() {
+			var items = document.getElementsByTagName('a');
+			var test = items[0];
+			if (typeof test === 'undefined' || !test) {
+			  alert("Es gibt nicht's zum Downloaden...");
+			} else {		  
+			  for (var i = 0; i < items.length; i++) {
+				items[i].setAttribute('download', null);
+				items[i].click();
+			  }
+			}
+		}
+		
+		document.getElementById('searchbutton').addEventListener('click', getPlace);
+		document.getElementById('download').addEventListener('click', downloadALL);
+	});
+	</script>
+	</head>
+	<body>´
+	<div class="container">
+	<h2>Bergfex GPS-Grabber</h2>
+	  <form class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Skigebiets-Suche:</label>
+				<div class="col-sm-10">   
+					<input id="placeInput" type="text" class="form-control" placeholder="...">
+				</div>
+			</div>
+			<div class="form-group">        
+			  <div class="col-sm-offset-2 col-sm-10">
+				<button id="searchbutton" type="button" class="btn btn-primary btn-md">Abfrage</button>
+			  </div>
+			</div>
+			<div class="form-group">  
+			  <div class="col-sm-offset-2 col-sm-10">
+				<button id="download" type="button" class="btn btn-primary btn-md">Alle herunterladen</button>
+			  </div>
+			</div>	
+			<div class="form-group">  
+			  <div class="col-sm-offset-2 col-sm-10">
+				<ol id="bergfex"></ol>
+			  </div>
+			</div>				
+	  </form>
+	</div>
+	</body>
+<html>
