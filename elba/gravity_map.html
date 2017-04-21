@@ -77,7 +77,7 @@
 								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
 								layer.setStyle({weight: 3,
 												opacity: 0.7,
-												color: 'red',
+												color: 'yellow',
 												dashArray: '4'}) 
 							});
 						});				
@@ -95,53 +95,12 @@
 												dashArray: '4'}) 
 							});
 						});				
-
-
-				
-		/*			
-		var badKml = omnivore.kml('../elbaweb/KMLs/bad/bad.kml')
-			.on('ready', function() {
-							this.eachLayer(function(layer) {
-							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
-								layer.setStyle({weight: 3,
-												opacity: 0.7,
-												color: 'red',
-												dashArray: '4'}) 
-							});							
-						});
-						
-		var ideeKml = omnivore.kml('../elbaweb/KMLs/idee/idee.kml')
-			.on('ready', function() {
-							this.eachLayer(function(layer) {
-							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
-								layer.setStyle({weight: 3,
-												opacity: 0.7,
-												color: 'green',
-												dashArray: '4'}) 
-							});							
-						});
-		// not used:				
-		var dahlKml = omnivore.kml('../elbaweb/KMLs/DAHL.kml')
-			.on('ready', function() {
-							// After the 'ready' event fires, the GeoJSON contents are accessible
-							// and you can iterate through layers to bind custom popups
-							this.eachLayer(function(layer) {
-								// See the `.bindPopup` documentation for full details
-								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
-								layer.setStyle({weight: 4,
-												opacity: 0.5,
-												color: 'darkgrey',
-												dashArray: '1'}) 
-							});
-						});
-						
-		var panoramio = new L.Panoramio({maxLoad: 50, maxTotal: 250});						
-						
+			
 		/*
 		For highlighting features see:
 		http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
 		*/	
-		/*
+
 		var style = {
 			'default': {
 				'weight': 3,
@@ -173,11 +132,10 @@
 		}
 
 		var groupKML = new L.LayerGroup([
-			dahlKml,
-			goodKml,
-			badKml,
-			gehtsoKml,
-			ideeKml
+			ScaletteKML,
+			MezzaStregaKML,
+			VignolaKML,
+			LaghettoRossoKML
 		]);
 
 		// Iterate over groupKML
@@ -195,7 +153,7 @@
 				unsetHighlight(layer);
 			});
 		});
-*/		
+		
 		var trails = {
 		  "Scalette": ScaletteKML,
 		  "Mezza Strega": MezzaStregaKML,
