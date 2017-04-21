@@ -198,9 +198,9 @@
 */		
 		var trails = {
 		  "Scalette": ScaletteKML,
-		  "MezzaStrega": MezzaStregaKML,
+		  "Mezza Strega": MezzaStregaKML,
 		  "Vignola": VignolaKML,
-		  "LaghettoRosso": LaghettoRossoKML
+		  "Laghetto Rosso": LaghettoRossoKML
 		};		
 
 		var baseLayers = {
@@ -212,7 +212,7 @@
 		var map = L.map('map', {
 		  center: [42.79,10.28],
 		  zoom: 12,
-		  layers: [mapbox_satelliteLayer, trails]
+		  layers: [mapbox_satelliteLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
 		});
 		
 		L.control.layers(baseLayers, trails).addTo(map);
