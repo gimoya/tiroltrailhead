@@ -54,8 +54,8 @@
 												dashArray: '4'}) 
 							});
 						});
-		/*					
-		var gehtsoKml = omnivore.kml('/KML/scalette.kml')
+				
+		var scaletteKML = omnivore.kml('/KML/scalette.kml')
 			.on('ready', function() {
 							this.eachLayer(function(layer) {
 							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
@@ -65,7 +65,7 @@
 												dashArray: '4'}) 
 							});							
 						});						
-						
+		/*			
 		var badKml = omnivore.kml('../elbaweb/KMLs/bad/bad.kml')
 			.on('ready', function() {
 							this.eachLayer(function(layer) {
@@ -180,7 +180,7 @@
 		var map = L.map('map', {
 		  center: [42.79,10.28],
 		  zoom: 12,
-		  layers: [mapbox_satelliteLayer, scalette]
+		  layers: [mapbox_satelliteLayer, scaletteKML]
 		  // layers: [mapbox_satelliteLayer, goodKml, gehtsoKml, ideeKml, badKml]  
 		});
 		
