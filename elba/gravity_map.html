@@ -74,7 +74,7 @@
 							// and you can iterate through layers to bind custom popups
 							this.eachLayer(function(layer) {
 								// See the `.bindPopup` documentation for full details
-								layer.bindPopup('<script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/507c6df0bd205465a5f647e148c6220c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
 								layer.setStyle({weight: 3,
 												opacity: 0.7,
 												color: 'yellow',
