@@ -94,8 +94,7 @@
 							});
 						});				
 						
-		function openLightWeight(e) {
-			console.log(e);
+		function openLightWeight() {
 			$("#photos").append('<iframe src="//lightwidget.com/widgets/4c730d7b2d4d502598662b73531bd76a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#photos").animate({scrollTop:300}, 5000);
 		}						
@@ -112,8 +111,8 @@
 												color: 'red',
 												dashArray: '4'}) 
 							});
-						})
-			.on('click', openLightWeight(e));
+						});
+		MezzaStregaKML.on('click', openLightWeight());
 		
 		/*
 		For highlighting features see:
