@@ -94,6 +94,11 @@
 							});
 						});				
 						
+		function openLightWeight() {
+			$("#photos").append('<iframe src="//lightwidget.com/widgets/4c730d7b2d4d502598662b73531bd76a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#photos").animate({scrollTop:300}, 5000);
+		}						
+						
 		var MezzaStregaKML = omnivore.kml('../elba/KML/	MezzaStrega.kml')
 			.on('ready', function() {
 							// After the 'ready' event fires, the GeoJSON contents are accessible
@@ -107,12 +112,7 @@
 												dashArray: '4'}) 
 							});
 						})
-			.on('click', function(e) openLightWeight());
-
-		function openLightWeight() {
-			$("#photos").append('<iframe src="//lightwidget.com/widgets/4c730d7b2d4d502598662b73531bd76a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#photos").animate({scrollTop:300}, 5000);
-		}
+			.on('click', function() openLightWeight());
 		
 		/*
 		For highlighting features see:
