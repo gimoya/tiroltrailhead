@@ -26,7 +26,7 @@
 	</style>
 </head>
 <body>
-<div id="photos" style="display:none; position:fixed; z-index:100; background-color:rgba(255,255,255,40); width:50%; height:100%;"></div>
+<div id="photos" style="display:none; position:fixed; z-index:100; background-color:rgba(255,255,255,0.50); width:50%; height:100%;"></div>
 <div id="map"></div>
 	<script language="javascript">
 
@@ -113,6 +113,9 @@
 				$("#photos").fadeIn("slow");
 			});
 			
+		map.on('click', function() {
+			$("#photos").fadeOut("slow");	
+		}
 		
 		/*
 		For highlighting features see:
