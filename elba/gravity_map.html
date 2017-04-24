@@ -105,16 +105,15 @@
 												color: 'red',
 												dashArray: '4'}) 
 							});
-						});	
-						
-		MezzaStregaKML.on('click', function () {
+						})
+			.on('click', function () {
 							this.eachLayer( onMapClick );
 						});
 		
 		function onMapClick(e) {
 		  L.popup()
 			.setLatLng(e.latlng)
-			.setContent('<iframe src="//lightwidget.com/widgets/507c6df0bd205465a5f647e148c6220c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>'7)
+			.setContent('<iframe src="//lightwidget.com/widgets/507c6df0bd205465a5f647e148c6220c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
 			.openOn(map);
 		}
 		/*
