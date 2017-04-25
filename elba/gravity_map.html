@@ -82,27 +82,25 @@
 </div>
 <script language="javascript">	
 
-	var markerGroup = L.layerGroup([
-		  L.marker([37.8, -91]), L.marker([38.8, -86]), L.marker([47.8, -106]),
-		  L.marker([31.8, -90]), L.marker([39.8, -96]), L.marker([33.8, -100]) ]);
-
 	var toggle = L.easyButton({
 	  states: [{
-		stateName: 'add-markers',
-		icon: 'fa-map-marker',
-		title: 'add random markers',
+		stateName: 'basemap-satellite',
+		icon: 'fa-globe',
+		title: 'change basemap to outdoor',
 		onClick: function(control) {
-		  map.addLayer(markerGroup);
+		  map.removeLayer(mapbox_satelliteLayer);
+		  map.addLayer(mapbox_outdoorLayer);
 		  control.state('remove-markers');
 		}
 	  }, {
-		icon: 'fa-undo',
-		stateName: 'remove-markers',
+		stateName: 'change basemap to satellite',
+		icon: 'fa-undo',	
+		title: 'change basemap back to satellite'		
 		onClick: function(control) {
-		  map.removeLayer(markerGroup);
-		  control.state('add-markers');
+		  map.removeLayer(mapbox_outdoorLayer);
+		  map.addLayer(mapbox_satelliteLayer);
+		  control.state('basemap-satellite');
 		},
-		title: 'remove markers'
 	  }]
 	});
 	
@@ -260,8 +258,8 @@
 	  layers: [mapbox_satelliteLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
 	});
 
-	// L.control.layers(baseLayers).addTo(map);
 	/*
+	L.control.layers(baseLayers).addTo(map);
 	L.control.locate({
 		strings: {
 			title: "Show me where I am, yo!"
@@ -269,6 +267,7 @@
 
 	}).addTo(map);
 	*/
+	
 	toggle.addTo(map);
 	
 	map.on('click', function() {
