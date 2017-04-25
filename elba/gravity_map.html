@@ -44,9 +44,9 @@
 		text-align: center;
 		color: white;
 	  }
-	  #infos {
-	    font-family: 'Consolas';
-		font-size:12px;
+	  #info, #tracks {
+	    	font-family: 'Corbel', 'bold';
+	    	font-size: 12px;
 	  }
 	</style>
 </head>
@@ -143,9 +143,9 @@
 			.on('click', function(e) {
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").html(e.layer.feature.properties.name);
-				$("#infos").html(e.layer.feature.properties.description);
+				$("#info").html(e.layer.feature.properties.description);
 				$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
-				$("#gpx").prop('href', '../elba/KML/Scalette.kml');
+				$("#kml").prop('href', '../elba/KML/Scalette.kml');
 				$("#infopanel").fadeIn("slow");
 			});
 		
