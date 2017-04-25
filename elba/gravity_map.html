@@ -90,10 +90,10 @@
 		onClick: function(control) {
 		  map.removeLayer(mapbox_satelliteLayer);
 		  map.addLayer(mapbox_outdoorLayer);
-		  control.state('remove-markers');
+		  control.state('basemap-outdoor');
 		}
 	  }, {
-		stateName: 'change basemap to satellite',
+		stateName: 'basemap-outdoor',
 		icon: 'fa-undo',	
 		title: 'change basemap back to satellite',		
 		onClick: function(control) {
