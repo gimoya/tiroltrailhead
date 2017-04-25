@@ -6,6 +6,10 @@
 	<link rel="stylesheet" href="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.css" />
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">	
+	<!-- GOOGLE FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>	
+	<!-- GOOGLE FONTS -->
 	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
@@ -23,10 +27,30 @@
         width: 100%;
         height: 100%;
       }
+	  #infopanel {
+		display:none; 
+		position:fixed; 
+		z-index:100; 
+		background-color:rgba(0,0,0,0.50); 
+		width:33%; 
+		height:100%;
+	  }
+	  #title {
+	    font-family: 'Sigmar One';
+		font-size: 18px;
+	  }
+	  #infos {
+	    font-family: 'Fredoka One';
+		font-size:12px;
+	  }
 	</style>
 </head>
 <body>
-<div id="photos" style="display:none; position:fixed; z-index:100; background-color:rgba(255,255,255,0.50); width:50%; height:100%;"></div>
+<div id="infopanel">
+	<div id="photos"></div>
+	<div id="title"></div>
+	<div id="info"></div>
+</div>
 <div id="map"></div>
 	<script language="javascript">
 
@@ -108,9 +132,11 @@
 												dashArray: '4'}) 
 							});
 						})
-			.on('click', function() {
+			.on('click', function(e) {
+				$("#infopanel").fadeIn("slow");
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#photos").fadeIn("slow");
+				$("#title").html(e.feature.properties.name);
+				$("#infos").html(e.feature.properties.description);
 			});
 		
 		/*
@@ -198,7 +224,7 @@
 		}).addTo(map);
 		
 		map.on('click', function() {
-			$("#photos").fadeOut("slow");	
+			$("#infopanel").fadeOut("slow");	
 		});
 		
 	</script>
