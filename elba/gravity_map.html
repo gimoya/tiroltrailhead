@@ -92,14 +92,14 @@
 		icon: 'fa-map-marker',
 		title: 'add random markers',
 		onClick: function(control) {
-		  scatteredMarkerMap.addLayer(markerGroup);
+		  map.addLayer(markerGroup);
 		  control.state('remove-markers');
 		}
 	  }, {
 		icon: 'fa-undo',
 		stateName: 'remove-markers',
 		onClick: function(control) {
-		  scatteredMarkerMap.removeLayer(markerGroup);
+		  map.removeLayer(markerGroup);
 		  control.state('add-markers');
 		},
 		title: 'remove markers'
