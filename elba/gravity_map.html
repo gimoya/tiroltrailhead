@@ -56,7 +56,7 @@
 	<div id="title"></div>
 	<div id="info"></div>
 	<div id="tracks">
-		<a id="gpx"></a> | <a id="kml"></a>
+		<a id="gpx" href=""></a> | <a id="kml" href=""></a>
 	</div>
 </div>
 <div id="map"></div>
@@ -144,8 +144,8 @@
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").html(e.layer.feature.properties.name);
 				$("#infos").html(e.layer.feature.properties.description);
-				$("#gpx").attr(href, '../elba/KML/Scalette.gpx');
-				$("#gpx").attr(href, '../elba/KML/Scalette.kml');
+				$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
+				$("#gpx").prop('href', '../elba/KML/Scalette.kml');
 				$("#infopanel").fadeIn("slow");
 			});
 		
