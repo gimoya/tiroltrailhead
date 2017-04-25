@@ -125,8 +125,6 @@
 		}
 	  }]
 	});
-	
-	animatedToggle.addTo(map);
 
 	var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 	var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
@@ -281,7 +279,8 @@
 	  layers: [mapbox_satelliteLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
 	});
 
-	L.control.layers(baseLayers).addTo(map);
+	// L.control.layers(baseLayers).addTo(map);
+	
 	L.control.locate({
 		strings: {
 			title: "Show me where I am, yo!"
@@ -289,6 +288,8 @@
 
 	}).addTo(map);
 
+	animatedToggle.addTo(map);
+	
 	map.on('click', function() {
 		$("#infopanel").fadeOut("slow");	
 	});
