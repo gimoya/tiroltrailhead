@@ -77,37 +77,6 @@
 <div id="map">
 </div>
 <script language="javascript">	
-	L.Control.Layers.prototype._addItem= function (obj) {
-	      var label = document.createElement('label'),
-			    input,
-			    checked = this._map.hasLayer(obj.layer);
-
-			if (obj.overlay) {
-				input = document.createElement('input');
-				input.type = 'checkbox';
-				input.className = 'leaflet-control-layers-selector';
-				input.defaultChecked = checked;
-			} else {
-				input = this._createRadioElement('leaflet-base-layers', checked);
-			}
-
-			input.layerId = L.stamp(obj.layer);
-
-			L.DomEvent.on(input, 'click', this._onInputClick, this);
-
-			var name = document.createElement('span');
-			name.innerHTML = ' ' + obj.name;
-
-			label.appendChild(input);
-			label.appendChild(name);
-			label.className = obj.overlay ? "checkbox" : "radio";
-			var container = obj.overlay ? this._overlaysList : this._baseLayersList;
-			container.appendChild(label);
-
-			return label;
-	}	
-</script>
-<script language="javascript">	
 
 	var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 	var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
