@@ -72,174 +72,206 @@
 		<a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a>
 	</div>
 </div>
-<div id="map"></div>
-	<script language="javascript">	
+<div id="map">
+</div>
+<script language="javascript">	
+	L.Control.Layers.prototype._addItem= function (obj) {
+	      var label = document.createElement('label'),
+			    input,
+			    checked = this._map.hasLayer(obj.layer);
 
-		var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
-		var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
-		var mapbox_outdoorUrl = 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
+			if (obj.overlay) {
+				input = document.createElement('input');
+				input.type = 'checkbox';
+				input.className = 'leaflet-control-layers-selector';
+				input.defaultChecked = checked;
+			} else {
+				input = this._createRadioElement('leaflet-base-layers', checked);
+			}
 
-		var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
-		  attribution: mapbox_Attr 
-		});
-		
-		var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
-		  attribution: mapbox_Attr 
-		});		
-				
-		var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
-			.on('ready', function() {
-							// After the 'ready' event fires, the GeoJSON contents are accessible
-							// and you can iterate through layers to bind custom popups
-							this.eachLayer(function(layer) {
-								// See the `.bindPopup` documentation for full details
-								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
-								layer.setStyle({weight: 3,
-												opacity: 0.7,
-												color: 'green'
-									       }) 
-							});
+			input.layerId = L.stamp(obj.layer);
+
+			L.DomEvent.on(input, 'click', this._onInputClick, this);
+
+			var name = document.createElement('span');
+			name.innerHTML = ' ' + obj.name;
+
+			label.appendChild(input);
+			label.appendChild(name);
+			label.className = obj.overlay ? "checkbox" : "radio";
+			var container = obj.overlay ? this._overlaysList : this._baseLayersList;
+			container.appendChild(label);
+
+			return label;
+	}	
+</script>
+<script language="javascript">	
+
+	var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
+	var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
+	var mapbox_outdoorUrl = 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
+
+	var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
+	  attribution: mapbox_Attr 
+	});
+
+	var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
+	  attribution: mapbox_Attr 
+	});		
+
+	var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
+		.on('ready', function() {
+						// After the 'ready' event fires, the GeoJSON contents are accessible
+						// and you can iterate through layers to bind custom popups
+						this.eachLayer(function(layer) {
+							// See the `.bindPopup` documentation for full details
+							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
+							layer.setStyle({weight: 3,
+											opacity: 0.7,
+											color: 'green'
+								       }) 
 						});
-						
-		var VignolaKML = omnivore.kml('../elba/KML/Vignola.kml')
-			.on('ready', function() {
-							// After the 'ready' event fires, the GeoJSON contents are accessible
-							// and you can iterate through layers to bind custom popups
-							this.eachLayer(function(layer) {
-								// See the `.bindPopup` documentation for full details
-								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
-								layer.setStyle({weight: 3,
-												opacity: 0.7,
-												color: 'blue'
-									       }) 
-							});
-						});				
-						
-		var LaghettoRossoKML = omnivore.kml('../elba/KML/LaghettoRosso.kml')
-			.on('ready', function() {
-							// After the 'ready' event fires, the GeoJSON contents are accessible
-							// and you can iterate through layers to bind custom popups
-							this.eachLayer(function(layer) {
-								// See the `.bindPopup` documentation for full details
-								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
-								layer.setStyle({weight: 3,
-												opacity: 0.7,
-												color: 'yellow'
-									       }) 
-							});
-						});				
-					
-						
-		var MezzaStregaKML = omnivore.kml('../elba/KML/	MezzaStrega.kml')
-			.on('ready', function() {
-							// After the 'ready' event fires, the GeoJSON contents are accessible
-							// and you can iterate through layers to bind custom popups
-							this.eachLayer(function(layer) {
-								// See the `.bindPopup` documentation for full details
-								// layer.bindPopup('<iframe src="//lightwidget.com/widgets/4c730d7b2d4d502598662b73531bd76a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
-								layer.setStyle({weight: 3,
-												opacity: 0.7,
-												color: 'red'
-									       }) 
-							});
-						})
-			.on('click', function(e) {
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").html(e.layer.feature.properties.name);
-				$("#info").html(e.layer.feature.properties.description);
-				$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
-				$("#kml").prop('href', '../elba/KML/Scalette.kml');
-				$("#infopanel").fadeIn("slow");
-			});
-		
-		/*
-		For highlighting features see:
-		http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
-		*/	
+					});
 
-		var style = {
-			'default': {
-				'weight': 3,
-				'opacity': 0.7
-			},
-			'highlight': {
-				'weight': 5,
-				'opacity': 0.9
-			}
-		};
-		
-		// Variable for storing highlighted layer
-		var highlight;
+	var VignolaKML = omnivore.kml('../elba/KML/Vignola.kml')
+		.on('ready', function() {
+						// After the 'ready' event fires, the GeoJSON contents are accessible
+						// and you can iterate through layers to bind custom popups
+						this.eachLayer(function(layer) {
+							// See the `.bindPopup` documentation for full details
+							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
+							layer.setStyle({weight: 3,
+											opacity: 0.7,
+											color: 'blue'
+								       }) 
+						});
+					});				
 
-		function setHighlight (layer) {
-		  // Check if something's highlighted, if so unset highlight
-		  if (highlight) {
-			unsetHighlight(highlight);
-		  }
-		  // Set highlight style on layer and store to variable
-		  layer.setStyle(style.highlight);
-		  highlight = layer;
+	var LaghettoRossoKML = omnivore.kml('../elba/KML/LaghettoRosso.kml')
+		.on('ready', function() {
+						// After the 'ready' event fires, the GeoJSON contents are accessible
+						// and you can iterate through layers to bind custom popups
+						this.eachLayer(function(layer) {
+							// See the `.bindPopup` documentation for full details
+							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
+							layer.setStyle({weight: 3,
+											opacity: 0.7,
+											color: 'yellow'
+								       }) 
+						});
+					});				
+
+
+	var MezzaStregaKML = omnivore.kml('../elba/KML/	MezzaStrega.kml')
+		.on('ready', function() {
+						// After the 'ready' event fires, the GeoJSON contents are accessible
+						// and you can iterate through layers to bind custom popups
+						this.eachLayer(function(layer) {
+							// See the `.bindPopup` documentation for full details
+							// layer.bindPopup('<iframe src="//lightwidget.com/widgets/4c730d7b2d4d502598662b73531bd76a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
+							layer.setStyle({weight: 3,
+											opacity: 0.7,
+											color: 'red'
+								       }) 
+						});
+					})
+		.on('click', function(e) {
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").html(e.layer.feature.properties.name);
+			$("#info").html(e.layer.feature.properties.description);
+			$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
+			$("#kml").prop('href', '../elba/KML/Scalette.kml');
+			$("#infopanel").fadeIn("slow");
+		});
+
+	/*
+	For highlighting features see:
+	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
+	*/	
+
+	var style = {
+		'default': {
+			'weight': 3,
+			'opacity': 0.7
+		},
+		'highlight': {
+			'weight': 5,
+			'opacity': 0.9
+		}
+	};
+
+	// Variable for storing highlighted layer
+	var highlight;
+
+	function setHighlight (layer) {
+	  // Check if something's highlighted, if so unset highlight
+	  if (highlight) {
+		unsetHighlight(highlight);
+	  }
+	  // Set highlight style on layer and store to variable
+	  layer.setStyle(style.highlight);
+	  highlight = layer;
+	}
+
+	function unsetHighlight (layer) {
+	  // Set default style and clear variable
+	  layer.setStyle(style.default);
+	  highlight = null;
+	}
+
+	var groupKML = new L.LayerGroup([
+		ScaletteKML,
+		MezzaStregaKML,
+		VignolaKML,
+		LaghettoRossoKML
+	]);
+
+	// Iterate over groupKML
+	groupKML.eachLayer(function (layer) {
+
+		// Mouseover handler
+		layer.on('mouseover', function (e) {
+			// Set highlight
+			setHighlight(layer);
+		});
+
+		// Mouseout handler
+		layer.on('mouseout', function (e) {
+			 // Unset highlight
+			unsetHighlight(layer);
+		});
+	});
+
+	var trails = {
+	  "Scalette": ScaletteKML,
+	  "Mezza Strega": MezzaStregaKML,
+	  "Vignola": VignolaKML,
+	  "Laghetto Rosso": LaghettoRossoKML
+	};		
+
+	var baseLayers = {
+	  "Satellit": mapbox_satelliteLayer,
+	  "Terrain": mapbox_outdoorLayer
+	};
+
+	var map = L.map('map', {
+	  center: [42.82,10.34],
+	  zoom: 13,
+	  layers: [mapbox_satelliteLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
+	});
+
+	L.control.layers(baseLayers).addTo(map);
+	L.control.locate({
+		strings: {
+			title: "Show me where I am, yo!"
 		}
 
-		function unsetHighlight (layer) {
-		  // Set default style and clear variable
-		  layer.setStyle(style.default);
-		  highlight = null;
-		}
+	}).addTo(map);
 
-		var groupKML = new L.LayerGroup([
-			ScaletteKML,
-			MezzaStregaKML,
-			VignolaKML,
-			LaghettoRossoKML
-		]);
+	map.on('click', function() {
+		$("#infopanel").fadeOut("slow");	
+	});
 
-		// Iterate over groupKML
-		groupKML.eachLayer(function (layer) {
-		
-			// Mouseover handler
-			layer.on('mouseover', function (e) {
-				// Set highlight
-				setHighlight(layer);
-			});
-
-			// Mouseout handler
-			layer.on('mouseout', function (e) {
-				 // Unset highlight
-				unsetHighlight(layer);
-			});
-		});
-		
-		var trails = {
-		  "Scalette": ScaletteKML,
-		  "Mezza Strega": MezzaStregaKML,
-		  "Vignola": VignolaKML,
-		  "Laghetto Rosso": LaghettoRossoKML
-		};		
-
-		var baseLayers = {
-		  "Satellit": mapbox_satelliteLayer,
-		  "Terrain": mapbox_outdoorLayer
-		};
-			 
-		var map = L.map('map', {
-		  center: [42.82,10.34],
-		  zoom: 13,
-		  layers: [mapbox_satelliteLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
-		});
-		
-		L.control.layers(baseLayers).addTo(map);
-		L.control.locate({
-			strings: {
-				title: "Show me where I am, yo!"
-			}
-			
-		}).addTo(map);
-		
-		map.on('click', function() {
-			$("#infopanel").fadeOut("slow");	
-		});
-		
-	</script>
+</script>
 </body>	
 </html>
