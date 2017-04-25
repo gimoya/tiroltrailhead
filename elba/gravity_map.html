@@ -31,9 +31,10 @@
 		display:none; 
 		position:fixed; 
 		z-index:100; 
-		background-color:rgba(0,0,0,0.50); 
+		background-color:rgba(0,0,0,0.70); 
 		width:33%; 
 		height:100%;
+		color: white;
 	  }
 	  #photos {
 		width:100%;
@@ -42,7 +43,6 @@
 	    font-family: 'Sigmar One';
 		font-size: 32px;
 		text-align: center;
-		color: white;
 		padding-top: 10px;
 	  }
 	  #info, #tracks {
@@ -95,8 +95,8 @@
 								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
 								layer.setStyle({weight: 3,
 												opacity: 0.7,
-												color: 'green',
-												dashArray: '4'}) 
+												color: 'green'
+									       }) 
 							});
 						});
 						
@@ -109,8 +109,8 @@
 								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
 								layer.setStyle({weight: 3,
 												opacity: 0.7,
-												color: 'blue',
-												dashArray: '4'}) 
+												color: 'blue'
+									       }) 
 							});
 						});				
 						
@@ -123,8 +123,8 @@
 								layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
 								layer.setStyle({weight: 3,
 												opacity: 0.7,
-												color: 'yellow',
-												dashArray: '4'}) 
+												color: 'yellow'
+									       }) 
 							});
 						});				
 					
@@ -138,8 +138,8 @@
 								// layer.bindPopup('<iframe src="//lightwidget.com/widgets/4c730d7b2d4d502598662b73531bd76a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
 								layer.setStyle({weight: 3,
 												opacity: 0.7,
-												color: 'red',
-												dashArray: '4'}) 
+												color: 'red'
+									       }) 
 							});
 						})
 			.on('click', function(e) {
@@ -223,7 +223,7 @@
 		};
 			 
 		var map = L.map('map', {
-		  center: [42.79,10.28],
+		  center: [42.80,10.32],
 		  zoom: 12,
 		  layers: [mapbox_outdoorLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
 		});
