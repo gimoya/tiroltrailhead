@@ -73,17 +73,7 @@
 	</div>
 </div>
 <div id="map"></div>
-	<script language="javascript">
-
-		var mtbmapAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-		  '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-		  'Tiles � <a href="http://mtbmap.cz">mtbmap</a>';
-		  
-		var mtbmapUrl = 'http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png';
-		
-		var mtbmapLayer = L.tileLayer(mtbmapUrl, {
-		  attribution: mtbmapAttr
-		});		
+	<script language="javascript">	
 
 		var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 		var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
@@ -229,8 +219,7 @@
 
 		var baseLayers = {
 		  "Satellit": mapbox_satelliteLayer,
-		  "Terrain": mapbox_outdoorLayer,		  
-		  "OSM-MTBMap": mtbmapLayer
+		  "Terrain": mapbox_outdoorLayer
 		};
 			 
 		var map = L.map('map', {
@@ -239,11 +228,12 @@
 		  layers: [mapbox_outdoorLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
 		});
 		
-		L.control.layers(baseLayers, trails).addTo(map);
+		L.control.layers(baseLayers).addTo(map);
 		L.control.locate({
 			strings: {
 				title: "Show me where I am, yo!"
 			}
+			
 		}).addTo(map);
 		
 		map.on('click', function() {
