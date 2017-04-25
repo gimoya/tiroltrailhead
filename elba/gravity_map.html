@@ -87,8 +87,8 @@
 	var toggle = L.easyButton({
 	  states: [{
 		stateName: 'basemap-satellite',
-		icon: 'fa-globe',
-		title: 'change basemap to outdoor',
+		icon: '<strong>S</strong>',
+		title: 'change basemap to outdoor/terrain',
 		onClick: function(control) {
 		  map.removeLayer(mapbox_satelliteLayer);
 		  map.addLayer(mapbox_outdoorLayer);
@@ -96,7 +96,7 @@
 		}
 	  }, {
 		stateName: 'basemap-outdoor',
-		icon: 'fa-undo',	
+		icon: '<strong>T</strong>',	
 		title: 'change basemap back to satellite',		
 		onClick: function(control) {
 		  map.removeLayer(mapbox_outdoorLayer);
