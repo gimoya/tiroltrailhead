@@ -134,6 +134,7 @@
 						})
 			.on('click', function(e) {
 				$("#infopanel").fadeIn("slow");
+				console.log(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").html(e.feature.properties.name);
 				$("#infos").html(e.feature.properties.description);
