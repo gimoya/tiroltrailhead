@@ -33,26 +33,6 @@
 		padding: 0;
 		margin: 0;
 	}
-
-	.state-remove-markers,
-	.state-add-markers{
-	  transition-duration: .5s;
-	  transform: scaleY(0);
-	  position: absolute;
-	  display: block;
-	  top: 0;
-	  width: 100%;}
-
-	.state-remove-markers{
-	  transform-origin: 50% 0; }
-	.state-add-markers{
-	  transform-origin: 50% 100%; }
-
-	.state-remove-markers.remove-markers-active{
-	  transform: scaleY(1); }
-
-	.state-add-markers.add-markers-active{
-	  transform: scaleY(1); }
   
 	#map {
 		position: absolute;
@@ -102,31 +82,30 @@
 </div>
 <script language="javascript">	
 
-	var randomMarkers = L.layerGroup([
-		  L.marker([37.8, -110]), L.marker([38.8, -86]), L.marker([47.8, -106]),
-		  L.marker([31.8, -120]), L.marker([39.8, -96]), L.marker([33.8, -100]) ]);
+	var markerGroup = L.layerGroup([
+		  L.marker([37.8, -91]), L.marker([38.8, -86]), L.marker([47.8, -106]),
+		  L.marker([31.8, -90]), L.marker([39.8, -96]), L.marker([33.8, -100]) ]);
 
-	var animatedToggle = L.easyButton({
-	  id: 'animated-marker-toggle',
-	  type: 'animate',
+	var toggle = L.easyButton({
 	  states: [{
 		stateName: 'add-markers',
 		icon: 'fa-map-marker',
-		title: 'add some markers',
+		title: 'add random markers',
 		onClick: function(control) {
-		  map.addLayer(randomMarkers);
+		  scatteredMarkerMap.addLayer(markerGroup);
 		  control.state('remove-markers');
 		}
 	  }, {
-		stateName: 'remove-markers',
-		title: 'remove markers',
 		icon: 'fa-undo',
+		stateName: 'remove-markers',
 		onClick: function(control) {
-		  map.removeLayer(randomMarkers);
+		  scatteredMarkerMap.removeLayer(markerGroup);
 		  control.state('add-markers');
-		}
+		},
+		title: 'remove markers'
 	  }]
 	});
+	
 
 	var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 	var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
@@ -290,7 +269,7 @@
 
 	}).addTo(map);
 	*/
-	animatedToggle.addTo(map);
+	toggle.addTo(map);
 	
 	map.on('click', function() {
 		$("#infopanel").fadeOut("slow");	
