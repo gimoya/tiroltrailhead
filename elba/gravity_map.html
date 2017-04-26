@@ -261,9 +261,12 @@
 	var map = L.map('map', {
 	  center: [42.82,10.34],
 	  zoom: 13,
+	  zoomControl: false,
 	  layers: [mapbox_satelliteLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
 	});
-
+	
+	new L.Control.Zoom({ position: 'topright' }).addTo(map);
+	
 	/*
 	L.control.layers(baseLayers).addTo(map);
 	L.control.locate({
