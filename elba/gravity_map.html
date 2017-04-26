@@ -55,7 +55,7 @@
 	}
 	
 
-	 #layerinfo {
+	 #layer-name-info {
 		position: absolute;
 		top: 10px;
 		right: 10px;
@@ -109,7 +109,7 @@
 	</style>
 </head>
 <body>
-<div id="layer-info" class="leaflet-bar">...</div>
+<div id="layer-name-info" class="leaflet-bar">...</div>
 <div id="infopanel">
 	<div id="photos"></div>
 	<div id="title"></div>
@@ -348,14 +348,14 @@
 		layer.on('mouseover', function (e) {
 			// Set highlight
 			setHighlight(layer);
-			$("layer-info").html = e.layer.feature.properties.name;
+			$("layer-name-info").html = e.layer.feature.properties.name;
 		});
 
 		// Mouseout handler
 		layer.on('mouseout', function (e) {
 			 // Unset highlight
 			unsetHighlight(layer);
-			$("layer-info").html = '...';
+			$("layer-name-info").html = '...';
 		});
 	});
 
