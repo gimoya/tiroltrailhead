@@ -114,56 +114,131 @@
 	  attribution: mapbox_Attr 
 	});		
 
-	var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
+	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('ready', function() {
 						// After the 'ready' event fires, the GeoJSON contents are accessible
 						// and you can iterate through layers to bind custom popups
 						this.eachLayer(function(layer) {
-							// See the `.bindPopup` documentation for full details
-							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
 							layer.setStyle({weight: 3,
 											opacity: 0.7,
-											color: 'green'
+											color: 'red'
 								       }) 
 						});
-					});
+					})
+		.on('click', function(e) {
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").html(e.layer.feature.properties.name);
+			$("#info").html(e.layer.feature.properties.description);
+			$("#gpx").prop('href', '../elba/KML/CimaDelMonte.gpx');
+			$("#kml").prop('href', '../elba/KML/CimaDelMonte.kml');
+			$("#infopanel").fadeIn("slow");
+		});			
 
-	var VignolaKML = omnivore.kml('../elba/KML/Vignola.kml')
+	var LaBuccaDelBandito1KML = omnivore.kml('../elba/KML/LaBuccaDelBandito1.kml')
 		.on('ready', function() {
 						// After the 'ready' event fires, the GeoJSON contents are accessible
 						// and you can iterate through layers to bind custom popups
 						this.eachLayer(function(layer) {
-							// See the `.bindPopup` documentation for full details
-							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
 							layer.setStyle({weight: 3,
 											opacity: 0.7,
-											color: 'blue'
+											color: 'red'
 								       }) 
 						});
-					});				
+					})
+		.on('click', function(e) {
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").html(e.layer.feature.properties.name);
+			$("#info").html(e.layer.feature.properties.description);
+			$("#gpx").prop('href', '../elba/KML/LaBuccaDelBandito1.gpx');
+			$("#kml").prop('href', '../elba/KML/LaBuccaDelBandito1.kml');
+			$("#infopanel").fadeIn("slow");
+		});			
+
+	var LaBuccaDelBandito2KML = omnivore.kml('../elba/KML/LaBuccaDelBandito2.kml')
+		.on('ready', function() {
+						// After the 'ready' event fires, the GeoJSON contents are accessible
+						// and you can iterate through layers to bind custom popups
+						this.eachLayer(function(layer) {
+							layer.setStyle({weight: 3,
+											opacity: 0.7,
+											color: 'red'
+								       }) 
+						});
+					})
+		.on('click', function(e) {
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").html(e.layer.feature.properties.name);
+			$("#info").html(e.layer.feature.properties.description);
+			$("#gpx").prop('href', '../elba/KML/LaBuccaDelBandito2.gpx');
+			$("#kml").prop('href', '../elba/KML/LaBuccaDelBandito2.kml');
+			$("#infopanel").fadeIn("slow");
+		});			
 
 	var LaghettoRossoKML = omnivore.kml('../elba/KML/LaghettoRosso.kml')
 		.on('ready', function() {
 						// After the 'ready' event fires, the GeoJSON contents are accessible
 						// and you can iterate through layers to bind custom popups
 						this.eachLayer(function(layer) {
-							// See the `.bindPopup` documentation for full details
-							layer.bindPopup('<style>td {font-size: 1.5ex;} span {font-size: 2ex;}"</style><span><strong>'+layer.feature.properties.name+'</strong></span><p/>'+layer.feature.properties.description);
 							layer.setStyle({weight: 3,
 											opacity: 0.7,
-											color: 'yellow'
+											color: 'red'
 								       }) 
 						});
-					});				
+					})
+		.on('click', function(e) {
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").html(e.layer.feature.properties.name);
+			$("#info").html(e.layer.feature.properties.description);
+			$("#gpx").prop('href', '../elba/KML/LaghettoRosso.gpx');
+			$("#kml").prop('href', '../elba/KML/LaghettoRosso.kml');
+			$("#infopanel").fadeIn("slow");
+		});			
 
-
-	var MezzaStregaKML = omnivore.kml('../elba/KML/	MezzaStrega.kml')
+	var MezzaStregaKML = omnivore.kml('../elba/KML/MezzaStrega.kml')
 		.on('ready', function() {
 						// After the 'ready' event fires, the GeoJSON contents are accessible
 						// and you can iterate through layers to bind custom popups
 						this.eachLayer(function(layer) {
-							// See the `.bindPopup` documentation for full details
-							// layer.bindPopup('<iframe src="//lightwidget.com/widgets/4c730d7b2d4d502598662b73531bd76a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
+							layer.setStyle({weight: 3,
+											opacity: 0.7,
+											color: 'red'
+								       }) 
+						});
+					})
+		.on('click', function(e) {
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").html(e.layer.feature.properties.name);
+			$("#info").html(e.layer.feature.properties.description);
+			$("#gpx").prop('href', '../elba/KML/MezzaStrega.gpx');
+			$("#kml").prop('href', '../elba/KML/MezzaStrega.kml');
+			$("#infopanel").fadeIn("slow");
+		});
+
+	var StregaKML = omnivore.kml('../elba/KML/Strega.kml')
+		.on('ready', function() {
+						// After the 'ready' event fires, the GeoJSON contents are accessible
+						// and you can iterate through layers to bind custom popups
+						this.eachLayer(function(layer) {
+							layer.setStyle({weight: 3,
+											opacity: 0.7,
+											color: 'red'
+								       }) 
+						});
+					})
+		.on('click', function(e) {
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").html(e.layer.feature.properties.name);
+			$("#info").html(e.layer.feature.properties.description);
+			$("#gpx").prop('href', '../elba/KML/Strega.gpx');
+			$("#kml").prop('href', '../elba/KML/Strega.kml');
+			$("#infopanel").fadeIn("slow");
+		});
+		
+	var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
+		.on('ready', function() {
+						// After the 'ready' event fires, the GeoJSON contents are accessible
+						// and you can iterate through layers to bind custom popups
+						this.eachLayer(function(layer) {
 							layer.setStyle({weight: 3,
 											opacity: 0.7,
 											color: 'red'
@@ -177,8 +252,28 @@
 			$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
 			$("#kml").prop('href', '../elba/KML/Scalette.kml');
 			$("#infopanel").fadeIn("slow");
-		});
+		});			
 
+	var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml')
+		.on('ready', function() {
+						// After the 'ready' event fires, the GeoJSON contents are accessible
+						// and you can iterate through layers to bind custom popups
+						this.eachLayer(function(layer) {
+							layer.setStyle({weight: 3,
+											opacity: 0.7,
+											color: 'red'
+								       }) 
+						});
+					})
+		.on('click', function(e) {
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").html(e.layer.feature.properties.name);
+			$("#info").html(e.layer.feature.properties.description);
+			$("#gpx").prop('href', '../elba/KML/Vigniola.gpx');
+			$("#kml").prop('href', '../elba/KML/Vigniola.kml');
+			$("#infopanel").fadeIn("slow");
+		});
+		
 	/*
 	For highlighting features see:
 	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
@@ -215,10 +310,14 @@
 	}
 
 	var groupKML = new L.LayerGroup([
-		ScaletteKML,
+		CimaDelMonteKML,
+		LaghettoRossoKML,
+		LaBuccaDelBandito1KML,
+		LaBuccaDelBandito2KML,		
 		MezzaStregaKML,
-		VignolaKML,
-		LaghettoRossoKML
+		ScaletteKML,
+		StregaKML,
+		VigniolaKML
 	]);
 
 	// Iterate over groupKML
@@ -238,10 +337,14 @@
 	});
 
 	var trails = {
+	  "Laghetto Rosso": LaghettoRossoKML,
+	  "LaBuccaDelBandito - Cima Del Monte": LaBuccaDelBandito1KML,
+	  "LaBuccaDelBandito - Via Volterraio": LaBuccaDelBandito2KML,
+	  "Laghetto Rosso": LaghettoRossoKML,
 	  "Scalette": ScaletteKML,
+	  "Strega": StregaKML,
 	  "Mezza Strega": MezzaStregaKML,
-	  "Vignola": VignolaKML,
-	  "Laghetto Rosso": LaghettoRossoKML
+	  "Vigniola": VigniolaKML
 	};		
 
 	var baseLayers = {
