@@ -82,6 +82,9 @@
 		#info {
 			display:none;
 		}
+		#tracks {
+			font-size:1.5em;
+		}
 	}
     
 	</style>
@@ -247,10 +250,10 @@
 	};
 
 	var map = L.map('map', {
-	  center: [42.82,10.34],
-	  zoom: 13,
+	  center: [42.808660, 10.393714],
+	  zoom: 14,
 	  zoomControl: false,
-	  layers: [mapbox_satelliteLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
+	  layers: [mapbox_outdoorLayer, ScaletteKML, VignolaKML, LaghettoRossoKML, MezzaStregaKML]
 	});
 	
 	new L.Control.Zoom({ position: 'topright' }).addTo(map);
