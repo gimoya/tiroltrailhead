@@ -11,7 +11,8 @@
 	
 	<!-- GOOGLE FONTS -->
 	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>	
-	<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Bungee' rel='stylesheet' type='text/css'>	
 	<!-- GOOGLE FONTS -->
 
 	
@@ -33,6 +34,11 @@
 		padding: 0;
 		margin: 0;
 	}
+	
+	.custom-control {
+		font-family: Bungee;
+		font-weight: bold;
+	}
   
 	#map {
 		position: absolute;
@@ -42,8 +48,6 @@
 	    
 	#infopanel {
 		display:none; 
-		right: 0;
-		text-align: right;
 		position:fixed; 
 		z-index:100; 
 		background-color:rgba(0,0,0,0.70); 
@@ -87,7 +91,7 @@
 	var toggle = L.easyButton({
 	  states: [{
 		stateName: 'basemap-satellite',
-		icon: '<strong>S</strong>',
+		icon: '<span class="custom-control">S</span>',
 		title: 'change basemap to outdoor/terrain',
 		onClick: function(control) {
 		  map.removeLayer(mapbox_satelliteLayer);
@@ -96,7 +100,7 @@
 		}
 	  }, {
 		stateName: 'basemap-outdoor',
-		icon: '<strong>T</strong>',	
+		icon: '<span class="custom-control">T</span>',
 		title: 'change basemap back to satellite',		
 		onClick: function(control) {
 		  map.removeLayer(mapbox_outdoorLayer);
