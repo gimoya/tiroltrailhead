@@ -28,6 +28,7 @@
     <style type="text/css">
 	    
 	html, body {
+		font-size: 100%;
 		height: 100%;
 		padding: 0;
 		margin: 0;
@@ -44,32 +45,42 @@
 	}
 	    
 	#infopanel {
-		display:none; 
-		position:fixed; 
-		z-index:100; 
-		background-color:rgba(0,0,0,0.70); 
-		width:33%; 
-		height:100%;
+		display: none; 
+		position: fixed; 
+		z-index: 100; 
+		background-color: rgba(0,0,0,0.70); 
+		width: 33%; 
+		height: 100%;
 		color: white;
 	}
 	    
 	#photos {
-		width:100%;
+		width: 100%;
 	}
 	    
 	#title {
 		font-family: 'Sigmar One';
-		font-size: 32px;
+		font-size: 1.8em;
 	}
 	    
 	#info, #tracks {
 		font-family: 'Corbel', 'bold';
-		font-size: 14px;
+		font-size: 0.8em;
 	}
 	    
 	#info, #tracks, #title {
-		padding:10px;
-	}	    
+		padding: 0.5em;
+	}	
+
+	@media screen and (min-width: 480px) {
+		body {
+			font-size: 75%;
+		}
+		#infopanel {
+			width: 50%; 
+		}		
+	}
+    
 	</style>
 </head>
 <body>
