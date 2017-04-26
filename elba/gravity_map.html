@@ -68,7 +68,7 @@
 	}
 	    
 	#title {
-		font-family: 'Creepster';
+		font-family: 'Monoton';
 		font-size: 2.5em;
 	}
 	    
@@ -347,6 +347,7 @@
 		layer.on('mouseover', function (e) {
 			// Set highlight
 			setHighlight(layer);
+			console.log(e);
 			$("layer-name-info").html = e.feature.properties.name;
 		});
 
