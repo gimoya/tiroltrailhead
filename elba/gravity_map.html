@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
 	
 	<!-- GOOGLE FONTS -->	
-	<link href='http://fonts.googleapis.com/css?family=Exo:Medium|Fredoka+One|Sigmar+One|Bungee' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Exo:Bold|Fredoka+One|Sigmar+One|Bungee' rel='stylesheet' type='text/css'>	
 	<!-- GOOGLE FONTS -->
 
 	
@@ -84,29 +84,6 @@
 <div id="map">
 </div>
 <script language="javascript">	
-
-	var toggle = L.easyButton({
-	  states: [{
-		stateName: 'basemap-satellite',
-		icon: '<span class="custom-control">S</span>',
-		title: 'change basemap to outdoor/terrain',
-		onClick: function(control) {
-		  map.removeLayer(mapbox_satelliteLayer);
-		  map.addLayer(mapbox_outdoorLayer);
-		  control.state('basemap-outdoor');
-		}
-	  }, {
-		stateName: 'basemap-outdoor',
-		icon: '<span class="custom-control">T</span>',
-		title: 'change basemap back to satellite',		
-		onClick: function(control) {
-		  map.removeLayer(mapbox_outdoorLayer);
-		  map.addLayer(mapbox_satelliteLayer);
-		  control.state('basemap-satellite');
-		},
-	  }]
-	});
-	
 
 	var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 	var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
@@ -264,6 +241,31 @@
 	
 	new L.Control.Zoom({ position: 'topright' }).addTo(map);
 	
+	var toggle = L.easyButton({
+	  position: 'topright',
+	  states: [{
+		stateName: 'basemap-satellite',
+		icon: '<span class="custom-control">S</span>',
+		title: 'change basemap to outdoor/terrain',
+		onClick: function(control) {
+		  map.removeLayer(mapbox_satelliteLayer);
+		  map.addLayer(mapbox_outdoorLayer);
+		  control.state('basemap-outdoor');
+		}
+	  }, {
+		stateName: 'basemap-outdoor',
+		icon: '<span class="custom-control">T</span>',
+		title: 'change basemap back to satellite',		
+		onClick: function(control) {
+		  map.removeLayer(mapbox_outdoorLayer);
+		  map.addLayer(mapbox_satelliteLayer);
+		  control.state('basemap-satellite');
+		},
+	  }]
+	});	
+	
+	toggle.addTo(map);
+	
 	/*
 	L.control.layers(baseLayers).addTo(map);
 	L.control.locate({
@@ -273,8 +275,6 @@
 
 	}).addTo(map);
 	*/
-	
-	toggle.addTo(map);
 	
 	map.on('click', function() {
 		$("#infopanel").fadeOut("slow");	
