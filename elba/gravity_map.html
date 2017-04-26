@@ -364,15 +364,6 @@
 	var toggle = L.easyButton({
 	  position: 'topright',
 	  states: [{
-		stateName: 'basemap-satellite',
-		icon: '<span class="custom-control">S</span>',
-		title: 'change basemap to outdoor/terrain',
-		onClick: function(control) {
-		  map.removeLayer(mapbox_satelliteLayer);
-		  map.addLayer(mapbox_outdoorLayer);
-		  control.state('basemap-outdoor');
-		}
-	  }, {
 		stateName: 'basemap-outdoor',
 		icon: '<span class="custom-control">T</span>',
 		title: 'change basemap back to satellite',		
@@ -380,6 +371,15 @@
 		  map.removeLayer(mapbox_outdoorLayer);
 		  map.addLayer(mapbox_satelliteLayer);
 		  control.state('basemap-satellite');
+		}
+	  }, {
+		stateName: 'basemap-satellite',
+		icon: '<span class="custom-control">S</span>',
+		title: 'change basemap to outdoor/terrain',
+		onClick: function(control) {
+		  map.removeLayer(mapbox_satelliteLayer);
+		  map.addLayer(mapbox_outdoorLayer);
+		  control.state('basemap-outdoor');
 		},
 	  }]
 	});	
