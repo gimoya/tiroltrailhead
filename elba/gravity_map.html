@@ -60,8 +60,7 @@
 		top: 10px;
 		right: 10px;
 		z-index: 400;
-		padding: 1em;
-		background: white;
+		padding: 0.95em;
 	 }
   
 	#photos {
@@ -69,7 +68,7 @@
 	}
 	    
 	#title {
-		font-family: 'Bungee Shade';
+		font-family: 'Creepster';
 		font-size: 2.5em;
 	}
 	    
@@ -348,7 +347,7 @@
 		layer.on('mouseover', function (e) {
 			// Set highlight
 			setHighlight(layer);
-			$("layer-name-info").html = e.layer.feature.properties.name;
+			$("layer-name-info").html = e.feature.properties.name;
 		});
 
 		// Mouseout handler
