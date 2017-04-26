@@ -347,8 +347,7 @@
 		layer.on('mouseover', function (e) {
 			// Set highlight
 			setHighlight(layer);
-			console.log(e);
-			$("layer-name-info").html = e.feature.properties.name;
+			$("layer-name-info").html = e.layer.feature.properties.name
 		});
 
 		// Mouseout handler
