@@ -274,16 +274,6 @@
 		});			
 
 	var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml')
-		.on('ready', function() {
-						// After the 'ready' event fires, the GeoJSON contents are accessible
-						// and you can iterate through layers to bind custom popups
-						this.eachLayer(function(layer) {
-							layer.setStyle({weight: 3,
-									opacity: 0.7,
-									color: 'yellow'
-								       }) 
-						});
-					})
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").html(e.layer.feature.properties.name);
@@ -356,6 +346,13 @@
 			unsetHighlight(layer);
 			$("#layer-name-info").html('...');
 		});
+		
+		layer.on('ready', function() {
+						layer.setStyle({weight: 10,
+								opacity: 0.7,
+								color: 'yellow'
+							       }) 
+					})		
 	});
 
 	var trails = {
