@@ -288,10 +288,10 @@
 		
 		layer.on('ready', function() { 
 					layer.setStyle(style.default);
-					layer.setStyle('color': switch (layer.feature.properties.name) {
-									 case 'Scalette': return {'red};
+					layer.setStyle(switch (layer.feature.properties.name) {
+									 case 'Scalette': return {'color': 'red'};
 									 break;
-									 case 'Vigniola': return {'green'};
+									 case 'Vigniola': return {'color': 'green'};
 									 break;
     								});
 		});		
