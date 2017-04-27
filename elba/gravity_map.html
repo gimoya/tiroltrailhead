@@ -135,7 +135,7 @@
 	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Ewert");
+			$("#title").css("font-family", "Fruktur");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/CimaDelMonte.gpx');
@@ -179,7 +179,7 @@
 	var MezzaStregaKML = omnivore.kml('../elba/KML/MezzaStrega.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Fruktur");
+			$("#title").css("font-family", "Ewert");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/MezzaStrega.gpx');
