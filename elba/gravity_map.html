@@ -136,6 +136,7 @@
 	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").css("font-family", "Monoton");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/CimaDelMonte.gpx');
@@ -146,6 +147,7 @@
 	var LaBuccaDelBandito1KML = omnivore.kml('../elba/KML/LaBuccaDelBandito1.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").css("font-family", "Creepers");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/LaBuccaDelBandito1.gpx');
@@ -156,6 +158,7 @@
 	var LaBuccaDelBandito2KML = omnivore.kml('../elba/KML/LaBuccaDelBandito2.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").css("font-family", "Creepers");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/LaBuccaDelBandito2.gpx');
@@ -176,6 +179,7 @@
 	var MezzaStregaKML = omnivore.kml('../elba/KML/MezzaStrega.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").css("font-family", "Ultra");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/MezzaStrega.gpx');
@@ -186,6 +190,7 @@
 	var StregaKML = omnivore.kml('../elba/KML/Strega.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").css("font-family", "Fugaz One");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/Strega.gpx');
@@ -195,7 +200,8 @@
 		
 	var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
 		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
+			$("#title").css("font-family", "Hanalei");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
@@ -206,6 +212,7 @@
 	var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+			$("#title").css("font-family", "Bungee");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/Vigniola.gpx');
