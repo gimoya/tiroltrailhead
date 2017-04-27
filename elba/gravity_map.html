@@ -90,7 +90,7 @@
 	    
 	@media screen and (max-width: 480px) {
 		body {
-			font-size: 75%;
+			font-size: 50%;
 		}
 		#infopanel {
 			width: 50%; 
@@ -219,7 +219,11 @@
 			$("#kml").prop('href', '../elba/KML/Vigniola.kml');
 			$("#infopanel").fadeIn("slow");
 		});
-		
+	//Create a color dictionary based on layer names
+	var subwayColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
+	    "Bucca Del Bandito - Volterraio":"#009b2e", "Bucca Del Monte - Cima Del Monte":"#009b2e", "Cima Del Monte":"#ce06cb", 
+	    "Laghetto Rosso":"#fd9a00"};
+	
 	/*
 	For highlighting features see:
 	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
