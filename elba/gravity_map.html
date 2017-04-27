@@ -77,6 +77,7 @@
 		right: 10px;
 		z-index: 400;
 		padding: 0.4em;
+	    	bottom: 12.5em;		
 	}
 	    
 	#logo {
@@ -85,11 +86,7 @@
 		bottom: 0px;
 		z-index: 99;
 		padding-bottom: 1.2em;
-	}
-	    
-	#logo, #layer-name-info {    
-	    	bottom: 12.5em;
-		height: 12em;	
+		height: 12em;		
 	}
 	    
 	@media screen and (max-width: 480px) {
@@ -349,6 +346,7 @@
 		layer.on('mouseover', function (e) {
 			// Set highlight
 			setHighlight(layer);
+			console.log(.layer.feature.properties.name);
 			$("layer-name-info").html = e.layer.feature.properties.name;
 		});
 
