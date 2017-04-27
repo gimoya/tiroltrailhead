@@ -117,7 +117,7 @@
 		<a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a>
 	</div>
 </div>
-<img id="logo" src="elba_gravity_park.png"></img>
+	<img id="logo" src="elba_gravity_park.png"></img>
 <div id="map">
 </div>
 <script language="javascript">	
@@ -347,7 +347,7 @@
 		layer.on('mouseover', function (e) {
 			// Set highlight
 			setHighlight(layer);
-			$("layer-name-info").html = e.layer.feature.properties.name
+			$("layer-name-info").html = e.layer.feature.properties.name;
 		});
 
 		// Mouseout handler
