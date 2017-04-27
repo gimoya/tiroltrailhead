@@ -84,7 +84,7 @@
 		right: 0px;
 		bottom: 0px;
 		z-index: 99;
-		padding-bottom: 1.2em;
+		padding-bottom: 1.35em;
 		height: 12em;		
 	}
 	    
@@ -219,6 +219,7 @@
 			$("#kml").prop('href', '../elba/KML/Vigniola.kml');
 			$("#infopanel").fadeIn("slow");
 		});
+	
 	//Create a color dictionary based on layer names
 	var trailColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
 	    "Bucca Del Bandito - Via ":"#009b2e", "Bucca Del Monte - Cima Del Monte":"#009b2e", "Cima Del Monte":"#ce06cb", 
@@ -279,7 +280,7 @@
 			setHighlight(layer);
 			$("#layer-name-info").html(e.layer.feature.properties.name);
 			console.log(e.latlng);
-			console.log(latLngToLayerPoint(e.latlng));
+			//console.log(latLngToLayerPoint(e.latlng));
 			
 		});
 
@@ -292,7 +293,8 @@
 		
 		layer.on('ready', function() { 
 					layer.setStyle(style.default);
-					layer.setStyle(	{'color': trailColors[layer.feature.properties.name]} );
+					console.log(layer);
+					//layer.setStyle(	{'color': trailColors[layer.feature.properties.name]} );
 		});		
 	});
 
