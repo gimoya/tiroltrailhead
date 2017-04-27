@@ -53,15 +53,6 @@
 		height: 100%;
 		color: white;
 	}
-	
-
-	 #layer-name-info {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		z-index: 400;
-		padding: 0.95em;
-	 }
   
 	#photos {
 		width: 100%;
@@ -79,17 +70,28 @@
 	    
 	#info, #tracks, #title {
 		padding: 10px;
-	}	
-	
+	}
+	    
+	#layer-name-info {
+		position: absolute;
+		right: 10px;
+		z-index: 400;
+		padding: 0.4em;
+	}
+	    
 	#logo {
 		position: absolute;
 		right: 0px;
 		bottom: 0px;
 		z-index: 99;
-		width: 12em;
 		padding-bottom: 1.2em;
 	}
-
+	    
+	#logo, #layer-name-info {    
+	    	bottom: 12.5em;
+		height: 12em;	
+	}
+	    
 	@media screen and (max-width: 480px) {
 		body {
 			font-size: 75%;
