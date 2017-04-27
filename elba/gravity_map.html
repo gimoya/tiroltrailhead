@@ -221,8 +221,7 @@
 	var style = {
 		'default': {
 			'weight': 3,
-			'opacity': 0.7,
-			'lineJoin': 'round'
+			'opacity': 0.7
 		},
 		'highlight': {
 			'weight': 5,
@@ -267,7 +266,6 @@
 		layer.on('mouseover', function (e) {
 			// Set highlight
 			setHighlight(layer);
-			console.log(e.layer.feature.properties.name);
 			$("#layer-name-info").html(e.layer.feature.properties.name);
 		});
 
@@ -303,7 +301,7 @@
 	  center: [42.808660, 10.393714],
 	  zoom: 13,
 	  zoomControl: false,
-	  layers: [mapbox_outdoorLayer, ScaletteKML, VigniolaKML, LaghettoRossoKML, MezzaStregaKML, StregaKML, CimaDelMonteKML, LaBuccaDelBandito1KML, LaBuccaDelBandito2KML]
+	  layers: [mapbox_outdoorLayer, groupKML]
 	});
 	
 	new L.Control.Zoom({ position: 'topright' }).addTo(map);
