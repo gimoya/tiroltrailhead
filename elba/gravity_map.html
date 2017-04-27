@@ -96,7 +96,7 @@
 		#infopanel {
 			width: 50%; 
 		}	
-		#info {
+		#info, #info-name-layer {
 			display:none;
 		}
 		#tracks {
@@ -135,7 +135,6 @@
 
 	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('click', function(e) {
-			$("#layer-name-info").html(e.layer.feature.properties.name);
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
