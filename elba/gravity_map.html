@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
 	
 	<!-- GOOGLE FONTS -->	
-	<link href='http://fonts.googleapis.com/css?family=Bangers|Fugaz+One|Hanalei|Ranga|Russo+One|Ultra|Exo:Bold|Fredoka+One|Sigmar+One|Bungee|Bungee+Shade|Creepster|Ewert|Fruktur|Monoton|Rubik:900' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Bangers|Fugaz+One|Hanalei|Ranga|Ultra|Exo:Bold|Fredoka+One|Sigmar+One|Bungee|Bungee+Shade|Creepster|Ewert|Fruktur|Monoton|Rubik:900' rel='stylesheet' type='text/css'>	
 	<!-- GOOGLE FONTS -->
 
 	
@@ -212,7 +212,7 @@
 	var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Bungee");
+			$("#title").css("font-family", "Bungee Shade");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/Vigniola.gpx');
@@ -220,8 +220,8 @@
 			$("#infopanel").fadeIn("slow");
 		});
 	//Create a color dictionary based on layer names
-	var subwayColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
-	    "Bucca Del Bandito - Volterraio":"#009b2e", "Bucca Del Monte - Cima Del Monte":"#009b2e", "Cima Del Monte":"#ce06cb", 
+	var trailColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
+	    "Bucca Del Bandito - Via ":"#009b2e", "Bucca Del Monte - Cima Del Monte":"#009b2e", "Cima Del Monte":"#ce06cb", 
 	    "Laghetto Rosso":"#fd9a00"};
 	
 	/*
@@ -292,13 +292,7 @@
 		
 		layer.on('ready', function() { 
 					layer.setStyle(style.default);
-					/*layer.setStyle(switch (layer.feature.properties.name) {
-									 case 'Scalette': return {'color': 'red'};
-									 break;
-									 case 'Vigniola': return {'color': 'green'};
-									 break;
-    								});
-								*/
+					layer.setStyle(	{'color': trailColors[layer.feature.properties.name]} );
 		});		
 	});
 
