@@ -280,7 +280,7 @@
 			setHighlight(layer);
 			$("#layer-name-info").html(e.layer.feature.properties.name);
 			console.log(e.latlng);
-			//console.log(latLngToLayerPoint(e.latlng));
+			console.log(L.Map.latLngToLayerPoint(e.latlng));
 			
 		});
 
@@ -293,7 +293,7 @@
 		
 		layer.on('ready', function() { 
 					layer.setStyle(style.default);
-					console.log(layer); 
+					console.log(layer); ._layers[39].feature.properties.name
 					//layer.setStyle(	{'color': trailColors[layer.feature.properties.name]} );
 		});		
 	});
