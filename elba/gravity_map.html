@@ -135,7 +135,7 @@
 	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Monoton");
+			$("#title").css("font-family", "Timmana");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/CimaDelMonte.gpx');
@@ -297,22 +297,6 @@
 								*/
 		});		
 	});
-
-	var trails = {
-	  "Laghetto Rosso": LaghettoRossoKML,
-	  "LaBuccaDelBandito - Cima Del Monte": LaBuccaDelBandito1KML,
-	  "LaBuccaDelBandito - Via Volterraio": LaBuccaDelBandito2KML,
-	  "Laghetto Rosso": LaghettoRossoKML,
-	  "Scalette": ScaletteKML,
-	  "Strega": StregaKML,
-	  "Mezza Strega": MezzaStregaKML,
-	  "Vigniola": VigniolaKML
-	};		
-
-	var baseLayers = {
-	  "Satellit": mapbox_satelliteLayer,
-	  "Terrain": mapbox_outdoorLayer
-	};
 
 	var map = L.map('map', {
 	  center: [42.808660, 10.393714],
