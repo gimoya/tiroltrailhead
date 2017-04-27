@@ -294,7 +294,7 @@
 		layer.on('ready', function() { 
 					layer.setStyle(style.default);
 					console.log(layer);
-					//layer.setStyle(	{'color': trailColors[layer.feature.properties.name]} );
+					layer.setStyle(	{'color': trailColors[e.layer.feature.properties.name]} );
 		});		
 	});
 
