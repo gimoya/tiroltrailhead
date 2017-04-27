@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
 	
 	<!-- GOOGLE FONTS -->	
-	<link href='http://fonts.googleapis.com/css?family=Bangers|Fugaz+One|Hanalei|Ranga|Russo+One|Timmana|Ultra|Exo:Bold|Fredoka+One|Sigmar+One|BioRhyme|Black+Ops+One|Bungee|Bungee+Shade|Creepster|Ewert|Fruktur|Gravitas+One|Monoton|Rubik:900' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Bangers|Fugaz+One|Hanalei|Ranga|Russo+One|Ultra|Exo:Bold|Fredoka+One|Sigmar+One|Bungee|Bungee+Shade|Creepster|Ewert|Fruktur|Monoton|Rubik:900' rel='stylesheet' type='text/css'>	
 	<!-- GOOGLE FONTS -->
 
 	
@@ -99,7 +99,7 @@
 			display:none;
 		}
 		#tracks {
-			font-size:1.5em;
+			font-size:1.55em;
 		}
 	}
     
@@ -135,7 +135,7 @@
 	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Timmana");
+			$("#title").css("font-family", "Ewert");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/CimaDelMonte.gpx');
@@ -179,7 +179,7 @@
 	var MezzaStregaKML = omnivore.kml('../elba/KML/MezzaStrega.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Gravitas One");
+			$("#title").css("font-family", "Fruktur");
 			$("#title").html(e.layer.feature.properties.name);
 			$("#info").html(e.layer.feature.properties.description);
 			$("#gpx").prop('href', '../elba/KML/MezzaStrega.gpx');
