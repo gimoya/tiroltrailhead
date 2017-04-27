@@ -224,11 +224,13 @@
 	For highlighting features see:
 	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
 	*/	
-
+		
+	}
 	var style = {
 		'default': {
 			'weight': 3,
-			'opacity': 0.7
+			'opacity': 0.7,
+			'color': function(layer) {if layer.feature.properties.name = "Scalette" return "red" else return "green"}
 		},
 		'highlight': {
 			'weight': 5,
@@ -288,7 +290,7 @@
 		
 		layer.on('ready', function() { 
 					layer.setStyle(style.default);
-					});		
+					});	
 	});
 
 	var trails = {
