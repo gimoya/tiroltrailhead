@@ -119,6 +119,53 @@
 <div id="map">
 </div>
 <script language="javascript">	
+	
+	var map = L.map('map', {
+	  center: [42.808660, 10.393714],
+	  zoom: 13,
+	  zoomControl: false
+	});
+	
+	new L.Control.Zoom({ position: 'topright' }).addTo(map);
+	
+	var toggle = L.easyButton({
+	  position: 'topright',
+	  states: [{
+		stateName: 'basemap-outdoor',
+		icon: '<span class="custom-control">T</span>',
+		title: 'change basemap back to satellite',		
+		onClick: function(control) {
+		  map.removeLayer(mapbox_outdoorLayer);
+		  map.addLayer(mapbox_satelliteLayer);
+		  control.state('basemap-satellite');
+		}
+	  }, {
+		stateName: 'basemap-satellite',
+		icon: '<span class="custom-control">S</span>',
+		title: 'change basemap to outdoor/terrain',
+		onClick: function(control) {
+		  map.removeLayer(mapbox_satelliteLayer);
+		  map.addLayer(mapbox_outdoorLayer);
+		  control.state('basemap-outdoor');
+		},
+	  }]
+	});	
+	
+	toggle.addTo(map);
+	
+	/*
+	L.control.layers(baseLayers).addTo(map);
+	L.control.locate({
+		strings: {
+			title: "Show me where I am, yo!"
+		}
+
+	}).addTo(map);
+	*/
+	
+	map.on('click', function() {
+		$("#infopanel").fadeOut("slow");	
+	});	
 
 	var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 	var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
@@ -131,7 +178,8 @@
 	var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
 	  attribution: mapbox_Attr 
 	});		
-
+	
+	mapbox_outdoorLayer.addTo(map);
 
 	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('click', function(e) {
@@ -271,6 +319,9 @@
 	// Iterate over groupKML
 	groupKML.eachLayer(function (layer) {
 		
+		var startPt = new L.CircleMarker(layer.getLayers(0)[0]._latlngs[0]);
+		startPt.addTo(map);		
+		
 		layer.on('ready', function() { 
 			layer.setStyle(style.default);
 		});			
@@ -292,59 +343,9 @@
 			$("#layer-name-info").html('...');
 		});	
 	});
-	
-	var map = L.map('map', {
-	  center: [42.808660, 10.393714],
-	  zoom: 13,
-	  zoomControl: false,
-	  layers: [mapbox_outdoorLayer, groupKML]
-	});
-	
-	groupKML.eachLayer(function (layer) {	
-		var startPt = new L.CircleMarker(layer.getLayers(0)[0]._latlngs[0]);
-		startPt.addTo(map);
-	}
-	
-	new L.Control.Zoom({ position: 'topright' }).addTo(map);
-	
-	var toggle = L.easyButton({
-	  position: 'topright',
-	  states: [{
-		stateName: 'basemap-outdoor',
-		icon: '<span class="custom-control">T</span>',
-		title: 'change basemap back to satellite',		
-		onClick: function(control) {
-		  map.removeLayer(mapbox_outdoorLayer);
-		  map.addLayer(mapbox_satelliteLayer);
-		  control.state('basemap-satellite');
-		}
-	  }, {
-		stateName: 'basemap-satellite',
-		icon: '<span class="custom-control">S</span>',
-		title: 'change basemap to outdoor/terrain',
-		onClick: function(control) {
-		  map.removeLayer(mapbox_satelliteLayer);
-		  map.addLayer(mapbox_outdoorLayer);
-		  control.state('basemap-outdoor');
-		},
-	  }]
-	});	
-	
-	toggle.addTo(map);
-	
-	/*
-	L.control.layers(baseLayers).addTo(map);
-	L.control.locate({
-		strings: {
-			title: "Show me where I am, yo!"
-		}
 
-	}).addTo(map);
-	*/
+	groupKML.addTo(map);
 	
-	map.on('click', function() {
-		$("#infopanel").fadeOut("slow");	
-	});
 
 </script>
 </body>	
