@@ -140,7 +140,8 @@
 	var customLayer = L.geoJson(null, {
 	    // http://leafletjs.com/reference.html#geojson-style
 	    style: function(feature) {
-		return { color: trailColors[feature.properties.name] };
+		console.log(feature);
+		return { color: '#f00' };
 	    }
 	});
 	
