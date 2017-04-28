@@ -234,11 +234,12 @@
 		'default': {
 			'weight': 3,
 			'opacity': 0.5,
-			'color': 'green'
+			'color': 'orange'
 		},
 		'highlight': {
 			'weight': 5,
-			'opacity': 0.7
+			'opacity': 0.7,
+			'color': 'red'
 		}
 	};
 
@@ -292,10 +293,9 @@
 			$("#layer-name-info").html('...');
 		});
 		
-		/*layer.on('ready', function() { 
-					layer.setStyle(style.default);
-					//layer.setStyle(	{'color': trailColors[layer.feature.properties.name]} );
-		});*/		
+		layer.setStyle(style.default);
+		//layer.setStyle({'color': trailColors[layer.feature.properties.name]} );
+		});		
 	});
 
 	var map = L.map('map', {
