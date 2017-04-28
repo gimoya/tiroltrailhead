@@ -132,52 +132,7 @@
 	  attribution: mapbox_Attr 
 	});		
 
-	//Create a color dictionary based on layer names
-	var trailColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
-	    "Bucca Del Bandito - Via Volterraio":"#009b2e", "Bucca Del Bandito - Cima Del Monte":"#009b2e", "Cima Del Monte - Porto Azzurro":"#ce06cb", 
-	    "Laghetto Rosso":"#fd9a00"};
-	
-	function style(feature) {
-	    return {
-		color: trailColors[feature.properties.name]
-		dashArray: '3'
-	    };
-	}
-	
-	function highlightFeature(e) {
-	    var layer = e.target;
-
-	    layer.setStyle({
-		weight: 2,
-		color: '#666',
-		dashArray: ''
-	    });
-
-	    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-		layer.bringToFront();
-	    }
-	}	
-	
-	var customLayer;
-				      
-	function resetHighlight(e) {
-	    customLayer.resetStyle(e.target);
-	}	
-	
-	function onEachFeature(feature, layer) {
-	    layer.on({
-		mouseover: highlightFeature,
-		mouseout: resetHighlight
-	    });
-	}	
-	
-	customLayer = L.geoJson(null, {
-	    // http://leafletjs.com/reference.html#geojson-style
-	    style: style,
-	    onEachFeature: onEachFeature		
-	});	
-	
-	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml', null, customLayer)
+	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Fruktur");
@@ -188,7 +143,7 @@
 			$("#infopanel").fadeIn("slow");
 		});			
 
-	var BuccaDelBandito1KML = omnivore.kml('../elba/KML/BuccaDelBandito1.kml', null, customLayer)
+	var BuccaDelBandito1KML = omnivore.kml('../elba/KML/BuccaDelBandito1.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Creepster");
@@ -199,7 +154,7 @@
 			$("#infopanel").fadeIn("slow");
 		});			
 
-	var BuccaDelBandito2KML = omnivore.kml('../elba/KML/BuccaDelBandito2.kml', null, customLayer)
+	var BuccaDelBandito2KML = omnivore.kml('../elba/KML/BuccaDelBandito2.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Creepster");
@@ -210,7 +165,7 @@
 			$("#infopanel").fadeIn("slow");
 		});			
 
-	var LaghettoRossoKML = omnivore.kml('../elba/KML/LaghettoRosso.kml', null, customLayer)
+	var LaghettoRossoKML = omnivore.kml('../elba/KML/LaghettoRosso.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Ultra");
@@ -221,7 +176,7 @@
 			$("#infopanel").fadeIn("slow");
 		});			
 
-	var MezzaStregaKML = omnivore.kml('../elba/KML/MezzaStrega.kml', null, customLayer)
+	var MezzaStregaKML = omnivore.kml('../elba/KML/MezzaStrega.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Ewert");
@@ -232,7 +187,7 @@
 			$("#infopanel").fadeIn("slow");
 		});
 
-	var StregaKML = omnivore.kml('../elba/KML/Strega.kml', null, customLayer)
+	var StregaKML = omnivore.kml('../elba/KML/Strega.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Fugaz One");
@@ -243,7 +198,7 @@
 			$("#infopanel").fadeIn("slow");
 		});
 		
-	var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml', null, customLayer)
+	var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
 			$("#title").css("font-family", "Hanalei");
@@ -254,7 +209,7 @@
 			$("#infopanel").fadeIn("slow");
 		});			
 
-	var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml', null, customLayer)
+	var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Bungee Shade");
@@ -265,30 +220,26 @@
 			$("#infopanel").fadeIn("slow");
 		});
 	
+	//Create a color dictionary based on layer names
+	var trailColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
+	    "Bucca Del Bandito - Via ":"#009b2e", "Bucca Del Monte - Cima Del Monte":"#009b2e", "Cima Del Monte":"#ce06cb", 
+	    "Laghetto Rosso":"#fd9a00"};
+	
 	/*
 	For highlighting features see:
 	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
 	*/	
 
-	var groupKML = new L.LayerGroup([
-		CimaDelMonteKML,
-		LaghettoRossoKML,
-		BuccaDelBandito1KML,
-		BuccaDelBandito2KML,		
-		MezzaStregaKML,
-		ScaletteKML,
-		StregaKML,
-		VigniolaKML
-	]);
-/*
 	var style = {
 		'default': {
 			'weight': 3,
-			'opacity': 0.5
+			'opacity': 0.5,
+			'color': 'green'
 		},
 		'highlight': {
 			'weight': 5,
-			'opacity': 0.7
+			'opacity': 0.7,
+			'color': 'red'
 		}
 	};
 
@@ -310,10 +261,21 @@
 	  layer.setStyle(style.default);
 	  highlight = null;
 	}
-	
+
+	var groupKML = new L.LayerGroup([
+		CimaDelMonteKML,
+		LaghettoRossoKML,
+		BuccaDelBandito1KML,
+		BuccaDelBandito2KML,		
+		MezzaStregaKML,
+		ScaletteKML,
+		StregaKML,
+		VigniolaKML
+	]);
+
 	// Iterate over groupKML
 	groupKML.eachLayer(function (layer) {
-				
+		
 		layer.setStyle(style.default);
 
 		// Mouseover handler
@@ -332,7 +294,12 @@
 			unsetHighlight(layer);
 			$("#layer-name-info").html('...');
 		});
-	});*/
+		
+		/*layer.on('ready', function() { 
+					layer.setStyle(style.default);
+					//layer.setStyle(	{'color': trailColors[layer.feature.properties.name]} );
+		});*/		
+	});
 
 	var map = L.map('map', {
 	  center: [42.808660, 10.393714],
