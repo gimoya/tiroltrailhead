@@ -276,7 +276,9 @@
 	// Iterate over groupKML
 	groupKML.eachLayer(function (layer) {
 		
-		layer.setStyle(style.default);
+		layer.on('ready', function() { 
+			layer.setStyle(style.default);
+		});			
 
 		// Mouseover handler
 		layer.on('mouseover', function (e) {
@@ -293,12 +295,7 @@
 			 // Unset highlight
 			unsetHighlight(layer);
 			$("#layer-name-info").html('...');
-		});
-		
-		/*layer.on('ready', function() { 
-					layer.setStyle(style.default);
-					//layer.setStyle(	{'color': trailColors[layer.feature.properties.name]} );
-		});*/		
+		});	
 	});
 
 	var map = L.map('map', {
