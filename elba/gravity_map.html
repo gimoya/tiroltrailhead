@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
 	
 	<!-- GOOGLE FONTS -->	
 	<link href='http://fonts.googleapis.com/css?family=Bangers|Fugaz+One|Hanalei|Ranga|Ultra|Exo:Bold|Fredoka+One|Sigmar+One|Bungee|Bungee+Shade|Creepster|Ewert|Fruktur|Monoton|Rubik:900' rel='stylesheet' type='text/css'>	
@@ -318,12 +319,15 @@
 	]);
 		
 	// Iterate over groupKML
+	// used icons for markers:
+	 var endMarker = L.AwesomeMarkers.icon({
+		    icon: 'flag'
+		  });
+	
 	groupKML.eachLayer(function (layer) {	
 		
 		layer.on('ready', function() { 
-			// you can set .my-div-icon styles in CSS			
-			var myIcon = L.divIcon({className: 'leaflet-div-icon'});
-			var startPt = new L.marker(layer.getLayers(0)[0]._latlngs[0], {icon: myIcon});
+			var startPt = new L.marker(layer.getLayers(0)[0]._latlngs[0], {icon: endMarker});
 			startPt.addTo(map);				
 			layer.setStyle(style.default);
 		});			
