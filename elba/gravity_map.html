@@ -317,12 +317,11 @@
 	]);
 		
 	// Iterate over groupKML
-	groupKML.eachLayer(function (layer) {
-		
-		var startPt = new L.CircleMarker(layer.getLayers(0)[0]._latlngs[0]);
-		startPt.addTo(map);		
+	groupKML.eachLayer(function (layer) {	
 		
 		layer.on('ready', function() { 
+			var startPt = new L.CircleMarker(layer.getLayers(0)[0]._latlngs[0]);
+			startPt.addTo(map);				
 			layer.setStyle(style.default);
 		});			
 
