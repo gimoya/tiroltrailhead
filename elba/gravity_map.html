@@ -321,7 +321,7 @@
 		
 		layer.on('ready', function() { 
 			// you can set .my-div-icon styles in CSS			
-			var myIcon = L.divIcon({className: 'my-div-icon'});
+			var myIcon = L.divIcon({className: 'leaflet-div-icon'});
 			var startPt = new L.marker(layer.getLayers(0)[0]._latlngs[0], {icon: myIcon});
 			startPt.addTo(map);				
 			layer.setStyle(style.default);
