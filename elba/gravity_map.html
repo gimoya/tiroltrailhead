@@ -36,10 +36,9 @@
 	}
 	    
 	.awesome-marker i {
-	    font-size: 25px;
+	    font-size: 16px;
 	    margin-top: 10px;
-	    margin-left: 10px;
-	    color: 'darkslategrey';
+	    margin-left: 5px;
 	}
 	    
 	.custom-control {
@@ -332,18 +331,13 @@
 		    icon: 'fa-flag-checkered'
 		  });
 	
-	var startMarker = L.AwesomeMarkers.icon({
-		    icon: 'fa-play-circle'
-		  });	
-	
 	// Iterate over groupKML and make end and start markers, then attach event listeners..	
 	groupKML.eachLayer(function (layer) {	
 		
 		layer.on('ready', function() { 
 			var latlngs = layer.getLayers(0)[0]._latlngs;
-			var startPt = new L.marker(latlngs[0], {icon: startMarker}); 
 			var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endMarker});
-			startPt.addTo(map);
+			console.log(endPt);
 			endPt.addTo(map);
 			layer.setStyle(style.default);
 		});			
