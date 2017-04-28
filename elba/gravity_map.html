@@ -132,7 +132,19 @@
 	  attribution: mapbox_Attr 
 	});		
 
-	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
+	//Create a color dictionary based on layer names
+	var trailColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
+	    "Bucca Del Bandito - Via ":"#009b2e", "Bucca Del Monte - Cima Del Monte":"#009b2e", "Cima Del Monte":"#ce06cb", 
+	    "Laghetto Rosso":"#fd9a00"};
+	
+	var customLayer = L.geoJson(null, {
+	    // http://leafletjs.com/reference.html#geojson-style
+	    style: function(feature) {
+		return { color: trailColors[feature.properties.name] };
+	    }
+	});
+	
+	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml', null, customLayer)
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Fruktur");
@@ -220,11 +232,6 @@
 			$("#infopanel").fadeIn("slow");
 		});
 	
-	//Create a color dictionary based on layer names
-	var trailColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
-	    "Bucca Del Bandito - Via ":"#009b2e", "Bucca Del Monte - Cima Del Monte":"#009b2e", "Cima Del Monte":"#ce06cb", 
-	    "Laghetto Rosso":"#fd9a00"};
-	
 	/*
 	For highlighting features see:
 	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
@@ -233,13 +240,11 @@
 	var style = {
 		'default': {
 			'weight': 3,
-			'opacity': 0.5,
-			'color': 'orange'
+			'opacity': 0.5
 		},
 		'highlight': {
 			'weight': 5,
-			'opacity': 0.7,
-			'color': 'red'
+			'opacity': 0.7
 		}
 	};
 
