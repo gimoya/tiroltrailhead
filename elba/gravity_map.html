@@ -278,7 +278,6 @@
 			$("#infopanel").fadeIn("slow");
 		});
 	
-
 	/*
 	For highlighting features see:
 	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
@@ -328,18 +327,33 @@
 	// used icons for markers:
 	L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
 	
-	var endMarker = L.AwesomeMarkers.icon({
+	var endIcon = L.AwesomeMarkers.icon({
 		    icon: 'fa-flag-checkered',
 		    markerColor: 'cadetblue',
 		    iconColor: 'white'
 		  });
 	
-	var startMarker = L.AwesomeMarkers.icon({
-		    icon: 'fa-hand-o-down ',
+	var startIcon = L.AwesomeMarkers.icon({
+		    icon: 'fa-hand-o-down',
 		    markerColor: 'green',
 		    iconColor: 'white'
 		  });	
+	
+	var bikeRentIcon = L.AwesomeMarkers.icon({
+		    icon: 'fa-bicycle',
+		    markerColor: 'blue',
+		    iconColor: 'yellow'
+		  });	
+	
+	var bikeLoadingIcon = L.AwesomeMarkers.icon({
+		    icon: 'fa-truck',
+		    markerColor: 'purple',
+		    iconColor: 'yellow'
+		  });	
 
+	new L.marker([10.3989717, 42.81376], {icon: bikeRentIcon}).addTo(map);
+	new L.marker([42.799289, 10.357636], {icon: bikeLoadingIcon}).addTo(map);
+	
 	var trailColors = {
 			   "Scalette": "#ff3135", 
 			   "Vigniola": "#ff3135", 
@@ -356,8 +370,8 @@
 		
 		layer.on('ready', function() { 
 			var latlngs = layer.getLayers(0)[0]._latlngs;
-			var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endMarker});
-			var startPt = new L.marker(latlngs[0], {icon: startMarker});
+			var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon});
+			var startPt = new L.marker(latlngs[0], {icon: startIcon});
 			endPt.addTo(map);
 			startPt.addTo(map);
 			layer.setStyle({
