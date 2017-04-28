@@ -132,11 +132,7 @@
 	  attribution: mapbox_Attr 
 	});		
 
-	//Create a color dictionary based on layer names
-	var trailColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
-	    "Bucca Del Bandito - Via Volterraio":"#009b2e", "Bucca Del Bandito - Cima Del Monte":"#009b2e", "Cima Del Monte - Porto Azzurro":"#ce06cb", 
-	    "Laghetto Rosso":"#fd9a00"};
-	
+
 	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
@@ -147,8 +143,7 @@
 			$("#kml").prop('href', '../elba/KML/CimaDelMonte.kml');
 			$("#infopanel").fadeIn("slow");
 		})
-		.SetStyle('color': trailColors['Cima Del Monte - Porto Azzurro']});
-	
+		
 	var BuccaDelBandito1KML = omnivore.kml('../elba/KML/BuccaDelBandito1.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
@@ -226,6 +221,8 @@
 			$("#infopanel").fadeIn("slow");
 		});
 
+	CimaDelMonteKML.SetStyle({'color': '#ce06cb'});	
+	
 	/*
 	For highlighting features see:
 	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
