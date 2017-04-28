@@ -34,7 +34,12 @@
 		padding: 0;
 		margin: 0;
 	}
-	
+	    
+	.awesome-marker i {
+		font-size: 12px;
+		margin-top: 3px;
+	}
+	    
 	.custom-control {
 		font-family: Exo;
 	}
@@ -319,13 +324,14 @@
 	]);
 	
 	// used icons for markers:
+	L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
 	
-	 var endMarker = L.AwesomeMarkers.icon({
+	var endMarker = L.AwesomeMarkers.icon({
 		    icon: 'fa-map-marker'
 		  });
 	
-	 var endMarker = L.AwesomeMarkers.icon({
-		    icon: ''fa fa-hand-o-down'
+	var endMarker = L.AwesomeMarkers.icon({
+		    icon: 'fa-hand-o-down'
 		  });	
 	
 	// Iterate over groupKML and make end and start markers, then attach event listeners..	
