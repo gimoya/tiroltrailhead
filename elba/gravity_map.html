@@ -332,7 +332,7 @@
 		    icon: 'fa-flag-checkered'
 		  });
 	
-	var endMarker = L.AwesomeMarkers.icon({
+	var startMarker = L.AwesomeMarkers.icon({
 		    icon: 'fa-map-marker'
 		  });	
 	
@@ -340,8 +340,11 @@
 	groupKML.eachLayer(function (layer) {	
 		
 		layer.on('ready', function() { 
-			var startPt = new L.marker(layer.getLayers(0)[0]._latlngs[0], {icon: endMarker});
-			startPt.addTo(map);				
+			var latlngs = layer.getLayers(0)[0]._latlngs;
+			var startPt = new L.marker(latlngs[0], {icon: startMarker}); 
+			var startPt = new L.marker(latlngs[latlngs.length - 1], {icon: endMarker});
+			startPt.addTo(map);
+			endPt.addTo(map);
 			layer.setStyle(style.default);
 		});			
 
