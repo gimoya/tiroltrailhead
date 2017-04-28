@@ -287,8 +287,7 @@
 	var style = {
 		'default': {
 			'weight': 3,
-			'opacity': 0.5,
-			'color': 'red'
+			'opacity': 0.5
 		},
 		'highlight': {
 			'weight': 5,
@@ -334,11 +333,24 @@
 		    markerColor: 'cadetblue',
 		    iconColor: 'white'
 		  });
+	
 	var startMarker = L.AwesomeMarkers.icon({
 		    icon: 'fa-hand-o-down ',
 		    markerColor: 'green',
 		    iconColor: 'white'
 		  });	
+
+	var trailColors = {
+			   "Scalette": "#ff3135", 
+			   "Vigniola": "#ff3135", 
+			   "Strega": "ff3135", 
+			   "Mezza Strega": "#009b2e",
+			   "Bucca Del Bandito - Via Volterraio": "#009b2e", 
+			   "Bucca Del Monte - Cima Del Monte": "#009b2e", 
+			   "Cima Del Monte": "#ce06cb",
+			   "Laghetto Rosso": "#fd9a00"
+			  };
+	
 	// Iterate over groupKML and make end and start markers, then attach event listeners..	
 	groupKML.eachLayer(function (layer) {	
 		
@@ -348,8 +360,10 @@
 			var startPt = new L.marker(latlngs[0], {icon: startMarker});
 			endPt.addTo(map);
 			startPt.addTo(map);
-			layer.setStyle(style.default);
-			console.log(layer.getLayers()[0].feature.properties.name);
+			layer.setStyle({
+				'weight': 3,
+				'color': trailColors[(layer.getLayers()[0].feature.properties.name)]
+			});
 		});			
 
 		// Mouseover handler
