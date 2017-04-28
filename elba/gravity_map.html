@@ -146,8 +146,9 @@
 			$("#gpx").prop('href', '../elba/KML/CimaDelMonte.gpx');
 			$("#kml").prop('href', '../elba/KML/CimaDelMonte.kml');
 			$("#infopanel").fadeIn("slow");
-		});			
-
+		})
+		.SetStyle('color': trailColors['Cima Del Monte - Porto Azzurro']});
+	
 	var BuccaDelBandito1KML = omnivore.kml('../elba/KML/BuccaDelBandito1.kml')
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
@@ -270,7 +271,9 @@
 		StregaKML,
 		VigniolaKML
 	]);
-
+	
+	var layer_ids = [];
+		
 	// Iterate over groupKML
 	groupKML.eachLayer(function (layer) {
 		
