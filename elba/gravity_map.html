@@ -317,13 +317,18 @@
 		StregaKML,
 		VigniolaKML
 	]);
-		
-	// Iterate over groupKML
+	
 	// used icons for markers:
+	
 	 var endMarker = L.AwesomeMarkers.icon({
-		    icon: 'flag'
+		    icon: 'fa-map-marker'
 		  });
 	
+	 var endMarker = L.AwesomeMarkers.icon({
+		    icon: ''fa fa-hand-o-down'
+		  });	
+	
+	// Iterate over groupKML and make end and start markers, then attach event listeners..	
 	groupKML.eachLayer(function (layer) {	
 		
 		layer.on('ready', function() { 
