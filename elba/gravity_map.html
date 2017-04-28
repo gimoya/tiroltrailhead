@@ -270,6 +270,17 @@
 	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
 	*/	
 
+	var groupKML = new L.LayerGroup([
+		CimaDelMonteKML,
+		LaghettoRossoKML,
+		BuccaDelBandito1KML,
+		BuccaDelBandito2KML,		
+		MezzaStregaKML,
+		ScaletteKML,
+		StregaKML,
+		VigniolaKML
+	]);
+/*
 	var style = {
 		'default': {
 			'weight': 3,
@@ -299,18 +310,7 @@
 	  layer.setStyle(style.default);
 	  highlight = null;
 	}
-
-	var groupKML = new L.LayerGroup([
-		CimaDelMonteKML,
-		LaghettoRossoKML,
-		BuccaDelBandito1KML,
-		BuccaDelBandito2KML,		
-		MezzaStregaKML,
-		ScaletteKML,
-		StregaKML,
-		VigniolaKML
-	]);
-
+	
 	// Iterate over groupKML
 	groupKML.eachLayer(function (layer) {
 				
@@ -332,7 +332,7 @@
 			unsetHighlight(layer);
 			$("#layer-name-info").html('...');
 		});
-	});
+	});*/
 
 	var map = L.map('map', {
 	  center: [42.808660, 10.393714],
