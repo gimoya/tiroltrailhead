@@ -271,8 +271,6 @@
 	// Iterate over groupKML
 	groupKML.eachLayer(function (layer) {
 		
-		new L.CircleMarker(layer.getLayers(0)[0]._latlngs[0]).addTo(map)
-		
 		layer.on('ready', function() { 
 			layer.setStyle(style.default);
 		});			
@@ -301,6 +299,11 @@
 	  zoomControl: false,
 	  layers: [mapbox_outdoorLayer, groupKML]
 	});
+	
+	groupKML.eachLayer(function (layer) {	
+		var startPt = new L.CircleMarker(layer.getLayers(0)[0]._latlngs[0]);
+		startPt.addTo(map);
+	}
 	
 	new L.Control.Zoom({ position: 'topright' }).addTo(map);
 	
