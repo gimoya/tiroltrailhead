@@ -132,7 +132,19 @@
 	  attribution: mapbox_Attr 
 	});		
 
-	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
+	//Create a color dictionary based on layer names
+	var trailColors = {"Scalette":"#ff3135", "Vigniola":"#ff3135", "Strega":"ff3135", "Mezza Strega":"#009b2e",
+	    "Bucca Del Bandito - Via Volterraio":"#009b2e", "Bucca Del Bandito - Cima Del Monte":"#009b2e", "Cima Del Monte - Porto Azzurro":"#ce06cb", 
+	    "Laghetto Rosso":"#fd9a00"};
+	
+	var customLayer = L.geoJson(null, {
+	    // http://leafletjs.com/reference.html#geojson-style
+	    style: function(feature) {
+		return { color: trailColors[feature.properties.name] };
+	    }
+	});
+	
+	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml', null, customLayer)
 		.on('click', function(e) {
 			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 			$("#title").css("font-family", "Fruktur");
