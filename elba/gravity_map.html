@@ -320,7 +320,9 @@
 	groupKML.eachLayer(function (layer) {	
 		
 		layer.on('ready', function() { 
-			var startPt = new L.CircleMarker(layer.getLayers(0)[0]._latlngs[0]);
+			// you can set .my-div-icon styles in CSS			
+			var myIcon = L.divIcon({className: 'my-div-icon'});
+			var startPt = new L.marker(layer.getLayers(0)[0]._latlngs[0], {icon: myIcon});
 			startPt.addTo(map);				
 			layer.setStyle(style.default);
 		});			
