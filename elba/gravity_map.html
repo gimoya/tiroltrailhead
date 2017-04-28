@@ -333,7 +333,7 @@
 		  });
 	
 	var startMarker = L.AwesomeMarkers.icon({
-		    icon: 'fa-map-marker'
+		    icon: 'fa-play-circle'
 		  });	
 	
 	// Iterate over groupKML and make end and start markers, then attach event listeners..	
@@ -342,7 +342,7 @@
 		layer.on('ready', function() { 
 			var latlngs = layer.getLayers(0)[0]._latlngs;
 			var startPt = new L.marker(latlngs[0], {icon: startMarker}); 
-			var startPt = new L.marker(latlngs[latlngs.length - 1], {icon: endMarker});
+			var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endMarker});
 			startPt.addTo(map);
 			endPt.addTo(map);
 			layer.setStyle(style.default);
