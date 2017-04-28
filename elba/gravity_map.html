@@ -137,12 +137,45 @@
 	    "Bucca Del Bandito - Via Volterraio":"#009b2e", "Bucca Del Bandito - Cima Del Monte":"#009b2e", "Cima Del Monte - Porto Azzurro":"#ce06cb", 
 	    "Laghetto Rosso":"#fd9a00"};
 	
-	var customLayer = L.geoJson(null, {
-	    // http://leafletjs.com/reference.html#geojson-style
-	    style: function(feature) {
-		return { color: trailColors[feature.properties.name] };
+	function style(feature) {
+	    return {
+		color: trailColors[feature.properties.name]
+		dashArray: '3'
+	    };
+	}
+	
+	function highlightFeature(e) {
+	    var layer = e.target;
+
+	    layer.setStyle({
+		weight: 2,
+		color: '#666',
+		dashArray: ''
+	    });
+
+	    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+		layer.bringToFront();
 	    }
-	});
+	}	
+	
+	var customLayer;
+				      
+	function resetHighlight(e) {
+	    customLayer.resetStyle(e.target);
+	}	
+	
+	function onEachFeature(feature, layer) {
+	    layer.on({
+		mouseover: highlightFeature,
+		mouseout: resetHighlight
+	    });
+	}	
+	
+	customLayer = L.geoJson(null, {
+	    // http://leafletjs.com/reference.html#geojson-style
+	    style: style,
+	    onEachFeature: onEachFeature		
+	});	
 	
 	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml', null, customLayer)
 		.on('click', function(e) {
