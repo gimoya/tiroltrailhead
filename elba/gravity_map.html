@@ -267,11 +267,11 @@
 		StregaKML,
 		VigniolaKML
 	]);
-	
-	var layer_ids = [];
 		
 	// Iterate over groupKML
 	groupKML.eachLayer(function (layer) {
+		
+		new L.CircleMarker(layer.getLayers(0)[0]._latlngs[0]).addTo(map)
 		
 		layer.on('ready', function() { 
 			layer.setStyle(style.default);
@@ -294,15 +294,6 @@
 			$("#layer-name-info").html('...');
 		});	
 	});
-
-	ScaletteKML.setStyle({'color':'cyan'});
-	VigniolaKML.setStyle({'color':'blue'});
-	StregaKML.setStyle({'color':'green'});
-	MezzaStregaKML.setStyle({'color':'violet'});
-	LaghettoRossoKML.setStyle({'color':'red'});
-	BuccaDelBandito2KML.setStyle({'color':'black'});
-	BuccaDelBandito1KML.setStyle({'color':'black'});
-	CimaDelMonteKML.setStyle({'color':'yellow'});
 	
 	var map = L.map('map', {
 	  center: [42.808660, 10.393714],
