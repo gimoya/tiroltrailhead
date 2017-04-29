@@ -36,6 +36,12 @@
 		margin: 0;
 	}
 	    
+	#map {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}	    
+	    
 	.awesome-marker i {
 	    font-size: 16px;
 	    margin-top: 10px;
@@ -43,12 +49,6 @@
 	    
 	.custom-control {
 		font-family: Exo;
-	}
-  
-	#map {
-		position: absolute;
-		width: 100%;
-		height: 100%;
 	}
 	 
 	/* 
@@ -102,7 +102,18 @@
 		z-index: 400;
 		padding: 0.4em;
 	    	bottom: 12.5em;		
-		white-space: nowrap;
+	}
+	    
+	#poi-info {
+		width: 33%;
+		height:5%;
+		padding: 1em;
+		top: 0;
+		right:0;
+		display: none; 
+		position: fixed; 
+		z-index: 100; 
+		background-color: rgba(0,0,0,0.70); 
 	}
 	    
 	#logo {
@@ -122,9 +133,7 @@
 			width: 50%; 
 		}	
 		#info, #layer-name-info {
-			font-size: 80%;
-			width: 40%;
-			display: none;
+			display: none,
 		}
 		#tracks {
 			font-size:1.75em;
@@ -133,306 +142,308 @@
     
 	</style>
 </head>
+	
 <body>
-<div id="layer-name-info" class="leaflet-bar">...</div>
-<div id="infopanel">
-	<div id="photos"></div>		
-	<div id="title"></div>
-	<div id="info"></div>
-	<div id="tracks">
-		<a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a>
+	<div id="poi-info"></div>
+	<div id="layer-name-info" class="leaflet-bar">...</div>
+	<div id="infopanel">
+		<div id="photos"></div>		
+		<div id="title"></div>
+		<div id="info"></div>
+		<div id="tracks">
+			<a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a>
+		</div>
 	</div>
-</div>
 	<img id="logo" src="elba_gravity_park.png"></img>
-<div id="map">
-</div>
-<script language="javascript">	
+	<div id="map"></div>
 	
-	var map = L.map('map', {
-	  center: [42.808660, 10.393714],
-	  zoom: 13,
-	  maxZoom: 15,
-	  minZoom: 11,
-	  zoomControl: false
-	});
-	
-	new L.Control.Zoom({ position: 'topright' }).addTo(map);
-	
-	var toggle = L.easyButton({
-	  position: 'topright',
-	  states: [{
-		stateName: 'basemap-outdoor',
-		icon: '<span class="custom-control">T</span>',
-		title: 'change basemap back to satellite',		
-		onClick: function(control) {
-		  map.removeLayer(mapbox_outdoorLayer);
-		  map.addLayer(mapbox_satelliteLayer);
-		  control.state('basemap-satellite');
-		}
-	  }, {
-		stateName: 'basemap-satellite',
-		icon: '<span class="custom-control">S</span>',
-		title: 'change basemap to outdoor/terrain',
-		onClick: function(control) {
-		  map.removeLayer(mapbox_satelliteLayer);
-		  map.addLayer(mapbox_outdoorLayer);
-		  control.state('basemap-outdoor');
-		},
-	  }]
-	});	
-	
-	toggle.addTo(map);
-	
-	/*
-	L.control.layers(baseLayers).addTo(map);
-	L.control.locate({
-		strings: {
-			title: "Show me where I am, yo!"
-		}
+	<script language="javascript">	
 
-	}).addTo(map);
-	*/
-	
-	map.on('click', function() {
-		$("#infopanel").fadeOut("slow");	
-	});	
-
-	var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
-	var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
-	var mapbox_outdoorUrl = 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
-
-	var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
-	  attribution: mapbox_Attr 
-	});
-
-	var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
-	  attribution: mapbox_Attr 
-	});		
-	
-	mapbox_outdoorLayer.addTo(map);
-
-	var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
-		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Fruktur");
-			$("#title").html(e.layer.feature.properties.name);
-			$("#info").html(e.layer.feature.properties.description);
-			$("#gpx").prop('href', '../elba/KML/CimaDelMonte.gpx');
-			$("#kml").prop('href', '../elba/KML/CimaDelMonte.kml');
-			$("#infopanel").fadeIn("slow");
-		})
-		
-	var BuccaDelBandito1KML = omnivore.kml('../elba/KML/BuccaDelBandito1.kml')
-		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Creepster");
-			$("#title").html(e.layer.feature.properties.name);
-			$("#info").html(e.layer.feature.properties.description);
-			$("#gpx").prop('href', '../elba/KML/BuccaDelBandito1.gpx');
-			$("#kml").prop('href', '../elba/KML/BuccaDelBandito1.kml');
-			$("#infopanel").fadeIn("slow");
-		});			
-
-	var BuccaDelBandito2KML = omnivore.kml('../elba/KML/BuccaDelBandito2.kml')
-		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Creepster");
-			$("#title").html(e.layer.feature.properties.name);
-			$("#info").html(e.layer.feature.properties.description);
-			$("#gpx").prop('href', '../elba/KML/BuccaDelBandito2.gpx');
-			$("#kml").prop('href', '../elba/KML/BuccaDelBandito2.kml');
-			$("#infopanel").fadeIn("slow");
-		});
-	
-	var LaghettoRossoKML = omnivore.kml('../elba/KML/LaghettoRosso.kml')
-		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Ultra");
-			$("#title").html(e.layer.feature.properties.name);
-			$("#info").html(e.layer.feature.properties.description);
-			$("#gpx").prop('href', '../elba/KML/LaghettoRosso.gpx');
-			$("#kml").prop('href', '../elba/KML/LaghettoRosso.kml');
-			$("#infopanel").fadeIn("slow");
-		});			
-
-	var MezzaStregaKML = omnivore.kml('../elba/KML/MezzaStrega.kml')
-		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Ewert");
-			$("#title").html(e.layer.feature.properties.name);
-			$("#info").html(e.layer.feature.properties.description);
-			$("#gpx").prop('href', '../elba/KML/MezzaStrega.gpx');
-			$("#kml").prop('href', '../elba/KML/MezzaStrega.kml');
-			$("#infopanel").fadeIn("slow");
+		var map = L.map('map', {
+		  center: [42.808660, 10.393714],
+		  zoom: 13,
+		  maxZoom: 15,
+		  minZoom: 11,
+		  zoomControl: false
 		});
 
-	var StregaKML = omnivore.kml('../elba/KML/Strega.kml', null)
-		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Fugaz One");
-			$("#title").html(e.layer.feature.properties.name);
-			$("#info").html(e.layer.feature.properties.description);
-			$("#gpx").prop('href', '../elba/KML/Strega.gpx');
-			$("#kml").prop('href', '../elba/KML/Strega.kml');
-			$("#infopanel").fadeIn("slow");
-		});
-		
-	var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
-		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
-			$("#title").css("font-family", "Hanalei");
-			$("#title").html(e.layer.feature.properties.name);
-			$("#info").html(e.layer.feature.properties.description);
-			$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
-			$("#kml").prop('href', '../elba/KML/Scalette.kml');
-			$("#infopanel").fadeIn("slow");
-		});			
+		new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
-	var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml')
-		.on('click', function(e) {
-			$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-			$("#title").css("font-family", "Bungee Shade");
-			$("#title").html(e.layer.feature.properties.name);
-			$("#info").html(e.layer.feature.properties.description);
-			$("#gpx").prop('href', '../elba/KML/Vigniola.gpx');
-			$("#kml").prop('href', '../elba/KML/Vigniola.kml');
-			$("#infopanel").fadeIn("slow");
-		});
-	
-	/*
-	For highlighting features see:
-	http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
-	*/	
-
-	var style = {
-		'default': {
-			'weight': 4,
-			'opacity': 0.4
-		},
-		'highlight': {
-			'weight': 6,
-			'opacity': 0.6
-		}
-	};
-
-	// Variable for storing highlighted layer
-	var highlight;
-
-	function setHighlight (layer) {
-	  // Check if something's highlighted, if so unset highlight
-	  if (highlight) {
-		unsetHighlight(highlight);
-	  }
-	  // Set highlight style on layer and store to variable
-	  layer.setStyle(style.highlight);
-	  highlight = layer;
-	}
-
-	function unsetHighlight (layer) {
-	  // Set default style and clear variable
-	  layer.setStyle(style.default);
-	  highlight = null;
-	}
-
-	var groupKML = new L.LayerGroup([
-		CimaDelMonteKML,
-		LaghettoRossoKML,
-		BuccaDelBandito1KML,
-		BuccaDelBandito2KML,		
-		MezzaStregaKML,
-		ScaletteKML,
-		StregaKML,
-		VigniolaKML
-	]);
-	
-	// used icons for markers:
-	L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
-	
-	var endIcon = L.AwesomeMarkers.icon({
-		    icon: 'fa-flag-checkered',
-		    markerColor: 'cadetblue',
-		    iconColor: 'white'
-		  });
-	
-	var startIcon = L.AwesomeMarkers.icon({
-		    icon: 'fa-hand-o-down',
-		    markerColor: 'green',
-		    iconColor: 'white'
-		  });	
-	
-	var bikeRentIcon = L.AwesomeMarkers.icon({
-		    icon: 'fa-bicycle',
-		    markerColor: 'blue',
-		    iconColor: 'yellow'
-		  });	
-	
-	var bikeLoadingIcon = L.AwesomeMarkers.icon({
-		    icon: 'fa-truck',
-		    markerColor: 'purple',
-		    iconColor: 'yellow'
-		  });	
-	
-	function openShopURL(e) {
-		$("#layer-name-info").html('<a href="http://www.elbagravitybikerent.it/">Elba Gravity Bike Rent</a>');
-		$("#layer-name-info").css("display", "block");
-	}
-	
-	function showTelDario(e) {
-		$("#layer-name-info").html('<a href="tel:+39 320 264 9391">Call +39 320 264 9391</a>');
-		$("#layer-name-info").css("display", "block");
-	}
-	
-	new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon}).on('click', openShopURL).addTo(map);	
-	new L.marker([42.799289, 10.357636], {icon: bikeLoadingIcon}).on('click', showTelDario).addTo(map);
-	
-	var trailColors = {
-			   "Scalette": "#ff3135", 
-			   "Vigniola": "#ff3135", 
-			   "Strega": "#ff3135", 
-			   "Mezza Strega": "#009b2e",
-			   "Bucca Del Bandito - Via Volterraio": "#009b2e", 
-			   "Bucca Del Bandito - Cima Del Monte": "#009b2e", 
-			   "Cima Del Monte - Porto Azzurro": "#ce06cb",
-			   "Laghetto Rosso": "#fd9a00"
-	};
-	
-	// Iterate over groupKML and make end and start markers, then attach event listeners..	
-	groupKML.eachLayer(function (layer) {	
-	
-		layer.on('ready', function() { 
-			var latlngs = layer.getLayers(0)[0]._latlngs;
-			var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon});
-			var startPt = new L.marker(latlngs[0], {icon: startIcon});
-			endPt.addTo(map);
-			startPt.addTo(map);
-			layer.setStyle({
-				'weight': 3,
-				'color': trailColors[layer.getLayers()[0].feature.properties.name]
-			});
-			console.log(layer.getLayers()[0].feature.properties.name);
-		});			
-
-		// Mouseover handler
-		layer.on('mouseover', function (e) {
-			// Set highlight
-			setHighlight(layer);
-			$("#layer-name-info").html(e.layer.feature.properties.name);
-			console.log(e.latlng);
-			//console.log(L.Map.latLngToLayerPoint(e.latlng));
-			
-		});
-
-		// Mouseout handler
-		layer.on('mouseout', function (e) {
-			 // Unset highlight
-			unsetHighlight(layer);
-			$("#layer-name-info").html('...');
+		var toggle = L.easyButton({
+		  position: 'topright',
+		  states: [{
+			stateName: 'basemap-outdoor',
+			icon: '<span class="custom-control">T</span>',
+			title: 'change basemap back to satellite',		
+			onClick: function(control) {
+			  map.removeLayer(mapbox_outdoorLayer);
+			  map.addLayer(mapbox_satelliteLayer);
+			  control.state('basemap-satellite');
+			}
+		  }, {
+			stateName: 'basemap-satellite',
+			icon: '<span class="custom-control">S</span>',
+			title: 'change basemap to outdoor/terrain',
+			onClick: function(control) {
+			  map.removeLayer(mapbox_satelliteLayer);
+			  map.addLayer(mapbox_outdoorLayer);
+			  control.state('basemap-outdoor');
+			},
+		  }]
 		});	
-	});
 
-	map.addLayer(groupKML);
-	
+		toggle.addTo(map);
 
-</script>
+		/*
+		L.control.layers(baseLayers).addTo(map);
+		L.control.locate({
+			strings: {
+				title: "Show me where I am, yo!"
+			}
+
+		}).addTo(map);
+		*/
+
+		map.on('click', function() {
+			$("#infopanel").fadeOut("slow");	
+		});	
+
+		var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
+		var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
+		var mapbox_outdoorUrl = 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
+
+		var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
+		  attribution: mapbox_Attr 
+		});
+
+		var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
+		  attribution: mapbox_Attr 
+		});		
+
+		mapbox_outdoorLayer.addTo(map);
+
+		var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
+			.on('click', function(e) {
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#title").css("font-family", "Fruktur");
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#gpx").prop('href', '../elba/KML/CimaDelMonte.gpx');
+				$("#kml").prop('href', '../elba/KML/CimaDelMonte.kml');
+				$("#infopanel").fadeIn("slow");
+			})
+
+		var BuccaDelBandito1KML = omnivore.kml('../elba/KML/BuccaDelBandito1.kml')
+			.on('click', function(e) {
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#title").css("font-family", "Creepster");
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#gpx").prop('href', '../elba/KML/BuccaDelBandito1.gpx');
+				$("#kml").prop('href', '../elba/KML/BuccaDelBandito1.kml');
+				$("#infopanel").fadeIn("slow");
+			});			
+
+		var BuccaDelBandito2KML = omnivore.kml('../elba/KML/BuccaDelBandito2.kml')
+			.on('click', function(e) {
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#title").css("font-family", "Creepster");
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#gpx").prop('href', '../elba/KML/BuccaDelBandito2.gpx');
+				$("#kml").prop('href', '../elba/KML/BuccaDelBandito2.kml');
+				$("#infopanel").fadeIn("slow");
+			});
+
+		var LaghettoRossoKML = omnivore.kml('../elba/KML/LaghettoRosso.kml')
+			.on('click', function(e) {
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#title").css("font-family", "Ultra");
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#gpx").prop('href', '../elba/KML/LaghettoRosso.gpx');
+				$("#kml").prop('href', '../elba/KML/LaghettoRosso.kml');
+				$("#infopanel").fadeIn("slow");
+			});			
+
+		var MezzaStregaKML = omnivore.kml('../elba/KML/MezzaStrega.kml')
+			.on('click', function(e) {
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#title").css("font-family", "Ewert");
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#gpx").prop('href', '../elba/KML/MezzaStrega.gpx');
+				$("#kml").prop('href', '../elba/KML/MezzaStrega.kml');
+				$("#infopanel").fadeIn("slow");
+			});
+
+		var StregaKML = omnivore.kml('../elba/KML/Strega.kml', null)
+			.on('click', function(e) {
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#title").css("font-family", "Fugaz One");
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#gpx").prop('href', '../elba/KML/Strega.gpx');
+				$("#kml").prop('href', '../elba/KML/Strega.kml');
+				$("#infopanel").fadeIn("slow");
+			});
+
+		var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
+			.on('click', function(e) {
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
+				$("#title").css("font-family", "Hanalei");
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
+				$("#kml").prop('href', '../elba/KML/Scalette.kml');
+				$("#infopanel").fadeIn("slow");
+			});			
+
+		var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml')
+			.on('click', function(e) {
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#title").css("font-family", "Bungee Shade");
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#gpx").prop('href', '../elba/KML/Vigniola.gpx');
+				$("#kml").prop('href', '../elba/KML/Vigniola.kml');
+				$("#infopanel").fadeIn("slow");
+			});
+
+		/*
+		For highlighting features see:
+		http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
+		*/	
+
+		var style = {
+			'default': {
+				'weight': 4,
+				'opacity': 0.4
+			},
+			'highlight': {
+				'weight': 6,
+				'opacity': 0.6
+			}
+		};
+
+		// Variable for storing highlighted layer
+		var highlight;
+
+		function setHighlight (layer) {
+		  // Check if something's highlighted, if so unset highlight
+		  if (highlight) {
+			unsetHighlight(highlight);
+		  }
+		  // Set highlight style on layer and store to variable
+		  layer.setStyle(style.highlight);
+		  highlight = layer;
+		}
+
+		function unsetHighlight (layer) {
+		  // Set default style and clear variable
+		  layer.setStyle(style.default);
+		  highlight = null;
+		}
+
+		var groupKML = new L.LayerGroup([
+			CimaDelMonteKML,
+			LaghettoRossoKML,
+			BuccaDelBandito1KML,
+			BuccaDelBandito2KML,		
+			MezzaStregaKML,
+			ScaletteKML,
+			StregaKML,
+			VigniolaKML
+		]);
+
+		// used icons for markers:
+		L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
+
+		var endIcon = L.AwesomeMarkers.icon({
+			    icon: 'fa-flag-checkered',
+			    markerColor: 'cadetblue',
+			    iconColor: 'white'
+			  });
+
+		var startIcon = L.AwesomeMarkers.icon({
+			    icon: 'fa-hand-o-down',
+			    markerColor: 'green',
+			    iconColor: 'white'
+			  });	
+
+		var bikeRentIcon = L.AwesomeMarkers.icon({
+			    icon: 'fa-bicycle',
+			    markerColor: 'blue',
+			    iconColor: 'yellow'
+			  });	
+
+		var bikeLoadingIcon = L.AwesomeMarkers.icon({
+			    icon: 'fa-truck',
+			    markerColor: 'purple',
+			    iconColor: 'yellow'
+			  });	
+
+		function openShopURL(e) {
+			$("#poi-info").html('<a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity Bike Rent</a>');
+			$("#poi-info").css("display", "block");
+		}
+
+		function showTelDario(e) {
+			$("#poi-info").html('<a href="tel:+39 320 264 9391">Call +39 320 264 9391</a>');
+			$("#poi-info").css("display", "block");
+		}
+
+		new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon}).on('click', openShopURL).addTo(map);	
+		new L.marker([42.799289, 10.357636], {icon: bikeLoadingIcon}).on('click', showTelDario).addTo(map);
+
+		var trailColors = {
+				   "Scalette": "#ff3135", 
+				   "Vigniola": "#ff3135", 
+				   "Strega": "#ff3135", 
+				   "Mezza Strega": "#009b2e",
+				   "Bucca Del Bandito - Via Volterraio": "#009b2e", 
+				   "Bucca Del Bandito - Cima Del Monte": "#009b2e", 
+				   "Cima Del Monte - Porto Azzurro": "#ce06cb",
+				   "Laghetto Rosso": "#fd9a00"
+		};
+
+		// Iterate over groupKML and make end and start markers, then attach event listeners..	
+		groupKML.eachLayer(function (layer) {	
+
+			layer.on('ready', function() { 
+				var latlngs = layer.getLayers(0)[0]._latlngs;
+				var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon});
+				var startPt = new L.marker(latlngs[0], {icon: startIcon});
+				endPt.addTo(map);
+				startPt.addTo(map);
+				layer.setStyle({
+					'weight': 3,
+					'color': trailColors[layer.getLayers()[0].feature.properties.name]
+				});
+				console.log(layer.getLayers()[0].feature.properties.name);
+			});			
+
+			// Mouseover handler
+			layer.on('mouseover', function (e) {
+				// Set highlight
+				setHighlight(layer);
+				$("#layer-name-info").html(e.layer.feature.properties.name);
+				console.log(e.latlng);
+				//console.log(L.Map.latLngToLayerPoint(e.latlng));
+
+			});
+
+			// Mouseout handler
+			layer.on('mouseout', function (e) {
+				 // Unset highlight
+				unsetHighlight(layer);
+				$("#layer-name-info").html('...');
+			});	
+		});
+
+		map.addLayer(groupKML);
+
+
+	</script>
 </body>	
 </html>
