@@ -354,9 +354,11 @@
 	function openShopURL(e) {
 		$("#layer-name-info").html("..here will be the shop link!");
 	}
+	
 	function showTelDario(e) {
 		$("#layer-name-info").html("..clickable cellphone no. of shuttle");
 	}
+	
 	new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon}).on('click', openShopURL).addTo(map);	
 	new L.marker([42.799289, 10.357636], {icon: bikeLoadingIcon}).on('click', showTelDario).addTo(map);
 	
@@ -369,10 +371,11 @@
 			   "Bucca Del Bandito - Cima Del Monte": "#009b2e", 
 			   "Cima Del Monte - Porto Azzurro": "#ce06cb",
 			   "Laghetto Rosso": "#fd9a00"
+	};
 	
 	// Iterate over groupKML and make end and start markers, then attach event listeners..	
 	groupKML.eachLayer(function (layer) {	
-		
+	
 		layer.on('ready', function() { 
 			var latlngs = layer.getLayers(0)[0]._latlngs;
 			var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon});
