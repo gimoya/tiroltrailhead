@@ -36,6 +36,10 @@
 		margin: 0;
 	}
 	    
+	.leaflet-bar a, .leaflet-bar a:	hover {
+		background-color: transparent;
+	}
+	    
 	.awesome-marker i {
 	    font-size: 16px;
 	    margin-top: 10px;
@@ -122,7 +126,9 @@
 			width: 50%; 
 		}	
 		#info, #layer-name-info {
-			display:none;
+			font-size: 50%;
+			width: 40%;
+			display: none;
 		}
 		#tracks {
 			font-size:1.75em;
@@ -372,10 +378,12 @@
 	
 	function openShopURL(e) {
 		$("#layer-name-info").html('<a href="http://www.elbagravitybikerent.it/">Elba Gravity Bike Rent</a>');
+		$("#layer-name-info").css("display", "block!important");
 	}
 	
 	function showTelDario(e) {
 		$("#layer-name-info").html('<a href="tel:+39 320 264 9391">Call +39 320 264 9391</a>');
+		$("#layer-name-info").css("display", "block!important");
 	}
 	
 	new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon}).on('click', openShopURL).addTo(map);	
