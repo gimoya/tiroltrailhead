@@ -163,7 +163,12 @@
 		  minZoom: 11,
 		  zoomControl: false
 		});
-
+		
+		map.on('click', function() {
+			$("#infopanel").fadeOut("slow");
+			$("#poi-info").fadeOut("slow");
+		});
+		
 		new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
 		var toggle = L.easyButton({
@@ -199,11 +204,7 @@
 			}
 
 		}).addTo(map);
-		*/
-
-		map.on('click', function() {
-			$("#infopanel").fadeOut("slow");	
-		});	
+		*/	
 
 		var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 		var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
@@ -393,18 +394,13 @@
 			// console.log(latLngToLayerPoint(e.latlng));
 		}
 		
-		function hideIt(e) {
-			$("#poi-info").fadeOut("slow")
-		}
 
 		new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon})
 			.on('mouseover', openShopURL)
-			.on('mouseout', hideIt)
 			.addTo(map);	
 		
 		new L.marker([42.799289, 10.357636], {icon: bikeLoadingIcon})
 			.on('mouseover', showTelDario)
-			.on('mouseout', hideIt)
 			.addTo(map);
 		
 		var trailColors = {
@@ -453,7 +449,6 @@
 		});
 
 		map.addLayer(groupKML);
-
 
 	</script>
 </body>	
