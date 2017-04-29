@@ -390,12 +390,23 @@
 			$("#poi-info").css("display", "block");
 			$("#poi-info").css("top", "10px");
 			$("#poi-info").css("left", "100px");
-			console.log(latLngToLayerPoint(e.latlng));
+			// console.log(latLngToLayerPoint(e.latlng));
+		}
+		
+		function hideIt(e) {
+			$("#poi-info").fadeOut("slow")
 		}
 
-		new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon}).on('click', openShopURL).addTo(map);	
-		new L.marker([42.799289, 10.357636], {icon: bikeLoadingIcon}).on('click', showTelDario).addTo(map);
-
+		new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon})
+			.on('mouseover', openShopURL)
+			.on('mouseout', hideIt)
+			.addTo(map);	
+		
+		new L.marker([42.799289, 10.357636], {icon: bikeLoadingIcon})
+			.on('mouseover', showTelDario)
+			.on('mouseout', hideIt)
+			.addTo(map);
+		
 		var trailColors = {
 				   "Scalette": "#ff3135", 
 				   "Vigniola": "#ff3135", 
