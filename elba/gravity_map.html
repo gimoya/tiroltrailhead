@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="http://watson.lennardvoogdt.nl/Leaflet.awesome-markers/dist/leaflet.awesome-markers.css">
 	
 	<!-- GOOGLE FONTS -->	
-	<link href='http://fonts.googleapis.com/css?family=Bangers|Fugaz+One|Hanalei|Ranga|Ultra|Exo:Bold|Fredoka+One|Sigmar+One|Bungee|Bungee+Shade|Creepster|Ewert|Fruktur|Monoton|Rubik:900' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Bangers|Fugaz+One|Hanalei|Ranga|Ultra|Exo:Bold|Fredoka+One|Sigmar+One|Bungee+Inline|Creepster|Ewert|Fruktur|Monoton|Rubik:900' rel='stylesheet' type='text/css'>	
 	<!-- GOOGLE FONTS -->
 
 	
@@ -219,14 +219,14 @@
 		mapbox_outdoorLayer.addTo(map);		
 		
 		var trailColors = {
-				   "Scalette": "#ff3135", 
-				   "Vigniola": "#ff3135", 
-				   "Strega": "#ff3135", 
+				   "Scalette": "#eb7b03", 
+				   "Vigniola": "#6826ce", 
+				   "Strega": "#d7374c", 
 				   "Mezza Strega": "#009b2e",
 				   "Bucca Del Bandito - Via Volterraio": "#009b2e", 
 				   "Bucca Del Bandito - Cima Del Monte": "#009b2e", 
-				   "Cima Del Monte - Porto Azzurro": "#ce06cb",
-				   "Laghetto Rosso": "#fd9a00"
+				   "Cima Del Monte - Porto Azzurro": "#0d94ca",
+				   "Laghetto Rosso": "#fc2500"
 		};
 		
 		function trailClick(e) {
@@ -304,7 +304,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Bungee Shade");
+				$("#title").css("font-family", "Bungee Inline");
 				$("#gpx").prop('href', '../elba/KML/Vigniola.gpx');
 				$("#kml").prop('href', '../elba/KML/Vigniola.kml');
 			});
