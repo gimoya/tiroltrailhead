@@ -65,9 +65,7 @@
 	a:active  {
 		transition: color .3s;
 		color: #007BE6;
-	}
-
-	.link { text-decoration: none; }	
+	}	
 	    
 	#infopanel {
 		display: none; 
@@ -159,7 +157,7 @@
 		var map = L.map('map', {
 		  center: [42.808660, 10.393714],
 		  zoom: 13,
-		  maxZoom: 15,
+		  maxZoom: 17,
 		  minZoom: 11,
 		  zoomControl: false
 		});
@@ -219,7 +217,14 @@
 		});		
 
 		mapbox_outdoorLayer.addTo(map);
-
+		
+		function trackClick(e) {
+				$("#title").html(e.layer.feature.properties.name);
+				$("#info").html(e.layer.feature.properties.description);
+				$("#infopanel").fadeIn("slow");
+				$("#poi-info").fadeOut("fast");
+		}
+		
 		var CimaDelMonteKML = omnivore.kml('../elba/KML/CimaDelMonte.kml')
 			.on('click', function(e) {
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
@@ -288,13 +293,11 @@
 
 		var ScaletteKML = omnivore.kml('../elba/KML/Scalette.kml')
 			.on('click', function(e) {
+				trackClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
 				$("#title").css("font-family", "Hanalei");
-				$("#title").html(e.layer.feature.properties.name);
-				$("#info").html(e.layer.feature.properties.description);
 				$("#gpx").prop('href', '../elba/KML/Scalette.gpx');
 				$("#kml").prop('href', '../elba/KML/Scalette.kml');
-				$("#infopanel").fadeIn("slow");
 			});			
 
 		var VigniolaKML = omnivore.kml('../elba/KML/Vigniola.kml')
