@@ -411,23 +411,21 @@
 					'weight': 5,
 					'color': trailColors[layer.getLayers()[0].feature.properties.name]
 				});
-				console.log(layer.getLayers()[0].feature.properties.name);
 			});			
 
 			// Mouseover handler
 			layer.on('mouseover', function (e) {
 				// Set highlight
 				setHighlight(layer);
+				$("#infopanel-right").css("display", "block");
 				$("#layer-name-info").html(e.layer.feature.properties.name);
-				console.log(e.latlng);
-				//console.log(L.Map.latLngToLayerPoint(e.latlng));
-
 			});
 
 			// Mouseout handler
 			layer.on('mouseout', function (e) {
 				 // Unset highlight
 				unsetHighlight(layer);
+				$("#infopanel-right").css("display", "block");
 				$("#layer-name-info").html('...');
 			});	
 		});
