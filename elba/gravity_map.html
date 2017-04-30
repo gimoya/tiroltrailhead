@@ -126,7 +126,7 @@
 	<div id="infopanel-right">
 		<div class="info-row" id="poi-info"></div>
 		<div class="info-row" id="layer-name-info"></div>
-		<!--div class="info-row"><img id="logo" src="elba_gravity_park.png"></div-->
+		<div class="info-row"><img id="logo" src="elba_gravity_park.png"></div>
 	</div>
 	<div id="infopanel-left">
 		<div id="photos"></div>		
@@ -369,17 +369,13 @@
 
 		function openShopURL(e) {
 			$("#poi-info").html('<a href="http://www.elbagravitybikerent.it/" target="_blank";>Go to Elba Gravity</br>Bike Shop/Rent</a>');
-			$("#poi-info").css("display", "block");
-			$("#poi-info").css("top", "10px");
-			$("#poi-info").css("right", "100px");
+			$("#infopanel-right").css("display", "block");
 			// console.log(latLngToLayerPoint(e.latlng));			
 		}
 
 		function showTelDario(e) {
 			$("#poi-info").html('<a href="tel:+39 320 264 9391">Shuttle Call</br>+39 320 264 9391</a>');
-			$("#poi-info").css("display", "block");
-			$("#poi-info").css("top", "10px");
-			$("#poi-info").css("right", "100px");
+			$("#infopanel-right").css("display", "block");
 			// console.log(latLngToLayerPoint(e.latlng));
 		}
 		
