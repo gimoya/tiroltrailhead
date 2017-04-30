@@ -69,8 +69,8 @@
 	}	
 	
 	// exceptation for control links..
-	.leaflet-bar a {
-	    color: black;
+	.leaflet-bar a:link {
+	    color: black!important;
 	}
 	    
 	#infopanel-left {
@@ -117,7 +117,7 @@
 		font-weight: bold;
 	}
 	    
-	@media screen and (max-width: 650px) {
+	@media (max-height: 850px) and (max-width: 750px) {
 		body {
 			font-size: 75%;
 		}
@@ -420,6 +420,7 @@
 			$("#layer-name-info").html('Start/Exit');
 			$("#infopanel-right").fadeIn("slow");
 		}
+		
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
 
