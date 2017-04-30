@@ -59,8 +59,11 @@
 		color: white;
 	}
 
-	a:link,
-	a:visited { color: #f9ff00; }
+	#info-panel-right a:link, #info-panel-right a:visited,
+	#info-panel-left a:link, #info-panel-left a:visited { 
+		color: #f9ff00; 
+	}
+
 	a:hover   { color: #7FDBFF; }
 	a:active  {
 		transition: color .3s;
@@ -409,12 +412,17 @@
 				.addTo(map);
 		}
 
+		function ptStartEndClick(e) {
+			$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
+			$("#layer-name-info").html(e.layer.feature.properties.description);
+			$("#infopanel-right").fadeIn("slow");
+		}
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
 
 			layer.on('ready', function() { 
 				var latlngs = layer.getLayers(0)[0]._latlngs;
-				var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon});
+				var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon}).on('click', ptStartEndClick);
 				var startPt = new L.marker(latlngs[0], {icon: startIcon});
 				endPt.addTo(map);
 				startPt.addTo(map);
@@ -428,16 +436,16 @@
 			layer.on('mouseover', function (e) {
 				// Set highlight
 				setHighlight(layer);
-				$("#infopanel-right").css("display", "block");
+				$("#infopanel-right").fadeIn("slow");
 				$("#layer-name-info").html(e.layer.feature.properties.name);
+				$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
 			});
 
 			// Mouseout handler
 			layer.on('mouseout', function (e) {
 				 // Unset highlight
 				unsetHighlight(layer);
-				$("#infopanel-right").css("display", "block");
-				$("#layer-name-info").html('...');
+				$("#layer-name-info").fadeOut("slow");
 			});	
 		});
 
