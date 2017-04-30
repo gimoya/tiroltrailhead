@@ -417,7 +417,7 @@
 
 		function ptStartEndClick(layer) {
 			$("#layer-name-info").css('color', trailColors[layer.getLayers()[0].feature.properties.name]);
-			$("#layer-name-info").html(layer.getLayers()[0].feature.properties.description);
+			$("#layer-name-info").html(layer.getLayers()[0].feature.properties.name);
 			$("#infopanel-right").fadeIn("slow");
 		}
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
