@@ -70,7 +70,7 @@
 	
 	// exceptation for control links..
 	.leaflet-control-container a { 
-		color: black; 
+		color: black!important; 
 	} 
 	    
 	#infopanel-left {
@@ -117,7 +117,7 @@
 		font-weight: bold;
 	}
 	    
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 560px) {
 		body {
 			font-size: 75%;
 		}
@@ -415,9 +415,9 @@
 				.addTo(map);
 		}
 
-		function ptStartEndClick(layer) {
-			$("#layer-name-info").css('color', trailColors[layer.getLayers()[0].feature.properties.name]);
-			$("#layer-name-info").html(layer.getLayers()[0].feature.properties.name);
+		function ptStartEndClick() {
+			$("#layer-name-info").css('color', white);
+			$("#layer-name-info").html('Trailhead | Trail Exit');
 			$("#infopanel-right").fadeIn("slow");
 		}
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
@@ -425,8 +425,8 @@
 
 			layer.on('ready', function() { 
 				var latlngs = layer.getLayers(0)[0]._latlngs;
-				var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon}).on('click', ptStartEndClick(layer));
-				var startPt = new L.marker(latlngs[0], {icon: startIcon});
+				var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon}).on('click', ptStartEndClick());
+				var startPt = new L.marker(latlngs[0], {icon: startIcon}).on('click',  ptStartEndClick());
 				endPt.addTo(map);
 				startPt.addTo(map);
 				layer.setStyle({
