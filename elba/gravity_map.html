@@ -78,10 +78,12 @@
 	}
 	    
 	#info-panel-right {
-		display:none;
-		position: fixed;	
+		display: none;
+		position: absolute;	
 		width: 15%;
-		height: 100%;
+		bottom: 10px;
+		right: 0px;
+		text-align: right;
 		z-index: 100; 
 		background-color: rgba(0,0,0,0.70);		
 		font-size: 2vw;
@@ -368,13 +370,13 @@
 			  });	
 
 		function openShopURL(e) {
-			$("#poi-info").html('<a href="http://www.elbagravitybikerent.it/" target="_blank";>Go to Elba Gravity</br>Bike Shop/Rent</a>');
+			$("#poi-info").html('Go to:</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
 			$("#infopanel-right").css("display", "block");
 			// console.log(latLngToLayerPoint(e.latlng));			
 		}
 
 		function showTelDario(e) {
-			$("#poi-info").html('<a href="tel:+39 320 264 9391">Shuttle Call</br>+39 320 264 9391</a>');
+			$("#poi-info").html('Shuttle Call</br><a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
 			$("#infopanel-right").css("display", "block");
 			// console.log(latLngToLayerPoint(e.latlng));
 		}
