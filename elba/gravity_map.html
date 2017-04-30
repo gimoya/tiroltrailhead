@@ -60,7 +60,7 @@
 	}
 
 	a:link,
-	a:visited { color: #2d94df; }
+	a:visited { color: #f9ff00; }
 	a:hover   { color: #7FDBFF; }
 	a:active  {
 		transition: color .3s;
@@ -90,6 +90,7 @@
 
 	.info-row {
 	    padding: 10px;
+	    text-align: right;
 	}  
 	    
 	#photos, #logo {
@@ -106,7 +107,8 @@
 	}
 	#layer-name-info, #poi-info {
 		font-family: 'Corbel', 'bold';
-		font-size: 2em;
+		font-size: 1.75em;
+		font-weight: bold;
 	}
 	    
 	@media screen and (max-width: 480px) {
@@ -124,6 +126,9 @@
 		}
 		#trail-info {
 			display: none;
+		}
+		#poi-info {
+			font-size: 1.25em;
 		}
 	}
     
