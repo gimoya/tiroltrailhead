@@ -316,11 +316,11 @@
 
 		var style = {
 			'default': {
-				'weight': 4,
+				'weight': 5,
 				'opacity': 0.4
 			},
 			'highlight': {
-				'weight': 6,
+				'weight': 7,
 				'opacity': 0.6
 			}
 		};
@@ -383,7 +383,7 @@
 			  });	
 
 		function openShopURL(e) {
-			$("#poi-info").html('<a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity Bike Rent</a>');
+			$("#poi-info").html('<a href="http://www.elbagravitybikerent.it/" target="_blank";>Go to Elba Gravity</br>Bike Shop/Rent</a>');
 			$("#poi-info").css("display", "block");
 			$("#poi-info").css("top", "10px");
 			$("#poi-info").css("right", "100px");
@@ -391,21 +391,29 @@
 		}
 
 		function showTelDario(e) {
-			$("#poi-info").html('<a href="tel:+39 320 264 9391">Call +39 320 264 9391</a>');
+			$("#poi-info").html('<a href="tel:+39 320 264 9391">Shuttle Call</br>+39 320 264 9391</a>');
 			$("#poi-info").css("display", "block");
 			$("#poi-info").css("top", "10px");
 			$("#poi-info").css("right", "100px");
 			// console.log(latLngToLayerPoint(e.latlng));
 		}
 		
-
+		var bikeLoadingPts = [
+			[42.799289, 10.357636],
+			[42.860381, 10.420435],
+			[42.843782, 10.400274],
+			[42.770250, 10.390604]
+		];
+		
 		new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon})
 			.on('click', openShopURL)
 			.addTo(map);	
 		
-		new L.marker([42.799289, 10.357636], {icon: bikeLoadingIcon})
-			.on('click', showTelDario)
-			.addTo(map);
+		for (i = 0; i < bikeLoadingPts.length; i++) { 
+			new L.marker(bikeLoadingPts[i], {icon: bikeLoadingIcon})
+				.on('click', showTelDario)
+				.addTo(map);
+		}
 
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
@@ -417,7 +425,7 @@
 				endPt.addTo(map);
 				startPt.addTo(map);
 				layer.setStyle({
-					'weight': 3,
+					'weight': 5,
 					'color': trailColors[layer.getLayers()[0].feature.properties.name]
 				});
 				console.log(layer.getLayers()[0].feature.properties.name);
