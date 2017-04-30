@@ -58,8 +58,7 @@
 		transition: color .4s;
 	}
 
-	#info-panel-right a:link, #info-panel-right a:visited,
-	#info-panel-left a:link, #info-panel-left a:visited { 
+	a:link, a:visited { 
 		color: #f9ff00; 
 	}
 
@@ -74,7 +73,7 @@
 		position: fixed; 
 		z-index: 100; 
 		background-color: rgba(0,0,0,0.70); 
-		width: 27,5%; 
+		width: 27.5%; 
 		height: 100%;
 		color: white;
 	}
@@ -435,9 +434,10 @@
 			layer.on('mouseover', function (e) {
 				// Set highlight
 				setHighlight(layer);
-				$("#infopanel-right").fadeIn("slow");
 				$("#layer-name-info").html(e.layer.feature.properties.name);
 				$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
+				$("#infopanel-right").fadeIn("slow");
+				$("#layer-name-info").fadeIn("slow");
 			});
 
 			// Mouseout handler
