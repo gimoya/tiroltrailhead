@@ -56,7 +56,6 @@
 	*/  
 	a {
 		transition: color .4s;
-		color: white;
 	}
 
 	#info-panel-right a:link, #info-panel-right a:visited,
@@ -75,7 +74,7 @@
 		position: fixed; 
 		z-index: 100; 
 		background-color: rgba(0,0,0,0.70); 
-		max-width: 33%; 
+		width: 27,5%; 
 		height: 100%;
 		color: white;
 	}
@@ -412,7 +411,7 @@
 				.addTo(map);
 		}
 
-		function ptStartEndClick() {
+		function ptStartEndClick(layer) {
 			$("#layer-name-info").css('color', trailColors[layer.getLayers()[0].feature.properties.name]);
 			$("#layer-name-info").html(layer.getLayers()[0].feature.properties.description);
 			$("#infopanel-right").fadeIn("slow");
