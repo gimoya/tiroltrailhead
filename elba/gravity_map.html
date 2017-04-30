@@ -266,7 +266,7 @@
 
 		var LaghettoRossoKML = omnivore.kml('../elba/KML/LaghettoRosso.kml')
 			.on('click', function(e) {
-				trackClick(e);
+				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").css("font-family", "Ultra");
 				$("#gpx").prop('href', '../elba/KML/LaghettoRosso.gpx');
