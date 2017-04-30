@@ -75,7 +75,7 @@
 		position: fixed; 
 		z-index: 100; 
 		background-color: rgba(0,0,0,0.70); 
-		width: 33%; 
+		max-width: 33%; 
 		height: 100%;
 		color: white;
 	}
@@ -122,7 +122,7 @@
 			width: 50%; 
 		}	
 		#title {
-			font-size: 1.85em;
+			font-size: 2em;
 		}
 		#tracks {
 			font-size: 1.75em;
@@ -131,7 +131,7 @@
 			display: none;
 		}
 		#poi-info {
-			font-size: 1.25em;
+			font-size: 1.5em;
 		}
 	}
     
@@ -412,9 +412,9 @@
 				.addTo(map);
 		}
 
-		function ptStartEndClick(e) {
-			$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
-			$("#layer-name-info").html(e.layer.feature.properties.description);
+		function ptStartEndClick() {
+			$("#layer-name-info").css('color', trailColors[layer.getLayers()[0].feature.properties.name]);
+			$("#layer-name-info").html(layer.getLayers()[0].feature.properties.description);
 			$("#infopanel-right").fadeIn("slow");
 		}
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
