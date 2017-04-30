@@ -30,7 +30,6 @@
     <style type="text/css">
 	    
 	html, body {
-		font-size: 100%;
 		height: 100%;
 		padding: 0;
 		margin: 0;
@@ -80,7 +79,7 @@
 	#infopanel-right {
 		position: absolute;	
 		width: 20%;
-		bottom: 10px;
+		bottom: 0px;
 		right: 0px;
 		text-align: right;
 		z-index: 100; 
@@ -98,26 +97,20 @@
 	}
 	    
 	#title {
-		font-size: 2.5em;
+		font-size: 2.5vw;
 	}
 	    
 	#trail-info, #tracks {
 		font-family: 'Corbel', 'bold';
-		font-size: 1em;
+		font-size: 1.5vw;
 	}
 	    
 	@media screen and (max-width: 480px) {
-		body {
-			font-size: 65%;
-		}
 		#infopanel-left, #infopanel-right {
 			width: 50%; 
 		}	
 		#trail-info {
 			display: none,
-		}
-		#tracks {
-			font-size:1.75em;
 		}
 	}
     
