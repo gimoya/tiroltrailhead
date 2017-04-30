@@ -76,8 +76,22 @@
 		height: 100%;
 		color: white;
 	}
-  
-	#photos {
+	    
+	#info-panel-right {
+		display:none;
+		position: fixed;
+		right: 0;		
+		width: 20%;
+		z-index: 100; 
+		background-color: rgba(0,0,0,0.70);		
+		font-size: 2vw;
+	}
+
+	.info-row {
+	    padding: 1em;
+	}  
+	    
+	#photos, #logo {
 		width: 100%;
 	}
 	    
@@ -88,23 +102,6 @@
 	#trail-info, #tracks {
 		font-family: 'Corbel', 'bold';
 		font-size: 1em;
-	}
-	
-	#info-panel-right {
-		position: absolute;
-		right: 0;		
-		width: 20%;
-		z-index: 100; 
-		background-color: rgba(0,0,0,0.70);		
-		font-size: 2vw;
-	}
-
-	.info-row {
-	    padding: 1em;
-	}
-	    
-	#logo {
-		width: 100%;		
 	}
 	    
 	@media screen and (max-width: 480px) {
