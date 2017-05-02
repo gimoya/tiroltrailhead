@@ -1,6 +1,8 @@
 <html>
 <head>
+
 <title>ELBA GRAVITY PARK</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
@@ -26,9 +28,11 @@
 	<script src="//lightwidget.com/widgets/lightwidget.js"></script>	
 	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 	
-	<!--link rel="stylesheet" href="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.css" />
-	<script src="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script-->
-	
+	<!-- Locate Control -->
+	<link rel="stylesheet" href="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.css" />
+	<script src="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+	<!-- Locate Control -->
+#	
     <style type="text/css">
 	    
 	html, body {
@@ -141,7 +145,7 @@
 	<div id="infopanel-right">
 		<div class="info-row" id="layer-name-info"></div>
 		<div class="info-row" id="poi-info"></div>
-		<div class="info-row"><img  id="logo" src="elba_gravity_park.png"></div>
+		<div class="info-row"><img  id="logo" src="Images/elba_gravity_park.png"></div>
 	</div>
 	<div id="infopanel-left">
 		<div id="photos"></div>		
@@ -195,7 +199,7 @@
 
 		toggle.addTo(map);
 
-		/*
+	
 		L.control.layers(baseLayers).addTo(map);
 		L.control.locate({
 			strings: {
@@ -203,7 +207,6 @@
 			}
 
 		}).addTo(map);
-		*/	
 
 		var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 		var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
