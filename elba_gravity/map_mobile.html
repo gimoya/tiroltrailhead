@@ -104,13 +104,14 @@
 		bottom: 0px;
 		right: 0px;
 		z-index: 999; 
-		background-color: rgba(255,255,255,0.50);		
-		color: white;
+		background-color: rgba(255,255,255,0.30);		
+		color: smokewhite;
 	}
 
 	.info-row {
 	    padding: 10px;
 	    text-align: center;
+	    display: none;
 	}  
 	
 	/*
@@ -265,7 +266,7 @@
 				$("#layer-name-info").css("font-family", "Fruktur")				
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");
+				$(".info-row").fadeIn("slow");
 			})
 
 		var BuccaDelBandito1KML = omnivore.kml('KML/BuccaDelBandito1.kml')
@@ -279,7 +280,7 @@
 				$("#layer-name-info").css("font-family", "Creepster")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");				
+				$(".info-row").fadeIn("slow");				
 			});			
 
 		var BuccaDelBandito2KML = omnivore.kml('KML/BuccaDelBandito2.kml')
@@ -293,7 +294,7 @@
 				$("#layer-name-info").css("font-family", "Creepster")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");
+				$(".info-row").fadeIn("slow");
 			});
 
 		var LaghettoRossoKML = omnivore.kml('KML/LaghettoRosso.kml')
@@ -308,7 +309,7 @@
 				$("#layer-name-info").css("font-family", "Ultra")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");
+				$(".info-row").fadeIn("slow");
 			});			
 
 		var MezzaStregaKML = omnivore.kml('KML/MezzaStrega.kml')
@@ -323,7 +324,7 @@
 				$("#layer-name-info").css("font-family", "Ewert")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");				
+				$(".info-row").fadeIn("slow");				
 			});
 
 		var StregaKML = omnivore.kml('KML/Strega.kml', null)
@@ -338,7 +339,7 @@
 				$("#layer-name-info").css("font-family", "Fugaz One")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");				
+				$(".info-row").fadeIn("slow");				
 			});
 
 		var ScaletteKML = omnivore.kml('KML/Scalette.kml')
@@ -353,7 +354,7 @@
 				$("#layer-name-info").css("font-family", "Hanalei")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");				
+				$(".info-row").fadeIn("slow");				
 			});			
 
 		var VigniolaKML = omnivore.kml('KML/Vigniola.kml')
@@ -368,7 +369,7 @@
 				$("#layer-name-info").css("font-family", "Bungee Inline")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");				
+				$(".info-row").fadeIn("slow");				
 			});
 
 		/*
