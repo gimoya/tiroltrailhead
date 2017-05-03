@@ -22,7 +22,7 @@ $(document).ready(function() {
 	    $('#mobile').removeClass('btn btn-primary disabled');
 	    $('#mobile').addClass('btn btn-primary active');  
 	    $('#desktop').removeClass('btn btn-primary active');
-	    $('#desktop').addClass('btn btn-primary disable');  		
+	    $('#desktop').addClass('btn btn-primary disabled');  		
 	} else {
 	    $('#desktop').removeClass('btn btn-primary disabled');
 	    $('#desktop').addClass('btn btn-primary active');  
@@ -37,28 +37,21 @@ $(document).ready(function() {
 });
 </script>
 
-</head>
 <style type="text/css">
 	    
 html, body {
-	font-size: 100%;
+	width: 100%;
 	height: 100%;
 	padding: 0;
 	margin: 0;
 }
 
 #landing-page-container {
-	width: 317px;
-	height: 46px;
-	position: absolute;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
+  display: flex;
+  justify-content: center;
 }
 </style>
-
+</head>
 
 <div id="landing-page-container">
   <div class="btn-group btn-group-lg">
