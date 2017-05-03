@@ -15,14 +15,21 @@
 <!-- BOOTSTRAP -->
 
 <script language="javascript">
-$( document ).ready(function() {
-	if ($(window).width() > 600) { 
+$(document).ready(function() {
+    function checkWidth() {
+        var windowSize = $(window).width();	
+	if (windowSize <= 600) { 
 	    $('#mobile').removeClass('btn btn-primary disabled');
 	    $('#mobile').addClass('btn btn-primary active');  
 	} else {
 	    $('#desktop').removeClass('btn btn-primary disabled');
 	    $('#desktop').addClass('btn btn-primary active');  
 	}
+    }
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);	
 }
 </script>
 
