@@ -130,8 +130,7 @@
 	    
 	#layer-name-info, #poi-info {
 		font-family: 'Corbel', 'bold';
-		font-size: 1.5em;
-		font-weight: bold;
+		font-size: 2.2 em;
 	}
 	
 	/*
@@ -183,6 +182,7 @@
 		map.on('click', function() {
 			//$("#infopanel-left").fadeOut("slow");
 			//$("#infopanel-right").fadeOut("slow");
+			("info-row").fadeOut("slow");
 		});
 		
 		new L.Control.Zoom({ position: 'topright' }).addTo(map);
