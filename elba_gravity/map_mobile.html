@@ -98,8 +98,7 @@
 	}
 	*/
 	    
-	#infopanel-right {
-	    	display: none;		
+	#infopanel-right {		
 		position: absolute;	
 		width: 100%;
 		bottom: 0px;
@@ -180,12 +179,10 @@
 		  zoomControl: false
 		});
 		
-		/*
 		map.on('click', function() {
-			$("#infopanel-left").fadeOut("slow");
+			//$("#infopanel-left").fadeOut("slow");
 			$("#infopanel-right").fadeOut("slow");
 		});
-		*/
 		
 		new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
