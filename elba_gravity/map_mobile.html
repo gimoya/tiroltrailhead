@@ -182,7 +182,7 @@
 		
 		map.on('click', function() {
 			//$("#infopanel-left").fadeOut("slow");
-			$("#infopanel-right").fadeOut("slow");
+			//$("#infopanel-right").fadeOut("slow");
 		});
 		
 		new L.Control.Zoom({ position: 'topright' }).addTo(map);
@@ -262,8 +262,9 @@
 				$("#gpx").prop('href', 'KML/CimaDelMonte.gpx');
 				$("#kml").prop('href', 'KML/CimaDelMonte.kml');
 				*/
-				$("#layer-name-info").css("font-family", "Fruktur");				
-				$("#layer-name-info").html(e.layer.feature.properties.name);
+				$("#layer-name-info").css("font-family", "Fruktur")				
+					.html(e.layer.feature.properties.name)
+					.css('color', trailColors[e.layer.feature.properties.name]);
 				$("#infopanel-right").fadeIn("slow");
 			})
 
@@ -275,8 +276,9 @@
 				$("#gpx").prop('href', 'KML/BuccaDelBandito1.gpx');
 				$("#kml").prop('href', 'KML/BuccaDelBandito1.kml');
 				*/
-				$("#layer-name-info").css("font-family", "Creepster");
-				$("#layer-name-info").html(e.layer.feature.properties.name);
+				$("#layer-name-info").css("font-family", "Creepster")
+					.html(e.layer.feature.properties.name)
+					.css('color', trailColors[e.layer.feature.properties.name]);
 				$("#infopanel-right").fadeIn("slow");				
 			});			
 
@@ -288,8 +290,9 @@
 				$("#gpx").prop('href', 'KML/BuccaDelBandito2.gpx');
 				$("#kml").prop('href', 'KML/BuccaDelBandito2.kml');
 				*/
-				$("#layer-name-info").css("font-family", "Creepster");
-				$("#layer-name-info").html(e.layer.feature.properties.name);
+				$("#layer-name-info").css("font-family", "Creepster")
+					.html(e.layer.feature.properties.name)
+					.css('color', trailColors[e.layer.feature.properties.name]);
 				$("#infopanel-right").fadeIn("slow");
 			});
 
@@ -302,9 +305,10 @@
 				$("#gpx").prop('href', 'KML/LaghettoRosso.gpx');
 				$("#kml").prop('href', 'KML/LaghettoRosso.kml');
 				*/
-				$("#layer-name-info").css("font-family", "Ultra");
-				$("#layer-name-info").html(e.layer.feature.properties.name);
-				$("#infopanel-right").fadeIn("slow");					
+				$("#layer-name-info").css("font-family", "Ultra")
+					.html(e.layer.feature.properties.name)
+					.css('color', trailColors[e.layer.feature.properties.name]);
+				$("#infopanel-right").fadeIn("slow");
 			});			
 
 		var MezzaStregaKML = omnivore.kml('KML/MezzaStrega.kml')
@@ -316,9 +320,10 @@
 				$("#gpx").prop('href', 'KML/MezzaStrega.gpx');
 				$("#kml").prop('href', 'KML/MezzaStrega.kml');
 				*/
-				$("#layer-name-info").css("font-family", "Ewert");
-				$("#layer-name-info").html(e.layer.feature.properties.name);
-				$("#infopanel-right").fadeIn("slow");					
+				$("#layer-name-info").css("font-family", "Ewert")
+					.html(e.layer.feature.properties.name)
+					.css('color', trailColors[e.layer.feature.properties.name]);
+				$("#infopanel-right").fadeIn("slow");				
 			});
 
 		var StregaKML = omnivore.kml('KML/Strega.kml', null)
@@ -330,9 +335,10 @@
 				$("#gpx").prop('href', 'KML/Strega.gpx');
 				$("#kml").prop('href', 'KML/Strega.kml');
 				*/
-				$("#layer-name-info").css("font-family", "Fugaz One");
-				$("#layer-name-info").html(e.layer.feature.properties.name);
-				$("#infopanel-right").fadeIn("slow");					
+				$("#layer-name-info").css("font-family", "Fugaz One")
+					.html(e.layer.feature.properties.name)
+					.css('color', trailColors[e.layer.feature.properties.name]);
+				$("#infopanel-right").fadeIn("slow");				
 			});
 
 		var ScaletteKML = omnivore.kml('KML/Scalette.kml')
@@ -344,9 +350,10 @@
 				$("#gpx").prop('href', 'KML/Scalette.gpx');
 				$("#kml").prop('href', 'KML/Scalette.kml');
 				*/
-				$("#layer-name-info").css("font-family", "Hanalei");
-				$("#layer-name-info").html(e.layer.feature.properties.name);
-				$("#infopanel-right").fadeIn("slow");					
+				$("#layer-name-info").css("font-family", "Hanalei")
+					.html(e.layer.feature.properties.name)
+					.css('color', trailColors[e.layer.feature.properties.name]);
+				$("#infopanel-right").fadeIn("slow");				
 			});			
 
 		var VigniolaKML = omnivore.kml('KML/Vigniola.kml')
@@ -358,9 +365,10 @@
 				$("#gpx").prop('href', 'KML/Vigniola.gpx');
 				$("#kml").prop('href', 'KML/Vigniola.kml');
 				*/
-				$("#layer-name-info").css("font-family", "Bungee Inline");
-				$("#layer-name-info").html(e.layer.feature.properties.name);
-				$("#infopanel-right").fadeIn("slow");					
+				$("#layer-name-info").css("font-family", "Bungee Inline")
+					.html(e.layer.feature.properties.name)
+					.css('color', trailColors[e.layer.feature.properties.name]);
+				$("#infopanel-right").fadeIn("slow");				
 			});
 
 		/*
