@@ -171,6 +171,10 @@
 	
 	<script language="javascript">	
 
+		$( "#layer-name-info" ).click(function() {
+		  	$("#infopanel-right").fadeOut("slow");
+		});
+		
 		var map = L.map('map', {
 		  center: [42.808660, 10.393714],
 		  zoom: 13,
