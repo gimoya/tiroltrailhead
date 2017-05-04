@@ -1,4 +1,43 @@
-<style>
+<html>
+<head>
+
+<title>ELBA GRAVITY PARK</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">		
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+<!-- BOOTSTRAP -->
+
+<script language="javascript">
+$(document).ready(function() {
+    function checkWidth() {
+        var windowSize = $(window).width();	
+	if (windowSize <= 500) { 
+	    $('#mobile').removeClass('btn btn-primary disabled');
+	    $('#mobile').addClass('btn btn-primary active');  
+	    $('#desktop').removeClass('btn btn-primary active');
+	    $('#desktop').addClass('btn btn-primary disabled');  		
+	} else {
+	    $('#desktop').removeClass('btn btn-primary disabled');
+	    $('#desktop').addClass('btn btn-primary active');  
+	    $('#mobile').removeClass('btn btn-primary active');
+	    $('#mobile').addClass('btn btn-primary disabled'); 		
+	}
+    }
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);	
+});
+</script>
+
+<style type="text/css">
 body{
   padding:0;
   margin:0;
