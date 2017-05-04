@@ -22,12 +22,15 @@ $(document).ready(function() {
 	    $('#mobile').removeClass('btn btn-info disabled');
 	    $('#mobile').addClass('btn btn-info active');  
 	    $('#desktop').removeClass('btn btn-info active');
-	    $('#desktop').addClass('btn btn-info disabled');  		
+	    $('#desktop').addClass('btn btn-info disabled'); 
 	} else {
 	    $('#desktop').removeClass('btn btn-info disabled');
 	    $('#desktop').addClass('btn btn-info active');  
 	    $('#mobile').removeClass('btn btn-info active');
 	    $('#mobile').addClass('btn btn-info disabled'); 		
+	}
+	if (windowSize >= 800) { 
+	    $('.vid-container').css('display', 'none');
 	}
     }
     // Execute on load
