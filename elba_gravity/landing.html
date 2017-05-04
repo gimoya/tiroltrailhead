@@ -29,8 +29,9 @@ $(document).ready(function() {
 	    $('#mobile').removeClass('btn btn-info active');
 	    $('#mobile').addClass('btn btn-info disabled'); 		
 	}
-	if (windowSize >= 800) { 
-	    $('.vid-container').css('display', 'none');
+	if (windowSize <= 800) { 
+	    $('.bgvid').css('display', 'none');
+	    $('.bgvid-inner').css('display', 'none');			
 	}
     }
     // Execute on load
