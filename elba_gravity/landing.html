@@ -19,15 +19,11 @@ $(document).ready(function() {
     function checkWidth() {
         var windowSize = $(window).width();	
 	if (windowSize <= 500) { 
-	    $('#mobile').removeClass('btn btn-info disabled');
-	    $('#mobile').addClass('btn btn-info active');  
-	    $('#desktop').removeClass('btn btn-info active');
-	    $('#desktop').addClass('btn btn-info disabled'); 
+	    $('#mobile').removeClass('btn btn-info disabled').addClass('btn btn-info active');  
+	    $('#desktop').removeClass('btn btn-info active').addClass('btn btn-info disabled'); 
 	} else {
-	    $('#desktop').removeClass('btn btn-info disabled');
-	    $('#desktop').addClass('btn btn-info active');  
-	    $('#mobile').removeClass('btn btn-info active');
-	    $('#mobile').addClass('btn btn-info disabled'); 		
+	    $('#desktop').removeClass('btn btn-info disabled').addClass('btn btn-info active');  
+	    $('#mobile').removeClass('btn btn-info active').addClass('btn btn-info disabled'); 	
 	}
 	if (windowSize <= 800) { 
 	    $('#bgvideo').css('display', 'none');
@@ -37,6 +33,7 @@ $(document).ready(function() {
 	    $('#bgvideo').css('display', 'inherit');
 	    $('#bgvideo-inner').css('display', 'inherit');	
 	    $('#vidsurrogate').css('background-image', 'url("https://raw.githubusercontent.com/gimoya/tiroltrailhead/gh-pages/elba_gravity/Images/18193139_1344599018910543_1953926692101076603_o.jpg")');
+	    $('#vidsurrogate').css('background','grey');
     	}	
     }
     // Execute on load
@@ -84,6 +81,7 @@ body{
     background-attachment: fixed;
     background-position: center; 
     background-repeat: no-repeat;
+    min-height: 100%;
 }
 .box{
   position:absolute;
