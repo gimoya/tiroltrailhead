@@ -36,7 +36,7 @@ $(document).ready(function() {
 	} else {
 	    $('#bgvideo').css('display', 'inherit');
 	    $('#bgvideo-inner').css('display', 'inherit');	
-	    $('#vidsurrogate').css('display', 'none');	
+	    $('#vidsurrogate').css('background-image', 'url("Images/18193139_1344599018910543_1953926692101076603_o.jpg")');	
     	}	
     }
     // Execute on load
@@ -131,7 +131,7 @@ body{
 </style>
 
 <div class="vid-container">
-  <img src="Images/18193139_1344599018910543_1953926692101076603_o.jpg" id="vidsurrogate"/>
+  <div id="vidsurrogate"></div>
   <video id="bgvideo" class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
        <source src="https://thumbs.gfycat.com/DearestBasicEnglishsetter-mobile.mp4" type="video/mp4">
   </video>
