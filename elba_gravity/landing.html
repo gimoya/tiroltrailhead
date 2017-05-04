@@ -31,10 +31,12 @@ $(document).ready(function() {
 	}
 	if (windowSize <= 800) { 
 	    $('#bgvideo').css('display', 'none');
-	    $('#bgvideo-inner').css('display', 'none');			
+	    $('#bgvideo-inner').css('display', 'none');	
+	    $('#vidsurrogate').css('display', 'block');
 	} else {
 	    $('#bgvideo').css('display', 'inherit');
-	    $('#bgvideo-inner').css('display', 'inherit');			
+	    $('#bgvideo-inner').css('display', 'inherit');	
+	    $('#vidsurrogate').css('display', 'none');	
     	}	
     }
     // Execute on load
@@ -129,7 +131,7 @@ body{
 </style>
 
 <div class="vid-container">
-  <img src="" id=""/>
+  <img src="" id="vidsurrogate"/>
   <video id="bgvideo" class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
        <source src="https://thumbs.gfycat.com/DearestBasicEnglishsetter-mobile.mp4" type="video/mp4">
   </video>
