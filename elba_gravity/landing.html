@@ -30,8 +30,8 @@ $(document).ready(function() {
 	    $('#mobile').addClass('btn btn-info disabled'); 		
 	}
 	if (windowSize <= 800) { 
-	    $('.bgvid').css('display', 'none');
-	    $('.bgvid-inner').css('display', 'none');			
+	    $('#bgvideo').css('display', 'none');
+	    $('#bgvideo-inner').css('display', 'none');			
 	}
     }
     // Execute on load
@@ -126,11 +126,11 @@ body{
 </style>
 
 <div class="vid-container">
-  <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
+  <video id="bgvideo" class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
        <source src="https://thumbs.gfycat.com/DearestBasicEnglishsetter-mobile.mp4" type="video/mp4">
   </video>
   <div class="inner-container">
-    <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+    <video id="bgvideo-inner" class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
        <source src="https://thumbs.gfycat.com/DearestBasicEnglishsetter-mobile.mp4" type="video/mp4">
     </video>
     <div class="box">
