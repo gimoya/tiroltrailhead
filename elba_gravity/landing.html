@@ -32,7 +32,9 @@ $(document).ready(function() {
 	if (windowSize <= 800) { 
 	    $('#bgvideo').css('display', 'none');
 	    $('#bgvideo-inner').css('display', 'none');			
-	}
+	} else {
+	    $('#bgvideo').css('display', 'inherit');
+	    $('#bgvideo-inner').css('display', 'inherit');			
     }
     // Execute on load
     checkWidth();
