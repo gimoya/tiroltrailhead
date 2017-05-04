@@ -28,11 +28,11 @@ $(document).ready(function() {
 	if (windowSize <= 800) { 
 	    $('#bgvideo').css('display', 'none');
 	    $('#bgvideo-inner').css('display', 'none');	
-	    $('#vidsurrogate').css('display', 'block');
+	    $('.vid-container').css('background-image', 'url(Images/18193139_1344599018910543_1953926692101076603_o.jpg)');		
 	} else {
 	    $('#bgvideo').css('display', 'inherit');
 	    $('#bgvideo-inner').css('display', 'inherit');
-	    $('#vidsurrogate').css('display', 'none');
+	    $('.vidsurrogate').css('background-image', 'none');
     	}	
     }
     // Execute on load
@@ -75,13 +75,6 @@ body{
   -ms-filter: blur(10px);
   -o-filter: blur(10px);
   filter:blur(10px);
-}
-#vidsurrogate {
-  background-image: url(Images/18193139_1344599018910543_1953926692101076603_o.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 .box{
   position:absolute;
@@ -134,14 +127,13 @@ body{
 </style>
 
 <div class="vid-container">
-  <div id="vidsurrogate"></div>
   <video id="bgvideo" class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
        <source src="https://thumbs.gfycat.com/DearestBasicEnglishsetter-mobile.mp4" type="video/mp4">
   </video>
   <div class="inner-container">
     <video id="bgvideo-inner" class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
        <source src="https://thumbs.gfycat.com/DearestBasicEnglishsetter-mobile.mp4" type="video/mp4">
-    </video>
+    </video>	  
     <div class="box">
       <h1>Media Type</h1>
   <div class="text-center">	    
