@@ -147,8 +147,8 @@
 		  zoomControl: false
 		});
 		
-		L.control.attribution({position: 'topright'}).addTo(map);
-		L.Control.Zoom({ position: 'topright' }).addTo(map);
+		new L.control.attribution({position: 'bottomleft'}).addTo(map);
+		new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
 		var toggle = L.easyButton({
 		  position: 'topright',
