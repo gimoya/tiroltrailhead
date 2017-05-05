@@ -118,13 +118,20 @@
 	#layer-name-info {
 		background-color: rgba(255,255,255,0.1);
 	}
-
+	
+	#close {
+		font-family: Corbel;
+		float: right;
+		display: inline-block;
+		padding: 2px 5px;
+		background: #ccc;
+	}
 	</style>
 </head>
 	
 <body>
 	<div id="infopanel-right">
-		<div class="info-row" id="layer-name-info"></div>
+		<div class="info-row" id="layer-name-info"><span id='close' onclick='$(this).parent().parent().hide();'>X</span></div>
 		<div class="info-row" id="poi-info"></div>
 	</div>
 	
@@ -140,12 +147,6 @@
 		  zoomControl: false
 		});
 		
-		/*
-		map.on('click', function() {
-			//$("#infopanel-left").fadeOut("slow");
-			$("#infopanel-right").fadeOut("slow");
-		});
-		*/
 		new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
 		var toggle = L.easyButton({
