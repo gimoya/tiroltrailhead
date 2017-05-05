@@ -94,18 +94,6 @@
 	    color: darkslategrey;
 	}
 	    
-	/*   
-	#infopanel-left {
-		display: none; 
-		position: fixed; 
-		z-index: 100; 
-		background-color: rgba(0,0,0,0.70); 
-		width: 25%; 
-		height: 100%;
-		color: white;
-	}
-	*/
-	    
 	#infopanel-right {		
 		position: absolute;
 		display: none;
@@ -121,21 +109,6 @@
 	    padding: 10px;
 	    text-align: center;
 	}  
-	
-	/*
-	#photos, #logo {
-		max-width: 100%;
-	}
-	    
-	#title {
-		font-size: 2.3em;
-	}
-	
-	#trail-info, #tracks {
-		font-family: 'Corbel', 'bold';
-		font-size: 1.25em;
-	}
-	*/
 	    
 	#layer-name-info, #poi-info {
 		font-family: 'Corbel', 'bold';
@@ -144,51 +117,20 @@
 	    
 	#layer-name-info {
 		background-color: rgba(255,255,255,0.1);
-		cursor: pointer; 
-		cursor: hand;
 	}
-	
-	/*
-	@media screen and (max-height: 650px), (max-width: 800px) {
-		body {
-			font-size: 75%;
-		}
-		#infopanel-left, #infopanel-right {
-			width: 50%; 
-		}	
-		#tracks {
-			font-size: 1.75em;
-		}
-		#trail-info {
-			display: none;
-		}
-	}
-	*/
-    
+
 	</style>
 </head>
 	
 <body>
 	<div id="infopanel-right">
-		<div class="info-row" id="layer-name-info" title="Click to close..."></div>
+		<div class="info-row" id="layer-name-info"></div>
 		<div class="info-row" id="poi-info"></div>
-		<!--div class="info-row"><img  id="logo" src="Images/elba_gravity_park.png"></div-->
 	</div>
-	<!--div id="infopanel-left">
-		<div id="photos"></div>		
-		<div class="info-row" id="title"></div>
-		<div class="info-row" id="trail-info"></div>
-		<div class="info-row" id="tracks">
-			<a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a>
-		</div-->
-	</div>
+	
 	<div id="map"></div>
 	
-	<script language="javascript">	
-
-		$( "#layer-name-info" ).click(function() {
-		  	$("#infopanel-right").fadeOut("slow");
-		});
+	<script language="javascript">
 		
 		var map = L.map('map', {
 		  center: [42.808660, 10.393714],
@@ -274,13 +216,6 @@
 		
 		var CimaDelMonteKML = omnivore.kml('KML/CimaDelMonte.kml')
 			.on('click', function(e) {
-				/*
-				trailClick(e);
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Fruktur");
-				$("#gpx").prop('href', 'KML/CimaDelMonte.gpx');
-				$("#kml").prop('href', 'KML/CimaDelMonte.kml');
-				*/
 				$("#layer-name-info").css("font-family", "Fruktur")				
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
@@ -289,12 +224,6 @@
 
 		var BuccaDelBandito1KML = omnivore.kml('KML/BuccaDelBandito1.kml')
 			.on('click', function(e) {
-				/*trailClick(e);
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Creepster");
-				$("#gpx").prop('href', 'KML/BuccaDelBandito1.gpx');
-				$("#kml").prop('href', 'KML/BuccaDelBandito1.kml');
-				*/
 				$("#layer-name-info").css("font-family", "Creepster")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
@@ -303,12 +232,6 @@
 
 		var BuccaDelBandito2KML = omnivore.kml('KML/BuccaDelBandito2.kml')
 			.on('click', function(e) {
-				/*trailClick(e);
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Creepster");
-				$("#gpx").prop('href', 'KML/BuccaDelBandito2.gpx');
-				$("#kml").prop('href', 'KML/BuccaDelBandito2.kml');
-				*/
 				$("#layer-name-info").css("font-family", "Creepster")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
@@ -317,13 +240,6 @@
 
 		var LaghettoRossoKML = omnivore.kml('KML/LaghettoRosso.kml')
 			.on('click', function(e) {
-				/*
-				trailClick(e);
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Ultra");
-				$("#gpx").prop('href', 'KML/LaghettoRosso.gpx');
-				$("#kml").prop('href', 'KML/LaghettoRosso.kml');
-				*/
 				$("#layer-name-info").css("font-family", "Ultra")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
@@ -332,13 +248,6 @@
 
 		var MezzaStregaKML = omnivore.kml('KML/MezzaStrega.kml')
 			.on('click', function(e) {
-				/*
-				trailClick(e);
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Ewert");
-				$("#gpx").prop('href', 'KML/MezzaStrega.gpx');
-				$("#kml").prop('href', 'KML/MezzaStrega.kml');
-				*/
 				$("#layer-name-info").css("font-family", "Ewert")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
@@ -347,13 +256,6 @@
 
 		var StregaKML = omnivore.kml('KML/Strega.kml', null)
 			.on('click', function(e) {
-				/*
-				trailClick(e);
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Fugaz One");
-				$("#gpx").prop('href', 'KML/Strega.gpx');
-				$("#kml").prop('href', 'KML/Strega.kml');
-				*/
 				$("#layer-name-info").css("font-family", "Fugaz One")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
@@ -362,13 +264,6 @@
 
 		var ScaletteKML = omnivore.kml('KML/Scalette.kml')
 			.on('click', function(e) {
-				/*
-				trailClick(e);
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>')
-				$("#title").css("font-family", "Hanalei");
-				$("#gpx").prop('href', 'KML/Scalette.gpx');
-				$("#kml").prop('href', 'KML/Scalette.kml');
-				*/
 				$("#layer-name-info").css("font-family", "Hanalei")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
@@ -377,13 +272,6 @@
 
 		var VigniolaKML = omnivore.kml('KML/Vigniola.kml')
 			.on('click', function(e) {
-				/*
-				trailClick(e);
-				$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Bungee Inline");
-				$("#gpx").prop('href', 'KML/Vigniola.gpx');
-				$("#kml").prop('href', 'KML/Vigniola.kml');
-				*/
 				$("#layer-name-info").css("font-family", "Bungee Inline")
 					.html(e.layer.feature.properties.name)
 					.css('color', trailColors[e.layer.feature.properties.name]);
@@ -508,24 +396,6 @@
 					'color': trailColors[layer.getLayers()[0].feature.properties.name]
 				});
 			});			
-			/*
-			// Mouseover handler
-			layer.on('mouseover', function (e) {
-				// Set highlight
-				setHighlight(layer);
-				$("#layer-name-info").html(e.layer.feature.properties.name);
-				$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");
-				$("#layer-name-info").fadeIn("slow");
-			});
-
-			// Mouseout handler
-			layer.on('mouseout', function (e) {
-				 // Unset highlight
-				unsetHighlight(layer);
-				$("#layer-name-info").fadeOut("slow");
-			});	
-			*/
 		});
 
 		map.addLayer(groupKML);
