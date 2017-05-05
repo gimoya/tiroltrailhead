@@ -206,7 +206,7 @@
 				   "Laghetto Rosso": "#fc2500"
 		};
 		
-		function trailClick(e, layer, font) {
+		function trailClick(e, font) {
 			$("#layer-name-info").css("font-family", font)
 				.html(e.layer.feature.properties.name)
 				.css('color', trailColors[e.layer.feature.properties.name]);
@@ -214,7 +214,7 @@
 		}
 		
 		var CimaDelMonteKML = omnivore.kml('KML/CimaDelMonte.kml')
-			.on('click', function(e) {trailClick(e, layer, font)});
+			.on('click', function(e) {trailClick(e, font)});
 		/*
 			.on('click', function(e) {
 				$("#layer-name-info").css("font-family", "Fruktur")				
