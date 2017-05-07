@@ -444,6 +444,12 @@
 
 		map.addLayer(groupKML);
 		
+		/* get width of info-panel (25 or 50% of screen) and 
+		   use this value for height, because iframe will be quadratic and fill 100%
+		   of parent divs #photos and #infopanel-left
+		   This way the KML-name, which is diplayed in the div that's floating below, and is faster 
+		   loaded, will not be shifted farther to the bottom, when iframe is ready latter!
+		*/
 		$(document).ready(function() {
 			$('#photos').css({'height': $('#infopanel-left').width()});
 		});
