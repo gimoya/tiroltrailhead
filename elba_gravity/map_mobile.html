@@ -68,6 +68,9 @@
 		font-family: Exo;
 	}
 	
+	/* 
+	hack to fix fa-marker position in geo-location control
+	*/
 	span.fa-map-marker.fa {
 		margin-top: 5px;
 	}
@@ -89,7 +92,9 @@
 		color: #007BE6;
 	}	
 	
-	// exceptation for control links..
+	/*
+	exceptation for control links.. not working?
+	*/
 	.leaflet-bar a {
 	    color: darkslategrey;
 	}
@@ -114,10 +119,15 @@
 		font-size: 2.5em;
 	}
 	    
+	/*    
 	#layer-name-info {
 		background-color: rgba(255,255,255,0.1);
 	}
+	*/
 	
+	/* 
+	CSS for inline close element which will hide it's parent div if clicked..
+	*/
 	#close {
 		color: white;
 		font-family: Corbel;
@@ -133,6 +143,7 @@
 	<div id="infopanel-right">
 		<div class="info-row" id="layer-name-info"></div>
 		<div class="info-row" id="poi-info"></div>
+		<div class="info-row" style="height:17px;"></div>
 	</div>
 	
 	<div id="map"></div>
