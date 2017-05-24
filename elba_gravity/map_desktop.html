@@ -246,6 +246,14 @@
 				$("#title").css('color', trailColors[e.layer.feature.properties.name]);
 				$("#trail-info").html(e.layer.feature.properties.description);
 				$("#infopanel-left").fadeIn("slow");
+				$(".IT-Click").on('click', function() {
+					$(".EN").css("display", "none");
+					$(".IT").css("display", "block");
+				});
+				$(".EN-Click").on('click', function() {
+					$(".IT").css("display", "none");
+					$(".EN").css("display", "block");
+				});	
 		}
 		
 		var CimaDelMonteKML = omnivore.kml('KML/CimaDelMonte.kml')
@@ -454,15 +462,7 @@
 		   loaded, will not be shifted farther to the bottom, when iframe is ready latter!
 		*/
 		$(document).ready(function() {
-		  $('#photos').css({'height': $('#infopanel-left').width()});
-		  $(".IT-Click").on('click', function() {
-			$(".EN").css("display", "none");
-			$(".IT").css("display", "block");
-		  });
-		  $(".EN-Click").on('click', function() {
-			$(".IT").css("display", "none");
-			$(".EN").css("display", "block");
-		  });			
+		  $('#photos').css({'height': $('#infopanel-left').width()});		
 		});
 	</script>
 </body>	
