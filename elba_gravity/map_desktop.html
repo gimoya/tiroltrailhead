@@ -96,7 +96,7 @@
 
 	.info-row {
 	    padding: 10px;
-	    text-align: right;
+	    text-align: left;
 	}  
 	    
 	#photos, #logo {
@@ -109,8 +109,10 @@
 	    
 	#trail-info, #tracks {
 		font-family: 'Corbel', 'bold';
-		font-size: 1.25em;
+		font-size: 1em;
+		text-align: justify;
 	}
+	
 	#layer-name-info, #poi-info {
 		font-family: 'Corbel', 'bold';
 		font-size: 1.9em;
@@ -131,7 +133,19 @@
 			display: none;
 		}
 	}
-    
+   
+   .IT {
+	  display: block;
+	}
+
+	.EN {
+	  display: none;
+	}
+
+	.IT-Click,
+	.EN-Click {
+	   cursor: pointer; cursor: hand; }
+	}
 	</style>
 </head>
 	
@@ -440,7 +454,15 @@
 		   loaded, will not be shifted farther to the bottom, when iframe is ready latter!
 		*/
 		$(document).ready(function() {
-			$('#photos').css({'height': $('#infopanel-left').width()});
+		  $('#photos').css({'height': $('#infopanel-left').width()});
+		  $(".IT-Click").on('click', function() {
+			$(".EN").css("display", "none");
+			$(".IT").css("display", "block");
+		  });
+		  $(".EN-Click").on('click', function() {
+			$(".IT").css("display", "none");
+			$(".EN").css("display", "block");
+		  });			
 		});
 	</script>
 </body>	
