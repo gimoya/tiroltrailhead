@@ -222,8 +222,7 @@
 				   "Vigniola": "#6826ce", 
 				   "Strega": "#d7374c", 
 				   "Mezza Strega": "#009b2e",
-				   "Bucca Del Bandito - Via Volterraio": "#009b2e", 
-				   "Bucca Del Bandito - Cima Del Monte": "#009b2e", 
+				   "Bucca Del Bandito": "#009b2e", 
 				   "Cima Del Monte - Porto Azzurro": "#0d94ca",
 				   "Laghetto Rosso": "#fc2500"
 		};
@@ -244,23 +243,14 @@
 				$("#kml").prop('href', 'KML/CimaDelMonte.kml');
 			})
 
-		var BuccaDelBandito1KML = omnivore.kml('KML/BuccaDelBandito1.kml')
+		var BuccaDelBanditoKML = omnivore.kml('KML/BuccaDelBandito.kml')
 			.on('click', function(e) {
 				trailClick(e);
 				//$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").css("font-family", "Creepster");
-				$("#gpx").prop('href', 'KML/BuccaDelBandito1.gpx');
-				$("#kml").prop('href', 'KML/BuccaDelBandito1.kml');
+				$("#gpx").prop('href', 'KML/BuccaDelBandito.gpx');
+				$("#kml").prop('href', 'KML/BuccaDelBandito.kml');
 			});			
-
-		var BuccaDelBandito2KML = omnivore.kml('KML/BuccaDelBandito2.kml')
-			.on('click', function(e) {
-				trailClick(e);
-				//$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Creepster");
-				$("#gpx").prop('href', 'KML/BuccaDelBandito2.gpx');
-				$("#kml").prop('href', 'KML/BuccaDelBandito2.kml');
-			});
 
 		var LaghettoRossoKML = omnivore.kml('KML/LaghettoRosso.kml')
 			.on('click', function(e) {
@@ -345,8 +335,7 @@
 		var groupKML = new L.LayerGroup([
 			CimaDelMonteKML,
 			LaghettoRossoKML,
-			BuccaDelBandito1KML,
-			BuccaDelBandito2KML,		
+			BuccaDelBanditoKML,	
 			MezzaStregaKML,
 			ScaletteKML,
 			StregaKML,
