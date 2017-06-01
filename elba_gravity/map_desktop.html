@@ -88,7 +88,6 @@
 		width: 25%;
 		bottom: 0px;
 		right: 0px;
-		margin-bottom: 16px
 		margin-bottom: 16px;
 		z-index: 100; 
 		background-color: rgba(0,0,0,0.30);		
@@ -442,7 +441,7 @@
 			layer.on('mouseover', function (e) {
 				// Set highlight
 				setHighlight(layer);
-				$("#layer-name-info").html(e.layer.feature.properties.name);
+				$("#layer-name-info").html('>> ' + e.layer.feature.properties.name);
 				$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
 				$("#infopanel-right").fadeIn("slow");
 				$("#layer-name-info").fadeIn("slow");
