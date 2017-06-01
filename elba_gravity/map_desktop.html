@@ -242,7 +242,7 @@
 				   "Mezza Strega": "#009b2e",
 				   "Bucca Del Bandito": "#009b2e", 
 				   "Cima Del Monte - Porto Azzurro": "#0d94ca",
-				   "Laghetto Rosso": "#fc2500"
+				   "Miniere": "#fc2500"
 		};
 		
 		function trailClick(e) {
@@ -272,19 +272,19 @@
 		var BuccaDelBanditoKML = omnivore.kml('KML/BuccaDelBandito.kml')
 			.on('click', function(e) {
 				trailClick(e);
-				//$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/e637f5fd56945098ae1fde70b07164e9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").css("font-family", "Creepster");
 				$("#gpx").prop('href', 'KML/BuccaDelBandito.gpx');
 				$("#kml").prop('href', 'KML/BuccaDelBandito.kml');
 			});			
 
-		var LaghettoRossoKML = omnivore.kml('KML/LaghettoRosso.kml')
+		var MiniereKML = omnivore.kml('KML/Miniere.kml')
 			.on('click', function(e) {
 				trailClick(e);
-				//$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/7cfa1a27909850c1a5eb5d022fef31c9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").css("font-family", "Ultra");
-				$("#gpx").prop('href', 'KML/LaghettoRosso.gpx');
-				$("#kml").prop('href', 'KML/LaghettoRosso.kml');
+				$("#gpx").prop('href', 'KML/Miniere.gpx');
+				$("#kml").prop('href', 'KML/Miniere.kml');
 			});			
 
 		var MezzaStregaKML = omnivore.kml('KML/MezzaStrega.kml')
@@ -299,7 +299,7 @@
 		var StregaKML = omnivore.kml('KML/Strega.kml', null)
 			.on('click', function(e) {
 				trailClick(e);
-				//$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#photos").html('iframe src="//lightwidget.com/widgets/bb59eb0d5ecc520e99203b6560267003.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").css("font-family", "Fugaz One");
 				$("#gpx").prop('href', 'KML/Strega.gpx');
 				$("#kml").prop('href', 'KML/Strega.kml');
@@ -317,7 +317,7 @@
 		var VigniolaKML = omnivore.kml('KML/Vigniola.kml')
 			.on('click', function(e) {
 				trailClick(e);
-				//$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/dfcc8c0a1ba453eda55f65fa052eb28e.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").css("font-family", "Bungee Inline");
 				$("#gpx").prop('href', 'KML/Vigniola.gpx');
 				$("#kml").prop('href', 'KML/Vigniola.kml');
@@ -360,7 +360,7 @@
 
 		var groupKML = new L.LayerGroup([
 			CimaDelMonteKML,
-			LaghettoRossoKML,
+			MiniereKML,
 			BuccaDelBanditoKML,	
 			MezzaStregaKML,
 			ScaletteKML,
