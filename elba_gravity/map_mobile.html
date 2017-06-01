@@ -225,7 +225,7 @@
 				.html(e.layer.feature.properties.name)
 				.css('color', trailColors[e.layer.feature.properties.name]);
 			$("#infopanel-right").fadeIn("slow");
-			//map.fitBounds(e.layer.feature.getBounds());
+			map.fitBounds(e.layer.getBounds());
 		}
 		
 		var SerraKML = omnivore.kml('KML/Serra.kml')
