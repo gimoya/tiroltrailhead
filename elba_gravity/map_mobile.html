@@ -214,9 +214,8 @@
 				   "Vigniola": "#6826ce", 
 				   "Strega": "#d7374c", 
 				   "Mezza Strega": "#54ff00",
-				   "Bucca Del Bandito - Via Volterraio": "#009b2e", 
-				   "Bucca Del Bandito - Cima Del Monte": "#009b2e", 
-				   "Cima Del Monte - Porto Azzurro": "#286090",
+				   "Bucca Del Bandito": "#009b2e",
+				   "Serra": "#286090",
 				   "Laghetto Rosso": "#fc2500"
 		};
 		
@@ -228,7 +227,7 @@
 			$("#infopanel-right").fadeIn("slow");
 		}
 		
-		var CimaDelMonteKML = omnivore.kml('KML/CimaDelMonte.kml')
+		var SerraKML = omnivore.kml('KML/Serra.kml')
 			.on('click', function(e) {trailClick(e, "Fruktur")});
 
 		var BuccaDelBandito1KML = omnivore.kml('KML/BuccaDelBandito1.kml')
@@ -237,7 +236,7 @@
 		var BuccaDelBandito2KML = omnivore.kml('KML/BuccaDelBandito2.kml')
 			.on('click', function(e) {trailClick(e, "Creepster")});
 
-		var LaghettoRossoKML = omnivore.kml('KML/LaghettoRosso.kml')
+		var MiniereKML = omnivore.kml('KML/Miniere.kml')
 			.on('click', function(e) {trailClick(e, "Ultra")});			
 
 		var MezzaStregaKML = omnivore.kml('KML/MezzaStrega.kml')
@@ -288,8 +287,8 @@
 		}
 
 		var groupKML = new L.LayerGroup([
-			CimaDelMonteKML,
-			LaghettoRossoKML,
+			SerraKML,
+			MiniereKML,
 			BuccaDelBandito1KML,
 			BuccaDelBandito2KML,		
 			MezzaStregaKML,
