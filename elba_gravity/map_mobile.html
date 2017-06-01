@@ -230,11 +230,8 @@
 		var SerraKML = omnivore.kml('KML/Serra.kml')
 			.on('click', function(e) {trailClick(e, "Fruktur")});
 
-		var BuccaDelBandito1KML = omnivore.kml('KML/BuccaDelBandito1.kml')
+		var BuccaDelBanditoKML = omnivore.kml('KML/BuccaDelBandito.kml')
 			.on('click', function(e) {trailClick(e, "Creepster")});		
-
-		var BuccaDelBandito2KML = omnivore.kml('KML/BuccaDelBandito2.kml')
-			.on('click', function(e) {trailClick(e, "Creepster")});
 
 		var MiniereKML = omnivore.kml('KML/Miniere.kml')
 			.on('click', function(e) {trailClick(e, "Ultra")});			
@@ -289,8 +286,7 @@
 		var groupKML = new L.LayerGroup([
 			SerraKML,
 			MiniereKML,
-			BuccaDelBandito1KML,
-			BuccaDelBandito2KML,		
+			BuccaDelBanditoKML,	
 			MezzaStregaKML,
 			ScaletteKML,
 			StregaKML,
