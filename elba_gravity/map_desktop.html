@@ -254,6 +254,7 @@
 					$(".IT").css("display", "none");
 					$(".EN").css("display", "block");
 				});	
+				map.fitBounds(e.layer.feature.getBounds());				
 		}
 
 		var CavoKML = omnivore.kml('KML/Cavo.kml')
