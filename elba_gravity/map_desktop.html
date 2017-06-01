@@ -239,7 +239,7 @@
 				   "Strega": "#d7374c", 
 				   "Mezza Strega": "#009b2e",
 				   "Bucca Del Bandito": "#009b2e", 
-				   "Cima Del Monte - Porto Azzurro": "#0d94ca",
+				   "Serra": "#0d94ca",
 				   "Miniere": "#fc2500"
 		};
 		
@@ -258,13 +258,13 @@
 				});	
 		}
 		
-		var CimaDelMonteKML = omnivore.kml('KML/CimaDelMonte.kml')
+		var SerraKML = omnivore.kml('KML/Serra.kml')
 			.on('click', function(e) {
 				trailClick(e);
-				//$("#photos").html('<iframe src="//lightwidget.com/widgets/b1c24146915358abaa91dadd776e6e25.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/e535e22ef1aa5ccd857aa7219956df32.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").css("font-family", "Fruktur");
-				$("#gpx").prop('href', 'KML/CimaDelMonte.gpx');
-				$("#kml").prop('href', 'KML/CimaDelMonte.kml');
+				$("#gpx").prop('href', 'KML/Serra.gpx');
+				$("#kml").prop('href', 'KML/Serra.kml');
 			})
 
 		var BuccaDelBanditoKML = omnivore.kml('KML/BuccaDelBandito.kml')
@@ -357,7 +357,7 @@
 		}
 
 		var groupKML = new L.LayerGroup([
-			CimaDelMonteKML,
+			SerraKML,
 			MiniereKML,
 			BuccaDelBanditoKML,	
 			MezzaStregaKML,
