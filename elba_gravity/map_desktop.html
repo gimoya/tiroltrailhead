@@ -88,8 +88,8 @@
 		width: 25%;
 		bottom: 0px;
 		right: 0px;
-		padding: 10px;
-		text-align: right;
+		margin-bottom: 16px
+		margin-bottom: 16px;
 		z-index: 100; 
 		background-color: rgba(0,0,0,0.30);		
 		color: white;
@@ -298,7 +298,7 @@
 		var StregaKML = omnivore.kml('KML/Strega.kml', null)
 			.on('click', function(e) {
 				trailClick(e);
-				$("#photos").html('iframe src="//lightwidget.com/widgets/bb59eb0d5ecc520e99203b6560267003.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/bb59eb0d5ecc520e99203b6560267003.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				$("#title").css("font-family", "Fugaz One");
 				$("#gpx").prop('href', 'KML/Strega.gpx');
 				$("#kml").prop('href', 'KML/Strega.kml');
