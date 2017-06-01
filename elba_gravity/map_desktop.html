@@ -236,8 +236,9 @@
 				   "Strega": "#d7374c", 
 				   "Mezza Strega": "#009b2e",
 				   "Bucca Del Bandito": "#009b2e", 
-				   "Serra": "#0d94ca",
-				   "Miniere": "#fc2500"
+				   "Serra": "#9BEA00",
+				   "Miniere": "#fc2500",
+				   "Cavo": "#FFD700"
 		};
 		
 		function trailClick(e) {
@@ -254,7 +255,16 @@
 					$(".EN").css("display", "block");
 				});	
 		}
-		
+
+		var CavoKML = omnivore.kml('KML/Cavo.kml')
+			.on('click', function(e) {
+				trailClick(e);
+				$("#photos").html('<iframe src="//lightwidget.com/widgets/6d167f1931505782a4628f3b1d29d22f.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
+				$("#title").css("font-family", "Fruktur");
+				$("#gpx").prop('href', 'KML/Cavo.gpx');
+				$("#kml").prop('href', 'KML/Cavo.kml');
+			})
+			
 		var SerraKML = omnivore.kml('KML/Serra.kml')
 			.on('click', function(e) {
 				trailClick(e);
@@ -360,7 +370,8 @@
 			MezzaStregaKML,
 			ScaletteKML,
 			StregaKML,
-			VigniolaKML
+			VigniolaKML,
+			CavoKML
 		]);
 
 		// used icons for markers:
