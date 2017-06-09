@@ -377,15 +377,24 @@
 		]);
 		
 		// same copy for outline
+		var CavoKML_outline = omnivore.kml('KML/Cavo.kml');		
+		var SerraKML_outline = omnivore.kml('KML/Serra.kml');;
+		var BuccaDelBanditoKML_outline = omnivore.kml('KML/BuccaDelBandito.kml');
+		var MiniereKML_outline = omnivore.kml('KML/Miniere.kml');
+		var MezzaStregaKML_outline = omnivore.kml('KML/MezzaStrega.kml');
+		var StregaKML_outline = omnivore.kml('KML/Strega.kml', null)
+		var ScaletteKML_outline = omnivore.kml('KML/Scalette.kml');
+		var VigniolaKML_outline = omnivore.kml('KML/Vigniola.kml');
+		
 		var groupKML_outline = new L.LayerGroup([
-			SerraKML,
-			MiniereKML,
-			BuccaDelBanditoKML,	
-			MezzaStregaKML,
-			ScaletteKML,
-			StregaKML,
-			VigniolaKML,
-			CavoKML
+			SerraKML_outline,
+			MiniereKML_outline,
+			BuccaDelBanditoKML_outline,	
+			MezzaStregaKML_outline,
+			ScaletteKML_outline,
+			StregaKML_outline,
+			VigniolaKML_outline,
+			CavoKML_outline
 		]);
 		
 		// used icons for markers:
@@ -446,7 +455,6 @@
 		
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
-
 			layer.on('ready', function() { 
 				var latlngs = layer.getLayers(0)[0]._latlngs;
 				var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon});
@@ -483,7 +491,7 @@
 				layer.setStyle({
 					'color': 'white',
 					'weight': 7,
-					'opacity': 0.4					
+					'opacity': 0.2					
 				});
 			});	
 		});
