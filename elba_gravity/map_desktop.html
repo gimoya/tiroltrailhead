@@ -446,11 +446,11 @@
 				var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon});
 				var startPt = new L.marker(latlngs[0], {icon: startIcon});
 				endPt.addTo(map);
-				startPt.addTo(map);
-				layer.setStyle(style.default);
-				layer.setStyle(style.default_plus);				
+				startPt.addTo(map);				
 				layer.setStyle({
-					'color': trailColors[layer.getLayers()[0].feature.properties.name]
+					'color': trailColors[layer.getLayers()[0].feature.properties.name],
+					'weight': 5,
+					'opacity': 0.4					
 				});
 			});			
 
