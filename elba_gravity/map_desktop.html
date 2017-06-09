@@ -490,13 +490,12 @@
 			layer.on('ready', function() { 			
 				layer.setStyle({
 					'color': 'white',
-					'weight': 7,
-					'opacity': 0.2					
+					'weight': 7					
 				});
 			});	
 		});
 		
-		map.addLayer(groupKML_outline, groupKML);
+		map.addLayer(groupKML);
 		
 		/* get width of info-panel (25 or 50% of screen) and 
 		   use this value for height, because iframe will be quadratic and fill 100%
