@@ -210,13 +210,14 @@
 		mapbox_outdoorLayer.addTo(map);		
 		
 		var trailColors = {
-				   "Scalette": "#eb7b03", 
-				   "Vigniola": "#6826ce", 
-				   "Strega": "#d7374c", 
-				   "Mezza Strega": "#54ff00",
-				   "Bucca Del Bandito": "#009b2e",
-				   "Serra": "#286090",
-				   "Laghetto Rosso": "#fc2500"
+			"Miniere": "#6dc066",
+			"Strega": "#ffd700", 
+			"Mezza Strega": "#ff0000",
+			"Scalette": "#66cccc",
+			"Vignola": "#8a2be2",
+			"Cavo": "#0099cc",
+			"Serra": "#ffb6c1",
+			"Buca Del Bandito": "#000000
 		};
 		
 		function trailClick(e, font) {
@@ -227,6 +228,9 @@
 			$("#infopanel-right").fadeIn("slow");
 			map.fitBounds(e.layer.getBounds());
 		}
+		
+		var CavoKML = omnivore.kml('KML/Cavo.kml')
+			.on('click', function(e) {trailClick(e, "Bangers")});	
 		
 		var SerraKML = omnivore.kml('KML/Serra.kml')
 			.on('click', function(e) {trailClick(e, "Fruktur")});
