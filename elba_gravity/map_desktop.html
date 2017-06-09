@@ -340,6 +340,11 @@
 				'weight': 5,
 				'opacity': 0.4
 			},
+			'default_plus': {
+				'weight': 7,
+				'opacity': 0.4,
+				'color': 'white'
+			},			
 			'highlight': {
 				'weight': 7,
 				'opacity': 0.6
@@ -362,6 +367,7 @@
 		function unsetHighlight (layer) {
 		  // Set default style and clear variable
 		  layer.setStyle(style.default);
+		  layer.setStyle(style.default_plus);
 		  highlight = null;
 		}
 
@@ -441,8 +447,9 @@
 				var startPt = new L.marker(latlngs[0], {icon: startIcon});
 				endPt.addTo(map);
 				startPt.addTo(map);
+				layer.setStyle(style.default);
+				layer.setStyle(style.default_plus);				
 				layer.setStyle({
-					'weight': 5,
 					'color': trailColors[layer.getLayers()[0].feature.properties.name]
 				});
 			});			
