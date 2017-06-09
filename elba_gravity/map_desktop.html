@@ -337,14 +337,10 @@
 
 		var style = {
 			'default': {
+				'stroke': true,
 				'weight': 5,
 				'opacity': 0.4
-			},
-			'default_plus': {
-				'weight': 7,
-				'opacity': 0.4,
-				'color': 'white'
-			},			
+			},		
 			'highlight': {
 				'weight': 7,
 				'opacity': 0.6
@@ -449,6 +445,7 @@
 				layer.setStyle({
 					'color': trailColors[layer.getLayers()[0].feature.properties.name],
 					'weight': 5,
+					'stroke': true,
 					'opacity': 0.4					
 				});
 			});			
