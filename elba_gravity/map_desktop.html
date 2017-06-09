@@ -243,7 +243,8 @@
 		
 		function trailClick(e) {
 				$("#title").html(e.layer.feature.properties.name);
-				$("#title").css('color', trailColors[e.layer.feature.properties.name]);
+				//$("#title").css('color', trailColors[e.layer.feature.properties.name]);
+				$("#title").css("font-family", "Bangers");
 				$("#trail-info").html(e.layer.feature.properties.description);
 				$("#infopanel-left").fadeIn("slow");
 				$(".IT-Click").on('click', function() {
@@ -261,7 +262,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/6d167f1931505782a4628f3b1d29d22f.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Bangers");
+				//$("#title").css("font-family", "Bangers");
 				$("#gpx").prop('href', 'KML/Cavo.gpx');
 				$("#kml").prop('href', 'KML/Cavo.kml');
 			})
@@ -270,7 +271,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/e535e22ef1aa5ccd857aa7219956df32.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Fruktur");
+				//$("#title").css("font-family", "Fruktur");
 				$("#gpx").prop('href', 'KML/Serra.gpx');
 				$("#kml").prop('href', 'KML/Serra.kml');
 			})
@@ -279,7 +280,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/e637f5fd56945098ae1fde70b07164e9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Creepster");
+				//$("#title").css("font-family", "Creepster");
 				$("#gpx").prop('href', 'KML/BuccaDelBandito.gpx');
 				$("#kml").prop('href', 'KML/BuccaDelBandito.kml');
 			});			
@@ -288,7 +289,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/7cfa1a27909850c1a5eb5d022fef31c9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Ultra");
+				//$("#title").css("font-family", "Ultra");
 				$("#gpx").prop('href', 'KML/Miniere.gpx');
 				$("#kml").prop('href', 'KML/Miniere.kml');
 			});			
@@ -297,7 +298,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/cc84f0d9d7b9595885992cd3a18d0d38.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Ewert");
+				//$("#title").css("font-family", "Ewert");
 				$("#gpx").prop('href', 'KML/MezzaStrega.gpx');
 				$("#kml").prop('href', 'KML/MezzaStrega.kml');
 			});
@@ -306,7 +307,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/bb59eb0d5ecc520e99203b6560267003.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Fugaz One");
+				//$("#title").css("font-family", "Fugaz One");
 				$("#gpx").prop('href', 'KML/Strega.gpx');
 				$("#kml").prop('href', 'KML/Strega.kml');
 			});
@@ -315,7 +316,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/7920ebe9426c5b4aa4235de3f5eab748.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "'Hanalei Fill'");
+				//$("#title").css("font-family", "Hanalei Fill");
 				$("#gpx").prop('href', 'KML/Scalette.gpx');
 				$("#kml").prop('href', 'KML/Scalette.kml');
 			});			
@@ -324,7 +325,7 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/dfcc8c0a1ba453eda55f65fa052eb28e.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				$("#title").css("font-family", "Bungee Inline");
+				//$("#title").css("font-family", "Bungee Inline");
 				$("#gpx").prop('href', 'KML/Vigniola.gpx');
 				$("#kml").prop('href', 'KML/Vigniola.kml');
 			});
