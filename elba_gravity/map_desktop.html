@@ -375,8 +375,18 @@
 			VigniolaKML,
 			CavoKML
 		]);
-		// copy for outline
-		var groupKML_outline = groupKML;
+		
+		// same copy for outline
+		var groupKML_outline = new L.LayerGroup([
+			SerraKML,
+			MiniereKML,
+			BuccaDelBanditoKML,	
+			MezzaStregaKML,
+			ScaletteKML,
+			StregaKML,
+			VigniolaKML,
+			CavoKML
+		]);
 		
 		// used icons for markers:
 		L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
