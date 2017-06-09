@@ -337,7 +337,6 @@
 
 		var style = {
 			'default': {
-				'stroke': true,
 				'weight': 5,
 				'opacity': 0.4
 			},		
@@ -376,7 +375,9 @@
 			VigniolaKML,
 			CavoKML
 		]);
-
+		// copy for outline
+		var groupKML_outline = groupKML;
+		
 		// used icons for markers:
 		L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
 
@@ -445,7 +446,6 @@
 				layer.setStyle({
 					'color': trailColors[layer.getLayers()[0].feature.properties.name],
 					'weight': 5,
-					'stroke': true,
 					'opacity': 0.4					
 				});
 			});			
@@ -467,8 +467,17 @@
 				$("#layer-name-info").fadeOut("slow");
 			});	
 		});
-
-		map.addLayer(groupKML);
+		
+		groupKML_outline.eachLayer(function (layer) {	
+			layer.on('ready', function() { 			
+				layer.setStyle({
+					'color': 'white',
+					'weight': 7,
+					'opacity': 0.4					
+				});
+			});	
+			
+		map.addLayer(groupKML, groupKML_outline);
 		
 		/* get width of info-panel (25 or 50% of screen) and 
 		   use this value for height, because iframe will be quadratic and fill 100%
