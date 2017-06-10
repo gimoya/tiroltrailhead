@@ -206,16 +206,6 @@
 
 		toggle.addTo(map);
 
-		/*
-		L.control.layers(baseLayers).addTo(map);
-		L.control.locate({
-			strings: {
-				title: "Show me where I am, yo!"
-			}
-
-		}).addTo(map);
-		*/	
-
 		var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>';  
 		var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
 		var mapbox_outdoorUrl = 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
@@ -333,6 +323,7 @@
 		/*
 		For highlighting features see:
 		http://stackoverflow.com/questions/32971673/how-do-you-make-a-highlighted-outline-appear-in-leaflet-js-on-mouseover-and-by-h
+		Maybe cleaner here: http://bl.ocks.org/bsudekum/5431771
 		*/	
 
 		var style = {
