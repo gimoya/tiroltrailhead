@@ -230,6 +230,42 @@
 			"Serra": "#ffb6c1",
 			"Bucca Del Bandito": "#000000"
 		};
+
+		
+		// use one version of the kml layers for outline styling
+		
+		var CavoKML_outline = omnivore.kml('KML/Cavo.kml');		
+		var SerraKML_outline = omnivore.kml('KML/Serra.kml');
+		var BuccaDelBanditoKML_outline = omnivore.kml('KML/BuccaDelBandito.kml');
+		var MiniereKML_outline = omnivore.kml('KML/Miniere.kml');
+		var MezzaStregaKML_outline = omnivore.kml('KML/MezzaStrega.kml');
+		var StregaKML_outline = omnivore.kml('KML/Strega.kml', null)
+		var ScaletteKML_outline = omnivore.kml('KML/Scalette.kml');
+		var VigniolaKML_outline = omnivore.kml('KML/Vigniola.kml');
+		
+		var groupKML_outline = new L.LayerGroup([
+			SerraKML_outline,
+			MiniereKML_outline,
+			BuccaDelBanditoKML_outline,	
+			MezzaStregaKML_outline,
+			ScaletteKML_outline,
+			StregaKML_outline,
+			VigniolaKML_outline,
+			CavoKML_outline
+		]);
+		
+		groupKML_outline.eachLayer(function (layer) {	
+			layer.on('ready', function() { 			
+				layer.setStyle({
+					'color': 'white',
+					'weight': 8					
+				});
+			});	
+		});
+		
+		map.addLayer(groupKML_outline);		
+		
+		// now the KML tracks with events and all that..
 		
 		function trailClick(e) {
 				$("#title").html(e.layer.feature.properties.name);
@@ -457,39 +493,6 @@
 		});
 		
 		map.addLayer(groupKML);	
-
-		// use same kml layers for outline
-		
-		var CavoKML_outline = omnivore.kml('KML/Cavo.kml');		
-		var SerraKML_outline = omnivore.kml('KML/Serra.kml');
-		var BuccaDelBanditoKML_outline = omnivore.kml('KML/BuccaDelBandito.kml');
-		var MiniereKML_outline = omnivore.kml('KML/Miniere.kml');
-		var MezzaStregaKML_outline = omnivore.kml('KML/MezzaStrega.kml');
-		var StregaKML_outline = omnivore.kml('KML/Strega.kml', null)
-		var ScaletteKML_outline = omnivore.kml('KML/Scalette.kml');
-		var VigniolaKML_outline = omnivore.kml('KML/Vigniola.kml');
-		
-		var groupKML_outline = new L.LayerGroup([
-			SerraKML_outline,
-			MiniereKML_outline,
-			BuccaDelBanditoKML_outline,	
-			MezzaStregaKML_outline,
-			ScaletteKML_outline,
-			StregaKML_outline,
-			VigniolaKML_outline,
-			CavoKML_outline
-		]);
-		
-		groupKML_outline.eachLayer(function (layer) {	
-			layer.on('ready', function() { 			
-				layer.setStyle({
-					'color': 'white',
-					'weight': 8					
-				});
-			});	
-		});
-		
-		map.addLayer(groupKML_outline);			
 		
 		/* get width of info-panel (25 or 50% of screen) and 
 		   use this value for height, because iframe will be quadratic and fill 100%
