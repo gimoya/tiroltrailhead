@@ -435,8 +435,8 @@
 		}
 
 		function showBikeShuttle(e) {
-			$("#layer-name-info").html("Possible bike loading point: " + e.target.properties.place);
-			$("#poi-info").html('Shuttle Call</br><a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
+			$("#layer-name-info").html("Bike loading point: " + e.target.properties.place);
+			$("#poi-info").html('Call</br><a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
 			$("#infopanel-right").css("display", "block");
 		}
 		
@@ -452,11 +452,11 @@
 			.addTo(map);	
 		
 		for (i = 0; i < bikeLoadingPts.length; i++) { 
-			var marker = L.marker([ bikeLoadingPts[i].Lat, bikeLoadingPts[i].Lon ], {icon: bikeLoadingIcon});
+			marker = new L.marker([ bikeLoadingPts[i].Lat, bikeLoadingPts[i].Lon ], {icon: bikeLoadingIcon});
 			marker.properties = {};
 			marker.properties.place = bikeLoadingPts[i].Place;
-			marker.on('click', showBikeShuttle)
-				.addTo(map);
+			marker.on('click', showBikeShuttle);
+			marker.addTo(map);
 		}
 		
 		var x;
