@@ -435,8 +435,8 @@
 			// console.log(latLngToLayerPoint(e.latlng));			
 		}
 
-		function showTelDario(e) {
-			$("#layer-name-info").empty();
+		function showBikeShuttle(e) {
+			$("#layer-name-info").html(e.properties.Place);
 			$("#poi-info").html('Shuttle Call</br><a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
 			$("#infopanel-right").css("display", "block");
 		}
@@ -454,11 +454,12 @@
 		
 		for (i = 0; i < bikeLoadingPts.length; i++) { 
 			var marker = L.marker([ bikeLoadingPts[i].Lat, bikeLoadingPts[i].Lon ], {icon: bikeLoadingIcon});
-			//marker.properties = {};
-			//marker.properties.place = bikeLoadingPts[i].Place;
-			marker.on('click', showTelDario)
+			marker.properties = {};
+			marker.properties.place = bikeLoadingPts[i].Place;
+			marker.on('click', showBikeShuttle)
 				.addTo(map);
 		}
+		
 		var x;
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
