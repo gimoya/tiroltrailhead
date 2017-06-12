@@ -480,7 +480,9 @@
 				$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
 				$("#infopanel-right").fadeIn("slow");
 				$("#layer-name-info").fadeIn("slow");
-				x = e.containerPoint;
+				$("#infopanel-right").css("left", e.containerPoint.x);
+				$("#infopanel-right").css("top", e.containerPoint.y);
+
 			});
 
 			// Mouseout handler
