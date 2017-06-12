@@ -427,7 +427,7 @@
 			  });	
 
 		function openShopURL(e) 
-			$("#layer-name-info").html('');
+			$("#layer-name-info").empty('');
 			$("#poi-info").html('Go to</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
 			$("#infopopup").css("left", e.containerPoint.x);
 			$("#infopopup").css("top", e.containerPoint.y);				
@@ -435,7 +435,7 @@
 		}
 
 		function showTelDario(e) {
-			$("#layer-name-info").html('');
+			$("#layer-name-info").empty();
 			$("#poi-info").html('Shuttle Call</br><a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
 			$("#infopopup").css("left", e.containerPoint.x);
 			$("#infopopup").css("top", e.containerPoint.y);				
