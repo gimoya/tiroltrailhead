@@ -431,23 +431,21 @@
 		function openShopURL(e) {
 			$("#layer-name-info").empty();
 			$("#poi-info").html('Go to:</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
-			$("#infopanel-right").css("display", "block");
-			// console.log(latLngToLayerPoint(e.latlng));			
+			$("#infopanel-right").css("display", "block");			
 		}
 
 		function showBikeShuttle(e) {
-		    console.log(e);
-			$("#layer-name-info").html(e.target.properties.place);
+			$("#layer-name-info").html("Possible bike loading point: " + e.target.properties.place);
 			$("#poi-info").html('Shuttle Call</br><a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
 			$("#infopanel-right").css("display", "block");
 		}
 		
 
 		bikeLoadingPts = new Array();
-		bikeLoadingPts.push({Place: 'Porto Azzurro', 'Lat': 42.860381, 'Lon': 10.420435});
+		bikeLoadingPts.push({Place: 'Cavo', 'Lat': 42.860381, 'Lon': 10.420435});
 		bikeLoadingPts.push({Place: 'Magazzini Beach', 'Lat': 42.843782, 'Lon': 10.400274});
 		bikeLoadingPts.push({Place: 'Bagnaia', 'Lat': 42.799289, 'Lon':10.357636});
-		bikeLoadingPts.push({Place: 'Cavo', 'Lat': 42.770250, 'Lon': 10.390604});
+		bikeLoadingPts.push({Place: 'Porto Azzurro', 'Lat': 42.770250, 'Lon': 10.390604});
 		
 		new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon})
 			.on('click', openShopURL)
