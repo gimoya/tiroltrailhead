@@ -80,8 +80,10 @@
 		color: white;
 	}
 	    
-	#infopopup {
+	#infopanel-right {
 		position: absolute;	
+		bottom: 0px;
+		right: 0px;
 		padding: 0 10 0 10px;
 		margin-bottom: 16px;
 		z-index: 100; 
@@ -114,7 +116,7 @@
 		body {
 			font-size: 75%;
 		}
-		#infopanel-left {
+		#infopanel-left, #infopanel-right {
 			width: 50%; 
 		}	
 		#tracks {
@@ -174,7 +176,7 @@
 		
 		map.on('click', function() {
 			$("#infopanel-left").fadeOut("slow");
-			$("#infopopup").fadeOut("slow");
+			$("#infopanel-right").fadeOut("slow");
 		});
 		
 		new L.Control.Zoom({ position: 'topright' }).addTo(map);
@@ -427,19 +429,17 @@
 			  });	
 
 		function openShopURL(e) {
-			$("#layer-name-info").empty('');
-			$("#poi-info").html('Go to</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
-			$("#infopopup").css("left", e.containerPoint.x);
-			$("#infopopup").css("top", e.containerPoint.y);				
-			$("#infopopup").css("display", "block");			
+			$("#layer-name-info").empty();
+			$("#poi-info").html('Go to:</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
+			$("#infopanel-right").css("display", "block");
+			// console.log(latLngToLayerPoint(e.latlng));			
 		}
 
 		function showTelDario(e) {
 			$("#layer-name-info").empty();
 			$("#poi-info").html('Shuttle Call</br><a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
-			$("#infopopup").css("left", e.containerPoint.x);
-			$("#infopopup").css("top", e.containerPoint.y);				
-			$("#infopopup").css("display", "block");
+			$("#infopanel-right").css("display", "block");
+			// console.log(latLngToLayerPoint(e.latlng));
 		}
 		
 		var bikeLoadingPts = [
@@ -480,9 +480,7 @@
 				setHighlight(layer);
 				$("#layer-name-info").html(' >> ' + e.layer.feature.properties.name);
 				$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopopup").css("left", e.containerPoint.x);
-				$("#infopopup").css("top", e.containerPoint.y);				
-				$("#infopopup").fadeIn("slow");
+				$("#infopanel-right").fadeIn("slow");
 				$("#layer-name-info").fadeIn("slow");
 			});
 
@@ -490,7 +488,7 @@
 			layer.on('mouseout', function (e) {
 				 // Unset highlight
 				unsetHighlight(layer);
-				$("#infopopup").fadeOut("slow");
+				$("#layer-name-info").fadeOut("slow");
 			});	
 		});
 		
