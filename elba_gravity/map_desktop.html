@@ -106,7 +106,7 @@
 	}
 	
 	
-	#layer-name-info, #poi-info {
+	#poi-info {
 		font-family: 'Corbel', 'bold';
 		font-size: 1.9em;
 		font-weight: bold;
@@ -151,7 +151,6 @@
 	
 <body>
 	<div id="infopanel-right">
-		<div class="info-row" id="layer-name-info"></div>
 		<div class="info-row" id="poi-info"></div>
 	</div>
 	<div id="infopanel-left">
@@ -429,16 +428,15 @@
 			  });	
 
 		function openShopURL(e) {
-			$("#layer-name-info").empty();
 			$("#poi-info").html('Go to:</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
 			$("#infopanel-right").css("display", "block");			
 		}
 
 		function showBikeShuttle(e) {
-			$("#layer-name-info").html("Bike loading point: " + e.target.properties.place);
-			$("#poi-info").html('Call <a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
+			$("#poi-info").css('color', 'white'); 
+			$("#poi-info").html('Bike loading point: ' + e.target.properties.place + '</br>' + 'Call <a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
 			$("#infopanel-right").fadeIn("slow");
-			$("#layer-name-info").fadeIn("slow");			
+			$("#poi-info").fadeIn("slow");			
 		}
 		
 
@@ -480,17 +478,17 @@
 			layer.on('mouseover', function (e) {
 				// Set highlight
 				setHighlight(layer);
-				$("#layer-name-info").html(' >> ' + e.layer.feature.properties.name);
-				$("#layer-name-info").css('color', trailColors[e.layer.feature.properties.name]);
+				$("#poi").html(' >> ' + e.layer.feature.properties.name);
+				$("#poi-info").css('color', trailColors[e.layer.feature.properties.name]);
 				$("#infopanel-right").fadeIn("slow");
-				$("#layer-name-info").fadeIn("slow");
+				$("#poi-info").fadeIn("slow");
 			});
 
 			// Mouseout handler
 			layer.on('mouseout', function (e) {
 				 // Unset highlight
 				unsetHighlight(layer);
-				$("#layer-name-info").fadeOut("slow");
+				$("#poi-info").fadeOut("slow");
 			});	
 		});
 		
