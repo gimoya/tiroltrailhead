@@ -428,8 +428,10 @@
 			  });	
 
 		function openShopURL(e) {
+			$("#poi-info").css('color', 'white'); 
 			$("#poi-info").html('Go to</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
-			$("#infopanel-right").css("display", "block");			
+			$("#infopanel-right").fadeIn("slow");
+			$("#poi-info").fadeIn("slow");		
 		}
 
 		function showBikeShuttle(e) {
