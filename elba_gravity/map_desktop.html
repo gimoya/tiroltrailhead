@@ -117,7 +117,7 @@
 			font-size: 75%;
 		}
 		#infopanel-left, #infopanel-right {
-			width: 50%; 
+			max-width: 50%; 
 		}	
 		#tracks {
 			font-size: 1.75em;
@@ -268,7 +268,7 @@
 		
 		function trailClick(e) {
 				$("#title").html(e.layer.feature.properties.name);
-				//$("#title").css('color', trailColors[e.layer.feature.properties.name]);
+				$("#title").css('color', trailColors[e.layer.feature.properties.name]);
 				$("#title").css("font-family", "Bangers");
 				$("#trail-info").html(e.layer.feature.properties.description);
 				$("#infopanel-left").fadeIn("slow");
@@ -428,7 +428,7 @@
 			  });	
 
 		function openShopURL(e) {
-			$("#poi-info").html('Go to:</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
+			$("#poi-info").html('Go to</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
 			$("#infopanel-right").css("display", "block");			
 		}
 
@@ -458,7 +458,6 @@
 			marker.addTo(map);
 		}
 		
-		var x;
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
 			layer.on('ready', function() { 
