@@ -153,7 +153,7 @@
 						<p id="outputListSellrain">SELLRAIN</p>
 						<p id="outputListStubai">STUBAITAL</p>
 						<p id="outputListOetztal">VORDERES ÖTZTAL & OCHSENGARTEN</p>
-						<p id="outputListWipptal">WIPPTAL & SEITENTÄLER</p>
+						<p id="outputListWipptalBrenner">WIPPTAL & BRENNER</p>
 						<!-- hitwebcounter Code START -->
 						<a href="http://www.hitwebcounter.com/links.php" target="_blank">
 							<img src="http://hitwebcounter.com/counter/counter.php?page=5756788&style=0038&nbdigits=7&type=page&initCount=100" style="border:none; margin-bottom: 20px;">
@@ -788,8 +788,8 @@
 						continue;							
 					}
 					
-					if (descr.indexOf("Wipptal") > -1) {
-						outputListWipptal.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
+					if (descr.indexOf("Wipptal-Brenner") > -1) {
+						outputListWipptalBrenner.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
 						continue;
 					} else {
 						console.log('Caution: Feature with name: "' + name + '" could not be assigned and will be missing in Trails list!!');
