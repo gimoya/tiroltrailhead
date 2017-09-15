@@ -109,10 +109,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1218928.70750550949014723</xmin>
-      <ymin>5988716.87229208461940289</ymin>
-      <xmax>1220018.89919317071326077</xmax>
-      <ymax>5989099.28636500798165798</ymax>
+      <xmin>1421826.81898285867646337</xmin>
+      <ymin>5908221.00189817324280739</ymin>
+      <xmax>1423269.79658634727820754</xmax>
+      <ymax>5908956.70724628679454327</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -1750,7 +1750,7 @@
         <ymax>47.03082760375210114</ymax>
       </extent>
       <id>Elevation_Plugin_Results20170720115133858</id>
-      <datasource>memory?geometry=Point&amp;crs=EPSG:4326&amp;field=elevation:(0,0)</datasource>
+      <datasource>memory?geometry=Point&amp;crs=EPSG:4326&amp;field=elevation:(0,0):string(255,0)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1773,13 +1773,13 @@
       <layerDependencies/>
       <expressionfields/>
       <defaults>
-        <default field="elevation" expression=""/>
+        <default field="elevation:(0,0)" expression=""/>
       </defaults>
       <map-layer-style-manager current="">
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="elevation">
+        <edittype widgetv2type="TextEdit" name="elevation:(0,0)">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
@@ -1816,7 +1816,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield></displayfield>
+      <displayfield>elevation:(0,0)</displayfield>
       <label>1</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -1838,9 +1838,9 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
-        <alias field="elevation" index="0" name=""/>
+        <alias field="elevation:(0,0)" index="0" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -1848,10 +1848,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="583290919">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -2350,7 +2350,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -2370,10 +2370,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -3424,7 +3424,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -3444,10 +3444,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="-16777216">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -5567,7 +5567,7 @@
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="1">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;OGC_FID&quot;" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="OGC_FID"/>
           <column width="268" hidden="0" type="field" name="name"/>
