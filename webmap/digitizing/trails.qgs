@@ -103,6 +103,9 @@
     </layer-tree-group>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Rasters">
       <customproperties/>
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR">
+        <customproperties/>
+      </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bergfex_oek20170517223227274" name="bergfex oek">
         <customproperties/>
       </layer-tree-layer>
@@ -121,10 +124,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1301274.29997558705508709</xmin>
-      <ymin>6011521.82427634950727224</ymin>
-      <xmax>1304626.92577772960066795</xmax>
-      <ymax>6013796.18528494331985712</ymax>
+      <xmin>1302791.73202996584586799</xmin>
+      <ymin>6019933.55949488002806902</ymin>
+      <xmax>1307602.70241906424053013</xmax>
+      <ymax>6022403.74692120123654604</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -192,6 +195,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kirchberg__Kitzbühel_any20160510222257462"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="GeoSearch20150812121601587"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__3_20151230230331695"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Flugjahr_Aktuell_RGB_Footprint_Aktuell_RGB_Image_Aktuell_RGB20170918213632207"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3785" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memory_layer20150416091404471"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__64_20161108211920335"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__9_20170523234125703"/>
@@ -212,6 +216,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Toaster_Course__11_20150607211036505"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__8_20161208171851614"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__28_20160704175844385"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3785" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memory_layer20141206234503153"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Toaster_Course__3_20150621211125374"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Venet_Plattenrain_Pitzeklamm20160725212358763"/>
@@ -293,8 +298,8 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="output20151117201932335"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Route_wgs8420160510214753677"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__1_20161215074536172"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3785" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memory_layer20150530132111171"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Elevation_Plugin_Results20170918165342523"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3785" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memory_layer20150530132111171"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Toaster_Course__5_20150730001455178"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenLayers_plugin_layer20141125090141845"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenLayers_plugin_layer20141122222552357"/>
@@ -496,6 +501,7 @@
       <item>Kotalm_Köglalm_tracks20170918165124750</item>
       <item>Köglalm20170918165145129</item>
       <item>Elevation_Plugin_Results20170918165342523</item>
+      <item>Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -654,6 +660,11 @@
       </legendlayer>
     </legendgroup>
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Rasters">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046" visible="0"/>
+        </filegroup>
+      </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="bergfex oek" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="bergfex_oek20170517223227274" visible="0"/>
@@ -1847,7 +1858,7 @@
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>Elevation_Plugin_Results20170918165342523</id>
-      <datasource>memory?geometry=Point&amp;crs=EPSG:4326&amp;field=elevation:(0,0)</datasource>
+      <datasource>memory?geometry=Point&amp;crs=EPSG:4326&amp;field=elevation:(0,0):string(255,0)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1870,13 +1881,13 @@
       <layerDependencies/>
       <expressionfields/>
       <defaults>
-        <default field="elevation" expression=""/>
+        <default field="elevation:(0,0)" expression=""/>
       </defaults>
       <map-layer-style-manager current="">
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <edittypes>
-        <edittype widgetv2type="TextEdit" name="elevation">
+        <edittype widgetv2type="TextEdit" name="elevation:(0,0)">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
@@ -1913,7 +1924,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield></displayfield>
+      <displayfield>elevation:(0,0)</displayfield>
       <label>1</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -1935,9 +1946,9 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
-        <alias field="elevation" index="0" name=""/>
+        <alias field="elevation:(0,0)" index="0" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -1945,10 +1956,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -1957,6 +1968,51 @@
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <extent>
+        <xmin>996301.77520000003278255</xmin>
+        <ymin>5806375.76606199983507395</ymin>
+        <xmax>1536867.59020500001497567</xmax>
+        <ymax>6168598.19534699991345406</ymax>
+      </extent>
+      <id>Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046</id>
+      <datasource>contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/jpeg&amp;layers=Image_Aktuell_CIR&amp;layers=Footprint_Aktuell_CIR&amp;layers=Flugjahr_Aktuell_CIR&amp;styles=&amp;styles=&amp;styles=&amp;url=https://gis.tirol.gv.at/arcgis/services/Service_Public/orthofoto/MapServer/WMSServer</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Html"/>
+      </customproperties>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
+          <rasterTransparency/>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
@@ -2439,7 +2495,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="name" index="0" name=""/>
         <alias field="cmt" index="1" name=""/>
@@ -2463,10 +2519,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="-16777216">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -2609,7 +2665,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -2629,10 +2685,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="114928952">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -3975,7 +4031,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -3995,10 +4051,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="119698992">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -6038,7 +6094,7 @@
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;OGC_FID&quot;" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;OGC_FID&quot;" sortOrder="1">
         <columns>
           <column width="-1" hidden="0" type="field" name="OGC_FID"/>
           <column width="268" hidden="0" type="field" name="name"/>
@@ -6141,21 +6197,34 @@
       <LayerSnappingList type="QStringList">
         <value>2017_01_03_00_13_06_tracks20170103001711468</value>
         <value>Amberg_Auerklamm_00120170202093105180</value>
+        <value>Blaserhütte__Trinser_Steig20170719225815505</value>
         <value>Elevation_Plugin_Results20161113213623572</value>
         <value>Elevation_Plugin_Results20161230220840815</value>
         <value>Elevation_Plugin_Results20170104221005837</value>
+        <value>Elevation_Plugin_Results20170719231029317</value>
+        <value>Elevation_Plugin_Results20170720115133858</value>
+        <value>Elevation_Plugin_Results20170918165342523</value>
         <value>Holzberg20170202093444818</value>
+        <value>Knappensteig_Piburger_See20170524002317942</value>
+        <value>Kotalm_Köglalm_tracks20170918165124750</value>
+        <value>Köglalm20170918165145129</value>
+        <value>Lichtsee_Steig20170720115104168</value>
         <value>Marienbergjoch_00120170202141634707</value>
+        <value>MiemingerP_Krebsbach_FiechterK_Stöttl20170524003524337</value>
+        <value>Portjoch20170719232238920</value>
+        <value>Portjoch220170719232239039</value>
+        <value>Rosskopf_Gossensaß20170720160050807</value>
+        <value>Tunnelweg_Hubertus20170918164942805</value>
+        <value>Wipptalerhof_BergerAlmPP20170719230749495</value>
         <value>brouter__4_20170501211044622</value>
         <value>brouter__5_20170501211329398</value>
         <value>brouter__6_20170517161520340</value>
         <value>brouter__8_20170517165353708</value>
+        <value>brouter__8_20170523234250060</value>
         <value>brouter__9_20170517233141607</value>
         <value>ler_grubig_blindsee_AM_tracks20170104213308353</value>
         <value>regions_utm_utf820141118153216780</value>
         <value>trails_utm_utf820141118153222040</value>
-        <value>brouter__8_20170523234250060</value>
-        <value>Knappensteig_Piburger_See20170524002317942</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
@@ -6172,9 +6241,22 @@
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>enabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
       </LayerSnappingEnabledList>
       <SnappingMode type="QString">advanced</SnappingMode>
       <AvoidIntersectionsList type="QStringList"/>
@@ -6193,10 +6275,23 @@
         <value>2</value>
         <value>2</value>
         <value>2</value>
-        <value>1</value>
-        <value>1</value>
         <value>2</value>
         <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>1</value>
+        <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
         <value>to_vertex_and_segment</value>
@@ -6212,10 +6307,23 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
       </LayerSnapToList>
       <DefaultSnapType type="QString">to vertex</DefaultSnapType>
       <DefaultSnapTolerance type="double">0</DefaultSnapTolerance>
@@ -6234,10 +6342,23 @@
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
-        <value>5.000000</value>
-        <value>5.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>5.000000</value>
+        <value>5.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
     <Identify>
