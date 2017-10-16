@@ -112,10 +112,10 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bergfex_oek20170517223227274" name="bergfex oek">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="bergfex_oek20170517223227274" name="bergfex oek">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenStreetMap20161207230225903" name="OpenStreetMap">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenStreetMap20161207230225903" name="OpenStreetMap">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OCM_Landscape20161207230225880" name="OCM Landscape">
@@ -130,10 +130,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1348468.95785291935317218</xmin>
-      <ymin>6022274.23213983047753572</ymin>
-      <xmax>1352453.58336611767299473</xmax>
-      <ymax>6027929.81485056597739458</ymax>
+      <xmin>1209492.85315781738609076</xmin>
+      <ymin>5997582.61389207653701305</ymin>
+      <xmax>1213734.00093419756740332</xmax>
+      <ymax>6002324.99140614084899426</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -471,6 +471,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kragenjoch_Zaubersteig20161228010102856"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="GeoSearch20160706205034152"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__20_20160531213240919"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Elevation_Plugin_Results20171016120135416"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3785" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memory_layer20141205235554729"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="2017_01_03_00_13_06_tracks20170103001711468"/>
     </layer_coordinate_transform_info>
@@ -687,14 +688,14 @@
           <legendlayerfile isInOverview="0" layerid="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="bergfex oek" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="bergfex oek" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="bergfex_oek20170517223227274" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="bergfex_oek20170517223227274" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OpenStreetMap" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenStreetMap" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OpenStreetMap20161207230225903" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="OpenStreetMap20161207230225903" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OCM Landscape" showFeatureCount="0">
@@ -6123,13 +6124,13 @@
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="100000" maximumScale="1e+08" simplifyDrawingHints="1" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
-        <xmin>1180674.00026434729807079</xmin>
-        <ymin>5908203.65203738678246737</ymin>
-        <xmax>1426785.25308211147785187</xmax>
-        <ymax>6057885.15582270082086325</ymax>
+        <xmin>1206534.63117053383029997</xmin>
+        <ymin>6000999.47860781662166119</ymin>
+        <xmax>1212759.39445671089924872</xmax>
+        <ymax>6007959.90040759928524494</ymax>
       </extent>
       <id>trails_utm_utf820141118153222040</id>
-      <datasource>./trails_utm_utf8.sqlite</datasource>
+      <datasource>./trails_utm_utf8.sqlite|layerid=0</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6503,9 +6504,9 @@
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="1">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;value&quot;" sortOrder="0">
         <columns>
-          <column width="-1" hidden="0" type="field" name="OGC_FID"/>
+          <column width="356" hidden="0" type="field" name="OGC_FID"/>
           <column width="268" hidden="0" type="field" name="name"/>
           <column width="206" hidden="0" type="field" name="region"/>
           <column width="-1" hidden="0" type="field" name="altitude"/>
@@ -6606,6 +6607,7 @@
       <LayerSnappingList type="QStringList">
         <value>2017_01_03_00_13_06_tracks20170103001711468</value>
         <value>Amberg_Auerklamm_00120170202093105180</value>
+        <value>BHäring_Stallhäusl_Juffing20171016090011323</value>
         <value>Blaserhütte__Trinser_Steig20170719225815505</value>
         <value>Elevation_Plugin_Results20161113213623572</value>
         <value>Elevation_Plugin_Results20161230220840815</value>
@@ -6633,8 +6635,8 @@
         <value>brouter__9_20170517233141607</value>
         <value>ler_grubig_blindsee_AM_tracks20170104213308353</value>
         <value>regions_utm_utf820141118153216780</value>
-        <value>trails_utm_utf820141118153222040</value>
         <value>t112445055_widdersberghorn_kerschbaumers_bruck20171016073555106</value>
+        <value>trails_utm_utf820141118153222040</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
@@ -6666,8 +6668,9 @@
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
-        <value>enabled</value>
         <value>disabled</value>
+        <value>disabled</value>
+        <value>enabled</value>
       </LayerSnappingEnabledList>
       <SnappingMode type="QString">advanced</SnappingMode>
       <AvoidIntersectionsList type="QStringList"/>
@@ -6701,9 +6704,10 @@
         <value>2</value>
         <value>2</value>
         <value>2</value>
-        <value>1</value>
+        <value>2</value>
         <value>1</value>
         <value>2</value>
+        <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
         <value>to_vertex_and_segment</value>
@@ -6734,9 +6738,10 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
       </LayerSnapToList>
       <DefaultSnapType type="QString">to vertex</DefaultSnapType>
       <DefaultSnapTolerance type="double">0</DefaultSnapTolerance>
@@ -6770,9 +6775,10 @@
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
-        <value>5.000000</value>
+        <value>0.000000</value>
         <value>5.000000</value>
         <value>0.000000</value>
+        <value>5.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
     <Identify>
