@@ -33,7 +33,7 @@ def formOpen(dialog,layerid,featureid):
 	conflField.textChanged.connect( newDescr )
 
 def newDescr():
-	descrField.setPlainText('<div id="topic" style="float:left;">Name:</br>Region:</br>H&ouml;hendifferenz:</br>Schwierigkeit:</br>Gefahr:</br>Uphill:</br>Erlebnis:</br>Aufstiegshilfe:</br>Konflikt:</div><div id="topic-text">' +	
+	descrField.setPlainText('<div id="topic" style="float:left;">Name:</br>Region:</br>Seeh&ouml;he:</br>Schwierigkeit:</br>Gefahr:</br>Uphill:</br>Erlebnis:</br>Aufstiegshilfe:</br>Konflikt:</div><div id="topic-text">' +	
 	nameField.text() + '</br>' + regionField.currentText() + '</br>' + altField.text() + '</br>' +
 	difficField.text() + '</br>' + riskField.text() + '</br>' + uphillField.text() + '</br>' + valueField.text() + '</br>' +
 	shuttleField.text() + '</br>' + conflField.text() + '</div>')
