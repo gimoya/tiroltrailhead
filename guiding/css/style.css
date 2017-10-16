@@ -101,8 +101,9 @@ a:focus, a:hover {
 
 .navbar-default .navbar-brand {
 	color: #fff200;
-	font-family: 'Sigmar One', cursive;
-	font-size: 5.5ex;
+	font-family: 'Monofett', cursive;
+	font-size: 6ex;
+	letter-spacing: 1px;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
