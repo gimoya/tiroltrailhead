@@ -101,7 +101,9 @@ a:focus, a:hover {
 
 .navbar-default .navbar-brand {
 	color: #fff200;
-	font: 8ex Rubik Mono One;
+	font-family: 'Rubik Mono One';
+	font-size: 8ex;
+	letter-spacing: 3px;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -538,7 +540,8 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 
 .slider .caption h3 {
-	font: 50px Monoton;
+	font-family: 'Monoton';
+	font-size: 50px;
 	color: #FFF;
 	font-weight: 700;
 }
