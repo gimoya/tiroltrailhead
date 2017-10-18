@@ -101,9 +101,8 @@ a:focus, a:hover {
 
 .navbar-default .navbar-brand {
 	color: #fff200;
-	font-family: 'Rubik Mono One', 'sans-serif';
-	font-size: 7ex;
-	letter-spacing: 3px;
+	font-family: 'Sigmar One', 'cursive';
+	font-size: 6ex;
 }
 
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -540,9 +539,10 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 
 .slider .caption h3 {
-	font-size: 50px;
 	color: #FFF;
-	font-weight: 700;
+	font-family: 'Cabin Sketch', 'cursive';
+	font-size: 45px;	
+	font-weight: bold;
 }
 
 .caption-signup {
