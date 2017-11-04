@@ -226,7 +226,7 @@
 			$("#layer-name-info").css('font-family', font)
 				.html(e.layer.feature.properties.name)
 				.css('color', trailColors[e.layer.feature.properties.name]);
-				.css('display', 'block');
+				.css('display', 'block'); // this will show #layer-name-info again, if its display was set to none after clicked #poi-info
 			$("#infopanel-right").fadeIn("slow");
 			map.fitBounds(e.layer.getBounds());
 		}
@@ -330,6 +330,7 @@
 		function openShopURL(e) {
 			$("#close-div").html('<span id="close" onclick="$(this).parent().parent().hide();">X</span>');
 			$("#poi-info").html('Go to:</br><a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
+			$("#layer-name-info").css('display','none'); // this will hide #layer-name-info, which otherwise would always stick above #poi-info	
 			$("#infopanel-right").fadeIn("slow");
 			// console.log(latLngToLayerPoint(e.latlng));			
 		}
@@ -337,7 +338,7 @@
 		function showTelDario(e) {
 			$("#close-div").html('<span id="close" onclick="$(this).parent().parent().hide();">X</span>');
 			$("#poi-info").html('Shuttle Call</br><a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
-			$("#name-info").css('display','none');			
+			$("#layer-name-info").css('display','none'); // this will hide #layer-name-info, which otherwise would always stick above #poi-info	
 			$("#infopanel-right").fadeIn("slow");
 			// console.log(latLngToLayerPoint(e.latlng));
 		}
