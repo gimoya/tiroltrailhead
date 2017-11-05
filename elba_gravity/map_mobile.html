@@ -114,7 +114,7 @@
 	    text-align: center;
 	}  
 	    
-	#layer-name-info, #poi-info {
+	#layer-name-info, #poi-info, #tracks {
 		font-family: 'Corbel';
 		font-size: 2.5em;
 	}
@@ -137,7 +137,10 @@
 <body>
 	<div id="infopanel-right">
 		<div class="info-row" id="close-div" style="height:15px;"></div>
-		<div class="info-row" id="layer-name-info"></div>
+		<div class="info-row" id="layer-name-info">
+		<div class="info-row" id="tracks">
+			<a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a>
+		</div>
 		<div class="info-row" id="poi-info"></div>
 		<div class="info-row" id="spacer-bottom" style="height:17px;"></div>
 	</div>
@@ -218,10 +221,11 @@
 		function trailClick(e, font) {
 			$("#close-div").html('<span id="close" onclick="$(this).parent().parent().hide();">X</span>');
 			$("#layer-name-info").css('font-family', font)
-				.html(e.layer.feature.properties.name + ' <a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a>')
+				.html(e.layer.feature.properties.name')
 				.css('color', trailColors[e.layer.feature.properties.name])
-				// this will show #layer-name-info again, if its display was set to none after clicked #poi-info
+				// this will show #tracks and #layer-name-info again, if its display was set to none after clicked #poi-info
 				.css('display', 'block'); 
+			$("#tracks").css('display', 'block');
 			$("#infopanel-right").fadeIn("slow");
 			map.fitBounds(e.layer.getBounds());
 		}
@@ -330,8 +334,9 @@
 		function openShopURL(e) {
 			$("#close-div").html('<span id="close" onclick="$(this).parent().parent().hide();">X</span>');
 			$("#poi-info").html('Visit: <a href="http://www.elbagravitybikerent.it/" target="_blank";>Elba Gravity</br>Bike Shop/Rent</a>');
-			// this will hide #layer-name-info, which otherwise would always stick above #poi-info	
+			// this will hide #layer-name-info and #tracks, which otherwise would always stick above #poi-info	
 			$("#layer-name-info").css('display','none');
+			$("#tracks").css('display','none');
 			$("#infopanel-right").fadeIn("slow");
 			// console.log(latLngToLayerPoint(e.latlng));			
 		}
