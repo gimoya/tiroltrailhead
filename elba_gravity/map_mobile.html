@@ -231,12 +231,7 @@
 		}
 		
 		var CavoKML = omnivore.kml('KML/Cavo.kml')
-			.on('click', function(e) {
-					trailClick(e, "Bangers"); 				
-					$("#gpx").prop('href', 'KML/Cavo.gpx');
-					$("#kml").prop('href', 'KML/Cavo.kml');
-					}
-				);	
+			.on('click', function(e) {trailClick(e, "Bangers")});
 		
 		var SerraKML = omnivore.kml('KML/Serra.kml')
 			.on('click', function(e) {trailClick(e, "Fruktur")});
@@ -344,8 +339,9 @@
 		function showTelDario(e) {
 			$("#close-div").html('<span id="close" onclick="$(this).parent().parent().hide();">X</span>');
 			$("#poi-info").html('Shuttle Call: <a href="tel:+39 320 264 9391">+39 320 264 9391</a>');
-			// this will hide #layer-name-info, which otherwise would always stick above #poi-info	
+			// this will hide #layer-name-info and #tracks, which otherwise would always stick above #poi-info	
 			$("#layer-name-info").css('display','none'); 
+			$("#tracks").css('display','none');
 			$("#infopanel-right").fadeIn("slow");
 			// console.log(latLngToLayerPoint(e.latlng));
 		}
