@@ -114,9 +114,14 @@
 	    text-align: center;
 	}  
 	    
-	#layer-name-info, #poi-info, #tracks {
+	#layer-name-info, #poi-info {
 		font-family: 'Corbel';
 		font-size: 2.5em;
+	}
+	
+	#tracks {
+		font-family: 'Corbel';
+		font-size: 1.5em;
 	}
 	
 	/* 
@@ -229,7 +234,12 @@
 		}
 		
 		var CavoKML = omnivore.kml('KML/Cavo.kml')
-			.on('click', function(e) {trailClick(e, "Bangers")});
+			.on('click', function(e) {
+					trailClick(e, "Bangers");
+					$("#gpx").prop('href', 'KML/Serra.gpx');
+					$("#kml").prop('href', 'KML/Serra.kml');
+					}
+				);
 		
 		var SerraKML = omnivore.kml('KML/Serra.kml')
 			.on('click', function(e) {trailClick(e, "Fruktur")});
