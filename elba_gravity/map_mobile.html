@@ -237,6 +237,7 @@
 			.on('click', function(e) {trailClick(e, "Bangers")});
 		
 		var SerraKML = omnivore.kml('KML/Serra.kml')
+			.on('click', function(e) {
 				trailClick(e, "Fruktur");
 				$("#gpx").prop('href', 'KML/Serra.gpx');
 				$("#kml").prop('href', 'KML/Serra.kml');
