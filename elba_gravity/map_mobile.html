@@ -234,15 +234,13 @@
 		}
 		
 		var CavoKML = omnivore.kml('KML/Cavo.kml')
-			.on('click', function(e) {
-					trailClick(e, "Bangers");
-					$("#gpx").prop('href', 'KML/Serra.gpx');
-					$("#kml").prop('href', 'KML/Serra.kml');
-					}
-				);
+			.on('click', function(e) {trailClick(e, "Bangers")});
 		
 		var SerraKML = omnivore.kml('KML/Serra.kml')
-			.on('click', function(e) {trailClick(e, "Fruktur")});
+				trailClick(e, "Fruktur");
+				$("#gpx").prop('href', 'KML/Serra.gpx');
+				$("#kml").prop('href', 'KML/Serra.kml');
+			});
 
 		var BuccaDelBanditoKML = omnivore.kml('KML/BuccaDelBandito.kml')
 			.on('click', function(e) {trailClick(e, "Creepster")});		
