@@ -428,23 +428,27 @@
 			layer.on('ready', function() { 
 			
 				var latlngs = layer.getLayers(0)[0]._latlngs;
-				new L.circleMarker(latlngs[latlngs.length - 1], {
+				
+				new L.marker(latlngs[0], {
 						color: 'black',
-						fillColor: '#f03',
+						fillColor: 'white',
 						radius: 10
 					})
-					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' > Start', {
+					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' - Start', {
 						permanent: false, 
 						direction: 'right'
 					})
 					.addTo(map);
-
-				new L.marker(latlngs[0], {icon: startIcon})
-					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' > Exit', {
-							permanent: false, 
-							direction: 'right'
-						}
-					)
+					
+				new L.circleMarker(latlngs[latlngs.length - 1], {
+						color: 'black',
+						fillColor: 'white',
+						radius: 10
+					})
+					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' - End', {
+						permanent: false, 
+						direction: 'right'
+					})
 					.addTo(map);
 					
 				layer.setStyle({
