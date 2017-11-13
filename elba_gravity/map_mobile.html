@@ -428,10 +428,10 @@
 			layer.on('ready', function() { 
 			
 				var latlngs = layer.getLayers(0)[0]._latlngs;
-				new L.circle(latlngs[latlngs.length - 1], {
+				new L.circleMarker(latlngs[latlngs.length - 1], {
 						color: 'black',
 						fillColor: '#f03',
-						radius: 100
+						radius: 10
 					})
 					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' > Start', {
 						permanent: false, 
