@@ -391,15 +391,7 @@
 		
 		var loadingPtsLabels = ['Bagnaia', 'Magazzini', 'Cavo', 'SP 33 - Vignola Exit', 'Porto Azzurro', 'Rio Marina'];
 		
-		var POIs = [
-			[42.8306262, 10.4210224],
-			[42.802583, 10.383708]
-		];
-		
-		var poiLabels = ['Fortezza di Giogo', '	Fortezza del Volterraio'];
-		
 		new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon})
-		
 			.on('click', openShopURL)
 			.addTo(map);	
 		
@@ -414,19 +406,6 @@
 				.on('click', showTelDario)
 				.addTo(map);
 		}
-		
-		/*
-		for (i = 0; i < POIs.length; i++) { 
-			new L.marker(POIs[i], {icon: poiIcon})
-				.bindTooltip(poiLabels[i], 
-					{
-						permanent: false, 
-						direction: 'right'
-					}
-				)
-				.addTo(map);
-		}	
-		*/
 		
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
