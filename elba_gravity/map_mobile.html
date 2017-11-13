@@ -364,7 +364,7 @@
 			
 		var poiIcon = L.AwesomeMarkers.icon({
 			    icon: 'fa-thumb-tack',
-			    markerColor: 'green',
+			    markerColor: 'blue',
 			    iconColor: 'white'
 			  });				
 
@@ -413,7 +413,7 @@
 		}
 		
 		for (i = 0; i < POIs.length; i++) { 
-			new L.marker(bikeLoadingPts[i], {icon: poiIcon})
+			new L.marker(POIs[i], {icon: poiIcon})
 				.bindTooltip(poiLabels[i], 
 					{
 						permanent: false, 
