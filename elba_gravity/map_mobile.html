@@ -428,18 +428,19 @@
 			layer.on('ready', function() { 
 			
 				var latlngs = layer.getLayers(0)[0]._latlngs;
-				new L.marker(latlngs[latlngs.length - 1], {icon: endIcon})
-					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' > Start', 
-						{
-							permanent: false, 
-							direction: 'right'
-						}
-					)
+				new L.circle(latlngs[latlngs.length - 1], {
+						color: 'black',
+						fillColor: '#f03',
+						radius: 10px
+					})
+					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' > Start', {
+						permanent: false, 
+						direction: 'right'
+					})
 					.addTo(map);
 
 				new L.marker(latlngs[0], {icon: startIcon})
-					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' > Exit', 
-						{
+					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' > Exit', {
 							permanent: false, 
 							direction: 'right'
 						}
