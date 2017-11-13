@@ -384,8 +384,11 @@
 			[42.799289, 10.357636],
 			[42.860381, 10.420435],
 			[42.843782, 10.400274],
-			[42.770250, 10.390604]
+			[42.770250, 10.390604],
+			[42.815970, 10.428423]
 		];
+		
+		var loadingPtsLabels = ['Cavo', 'Magazzini', 'Bagnaia', 'Porto Azzurro', 'Rio Elba' 'Rio Marina'];
 		
 		var POIs = [
 			[42.8306262, 10.4210224],
@@ -395,11 +398,18 @@
 		var poiLabels = ['Fortezza di Giogo', '	Fortezza del Volterraio'];
 		
 		new L.marker([42.81376, 10.3989717], {icon: bikeRentIcon})
+		
 			.on('click', openShopURL)
 			.addTo(map);	
 		
 		for (i = 0; i < bikeLoadingPts.length; i++) { 
 			new L.marker(bikeLoadingPts[i], {icon: bikeLoadingIcon})
+				.bindTooltip(loadingPtsLabels[i], 
+					{
+						permanent: false, 
+						direction: 'right'
+					}
+				)
 				.on('click', showTelDario)
 				.addTo(map);
 		}
