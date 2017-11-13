@@ -223,7 +223,7 @@
 			"Strega": "#ffd700", 
 			"Mezza Strega": "#ff0000",
 			"Scalette": "#66cccc",
-			"Vigniola": "#8a2be2",
+			"Vignola": "#8a2be2",
 			"Cavo": "#0099cc",
 			"Serra": "#ffb6c1",
 			"Buca Del Bandito": "#000000"
@@ -239,7 +239,7 @@
 		var MezzaStregaKML_outline = omnivore.kml('KML/MezzaStrega.kml');
 		var StregaKML_outline = omnivore.kml('KML/Strega.kml');
 		var ScaletteKML_outline = omnivore.kml('KML/Scalette.kml');
-		var VigniolaKML_outline = omnivore.kml('KML/Vigniola.kml');
+		var VignolaKML_outline = omnivore.kml('KML/Vignola.kml');
 		
 		var groupKML_outline = new L.LayerGroup([
 			SerraKML_outline,
@@ -248,7 +248,7 @@
 			MezzaStregaKML_outline,
 			ScaletteKML_outline,
 			StregaKML_outline,
-			VigniolaKML_outline,
+			VignolaKML_outline,
 			CavoKML_outline
 		]);
 		
@@ -345,13 +345,13 @@
 				$("#kml").prop('href', 'KML/Scalette.kml');
 			});			
 
-		var VigniolaKML = omnivore.kml('KML/Vigniola.kml')
+		var VignolaKML = omnivore.kml('KML/Vignola.kml')
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/dfcc8c0a1ba453eda55f65fa052eb28e.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				//$("#title").css("font-family", "Bungee Inline");
-				$("#gpx").prop('href', 'KML/Vigniola.gpx');
-				$("#kml").prop('href', 'KML/Vigniola.kml');
+				$("#gpx").prop('href', 'KML/Vignola.gpx');
+				$("#kml").prop('href', 'KML/Vignola.kml');
 			});
 
 		/*
@@ -395,7 +395,7 @@
 			MezzaStregaKML,
 			ScaletteKML,
 			StregaKML,
-			VigniolaKML,
+			VignolaKML,
 			CavoKML
 		]);	
 		
