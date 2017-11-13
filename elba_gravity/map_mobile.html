@@ -344,19 +344,6 @@
 		// used icons for markers:
 		L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
 
-		var endIcon = L.AwesomeMarkers.icon({
-			    icon: 'fa-flag-checkered',
-				iconSize: '5px',
-			    markerColor: 'cadetblue',
-			    iconColor: 'white'
-			  });
-
-		var startIcon = L.AwesomeMarkers.icon({
-			    icon: 'fa-hand-o-down',
-			    markerColor: 'green',
-			    iconColor: 'white'
-			  });	
-
 		var bikeRentIcon = L.AwesomeMarkers.icon({
 			    icon: 'fa-bicycle',
 			    markerColor: 'blue',
@@ -371,7 +358,7 @@
 			
 		var poiIcon = L.AwesomeMarkers.icon({
 			    icon: 'fa-thumb-tack',
-			    markerColor: 'lightbrown',
+			    markerColor: 'orange',
 			    iconColor: 'white'
 			  });				
 
@@ -417,6 +404,7 @@
 				.addTo(map);
 		}
 		
+		/*
 		for (i = 0; i < POIs.length; i++) { 
 			new L.marker(POIs[i], {icon: poiIcon})
 				.bindTooltip(poiLabels[i], 
@@ -426,7 +414,8 @@
 					}
 				)
 				.addTo(map);
-		}		
+		}	
+		*/
 		
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
