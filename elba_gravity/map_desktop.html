@@ -460,6 +460,10 @@
 						fillOpacity: 1,					
 						radius: 8
 					})
+					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' - End', {
+						permanent: false, 
+						direction: 'right'
+					})
 					.addTo(map);
 					
 				new L.circleMarker(latlngs[latlngs.length - 1], {
