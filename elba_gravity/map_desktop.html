@@ -226,7 +226,7 @@
 			"Vigniola": "#8a2be2",
 			"Cavo": "#0099cc",
 			"Serra": "#ffb6c1",
-			"Bucca Del Bandito": "#000000"
+			"Buca Del Bandito": "#000000"
 		};
 
 		
@@ -234,7 +234,7 @@
 		
 		var CavoKML_outline = omnivore.kml('KML/Cavo.kml');		
 		var SerraKML_outline = omnivore.kml('KML/Serra.kml');
-		var BuccaDelBanditoKML_outline = omnivore.kml('KML/BuccaDelBandito.kml');
+		var BucaDelBanditoKML_outline = omnivore.kml('KML/BucaDelBandito.kml');
 		var MiniereKML_outline = omnivore.kml('KML/Miniere.kml');
 		var MezzaStregaKML_outline = omnivore.kml('KML/MezzaStrega.kml');
 		var StregaKML_outline = omnivore.kml('KML/Strega.kml');
@@ -244,7 +244,7 @@
 		var groupKML_outline = new L.LayerGroup([
 			SerraKML_outline,
 			MiniereKML_outline,
-			BuccaDelBanditoKML_outline,	
+			BucaDelBanditoKML_outline,	
 			MezzaStregaKML_outline,
 			ScaletteKML_outline,
 			StregaKML_outline,
@@ -300,13 +300,13 @@
 				$("#kml").prop('href', 'KML/Serra.kml');
 			});
 
-		var BuccaDelBanditoKML = omnivore.kml('KML/BuccaDelBandito.kml')
+		var BucaDelBanditoKML = omnivore.kml('KML/BucaDelBandito.kml')
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/e637f5fd56945098ae1fde70b07164e9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
 				//$("#title").css("font-family", "Creepster");
-				$("#gpx").prop('href', 'KML/BuccaDelBandito.gpx');
-				$("#kml").prop('href', 'KML/BuccaDelBandito.kml');
+				$("#gpx").prop('href', 'KML/BucaDelBandito.gpx');
+				$("#kml").prop('href', 'KML/BucaDelBandito.kml');
 			});			
 
 		var MiniereKML = omnivore.kml('KML/Miniere.kml')
@@ -391,7 +391,7 @@
 		var groupKML = new L.LayerGroup([
 			SerraKML,
 			MiniereKML,
-			BuccaDelBanditoKML,	
+			BucaDelBanditoKML,	
 			MezzaStregaKML,
 			ScaletteKML,
 			StregaKML,
@@ -401,18 +401,6 @@
 		
 		// used icons for markers:
 		L.AwesomeMarkers.Icon.prototype.options.prefix = 'fa';
-
-		var endIcon = L.AwesomeMarkers.icon({
-			    icon: 'fa-flag-checkered',
-			    markerColor: 'cadetblue',
-			    iconColor: 'white'
-			  });
-
-		var startIcon = L.AwesomeMarkers.icon({
-			    icon: 'fa-hand-o-down',
-			    markerColor: 'green',
-			    iconColor: 'white'
-			  });	
 
 		var bikeRentIcon = L.AwesomeMarkers.icon({
 			    icon: 'fa-bicycle',
@@ -461,16 +449,38 @@
 		
 		// Iterate over groupKML and make end and start markers, then attach event listeners..	
 		groupKML.eachLayer(function (layer) {	
+
 			layer.on('ready', function() { 
+			
 				var latlngs = layer.getLayers(0)[0]._latlngs;
-				var endPt = new L.marker(latlngs[latlngs.length - 1], {icon: endIcon});
-				var startPt = new L.marker(latlngs[0], {icon: startIcon});
-				endPt.addTo(map);
-				startPt.addTo(map);				
+				
+				new L.circleMarker(latlngs[0], {
+						color: 'darkslategrey',
+						fillColor: 'lightgreen',
+						fillOpacity: 1,					
+						radius: 8
+					})
+					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' - Start', {
+						permanent: false, 
+						direction: 'right'
+					})
+					.addTo(map);
+					
+				new L.circleMarker(latlngs[latlngs.length - 1], {
+						color: 'darkslategrey',
+						fillColor: 'pink',
+						fillOpacity: 1,
+						radius: 8
+					})
+					.bindTooltip(layer.getLayers()[0].feature.properties.name + ' - End', {
+						permanent: false, 
+						direction: 'right'
+					})
+					.addTo(map);
+					
 				layer.setStyle({
-					'color': trailColors[layer.getLayers()[0].feature.properties.name],
-					'weight': 4,
-					'opacity': 0.6
+					'weight': 5,
+					'color': trailColors[layer.getLayers()[0].feature.properties.name]
 				});
 			});			
 
