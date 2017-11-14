@@ -466,6 +466,7 @@
 			layer.on('ready', function() { 
 			
 				var latlngs = layer.getLayers(0)[0]._latlngs;
+				var name = layer.getLayers(0)[0].feature.properties.name;
 				
 				// Add start point
 				new L.circleMarker(latlngs[0], {
@@ -486,8 +487,8 @@
 					.on('mouseover', function (e) {
 						// put div to click xy
 						var layerPoint = map.latLngToLayerPoint(e.latlng);
-						$("#popup").html(layer.feature.properties.name);
-						$("#popup").css('color', trailColors[layer.feature.properties.name]);
+						$("#popup").html(name);
+						$("#popup").css('color', trailColors[name]);
 						$('#popup').css({'left': layerPoint.x+10});
 						$('#popup').css({'top': layerPoint.y+10});
 						$("#popup").fadeIn("slower");
@@ -497,7 +498,7 @@
 				// color each trail accordingly
 				layer.setStyle({
 					'weight': 5,
-					'color': trailColors[layer.getLayers()[0].feature.properties.name]
+					'color': trailColors[name]
 				});
 			});			
 
@@ -507,8 +508,8 @@
 				setHighlight(layer);
 				// put div to click xy
 				var layerPoint = map.latLngToLayerPoint(e.latlng);
-				$("#popup").html(e.layer.feature.properties.name);
-				$("#popup").css('color', trailColors[e.layer.feature.properties.name]);
+				$("#popup").html(name);
+				$("#popup").css('color', trailColors[name]);
 				$('#popup').css({'left': layerPoint.x+10});
 				$('#popup').css({'top': layerPoint.y+10});
 				$("#popup").fadeIn("slower");
