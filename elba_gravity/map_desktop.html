@@ -496,18 +496,18 @@
 				setHighlight(layer);
 				// put div to click xy
 				var layerPoint = map.latLngToLayerPoint(e.latlng);
-				$("#popup").html(' >> ' + e.layer.feature.properties.name);
+				$("#popup").html(e.layer.feature.properties.name);
 				$("#popup").css('color', trailColors[e.layer.feature.properties.name]);
-				$('#popup').css({'left': layerPoint.x});
-				$('#popup').css({'top': layerPoint.y});
-				$("#popup").fadeIn("fast");
+				$('#popup').css({'left': layerPoint.x+10});
+				$('#popup').css({'top': layerPoint.y+10});
+				$("#popup").fadeIn("slower");
 			});
 
 			// Mouseout handler
 			layer.on('mouseout', function (e) {
 				 // Unset highlight
 				unsetHighlight(layer);
-				$("#popup").fadeOut("fast");
+				$("#popup").fadeOut("slower");
 			});	
 		});
 		
