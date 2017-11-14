@@ -486,8 +486,8 @@
 					.on('mouseover', function (e) {
 						// put div to click xy
 						var layerPoint = map.latLngToLayerPoint(e.latlng);
-						$("#popup").html(e.layer.feature.properties.name);
-						$("#popup").css('color', trailColors[e.layer.feature.properties.name]);
+						$("#popup").html(layer.feature.properties.name);
+						$("#popup").css('color', trailColors[layer.feature.properties.name]);
 						$('#popup').css({'left': layerPoint.x+10});
 						$('#popup').css({'top': layerPoint.y+10});
 						$("#popup").fadeIn("slower");
