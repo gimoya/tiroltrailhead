@@ -468,30 +468,49 @@
 				var latlngs = layer.getLayers(0)[0]._latlngs;
 				var name = layer.getLayers(0)[0].feature.properties.name;
 				
-				// Add start point
+				// Add start point for each layer
 				new L.circleMarker(latlngs[0], {
 						color: 'darkslategrey',
 						fillColor: 'lightgreen',
 						fillOpacity: 1,					
 						radius: 8
 					})
-					.addTo(map);
+					// Mouseover handler for start/end points
+					.on('mouseover', function (e) {
+						// put div to click xy
+						var layerPoint = map.latLngToLayerPoint(e.latlng);
+						$("#popup").html('Start - ' + name);
+						$("#popup").css('color', trailColors[name]);
+						$('#popup').css({'left': layerPoint.x+10});
+						$('#popup').css({'top': layerPoint.y-10});
+						$("#popup").fadeIn("slower");
+					})
+					// Mouseout handler for start/end points
+					.on('mouseout', function (e) {
+						$("#popup").fadeOut("slower");
+					})
+					.addTo(map);					
 					
-				// Add end point
+				// Add end points for each layer
 				new L.circleMarker(latlngs[latlngs.length - 1], {
 						color: 'darkslategrey',
 						fillColor: 'pink',
 						fillOpacity: 1,
 						radius: 8
 					})
+					// Mouseover handler for start/end points
 					.on('mouseover', function (e) {
 						// put div to click xy
 						var layerPoint = map.latLngToLayerPoint(e.latlng);
-						$("#popup").html(name);
+						$("#popup").html('End - ' + name);
 						$("#popup").css('color', trailColors[name]);
 						$('#popup').css({'left': layerPoint.x+10});
-						$('#popup').css({'top': layerPoint.y+10});
+						$('#popup').css({'top': layerPoint.y-10});
 						$("#popup").fadeIn("slower");
+					})
+					// Mouseout handler for start/end points
+					.on('mouseout', function (e) {
+						$("#popup").fadeOut("slower");
 					})
 					.addTo(map);
 				
@@ -502,20 +521,13 @@
 				});
 			});			
 
-			// Mouseover handler
+			// Mouseover handler for trails
 			layer.on('mouseover', function (e) {
 				// Set highlight
 				setHighlight(layer);
-				// put div to click xy
-				var layerPoint = map.latLngToLayerPoint(e.latlng);
-				$("#popup").html(name);
-				$("#popup").css('color', trailColors[name]);
-				$('#popup').css({'left': layerPoint.x+10});
-				$('#popup').css({'top': layerPoint.y+10});
-				$("#popup").fadeIn("slower");
 			});
 
-			// Mouseout handler
+			// Mouseout handler for trails
 			layer.on('mouseout', function (e) {
 				 // Unset highlight
 				unsetHighlight(layer);
