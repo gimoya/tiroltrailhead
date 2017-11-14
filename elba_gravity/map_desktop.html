@@ -483,9 +483,18 @@
 						fillOpacity: 1,
 						radius: 8
 					})
+					.on('mouseover', function (e) {
+						// put div to click xy
+						var layerPoint = map.latLngToLayerPoint(e.latlng);
+						$("#popup").html(e.layer.feature.properties.name);
+						$("#popup").css('color', trailColors[e.layer.feature.properties.name]);
+						$('#popup').css({'left': layerPoint.x+10});
+						$('#popup').css({'top': layerPoint.y+10});
+						$("#popup").fadeIn("slower");
+					})
 					.addTo(map);
 				
-				// 
+				// color each trail accordingly
 				layer.setStyle({
 					'weight': 5,
 					'color': trailColors[layer.getLayers()[0].feature.properties.name]
