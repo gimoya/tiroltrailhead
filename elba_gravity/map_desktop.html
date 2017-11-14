@@ -499,7 +499,7 @@
 					// Mouseover handler for start/end points
 					.on('mouseover', function (e) {
 						// put div to click xy
-						var containerPoint = map.latLngTocontainerPoint(e.latlng);
+						var containerPoint = map.latLngToContainerPoint(e.latlng);
 						$("#popup").html('Start - ' + name.toUpperCase() + ' Trail');
 						$("#popup").css('color', trailColors[name]);
 						$('#popup').css({'left': containerPoint.x+10});
