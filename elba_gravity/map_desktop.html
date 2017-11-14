@@ -482,11 +482,11 @@
 					// Mouseover handler for start/end points
 					.on('mouseover', function (e) {
 						// put div to click xy
-						var layerPoint = map.latLngToLayerPoint(e.latlng);
+						var containerPoint = map.latLngTocontainerPoint(e.latlng);
 						$("#popup").html('Start - ' + name.toUpperCase() + ' Trail');
 						$("#popup").css('color', trailColors[name]);
-						$('#popup').css({'left': layerPoint.x+10});
-						$('#popup').css({'top': layerPoint.y+10});
+						$('#popup').css({'left': containerPoint.x+10});
+						$('#popup').css({'top': containerPoint.y+10});
 						$("#popup").fadeIn("slower");
 					})
 					// Mouseout handler for start/end points
@@ -505,11 +505,11 @@
 					// Mouseover handler for start/end points
 					.on('mouseover', function (e) {
 						// put div to click xy
-						var layerPoint = map.latLngToLayerPoint(e.latlng);
+						var containerPoint = map.latLngTocontainerPoint(e.latlng);
 						$("#popup").html('End - ' + name.toUpperCase() + ' Trail');
 						$("#popup").css('color', trailColors[name]);
-						$('#popup').css({'left': layerPoint.x+10});
-						$('#popup').css({'top': layerPoint.y-20});
+						$('#popup').css({'left': containerPoint.x+10});
+						$('#popup').css({'top': containerPoint.y-20});
 						$("#popup").fadeIn("slower");
 					})
 					// Mouseout handler for start/end points
