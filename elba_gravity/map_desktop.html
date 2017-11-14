@@ -110,8 +110,13 @@
 		font-family: 'Corbel', 'bold';
 		font-size: 1.9em;
 		font-weight: bold;
-	}
-	    
+		  z-index:9999;
+		  position: absolute;
+		  padding: 4px 8px 4px 8px;
+		  background-color: white;
+		  display: none;
+		}	
+		
 	@media screen and (max-height: 600px), (max-width: 860px) {
 		body {
 			font-size: 75%;
@@ -149,6 +154,7 @@
 </head>
 	
 <body>
+	<div id="popup"></div>
 	<div id="infopanel-right">
 		<div class="info-row" id="poi-info"></div>
 	</div>
@@ -456,6 +462,7 @@
 			
 				var latlngs = layer.getLayers(0)[0]._latlngs;
 				
+				// Add start point
 				new L.circleMarker(latlngs[0], {
 						color: 'darkslategrey',
 						fillColor: 'lightgreen',
@@ -464,6 +471,7 @@
 					})
 					.addTo(map);
 					
+				// Add end point
 				new L.circleMarker(latlngs[latlngs.length - 1], {
 						color: 'darkslategrey',
 						fillColor: 'pink',
@@ -471,7 +479,8 @@
 						radius: 8
 					})
 					.addTo(map);
-					
+				
+				// 
 				layer.setStyle({
 					'weight': 5,
 					'color': trailColors[layer.getLayers()[0].feature.properties.name]
@@ -482,17 +491,20 @@
 			layer.on('mouseover', function (e) {
 				// Set highlight
 				setHighlight(layer);
-				$("#poi-info").html(' >> ' + e.layer.feature.properties.name);
-				$("#poi-info").css('color', trailColors[e.layer.feature.properties.name]);
-				$("#infopanel-right").fadeIn("slow");
-				$("#poi-info").fadeIn("slow");
+				// put div to click xy
+				var layerPoint = map.latLngToLayerPoint(e.latlng);
+				$("#popup").html(' >> ' + e.layer.feature.properties.name);
+				$("#popup").css('color', trailColors[e.layer.feature.properties.name]);
+				$('#popup').css({'left': layerPoint.x});
+				$('#popup').css({'top': layerPoint.y});
+				$("#popup").fadeIn("fast");
 			});
 
 			// Mouseout handler
 			layer.on('mouseout', function (e) {
 				 // Unset highlight
 				unsetHighlight(layer);
-				$("#poi-info").fadeOut("slow");
+				$("#popup").fadeOut("fast");
 			});	
 		});
 		
