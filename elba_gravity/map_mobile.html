@@ -256,7 +256,7 @@
 			$("#title").css('font-family', font)
 				.css('color', trailColors[e.layer.feature.properties.name])
 				.html(e.layer.feature.properties.name);
-			$("#trail-info").html(e.layer.feature.properties.description + '<a href="https://instagram.com/explore/tags/' + e.layer.feature.properties.name + '" target="_blank">Check on Instagram</a>');
+			$("#trail-info").html(e.layer.feature.properties.description + '<a href="https://instagram.com/explore/tags/' + e.layer.feature.properties.name.replace(/\s+/g, '') + '" target="_blank">Check on Instagram</a>');
 			$(".IT-Click").on('click', function() {
 				$(".EN").css("display", "none");
 				$(".IT").css("display", "block");
