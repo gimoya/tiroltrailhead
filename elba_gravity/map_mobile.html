@@ -98,7 +98,7 @@
 	    color: darkslategrey;
 	}
 	    
-	#infopanel-right {		
+	#infopanel {		
 		position: absolute;
 		display: none;
 		width: 100%;
@@ -130,6 +130,29 @@
 		font-size: 1.5em;
 	}
 	
+	#trail-info {
+		padding: 10 0 0 10px;
+	}
+
+   .IT, .EN {
+		max-height: 7em;
+		overflow-y: scroll;
+	}
+	
+   .IT {
+	  display: block;
+	}
+
+	.EN {
+	  display: none;
+	}
+
+	.IT-Click,
+	.EN-Click {
+	   cursor: hand; 
+	   color: #f9ff00;
+	}
+	
 	/* 
 	CSS for inline close element which will hide it's parent div if clicked..
 	*/
@@ -146,7 +169,7 @@
 </head> 		
 	
 <body>
-	<div id="infopanel-right">
+	<div id="infopanel">
 		<div class="info-row"><div id="close" onclick="$(this).parent().parent().fadeOut('slow');">X</div></div>
 		<div class="info-row" id="layer-name-info"></div>
 		<div class="info-row" id="tracks"><a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a></div>
@@ -234,7 +257,16 @@
 				// this will show #layer-name-info and #tracks again, if its display was set to none after clicked #poi-info
 				.css('display', 'block'); 
 			$("#tracks").css('display', 'block');
-			$("#infopanel-right").fadeIn("slow");
+			$(".IT-Click").on('click', function() {
+				$(".EN").css("display", "none");
+				$(".IT").css("display", "block");
+			});
+			$("#trail-info").html(e.layer.feature.properties.description);		
+			$(".EN-Click").on('click', function() {
+				$(".IT").css("display", "none");
+				$(".EN").css("display", "block");
+			});				
+			$("#infopanel").fadeIn("slow");			
 			map.fitBounds(e.layer.getBounds());
 		}
 		
@@ -366,7 +398,7 @@
 			// this will hide #layer-name-info abd #tracks, which otherwise would always stick above #poi-info	
 			$("#layer-name-info").css('display','none');
 			$("#tracks").css('display', 'none');
-			$("#infopanel-right").fadeIn("slow");
+			$("#infopanel").fadeIn("slow");
 			// console.log(latLngToLayerPoint(e.latlng));			
 		}
 
@@ -375,7 +407,7 @@
 			// this will hide #layer-name-info and #tracks, which otherwise would always stick above #poi-info	
 			$("#layer-name-info").css('display','none'); 
 			$("#tracks").css('display', 'none');
-			$("#infopanel-right").fadeIn("slow");
+			$("#infopanel").fadeIn("slow");
 			// console.log(latLngToLayerPoint(e.latlng));
 		}
 		
