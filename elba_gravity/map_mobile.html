@@ -249,7 +249,7 @@
 		
 		function trailClick(e, font) {
 			$("#title").css('font-family', font)
-				.html('&nbsp;' + e.layer.feature.properties.name)
+				.html(e.layer.feature.properties.name)
 				.css('color', trailColors[e.layer.feature.properties.name])
 				// this will show #title and #tracks again, if its display was set to none after clicked #poi-info
 				.css('display', 'block'); 
