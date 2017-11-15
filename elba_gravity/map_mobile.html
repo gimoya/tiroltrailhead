@@ -166,10 +166,10 @@
 	
 <body>
 	<div id="infopanel">
-		<div class="info-row"><div id="close" onclick="$(this).parent().parent().fadeOut('slow');">X</div></div>
+		<div id="close" onclick="$(this).parent().fadeOut('slow');">X</div>
 		<div class="info-row" id="title"></div>
-		<div class="info-row" id="tracks"><a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a></div>
 		<div class="info-row" id="trail-info"></div>
+		<div class="info-row" id="tracks"><a id="gpx" href="">GPX</a> | <a id="kml" href="">KML</a></div>		
 		<div class="info-row" id="poi-info"></div>
 		<div class="info-row" id="spacer-bottom" style="height:1em;"></div>
 	</div>
@@ -253,16 +253,16 @@
 				.css('color', trailColors[e.layer.feature.properties.name])
 				// this will show #title and #tracks again, if its display was set to none after clicked #poi-info
 				.css('display', 'block'); 
-			$("#tracks").css('display', 'block');
+			$("#trail-info").html(e.layer.feature.properties.description);	
 			$(".IT-Click").on('click', function() {
 				$(".EN").css("display", "none");
 				$(".IT").css("display", "block");
-			});
-			$("#trail-info").html(e.layer.feature.properties.description);		
+			});	
 			$(".EN-Click").on('click', function() {
 				$(".IT").css("display", "none");
 				$(".EN").css("display", "block");
 			});				
+			$("#tracks").css('display', 'block');
 			$("#infopanel").fadeIn("slow");			
 			map.fitBounds(e.layer.getBounds());
 		}
