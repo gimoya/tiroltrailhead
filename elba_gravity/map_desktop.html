@@ -279,10 +279,10 @@
 		
 		// now the KML tracks with events and all that..
 		
-		function trailClick(e) {
+		function trailClick(e, font) {
 				$("#title").html(e.layer.feature.properties.name);
 				$("#title").css('color', trailColors[e.layer.feature.properties.name]);
-				$("#title").css("font-family", "Bangers");
+				$("#title").css("font-family", font);
 				$("#trail-info").html(e.layer.feature.properties.description);
 				$("#infopanel-left").fadeIn("slow");
 				$(".IT-Click").on('click', function() {
@@ -297,37 +297,33 @@
 		}
 
 		var CavoKML = omnivore.kml('KML/Cavo.kml')
-			.on('click', function(e) {
+			.on('click', function(e, "Bangers") {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/6d167f1931505782a4628f3b1d29d22f.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				//$("#title").css("font-family", "Bangers");
 				$("#gpx").prop('href', 'KML/Cavo.gpx');
 				$("#kml").prop('href', 'KML/Cavo.kml');
 			});
 			
 		var SerraKML = omnivore.kml('KML/Serra.kml')
-			.on('click', function(e) {
+			.on('click', function(e, "Fruktur") {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/e535e22ef1aa5ccd857aa7219956df32.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				//$("#title").css("font-family", "Fruktur");
 				$("#gpx").prop('href', 'KML/Serra.gpx');
 				$("#kml").prop('href', 'KML/Serra.kml');
 			});
 
 		var BucaDelBanditoKML = omnivore.kml('KML/BucaDelBandito.kml')
-			.on('click', function(e) {
+			.on('click', function(e, "Creepster") {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/994b9682508659809d63287e94e522d6.html" scrolling="no" allowtransparency="true" class="lightwidget-7widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				//$("#title").css("font-family", "Creepster");
 				$("#gpx").prop('href', 'KML/BucaDelBandito.gpx');
 				$("#kml").prop('href', 'KML/BucaDelBandito.kml');
 			});			
 
 		var MiniereKML = omnivore.kml('KML/Miniere.kml')
-			.on('click', function(e) {
+			.on('click', function(e, "Ultra") {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/7cfa1a27909850c1a5eb5d022fef31c9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				//$("#title").css("font-family", "Ultra");
 				$("#gpx").prop('href', 'KML/Miniere.gpx');
 				$("#kml").prop('href', 'KML/Miniere.kml');
 			});			
@@ -336,16 +332,14 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/cc84f0d9d7b9595885992cd3a18d0d38.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				//$("#title").css("font-family", "Ewert");
 				$("#gpx").prop('href', 'KML/MezzaStrega.gpx');
 				$("#kml").prop('href', 'KML/MezzaStrega.kml');
 			});
 
 		var StregaKML = omnivore.kml('KML/Strega.kml', null)
-			.on('click', function(e) {
+			.on('click', function(e, "Fugaz One") {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/bb59eb0d5ecc520e99203b6560267003.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				//$("#title").css("font-family", "Fugaz One");
 				$("#gpx").prop('href', 'KML/Strega.gpx');
 				$("#kml").prop('href', 'KML/Strega.kml');
 			});
@@ -354,16 +348,14 @@
 			.on('click', function(e) {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/7920ebe9426c5b4aa4235de3f5eab748.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				//$("#title").css("font-family", "Hanalei Fill");
 				$("#gpx").prop('href', 'KML/Scalette.gpx');
 				$("#kml").prop('href', 'KML/Scalette.kml');
 			});			
 
 		var VignolaKML = omnivore.kml('KML/Vignola.kml')
-			.on('click', function(e) {
+			.on('click', function(e, "Bungee Inline") {
 				trailClick(e);
 				$("#photos").html('<iframe src="//lightwidget.com/widgets/1b8944eef7c85a2c8552a30a8d1da7e8.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>');
-				//$("#title").css("font-family", "Bungee Inline");
 				$("#gpx").prop('href', 'KML/Vignola.gpx');
 				$("#kml").prop('href', 'KML/Vignola.kml');
 			});
