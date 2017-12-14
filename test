@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<header>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$.ajaxSetup({
+    scriptCharset: "utf-8",
+    contentType: "application/json; charset=utf-8"
+});
+
+$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://www.tourenwelt.at/blog/') + '&callback=?', function(data){
+
+    var regex = /<h3 class="newstitle">.*?<\/h3>/g;
+	$("#out").html(data.contents.match(regex).map(function(val){
+			return val.replace(/<h3 class="newstitle">/g,'').replace(/<\/h3>/g, '</br>')})
+			);
+	
+	
+	
+});
+    
+</script>
+</header>
+<body>
+<div id="out">
+</div>
+</body>
+</html>
