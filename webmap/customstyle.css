@@ -912,14 +912,6 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	overflow: auto;
 }
 
-.H1 > img, #kodex-skala-head > img {
-	transition: all .5s ease-in-out;
-}
-
-.H1 > img:hover, #kodex-skala-head > img:hover { 
-	transform: scale(2); 
-}
-
 #skala, #kodex
 {	
 	font-size: 20px; 
