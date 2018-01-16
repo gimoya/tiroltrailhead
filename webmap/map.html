@@ -130,9 +130,9 @@
 					<p class="box3">
 						<span class="H2">Verwendung</span>
 						</br><strong>Zoom & Pan mit Maus/Touchpad/etc.</strong>
-						</br>Klick auf Trails für Infos und H&ouml;henprofil
-						</br>Klick in Karte gibt Koordinaten & Seehöhe
-						</br>Vollst&auml;ndige URL leitet zurück zur aktuellen Ansicht
+						</br>Klick auf Trails f&uuml;r Infos und H&ouml;henprofil
+						</br>Klick in Karte gibt Koordinaten & Seeh&ouml;he
+						</br>Vollst&auml;ndige URL leitet zur&uuml;ck zur aktuellen Ansicht
 						</br>
 					</p>
 					<p class="box3">
@@ -184,7 +184,7 @@
 			  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin:0;">
 			    <input type="hidden" name="cmd" value="_s-xclick">
 			    <input type="hidden" name="hosted_button_id" value="7N6ZTUXZ396XN">
-				  <button type="submit" class="support" id="yes">Unterstütze das Projekt mit 1.- oder einem beliebigem Betrag für den Track!</button>
+				  <button type="submit" class="support" id="yes">Unterst&uuml;tze das Projekt mit 1.- oder einem beliebigem Betrag f&uuml;r den Track!</button>
 			  </form>
 			  <div id="svg_container" class="pulse2">
 			    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 25 23.5">
@@ -437,7 +437,7 @@
 						document.getElementById("topic-text").appendChild(document.createTextNode(" | "));
 						document.getElementById("topic-text").appendChild(gpxLink);
 					} else {
-						document.getElementById("topic-text").innerHTML += "..Sorry, Download nicht von allen Browsern untersützt!";
+						document.getElementById("topic-text").innerHTML += "..Sorry, Download nicht von allen Browsern unters&uuml;tzt!";
 					}	
 					document.getElementById("topic").appendChild(document.createElement("br"));					
 					document.getElementById("topic-text").appendChild(document.createElement("br"));
@@ -666,7 +666,7 @@
 										 // tooltip string in 3rd column
 										 // 'Punkt: ' + (i+1) + '\n' +
 										 'Strecke: ' + (distance[i]/1000).toFixed(1) + ' km\n' +
-										 'Seehöhe: ' + elev.toFixed(0) + ' m ']
+										 'Seeh&ouml;he: ' + elev.toFixed(0) + ' m ']
 							);
 						}
 			
@@ -675,7 +675,7 @@
 						var chart = new google.visualization.AreaChart(document.getElementById('elevation_chart'));
 						var height = Math.round((Math.max.apply(null, elevArr)-Math.min.apply(null, elevArr))*0.0375+150, 0);
 						var options = {
-							title: 'Höhenprofil',
+							title: 'H&ouml;henprofil',
 						    tooltip: { trigger: 'selection' },
 						    // use altitude range (max - min) as proportional factor for chart height
 							// and trail length for width
@@ -928,7 +928,7 @@
 							}
 						}
 						var msg = "WGS84: "+ parseFloat(lonlat.lat.toFixed(2)) + " N, " + parseFloat(lonlat.lon.toFixed(2)) + 
-						          " E</br>Seehöhe: " + parseFloat(elevArr[0].toFixed(0)) + " m";
+						          " E</br>Seeh&ouml;he: " + parseFloat(elevArr[0].toFixed(0)) + " m";
 						document.getElementById("click-info").innerHTML = msg;
 					});
                 }
