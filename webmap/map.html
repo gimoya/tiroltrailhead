@@ -675,14 +675,14 @@
 						var chart = new google.visualization.AreaChart(document.getElementById('elevation_chart'));
 						var height = Math.round((Math.max.apply(null, elevArr)-Math.min.apply(null, elevArr))*0.0375+150, 0);
 						var options = {
-							title: 'H&ouml;henprofil',
+							title: 'Streckenprofil',
 						    tooltip: { trigger: 'selection' },
 						    // use altitude range (max - min) as proportional factor for chart height
 							// and trail length for width
 							height: height,
 							width: ftGeoLength/50+140,
 							legend: 'none',
-							titleY: 'Seehöhe (m)',
+							titleY: 'Seeh&ouml;he (m)',
 							titleX: 'Strecke (km)',
 							backgroundColor: 'transparent',
 							fontSize: 12,
