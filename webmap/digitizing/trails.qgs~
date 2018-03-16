@@ -5,10 +5,10 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="Marchgatterl___Variante_120180207122647399" name="Marchgatterl - Variante 1">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Marchgatterl___Variante_120180207122647399" name="Marchgatterl - Variante 1">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="Marchgatterl_Köglalm_Notburga20180306150938156" name="Marchgatterl-Köglalm-Notburga">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Marchgatterl_Köglalm_Notburga20180306150938156" name="Marchgatterl-Köglalm-Notburga">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Freizeitticket_Tour___Variante_3__Von_Innsbruck_zum_Brenner20180207122647352" name="Freizeitticket-Tour - Variante 3_ Von Innsbruck zum Brenner Freizeitticket-Tour - Variante 3 1">
@@ -23,7 +23,7 @@
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Marchgatterl20180207122647212" name="Marchgatterl">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Freizeitticket_Tour__Von_Innsbruck_zum_Brenner20180207122647149" name="Freizeitticket-Tour_ Von Innsbruck zum Brenner Freizeitticket-Tour 1">
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="Freizeitticket_Tour__Von_Innsbruck_zum_Brenner20180207122647149" name="Freizeitticket-Tour_ Von Innsbruck zum Brenner Freizeitticket-Tour 1">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Trailmap">
@@ -67,10 +67,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1302104.6474774272646755</xmin>
-      <ymin>6012719.0407593697309494</ymin>
-      <xmax>1306757.83547000889666378</xmax>
-      <ymax>6018212.17969408445060253</ymax>
+      <xmin>1274574.03555570379830897</xmin>
+      <ymin>5929230.35339806135743856</ymin>
+      <xmax>1345542.82553069316782057</xmax>
+      <ymax>6091319.83559717889875174</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -460,14 +460,14 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Marchgatterl - Variante 1" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Marchgatterl - Variante 1" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Marchgatterl___Variante_120180207122647399" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="Marchgatterl___Variante_120180207122647399" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Marchgatterl-Köglalm-Notburga" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Marchgatterl-Köglalm-Notburga" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Marchgatterl_Köglalm_Notburga20180306150938156" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="Marchgatterl_Köglalm_Notburga20180306150938156" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Freizeitticket-Tour - Variante 3_ Von Innsbruck zum Brenner Freizeitticket-Tour - Variante 3 1" showFeatureCount="0">
@@ -490,9 +490,9 @@
         <legendlayerfile isInOverview="0" layerid="Marchgatterl20180207122647212" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Freizeitticket-Tour_ Von Innsbruck zum Brenner Freizeitticket-Tour 1" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Freizeitticket-Tour_ Von Innsbruck zum Brenner Freizeitticket-Tour 1" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Freizeitticket_Tour__Von_Innsbruck_zum_Brenner20180207122647149" visible="0"/>
+        <legendlayerfile isInOverview="0" layerid="Freizeitticket_Tour__Von_Innsbruck_zum_Brenner20180207122647149" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Trailmap">
@@ -2292,6 +2292,12 @@
       </conditionalstyles>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="100000" maximumScale="1e+08" simplifyDrawingHints="1" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>11.71379888280000081</xmin>
+        <ymin>47.39447098779999834</ymin>
+        <xmax>11.85031824210000018</xmax>
+        <ymax>47.50165772569999945</ymax>
+      </extent>
       <id>Marchgatterl20180207122647212</id>
       <datasource>../../../../Downloads/Marchgatterl.kml</datasource>
       <keywordList>
