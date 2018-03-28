@@ -52,19 +52,19 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="N47E01120180315075617474" name="N47E011">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bergfex_oek20170517223227274" name="bergfex oek">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenStreetMap20161207230225903" name="OpenStreetMap">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenStreetMap20161207230225903" name="OpenStreetMap">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OCM_Landscape20161207230225880" name="OCM Landscape">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenCycleMap20161207230225903" name="OpenCycleMap">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenCycleMap20161207230225903" name="OpenCycleMap">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -73,10 +73,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1269167.16108872764743865</xmin>
-      <ymin>5983089.39734418783336878</ymin>
-      <xmax>1269977.21602719859220088</xmax>
-      <ymax>5983774.95122807566076517</ymax>
+      <xmin>1270406.47241916414350271</xmin>
+      <ymin>5979354.78983383439481258</ymin>
+      <xmax>1270866.6753925527445972</xmax>
+      <ymax>5979744.26210392452776432</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -545,9 +545,9 @@
           <legendlayerfile isInOverview="0" layerid="N47E01120180315075617474" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20170918213819046" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="bergfex oek" showFeatureCount="0">
@@ -555,9 +555,9 @@
           <legendlayerfile isInOverview="0" layerid="bergfex_oek20170517223227274" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OpenStreetMap" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenStreetMap" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OpenStreetMap20161207230225903" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="OpenStreetMap20161207230225903" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OCM Landscape" showFeatureCount="0">
@@ -565,9 +565,9 @@
           <legendlayerfile isInOverview="0" layerid="OCM_Landscape20161207230225880" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OpenCycleMap" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenCycleMap" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OpenCycleMap20161207230225903" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="OpenCycleMap20161207230225903" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
