@@ -302,6 +302,7 @@
 			var mapSpecial = new OpenLayers.Layer.XYZ( "Kompass",
 				"http://ec2.cdn.ecmaps.de/WmsGateway.ashx.jpg?Experience=kompass&MapStyle=KOMPASS%20Touristik&TileX=${x}&TileY=${y}&ZoomLevel=${z}",
 				{
+				numZoomLevels: 18;
 				sphericalMercator: true,
 				buffer: 0,
 				attribution: "&copy; <a href='http://www.kompass.de'>Kompass Wanderkarten</a>",
