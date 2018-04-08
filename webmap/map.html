@@ -39,7 +39,7 @@
 			}
 			
 			var pw_prompt = prompt('Bitte Passwort (NEU!! email: office@trailhead.com) eingeben, um auf die **tiroltrailhead web map** zu gelangen..',' ');
-			var pw = 'supportplz';
+			var pw = 'noshare';
 			// if prompt is cancelled the pw_prompt var will be null!
 			if (pw_prompt == null) {
 				alert('Kein Passwort wurde angegeben, **tiroltrailhead web map** wird nicht geladen...');
@@ -415,8 +415,7 @@
 					addElevPlot(feature);
 					//map.zoomToExtent(event.feature.geometry.getBounds(), closest=false);						
 										
-					
-					//  append newline anf photo-link...				
+					//  append newline and photo-link...				
 					document.getElementById("topic").appendChild(document.createElement("br"));					
 					document.getElementById("topic-text").appendChild(document.createElement("br"));
 					document.getElementById("topic").innerHTML += "Fotos:";
