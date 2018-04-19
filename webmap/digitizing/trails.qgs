@@ -88,10 +88,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1251462.80469410051591694</xmin>
-      <ymin>5977020.4933070782572031</ymin>
-      <xmax>1261108.84612397407181561</xmax>
-      <ymax>5982461.03801375068724155</ymax>
+      <xmin>1278899.29792470391839743</xmin>
+      <ymin>5991375.03308312222361565</ymin>
+      <xmax>1289586.11685546394437551</xmax>
+      <ymax>5997402.5954347662627697</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -6107,6 +6107,7 @@ def my_form_open(dialog, layer, feature):
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
+        <value>Ampass_Kienberg_Runde_00120180419152101891</value>
         <value>Freizeitticket_Tour__Von_Innsbruck_zum_Brenner20180207122647149</value>
         <value>Freizeitticket_Tour___Variante_1__Von_Innsbruck_zum_Brenner20180207122647258</value>
         <value>Freizeitticket_Tour___Variante_2__Von_Innsbruck_zum_Brenner20180207122647305</value>
@@ -6114,7 +6115,9 @@ def my_form_open(dialog, layer, feature):
         <value>Marchgatterl20180207122647212</value>
         <value>Marchgatterl_Köglalm_Notburga20180306150938156</value>
         <value>Marchgatterl___Variante_120180207122647399</value>
+        <value>Sistranser_Herztal_00120180419152102019</value>
         <value>Variante_Aldranser_Alm20180408225929323</value>
+        <value>Variante_Kienberg20180419152101967</value>
         <value>WWW_Challenge_2016_tracks20180112233201402</value>
         <value>brouter20180129230524104</value>
         <value>brouter__1_20180129230726969</value>
@@ -6123,6 +6126,9 @@ def my_form_open(dialog, layer, feature):
         <value>trails_utm_utf820141118153222040</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -6154,10 +6160,16 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
         <value>2</value>
         <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
         <value>1</value>
         <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -6189,8 +6201,11 @@ def my_form_open(dialog, layer, feature):
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
         <value>5.000000</value>
-        <value>5.000000</value>
+        <value>13.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
     <Identify>

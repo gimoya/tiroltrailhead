@@ -88,10 +88,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1271315.46610407787375152</xmin>
-      <ymin>5971388.57591011188924313</ymin>
-      <xmax>1279988.13386085187084973</xmax>
-      <ymax>5978388.72686236910521984</ymax>
+      <xmin>1278899.29792470391839743</xmin>
+      <ymin>5991375.03308312222361565</ymin>
+      <xmax>1289586.11685546394437551</xmax>
+      <ymax>5997402.5954347662627697</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -161,8 +161,8 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Toaster_Course__8_20150602114023756"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Tramway20171016074624983"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="t108715337_Tourenplanung_am_8_November_201620161108211554997"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="OsmQuery20160623153922451"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Ampass_Kienberg_Runde_00120180419152101891"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="OsmQuery20160623153922451"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Stefansbrücke_Mutters_Pfarrach_Hirtensteig20160706204955560"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kirchberg__Kitzbühel_any20160510222257462"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="GeoSearch20150812121601587"/>
@@ -829,7 +829,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -849,10 +849,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="127338360">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -3963,7 +3963,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -3983,10 +3983,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="-1889785610">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -4289,7 +4289,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -4309,10 +4309,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="-1889785610">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -6107,6 +6107,7 @@ def my_form_open(dialog, layer, feature):
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
+        <value>Ampass_Kienberg_Runde_00120180419152101891</value>
         <value>Freizeitticket_Tour__Von_Innsbruck_zum_Brenner20180207122647149</value>
         <value>Freizeitticket_Tour___Variante_1__Von_Innsbruck_zum_Brenner20180207122647258</value>
         <value>Freizeitticket_Tour___Variante_2__Von_Innsbruck_zum_Brenner20180207122647305</value>
@@ -6114,7 +6115,9 @@ def my_form_open(dialog, layer, feature):
         <value>Marchgatterl20180207122647212</value>
         <value>Marchgatterl_Köglalm_Notburga20180306150938156</value>
         <value>Marchgatterl___Variante_120180207122647399</value>
+        <value>Sistranser_Herztal_00120180419152102019</value>
         <value>Variante_Aldranser_Alm20180408225929323</value>
+        <value>Variante_Kienberg20180419152101967</value>
         <value>WWW_Challenge_2016_tracks20180112233201402</value>
         <value>brouter20180129230524104</value>
         <value>brouter__1_20180129230726969</value>
@@ -6123,6 +6126,9 @@ def my_form_open(dialog, layer, feature):
         <value>trails_utm_utf820141118153222040</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -6154,10 +6160,16 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
         <value>2</value>
         <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
         <value>1</value>
         <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -6189,8 +6201,11 @@ def my_form_open(dialog, layer, feature):
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
         <value>5.000000</value>
-        <value>5.000000</value>
+        <value>13.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
     <Identify>
