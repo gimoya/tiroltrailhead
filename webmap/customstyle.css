@@ -777,7 +777,7 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	background-color: rgba(241, 241, 241, 0.9);
 }
 	
-#new_trail_1, #new_trail_2 {
+#new_trail {
     -webkit-animation-name: blinker;
     -webkit-animation-timing-function: steps(10, start);
     -webkit-animation-iteration-count: infinite;
@@ -789,20 +789,11 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
     animation-name: blinker;
     animation-timing-function: steps(10, start);
     animation-iteration-count: infinite;
-}
-
-#new_trail_1 {
-    animation-duration: 1.5s;
+	
+	animation-duration: 1.5s;
 	-webkit-animation-duration: 1.5s;
     -moz-animation-duration: 1.5s;
 }
-
-#new_trail_2 {
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
 
 @-moz-keyframes blinker {  
     0% { background-color: white; }
