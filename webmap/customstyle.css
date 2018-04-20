@@ -902,14 +902,14 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	overflow: auto;
 }
 
-#skala, #kodex
+#skala, #kodex, #legend
 {	
 	font-size: 20px; 
 	font-family: Exo;
 	padding-bottom: 3%;
 }
 
-#skala-bold
+#info-bold
 {	
 	font-family: 'Fredoka One';
 	font-size: 32px;
