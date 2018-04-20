@@ -777,7 +777,7 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	background-color: rgba(241, 241, 241, 0.9);
 }
 	
-#new_trail {
+#bt_new_trail {
     -webkit-animation-name: blinker;
     -webkit-animation-timing-function: steps(10, start);
     -webkit-animation-iteration-count: infinite;
