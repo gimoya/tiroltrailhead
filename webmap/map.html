@@ -657,7 +657,7 @@
 				}	
 				
 				// check length of requested array --> should be < 512 per request
-				// 2500 requests perday 
+				// 2500 requests per day 
 				// console.log("positionalRequest ArrayL:\n" + locs.length);				
 				// console.log("Distance ArrayL:\n" + distance.length);			
 				// console.log("vertices_kept ArrayL:\n" + vertices_kept.length);			
@@ -669,6 +669,9 @@
 				// get and plot elevations
 				elevator.getElevationForLocations(positionalRequest, function(results, status) {
 				
+				// global variables to collect elev gain/loss:
+				var gain = 0, var loss = 0;				
+				
 					if (status === google.maps.ElevationStatus.OK) {
 						var data = new google.visualization.DataTable();
 						data.addColumn('number', 'Strecke');
@@ -677,9 +680,14 @@
 						data.addColumn({type: 'string', role: 'tooltip'});
 						// results.length is no. of equidistant samples, from i=0 to i=n
 						// thus, cumulative segment length in km is distance*i/1000
-						var elevArr = []; // this will hold elevation for later usage
-						for (var i = 0; i < results.length; i++) {
+						var elevArr = [elevArr.push(results[0].elevation)]; // this will hold elevation for later usage, init with first elev at id=0
+						for (var i = 1; i < results.length; i++) {
 							var elev = results[i].elevation;
+							if (elev[i] > elev[i-1]) { 
+								gain =+ elev[i] - elev[i-1];
+								} else {
+								loss =+ elev[i-1] - elev[i];
+							}
 							elevArr.push(elev); 
 							data.addRow([distance[i]/1000,
 							             Math.round(elev, 0),
@@ -689,7 +697,7 @@
 										 'Seeh\u00F6he: ' + elev.toFixed(0) + ' m ']
 							);
 						}
-			
+						console.log(gain)
 						// Draw the chart using the data within its DIV.
 						$("#elevation-wrapper").fadeIn("slow");
 						var chart = new google.visualization.AreaChart(document.getElementById('elevation_chart'));
