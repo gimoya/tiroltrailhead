@@ -684,12 +684,14 @@
 						var elevArr = [results[0].elevation]; // this will hold elevation for later usage, init with first elev at id=0
 						for (var i = 1; i < results.length; i++) {
 							var elev = results[i].elevation;
-							if (elev[i] > elev[i-1]) { 
-								gain += elev[i] - elev[i-1];
-								} else {
-								loss += elev[i-1] - elev[i];
-							}
 							elevArr.push(elev); 
+
+							if (elevArr[i] > elevArr[i-1]) { 
+								gain += elevArr[i] - elevArr[i-1];
+								} else {
+								loss += elevArr[i-1] - elevArr[i];
+							}
+							
 							data.addRow([distance[i]/1000,
 							             Math.round(elev, 0),
 										 // tooltip string in 3rd column
