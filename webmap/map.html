@@ -669,9 +669,9 @@
 				// get and plot elevations
 				elevator.getElevationForLocations(positionalRequest, function(results, status) {
 				
-				// global variables to collect elev gain/loss:
-				var gain = 0;
-				var loss = 0;				
+					// global variables to collect elev gain/loss:
+					var gain = 0;
+					var loss = 0;				
 				
 					if (status === google.maps.ElevationStatus.OK) {
 						var data = new google.visualization.DataTable();
@@ -681,7 +681,7 @@
 						data.addColumn({type: 'string', role: 'tooltip'});
 						// results.length is no. of equidistant samples, from i=0 to i=n
 						// thus, cumulative segment length in km is distance*i/1000
-						var elevArr = [elevArr.push(results[0].elevation)]; // this will hold elevation for later usage, init with first elev at id=0
+						var elevArr = [results[0].elevation]; // this will hold elevation for later usage, init with first elev at id=0
 						for (var i = 1; i < results.length; i++) {
 							var elev = results[i].elevation;
 							if (elev[i] > elev[i-1]) { 
