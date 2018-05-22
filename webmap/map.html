@@ -119,7 +119,7 @@
 		<div id="container">
 			<div id="explanation-and-list">
 				<div id="explanation">
-					<p class="H1"><img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" width="120" style="vertical-align:middle; padding: 5px;">T I R O L  T R A I L H E A D</p>
+					<p class="H1">T I R O L <img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" width="120" style="vertical-align:middle; padding: 5px;"> T R A I L H E A D</p>
 					<p class="box3">
 						<span class="H2">Basiskarten</span> 	
 						</br><strong>OSM:</strong> Open MTB-Map
@@ -137,8 +137,9 @@
 					</p>
 					<p class="box3">
 						<span class="H2">Infos</span>
+						<br>Falls Du einen der Trails gefahren bist, poste ein Foto auf Instagram mit zB. dem Hashtag <a href src="https://www.instagram.com/explore/tags/tiroltrailheadtour50/" target="_blank">#tiroltrailheadtour50 für Tour Nr. 50!</a></span>
 						</br><input type="button" class="Link" value="Infos/Anleitung/Links" onclick="window.open('info.html')">
-						</br>Neuester Trail: <span id="newest_trail"></span>
+						</br>Der neueste Trail: <span id="newest_trail"></span>
 					</p>
 				</div>			
 				<div id="list-wrapper">
@@ -185,7 +186,7 @@
 			  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin:0;">
 			    <input type="hidden" name="cmd" value="_s-xclick">
 			    <input type="hidden" name="hosted_button_id" value="7N6ZTUXZ396XN">
-				  <button type="submit" class="support" id="yes">In der Ausarbeitung dieser MTB-Touren stecken unzählige Arbeitsstunden - Bitte Unterst&uuml;tze das Projekt mit einem beliebigen Betrag f&uuml;r den bereitgestellten GPS-Track!</button>
+				  <button type="submit" class="support" id="yes">Hier ist Dein GPS-Track! Darin stecken unz&auml;hlige Arbeitsstunden - bitte unterst&uuml;tze das Projekt mit einem kleinen Betrag!</button>
 			  </form>
 			  <div id="svg_container" class="pulse2">
 			    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 25 23.5">
@@ -706,7 +707,7 @@
 						var chart = new google.visualization.AreaChart(document.getElementById('elevation_chart'));
 						var height = Math.round((Math.max.apply(null, elevArr)-Math.min.apply(null, elevArr))*0.0375+150, 0);
 						var options = {
-							title: 'H\u00F6henprofil (\u25B2' + Math.round(gain, 0) + ' hm | \u25BC' + Math.round(loss, 0) + ' tm)',
+							title: 'H\u00F6henprofil \u25B2' + Math.round(gain, 0) + ' hm | \u25BC' + Math.round(loss, 0) + ' hm',
 						    tooltip: { trigger: 'selection' },
 						    // use altitude range (max - min) as proportional factor for chart height
 							// and trail length for width
