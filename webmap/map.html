@@ -48,7 +48,7 @@
 				} else {
 					window.stop();
 				}
-				window.location='tiroltrailhead.com/webmap/info.html';
+				window.location='´tiroltrailhead.com/webmap/info.html';
 			}
 			if (trim(pw_prompt) == pw ) {
 				alert('Passwort richtig! Mit dem Klicken auf OK stimmst Du dem TIROLTRAILHEAD Kodex (s. tiroltrailhead.com/webmap/info.html) und dem Haftungsausschluss zu!');
@@ -119,7 +119,7 @@
 		<div id="container">
 			<div id="explanation-and-list">
 				<div id="explanation">
-					<p class="H1"><img src="tiroltrailhead.com/webmap/images/logo_trails_5_1.png" width="120" style="vertical-align:middle; padding: 5px;">T I R O L  T R A I L H E A D</p>
+					<p class="H1"><img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" width="120" style="vertical-align:middle; padding: 5px;">T I R O L  T R A I L H E A D</p>
 					<p class="box3">
 						<span class="H2">Basiskarten</span> 	
 						</br><strong>OSM:</strong> Open MTB-Map
@@ -154,7 +154,7 @@
 						<p id="outputListStubai">STUBAITAL</p>
 						<p id="outputListOetztal">VORDERES &Ouml;TZTAL & OCHSENGARTEN</p>
 						<p id="outputListWipptalBrenner">WIPPTAL & BRENNER</p>
-						<p id="outputListZillertal">ZILLERTAL</p>
+						<p id="outputListZillertal">ZILLERTAL</p>						
 						<!-- hitwebcounter Code START -->
 						<a href="http://www.hitwebcounter.com/links.php" target="_blank">
 							<img src="http://hitwebcounter.com/counter/counter.php?page=5756788&style=0038&nbdigits=7&type=page&initCount=100" style="border:none; margin-bottom: 20px;">
@@ -185,7 +185,7 @@
 			  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin:0;">
 			    <input type="hidden" name="cmd" value="_s-xclick">
 			    <input type="hidden" name="hosted_button_id" value="7N6ZTUXZ396XN">
-				  <button type="submit" class="support" id="yes">Unterst&uuml;tze das Projekt mit einem beliebigen Betrag f&uuml;r den Track!</button>
+				  <button type="submit" class="support" id="yes">Unterst&uuml;tze das Projekt mit 1.- oder einem beliebigem Betrag f&uuml;r den Track!</button>
 			  </form>
 			  <div id="svg_container" class="pulse2">
 			    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 25 23.5">
@@ -810,9 +810,10 @@
 						outputListWipptalBrenner.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
 						continue;
 					}
+					
 					if (descr.indexOf("Zillertal") > -1) {
-						outputListWipptalBrenner.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
-						continue;
+						outputListZillertal.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
+						continue;					
 					} else {
 						console.log('Caution: Feature with name: "' + name + '" could not be assigned and will be missing in Trails list!!');
 					}
