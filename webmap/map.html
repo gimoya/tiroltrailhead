@@ -670,7 +670,8 @@
 				elevator.getElevationForLocations(positionalRequest, function(results, status) {
 				
 				// global variables to collect elev gain/loss:
-				var gain = 0, var loss = 0;				
+				var gain = 0;
+				var loss = 0;				
 				
 					if (status === google.maps.ElevationStatus.OK) {
 						var data = new google.visualization.DataTable();
@@ -697,7 +698,10 @@
 										 'Seeh\u00F6he: ' + elev.toFixed(0) + ' m ']
 							);
 						}
-						console.log(gain)
+						
+						console.log(gain); 
+						console.log(loss);
+ 						
 						// Draw the chart using the data within its DIV.
 						$("#elevation-wrapper").fadeIn("slow");
 						var chart = new google.visualization.AreaChart(document.getElementById('elevation_chart'));
