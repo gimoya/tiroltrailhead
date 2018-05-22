@@ -615,6 +615,7 @@ PAYPAL SECTION
 
 .support:hover {
   cursor: pointer;
+  background-color: lightgreen; 
 }
 
 .pulse2 {
