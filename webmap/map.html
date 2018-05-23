@@ -712,7 +712,7 @@
 						    // use altitude range (max - min) as proportional factor for chart height
 							// and trail length for width
 							height: height,
-							width: ftGeoLength/60+250,
+							width: ftGeoLength/60+250 < 400 ? ftGeoLength/60+250 : 400,
 							legend: 'none',
 							titleY: 'Seeh\u00F6he (m)',
 							titleX: 'Strecke (km)',
