@@ -917,6 +917,13 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	margin: 25px 0px 0px 0px;
 }
 
+.info-bold-sub
+{	
+	font-family: 'Fredoka One';
+	font-size: 24px;
+	margin: 25px 0px 0px 0px;
+}
+
 /*
  * customized list bullets with letters S, G, U, E & increment
  */

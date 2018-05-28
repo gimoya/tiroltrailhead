@@ -13,3 +13,6 @@
 [0523/132956.937:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\settings.dat: Zugriff verweigert (0x5)
 [0523/132956.952:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Die Pipe wurde beendet. (0x6D)
 [0523/132956.952:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\settings.dat: Zugriff verweigert (0x5)
+[0528/230113.645:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Program Files (x86)\reports: Zugriff verweigert (0x5)
+[0528/230113.736:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Die Pipe wurde beendet. (0x6D)
+[0528/230113.742:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Program Files (x86)\reports: Zugriff verweigert (0x5)
