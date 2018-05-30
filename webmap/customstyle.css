@@ -917,6 +917,13 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 	margin: 25px 0px 0px 0px;
 }
 
+.info-bold-header
+{	
+	font-family: 'Fredoka One';
+	font-size: 40px;
+	margin: 25px 0px 0px 0px;
+}
+
 .info-bold-sub
 {	
 	font-family: 'Fredoka One';

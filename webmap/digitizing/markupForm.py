@@ -13,7 +13,7 @@ def formOpen(dialog,layerid,featureid):
 	global riskField
 	riskField = dialog.findChild(QLineEdit,"risk")
 	global uphillField
-	uphillField = dialog.findChild(QLineEdit,"uphill")
+	uphillField = dialog.findChild(QLineEdit,"uphill_pain")
 	global landscField
 	landscField = dialog.findChild(QLineEdit,"landscape")
 	global shuttleField
@@ -33,7 +33,7 @@ def formOpen(dialog,layerid,featureid):
 	conflField.textChanged.connect( newDescr )
 
 def newDescr():
-	descrField.setPlainText('<div id="topic" style="float:left;">Name:</br>Region:</br>Seeh&ouml;he:</br>Charakter:</br>Risiko:</br>Uphill:</br>Landschaft:</br>Konflikt:</br>Aufstiegshilfe:</div><div id="topic-text">' +	
+	descrField.setPlainText('<div id="topic" style="float:left;">Name:</br>Region:</br>Seeh&ouml;he:</br>Charakter:</br>Risiko:</br>Uphill Pain:</br>Landschaft:</br>Konflikt:</br>Aufstiegshilfe:</div><div id="topic-text">' +	
 	nameField.text() + '</br>' + regionField.currentText() + '</br>' + altField.text() + '</br>' +
 	characField.text() + '</br>' + riskField.text() + '</br>' + uphillField.text() + '</br>' + 
 	landscField.text() + '</br>' + conflField.text() + '</br>' + shuttleField.text() + '</div>')

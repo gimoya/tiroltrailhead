@@ -909,12 +909,12 @@
 			KMLtrails.events.register("beforefeatureadded", KMLtrails, 
 				function(event) {
 					var a = event.feature.attributes;
-					// trails with KX classification should be red
-					a.color = a.description.indexOf('KX') > -1 ? "#E53E38" : "#1F5AAA";
+					// trails with K! classification should be red
+					a.color = a.description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
 					// trails with ? classification (unknown, planned but not yet been there) should be pink
 					if (a.description.indexOf('?') > -1) {a.color = "#FF69B4"}
-					// trails with ! classification (been there, and it was shit) should be grey
-					if (a.description.indexOf('!') > -1) {a.color = "#BCBCBC"}
+					// trails with X! classification (been there, and it was shit) should be grey
+					if (a.description.indexOf('X!') > -1) {a.color = "#BCBCBC"}
 					return true;
 				}
 			);
