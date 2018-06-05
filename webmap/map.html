@@ -146,7 +146,7 @@
 						<p><span id="newest_trail"></span></p>
 						<p id="outputListIbk">INNSBRUCK</p>
 						<p id="outputListUnterland">ACHENSEE-SCHWAZ-W&Ouml;RGL</p>
-						<p id="outputListImst">IMST & PITZTAL</p>
+						<p id="outputListImst">LANDECK-IMST-PITZTAL</p>
 						<p id="outputListKufstein">KUFSTEIN & KAISER GEBIRGE</p>
 						<p id="outputListKarwendel">KARWENDEL</p>
 						<p id="outputListMieminger">MIEMINGER & WETTERSTEIN GEBIRGE</p>
@@ -216,7 +216,7 @@
 				displayProjection: proj4326,
 				// AUSTRIA: restrictedExtent: new OpenLayers.Bounds(1050550.516554,5839177.463709,1912760.195457,6283123.72391),
 				// restrictedExtent: new OpenLayers.Bounds(1183960,5892930,1443020,6047520),
-				restrictedExtent: new OpenLayers.Bounds(1180000,5890000,1445000,6066000),
+				restrictedExtent: new OpenLayers.Bounds(1175000,5900000,1450000,6070000),
 				controls: [new OpenLayers.Control.Navigation(), 
 						   // the permalink itself is not used in map, but we need the anchors which it sets to the window location
 						   // mind to add the permalink after the ArgParser!!
@@ -768,12 +768,12 @@
 					var descr =  features[i].attributes.description;
 					// check for region in description string and if found put to the according DIV
 					
-					if (descr.indexOf("Achensee-Schwaz-W\u00F6rgl") > -1) {
+					if (descr.indexOf("Achensee") > -1) {
 						outputListUnterland.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
 						continue;
 					}
 					
-					if (descr.indexOf("Kufstein-Kaiser") > -1) {
+					if (descr.indexOf("Kufstein") > -1) {
 						outputListKufstein.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
 						continue;
 					}
@@ -813,12 +813,12 @@
 						continue;
 					}
 					
-					if (descr.indexOf("Imst-Pitztal") > -1) {
+					if (descr.indexOf("Landeck") > -1) {
 						outputListImst.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
 						continue;							
 					}
 					
-					if (descr.indexOf("Wipptal-Brenner") > -1) {
+					if (descr.indexOf("Wipptal") > -1) {
 						outputListWipptalBrenner.innerHTML += '<li><input type="button" class="Link" value="' + name + '" onclick="selectByAttr(KMLtrails, this.value)"></input></li>';
 						continue;
 					}
