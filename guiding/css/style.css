@@ -1362,6 +1362,9 @@ ul.social-icons li a.youtube:hover {
 	.slider .caption {
 		padding-top: 305px;
 	}
+	.navbar-default .navbar-brand {
+		font-size: 5ex;
+	}
 }
 
 @media screen and (max-width:1024px) {
@@ -1369,7 +1372,7 @@ ul.social-icons li a.youtube:hover {
 		padding: 20px 0 10px;
 	}
 	.navbar-default .navbar-brand {
-		font-size: 5ex;
+		font-size: 4ex;
 	}
 	.hover-effect span {
 		letter-spacing: 2px;
@@ -1627,7 +1630,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:853px) {
 	.navbar-default .navbar-brand {
-		font-size: 4.5ex;
+		font-size: 3.5ex;
 	}
 	.callbacks_nav, .callbacks_nav.next {
 		top: 52.5%;
@@ -1684,7 +1687,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:768px) {
 	.navbar-default .navbar-brand {
-		font-size: 3.5ex;
+		font-size: 3ex;
 	}
 	.slider .caption {
 		padding-top: 180px;
@@ -2064,7 +2067,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:375px) {
 	.navbar-default .navbar-brand {
-		font-size: 1.83ex;
+		font-size: 2.1ex;
 	}
 	.video button.btn.btn-primary {
 		width: 71%;
