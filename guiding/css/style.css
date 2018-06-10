@@ -1372,7 +1372,7 @@ ul.social-icons li a.youtube:hover {
 		padding: 20px 0 10px;
 	}
 	.navbar-default .navbar-brand {
-		font-size: 4ex;
+		font-size: 3.75ex;
 	}
 	.hover-effect span {
 		letter-spacing: 2px;
@@ -1630,7 +1630,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:853px) {
 	.navbar-default .navbar-brand {
-		font-size: 3.5ex;
+		font-size: 3.25ex;
 	}
 	.callbacks_nav, .callbacks_nav.next {
 		top: 52.5%;
