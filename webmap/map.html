@@ -838,7 +838,7 @@
 			function getOverview() {
 				map.zoomToExtent(KMLpolygons.getDataExtent(), closest=false);
 				if ( $("#explanation-and-list").is(":visible") )
-					$("#explanation-and-list").slideToggle();
+					$("#explanation-and-list").fadeOut("slow");
 				if ( $("#onscreen-trails").is(":visible") )
 					$("#onscreen-trails").css({display: "none"});
 				selectCtrl.unselectAll();

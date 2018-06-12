@@ -196,10 +196,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1304782.32137707504443824</xmin>
-      <ymin>5986693.98294093180447817</ymin>
-      <xmax>1312952.84917477960698307</xmax>
-      <ymax>5996425.36015831772238016</ymax>
+      <xmin>1319922.72832156415097415</xmin>
+      <ymin>5965938.66565827652812004</ymin>
+      <xmax>1323956.15304029011167586</xmax>
+      <ymax>5969944.52858895249664783</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -352,6 +352,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="GeoSearch20141205235313245"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Marchgatterl___Variante_120180207122647399"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Output_layer20150530125756101"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="QuickWKT20180612233924946"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Oberland__Innsbruck_any20160510222256590"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Image_CIR20141122223106641"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Toaster_Course__1_20150615211912919"/>
@@ -13809,7 +13810,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="1">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="0">
         <columns>
           <column width="273" hidden="0" type="field" name="OGC_FID"/>
           <column width="377" hidden="0" type="field" name="name"/>
@@ -13821,7 +13822,7 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="value"/>
           <column width="-1" hidden="0" type="field" name="shuttle"/>
           <column width="-1" hidden="0" type="field" name="conflict"/>
-          <column width="257" hidden="0" type="field" name="description"/>
+          <column width="181" hidden="0" type="field" name="description"/>
           <column width="-1" hidden="0" type="field" name="id"/>
           <column width="-1" hidden="1" type="actions"/>
         </columns>
@@ -14687,6 +14688,7 @@ def my_form_open(dialog, layer, feature):
         <value>Tour2_12_06_2018_00120180612214729915</value>
         <value>Tour_12_06_2018_00120180612214729966</value>
         <value>Kellerjoch_Hütte_Proxenalm_Köglmoos_Pill_00120180612214730016</value>
+        <value>Variante_Julistollen_Samjoch_Köglmoos20180612224916535</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
@@ -14727,6 +14729,7 @@ def my_form_open(dialog, layer, feature):
         <value>disabled</value>
         <value>disabled</value>
         <value>enabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -14792,6 +14795,7 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
         <value>2</value>
         <value>2</value>
+        <value>2</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
         <value>to_vertex_and_segment</value>
@@ -14843,10 +14847,11 @@ def my_form_open(dialog, layer, feature):
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
       </LayerSnapToList>
       <DefaultSnapType type="QString">to vertex</DefaultSnapType>
       <DefaultSnapTolerance type="double">0</DefaultSnapTolerance>
-      <TopologicalEditing type="bool">true</TopologicalEditing>
+      <TopologicalEditing type="bool">false</TopologicalEditing>
       <LayerSnappingToleranceList type="QStringList">
         <value>0.000000</value>
         <value>0.000000</value>
@@ -14886,6 +14891,7 @@ def my_form_open(dialog, layer, feature):
         <value>5.000000</value>
         <value>0.000000</value>
         <value>13.000000</value>
+        <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
