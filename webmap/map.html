@@ -838,7 +838,7 @@
 			function getOverview() {
 				map.zoomToExtent(KMLpolygons.getDataExtent(), closest=false);
 				if ( $("#explanation-and-list").is(":visible") )
-					$("#explanation-and-list").fadeOut("slow");
+					$("#explanation-and-list").slideToggle();
 				if ( $("#onscreen-trails").is(":visible") )
 					$("#onscreen-trails").css({display: "none"});
 				selectCtrl.unselectAll();
@@ -949,7 +949,7 @@
                 trigger: function(e) {
 					// if explanation-and-list is visible, hide it!
 					if ( $("#explanation-and-list").is(":visible") ) {
-						$("#explanation-and-list").slideToggle();
+						$("#explanation-and-list").fadeOut("slow");
 					}
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
 					var locations = [new google.maps.LatLng(lonlat.lat, lonlat.lon)];
