@@ -947,6 +947,10 @@
                 }, 
 
                 trigger: function(e) {
+					// if explanation-and-list is visible, hide it!
+					if ( $("#explanation-and-list").is(":visible") ) {
+						$("#explanation-and-list").slideToggle();
+					}
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
 					var locations = [new google.maps.LatLng(lonlat.lat, lonlat.lon)];
 					//console.log(lonlat);
