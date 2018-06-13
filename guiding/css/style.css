@@ -636,9 +636,6 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 /*-- Agency --*/
 
-.agency {
-	background-color: #003b64;
-}
 
 .agency-grid {
 	text-align: center;
@@ -662,50 +659,17 @@ ul.callbacks_tabs.callbacks1_tabs {
 	line-height: 27px;
 }
 
+.agency {
+	background-color: #343252;
+}
+
 /*-- //Agency --*/
-
-
-
-/*-- Services --*/
-
-.tab-content>.tab-pane {
-	padding-top: 50px;
-}
-
-.nav-tabs>li>a {
-	margin: 0 20px;
-	padding: 10px 53px;
-	line-height: 1.42857143;
-	font-size: 16px;
-	font-weight: 600;
-	border: 1px solid transparent;
-	border-radius: 4px 4px 0 0;
-	color: #003B64;
-}
-
-.nav-tabs>li>a:hover, .nav>li>a:focus {
-	text-decoration: none;
-	background-color: #003B64;
-	color: #FFF;
-}
-
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
-	color: #008074;
-}
-
-.tab-info p {
-	line-height: 30px;
-	padding-top: 25px;
-}
-
-/*-- //Services --*/
-
 
 
 /*-- Video --*/
 
 .video {
-	background-color: #003B64;
+	background-color: #343252;
 	text-align: center;
 }
 
@@ -752,6 +716,41 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 
 /*-- //Video --*/
+
+
+/*-- Services --*/
+
+.tab-content>.tab-pane {
+	padding-top: 50px;
+}
+
+.nav-tabs>li>a {
+	margin: 0 20px;
+	padding: 10px 53px;
+	line-height: 1.42857143;
+	font-size: 16px;
+	font-weight: 600;
+	border: 1px solid transparent;
+	border-radius: 4px 4px 0 0;
+	color: #003B64;
+}
+
+.nav-tabs>li>a:hover, .nav>li>a:focus {
+	text-decoration: none;
+	background-color: #003B64;
+	color: #FFF;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+	color: #008074;
+}
+
+.tab-info p {
+	line-height: 30px;
+	padding-top: 25px;
+}
+
+/*-- //Services --*/
 
 /*-- Gallery --*/
 
