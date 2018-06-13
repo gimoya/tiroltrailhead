@@ -596,7 +596,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	font-family: inherit;
 	font-size: 40px;
 	font-weight: 600;
-	color: #003b64;
+	color: #0c7b7b;
 }
 
 .agency h2, .clients h3, .contact h3 {
@@ -2080,7 +2080,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:375px) {
 	.navbar-default .navbar-brand {
-		font-size: 2.1ex;
+		font-size: 2.5ex;
 	}
 	.video button.btn.btn-primary {
 		width: 71%;
