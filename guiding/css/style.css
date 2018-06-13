@@ -1698,6 +1698,7 @@ ul.social-icons li a.youtube:hover {
 @media screen and (max-width:768px) {
 	.navbar-default .navbar-brand {
 		font-size: 3.5ex;
+		padding-top: 10px!important;
 	}
 	.slider .caption {
 		padding-top: 180px;

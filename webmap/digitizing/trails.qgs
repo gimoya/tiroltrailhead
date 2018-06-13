@@ -196,10 +196,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1228333.21775385434739292</xmin>
-      <ymin>5994567.54317095968872309</ymin>
-      <xmax>1235092.77434533764608204</xmax>
-      <ymax>6002686.15670463163405657</ymax>
+      <xmin>1250872.42154930718243122</xmin>
+      <ymin>5951559.68416633363813162</ymin>
+      <xmax>1304948.87428117357194424</xmax>
+      <ymax>6016508.59243570920079947</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -13810,7 +13810,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;risk&quot;" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;region&quot;" sortOrder="0">
         <columns>
           <column width="273" hidden="0" type="field" name="OGC_FID"/>
           <column width="377" hidden="0" type="field" name="name"/>
