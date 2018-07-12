@@ -59,6 +59,20 @@
 }
 </script>
 
+<script>
+// When the user scrolls down XYpx from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("reqBtn").style.display = "block";
+    } else {
+        document.getElementById("reqBtn").style.display = "none";
+    }
+}
+
+</script>
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- //For-Mobile-Apps -->
@@ -79,8 +93,11 @@
 
 <!-- Body -->
 <body>
-
+	<!--Sticky E-Mail Request Button-->
+	<input type="button" class="Link" id="reqBtn" value="Get Your Ride!" onclick="window.open('mailto:guiding@tiroltrailhead.com?Subject=Anfrage MTB Guiding')">
+	
 	<!-- Header -->
+	<input type="button" class="Link" id="reqBtn" value="Get Your Ride!" onclick="window.open('mailto:guiding@tiroltrailhead.com?Subject=Anfrage MTB Guiding')">
 	<div class="header" id="home">
 
 		<!-- Navbar -->
