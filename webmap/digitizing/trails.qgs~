@@ -7,6 +7,9 @@
     <customproperties/>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="ROUTEN">
       <customproperties/>
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Gerlostaljoch_Panorama_Kreuzwiesen20180705174122343" name="Gerlostaljoch-Panorama-Kreuzwiesen">
+        <customproperties/>
+      </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Gerlosberg_Verbindung20180620120951351" name="Gerlosberg_Verbindung">
         <customproperties/>
       </layer-tree-layer>
@@ -211,9 +214,6 @@
     </layer-tree-group>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="Trailmap">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Gerlostaljoch_Panorama_Kreuzwiesen20180705174122343" name="Gerlostaljoch-Panorama-Kreuzwiesen">
-        <customproperties/>
-      </layer-tree-layer>
       <layer-tree-layer expanded="0" checked="Qt::Checked" id="trails_utm_utf820141118153222040" name="trails_utm_utf8">
         <customproperties/>
       </layer-tree-layer>
@@ -226,7 +226,7 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="N47E01120180315075617474" name="N47E011">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Boundary_Schummerung_Gelaendemodell_Footprint_Schummerung_Gelaendemodell_Image_Schummerung_Gelaendemodell20180525081217315" name="Boundary Schummerung_Gelaendemodell/Footprint Schummerung_Gelaendemodell/Image Schummerung_Gelaendemodell">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Boundary_Schummerung_Gelaendemodell_Footprint_Schummerung_Gelaendemodell_Image_Schummerung_Gelaendemodell20180525081217315" name="Boundary Schummerung_Gelaendemodell/Footprint Schummerung_Gelaendemodell/Image Schummerung_Gelaendemodell">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20180525080834814" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR">
@@ -235,10 +235,10 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Google_Hybrid20180702171830362" name="Google Hybrid">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="gdi_nomenklatur20180511150652199" name="gdi_nomenklatur">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="gdi_nomenklatur20180511150652199" name="gdi_nomenklatur">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="gdi_base_summer20180511150756480" name="gdi_base_summer">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="gdi_base_summer20180511150756480" name="gdi_base_summer">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bergfex_oek20170517223227274" name="bergfex oek">
@@ -250,7 +250,7 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OCM_Landscape20161207230225880" name="OCM Landscape">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenCycleMap20161207230225903" name="OpenCycleMap">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenCycleMap20161207230225903" name="OpenCycleMap">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -259,10 +259,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1325184.5021159858442843</xmin>
-      <ymin>5978315.7955028610303998</ymin>
-      <xmax>1338920.36806430201977491</xmax>
-      <ymax>5982403.48959616664797068</ymax>
+      <xmin>1289309.04519432433880866</xmin>
+      <ymin>5988530.37580189667642117</ymin>
+      <xmax>1290371.02782610827125609</xmax>
+      <ymax>5989129.35353052243590355</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -838,6 +838,11 @@
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
     <legendgroup open="false" checked="Qt::Unchecked" name="ROUTEN">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Gerlostaljoch-Panorama-Kreuzwiesen" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="Gerlostaljoch_Panorama_Kreuzwiesen20180705174122343" visible="0"/>
+        </filegroup>
+      </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Gerlosberg_Verbindung" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="Gerlosberg_Verbindung20180620120951351" visible="0"/>
@@ -1175,11 +1180,6 @@
       </legendlayer>
     </legendgroup>
     <legendgroup open="true" checked="Qt::Checked" name="Trailmap">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Gerlostaljoch-Panorama-Kreuzwiesen" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Gerlostaljoch_Panorama_Kreuzwiesen20180705174122343" visible="1"/>
-        </filegroup>
-      </legendlayer>
       <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="trails_utm_utf8" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="trails_utm_utf820141118153222040" visible="1"/>
@@ -1197,9 +1197,9 @@
           <legendlayerfile isInOverview="0" layerid="N47E01120180315075617474" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Boundary Schummerung_Gelaendemodell/Footprint Schummerung_Gelaendemodell/Image Schummerung_Gelaendemodell" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Boundary Schummerung_Gelaendemodell/Footprint Schummerung_Gelaendemodell/Image Schummerung_Gelaendemodell" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Boundary_Schummerung_Gelaendemodell_Footprint_Schummerung_Gelaendemodell_Image_Schummerung_Gelaendemodell20180525081217315" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Boundary_Schummerung_Gelaendemodell_Footprint_Schummerung_Gelaendemodell_Image_Schummerung_Gelaendemodell20180525081217315" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR" showFeatureCount="0">
@@ -1212,14 +1212,14 @@
           <legendlayerfile isInOverview="0" layerid="Google_Hybrid20180702171830362" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="gdi_nomenklatur" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="gdi_nomenklatur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="gdi_nomenklatur20180511150652199" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="gdi_nomenklatur20180511150652199" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="gdi_base_summer" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="gdi_base_summer" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="gdi_base_summer20180511150756480" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="gdi_base_summer20180511150756480" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="bergfex oek" showFeatureCount="0">
@@ -1237,9 +1237,9 @@
           <legendlayerfile isInOverview="0" layerid="OCM_Landscape20161207230225880" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenCycleMap" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OpenCycleMap" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OpenCycleMap20161207230225903" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="OpenCycleMap20161207230225903" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
@@ -1650,7 +1650,7 @@
         <fieldstyles/>
       </conditionalstyles>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="inf" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
       <extent>
         <xmin>1105602.67551600001752377</xmin>
         <ymin>5853379.05156899988651276</ymin>
@@ -1676,6 +1676,7 @@
         </spatialrefsys>
       </srs>
       <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
         <property key="identify/format" value="Html"/>
       </customproperties>
       <provider>wms</provider>
@@ -1686,7 +1687,7 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
+        <rasterrenderer opacity="0.584314" alphaBand="0" band="1" type="singlebandcolordata">
           <rasterTransparency/>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
@@ -5754,7 +5755,7 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <aliases>
         <alias field="Name" index="0" name=""/>
         <alias field="description" index="1" name=""/>
@@ -5774,10 +5775,10 @@
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="1010721908">
         <columns/>
       </attributetableconfig>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>.</editforminitfilepath>
       <editforminitcode><![CDATA[]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
@@ -17333,7 +17334,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;region&quot;" sortOrder="1">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;OGC_FID&quot;" sortOrder="0">
         <columns>
           <column width="273" hidden="0" type="field" name="OGC_FID"/>
           <column width="377" hidden="0" type="field" name="name"/>
