@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+<atom:author><atom:name>Locus (Android)</atom:name></atom:author>
+	<Style id="track001">
+		<LineStyle>
+			<color>96ff0000</color>
+			<width>4.0</width>
+		</LineStyle>
+	</Style>
+<Placemark>
+	<name>Zwischenziel</name>
+	<description><![CDATA[<font color="black"><table width="100%"><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b>Höhe</b></small></td><td align="center" valign="center">144 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Erstellt</b></small></td><td align="center" valign="center">1970-01-01 01:00:00</td></tr>
+</table></td></tr><tr><td><table width="100%"></table></td></tr></table></font>]]></description>
+	<Point>
+		<coordinates>10.196299,42.795724,143.50</coordinates>
+	</Point>
+	<gx:TimeStamp>
+		<when>2016-08-30T15:46:03Z</when>
+	</gx:TimeStamp>
+</Placemark>
+<Placemark>
+	<name>Luigi-MarcMarina</name>
+	<description><![CDATA[<br /><br /><font color="black"><table width="100%"><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b>Länge</b></small></td><td align="center" valign="center">1.5 km</td></tr>
+<tr><td align="left" valign="center"><small><b>Punkte</b></small></td><td align="center" valign="center">29</td></tr>
+<tr><td align="left" valign="center"><small><b>Erstellt</b></small></td><td align="center" valign="center">2016-08-30 15:45:53</td></tr>
+<tr><td align="left" valign="center"><small><b>Max. Tempo</b></small></td><td align="center" valign="center">0.0 km/h</td></tr>
+</table></td></tr><tr><td colspan="1"><hr></td></tr><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b></b></small></td><td align="center" valign="center">Höhenmeter</td><td align="center" valign="center">Distanz</td></tr>
+<tr><td align="left" valign="center"><small><b>Bergauf</b></small></td><td align="center" valign="center">0 m</td><td align="center" valign="center">0 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Bergab</b></small></td><td align="center" valign="center">-221 m</td><td align="center" valign="center">1064 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Ebene</b></small></td><td align="center" valign="center">0 m</td><td align="center" valign="center">441 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Gesamt</b></small></td><td align="center" valign="center">221 m</td><td align="center" valign="center">1505 m</td></tr>
+</table></td></tr></table></font>]]></description>
+	<styleUrl>#track001</styleUrl>
+	<MultiGeometry>
+		<LineString>
+			<coordinates>
+				10.198756,42.790671,223.50
+				10.198295,42.791023,223.50
+				10.197426,42.791747,207.25
+				10.197072,42.792070,198.50
+				10.196879,42.792173,195.75
+				10.196975,42.792362,196.25
+				10.196803,42.792512,194.50
+				10.196321,42.795197,160.75
+				10.196342,42.795338,155.75
+				10.196331,42.795448,152.50
+				10.196213,42.795606,148.50
+				10.196299,42.795724,143.50
+				10.196449,42.795740,141.75
+				10.196482,42.795826,138.75
+				10.196557,42.795913,135.75
+				10.196632,42.796086,130.50
+				10.196728,42.796204,126.50
+				10.196771,42.796307,123.25
+				10.197080,42.797046
+				10.197566,42.797349
+				10.197550,42.797978
+				10.198110,42.798911
+				10.198643,42.799624
+				10.198331,42.799880
+				10.197646,42.799944
+				10.196821,42.800784
+				10.197072,42.801170
+				10.196811,42.801198
+				10.197022,42.801609
+			</coordinates>
+		</LineString>
+	</MultiGeometry>
+</Placemark>
+</Document>
+</kml>

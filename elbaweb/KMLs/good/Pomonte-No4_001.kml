@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+<atom:author><atom:name>Locus (Android)</atom:name></atom:author>
+	<Style id="track001">
+		<LineStyle>
+			<color>96ff0000</color>
+			<width>4.0</width>
+		</LineStyle>
+	</Style>
+<Placemark>
+	<name>Pomonte-No4</name>
+	<description><![CDATA[<br /><br /><font color="black"><table width="100%"><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b>Länge</b></small></td><td align="center" valign="center">2.2 km</td></tr>
+<tr><td align="left" valign="center"><small><b>Punkte</b></small></td><td align="center" valign="center">75</td></tr>
+<tr><td align="left" valign="center"><small><b>Erstellt</b></small></td><td align="center" valign="center">2016-08-29 23:10:30</td></tr>
+<tr><td align="left" valign="center"><small><b>Max. Tempo</b></small></td><td align="center" valign="center">0.0 km/h</td></tr>
+</table></td></tr><tr><td colspan="1"><hr></td></tr><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b>Min. Höhe</b></small></td><td align="center" valign="center">56 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Max. Höhe</b></small></td><td align="center" valign="center">455 m</td></tr>
+</table></td></tr><tr><td colspan="1"><hr></td></tr><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b></b></small></td><td align="center" valign="center">Höhenmeter</td><td align="center" valign="center">Distanz</td></tr>
+<tr><td align="left" valign="center"><small><b>Bergauf</b></small></td><td align="center" valign="center">0 m</td><td align="center" valign="center">0 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Bergab</b></small></td><td align="center" valign="center">-398 m</td><td align="center" valign="center">2261 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Ebene</b></small></td><td align="center" valign="center">0 m</td><td align="center" valign="center">0 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Gesamt</b></small></td><td align="center" valign="center">398 m</td><td align="center" valign="center">2261 m</td></tr>
+</table></td></tr></table></font>]]></description>
+	<styleUrl>#track001</styleUrl>
+	<MultiGeometry>
+		<LineString>
+			<coordinates>
+				10.136171,42.760083,458.50
+				10.136141,42.760061,458.50
+				10.136064,42.759968,455.50
+				10.136038,42.759851,451.50
+				10.135744,42.759649,446.00
+				10.135725,42.759618,444.75
+				10.135786,42.759577,442.75
+				10.135749,42.759561,442.25
+				10.135400,42.759520,442.25
+				10.134799,42.759195,430.75
+				10.134724,42.759067,424.00
+				10.134916,42.759057,422.50
+				10.134798,42.758935,416.00
+				10.134950,42.758921,414.75
+				10.135066,42.758855,411.25
+				10.135040,42.758790,407.75
+				10.134820,42.758700,402.75
+				10.134930,42.758680,401.50
+				10.134820,42.758620,398.00
+				10.133790,42.758450,388.25
+				10.134324,42.758271,374.75
+				10.132910,42.757910,357.75
+				10.132700,42.757800,352.00
+				10.132660,42.757690,345.50
+				10.132180,42.757440,335.00
+				10.131650,42.757050,316.50
+				10.131130,42.756880,311.50
+				10.131180,42.756840,308.00
+				10.130830,42.756710,303.00
+				10.129390,42.756450,289.25
+				10.128887,42.756274,284.75
+				10.129200,42.756280,279.50
+				10.129050,42.756150,273.25
+				10.128410,42.755980,273.50
+				10.127808,42.755356,257.50
+				10.127687,42.755180,253.25
+				10.127392,42.754899,251.25
+				10.127330,42.754730,248.50
+				10.127250,42.754330,239.25
+				10.127290,42.754110,232.00
+				10.127140,42.753640,220.75
+				10.127105,42.753377,213.00
+				10.127357,42.753334,209.25
+				10.127360,42.753250,206.25
+				10.127270,42.753170,204.00
+				10.126997,42.753097,203.25
+				10.126860,42.753060,202.50
+				10.126560,42.752870,197.25
+				10.126500,42.752800,195.00
+				10.126800,42.752740,189.25
+				10.126540,42.752500,180.50
+				10.126150,42.752460,182.75
+				10.126350,42.752310,171.50
+				10.126143,42.752335,175.25
+				10.126169,42.752274,171.25
+				10.126528,42.752034,153.50
+				10.126780,42.751990,149.75
+				10.126520,42.751840,142.25
+				10.126800,42.751770,137.50
+				10.126650,42.751710,133.50
+				10.126950,42.751580,127.75
+				10.126670,42.751560,125.50
+				10.126650,42.751450,120.00
+				10.126388,42.751459,122.75
+				10.126070,42.751470,125.75
+				10.125810,42.751110,109.50
+				10.125530,42.750910,101.50
+				10.125020,42.750720,95.75
+				10.124760,42.750700,97.50
+				10.124350,42.750400,87.00
+				10.123770,42.750160,75.75
+				10.123820,42.750120,73.75
+				10.123690,42.749860,63.00
+				10.123340,42.749800,61.00
+				10.122768,42.749487,50.75
+			</coordinates>
+		</LineString>
+	</MultiGeometry>
+</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+<atom:author><atom:name>Locus (Android)</atom:name></atom:author>
+	<Style id="track001">
+		<LineStyle>
+			<color>96ff0000</color>
+			<width>4.0</width>
+		</LineStyle>
+	</Style>
+<Placemark>
+	<name>SassiRitti</name>
+	<description><![CDATA[<br /><br /><font color="black"><table width="100%"><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b>Länge</b></small></td><td align="center" valign="center">482 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Punkte</b></small></td><td align="center" valign="center">29</td></tr>
+<tr><td align="left" valign="center"><small><b>Erstellt</b></small></td><td align="center" valign="center">2016-08-28 23:29:56</td></tr>
+<tr><td align="left" valign="center"><small><b>Max. Tempo</b></small></td><td align="center" valign="center">0.0 km/h</td></tr>
+</table></td></tr><tr><td colspan="1"><hr></td></tr><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b>Min. Höhe</b></small></td><td align="center" valign="center">256 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Max. Höhe</b></small></td><td align="center" valign="center">314 m</td></tr>
+</table></td></tr><tr><td colspan="1"><hr></td></tr><tr><td><table width="100%"><tr><td align="left" valign="center"><small><b></b></small></td><td align="center" valign="center">Höhenmeter</td><td align="center" valign="center">Distanz</td></tr>
+<tr><td align="left" valign="center"><small><b>Bergauf</b></small></td><td align="center" valign="center">0 m</td><td align="center" valign="center">14 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Bergab</b></small></td><td align="center" valign="center">-58 m</td><td align="center" valign="center">462 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Ebene</b></small></td><td align="center" valign="center">0 m</td><td align="center" valign="center">10 m</td></tr>
+<tr><td align="left" valign="center"><small><b>Gesamt</b></small></td><td align="center" valign="center">58 m</td><td align="center" valign="center">486 m</td></tr>
+</table></td></tr></table></font>]]></description>
+	<styleUrl>#track001</styleUrl>
+	<MultiGeometry>
+		<LineString>
+			<coordinates>
+				10.196740,42.746308,316.25
+				10.197030,42.746196,316.25
+				10.197299,42.746201,314.00
+				10.197554,42.746150,311.25
+				10.197660,42.746201,310.25
+				10.197886,42.746207,307.50
+				10.198141,42.746186,304.00
+				10.198375,42.746228,301.00
+				10.198877,42.746477,294.00
+				10.199097,42.746617,290.75
+				10.199387,42.746560,285.00
+				10.199408,42.746669,285.00
+				10.199337,42.746711,286.00
+				10.199720,42.746830,277.25
+				10.199875,42.746898,273.25
+				10.200024,42.746836,270.50
+				10.200052,42.746971,268.50
+				10.200052,42.747054,267.75
+				10.200059,42.747148,266.75
+				10.200222,42.747028,263.00
+				10.200427,42.746950,257.50
+				10.200427,42.747054,257.00
+				10.200427,42.747168,256.50
+				10.200328,42.747226,258.75
+				10.200215,42.747324,261.00
+				10.200346,42.747499,256.50
+				10.200341,42.747415,257.25
+				10.200378,42.747348,256.75
+				10.200389,42.747342,253.25
+			</coordinates>
+		</LineString>
+	</MultiGeometry>
+</Placemark>
+</Document>
+</kml>
