@@ -668,7 +668,7 @@
 			<h3>ANFRAGE & BUCHUNG</h3>
 
 			<div class="contact-form">
-				<form action="http://formspree.io/guiding@tiroltrailhead.com" method="POST">
+				<form id="contact-form" action="http://formspree.io/guiding@tiroltrailhead.com" method="POST">
 					<input type="text" class="text" name="name" placeholder="Name" required="">
 					<input type="text" class="text" name="email" placeholder="E-Mail" required="">
 					<textarea placeholder="Message" name="message" required=""></textarea>
@@ -805,7 +805,8 @@
 	<!--Booking Button Script-->
 	<script>
 		function bookFunction() {
-			window.open("mailto:guiding@tiroltrailhead.com?Subject=Let's go MTBiking!");
+			document.getElementById(contact-form).focus();
+			document.getElementById(contact-form).select();
 		}
 	</script>
 	<!--Booking Button Script-->
