@@ -217,8 +217,8 @@
 
 			<h1>ABOUT</h1>
 		
-		<p class="para"><span style="font-weight: 500;">Kay Cichini, VAVOE zertifizierter Bike-Guide: </span><i>"..Schon vor vielen Jahren, als ich noch bei XC-Rennläufer war, 
-				        wurde mir bald klar, dass unter dem puren Leistungs-Aspekt viele Facetten des MTB-Sportes zu kurz kommen – vor Allem jene Teile, die mir heute nahezu am wichtigsten scheinen: das <b>Naturerlebnis</b>,
+		<p class="para"><span style="font-weight: 500;">Kay Cichini, VAVOE zertifizierter Bike-Guide: </span><i>"Mir wurde schon vor vielen Jahren, zur Zeit als ich noch XC-Rennläufer war, 
+				        bald klar, dass unter dem puren Leistungs-Aspekt viele Facetten des MTB-Sportes zu kurz kommen – vor Allem jene Teile, die mir heute nahezu am wichtigsten scheinen: das <b>Naturerlebnis</b>,
 				        die <b>Zeit mit Freunden</b> am Trail, das <b>Erreichen individueller Ziele</b>! Und über die vielen Jahre im MTB-Betrieb hat sich schließlich meine Philosophie ganz hin zu diesen Inhalten verschoben - für mich geht es heute ganz einfach um das <b>"Abenteuer Mountainbiken"!</b>
 				        Dieses Abenteuer für Euch – vom Einsteiger, der Mountainbike Grundtechniken erlernen will, bis hin zum MTB-Crack, der auf der Suche nach dem ultimativen Singletrail ist – 
 				        erlebbar zu machen, ist meine Leidenschaft!..."
@@ -668,19 +668,12 @@
 			<h3>ANFRAGE & BUCHUNG</h3>
 
 			<div class="contact-form">
-				<form id="contact-form" action="http://formspree.io/guiding@tiroltrailhead.com" method="POST">
-					<input type="text" class="text" name="name" placeholder="Name" required="">
+				<form action="http://formspree.io/guiding@tiroltrailhead.com" method="POST">
+					<input  id="namebox_id" type="text" class="text" name="name" placeholder="Name" required="">
 					<input type="text" class="text" name="email" placeholder="E-Mail" required="">
-					<textarea placeholder="Message" name="message" required=""></textarea>
+					<textarea id="messagebox_id" placeholder="Message" name="message" required=""></textarea>
 					<input type="submit" name="email_submit" class="more_btn" value="Sende E-Mail Anfrage">
 				</form>
-				<!--form>
-					<input type="text" class="text" placeholder="Name" required="">
-					<input type="text" class="text" placeholder="Email" required="">
-					<input type="text" class="text" placeholder="Phone" required="">
-					<textarea placeholder="Message" required=""></textarea>
-					<input type="submit" class="more_btn" value="Send Message">
-				</form-->
 
 				<!-- Social-Icons -->
 				<!--p>Or Login with</p>
@@ -804,9 +797,23 @@
 	<!--Sticky Button Script-->
 	<!--Booking Button Script-->
 	<script>
+		var i = 0;
+		var txt = "Get in touch! Feel free to ask for events, schedules, prices, dates... Put your name and E-Mail to the boxes above and hit 'Send!'... And then, let's go biking!\u000d";
+		var speed = 100;
+		
 		function bookFunction() {
-			document.getElementById(contact-form).focus();
-			document.getElementById(contact-form).select();
+		
+			// focusing the input form box..
+			document.getElementById("messagebox_id").focus();
+			document.getElementById("messagebox_id").select();
+			
+			// animated typing
+
+			if (i < txt.length) {
+				document.getElementById("messagebox_id").value += txt.charAt(i);
+				i++;
+				setTimeout(bookFunction, speed);
+			}
 		}
 	</script>
 	<!--Booking Button Script-->
