@@ -7,13 +7,16 @@
     <customproperties/>
     <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="ROUTEN">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="AldranserBach_Variante20181014222808921" name="AldranserBach-Variante">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="2018_10_15_10_44_53_tracks20181015124812120" name="2018-10-15_10-44-53 tracks">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="brouter__65_20181010150757331" name="brouter (65) Paths LineString">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="AldranserBach_Variante20181014222808921" name="AldranserBach-Variante">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="brouter__64_20181010150915210" name="brouter (64) Paths LineString">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="brouter__65_20181010150757331" name="brouter (65) Paths LineString">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="brouter__64_20181010150915210" name="brouter (64) Paths LineString">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="brouter__63_20181010145300529" name="brouter (63) Paths LineString">
@@ -274,7 +277,7 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="N47E01120180315075617474" name="N47E011">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="Boundary_Schummerung_Gelaendemodell_Footprint_Schummerung_Gelaendemodell_Image_Schummerung_Gelaendemodell20180525081217315" name="Boundary Schummerung_Gelaendemodell/Footprint Schummerung_Gelaendemodell/Image Schummerung_Gelaendemodell">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Boundary_Schummerung_Gelaendemodell_Footprint_Schummerung_Gelaendemodell_Image_Schummerung_Gelaendemodell20180525081217315" name="Boundary Schummerung_Gelaendemodell/Footprint Schummerung_Gelaendemodell/Image Schummerung_Gelaendemodell">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20180525080834814" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR">
@@ -292,10 +295,10 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bergfex_oek20170517223227274" name="bergfex oek">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenStreetMap20161207230225903" name="OpenStreetMap">
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="OpenStreetMap20161207230225903" name="OpenStreetMap">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="OCM_Landscape20161207230225880" name="OCM Landscape">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OCM_Landscape20161207230225880" name="OCM Landscape">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="OpenCycleMap20161207230225903" name="OpenCycleMap">
@@ -307,10 +310,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1275227.15882855071686208</xmin>
-      <ymin>5979584.1559020085260272</ymin>
-      <xmax>1275491.43686566944234073</xmax>
-      <ymax>5980546.3982651187106967</ymax>
+      <xmin>1276551.07638503517955542</xmin>
+      <ymin>5980929.3502857806161046</ymin>
+      <xmax>1277003.59903967287391424</xmax>
+      <ymax>5981100.1393454922363162</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -484,6 +487,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Gerlostaljoch_Panorama_Kreuzwiesen20180705174122343"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenLayers_plugin_layer20151015083505882"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Elevation_Plugin_Results20160209105142421"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="2018_10_15_10_44_53_tracks20181015124812120"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="gdi_nomenklatur20180511150652199"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Autenalm___Trail20151010223844753"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter__36_20180524232120937"/>
@@ -510,6 +514,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3785" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memory_layer20141125091233792"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3785" srcDatumTransform="-1" destDatumTransform="-1" layerid="Memory_layer20150416204549825"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenLayers_plugin_layer20150812120332605"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Sistreanser_Alm_Variante20181016164851893"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Toaster_Course__7_20150730002337226"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="brouter20180129230524104"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="OchsnerRunde_00120180511142236125"/>
@@ -914,23 +919,29 @@
       <item>brouter__65_20181010150757331</item>
       <item>brouter__64_20181010150915210</item>
       <item>AldranserBach_Variante20181014222808921</item>
+      <item>2018_10_15_10_44_53_tracks20181015124812120</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
     <legendgroup open="false" checked="Qt::PartiallyChecked" name="ROUTEN">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="AldranserBach-Variante" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="2018-10-15_10-44-53 tracks" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="AldranserBach_Variante20181014222808921" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="2018_10_15_10_44_53_tracks20181015124812120" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="brouter (65) Paths LineString" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="AldranserBach-Variante" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="brouter__65_20181010150757331" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="AldranserBach_Variante20181014222808921" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="brouter (64) Paths LineString" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="brouter (65) Paths LineString" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="brouter__64_20181010150915210" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="brouter__65_20181010150757331" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="brouter (64) Paths LineString" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="brouter__64_20181010150915210" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="brouter (63) Paths LineString" showFeatureCount="0">
@@ -1357,9 +1368,9 @@
           <legendlayerfile isInOverview="0" layerid="N47E01120180315075617474" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Boundary Schummerung_Gelaendemodell/Footprint Schummerung_Gelaendemodell/Image Schummerung_Gelaendemodell" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Boundary Schummerung_Gelaendemodell/Footprint Schummerung_Gelaendemodell/Image Schummerung_Gelaendemodell" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Boundary_Schummerung_Gelaendemodell_Footprint_Schummerung_Gelaendemodell_Image_Schummerung_Gelaendemodell20180525081217315" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="Boundary_Schummerung_Gelaendemodell_Footprint_Schummerung_Gelaendemodell_Image_Schummerung_Gelaendemodell20180525081217315" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR" showFeatureCount="0">
@@ -1387,14 +1398,14 @@
           <legendlayerfile isInOverview="0" layerid="bergfex_oek20170517223227274" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenStreetMap" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OpenStreetMap" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OpenStreetMap20161207230225903" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="OpenStreetMap20161207230225903" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OCM Landscape" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OCM Landscape" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OCM_Landscape20161207230225880" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="OCM_Landscape20161207230225880" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="OpenCycleMap" showFeatureCount="0">
@@ -1484,6 +1495,182 @@
     </Composition>
   </Composer>
   <projectlayers>
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>11.4435330000000004</xmin>
+        <ymin>47.23136000000000223</ymin>
+        <xmax>11.48863799999999991</xmax>
+        <ymax>47.26023899999999855</ymax>
+      </extent>
+      <id>2018_10_15_10_44_53_tracks20181015124812120</id>
+      <datasource>../../../../Downloads/2018-10-15_10-44-53.gpx|layerid=2</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>2018-10-15_10-44-53 tracks</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <layerDependencies/>
+      <expressionfields/>
+      <defaults>
+        <default field="name" expression=""/>
+        <default field="cmt" expression=""/>
+        <default field="desc" expression=""/>
+        <default field="src" expression=""/>
+        <default field="link1_href" expression=""/>
+        <default field="link1_text" expression=""/>
+        <default field="link1_type" expression=""/>
+        <default field="link2_href" expression=""/>
+        <default field="link2_text" expression=""/>
+        <default field="link2_type" expression=""/>
+        <default field="number" expression=""/>
+        <default field="type" expression=""/>
+        <default field="gpx_style_line" expression=""/>
+      </defaults>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="name">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cmt">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="desc">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="src">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="link1_href">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="link1_text">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="link1_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="link2_href">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="link2_text">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="link2_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="number">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="gpx_style_line">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+        <symbols>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="0">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="78,139,42,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="0.26"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="diameter"/>
+      </renderer-v2>
+      <labeling type="simple"/>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>name</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name="MS Shell Dlg 2"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <annotationform>.</annotationform>
+      <aliases>
+        <alias field="name" index="0" name=""/>
+        <alias field="cmt" index="1" name=""/>
+        <alias field="desc" index="2" name=""/>
+        <alias field="src" index="3" name=""/>
+        <alias field="link1_href" index="4" name=""/>
+        <alias field="link1_text" index="5" name=""/>
+        <alias field="link1_type" index="6" name=""/>
+        <alias field="link2_href" index="7" name=""/>
+        <alias field="link2_text" index="8" name=""/>
+        <alias field="link2_type" index="9" name=""/>
+        <alias field="number" index="10" name=""/>
+        <alias field="type" index="11" name=""/>
+        <alias field="gpx_style_line" index="12" name=""/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions default="-1"/>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+        <columns/>
+      </attributetableconfig>
+      <editform>.</editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath>.</editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <widgets/>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+    </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>Acherberg20180605095851647</id>
       <datasource>C:/Users/Kay/Google Drive/TRACKS/Acherberg.kml</datasource>
@@ -2013,7 +2200,7 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer opacity="0.584314" alphaBand="0" band="1" type="singlebandcolordata">
+        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
           <rasterTransparency/>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
@@ -20096,7 +20283,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="1">
         <columns>
           <column width="273" hidden="0" type="field" name="OGC_FID"/>
           <column width="377" hidden="0" type="field" name="name"/>
@@ -20924,8 +21111,11 @@ def my_form_open(dialog, layer, feature):
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
+        <value>2018_10_15_10_44_53_tracks20181015124812120</value>
         <value>Acherberg20180605095851647</value>
+        <value>AldranserBach_Variante20181014222808921</value>
         <value>BIKE_TRAIL_TIROL_Etappe_29__Landeck_Ischgl20180604162142013</value>
+        <value>Branbergkolmhaus_Steinerkogel20180618154541357</value>
         <value>Eggalm_Torsee20180522115248262</value>
         <value>Elevation_Plugin_Results20180525081631758</value>
         <value>Elevation_Plugin_Results20180528171126147</value>
@@ -20936,24 +21126,49 @@ def my_form_open(dialog, layer, feature):
         <value>Freizeitticket_Tour___Variante_1__Von_Innsbruck_zum_Brenner20180207122647258</value>
         <value>Freizeitticket_Tour___Variante_2__Von_Innsbruck_zum_Brenner20180207122647305</value>
         <value>Freizeitticket_Tour___Variante_3__Von_Innsbruck_zum_Brenner20180207122647352</value>
+        <value>Gedrechter_Kaltenbach20180620001631907</value>
+        <value>Gerlosberg_Verbindung20180620120951351</value>
+        <value>Gerlostaljoch_Panorama_Kreuzwiesen20180705174122343</value>
         <value>Gschliessegg20180528164104373</value>
+        <value>Gschliessegg_Schnagweg20180703083916431</value>
+        <value>Hainzenberg_Zell20180618174827423</value>
+        <value>Hamberg20181008102652955</value>
+        <value>Karlalm_Kotahornalm_Ramsau20181008103924866</value>
+        <value>Kellerjoch_Hecherhaus_Loas20181008100245346</value>
         <value>Kellerjoch_Hütte_Proxenalm_Köglmoos_Pill_00120180612214730016</value>
         <value>Kleiner_Gamsstein_00120180612214729551</value>
         <value>Kreuzjochhütte_Stumm_00220180522165541785</value>
+        <value>Largozalm_Wattens_Neu20180712111646917</value>
         <value>Loas_Geolsalm_Mittelstation_00120180612214729770</value>
+        <value>Loas_Pfundsjoch_Mayrhofen20180619224931850</value>
         <value>Marchgatterl20180207122647212</value>
         <value>Marchgatterl_Köglalm_Notburga20180306150938156</value>
         <value>Marchgatterl___Variante_120180207122647399</value>
+        <value>MareitStein20180624221354162</value>
         <value>Naunzalm_Hochebenweg_00120180612214729819</value>
+        <value>Nösslachjoch_Lichtsee20181008110504377</value>
         <value>Oetztal_CC_Enduro20180605102957919</value>
         <value>Pankrazberg_00120180612214729867</value>
+        <value>Panoramaweg_Geolsalm_00120181008101157888</value>
+        <value>Penken_Astegg20180618112701559</value>
         <value>Penken_Hölle20180522115420975</value>
+        <value>Saun20180702170508274</value>
         <value>Schachtkopf20180605141052244</value>
+        <value>Schellenberg_Wedlhütte20181008100018279</value>
+        <value>Schlagalm_Krörzinganger_Seebachwald20181008101459246</value>
+        <value>Schwendau_Chicken20181008104953704</value>
+        <value>Spieljoch_Gartlalm_Loas_Schlagalm20181008101301980</value>
+        <value>Spieljoch_Kaltenbach20180618172336108</value>
         <value>Tour2_12_06_2018_00120180612214729915</value>
         <value>Tour_12_06_2018_00120180612214729966</value>
+        <value>Trackspotting_2987320180618112613343</value>
         <value>Tumpen_Wiesle_Runde20180529221523173</value>
         <value>Variante_Julistollen_Samjoch_Köglmoos20180612224916535</value>
+        <value>Variante_Kotahornalm_Laberg_Steinerkogel20180618161530487</value>
         <value>WWW_Challenge_2016_tracks20180112233201402</value>
+        <value>Wedlhütte_Gedrechter_Hochalm20181008095833099</value>
+        <value>WiedersbergerHorn_Hamberg20181008102759305</value>
+        <value>Ziller_BrandbergerKolmhaus20180618111754969</value>
         <value>brouter__35_20180524230718641</value>
         <value>brouter__36_20180524232120937</value>
         <value>brouter__37_20180524233704491</value>
@@ -20962,6 +21177,15 @@ def my_form_open(dialog, layer, feature):
         <value>brouter__42_20180604163518834</value>
         <value>brouter__43_20180605094712852</value>
         <value>brouter__44_20180605100527667</value>
+        <value>brouter__48_20180618111110663</value>
+        <value>brouter__51_20180618115846719</value>
+        <value>brouter__52_20180618173959557</value>
+        <value>brouter__54_20180620120131284</value>
+        <value>brouter__55_20180621171805070</value>
+        <value>brouter__60_20180702171434315</value>
+        <value>brouter__63_20181010145300529</value>
+        <value>brouter__64_20181010150915210</value>
+        <value>brouter__65_20181010150757331</value>
         <value>flatschjoch_pfitsch_tracks20180527234746660</value>
         <value>forchet_obhf20180605120115403</value>
         <value>gps_daten_forest_aisle_trail_tracks20180524121311585</value>
@@ -20974,10 +21198,6 @@ def my_form_open(dialog, layer, feature):
         <value>vca_landeck_reschensee_mtb_tracks20180604143926585</value>
         <value>venettrail_tracks20180604173655374</value>
         <value>zams_pillerhoehe_mtb_790_tracks20180604143934363</value>
-        <value>brouter__48_20180618111110663</value>
-        <value>Ziller_BrandbergerKolmhaus20180618111754969</value>
-        <value>Trackspotting_2987320180618112613343</value>
-        <value>Penken_Astegg20180618112701559</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
@@ -21025,11 +21245,44 @@ def my_form_open(dialog, layer, feature):
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>enabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -21082,13 +21335,46 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
         <value>2</value>
         <value>2</value>
-        <value>1</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
         <value>2</value>
         <value>1</value>
         <value>2</value>
-        <value>2</value>
-        <value>2</value>
-        <value>2</value>
+        <value>1</value>
         <value>2</value>
         <value>2</value>
         <value>2</value>
@@ -21138,13 +21424,46 @@ def my_form_open(dialog, layer, feature):
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -21197,13 +21516,46 @@ def my_form_open(dialog, layer, feature):
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
         <value>5.000000</value>
         <value>0.000000</value>
         <value>13.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
