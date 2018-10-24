@@ -375,7 +375,8 @@
 				projection: map.displayProjection,
 				strategies: [new OpenLayers.Strategy.Fixed()],
 				protocol: new OpenLayers.Protocol.HTTP({
-					url: "digitizing/Trails.json"
+					url: "digitizing/Trails.json",
+					format: new OpenLayers.Format.GeoJSON({
 				})
 			});
 			
