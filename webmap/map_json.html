@@ -362,7 +362,7 @@
 				})
 			});
 						
-			var KMLtrails = new OpenLayers.Layer.Vector("GEOJSON", {
+			var KMLtrails = new OpenLayers.Layer.Vector("GeoJSON", {
 				rendererOptions: { zIndexing: true },
 				styleMap: new OpenLayers.StyleMap({
 					"default": styleTrails,
@@ -379,14 +379,7 @@
 				projection: map.displayProjection,
 				strategies: [new OpenLayers.Strategy.Fixed()],
 				protocol: new OpenLayers.Protocol.HTTP({
-					url: "digitizing/Trails.json",
-					format: new OpenLayers.Format.JSON({
-						extractStyles: false, 
-						extractAttributes: true,
-						maxDepth: 2,
-						// 'internalProjection': proj4326,
-						// 'externalProjection': proj900913
-					})
+					url: "digitizing/Trails.json"
 				})
 			});
 			
