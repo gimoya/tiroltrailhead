@@ -43,7 +43,8 @@ body a:focus, a:hover {
     font-size: 3ex;
     border: none;
     outline: none;
-    background-color: rgba(255, 242, 0, 0.3);
+    background-color: #fff200;
+	opacity: 0;
     color: rgba(0,0,0,0.8);
     cursor: pointer;
     padding: 15px;
