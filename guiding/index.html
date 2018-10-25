@@ -71,7 +71,7 @@
 <!-- Body -->
 <body>
 	<!--Sticky Book Button-->
-	<button onclick="bookFunction()" id="bookBtn" title="Join in..">Book a Ride!</button>
+	<button onclick="bookFunction()" id="bookBtn" disabled="disabled" title="Join in..">Book a Ride!</button>
 	
 	<!-- Header -->
 		<!-- Navbar -->
@@ -818,7 +818,10 @@
 				setTimeout(bookFunction, speed);
 			}
 		}
-		window.onload = bookFunction;
+		// enable button only after full page load!
+		$(document).ready(function(){
+			$("#bookBtn").prop("disabled", false);
+		});
 	</script>
 	<!--Booking Button Script-->
 
