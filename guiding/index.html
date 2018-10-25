@@ -18,44 +18,33 @@
 
 <script type="application/ld+json">
 {
-  "@context": "http://www.w3.org/ns/activitystreams",
-  "type": "http://schema.org/LocalBusiness",
-  "http://schema.org/address": {
-    "type": "http://schema.org/PostalAddress",
-    "http://schema.org/addressLocality": "Aldrans/Innsbruck",
-    "http://schema.org/addressRegion": "Tyrol/Austria",
-    "http://schema.org/postalCode": "A-6071",
-    "http://schema.org/streetAddress": "Grubenweg 22"
-  },
-  "http://schema.org/description": "Tirol Trailhead MTB-Guiding, Geführte Touren, Fahrtechnik-Training, MTB-Camps & Reisen..",
-  "http://schema.org/geo": {
-    "type": "http://schema.org/GeoCoordinates",
-    "http://schema.org/latitude": "47.259659",
-    "http://schema.org/longitude": "11.400375"
-  },
-  "http://schema.org/image": {
-    "id": "https://gimoya.github.io/tiroltrailhead/guiding/images/tab-4.jpg"
-  },
-  "http://schema.org/logo": {
-    "id": "http://gimoya.github.io/tiroltrailhead/guiding/images/logo_trails_5_1.png"
-  },
-  "http://schema.org/name": "Tirol Trailhead MTB-Guiding",
-  "http://schema.org/openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
-  "http://schema.org/sameAs": [
-    {
-      "id": "https://www.facebook.com/KayCichini"
-    },
-    {
-      "id": "https://www.instagram.com/tiroltrailhead"
-    },
-    {
-      "id": "https://www.youtube.com/channel/UCYsdgBSThrQtMsanm9FkaBA"
-    }
-  ],
-  "http://schema.org/telephone": "0043 650 9359 101",
-  "http://schema.org/url": {
-    "id": "http://gimoya.github.io/tiroltrailhead/guiding/"
-  }
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "address": {
+            "@type": "PostalAddress",
+           "addressLocality": "Aldrans",
+            "addressRegion": "Tyrol",
+            "postalCode":"A-6071",
+            "streetAddress": "Grubenweg 22"
+      },
+      "description": "VAVOE-certified MTB-Guide and MTB-Coach, offering coaching and guided Tours in Austria, Italy, Swiss and France.",
+      "name": "Tirol Trailhead MTB-Guiding",
+      "telephone": "+43 650 9359 101",
+      "openingHours": "Mo,Tu,We,Th,Fr 10:00-16:00",
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.259659",
+            "longitude": "11.400375"
+         },             
+      "sameAs": [ 
+        "https://www.facebook.com/KayCichini",
+        "https://www.instagram.com/tiroltrailhead",
+        "https://www.youtube.com/channel/UCYsdgBSThrQtMsanm9FkaBA"
+        ],
+      "image": "https://gimoya.github.io/tiroltrailhead/guiding/images/tab-4.jpg",
+      "logo": "http://gimoya.github.io/tiroltrailhead/guiding/images/logo_trails_5_1.png",
+      "priceRange": "40-200 Euro",
+      "url": "http://gimoya.github.io/tiroltrailhead/guiding/"
 }
 </script>
 
