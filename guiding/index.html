@@ -800,7 +800,6 @@
 	<!--Sticky Button Script-->
 	<!--Booking Button Script-->
 	<script>
-	window.onload = function(){
 		var i = 0;
 		var speed = 100;
 		var txt = "Get in touch! Feel free to ask for events, schedules, prices, dates... :) Don't forget to put your name and E-Mail to the boxes above. Hit 'Send!' and then let's go biking!\u000d";
@@ -819,7 +818,7 @@
 				setTimeout(bookFunction, speed);
 			}
 		}
-	};
+		window.onload = bookFunction;
 	</script>
 	<!--Booking Button Script-->
 
