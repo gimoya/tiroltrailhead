@@ -98,8 +98,8 @@ function createPittHistDistGeoJson(data) {
       }
     },
     onEachFeature: function(feature, layer) {
-      var name = feature.properties.name;
-      var popupContent = L.Util.template('<h2 class="map-popup">{name}</h2>', feature.properties);
+      var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
+      var popupContent = L.Util.template(tooltipTemplate, feature.properties);
       // add a popup to each feature
       layer.bindPopup(popupContent, {
         closeOnClick: true
