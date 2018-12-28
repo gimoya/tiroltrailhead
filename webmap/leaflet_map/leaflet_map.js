@@ -1,9 +1,9 @@
 'use strict';
 
 /*** General Leaflet Code ***/
-// Create map and center around Pittsburgh, PA
+// Create map and center around Innsbruck, AT
 var map = L.map('map', {
-  center: [40.44250530554684, -79.969482421875],
+  center: [47.26, 11.42],
   zoom: 13
 });
 
@@ -15,15 +15,10 @@ var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 /*** Code for adding GeoJSON ***/
 // Pittsburgh Historic Districts GeoJSON file
 // Pittsburgh Open GIS Data Site: https://pghgis.pittsburghpa.opendata.arcgis.com/
-var geoJsonUrl = '//pghgis-pittsburghpa.opendata.arcgis.com/datasets/71df883dcf184292b69d5721df39b5dd_0.geojson'
-// this is an alternate URL for the GeoJSON file
-//var geoJsonUrl = '//pghgis-pittsburghpa.opendata.arcgis.com/datasets/71df883dcf184292b69d5721df39b5dd_0.geojson?where=&geometry={"xmin":-8926957.476723036,"ymin":4925457.3678345485,"xmax":-8878687.493361013,"ymax":4936922.92207731,"spatialReference":{"wkid":102100}}';
-
-// Change to this url to test error function
-//var geoJsonUrl = '//pghgis-pittsburghpa.opendata.arcgis.com/datasets/71df883dcf184292b69d5721df39b5zz_0.geojson';
+var geoJsonUrl = 'Trails.json'
 
 // Placeholder for layer. Required to test if layer is added to map or not.
-var pittHistDist;
+var lyrPlhldr;
 
 // HTML element to display error message
 var errMsgSpan = $('#errorMsg');
@@ -91,7 +86,7 @@ function addDataVanillaJS() {
 // create GeoJSON layer, style, add popup, and add to map
 function createPittHistDistGeoJson(data) {
   // see http://leafletjs.com/reference.html#geojson
-  pittHistDist = L.geoJson(data, {
+  lyrPlhldr = L.geoJson(data, {
     // symbolize features
     style: function(feature) {
       return {
@@ -115,7 +110,7 @@ function createPittHistDistGeoJson(data) {
 
 // Test if map has layer
 function mapHasLayer() {
-  if (map.hasLayer(pittHistDist)) {
+  if (map.hasLayer(lyrPlhldr)) {
     return true;
   } else {
     return false;
@@ -126,7 +121,7 @@ function mapHasLayer() {
 function removeLayerFromMap() {
   // if layer is on map, remove the layer
   if (mapHasLayer()) {
-    map.removeLayer(pittHistDist);
+    map.removeLayer(lyrPlhldr);
   }
 }
 
