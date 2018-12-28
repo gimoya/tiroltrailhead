@@ -26,11 +26,11 @@ function getColor(description) {
 
 function styleLines(feature) {
     return {
-			color: getColor(feature.properties.description),
-			weight: 2,
-			opacity: .7, 	
-			lineJoin: 'round',  //miter | round | bevel 
-            };
+		color: getColor(feature.properties.description),
+		weight: 2,
+		opacity: 7,
+		lineJoin: 'round',  //miter | round | bevel 
+    };
 }
 
 var trailsLayer;
@@ -39,8 +39,7 @@ $.getJSON('Trails.json', function(json) {
   trailsLayer = L.geoJson(json, {
     style: styleLines,
 	onEachFeature: function(feature, layer) {
-		  var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
-		  var popupContent = L.Util.template(tooltipTemplate, feature.properties);
+		  var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
 		  // add a popup to each feature
 		  layer.bindPopup(popupContent, { closeOnClick: true })
 		  }
