@@ -107,22 +107,20 @@ function styleLines(feature) {
 // create GeoJSON layer, style, add popup, and add to map
 function createGeoJsonTrails(data) {
   // see http://leafletjs.com/reference.html#geojson
-  lyrPlhldr = L.geoJson(data, {
-    // symbolize features
-    style: styleLines
-    }).addTo(map); // add layer to map
+  lyrPlhldr = L.geoJson(data, 
+	// symbolize features
+	{ style: styleLines },
+	{ onEachFeature: 
+		function(feature, layer) {
+		  var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
+		  var popupContent = L.Util.template(tooltipTemplate, feature.properties);
+		  // add a popup to each feature
+		  layer.bindPopup(popupContent, {
+			closeOnClick: true
+		  });
+		}
+	}).addTo(map); // add layer to map
 }
-
-/*
-    onEachFeature: function(feature, layer) {
-      var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
-      var popupContent = L.Util.template(tooltipTemplate, feature.properties);
-      // add a popup to each feature
-      layer.bindPopup(popupContent, {
-        closeOnClick: true
-      });
-    }
-*/
 
 // Test if map has layer
 function mapHasLayer() {
