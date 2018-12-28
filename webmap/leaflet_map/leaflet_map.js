@@ -116,7 +116,7 @@ function createGeoJsonTrails(data) {
         closeOnClick: true
       });
     }
-  }).addTo(map); // add layer to map
+  ).addTo(map); // add layer to map
 }
 
 // Test if map has layer
