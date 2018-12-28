@@ -2,6 +2,8 @@
 
 html,
 body,
+
+
 #map {
   width: 100%;
   height: 100%;
@@ -48,20 +50,6 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 }
 
 
-/*** Error message at lower left of map ***/
-
-#errorMsg {
-  display: none;
-  position: absolute;
-  left: 15px;
-  bottom: 10px;
-  padding: 15px;
-  background: #fff;
-  color: #ff0000;
-  font-weight: bold;
-  z-index: 500;
-}
-
 
 /*** Map popup ***/
 
@@ -77,4 +65,16 @@ ul.nav.navbar-nav.navbar-right li a:hover {
   .navbar-default .navbar-brand {
     font-size: 1em;
   }
+}
+
+/*** popup contents ***/
+
+#topic {
+	font-weight: bold;
+	line-height:1.3!important;
+} 
+#topic-text {
+	margin-left:9em;
+	line-height:1.3!important;
+	white-space: nowrap;
 }
