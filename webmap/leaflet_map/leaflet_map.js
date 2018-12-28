@@ -97,7 +97,7 @@ function getColor(description) {
 function styleLines(feature) {
     return {
                 color: getColor(feature.properties.description),
-                weight: 1,
+                weight: 2,
                 opacity: .7,
                 lineJoin: 'round',  //miter | round | bevel 
 
