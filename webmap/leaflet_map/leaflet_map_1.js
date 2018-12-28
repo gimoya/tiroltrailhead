@@ -33,7 +33,7 @@ function styleLines(feature) {
             };
 }
 
-$.getJSON('trails.json', function(json) {
+$.getJSON('Trails.json', function(json) {
   trailsLayer = L.geoJson(json, {
     style: styleLines,
 	onEachFeature: function(feature, layer) {
