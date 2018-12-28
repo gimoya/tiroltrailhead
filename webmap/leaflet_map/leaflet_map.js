@@ -96,7 +96,7 @@ function getColor(description) {
 
 function styleLines(feature) {
       return {
-        color: getColor(feature.properties.description)
+        color: getColor(feature.properties.description),
         weight: 1,
         opacity: 1
       }
