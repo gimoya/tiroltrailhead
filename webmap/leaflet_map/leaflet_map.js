@@ -35,7 +35,7 @@ function addDataJQuery() {
   if (!mapHasLayer()) {
     var getLayerJQuery = $.getJSON(geoJsonUrl, function(data) {
       // create a GeoJSON layer
-      createPittHistDistGeoJson(data);
+      createGeoJsonTrails(data);
     }); // end getLayerJQuery()
 
     // If there is an error making the request, write the error out in the <span id="#errorMsg"> element
@@ -71,7 +71,7 @@ function addDataVanillaJS() {
         if (getLayerVanillaJS.readyState === 4 && getLayerVanillaJS.status === 200) {          
             var geoJsonData = JSON.parse(getLayerVanillaJS.responseText);
             // create a GeoJSON layer
-            createPittHistDistGeoJson(geoJsonData);
+            createGeoJsonTrails(geoJsonData);
           } else if (getLayerVanillaJS.readyState === 4 && getLayerVanillaJS.status !== 200) {
             // add error message to span         
             var err = getLayerVanillaJS.statusText + ' (' + getLayerVanillaJS.status + ')';
@@ -83,19 +83,30 @@ function addDataVanillaJS() {
 } // end addDataVanillaJS()
 
 /*** Helper Functions ***/
+// style function for features
+function getColor(description) {
+	var color;
+	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
+	// trails with ? classification (unknown, planned but not yet been there) should be pink
+	if (description.indexOf('?') > -1) {color = "#FF69B4"}
+	// trails with X! classification (been there, and it was shit) should be grey
+	if (description.indexOf('X!') > -1) {color = "#BCBCBC"}	
+	return color
+}
+
+function styleLines(feature) {
+      return {
+        color: getColor(feature.properties.description)
+        weight: 1,
+        opacity: 1
+      }
+
 // create GeoJSON layer, style, add popup, and add to map
-function createPittHistDistGeoJson(data) {
+function createGeoJsonTrails(data) {
   // see http://leafletjs.com/reference.html#geojson
   lyrPlhldr = L.geoJson(data, {
     // symbolize features
-    style: function(feature) {
-      return {
-        color: '#000',
-        weight: 3,
-        opacity: 1,
-        fillColor: '#EBE34D',
-        fillOpacity: 0.5
-      }
+    style: styleLines;
     },
     onEachFeature: function(feature, layer) {
       var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
