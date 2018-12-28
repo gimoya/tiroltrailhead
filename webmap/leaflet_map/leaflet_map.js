@@ -106,7 +106,7 @@ function createGeoJsonTrails(data) {
   // see http://leafletjs.com/reference.html#geojson
   lyrPlhldr = L.geoJson(data, {
     // symbolize features
-    style: styleLines;
+    style: styleLines
     },
     onEachFeature: function(feature, layer) {
       var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
