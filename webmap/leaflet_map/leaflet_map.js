@@ -109,7 +109,8 @@ function createGeoJsonTrails(data) {
   // see http://leafletjs.com/reference.html#geojson
   lyrPlhldr = L.geoJson(data, 
 	// symbolize features
-	{ style: styleLines },
+	{ 
+	style: styleLines,
 	onEachFeature: 
 		function(feature, layer) {
 		  var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
@@ -117,7 +118,7 @@ function createGeoJsonTrails(data) {
 		  // add a popup to each feature
 		  layer.bindPopup(popupContent, {
 			closeOnClick: true
-		  });
+		})};
 	}).addTo(map); // add layer to map
 }
 
