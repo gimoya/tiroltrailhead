@@ -95,11 +95,14 @@ function getColor(description) {
 }
 
 function styleLines(feature) {
-      return {
-        color: getColor(feature.properties.description),
-        weight: 1,
-        opacity: 1
-      }
+    return {
+                color: getColor(feature.properties.description),
+                weight: 1,
+                opacity: .7,
+                lineJoin: 'round',  //miter | round | bevel 
+
+            };
+}
 
 // create GeoJSON layer, style, add popup, and add to map
 function createGeoJsonTrails(data) {
@@ -115,8 +118,7 @@ function createGeoJsonTrails(data) {
       layer.bindPopup(popupContent, {
         closeOnClick: true
       });
-    }
-  ).addTo(map); // add layer to map
+    }).addTo(map); // add layer to map
 }
 
 // Test if map has layer
