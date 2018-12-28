@@ -37,8 +37,8 @@ function styleLines(feature) {
 $.getJSON('Trails.json', function(json) {
 	
 	trailsLayer = L.geoJson(json,
-	{ 
-		{style: styleLines },
+		{ 
+		style: styleLines,
 		onEachFeature: 
 			function(feature, layer) {
 			  var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
