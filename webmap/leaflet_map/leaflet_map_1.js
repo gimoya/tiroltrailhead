@@ -7,10 +7,20 @@ var map = L.map('map', {
   zoom: 13
 });
 
-// Add Open Street Map as base map
-var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>'
-}).addTo(map);
+// Add base maps with controls
+var basemaps = {
+    'OSM': L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>'
+	}),
+
+    'TIRIS-Gelände': L.tileLayer.wms('https://gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
+        layers: 'Boundary_Schummerung_Gelaendemodell/Footprint_Schummerung_Gelaendemodell/Image_Schummerung_Gelaendemodell'
+    })
+};
+
+L.control.layers(basemaps).addTo(map);
+
+basemaps.addTo(map);
 
 /*** Helper Functions ***/
 // style function for features
