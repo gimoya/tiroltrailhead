@@ -104,15 +104,24 @@ var el = L.control.elevation({
 
 el.addTo(map);
 		
+
 $.getJSON('Trails.json', function(json) {
   trailsLayer = L.geoJson(json, {
     style: styleLines,
-	onEachFeature: { el.addData.bind(el) }
-	
-					/*function(feature, layer) {
+	onEachFeature: function(feature, layer) {
 		  var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
 		  // add a popup to each feature
-		  layer.bindPopup(popupContent, trailPopupOptions)
-		  }*/
+		  layer.bindPopup(popupContent, trailPopupOptions);
+		  el.addData.bind(el)
+		  }
   }).addTo(map);
 });
+
+/*
+$.getJSON('Trails.json', function(json) {
+  trailsLayer = L.geoJson(json, {
+    style: styleLines,
+	onEachFeature: el.addData.bind(el)
+  }).addTo(map);
+});
+*/
