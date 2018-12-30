@@ -18,6 +18,11 @@ var basemaps = {
 		maxZoom: 19, 
 		attribution: attributionsTirol
     })
+	
+	'TIRIS-Gelände': L.tileLayer.wms('//wmts.kartetirol.at/wmtsgdi_base_summer', {
+	    layers: 'gdi_base_summer', 
+		maxZoom: 19, 
+		attribution: attributionsTirol
 };
 
 L.control.layers(basemaps).addTo(map);
