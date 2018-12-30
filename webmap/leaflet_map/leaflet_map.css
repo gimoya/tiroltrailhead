@@ -82,7 +82,7 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 #bar {
 	position:absolute;
 	z-index: 1;
-	top:0;
+	bottom:0;
 	right:0;
 	margin: 4px;
 	padding: 4px;

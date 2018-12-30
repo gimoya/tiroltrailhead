@@ -7,20 +7,28 @@ var map = L.map('map', {
   zoom: 13
 });
 
+var attributionsTirol = ' | &copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
+
 // Add base maps with controls
 var basemaps = {
     'OSM': L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>'
 	}),
 
-    'TIRIS-Gelände': L.tileLayer.wms('https://gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
-        layers: 'Boundary_Schummerung_Gelaendemodell/Footprint_Schummerung_Gelaendemodell/Image_Schummerung_Gelaendemodell'
+    'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
+        layers: 'Image_Schummerung_Gelaendemodell', 
+		maxZoom: 19, 
+		attribution: attributionsTirol
     })
 };
 
 L.control.layers(basemaps).addTo(map);
-
 basemaps.OSM.addTo(map);
+
+// create fullscreen control
+var fsControl = new L.Control.FullScreen();
+// add fullscreen control to the map
+map.addControl(fsControl);
 
 map.on('moveend', function(e){
 	coords.innerHTML='<b> CENTER: </b>' + map.getCenter()
