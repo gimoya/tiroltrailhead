@@ -51,6 +51,13 @@ function styleLines(feature) {
     };
 }
 
+// specify popup options 
+    var trailPopupOptions =
+        {
+		closeOnClick: true
+        className: 'trailPopupClass'
+        }
+		
 var trailsLayer;
 
 $.getJSON('Trails.json', function(json) {
@@ -59,7 +66,7 @@ $.getJSON('Trails.json', function(json) {
 	onEachFeature: function(feature, layer) {
 		  var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
 		  // add a popup to each feature
-		  layer.bindPopup(popupContent, { closeOnClick: true })
+		  layer.bindPopup(popupContent, trailPopupOptions)
 		  }
   }).addTo(map);
 });
