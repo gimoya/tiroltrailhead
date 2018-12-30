@@ -20,7 +20,7 @@ var basemaps = {
 
 L.control.layers(basemaps).addTo(map);
 
-basemaps.addTo(map);
+basemaps.OSM.addTo(map);
 
 /*** Helper Functions ***/
 // style function for features
