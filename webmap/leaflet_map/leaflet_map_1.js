@@ -128,7 +128,7 @@ map.on("click", function(e){
 		// the variable is defined
 		map.removeControl(el);
 	};	
-};
+});
 
 
 map.on('moveend', function(e){
