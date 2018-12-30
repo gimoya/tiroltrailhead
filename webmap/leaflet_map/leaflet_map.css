@@ -56,6 +56,8 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 .map-popup {
   font-size: 1.25em;
   font-weight: bold;
+  border-radius: 5px;
+  box-shadow: none;
 }
 
 
