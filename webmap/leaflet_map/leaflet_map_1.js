@@ -14,13 +14,12 @@ var basemaps = {
 		maxNativeZoom: 15,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
-	'TIRIS-Sommerkarte': L.tileLayer('//wmts.kartetirol.at/gdi_summer/{z}/{y}/{x}.png', { 
+	'TIRIS-Sommerkarte': L.tileLayer('//wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png', { 
 		maxZoom : 18, attribution : attributionsTirol, tileSize : 256 
 	}),
-	'TIRIS-Orthofoto': new L.TileLayer.WMTS('//wmts.kartetirol.at/wmts/gdi_ortho', {
-	    layer: 'gdi_ortho', format: "image/png", style: "default", tilematrixSet: "GoogleMapsCompatible",
-		attribution: attributionsTirol
-	}),		
+	'TIRIS-Orthofoto': L.tileLayer('//wmts.kartetirol.at/gdi_ortho/{z}/{x}/{y}.png', { 
+		maxZoom : 18, attribution : attributionsTirol, tileSize : 256 
+	}),
     'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
         layers: 'Image_Schummerung_Gelaendemodell', 
 		maxZoom: 19, 
