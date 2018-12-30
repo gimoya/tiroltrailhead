@@ -22,6 +22,13 @@ L.control.layers(basemaps).addTo(map);
 
 basemaps.OSM.addTo(map);
 
+map.on('moveend', function(e){
+	coords.innerHTML='<b> CENTER: </b>' + map.getCenter()
+})
+.on('zoomend', function(e){
+	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
+});
+
 /*** Helper Functions ***/
 // style function for features
 function getColor(description) {
