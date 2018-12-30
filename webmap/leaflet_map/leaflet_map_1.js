@@ -77,10 +77,11 @@ function styleLines(feature) {
 		
 var trailsLayer;
 
+var el;
 
 function addData(e) {
 	//all used options are the default values
-	var el = L.control.elevation({
+	el = L.control.elevation({
 		position: "topright",
 		theme: "steelblue-theme", //default: lime-theme
 		width: 600,
@@ -117,6 +118,7 @@ $.getJSON('Trails.json', function(json) {
 		layer.bindPopup(popupContent, trailPopupOptions);
 		
 		layer.on ('click', function(e) {
+				map.removeControl(el);
 				addData(feature)
 			});
 	}
