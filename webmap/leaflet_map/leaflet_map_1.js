@@ -54,7 +54,7 @@ function styleLines(feature) {
 // specify popup options 
     var trailPopupOptions =
         {
-		closeOnClick: true
+		closeOnClick: true,
         className: 'trailPopupClass'
         }
 		
