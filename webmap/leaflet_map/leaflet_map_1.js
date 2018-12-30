@@ -115,7 +115,6 @@ $.getJSON('Trails.json', function(json) {
 		
 		layer.on ('click', function(e) {
 				console.log(e);
-				el.clear();
 				el.addData(e.feature)
 			});
 	}
