@@ -118,7 +118,10 @@ $.getJSON('Trails.json', function(json) {
 		layer.bindPopup(popupContent, trailPopupOptions);
 		
 		layer.on ('click', function(e) {
-				map.removeControl(el);
+				if (typeof el !== 'undefined') {
+					// the variable is defined
+					map.removeControl(el);
+				};
 				addData(feature)
 			});
 	}
