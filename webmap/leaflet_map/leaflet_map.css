@@ -49,24 +49,22 @@ ul.nav.navbar-nav.navbar-right li a:hover {
   color: #000;
 }
 
-
-
-/*** Map popup ***/
-
-.map-popup {
-  font-size: 1.25em;
-  font-weight: bold;
-  border-radius: 5px;
-  box-shadow: none;
-}
-
-
 /*** Control font size of title on small screens ***/
 
 @media screen and (max-width: 400px) {
   .navbar-default .navbar-brand {
     font-size: 1em;
   }
+}
+
+
+
+
+/*** Map popup Title***/
+
+.map-popup {
+  font-size: 1.25em;
+  font-weight: bold;
 }
 
 /*** popup contents ***/
@@ -81,11 +79,23 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 	white-space: nowrap;
 }
 
+.trailPopupClass .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    box-shadow: none;
+}
+
+.trailPopupClass .leaflet-popup-content-wrapper {
+    padding: 5px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+/*** Coords / Zoom Info Bar ***/
+
 #bar {
 	position:absolute;
-	z-index: 1;
+	z-index: 999;
 	bottom:0;
-	right:0;
+	left:0;
 	margin: 4px;
 	padding: 4px;
 	background-color: rgba(255,255,255,0.9);

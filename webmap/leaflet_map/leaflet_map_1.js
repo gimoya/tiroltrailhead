@@ -1,5 +1,3 @@
-'use strict';
-
 /*** General Leaflet Code ***/
 // Create map and center around Innsbruck, AT
 var map = L.map('map', {
