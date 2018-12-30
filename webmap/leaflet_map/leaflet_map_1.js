@@ -103,7 +103,6 @@ var el = L.control.elevation({
 });
 
 function addData(e) {
-	el.clear();
     el.addData(e);
     map.addControl(el);
 }
