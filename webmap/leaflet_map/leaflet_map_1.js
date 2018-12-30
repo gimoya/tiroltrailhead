@@ -25,11 +25,6 @@ var basemaps = {
 L.control.layers(basemaps).addTo(map);
 basemaps.OSM.addTo(map);
 
-// create fullscreen control
-var fsControl = new L.Control.FullScreen();
-// add fullscreen control to the map
-map.addControl(fsControl);
-
 map.on('moveend', function(e){
 	coords.innerHTML='<b> CENTER: </b>' + map.getCenter()
 })
