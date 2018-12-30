@@ -9,7 +9,7 @@ var attributionsTirol = ' | &copy; <a href="https://data.tirol.gv.at" target="_b
 
 // Add base maps with controls
 var basemaps = {
-    'OSM-4umaps': L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
+    '4UMaps': L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
 		maxZoom: 19, 
 		maxNativeZoom: 15,
 		attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
@@ -27,7 +27,7 @@ var basemaps = {
 };
 
 L.control.layers(basemaps).addTo(map);
-basemaps.OSM.addTo(map);
+basemaps.4UMaps.addTo(map);
 
 map.on('moveend', function(e){
 	coords.innerHTML='<b> CENTER: </b>' + map.getCenter()
