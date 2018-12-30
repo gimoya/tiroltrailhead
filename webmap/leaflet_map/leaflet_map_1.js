@@ -14,16 +14,7 @@ var basemaps = {
 		maxNativeZoom: 15,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
-	'TIRIS-Sommerkarte': L.tileLayer(
-		"//wmts.kartetirol.at/wmts?" +
-		"&REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0" +
-		"&STYLE=default" +
-		"&TILEMATRIXSET=GoogleMapsCompatible" +
-		"&FORMAT=image/png" +
-		"&LAYER=gdi_summer" +
-		"&TILEMATRIX={z}" +
-		"&TILEROW={y}" +
-		"&TILECOL={x}", { 
+	'TIRIS-Sommerkarte': L.tileLayer('//wmts.kartetirol.at/gdi_summer/{z}/{y}/{x}.png', { 
 		maxZoom : 18, attribution : attributionsTirol, tileSize : 256 
 	}),
 	'TIRIS-Orthofoto': new L.TileLayer.WMTS('//wmts.kartetirol.at/wmts/gdi_ortho', {
