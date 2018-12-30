@@ -82,15 +82,15 @@ var el;
 function addData(e) {
 	//all used options are the default values
 	el = L.control.elevation({
-		position: "topright",
+		position: "bottomright",
 		theme: "steelblue-theme", //default: lime-theme
 		width: 600,
-		height: 125,
+		height: 150,
 		margins: {
 			top: 10,
 			right: 20,
 			bottom: 30,
-			left: 50
+			left: 80
 		},
 		useHeightIndicator: true, //if false a marker is drawn at map position
 		interpolation: "linear", //see https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-area_interpolate
@@ -101,7 +101,7 @@ function addData(e) {
 		},
 		xTicks: undefined, //number of ticks in x axis, calculated by default according to width
 		yTicks: undefined, //number of ticks on y axis, calculated by default according to height
-		collapsed: true,  //collapsed mode, show chart on click or mouseover
+		collapsed: false,  //collapsed mode, show chart on click or mouseover
 		imperial: false    //display imperial units instead of metric
 	});
     el.addData(e);
