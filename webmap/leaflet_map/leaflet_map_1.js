@@ -103,6 +103,8 @@ var el = L.control.elevation({
 });
 
 map.addControl(el);
+
+var save_event;
 	
 $.getJSON('Trails.json', function(json) {
   trailsLayer = L.geoJson(json, {
@@ -114,8 +116,8 @@ $.getJSON('Trails.json', function(json) {
 		layer.bindPopup(popupContent, trailPopupOptions);
 		
 		layer.on ('click', function(e) {
-				console.log(e.feature);
-				el.addData(e.feature)
+				save_event = e;
+				el.addData(e.target.feature)
 			});
 	}
   }).addTo(map);
