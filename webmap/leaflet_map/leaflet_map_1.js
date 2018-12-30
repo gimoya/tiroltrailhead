@@ -102,11 +102,8 @@ var el = L.control.elevation({
 	imperial: false    //display imperial units instead of metric
 });
 
-function addData(e) {
-    el.addData(e);
-    map.addControl(el);
-}
-		
+map.addControl(el);
+	
 $.getJSON('Trails.json', function(json) {
   trailsLayer = L.geoJson(json, {
     style: styleLines,
@@ -117,7 +114,9 @@ $.getJSON('Trails.json', function(json) {
 		layer.bindPopup(popupContent, trailPopupOptions);
 		
 		layer.on ('click', function(e) {
-				addData(feature)
+				console.log(e);
+				el.clear();
+				el.addData(e.feature)
 			});
 	}
   }).addTo(map);
