@@ -14,12 +14,12 @@ var basemaps = {
 		maxNativeZoom: 15,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
-	'TIRIS-Sommerkarte': L.tileLayer.wms('//wmts.kartetirol.at', {
+	'TIRIS-Sommerkarte': L.tileLayer.wms('//wmts.kartetirol.at/wmts', {
 	    layers: 'gdi_summer', 
 		maxZoom: 19, 
 		attribution: attributionsTirol
 	}),	
-	'TIRIS-Orthofoto': L.tileLayer.wms('//wmts.kartetirol.at', {
+	'TIRIS-Orthofoto': L.tileLayer.wms('//wmts.kartetirol./wmts', {
 	    layers: 'gdi_ortho', 
 		maxZoom: 19, 
 		attribution: attributionsTirol
@@ -29,6 +29,10 @@ var basemaps = {
 		maxZoom: 19, 
 		attribution: attributionsTirol
     }),
+};
+
+var overlays = {
+	
 };
 
 L.control.layers(basemaps).addTo(map);
