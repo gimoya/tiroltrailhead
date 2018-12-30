@@ -7,7 +7,7 @@ var map = L.map('map', {
 
 var attributionsTirol = '&copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
 
-// Add base maps with controls
+/*** Add base maps with controls ***/
 var basemaps = {
     'osm4UMaps': L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
 		maxZoom: 19, 
@@ -37,18 +37,10 @@ var overlays = {
 };
 
 L.control.layers(basemaps, overlays).addTo(map);
-
 basemaps.osm4UMaps.addTo(map);
 
-map.on('moveend', function(e){
-	coords.innerHTML='<b> CENTER: </b>' + map.getCenter()
-})
-.on('zoomend', function(e){
-	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
-});
+/*** Trail Style Functions ***/
 
-/*** Helper Functions ***/
-// style function for features
 function getColor(description) {
 	var color;
 	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
@@ -68,14 +60,40 @@ function styleLines(feature) {
     };
 }
 
-// specify popup options 
-    var trailPopupOptions =
-        {
-		closeOnClick: true,
-        className: 'trailPopupClass'
-        }
+/*** specify Trail Popup options ***/
+
+var trailPopupOptions =
+	{
+	closeOnClick: true,
+	className: 'trailPopupClass'
+	}
+		
+		
+/*** Add Trails ***/
 		
 var trailsLayer;
+	
+$.getJSON('Trails.json', function(json) {
+  trailsLayer = L.geoJson(json, {
+    style: styleLines,
+	onEachFeature: function(feature, layer) {
+		
+		var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
+		// add a popup to each feature
+		layer.bindPopup(popupContent, trailPopupOptions);
+		
+		layer.on ('click', function(e) {
+				if (typeof el !== 'undefined') {
+					// the variable is defined
+					map.removeControl(el);
+				};
+				addData(feature)
+			});
+	}
+  }).addTo(map);
+});
+
+/*** Add Elevation ***/
 
 var el;
 
@@ -107,23 +125,22 @@ function addData(e) {
     el.addData(e);
     map.addControl(el);
 }
-		
-$.getJSON('Trails.json', function(json) {
-  trailsLayer = L.geoJson(json, {
-    style: styleLines,
-	onEachFeature: function(feature, layer) {
-		
-		var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
-		// add a popup to each feature
-		layer.bindPopup(popupContent, trailPopupOptions);
-		
-		layer.on ('click', function(e) {
-				if (typeof el !== 'undefined') {
-					// the variable is defined
-					map.removeControl(el);
-				};
-				addData(feature)
-			});
-	}
-  }).addTo(map);
+
+
+
+/*** Event Listeners ***/
+
+map.on("click", function(e){
+	if (typeof el !== 'undefined') {
+		// the variable is defined
+		map.removeControl(el);
+	};	
+};
+
+
+map.on('moveend', function(e){
+	coords.innerHTML='<b> CENTER: </b>' + map.getCenter()
+})
+.on('zoomend', function(e){
+	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
 });
