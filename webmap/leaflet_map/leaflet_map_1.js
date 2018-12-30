@@ -102,26 +102,23 @@ var el = L.control.elevation({
 	imperial: false    //display imperial units instead of metric
 });
 
-el.addTo(map);
+function addData(e) {
+    el.addData(e);
+    map.addControl(el);
+}
 		
-
 $.getJSON('Trails.json', function(json) {
   trailsLayer = L.geoJson(json, {
     style: styleLines,
 	onEachFeature: function(feature, layer) {
-		  var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
-		  // add a popup to each feature
-		  layer.bindPopup(popupContent, trailPopupOptions);
-		  el.addData.bind(el)
-		  }
+		
+		var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
+		// add a popup to each feature
+		layer.bindPopup(popupContent, trailPopupOptions);
+		
+		layer.on ('click', function(e) {
+				addData(feature)
+			});
+	}
   }).addTo(map);
 });
-
-/*
-$.getJSON('Trails.json', function(json) {
-  trailsLayer = L.geoJson(json, {
-    style: styleLines,
-	onEachFeature: el.addData.bind(el)
-  }).addTo(map);
-});
-*/
