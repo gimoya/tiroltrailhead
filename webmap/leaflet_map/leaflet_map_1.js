@@ -9,20 +9,21 @@ var attributionsTirol = ' | &copy; <a href="https://data.tirol.gv.at" target="_b
 
 // Add base maps with controls
 var basemaps = {
-    'OSM': L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>'
+    'OSM-4umaps': L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
+		maxZoom: 19, 
+		maxNativeZoom: 15,
+		attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
-
     'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
         layers: 'Image_Schummerung_Gelaendemodell', 
 		maxZoom: 19, 
 		attribution: attributionsTirol
-    })
-	
+    }),
 	'TIRIS-Sommerkarte': L.tileLayer.wms('//wmts.kartetirol.at/wmtsgdi_base_summer', {
 	    layers: 'gdi_base_summer', 
 		maxZoom: 19, 
 		attribution: attributionsTirol
+	}),
 };
 
 L.control.layers(basemaps).addTo(map);
