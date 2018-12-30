@@ -5,25 +5,30 @@ var map = L.map('map', {
   zoom: 13
 });
 
-var attributionsTirol = ' | &copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
+var attributionsTirol = '&copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
 
 // Add base maps with controls
 var basemaps = {
     'osm4UMaps': L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
 		maxZoom: 19, 
 		maxNativeZoom: 15,
-		attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
+	'TIRIS-Sommerkarte': L.tileLayer.wms('//wmts.kartetirol.at', {
+	    layers: 'gdi_summer', 
+		maxZoom: 19, 
+		attribution: attributionsTirol
+	}),	
+	'TIRIS-Orthofoto': L.tileLayer.wms('//wmts.kartetirol.at', {
+	    layers: 'gdi_ortho', 
+		maxZoom: 19, 
+		attribution: attributionsTirol
+	}),		
     'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
         layers: 'Image_Schummerung_Gelaendemodell', 
 		maxZoom: 19, 
 		attribution: attributionsTirol
     }),
-	'TIRIS-Sommerkarte': L.tileLayer.wms('//wmts.kartetirol.at/wmtsgdi_base_summer', {
-	    layers: 'gdi_base_summer', 
-		maxZoom: 19, 
-		attribution: attributionsTirol
-	}),
 };
 
 L.control.layers(basemaps).addTo(map);
