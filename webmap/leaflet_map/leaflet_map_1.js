@@ -107,7 +107,7 @@ el.addTo(map);
 $.getJSON('Trails.json', function(json) {
   trailsLayer = L.geoJson(json, {
     style: styleLines,
-	onEachFeature: {el.addData.bind(el)
+	onEachFeature: {el.addData.bind(el)}
 	
 					/*function(feature, layer) {
 		  var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
