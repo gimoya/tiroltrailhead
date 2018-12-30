@@ -28,10 +28,16 @@ var basemaps = {
 };
 
 var overlays = {
-	
+	'TIRIS-Namen': L.tileLayer('//wmts.kartetirol.at/gdi_nomenklatur/{z}/{x}/{y}.png', { 
+		maxZoom : 18, tileSize : 256 
+	}),
+	'Wanderwege (waymarkedtrails.org)': L.tileLayer(waymarkedHikingUrl, {
+		maxZoom: 19, maxNativeZoom: 18, attribution: '&copy; <a href="http://www.waymarkedtrails.org" target="_blank">waymarkedtrails.org</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.de" target="_blank">CC BY-SA 3.0 DE</a>'7
+	})
 };
 
-L.control.layers(basemaps).addTo(map);
+L.control.layers(basemaps, overlays).addTo(map);
+
 basemaps.osm4UMaps.addTo(map);
 
 map.on('moveend', function(e){
