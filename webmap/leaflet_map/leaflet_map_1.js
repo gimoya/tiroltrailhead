@@ -68,38 +68,10 @@ var trailPopupOptions =
 	className: 'trailPopupClass'
 	}
 		
-		
-/*** Add Trails ***/
-		
-var trailsLayer;
-	
-$.getJSON('Trails.json', function(json) {
-  trailsLayer = L.geoJson(json, {
-    style: styleLines,
-	onEachFeature: function(feature, layer) {
-		
-		var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
-		// add a popup to each feature
-		layer.bindPopup(popupContent, trailPopupOptions);
-		
-		layer.on ('click', function(e) {
-				if (typeof el !== 'undefined') {
-					// the variable is defined
-					map.removeControl(el);
-				};
-				addData(feature)
-			});
-	}
-  }).addTo(map);
-});
 
-/*** Add Elevation ***/
+/*** Set up Elevation Control ***/
 
-var el;
-
-function addData(e) {
-	//all used options are the default values
-	el = L.control.elevation({
+var el = L.control.elevation({
 		position: "bottomright",
 		theme: "steelblue-theme", //default: lime-theme
 		width: 600,
@@ -121,11 +93,32 @@ function addData(e) {
 		yTicks: undefined, //number of ticks on y axis, calculated by default according to height
 		collapsed: false,  //collapsed mode, show chart on click or mouseover
 		imperial: false    //display imperial units instead of metric
-	});
-    el.addData(e);
-    map.addControl(el);
-}
-
+});
+		
+/*** Add Trails ***/
+		
+var trailsLayer;
+	
+$.getJSON('Trails.json', function(json) {
+  trailsLayer = L.geoJson(json, {
+    style: styleLines,
+	onEachFeature: function(feature, layer) {
+		
+		var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
+		// add a popup to each feature
+		layer.bindPopup(popupContent, trailPopupOptions);
+		
+		layer.on ('click', function(e) {
+				if (typeof el !== 'undefined') {
+					// the variable is defined
+					map.removeControl(el);
+				};
+				el.addData.bind(el);
+				map.addControl(el);
+			});
+	}
+  }).addTo(map);
+});
 
 
 /*** Event Listeners ***/
