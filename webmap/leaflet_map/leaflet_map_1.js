@@ -14,11 +14,11 @@ var basemaps = {
 		maxNativeZoom: 15,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
-	'TIRIS-Sommerkarte': new L.TileLayer.WMTS('//wmts.kartetirol.at/wmts/gdi_summer/', {
+	'TIRIS-Sommerkarte': new L.TileLayer.WMTS('//wmts.kartetirol.at/wmts/gdi_summer', {
 	    layer: 'gdi_summer', format: "image/png", style: "default", tilematrixSet: "GoogleMapsCompatible",
 		attribution: attributionsTirol
 	}),	
-	'TIRIS-Orthofoto': new L.TileLayer.WMTS('//wmts.kartetirol.at/wmts/gdi_ortho/', {
+	'TIRIS-Orthofoto': new L.TileLayer.WMTS('//wmts.kartetirol.at/wmts/gdi_ortho', {
 	    layer: 'gdi_ortho', format: "image/png", style: "default", tilematrixSet: "GoogleMapsCompatible",
 		attribution: attributionsTirol
 	}),		
