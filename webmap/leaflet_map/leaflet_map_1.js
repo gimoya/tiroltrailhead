@@ -113,7 +113,7 @@ $.getJSON('Trails.json', function(json) {
 					// the variable is defined
 					map.removeControl(el);
 				};
-				el.addto(map);
+				el.addTo(map);
 				el.addData.bind(el);
 			});
 	}
