@@ -68,6 +68,9 @@ var trailPopupOptions =
 	className: 'trailPopupClass'
 	}
 		
+		
+/*** Set up Elevation Control ***/
+
 var el = L.control.elevation({
 			position: "bottomright",
 			theme: "steelblue-theme", //default: lime-theme
@@ -91,12 +94,6 @@ var el = L.control.elevation({
 			collapsed: false,  //collapsed mode, show chart on click or mouseover
 			imperial: false    //display imperial units instead of metric
 	});
-
-/*** Set up Elevation Control ***/
-function addData(e) {
-	el.addData(e);
-    map.addControl(el);
-}
 		
 /*** Add Trails ***/
 		
@@ -116,7 +113,7 @@ $.getJSON('Trails.json', function(json) {
 					// the variable is defined
 					map.removeControl(el);
 				};
-				el.addData(feature, layer);
+				el.addData.bind(el);
 			});
 	}
   }).addTo(map);
