@@ -108,15 +108,13 @@ $.getJSON('Trails.json', function(json) {
 		// add a popup to each feature
 		layer.bindPopup(popupContent, trailPopupOptions);
 		
-		layer.on ('click', function(e) {
+		layer.on ('click', function(feature, layer) {
 				if (typeof el !== 'undefined') {
 					// the variable is defined
 					map.removeControl(el);
 				};
-				console.log(e);
-				console.log(e.feature);
-				el.addData(e);
-				el.addData.bind(el);
+				console.log(feature);
+				el.addData(feature, layer);
 				map.addControl(el);
 			});
 	}
