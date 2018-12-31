@@ -68,12 +68,7 @@ var trailPopupOptions =
 	className: 'trailPopupClass'
 	}
 		
-var el;
-
-/*** Set up Elevation Control ***/
-function addData(e) {
-
-	el = L.control.elevation({
+var el = L.control.elevation({
 			position: "bottomright",
 			theme: "steelblue-theme", //default: lime-theme
 			width: 600,
@@ -96,6 +91,9 @@ function addData(e) {
 			collapsed: false,  //collapsed mode, show chart on click or mouseover
 			imperial: false    //display imperial units instead of metric
 	});
+
+/*** Set up Elevation Control ***/
+function addData(e) {
 	el.addData(e);
     map.addControl(el);
 }
