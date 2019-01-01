@@ -74,13 +74,13 @@ var trailPopupOptions =
 var el = L.control.elevation({
 			position: "bottomright",
 			theme: "steelblue-theme", //default: lime-theme
-			width: 600,
+			width: 500,
 			height: 200,
 			margins: {
-				top: 10,
+				top: 20,
 				right: 20,
 				bottom: 30,
-				left: 80
+				left: 60
 			},
 			useHeightIndicator: true, //if false a marker is drawn at map position
 			interpolation: "linear", //see https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-area_interpolate
