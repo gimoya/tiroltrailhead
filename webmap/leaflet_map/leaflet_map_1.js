@@ -111,6 +111,7 @@ $.getJSON('Trails.json', function(json) {
 		layer.on ('click', function(e) {
 				if (typeof el !== 'undefined') {
 					// the variable is defined
+					el.clear();
 					map.removeControl(el);
 				};
 				el.addTo(map);
@@ -127,6 +128,7 @@ $.getJSON('Trails.json', function(json) {
 map.on("click", function(e){
 	if (typeof el !== 'undefined') {
 		// the variable is defined
+		el.clear();
 		map.removeControl(el);
 	};	
 });
