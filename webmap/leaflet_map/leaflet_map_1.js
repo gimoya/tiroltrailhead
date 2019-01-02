@@ -115,6 +115,7 @@ $.getJSON('Trails.json', function(json) {
 					map.removeControl(el);
 				};
 				el.addTo(map);
+				el.addData.bind(el);
 				el.addData(feature, layer);
 				L.DomEvent.stopPropagation(e);
 			});
