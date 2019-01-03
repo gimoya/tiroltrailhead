@@ -5,6 +5,10 @@ html, body, #map {
     width: 100vw;
 }
 
+body{
+	padding-top:50px;
+}
+
 
 /*** Navigation ***/
 
