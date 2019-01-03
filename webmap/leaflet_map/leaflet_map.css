@@ -1,16 +1,13 @@
 /*** General ***/
 
-html,
-body,
-
-
-#map {
-  width: 100%;
-  height: 100%;
+body {
+    padding: 50px;
+    margin: 0;
 }
 
-body {
-  padding-top: 50px;
+html, body, #map {
+    height: 100%;
+    width: 100vw;
 }
 
 
