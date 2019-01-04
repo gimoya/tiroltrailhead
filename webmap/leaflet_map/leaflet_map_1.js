@@ -74,7 +74,7 @@ var trailPopupOptions =
 var el = L.control.elevation({
 			position: "bottomright",
 			theme: "steelblue-theme", //default: lime-theme
-			width: 500,
+			width: 500,	
 			height: 200,
 			margins: {
 				top: 20,
@@ -122,9 +122,9 @@ $.getJSON('Trails.json', function(json) {
 				el.addData.bind(el);
 				
 				/*** Feature stuff ***/
-								
-				console.log(e);
-				console.log(e.target.feature);
+				var selFeature = e.target.feature;
+				selFeature.setStyle({'color': '#333333', 'weight': 2,});	
+				selFeature.bringToFront();
 				
 				
 				
