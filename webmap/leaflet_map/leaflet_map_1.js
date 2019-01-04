@@ -100,35 +100,30 @@ var el = L.control.elevation({
 var trailsLayer;
 	
 $.getJSON('Trails.json', function(json) {
-  trailsLayer = L.geoJson(json, {
-    style: styleLines,
-	onEachFeature: function(feature, layer) {
-		
-		var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
-		// add a popup to each feature
-		layer.bindPopup(popupContent, trailPopupOptions);
-
-	}
-  })
+	trailsLayer = L.geoJson(json, {
+		style: styleLines,
+		onEachFeature: function(feature, layer) {
+			
+			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
+			// add a popup to each feature
+			layer.bindPopup(popupContent, trailPopupOptions);
+			
+			layer.on ('click touchstart', function(e) {
+				if (typeof el !== 'undefined') {
+					// the variable is defined
+					el.clear();
+					map.removeControl(el);
+				};
+				el.addTo(map);
+				
+				el.addData(e.layer.feature);
+				el.addData.bind(el);
+				
+				L.DomEvent.stopPropagation(e);
+			});
+		}
+	}).addTo(map);
 });
-
-
-trailsLayer.on ('click touchstart', function(e) {
-	if (typeof el !== 'undefined') {
-		// the variable is defined
-		el.clear();
-		map.removeControl(el);
-	};
-	el.addTo(map);
-	
-	el.addData(e.layer.feature		);
-	el.addData.bind(el);
-	
-	L.DomEvent.stopPropagation(e);
-});
-
-trailsLayer.addTo(map);
-
 
 
 /*** Event Listeners ***/
