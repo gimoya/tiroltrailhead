@@ -124,7 +124,7 @@ $.getJSON('Trails.json', function(json) {
 				/*** Feature stuff ***/
 								
 				console.log(e);
-				console.log(e.feature);
+				console.log(e.target.feature);
 				
 				
 				
