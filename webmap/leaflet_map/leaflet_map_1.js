@@ -99,6 +99,8 @@ var el = L.control.elevation({
 var trailsLayer;
 
 function doClickStuff(e) {
+	
+	var selFeature = e.target;
 				
 	/*** ELEVATION ***/
 	if (typeof el !== 'undefined') {
@@ -108,11 +110,11 @@ function doClickStuff(e) {
 	};
 	el.addTo(map);
 	
-	el.addData(feature, layer);
+	el.addData(selFeature);
 	el.addData.bind(el);
 	
 	/*** Feature stuff ***/
-	var selFeature = e.target;
+
 	selFeature.setStyle({'color': '#333333', 'weight': 2,});	
 	selFeature.bringToFront();
 	
