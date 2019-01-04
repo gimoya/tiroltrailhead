@@ -62,11 +62,10 @@ function styleLines(feature) {
 
 /*** specify Trail Popup options ***/
 
-var trailPopupOptions =
-	{
+var trailPopupOptions = {
 	closeOnClick: true,
 	className: 'trailPopupClass'
-	}
+};
 		
 		
 /*** Set up Elevation Control ***/
