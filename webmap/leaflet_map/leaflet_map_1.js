@@ -59,10 +59,6 @@ function styleLines(feature) {
 		lineJoin: 'round',  //miter | round | bevel 
     };
 }
-
-/*** specify Trail Popup options ***/
-
-var trailPopupOptions = ;
 		
 		
 /*** Set up Elevation Control ***/
@@ -117,7 +113,7 @@ function doClickStuff(e) {
 	selFeature.setStyle({'color': '#333333', 'weight': 2,});	
 	selFeature.bringToFront();
 	
-	L.DomEvent.stopPropagation(e);	
+	//L.DomEvent.stopPropagation(e);	
 }
 	
 $.getJSON('Trails.json', function(json) {
