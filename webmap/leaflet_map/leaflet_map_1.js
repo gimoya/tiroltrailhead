@@ -116,7 +116,7 @@ $.getJSON('Trails.json', function(json) {
 				};
 				el.addTo(map);
 				
-				el.addData(e.layer.feature);
+				el.addData(feature, layer);
 				el.addData.bind(el);
 				
 				L.DomEvent.stopPropagation(e);
