@@ -62,10 +62,7 @@ function styleLines(feature) {
 
 /*** specify Trail Popup options ***/
 
-var trailPopupOptions = {
-	closeOnClick: true,
-	className: 'trailPopupClass'
-};
+var trailPopupOptions = ;
 		
 		
 /*** Set up Elevation Control ***/
@@ -112,7 +109,7 @@ function doClickStuff(e) {
 	};
 	el.addTo(map);
 	
-	el.addData(selFeature);
+	el.addData(feature, layer);
 	el.addData.bind(el);
 	
 	/*** Feature stuff ***/
@@ -135,7 +132,7 @@ $.getJSON('Trails.json', function(json) {
 	
 			// add a popup to each feature	
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
-			layer.bindPopup(popupContent, trailPopupOptions);
+			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 			
 		}
 	}).addTo(map);
