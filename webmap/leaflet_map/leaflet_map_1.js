@@ -109,6 +109,8 @@ $.getJSON('Trails.json', function(json) {
 			layer.bindPopup(popupContent, trailPopupOptions);
 			
 			layer.on ('click touchstart', function(e) {
+				
+				/*** ELEVATION ***/
 				if (typeof el !== 'undefined') {
 					// the variable is defined
 					el.clear();
@@ -118,6 +120,13 @@ $.getJSON('Trails.json', function(json) {
 				
 				el.addData(feature, layer);
 				el.addData.bind(el);
+				
+				/*** Feature stuff ***/
+								
+				console.log(e);
+				console.log(e.feature);
+				
+				
 				
 				L.DomEvent.stopPropagation(e);
 			});
