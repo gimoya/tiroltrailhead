@@ -127,15 +127,16 @@ $.getJSON('Trails.json', function(json) {
 	trailsLayer = L.geoJson(json, {
 		style: styleLines,
 		onEachFeature: function(feature, layer) {
+			
+			// on events
+			layer.on({
+				click: doClickStuff
+			});			
 	
 			// add a popup to each feature	
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
 			layer.bindPopup(popupContent, trailPopupOptions);
 			
-			// on events
-			layer.on ({
-				'click touchstart': doClickStuff
-			});
 		}
 	}).addTo(map);
 });
