@@ -99,7 +99,7 @@ var el = L.control.elevation({
 		
 var trailsLayer;
 
-function doClickStuff() {
+function doClickStuff(e) {
 				
 	/*** ELEVATION ***/
 	if (typeof el !== 'undefined') {
