@@ -101,6 +101,8 @@ var trailsLayer;
 function doClickStuff(e) {
 	
 	var selFeature = e.target;
+	
+	console.log(selFeature);
 				
 	/*** ELEVATION ***/
 	if (typeof el !== 'undefined') {
@@ -125,11 +127,12 @@ $.getJSON('Trails.json', function(json) {
 	trailsLayer = L.geoJson(json, {
 		style: styleLines,
 		onEachFeature: function(feature, layer) {
-			
+	
+			// add a popup to each feature	
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
-			// add a popup to each feature
 			layer.bindPopup(popupContent, trailPopupOptions);
 			
+			// on events
 			layer.on ({
 				'click touchstart': doClickStuff
 			});
