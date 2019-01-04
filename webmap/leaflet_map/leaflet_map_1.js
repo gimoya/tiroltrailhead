@@ -98,6 +98,27 @@ var el = L.control.elevation({
 /*** Add Trails ***/
 		
 var trailsLayer;
+
+function doClickStuff() {
+				
+	/*** ELEVATION ***/
+	if (typeof el !== 'undefined') {
+		// the variable is defined
+		el.clear();
+		map.removeControl(el);
+	};
+	el.addTo(map);
+	
+	el.addData(feature, layer);
+	el.addData.bind(el);
+	
+	/*** Feature stuff ***/
+	var selFeature = e.target;
+	selFeature.setStyle({'color': '#333333', 'weight': 2,});	
+	selFeature.bringToFront();
+	
+	L.DomEvent.stopPropagation(e);	
+}
 	
 $.getJSON('Trails.json', function(json) {
 	trailsLayer = L.geoJson(json, {
@@ -108,27 +129,8 @@ $.getJSON('Trails.json', function(json) {
 			// add a popup to each feature
 			layer.bindPopup(popupContent, trailPopupOptions);
 			
-			layer.on ('click touchstart', function(e) {
-				
-				/*** ELEVATION ***/
-				if (typeof el !== 'undefined') {
-					// the variable is defined
-					el.clear();
-					map.removeControl(el);
-				};
-				el.addTo(map);
-				
-				el.addData(feature, layer);
-				el.addData.bind(el);
-				
-				/*** Feature stuff ***/
-				var selFeature = e.target.feature;
-				selFeature.setStyle({'color': '#333333', 'weight': 2,});	
-				selFeature.bringToFront();
-				
-				
-				
-				L.DomEvent.stopPropagation(e);
+			layer.on ({
+				'click touchstart': doClickStuff
 			});
 		}
 	}).addTo(map);
