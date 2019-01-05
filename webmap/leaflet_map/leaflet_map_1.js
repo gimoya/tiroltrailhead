@@ -110,7 +110,7 @@ function doClickStuff(e) {
 	
 	/*** Feature stuff ***/
 
-	selFeature.setStyle({'color': '#333333', 'weight': 2,});	
+	selFeature.setStyle({'color': '#333333', 'weight': 2});	
 	selFeature.bringToFront();
 	
 	//L.DomEvent.stopPropagation(e);	
