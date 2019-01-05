@@ -106,7 +106,7 @@ function doClickStuff(e) {
 	el.addTo(map);
 	
 	el.addData(selFeature);
-	el.addData.bind(el);
+	//el.addData.bind(el);
 	
 	/*** Feature stuff ***/
 
