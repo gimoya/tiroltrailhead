@@ -2,21 +2,22 @@
 <html lang="de">
 <header>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
+$.ajaxSetup({
+    scriptCharset: "utf-8",
+    contentType: "application/json; charset=utf-8"
+});
 
-axios.get('https://lawine.tirol.gv.at/data/produkte/ogd.geojson')
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+$.getJSON('http://www.whateverorigin.org/get?url=https://lawine.tirol.gv.at/data/produkte/ogd.geojson' + '&callback=?', function(data){
+
+	$("#out").html(data);
+	
+});
     
 </script>
 </header>
 <body>
-<div id="summary">
+<div id="out">
 </div>
 </body>
 </html>
