@@ -8,7 +8,8 @@ $.ajaxSetup({
     contentType: "application/json; charset=utf-8"
 });
 
-$.getJSON('http://www.whateverorigin.org/get?url=http://tourenwelt.at/blog' + '&callback=?', function(data){
+//http://www.whateverorigin.org/get?url=
+$.getJSON('http://tourenwelt.at/blog' + '&callback=?', function(data){
 
     var regex = /<h3 class="newstitle">.*?<\/h3>/g;
 	$("#out").html(data.contents.match(regex).map(function(val) {
