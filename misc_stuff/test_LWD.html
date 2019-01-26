@@ -8,14 +8,14 @@ $.ajaxSetup({
     contentType: "application/json; charset=utf-8"
 });
 
-$.getJSON('http://www.whateverorigin.org/get?url=https://lawine.tirol.gv.at/data/produkte/ogd.geojson' + '&callback=?', function(data){
-    console.log(data);
+$.getJSON('https://lawine.tirol.gv.at/data/produkte/ogd.geojson?callback=?', function(data){
+	$('#summary').text(data.result);
 });
     
 </script>
 </header>
 <body>
-<div id="out">
+<div id="summary">
 </div>
 </body>
 </html>
