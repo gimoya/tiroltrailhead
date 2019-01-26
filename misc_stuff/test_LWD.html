@@ -2,22 +2,20 @@
 <html lang="de">
 <header>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-</header>
-<body>
-
-<div id="out">
-
 <script>
+$.ajaxSetup({
+    scriptCharset: "utf-8",
+    contentType: "application/json; charset=utf-8"
+});
 
-$.getJSON("https://crossorigin.me/https://lawine.tirol.gv.at/data/produkte/ogd.geojson", function(json) {
-  $('#out').text(json);
-  console.log(json);
-})
-
+$.getJSON('http://www.whateverorigin.org/get?url=https://lawine.tirol.gv.at/data/produkte/ogd.geojson' + '&callback=?', function(json){
+	$("#out").text(json);
+});
     
 </script>
-
+</header>
+<body>
+<div id="out">
 </div>
 </body>
 </html>
