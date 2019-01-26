@@ -1,26 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <header>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$.ajaxSetup({
+    scriptCharset: "utf-8",
+    contentType: "application/json; charset=utf-8"
+});
 
-
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous">
+$.getJSON('http://www.whateverorigin.org/get?url=https://lawine.tirol.gv.at/data/produkte/ogd.geojson' + '&callback=?', function(data){
+    console.log(data);
+});
+    
 </script>
-
 </header>
 <body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-
-<script>
-
-window.onload = function () {
-	$.getJSON('https://lawine.tirol.gv.at/data/produkte/ogd.geojson', function(data) {
-		console.log(data);
-	});
-}
-
-</script>
+<div id="out">
+</div>
 </body>
 </html>
