@@ -14,6 +14,8 @@ else
 	echo -e "\n  You typed "$yesno" ..part skipped!\n---\n"
 fi
 
+echo -e "Deleting gdalwmscache before upload!"
+rm -rf d:/Projekte/tiroltrailhead/webmap/digitizing/gdalwmscache
 #push to gh-pages
 
 
