@@ -249,6 +249,12 @@
 					}
 				}
 			});
+
+			
+			
+			/*
+			
+			
 			
 			var apiKey = "ApTJzdkyN1DdFKkRAE6QIDtzihNaf6IWJsT-nQ_2eMoO4PN__0Tzhl2-WgJtXFSp";
 			
@@ -259,8 +265,6 @@
 				attributionTemplate: "&copy; BING Maps"
 			});
 			
-			
-			/*
 			var ghyb = new OpenLayers.Layer.Google(
 				"Google Hybrid",
 				{type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
@@ -843,10 +847,7 @@
 					$("#onscreen-trails").css({display: "none"});
 				selectCtrl.unselectAll();
 			}
-			
-			map.baseLayer = mapSpecial;
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons]);
-			map.raiseLayer(pointLayer, map.layers.length);
+
 						
 			/*
 			 * function to show trails on current screen
@@ -976,6 +977,14 @@
 			var click = new OpenLayers.Control.Click();
 			map.addControl(click);
 			click.activate();
+			
+			/*
+			add layers and basemaps
+			*/
+				
+			map.baseLayer = mapSpecial;
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons]);
+			map.raiseLayer(pointLayer, map.layers.length);
 			
 		</script>
   </body>
