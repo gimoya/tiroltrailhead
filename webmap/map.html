@@ -123,7 +123,7 @@
 					<p class="box3">
 						<span class="H2">Basiskarten</span> 	
 						</br><strong>OSM:</strong> Open MTB-Map
-						<!-->/br><strong>BING:</strong> BING Maps Hybrid<-->
+						</br><strong>Satellit:</strong> MAPBOX Satellite Images
 						</br><strong>Wanderkarte:</strong> M 1:50000, bis Zoom 16!
 						</br>
 					</p>
@@ -168,7 +168,7 @@
 				<a id="Overview" onclick="getOverview();"><i class="fa fa-globe fa-4x"></i></<a>
 				<a id="ToggleButton"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
 				<input type="button" class="Basemap" value="OSM" onclick="map.setBaseLayer(osm);">
-				<!--input type="button" class="Basemap" value="BING" onclick="map.setBaseLayer(bhyb);"-->
+				<input type="button" class="Basemap" value="MAPBOX" onclick="map.setBaseLayer(bhyb);"-->
 				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(mapSpecial);">
 				<!--input type="button" class="Basemap" value="OEK50" onclick="(map.getZoom() > 15) ? alert('OEK50 in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(mapSpecial);"-->
 			</div>
@@ -249,9 +249,13 @@
 					}
 				}
 			});
-
 			
-			
+			var bhyb = new OpenLayers.Layer.XYZ("OpenMTBMap", 
+				"https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/${z}/${x}/${y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ',		
+				{
+				numZoomLevels: 18,
+				attribution: 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a>'
+				});			
 			/*
 			var apiKey = "ApTJzdkyN1DdFKkRAE6QIDtzihNaf6IWJsT-nQ_2eMoO4PN__0Tzhl2-WgJtXFSp";
 			
@@ -845,10 +849,18 @@
 				selectCtrl.unselectAll();
 			}
 			
-			/* ADD LAYERS AND MAPS */
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, mapSpecial, osm]);
+			
+			/* ADD LAYERS AND MAPS*/
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, mapSpecial, osm, bhyb]);
 			map.raiseLayer(pointLayer, map.layers.length);
-						
+			/*
+			'
+			'
+			'
+			'
+			*/
+			
+			
 			/*
 			 * function to show trails on current screen
 			 * only do this if explanation-and-list DIV is not visible
