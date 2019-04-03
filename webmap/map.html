@@ -251,16 +251,14 @@
 			});
 			
 			var apiKey = "ApTJzdkyN1DdFKkRAE6QIDtzihNaf6IWJsT-nQ_2eMoO4PN__0Tzhl2-WgJtXFSp";
-
-
-			/*
+			
 			var bhyb = new OpenLayers.Layer.Bing({
 				key: apiKey,
 				type: "AerialWithLabels",
 				name: "Bing Aerial With Labels", 
 				attributionTemplate: "&copy; BING Maps"
 			});
-			*/
+			
 			
 			/*
 			var ghyb = new OpenLayers.Layer.Google(
@@ -846,7 +844,8 @@
 				selectCtrl.unselectAll();
 			}
 			
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, mapSpecial, osm]);
+			map.baseLayer = kompass;
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons]);
 			map.raiseLayer(pointLayer, map.layers.length);
 						
 			/*
