@@ -253,9 +253,6 @@
 			
 			
 			/*
-			
-			
-			
 			var apiKey = "ApTJzdkyN1DdFKkRAE6QIDtzihNaf6IWJsT-nQ_2eMoO4PN__0Tzhl2-WgJtXFSp";
 			
 			var bhyb = new OpenLayers.Layer.Bing({
@@ -847,7 +844,10 @@
 					$("#onscreen-trails").css({display: "none"});
 				selectCtrl.unselectAll();
 			}
-
+			
+			/* ADD LAYERS AND MAPS */
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, mapSpecial, osm]);
+			map.raiseLayer(pointLayer, map.layers.length);
 						
 			/*
 			 * function to show trails on current screen
@@ -977,12 +977,6 @@
 			var click = new OpenLayers.Control.Click();
 			map.addControl(click);
 			click.activate();
-			
-			/*
-			add layers and basemaps
-			*/
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, mapSpecial, osm]);
-			map.raiseLayer(pointLayer, map.layers.length);
 			
 		</script>
   </body>
