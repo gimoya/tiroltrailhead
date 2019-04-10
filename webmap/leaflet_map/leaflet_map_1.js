@@ -112,8 +112,8 @@ function doClickStuff(e) {
 	
 	/*** Feature stuff ***/
 
-	var name = feature.attributes.name;
-	var desc = feature.attributes.description;				
+	var name = feature.properties.name;
+	var desc = feature.properties.description;				
 						
 	//  append newline and photo-link...				
 	document.getElementById("topic").appendChild(document.createElement("br"));					
