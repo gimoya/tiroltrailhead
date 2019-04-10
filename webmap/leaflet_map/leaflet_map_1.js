@@ -93,11 +93,11 @@ var trailsLayer;
 
 function doClickStuff(e) {
 	
-	var feature = e.target;
+	var t = e.target;
 	
 	console.log(feature);
 				
-	/*** ELEVATION 
+	/*** ELEVATION ***/
 	if (typeof el !== 'undefined') {
 		// the variable is defined
 		el.clear();
@@ -105,15 +105,15 @@ function doClickStuff(e) {
 	};
 	el.addTo(map);
 	
-	el.addData(feature);
-	//el.addData.bind(el);
+	el.addData(t.feature);
+	el.addData.bind(el);
 	
-	***/
+	
 	
 	/*** Feature stuff ***/
 
-	var name = feature.properties.name;
-	var desc = feature.properties.description;				
+	var name = t.feature.properties.name;
+	var desc = t.feature.properties.description;				
 						
 	//  append newline and photo-link...				
 	document.getElementById("topic").appendChild(document.createElement("br"));					
