@@ -105,7 +105,7 @@ function doClickStuff(e) {
 		map.removeControl(el);
 	};	
 	
-    el.addData(e);
+    el.addData(e.target);
     map.addControl(el);	
 }
 
@@ -113,7 +113,15 @@ function doClickStuff(e) {
 	
 $.getJSON('Trails.json', function(json) {
 	trailsLayer = L.geoJson(json, {
+		
 		style: styleLines,
+		
+		marker_options: {
+			startIconUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/12431/pin-icon-start.png',
+			endIconUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/12431/pin-icon-end.png',
+			shadowUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/12431/pin-shadow.png'
+		},	
+		
 		onEachFeature: function(feature, layer) {
 			
 			// on events
