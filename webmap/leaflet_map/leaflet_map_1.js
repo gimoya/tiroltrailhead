@@ -118,7 +118,7 @@ $.getJSON('Trails.json', function(json) {
 			
 			// on events
 			layer.on({
-				click: doClickStuff;
+				click: doClickStuff
 			});			
 	
 			// add a popup to each feature	
