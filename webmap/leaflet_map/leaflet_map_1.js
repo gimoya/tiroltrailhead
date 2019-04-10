@@ -111,7 +111,8 @@ $.getJSON('Trails.json', function(json) {
 				el.clear();
 				map.removeControl(el);
 			};
-			el.addData.bind(el)
+			el.addTo(map);
+			el.addData.bind(el);			
 			
 			// on events
 			layer.on({
