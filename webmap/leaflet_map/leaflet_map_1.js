@@ -91,7 +91,7 @@ var el = L.control.elevation({
 		
 var trailsLayer;
 
-function doClickStuff(e) {
+function doClickStuff(e, layer) {
 	
 	var feature = e.target.feature;
 				
@@ -105,7 +105,7 @@ function doClickStuff(e) {
 		map.removeControl(el);
 	};	
 	
-    el.addData(feature);
+    el.addData(feature, layer);
     map.addControl(el);	
 }
 
@@ -126,7 +126,7 @@ $.getJSON('Trails.json', function(json) {
 			
 			// on events
 			layer.on({
-				click: doClickStuff
+				click: doClickStuff(e, layer)
 			});			
 	
 			// add a popup to each feature	
