@@ -91,7 +91,7 @@ var el = L.control.elevation({
 		
 var trailsLayer;
 
-function doClickStuff(e, layer) {
+function doClickStuff(e) {
 	
 	var feature = e.target.feature;
 				
@@ -105,7 +105,7 @@ function doClickStuff(e, layer) {
 		map.removeControl(el);
 	};	
 	
-    el.addData(feature, layer);
+    el.addData(e);
     map.addControl(el);	
 }
 
@@ -113,20 +113,13 @@ function doClickStuff(e, layer) {
 	
 $.getJSON('Trails.json', function(json) {
 	trailsLayer = L.geoJson(json, {
-		
 		style: styleLines,
-		
-		marker_options: {
-			startIconUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/12431/pin-icon-start.png',
-			endIconUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/12431/pin-icon-end.png',
-			shadowUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/12431/pin-shadow.png'
-		},	
 		
 		onEachFeature: function(feature, layer) {
 			
 			// on events
 			layer.on({
-				click: doClickStuff(e, layer)
+				click: doClickStuff
 			});			
 	
 			// add a popup to each feature	
