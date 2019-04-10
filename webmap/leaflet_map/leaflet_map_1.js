@@ -97,7 +97,7 @@ function doClickStuff(e) {
 	
 	console.log(selFeature);
 				
-	/*** ELEVATION ***/
+	/*** ELEVATION 
 	if (typeof el !== 'undefined') {
 		// the variable is defined
 		el.clear();
@@ -107,6 +107,8 @@ function doClickStuff(e) {
 	
 	el.addData(selFeature);
 	//el.addData.bind(el);
+	
+	***/
 	
 	/*** Feature stuff ***/
 
