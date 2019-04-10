@@ -161,7 +161,6 @@ function doClickStuff(e) {
 	} else {
 		document.getElementById("topic-text").innerHTML += "..Sorry, Download nicht von allen Browsern unters&uuml;tzt!";
 	}
-},	
 	selFeature.setStyle({'color': '#333333', 'weight': 2});	
 	selFeature.bringToFront();
 	//L.DomEvent.stopPropagation(e);	
