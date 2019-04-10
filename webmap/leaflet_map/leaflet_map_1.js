@@ -105,7 +105,7 @@ function doClickStuff(e) {
 		map.removeControl(el);
 	};	
 	
-    el.addData(feature);
+    el.addData(feature, e);
     map.addControl(el);	
 }
 
