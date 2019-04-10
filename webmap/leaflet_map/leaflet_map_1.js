@@ -108,8 +108,8 @@ function doClickStuff(e) {
 	el.addData(feature);
 	el.addData.bind(el);
 	
-	feature.setStyle({'color': '#333333', 'weight': 2});	
-	feature.bringToFront();
+	e.target.setStyle({'color': '#333333', 'weight': 2});	
+	e.target.bringToFront();
 	//L.DomEvent.stopPropagation(e);	
 }
 	
