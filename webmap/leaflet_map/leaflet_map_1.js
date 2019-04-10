@@ -93,9 +93,9 @@ var trailsLayer;
 
 function doClickStuff(e) {
 	
-	var selFeature = e.target;
+	var feature = e.target;
 	
-	console.log(selFeature);
+	console.log(feature);
 				
 	/*** ELEVATION 
 	if (typeof el !== 'undefined') {
@@ -105,16 +105,65 @@ function doClickStuff(e) {
 	};
 	el.addTo(map);
 	
-	el.addData(selFeature);
+	el.addData(feature);
 	//el.addData.bind(el);
 	
 	***/
 	
 	/*** Feature stuff ***/
 
+	var name = feature.attributes.name;
+	var desc = feature.attributes.description;				
+						
+	//  append newline and photo-link...				
+	document.getElementById("topic").appendChild(document.createElement("br"));					
+	document.getElementById("topic-text").appendChild(document.createElement("br"));
+	document.getElementById("topic").innerHTML += "Fotos:";
+	var instaLink = document.createElement("a");
+	instaLink.href = 'https://instagram.com/explore/tags/tiroltrailheadtour' + Number(name.match(/\((\d+)\)/)[1]);
+	instaLink.innerHTML = "Instagram";		
+	instaLink.target = '_blank';
+	document.getElementById("topic-text").appendChild(instaLink);
+
+	// append kmlLink for download, as last line in output
+	document.getElementById("topic").appendChild(document.createElement("br"));
+	document.getElementById("topic-text").appendChild(document.createElement("br"));
+	document.getElementById("topic").innerHTML += "Track:";					
+	
+	if (bowser.firefox || bowser.chrome) {
+	
+		// create kmlLink and gpxLink
+		// Transform feature and put download link 
+		
+		kmlString = tokml(toGeoJson(feature));
+		gpxString = tokml(toGeoJson(feature));			
+		
+		const MIME_TYPE = 'text/plain';      
+		var bb1 = new Blob([kmlString], {type: MIME_TYPE});
+		var bb2 = new Blob([gpxString], {type: MIME_TYPE});
+		var kmlLink = document.createElement("a");
+		var gpxLink = document.createElement("a");
+		kmlLink.href = window.URL.createObjectURL(bb1);
+		gpxLink.href = window.URL.createObjectURL(bb2);
+		kmlLink.download = name + ".kml";
+		gpxLink.download = name + ".gpx";
+		kmlLink.innerHTML = "KML";
+		gpxLink.innerHTML = "GPX";
+		kmlLink.onclick = function () { 		
+			$("#paypal").fadeIn("slow");
+		}
+		gpxLink.onclick = function () { 		
+			$("#paypal").fadeIn("slow");
+		}						
+		document.getElementById("topic-text").appendChild(kmlLink);
+		document.getElementById("topic-text").appendChild(document.createTextNode(" | "));
+		document.getElementById("topic-text").appendChild(gpxLink);
+	} else {
+		document.getElementById("topic-text").innerHTML += "..Sorry, Download nicht von allen Browsern unters&uuml;tzt!";
+	}
+},	
 	selFeature.setStyle({'color': '#333333', 'weight': 2});	
 	selFeature.bringToFront();
-	
 	//L.DomEvent.stopPropagation(e);	
 }
 	
