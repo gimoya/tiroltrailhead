@@ -94,20 +94,7 @@ var trailsLayer;
 function doClickStuff(e) {
 	
 	var feature = e.target.feature;
-	
-	console.log(feature);
 				
-	/*** ELEVATION ***/
-	if (typeof el !== 'undefined') {
-		// the variable is defined
-		el.clear();
-		map.removeControl(el);
-	};
-	el.addTo(map);
-	
-	el.addData(feature);
-	el.addData.bind(el);
-	
 	e.target.setStyle({'color': '#333333', 'weight': 2});	
 	e.target.bringToFront();
 	//L.DomEvent.stopPropagation(e);	
@@ -117,6 +104,14 @@ $.getJSON('Trails.json', function(json) {
 	trailsLayer = L.geoJson(json, {
 		style: styleLines,
 		onEachFeature: function(feature, layer) {
+			
+			/*** ELEVATION ***/
+			if (typeof el !== 'undefined') {
+				// the variable is defined
+				el.clear();
+				map.removeControl(el);
+			};
+			el.addData.bind(el)
 			
 			// on events
 			layer.on({
