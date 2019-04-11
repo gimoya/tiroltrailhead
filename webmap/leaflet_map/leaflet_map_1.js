@@ -97,13 +97,13 @@ function doClickStuff(e) {
 	e.target.bringToFront();
 	//L.DomEvent.stopPropagation(e);	
 	
-	// clear and remove old el control and add new one
 	if (typeof el !== 'undefined') {
 		// the variable is defined
 		el.clear();
 		map.removeControl(el);
 	};	
-	el.addData.bind(el);
+	
+    el.addData(e.target.feature);
     map.addControl(el);	
 }
 
@@ -117,8 +117,10 @@ $.getJSON('Trails.json', function(json) {
 			
 			// on events
 			layer.on({
-				click: doClickStuff
-			});	
+				click: {
+					layer.setStyle({'color': '#333333', 'weight': 2});	
+					layer.bringToFront();
+			});			
 	
 			// add a popup to each feature	
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
