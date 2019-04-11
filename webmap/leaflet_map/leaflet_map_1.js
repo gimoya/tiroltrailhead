@@ -92,9 +92,12 @@ var el = L.control.elevation({
 var trailsLayer;
 
 function doClickStuff(e) {
+	
+	var lyr = e.target;
+	var ftr = e.target.feature;
 				
-	e.target.setStyle({'color': '#333333', 'weight': 2});	
-	e.target.bringToFront();
+	lyr.setStyle({'color': '#333333', 'weight': 2});	
+	lyr.bringToFront();
 	//L.DomEvent.stopPropagation(e);	
 	
 	if (typeof el !== 'undefined') {
@@ -103,7 +106,7 @@ function doClickStuff(e) {
 		map.removeControl(el);
 	};	
 	
-    el.addData(e.target.feature);
+    el.addData(ftr, lyr);
     map.addControl(el);	
 }
 
@@ -117,9 +120,7 @@ $.getJSON('Trails.json', function(json) {
 			
 			// on events
 			layer.on({
-				click: {
-					layer.setStyle({'color': '#333333', 'weight': 2});	
-					layer.bringToFront();
+				click: doClickStuff
 			});			
 	
 			// add a popup to each feature	
