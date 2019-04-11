@@ -54,7 +54,7 @@ function getColor(description) {
 function styleLines(feature) {
     return {
 		color: getColor(feature.properties.description),
-		weight: 2,
+		weight: 3,
 		opacity: 7,
 		lineJoin: 'round',  //miter | round | bevel 
     };
@@ -65,7 +65,7 @@ function styleLines(feature) {
 
 var el = L.control.elevation({
 			position: "bottomright",
-			theme: "steelblue-theme", //default: lime-theme
+			theme: "lime-theme", //default: lime-theme
 			width: 500,	
 			height: 200,
 			margins: {
@@ -77,7 +77,7 @@ var el = L.control.elevation({
 			useHeightIndicator: true, //if false a marker is drawn at map position
 			interpolation: "linear", //see https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-area_interpolate
 			hoverNumber: {
-				decimalsX: 3, //decimals on distance (always in km)
+				decimalsX: 2, //decimals on distance (always in km)
 				decimalsY: 0, //deciamls on hehttps://www.npmjs.com/package/leaflet.coordinatesight (always in m)
 				formatter: undefined //custom formatter function may be injected
 			},
@@ -90,11 +90,16 @@ var el = L.control.elevation({
 /*** Add Trails ***/
 		
 var trailsLayer;
+var ftr;
 
 function doClickStuff(e) {
 	
+	if (typeof ftr !== 'undefined') {
+		// the variable is defined
+		ftr.styleLines();
+	
 	var lyr = e.target;
-	var ftr = e.target.feature;
+	ftr = e.target.feature;
 				
 	lyr.setStyle({'color': '#333333', 'weight': 2});	
 	lyr.bringToFront();
