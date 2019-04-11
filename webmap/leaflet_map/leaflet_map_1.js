@@ -74,7 +74,7 @@ var el = L.control.elevation({
 				bottom: 30,
 				left: 60
 			},
-			useHeightIndicator: false, //if false a marker is drawn at map position
+			useHeightIndicator: true, //if false a marker is drawn at map position
 			interpolation: "linear", //see https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-area_interpolate
 			hoverNumber: {
 				decimalsX: 3, //decimals on distance (always in km)
