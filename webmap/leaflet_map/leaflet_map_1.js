@@ -148,10 +148,10 @@ map.on("click", function(e){
 	};	
 });
 
-
 map.on('moveend', function(e){
 	coords.innerHTML='<b> CENTER: </b>' + map.getCenter()
-})
-.on('zoomend', function(e){
+});
+
+map.on('zoomend', function(e){
 	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
 });
