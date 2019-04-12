@@ -103,7 +103,7 @@ function doClickStuff(e) {
 				
 	lyr.setStyle({'color': '#333333', 'weight': 2});	
 	lyr.bringToFront();
-	//L.DomEvent.stopPropagation(e);	
+		
 	
 	if (typeof el !== 'undefined') {
 		// the variable is defined
@@ -111,6 +111,7 @@ function doClickStuff(e) {
 		map.removeControl(el);
 	};	
 	
+	L.DomEvent.stopPropagation(e);
     el.addData(ftr, lyr);
     map.addControl(el);	
 }
