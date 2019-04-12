@@ -89,22 +89,17 @@ var el = L.control.elevation({
 		
 /*** Add Trails ***/
 		
-var trailsLayer;
+var lyr;
 var ftr;
 
 function doClickStuff(e) {
 	
-	if (typeof ftr !== 'undefined') {
-		// the variable is defined
-		ftr.styleLines();
-	
-	var lyr = e.target;
+	lyr = e.target;
 	ftr = e.target.feature;
 				
 	lyr.setStyle({'color': '#333333', 'weight': 2});	
 	lyr.bringToFront();
 		
-	
 	if (typeof el !== 'undefined') {
 		// the variable is defined
 		el.clear();
