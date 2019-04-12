@@ -1,5 +1,3 @@
-'use strict';
-
 /*** General Leaflet Code ***/
 // Create map and center around Innsbruck, AT
 var map = L.map('map', {
@@ -7,83 +5,42 @@ var map = L.map('map', {
   zoom: 13
 });
 
-// Add Open Street Map as base map
-var osm = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>'
-}).addTo(map);
+var attributionsTirol = '&copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
 
-/*** Code for adding GeoJSON ***/
-// Pittsburgh Historic Districts GeoJSON file
-// Pittsburgh Open GIS Data Site: https://pghgis.pittsburghpa.opendata.arcgis.com/
-var geoJsonUrl = 'Trails.json'
+/*** Add base maps with controls ***/
+var basemaps = {
+    'osm4UMaps': L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
+		maxZoom: 19, 
+		maxNativeZoom: 15,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
+	}),
+	'TIRIS-Sommerkarte': L.tileLayer('//wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png', { 
+		maxZoom : 18, attribution : attributionsTirol, tileSize : 256 
+	}),
+	'TIRIS-Orthofoto': L.tileLayer('//wmts.kartetirol.at/gdi_ortho/{z}/{x}/{y}.png', { 
+		maxZoom : 18, attribution : attributionsTirol, tileSize : 256 
+	}),
+    'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
+        layers: 'Image_Schummerung_Gelaendemodell', 
+		maxZoom: 19, 
+		attribution: attributionsTirol
+    }),
+};
 
-// Placeholder for layer. Required to test if layer is added to map or not.
-var lyrPlhldr;
+var overlays = {
+	'TIRIS-Namen': L.tileLayer('//wmts.kartetirol.at/gdi_nomenklatur/{z}/{x}/{y}.png', { 
+		maxZoom : 18, tileSize : 256 
+	}),
+	'Wanderwege': L.tileLayer('https://tile.waymarkedtrails.org/slopes/{z}/{x}/{y}.png', {
+		maxZoom: 19, maxNativeZoom: 18, attribution: '&copy; <a href="http://www.waymarkedtrails.org" target="_blank">waymarkedtrails.org</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.de" target="_blank">CC BY-SA 3.0 DE</a>'
+	})
+};
 
-// HTML element to display error message
-var errMsgSpan = $('#errorMsg');
+L.control.layers(basemaps, overlays).addTo(map);
+basemaps.osm4UMaps.addTo(map);
 
-/*** Add layer using jQuery $.getJSON() method
-See https://api.jquery.com/jquery.getjson/
-1. Check to make sure layer is not already added to map.
-2. Call $.getJSON method, passing in url for geoJSON data
-3. Call function that creates Leaflet geoJSON layer and adds it to map
-4. A function for the fail event is created to handle errors with the request
-*******************************************************************************/
+/*** Trail Style Functions ***/
 
-function addDataJQuery() {
-  if (!mapHasLayer()) {
-    var getLayerJQuery = $.getJSON(geoJsonUrl, function(data) {
-      // create a GeoJSON layer
-      createGeoJsonTrails(data);
-    }); // end getLayerJQuery()
-
-    // If there is an error making the request, write the error out in the <span id="#errorMsg"> element
-    getLayerJQuery.fail(function(jqxhr, textStatus, error) {
-      var err = textStatus + ', ' + error + ' (' + jqxhr.status + ')';
-      errMsgSpan.text('Request Failed: ' + err);
-      errMsgSpan.show();
-    }); // end getLayerJQuery().fail()
-  } // end if (!mapHasLayer())
-} // end addDataJQuery()
-
-/*** Add layer using Vanilla JS to make an XML HTTP Request
-See https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-1. Check to make sure layer is not already added to map.
-2. Create a XMLHttpRequest
-3. Open the request using GET method
-4. Send the request
-5. Request will cycle through states. See https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
-6. Once the request is complete (4), if the request was successful (200), parse the request from string to JSON
-See https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
-See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
-7. Call function that creates Leaflet geoJSON layer and adds it to map
-8. If the response status is not 200, then an error message is generated
-***********************************************************************************************************************/
-// Add layer using vanilla AJAX request
-function addDataVanillaJS() {
-  if (!mapHasLayer()) {
-    var getLayerVanillaJS = new XMLHttpRequest();
-    getLayerVanillaJS.open('GET', geoJsonUrl);
-    getLayerVanillaJS.send();
-
-    getLayerVanillaJS.onreadystatechange = function(data) {
-        if (getLayerVanillaJS.readyState === 4 && getLayerVanillaJS.status === 200) {          
-            var geoJsonData = JSON.parse(getLayerVanillaJS.responseText);
-            // create a GeoJSON layer
-            createGeoJsonTrails(geoJsonData);
-          } else if (getLayerVanillaJS.readyState === 4 && getLayerVanillaJS.status !== 200) {
-            // add error message to span         
-            var err = getLayerVanillaJS.statusText + ' (' + getLayerVanillaJS.status + ')';
-            errMsgSpan.text('Request Failed: ' + err);
-            errMsgSpan.show();          
-        } // end if (getLayerVanillaJS.readyState === 4)
-      } // end getLayerVanillaJS.onreadystatechange()
-  } // if (!mapHasLayer())  
-} // end addDataVanillaJS()
-
-/*** Helper Functions ***/
-// style function for features
 function getColor(description) {
 	var color;
 	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
@@ -96,62 +53,100 @@ function getColor(description) {
 
 function styleLines(feature) {
     return {
-                color: getColor(feature.properties.description),
-                weight: 2,
-                opacity: .7,
-                lineJoin: 'round',  //miter | round | bevel 
+		color: getColor(feature.properties.description),
+		weight: 3,
+		opacity: 7,
+		lineJoin: 'round',  //miter | round | bevel 
+    };
+}
+		
+		
+/*** Set up Elevation Control ***/
 
-            };
+var el = L.control.elevation({
+			position: "bottomright",
+			theme: "lime-theme", //default: lime-theme
+			width: 500,	
+			height: 200,
+			margins: {
+				top: 20,
+				right: 20,
+				bottom: 30,
+				left: 60
+			},
+			useHeightIndicator: true, //if false a marker is drawn at map position
+			interpolation: "linear", //see https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-area_interpolate
+			hoverNumber: {
+				decimalsX: 2, //decimals on distance (always in km)
+				decimalsY: 0, //deciamls on hehttps://www.npmjs.com/package/leaflet.coordinatesight (always in m)
+				formatter: undefined //custom formatter function may be injected
+			},
+			xTicks: undefined, //number of ticks in x axis, calculated by default according to width
+			yTicks: undefined, //number of ticks on y axis, calculated by default according to height
+			collapsed: false,  //collapsed mode, show chart on click or mouseover
+			imperial: false    //display imperial units instead of metric
+	});
+		
+/*** Add Trails ***/
+		
+var lyr;
+var ftr;
+
+function doClickStuff(e) {
+	
+	lyr = e.target;
+	ftr = e.target.feature;
+				
+	lyr.setStyle({'color': '#333333', 'weight': 2});	
+	lyr.bringToFront();
+		
+	if (typeof el !== 'undefined') {
+		// the variable is defined
+		el.clear();
+		map.removeControl(el);
+	};	
+	
+	L.DomEvent.stopPropagation(e);
+    el.addData(ftr, lyr);
+    map.addControl(el);	
 }
 
-// create GeoJSON layer, style, add popup, and add to map
-function createGeoJsonTrails(data) {
-  // see http://leafletjs.com/reference.html#geojson
-  lyrPlhldr = L.geoJson(data, 
-	// symbolize features
-	{ 
-	style: styleLines,
-	onEachFeature: function(feature, layer) {
-		  var tooltipTemplate = '<h2 class="map-popup">{name}</h2>';
-		  var popupContent = L.Util.template(tooltipTemplate, feature.properties);
-		  // add a popup to each feature
-		  layer.bindPopup(popupContent, { closeOnClick: true })
-		  }
-	}).addTo(map); // add layer to map
-}
 
-// Test if map has layer
-function mapHasLayer() {
-  if (map.hasLayer(lyrPlhldr)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-// Remove layer from map
-function removeLayerFromMap() {
-  // if layer is on map, remove the layer
-  if (mapHasLayer()) {
-    map.removeLayer(lyrPlhldr);
-  }
-}
-
-/*** Event Handlers ***/
-// Add layer with $.getJSON()
-// tied to <a id="addJQ">
-$('#addJQ').click(function() {
-  addDataJQuery();
+	
+$.getJSON('Trails.json', function(json) {
+	trailsLayer = L.geoJson(json, {
+		style: styleLines,
+		
+		onEachFeature: function(feature, layer) {
+			
+			// on events
+			layer.on({
+				click: doClickStuff
+			});			
+	
+			// add a popup to each feature	
+			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
+			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
+			
+		}
+	}).addTo(map);
 });
 
-// Add layer with XMLHttpRequest()
-// tied to <a id="addVanillaJS">
-var addVanillaJS = document.getElementById('addVanillaJS');
-addVanillaJS.addEventListener('click', addDataVanillaJS);
 
-// Remove layer from map
-// tied to <a id="removeLayer">
-$('#removeLayer').click(function() {
-  removeLayerFromMap();
-  errMsgSpan.hide();
+/*** Event Listeners ***/
+
+map.on("click", function(e){
+	if (typeof el !== 'undefined') {
+		// the variable is defined
+		el.clear();
+		map.removeControl(el);
+	};	
+});
+
+map.on('moveend', function(e){
+	coords.innerHTML='<b> CENTER: </b>' + map.getCenter()
+});
+
+map.on('zoomend', function(e){
+	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
 });
