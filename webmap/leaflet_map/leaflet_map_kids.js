@@ -52,7 +52,7 @@ basemaps.osm4UMaps.addTo(map);
 
 	function dehighlight (layer) {
 	  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-		  geojson.resetStyle(layer);
+		  trailsLayer.resetStyle(layer);
 	  }
 	}
 
