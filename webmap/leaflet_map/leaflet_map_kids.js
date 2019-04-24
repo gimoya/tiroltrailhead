@@ -69,7 +69,8 @@ var el = L.control.elevation({
 function highlight (layer) {
 	layer.setStyle({
 		weight: 5,
-		dashArray: ''
+		dashArray: '',
+		opacity: 15
 	});
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
@@ -124,7 +125,7 @@ $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
   			return {
 				color:'green',
 				weight: 3,
-				dashArray: 3,
+				dashArray: 5,
 				opacity: 7,
 				lineJoin: 'round',  //miter | round | bevel 
 			};
