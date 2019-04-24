@@ -41,19 +41,10 @@ basemaps.osm4UMaps.addTo(map);
 
 /*** Trail Style Functions ***/
 
-function getColor(description) {
-	var color;
-	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
-	// trails with ? classification (unknown, planned but not yet been there) should be pink
-	if (description.indexOf('?') > -1) {color = "#FF69B4"}
-	// trails with X! classification (been there, and it was shit) should be grey
-	if (description.indexOf('X!') > -1) {color = "#BCBCBC"}	
-	return color
-}
 
 function styleLines(feature) {
     return {
-		color: getColor(feature.properties.description),
+		color:'green',
 		weight: 3,
 		opacity: 7,
 		lineJoin: 'round',  //miter | round | bevel 
@@ -125,7 +116,7 @@ $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 			});			
 	
 			// add a popup to each feature	
-			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
+			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 			
 		}
