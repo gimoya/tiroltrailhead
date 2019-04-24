@@ -40,16 +40,34 @@ L.control.layers(basemaps, overlays).addTo(map);
 basemaps.osm4UMaps.addTo(map);
 
 /*** Trail Style Functions ***/
+	function highlight (layer) {
+		layer.setStyle({
+			weight: 5,
+			dashArray: ''
+		});
+		if (!L.Browser.ie && !L.Browser.opera) {
+			layer.bringToFront();
+		}
+	}
 
+	function dehighlight (layer) {
+	  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+		  geojson.resetStyle(layer);
+	  }
+	}
 
-function styleLines(feature) {
-    return {
-		color:'green',
-		weight: 3,
-		opacity: 7,
-		lineJoin: 'round',  //miter | round | bevel 
-    };
-}
+	function select (layer) {
+	  if (selected !== null) {
+		var previous = selected;
+	  }
+		map.fitBounds(layer.getBounds());
+		selected = layer;
+		if (previous) {
+		  dehighlight(previous);
+		}
+	}
+
+	var selected = null;
 		
 		
 /*** Set up Elevation Control ***/
@@ -87,9 +105,8 @@ function doClickStuff(e) {
 	
 	lyr = e.target;
 	ftr = e.target.feature;
-				
-	lyr.setStyle({'color': '#333333', 'weight': 2});	
-	lyr.bringToFront();
+	
+	select.lyr;
 		
 	if (typeof el !== 'undefined') {
 		// the variable is defined
@@ -102,17 +119,27 @@ function doClickStuff(e) {
     map.addControl(el);	
 }
 
-
-	
 $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 	trailsLayer = L.geoJson(json, {
-		style: styleLines,
-		
+		style: 	function (feature) {
+  			return {
+				color:'green',
+				weight: 3,
+				opacity: 7,
+				lineJoin: 'round',  //miter | round | bevel 
+			};
+		},
 		onEachFeature: function(feature, layer) {
 			
 			// on events
-			layer.on({
-				click: doClickStuff
+			layer.on({		
+				'mouseover': function (e) {
+					highlight(e.target);
+				},
+				'mouseout': function (e) {
+					dehighlight(e.target);
+				},
+				'click': doClickStuff
 			});			
 	
 			// add a popup to each feature	
