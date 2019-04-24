@@ -113,7 +113,7 @@ function doClickStuff(e) {
 
 
 	
-$.getJSON('KIDS-MTB-SÖM.geojson', function(json) {
+$.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 	trailsLayer = L.geoJson(json, {
 		style: styleLines,
 		
