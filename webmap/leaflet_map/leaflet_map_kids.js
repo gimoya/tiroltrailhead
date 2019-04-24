@@ -39,37 +39,6 @@ var overlays = {
 L.control.layers(basemaps, overlays).addTo(map);
 basemaps.osm4UMaps.addTo(map);
 
-/*** Trail Style Functions ***/
-	function highlight (layer) {
-		layer.setStyle({
-			weight: 5,
-			dashArray: ''
-		});
-		if (!L.Browser.ie && !L.Browser.opera) {
-			layer.bringToFront();
-		}
-	}
-
-	function dehighlight (layer) {
-	  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-		  trailsLayer.resetStyle(layer);
-	  }
-	}
-
-	function select (layer) {
-	  if (selected !== null) {
-		var previous = selected;
-	  }
-		map.fitBounds(layer.getBounds());
-		selected = layer;
-		if (previous) {
-		  dehighlight(previous);
-		}
-	}
-
-	var selected = null;
-		
-		
 /*** Set up Elevation Control ***/
 
 var el = L.control.elevation({
@@ -96,8 +65,36 @@ var el = L.control.elevation({
 			imperial: false    //display imperial units instead of metric
 	});
 		
-/*** Add Trails ***/
-		
+/*** Trail Style Functions ***/
+function highlight (layer) {
+	layer.setStyle({
+		weight: 5,
+		dashArray: ''
+	});
+	if (!L.Browser.ie && !L.Browser.opera) {
+		layer.bringToFront();
+	}
+}
+
+function dehighlight (layer) {
+  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+	  trailsLayer.resetStyle(layer);
+  }
+}
+
+function select (layer) {
+  if (selected !== null) {
+	var previous = selected;
+  }
+	map.fitBounds(layer.getBounds());
+	selected = layer;
+	if (previous) {
+	  dehighlight(previous);
+	}
+}
+
+var selected = null;
+					
 var lyr;
 var ftr;
 
@@ -106,7 +103,7 @@ function doClickStuff(e) {
 	lyr = e.target;
 	ftr = e.target.feature;
 	
-	select.lyr;
+	select(lyr);
 		
 	if (typeof el !== 'undefined') {
 		// the variable is defined
@@ -119,12 +116,15 @@ function doClickStuff(e) {
     map.addControl(el);	
 }
 
+/*** Add Trails ***/
+
 $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 	trailsLayer = L.geoJson(json, {
 		style: 	function (feature) {
   			return {
 				color:'green',
 				weight: 3,
+				dashArray: 3,
 				opacity: 7,
 				lineJoin: 'round',  //miter | round | bevel 
 			};
