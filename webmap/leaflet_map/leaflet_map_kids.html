@@ -28,13 +28,12 @@
 		  <nav class="navbar navbar-default navbar-fixed-top">
 			<div class="navbar-header">
 			  <button type="button" class="navbar-toggle glyphicon glyphicon-menu-hamburger" data-toggle="collapse" data-target="#navbar"></button>
-			  <a class="navbar-brand" href="#">TIrol Trailhead Web Map</a>
+			  <a class="navbar-brand" href="#">TIrol Trailhead |Kinder-taugliche Routen SÖM</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbar">
 			  <ul class="nav navbar-nav navbar-right">
 				<li><a id="goInfo" href="#">Info</a></li>
-				<li><a id="Skala" href="#">Skala</a></li>
-				<li><a id="Credits" href="#">Credits</a></li>
+				<li><a id="Skala" href="#">GPS</a></li>
 			  </ul>
 			</div>
 		  </nav>
@@ -42,21 +41,6 @@
 		
 		<!-- container for map -->
 		<section id="map">
-			<!-- PAYPAL --> 
-				<div id="paypal">
-				  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin:0;">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="7N6ZTUXZ396XN">
-					  <button type="submit" class="support" id="yes">Hier ist Dein GPS-Track! Darin stecken unz&auml;hlige Arbeitsstunden - bitte unterst&uuml;tze das Projekt mit einem kleinen Betrag!</button>
-				  </form>
-				  <div id="svg_container" class="pulse2">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 25 23.5">
-					  <path id="heart" d="M17,0c-1.9,0-3.7,0.8-5,2.1C10.7,0.8,8.9,0,7,0C3.1,0,0,3.1,0,7c0,6.4,10.9,15.4,11.4,15.8 c0.2,0.2,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2C13.1,22.4,24,13.4,24,7C24,3.1,20.9,0,17,0z"></path>
-					</svg>
-				  </div>
-				  <button type="button" class="support" id="x">&Auml;hm, dieses mal nicht...</button>
-				</div>
-			<!-- PAYPAL END --> 
 			<!-- display error message -->
 			<span id="errorMsg"></span>
 			<span id='bar'>
@@ -66,5 +50,7 @@
 			</span>
 		</section>
 		<script type="text/javascript" src="leaflet_map_kids.js"></script>
+		<section id="Info">Info bla, bla<section>
+		<section id="GPS"><a href="#">GPS-files</a><section>		
 	</body>
 </html>
