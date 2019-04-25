@@ -153,13 +153,10 @@ $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX";			
-			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>';
+			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + "'" + gpxLink + "'";
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
-			
-			console.log(gpxLink);
-			
-			map.fitBounds(layer.getBounds(), {maxZoom: 14});
-			
+						
+			map.fitBounds(layer.getBounds(), {maxZoom: 14});			
 		}
 	}).addTo(map);
 });
