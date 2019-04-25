@@ -93,7 +93,26 @@ function select (layer) {
 }
 
 var selected = null;
-					
+
+function getColor(description) {
+	var color;
+	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
+	// trails with ? classification (unknown, planned but not yet been there) should be pink
+	if (description.indexOf('?') > -1) {color = "#FF69B4"}
+	// trails with X! classification (been there, and it was shit) should be grey
+	if (description.indexOf('X!') > -1) {color = "#BCBCBC"}	
+	return color
+}
+
+function styleLines(feature) {
+    return {
+		color: getColor(feature.properties.description),
+		weight: 3,
+		opacity: 7,
+		lineJoin: 'round',  //miter | round | bevel 
+    };
+}
+				
 var lyr;
 var ftr;
 
@@ -125,15 +144,9 @@ function doClickStuff(e) {
 
 $.getJSON('Trails.geojson', function(json) {
 	trailsLayer = L.geoJson(json, {
-		style: 	function (feature) {
-  			return {
-				color:'green',
-				weight: 3,
-				dashArray: 5,
-				opacity: 7,
-				lineJoin: 'round',  //miter | round | bevel 
-			};
-		},
+		
+		style: 	styleLines,
+		
 		onEachFeature: function(feature, layer) {
 			
 			// on events
