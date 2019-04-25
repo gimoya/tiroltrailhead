@@ -150,7 +150,7 @@ $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 			});			
 	
 			// add a popup to each feature	
-			var bb = new Blob([togpx(e.target.feature)], {type: 'text/plain'});
+			var bb = new Blob([togpx(feature)], {type: 'text/plain'});
 			var gpxLink = document.createElement("a");
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
