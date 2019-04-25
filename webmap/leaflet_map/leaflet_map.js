@@ -142,7 +142,7 @@ function doClickStuff(e) {
 
 /*** Add Trails ***/
 
-$.getJSON('Trails.geojson', function(json) {
+$.getJSON('Trails.json', function(json) {
 	trailsLayer = L.geoJson(json, {
 		
 		style: 	styleLines,
