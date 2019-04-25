@@ -1,7 +1,5 @@
-/*** General Leaflet Code ***/
-// Create map and center around Innsbruck, AT
+/*** Create map  ***/
 var map = L.map('map', {
-  center: [47.26, 11.42],
   zoom: 13
 });
 
@@ -39,28 +37,6 @@ var overlays = {
 L.control.layers(basemaps, overlays).addTo(map);
 basemaps.osm4UMaps.addTo(map);
 
-/*** Trail Style Functions ***/
-
-function getColor(description) {
-	var color;
-	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
-	// trails with ? classification (unknown, planned but not yet been there) should be pink
-	if (description.indexOf('?') > -1) {color = "#FF69B4"}
-	// trails with X! classification (been there, and it was shit) should be grey
-	if (description.indexOf('X!') > -1) {color = "#BCBCBC"}	
-	return color
-}
-
-function styleLines(feature) {
-    return {
-		color: getColor(feature.properties.description),
-		weight: 3,
-		opacity: 7,
-		lineJoin: 'round',  //miter | round | bevel 
-    };
-}
-		
-		
 /*** Set up Elevation Control ***/
 
 var el = L.control.elevation({
@@ -87,8 +63,37 @@ var el = L.control.elevation({
 			imperial: false    //display imperial units instead of metric
 	});
 		
-/*** Add Trails ***/
-		
+/*** Trail Style Functions ***/
+function highlight (layer) {
+	layer.setStyle({
+		weight: 5,
+		dashArray: '',
+		opacity: 15
+	});
+	if (!L.Browser.ie && !L.Browser.opera) {
+		layer.bringToFront();
+	}
+}
+
+function dehighlight (layer) {
+  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+	  trailsLayer.resetStyle(layer);
+  }
+}
+
+function select (layer) {
+  if (selected !== null) {
+	var previous = selected;
+  }
+	map.fitBounds(layer.getBounds());
+	selected = layer;
+	if (previous) {
+	  dehighlight(previous);
+	}
+}
+
+var selected = null;
+					
 var lyr;
 var ftr;
 
@@ -96,9 +101,11 @@ function doClickStuff(e) {
 	
 	lyr = e.target;
 	ftr = e.target.feature;
-				
-	lyr.setStyle({'color': '#333333', 'weight': 2});	
-	lyr.bringToFront();
+	
+	select(lyr);
+	
+	
+	/*** Elevation Control ***/
 		
 	if (typeof el !== 'undefined') {
 		// the variable is defined
@@ -109,25 +116,47 @@ function doClickStuff(e) {
 	L.DomEvent.stopPropagation(e);
     el.addData(ftr, lyr);
     map.addControl(el);	
+	
+	/*** Set GPX link ***/
+	
 }
 
+/*** Add Trails ***/
 
-	
-$.getJSON('Trails.json', function(json) {
+$.getJSON('Trails.geojson', function(json) {
 	trailsLayer = L.geoJson(json, {
-		style: styleLines,
-		
+		style: 	function (feature) {
+  			return {
+				color:'green',
+				weight: 3,
+				dashArray: 5,
+				opacity: 7,
+				lineJoin: 'round',  //miter | round | bevel 
+			};
+		},
 		onEachFeature: function(feature, layer) {
 			
 			// on events
-			layer.on({
-				click: doClickStuff
+			layer.on({		
+				'mouseover': function (e) {
+					highlight(e.target);
+				},
+				'mouseout': function (e) {
+					dehighlight(e.target);
+				},
+				'click': doClickStuff
 			});			
 	
 			// add a popup to each feature	
-			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>' + feature.properties.description;
+			var bb = new Blob([togpx(feature)], {type: 'text/plain'});
+			var gpxLink = document.createElement("a");
+			gpxLink.href = window.URL.createObjectURL(bb);		
+			gpxLink.download = feature.properties.name + ".gpx";
+			gpxLink.innerHTML = "GPX";			
+			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
-			
+						
+			map.fitBounds(layer.getBounds(), {maxZoom: 14});			
 		}
 	}).addTo(map);
 });
@@ -150,3 +179,4 @@ map.on('moveend', function(e){
 map.on('zoomend', function(e){
 	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
 });
+
