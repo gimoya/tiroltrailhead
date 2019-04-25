@@ -153,7 +153,7 @@ $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX";			
-			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + "'" + gpxLink + "'";
+			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 						
 			map.fitBounds(layer.getBounds(), {maxZoom: 14});			
