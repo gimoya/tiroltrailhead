@@ -105,6 +105,9 @@ function doClickStuff(e) {
 	ftr = e.target.feature;
 	
 	select(lyr);
+	
+	
+	/*** Elevation Control ***/
 		
 	if (typeof el !== 'undefined') {
 		// the variable is defined
@@ -115,6 +118,9 @@ function doClickStuff(e) {
 	L.DomEvent.stopPropagation(e);
     el.addData(ftr, lyr);
     map.addControl(el);	
+	
+	/*** Set GPX link ***/
+	
 }
 
 /*** Add Trails ***/
@@ -144,7 +150,12 @@ $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 			});			
 	
 			// add a popup to each feature	
-			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2>';
+			var bb = new Blob([togpx(e.target.feature)], {type: 'text/plain'});
+			var gpxLink = document.createElement("a");
+			gpxLink.href = window.URL.createObjectURL(bb);		
+			gpxLink.download = feature.properties.name + ".gpx";
+			gpxLink.innerHTML = "GPX";			
+			var popupContent = '<h2 class="map-popup">' + feature.properties.name + ' | ' + gpxLink + '</h2>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 			
 		}
