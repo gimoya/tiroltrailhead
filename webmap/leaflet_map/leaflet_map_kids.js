@@ -123,8 +123,6 @@ function doClickStuff(e) {
 
 /*** Add Trails ***/
 
-var trailsLayer;
-
 $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 	trailsLayer = L.geoJson(json, {
 		style: 	function (feature) {
@@ -158,6 +156,8 @@ $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink;
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 			
+			map.fitBounds(layer.getBounds());
+			
 		}
 	}).addTo(map);
 });
@@ -181,4 +181,3 @@ map.on('zoomend', function(e){
 	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
 });
 
-map.fitBounds(trailsLayer.getBounds());
