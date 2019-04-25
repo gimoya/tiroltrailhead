@@ -1,7 +1,5 @@
-/*** General Leaflet Code ***/
-// Create map and center around Innsbruck, AT
+/*** Create map  ***/
 var map = L.map('map', {
-  center: [47.26, 11.42],
   zoom: 13
 });
 
@@ -155,7 +153,7 @@ $.getJSON('KIDS-MTB-SOEM.geojson', function(json) {
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX";			
-			var popupContent = '<h2 class="map-popup">' + feature.properties.name + ' | ' + gpxLink + '</h2>';
+			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink;
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 			
 		}
@@ -180,3 +178,5 @@ map.on('moveend', function(e){
 map.on('zoomend', function(e){
 	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
 });
+
+map.fitBounds(trailsLayer.getBounds());
