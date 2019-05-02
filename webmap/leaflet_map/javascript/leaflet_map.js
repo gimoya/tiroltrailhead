@@ -115,6 +115,7 @@ function styleLines(feature) {
 				
 var lyr;
 var ftr;
+var trailsLayer;
 
 function doClickStuff(e, trailsLayer) {
 	
@@ -143,8 +144,6 @@ function doClickStuff(e, trailsLayer) {
 }
 
 /*** Add Trails ***/
-
-var trailsLayer;
 
 $.getJSON('Trails_Z.json', function(json) {
 	trailsLayer = L.geoJson(json, {
