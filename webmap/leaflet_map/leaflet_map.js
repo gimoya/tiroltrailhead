@@ -142,6 +142,8 @@ function doClickStuff(e) {
 
 /*** Add Trails ***/
 
+var trailsLayer;
+
 $.getJSON('Trails.json', function(json) {
 	trailsLayer = L.geoJson(json, {
 		
@@ -173,6 +175,12 @@ $.getJSON('Trails.json', function(json) {
 		}
 	}).addTo(map);
 });
+
+trailsLayer.setText('\u25BA', { repeat: true,
+								offset: 6,
+								attributes: {fill: 'red'}
+							  }
+					);
 
 
 /*** Event Listeners ***/
