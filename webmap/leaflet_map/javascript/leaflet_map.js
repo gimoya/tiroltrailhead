@@ -122,7 +122,7 @@ function doClickStuff(e) {
 	ftr = e.target.feature;
 	
 	select(lyr);
-	lyr.setText('--➤              ', { repeat: true, offset: 10, attributes: {fill:  getColor(ftr.properties.description), 'font-weight': 'bold', 'font-size': '15'} });
+	lyr.setText('--►             ', { repeat: true, offset: 12, attributes: {fill:  getColor(ftr.properties.description), 'font-weight': 'bold', 'font-size': '15'} });
 	
 	/*** Elevation Control ***/
 		
@@ -144,7 +144,7 @@ function doClickStuff(e) {
 
 var trailsLayer;
 
-$.getJSON('trails.geojson', function(json) {
+$.getJSON('Trails_Z.json', function(json) {
 	trailsLayer = L.geoJson(json, {
 		
 		style: 	styleLines,
