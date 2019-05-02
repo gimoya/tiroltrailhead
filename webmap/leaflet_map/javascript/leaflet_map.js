@@ -70,6 +70,10 @@ function highlight (layer) {
 		dashArray: '',
 		opacity: 15
 	});
+	layer.setText('\u25BA', { repeat: true,
+					  offset: 0,
+					  attributes: {fill: 'red'}
+					});
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
 	}
@@ -78,6 +82,7 @@ function highlight (layer) {
 function dehighlight (layer) {
   if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
 	  trailsLayer.resetStyle(layer);
+	  layer.setText(NULL);
   }
 }
 
@@ -170,13 +175,7 @@ $.getJSON('Trails.json', function(json) {
 			gpxLink.innerHTML = "GPX";			
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
-			
-			layer.setText('\u25BA', 
-				{ repeat: true,
-				  offset: 0,
-				  attributes: {fill: 'red'}
-			});
-		
+				
 			map.fitBounds(layer.getBounds(), {maxZoom: 14});			
 		}
 	}).addTo(map);
