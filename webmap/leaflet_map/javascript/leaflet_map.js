@@ -170,17 +170,17 @@ $.getJSON('Trails.json', function(json) {
 			gpxLink.innerHTML = "GPX";			
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
-						
+			
+			layer.setText('\u25BA', 
+				{ repeat: true,
+				  offset: 0,
+				  attributes: {fill: 'red'}
+			});
+		
 			map.fitBounds(layer.getBounds(), {maxZoom: 14});			
 		}
 	}).addTo(map);
 });
-
-trailsLayer.setText('\u25BA', { repeat: true,
-								offset: 6,
-								attributes: {fill: 'red'}
-							  }
-					);
 
 
 /*** Event Listeners ***/
