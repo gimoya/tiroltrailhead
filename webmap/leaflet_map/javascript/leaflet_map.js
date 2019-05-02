@@ -8,29 +8,28 @@ var attributionsTirol = '&copy; <a href="https://data.tirol.gv.at" target="_blan
 /*** Add base maps with controls ***/
 var basemaps = {
     'osm4UMaps': L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
-		maxZoom: 19, 
-		maxNativeZoom: 15,
+		maxZoom: 16,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
 	'TIRIS-Sommerkarte': L.tileLayer('//wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png', { 
-		maxZoom : 18, attribution : attributionsTirol, tileSize : 256 
+		maxZoom : 16, attribution : attributionsTirol, tileSize : 256 
 	}),
 	'TIRIS-Orthofoto': L.tileLayer('//wmts.kartetirol.at/gdi_ortho/{z}/{x}/{y}.png', { 
 		maxZoom : 18, attribution : attributionsTirol, tileSize : 256 
 	}),
     'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
         layers: 'Image_Schummerung_Gelaendemodell', 
-		maxZoom: 19, 
+		maxZoom: 18, 
 		attribution: attributionsTirol
     }),
 };
 
 var overlays = {
 	'TIRIS-Namen': L.tileLayer('//wmts.kartetirol.at/gdi_nomenklatur/{z}/{x}/{y}.png', { 
-		maxZoom : 18, tileSize : 256 
+		maxZoom : 16, tileSize : 256 
 	}),
 	'Wanderwege': L.tileLayer('https://tile.waymarkedtrails.org/slopes/{z}/{x}/{y}.png', {
-		maxZoom: 19, maxNativeZoom: 18, attribution: '&copy; <a href="http://www.waymarkedtrails.org" target="_blank">waymarkedtrails.org</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.de" target="_blank">CC BY-SA 3.0 DE</a>'
+		maxZoom: 16, attribution: '&copy; <a href="http://www.waymarkedtrails.org" target="_blank">waymarkedtrails.org</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.de" target="_blank">CC BY-SA 3.0 DE</a>'
 	})
 };
 
@@ -70,7 +69,7 @@ function highlight (layer) {
 		dashArray: '',
 		opacity: 15
 	});
-	layer.setText('      ►      ', { repeat: true, attributes: {fill: 'white', fontSize: '0.5ex'} });
+	layer.setText('>          ', { repeat: true, attributes: {fill: 'black', fontSize: '0.5ex'} });
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
 	}
@@ -175,7 +174,7 @@ $.getJSON('Trails.json', function(json) {
 							
 		}
 	}).addTo(map);
-	map.fitBounds(trailsLayer.getBounds(), {maxZoom: 12});
+	map.fitBounds(trailsLayer.getBounds(), {maxZoom: 14});
 });
 
 
