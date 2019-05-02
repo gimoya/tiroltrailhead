@@ -172,10 +172,10 @@ $.getJSON('Trails.json', function(json) {
 			gpxLink.innerHTML = "GPX";			
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
-				
-			map.fitBounds(layer.getBounds(), {maxZoom: 14});			
+							
 		}
 	}).addTo(map);
+	map.fitBounds(trailsLayer.getBounds(), {maxZoom: 12});
 });
 
 
