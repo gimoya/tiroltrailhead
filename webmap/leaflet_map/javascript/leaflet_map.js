@@ -70,7 +70,7 @@ function highlight (layer) {
 		dashArray: '',
 		opacity: 15
 	});
-	layer.setText('\u2911', { repeat: true, attributes: {fill: 'white', fontSize: '0.5ex'} });
+	layer.setText('      ►      ', { repeat: true, attributes: {fill: 'white', fontSize: '0.5ex'} });
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
 	}
