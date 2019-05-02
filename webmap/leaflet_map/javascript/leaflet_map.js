@@ -86,7 +86,6 @@ function select (layer) {
 	var previous = selected;
   }
 	map.fitBounds(layer.getBounds());
-	layer.setText('⮞              ', { repeat: true, offset: 0, attributes: {fill:  getColor(feature.properties.description), 'font-weight': 'bold', 'font-size': '10'} });
 	selected = layer;
 	if (previous) {
 	  dehighlight(previous);
@@ -123,7 +122,7 @@ function doClickStuff(e) {
 	ftr = e.target.feature;
 	
 	select(lyr);
-	
+	lyr.setText('⮞              ', { repeat: true, offset: 0, attributes: {fill:  getColor(ftr.properties.description), 'font-weight': 'bold', 'font-size': '10'} });
 	
 	/*** Elevation Control ***/
 		
