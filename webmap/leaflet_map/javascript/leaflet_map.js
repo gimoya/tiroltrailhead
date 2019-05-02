@@ -3,7 +3,7 @@ var map = L.map('map', {
   zoom: 13
 });
 
-var attributionsTirol = '&copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
+var attributionTirol = '&copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
 
 /*** Add base maps with controls ***/
 var basemaps = {
@@ -12,15 +12,15 @@ var basemaps = {
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
 	'TIRIS-Sommerkarte': L.tileLayer('//wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png', { 
-		maxZoom : 16, attribution : attributionsTirol, tileSize : 256 
+		maxZoom : 16, attribution : attributionTirol, tileSize : 256 
 	}),
 	'TIRIS-Orthofoto': L.tileLayer('//wmts.kartetirol.at/gdi_ortho/{z}/{x}/{y}.png', { 
-		maxZoom : 18, attribution : attributionsTirol, tileSize : 256 
+		maxZoom : 18, attribution : attributionTirol, tileSize : 256 
 	}),
     'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
         layers: 'Image_Schummerung_Gelaendemodell', 
 		maxZoom: 18, 
-		attribution: attributionsTirol
+		attribution: attributionTirol
     }),
 };
 
@@ -35,6 +35,7 @@ var overlays = {
 
 L.control.layers(basemaps, overlays).addTo(map);
 basemaps.osm4UMaps.addTo(map);
+
 
 /*** Set up Elevation Control ***/
 
@@ -62,39 +63,29 @@ var el = L.control.elevation({
 			imperial: false    //display imperial units instead of metric
 	});
 		
-/*** Trail Style Functions ***/
-function highlight (layer) {
+/*** Trail Style-Helper Functions ***/
+
+function highlight (layer) {	// will be used on hover
 	layer.setStyle({
 		weight: 4,
 		dashArray: '',
-		opacity: 0.8
+		opacity: 0.95
 	});
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
 	}	
 }
 
-function dehighlight (layer) {
+var selected = null;
+
+function dehighlight (layer) { 	// will be used inside select function
   if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
 	  trailsLayer.resetStyle(layer);
 	  layer.setText(null);
   }
 }
 
-var selected = null;
-
-function select (layer) {
-  if (selected !== null) {
-	var previous = selected;
-  }
-	map.fitBounds(layer.getBounds());
-	selected = layer;
-	if (previous) {
-	  dehighlight(previous);
-	}
-}
-
-function getColor(description) {
+function getColor(description) { // ..used inside styleLines function. will color trails according to description details..
 	var color;
 	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
 	// trails with ? classification (unknown, planned but not yet been there) should be pink
@@ -104,18 +95,32 @@ function getColor(description) {
 	return color
 }
 
-function styleLines(feature) {
+function styleLines(feature) {	// deafult style used for constructor of json
     return {
 		color: getColor(feature.properties.description),
 		weight: 3,
-		opacity: 0.75,
+		opacity: 0.8,
 		lineJoin: 'round',  //miter | round | bevel 
     };
 }
-				
+
+
+/*** Map and Json Layer Event Listeners and Helper Functions ***/
+			
 var lyr;
 var ftr;
 var trailsLayer;
+
+function select (layer) {  // ..use inside onClick Function doClickStuff() to select and style clicked feature 
+  if (selected !== null) {
+	var previous = selected;
+  }
+	map.fitBounds(layer.getBounds());
+	selected = layer;
+	if (previous) {
+	  dehighlight(previous);
+	}
+}
 
 function doClickStuff(e) {
 	
@@ -179,7 +184,7 @@ $.getJSON('Trails_Z.json', function(json) {
 });
 
 
-/*** Event Listeners ***/
+/*** Map Event Listeners ***/
 
 map.on("click", function(e){
 	if (typeof el !== 'undefined') {
