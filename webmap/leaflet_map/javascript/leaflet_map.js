@@ -117,7 +117,7 @@ var lyr;
 var ftr;
 var trailsLayer;
 
-function doClickStuff() {
+function doClickStuff(e) {
 	
 	lyr = e.target;
 	ftr = e.target.feature;
