@@ -70,10 +70,7 @@ function highlight (layer) {
 		dashArray: '',
 		opacity: 15
 	});
-	layer.setText('\u25BA', { repeat: true,
-					  offset: 0,
-					  attributes: {fill: 'red'}
-					});
+	layer.setText('\u25BB', { repeat: false	});
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
 	}
