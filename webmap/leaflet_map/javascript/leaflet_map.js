@@ -65,13 +65,13 @@ var el = L.control.elevation({
 /*** Trail Style Functions ***/
 function highlight (layer) {
 	layer.setStyle({
-		weight: 5,
+		weight: 4,
 		dashArray: '',
 		opacity: 15
 	});
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
-	}
+	}	
 }
 
 function dehighlight (layer) {
@@ -80,6 +80,8 @@ function dehighlight (layer) {
 	  layer.setText(null);
   }
 }
+
+var selected = null;
 
 function select (layer) {
   if (selected !== null) {
@@ -91,8 +93,6 @@ function select (layer) {
 	  dehighlight(previous);
 	}
 }
-
-var selected = null;
 
 function getColor(description) {
 	var color;
@@ -116,13 +116,13 @@ function styleLines(feature) {
 var lyr;
 var ftr;
 
-function doClickStuff(e) {
+function doClickStuff(e, trailsLayer) {
 	
 	lyr = e.target;
 	ftr = e.target.feature;
 	
 	select(lyr);
-	lyr.setText('- - - ►             ', { repeat: true, offset: 11, attributes: {fill:  getColor(ftr.properties.description), 'font-weight': 'bold', 'font-size': '13'} });
+	lyr.setText('- - - ►             ', { repeat: true, offset: 11, attributes: {fill:  getColor(ftr.properties.description), 'font-weight': 'bold', 'font-size': '12'} });
 	
 	/*** Elevation Control ***/
 		
@@ -136,7 +136,7 @@ function doClickStuff(e) {
     el.addData(ftr, lyr);
     map.addControl(el);	
 	
-	/*** Set GPX link ***/
+	log(trailsLayer);
 	
 }
 
@@ -162,7 +162,8 @@ $.getJSON('Trails_Z.json', function(json) {
 				'click': doClickStuff
 			});			
 	
-			// add a popup to each feature	
+			/*** add a popup to each feature and.. ***/ 	
+			/*** ..set GPX link ***/
 			var bb = new Blob([togpx(feature)], {type: 'text/plain'});
 			var gpxLink = document.createElement("a");
 			gpxLink.href = window.URL.createObjectURL(bb);		
