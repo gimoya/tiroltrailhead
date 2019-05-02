@@ -82,7 +82,7 @@ function highlight (layer) {
 function dehighlight (layer) {
   if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
 	  trailsLayer.resetStyle(layer);
-	  layer.setText(NULL);
+	  layer.setText(null);
   }
 }
 
