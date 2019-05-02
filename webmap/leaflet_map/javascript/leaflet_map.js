@@ -69,7 +69,7 @@ function highlight (layer) {
 		dashArray: '',
 		opacity: 15
 	});
-	layer.setText('>>          ', { repeat: true, offset: 1, attributes: {fontSize: '0.7ex'} });
+	layer.setText('>          ', { repeat: true, offset: 0.1, attributes: {fontSize: '0.7ex'} });
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
 	}
