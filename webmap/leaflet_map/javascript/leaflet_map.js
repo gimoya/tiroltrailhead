@@ -108,7 +108,7 @@ function styleLines(feature) {
     return {
 		color: getColor(feature.properties.description),
 		weight: 3,
-		opacity: 0.6,
+		opacity: 0.75,
 		lineJoin: 'round',  //miter | round | bevel 
     };
 }
@@ -139,7 +139,7 @@ function doClickStuff(e) {
 	
 	/*** make all non-selected trails opaque ***/ 
 	
-	trailsLayer.eachLayer(function(layer){ if(selected._leaflet_id !== layer._leaflet_id) {layer.setStyle({opacity: 0.3})}});
+	trailsLayer.eachLayer(function(layer){ if(selected._leaflet_id !== layer._leaflet_id) {layer.setStyle({opacity: 0.4})}});
 	
 }
 
@@ -187,6 +187,10 @@ map.on("click", function(e){
 		el.clear();
 		map.removeControl(el);
 	};	
+	/*** reset opaque trails ***/
+	trailsLayer.eachLayer(function(layer) {
+		layer.setStyle({opacity: 0.4})
+	});
 });
 
 map.on('moveend', function(e){
