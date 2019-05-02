@@ -67,7 +67,7 @@ function highlight (layer) {
 	layer.setStyle({
 		weight: 4,
 		dashArray: '',
-		opacity: 15
+		opacity: 0.8
 	});
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
@@ -108,7 +108,7 @@ function styleLines(feature) {
     return {
 		color: getColor(feature.properties.description),
 		weight: 3,
-		opacity: 7,
+		opacity: 0.6,
 		lineJoin: 'round',  //miter | round | bevel 
     };
 }
@@ -136,7 +136,9 @@ function doClickStuff(e, trailsLayer) {
     el.addData(ftr, lyr);
     map.addControl(el);	
 	
-	log(trailsLayer);
+	/*** make all non-selected trails opaque ***/ 
+	
+	trailsLayer.eachLayer(function(layer){ if(selected._leaflet_id !== layer._leaflet_id) {layer.setStyle({opacity: 0.3})}});
 	
 }
 
