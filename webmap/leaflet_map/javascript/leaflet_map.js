@@ -76,15 +76,6 @@ function highlight (layer) {	// will be used on hover
 	}	
 }
 
-var selected = null;
-
-function dehighlight (layer) { 	// will be used inside select function
-  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-	  trailsLayer.resetStyle(layer);
-	  layer.setText(null);
-  }
-}
-
 function getColor(description) { // ..used inside styleLines function. will color trails according to description details..
 	var color;
 	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
@@ -110,6 +101,15 @@ function styleLines(feature) {	// deafult style used for constructor of json
 var lyr;
 var ftr;
 var trailsLayer;
+
+var selected = null;
+
+function dehighlight (layer) { 	// will be used inside select function
+  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
+	  trailsLayer.resetStyle(layer);
+	  layer.setText(null);
+  }
+}
 
 function select (layer) {  // ..use inside onClick Function doClickStuff() to select and style clicked feature 
   if (selected !== null) {
@@ -192,10 +192,12 @@ map.on("click", function(e){
 		el.clear();
 		map.removeControl(el);
 	};	
-	/*** reset opaque trails ***/
+	/*** reset opaque trails, reset direction arrows ***/
 	trailsLayer.eachLayer(function(layer) {
 		layer.setStyle({opacity: 0.75})
 	});
+	selected.setText(null);
+	
 });
 
 map.on('moveend', function(e){
