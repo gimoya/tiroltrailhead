@@ -69,7 +69,6 @@ function highlight (layer) {
 		dashArray: '',
 		opacity: 15
 	});
-	layer.setText('>          ', { repeat: true, offset: 0.1, attributes: {fontSize: '0.7ex'} });
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
 	}
@@ -87,6 +86,7 @@ function select (layer) {
 	var previous = selected;
   }
 	map.fitBounds(layer.getBounds());
+	layer.setText('>                  ', { repeat: true, offset: 0.1, attributes: {fontSize: '0.8ex'} });
 	selected = layer;
 	if (previous) {
 	  dehighlight(previous);
