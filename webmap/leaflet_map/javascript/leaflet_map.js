@@ -86,7 +86,7 @@ function select (layer) {
 	var previous = selected;
   }
 	map.fitBounds(layer.getBounds());
-	layer.setText('⮞              ', { repeat: true, offset: -7, attributes: {fill: 'white', 'font-weight': 'bold', 'font-size': '15'} });
+	layer.setText('⮞              ', { repeat: true, offset: 0, attributes: {fill:  getColor(layer.feature.properties.description), 'font-weight': 'bold', 'font-size': '10'} });
 	selected = layer;
 	if (previous) {
 	  dehighlight(previous);
