@@ -152,6 +152,8 @@ $.getJSON('Trails_Z.json', function(json) {
 		
 		onEachFeature: function(feature, layer) {
 			
+			var defaultStyle = layer.style;
+			
 			// on events
 			layer.on({		
 				'mouseover': function (e) {
@@ -188,9 +190,7 @@ map.on("click", function(e){
 		map.removeControl(el);
 	};	
 	/*** reset opaque trails ***/
-	trailsLayer.eachLayer(function(layer) {
-		layer.setStyle({opacity: 0.4})
-	});
+	trailsLayer.resetStyle();
 });
 
 map.on('moveend', function(e){
