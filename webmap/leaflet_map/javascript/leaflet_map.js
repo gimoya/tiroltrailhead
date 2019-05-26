@@ -142,9 +142,13 @@ function doClickStuff(e) {
     el.addData(ftr, lyr);
     map.addControl(el);	
 	
-	/*** make all non-selected trails opaque ***/ 
+	/*** make all non-selected trails opaque, after resetting styles (ftr selected before)***/ 
 	
-	trailsLayer.eachLayer(function(layer){ if(selected._leaflet_id !== layer._leaflet_id) {layer.setStyle({opacity: 0.4})}});
+	trailsLayer.eachLayer(function(layer){ if(selected._leaflet_id !== layer._leaflet_id) {
+		dehighlight(layer);
+		layer.setStyle({opacity: 0.4})
+		}
+	});
 	
 }
 
