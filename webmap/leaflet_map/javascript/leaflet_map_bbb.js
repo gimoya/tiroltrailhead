@@ -88,7 +88,7 @@ function getColor(description) { // ..used inside styleLines function. will colo
 
 function styleLines(feature) {	// deafult style used for constructor of json
     return {
-		color: getColor(feature.properties.description),
+		color: 'red',
 		weight: 3,
 		opacity: 0.8,
 		lineJoin: 'round',  //miter | round | bevel 
