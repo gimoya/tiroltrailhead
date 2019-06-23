@@ -15,11 +15,11 @@ var basemaps = {
 		maxZoom : 19, attribution : attributionTirol, tileSize : 256 
 	}),
 	'TIRIS-Orthofoto': L.tileLayer('//wmts.kartetirol.at/gdi_ortho/{z}/{x}/{y}.png', { 
-		maxZoom : 19, attribution : attributionTirol, tileSize : 256 
+		maxZoom : 21, attribution : attributionTirol, tileSize : 256 
 	}),
     'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
         layers: 'Image_Schummerung_Gelaendemodell', 
-		maxZoom: 19, 
+		maxZoom: 21, 
 		attribution: attributionTirol
     }),
 };
