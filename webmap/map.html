@@ -878,9 +878,13 @@
 					var features = KMLtrails.features;
 					for (var i=0;i<features.length;i++) {
 						var ft = features[i];
-						console.log(ft.attributes.name);
-						if (ft.onScreen()){
-							output.push(ft.attributes.name);
+						try {
+							if (ft.onScreen()){
+								output.push(ft.attributes.name);
+								}
+							}
+						catch(err) {
+						  console.log = err.message & ', problem with feature: ' & ft.attributes.name;
 						}
 					}
 					// then, use output to display the list in html...
