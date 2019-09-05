@@ -528,7 +528,12 @@
 				var features = lineLayer.features;
 				for( var i = 0; i < lineLayer.features.length; i++ ) {	
 				    var ft = lineLayer.features[i];
-					var startPt = ft.geometry.getVertices(nodes = true)[0];  //if nodes = true is set only start and end points will be returned..
+					try {
+						  var startPt = ft.geometry.getVertices(nodes = true)[0];  //if nodes = true is set only start and end points will be returned..
+						}
+						catch(err) {
+						  console.log = err.message & ', NULL length? -> no node found for feature: ' & ft.name;
+					}
 					var pointGeometry = new OpenLayers.Geometry.Point(startPt.x, startPt.y);
 					var pointFeature = new OpenLayers.Feature.Vector(pointGeometry);
 					pointFeature.attributes = {name: ft.attributes.name};
