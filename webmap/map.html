@@ -532,7 +532,7 @@
 						  var startPt = ft.geometry.getVertices(nodes = true)[0];  //if nodes = true is set only start and end points will be returned..
 						}
 						catch(err) {
-						  console.log = err.message & ', NULL length? -> no node found for feature: ' & ft.name;
+						  console.log = err.message & ', NULL length? -> no node found for feature: ' & ft.attributes.name;
 					}
 					var pointGeometry = new OpenLayers.Geometry.Point(startPt.x, startPt.y);
 					var pointFeature = new OpenLayers.Feature.Vector(pointGeometry);
