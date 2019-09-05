@@ -21,6 +21,12 @@
     <customproperties/>
     <layer-tree-group name="CALC" expanded="1" checked="Qt::Checked">
       <customproperties/>
+      <layer-tree-layer id="Rasrkogel_3f682b6f_b612_440e_aa86_0fe895f9e1e5" name="Rasrkogel" expanded="1" checked="Qt::Checked" source="C:/Users/Kay/Google Drive/TRACKS/Rasrkogel.kml|layername=Rasrkogel" providerKey="ogr">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer id="Rauhenkopf_Arbiskopf_74da1c90_ee0c_40a1_99d7_1a5bf66a1a82" name="Rauhenkopf-Arbiskopf" expanded="1" checked="Qt::Checked" source="C:/Users/Kay/Google Drive/TRACKS/Rauhenkopf-Arbiskopf.kml|layername=Rauhenkopf-Arbiskopf" providerKey="ogr">
+        <customproperties/>
+      </layer-tree-layer>
       <layer-tree-layer id="output_84dd9592_546d_420e_bb2c_744e50026a75" name="segments" expanded="0" checked="Qt::Unchecked" source="./trail_segments.sqlite|layername=trail_segments" providerKey="ogr">
         <customproperties/>
       </layer-tree-layer>
@@ -80,12 +86,16 @@
       <item>DGM_Tirol_5m_epsg31254_5f098f6d_a3af_4f40_9aee_8fbcdc6c8527</item>
       <item>output_84dd9592_546d_420e_bb2c_744e50026a75</item>
       <item>gdi_base_summer_cf071aec_e3d5_4eba_baf9_745106b93215</item>
+      <item>Rauhenkopf_Arbiskopf_74da1c90_ee0c_40a1_99d7_1a5bf66a1a82</item>
+      <item>Rasrkogel_3f682b6f_b612_440e_aa86_0fe895f9e1e5</item>
     </custom-order>
   </layer-tree-group>
   <snapping-settings tolerance="0" intersection-snapping="1" enabled="1" mode="3" unit="2" type="1">
     <individual-layer-settings>
       <layer-setting id="trails_utm_utf820141118153222040" tolerance="13" units="1" enabled="1" type="1"/>
       <layer-setting id="output_84dd9592_546d_420e_bb2c_744e50026a75" tolerance="12" units="1" enabled="0" type="1"/>
+      <layer-setting id="Rauhenkopf_Arbiskopf_74da1c90_ee0c_40a1_99d7_1a5bf66a1a82" tolerance="12" units="1" enabled="0" type="1"/>
+      <layer-setting id="Rasrkogel_3f682b6f_b612_440e_aa86_0fe895f9e1e5" tolerance="12" units="1" enabled="0" type="1"/>
       <layer-setting id="regions_utm_utf820141118153216780" tolerance="5" units="1" enabled="0" type="1"/>
     </individual-layer-settings>
   </snapping-settings>
@@ -93,10 +103,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>1319079.8151193861849606</xmin>
-      <ymin>5965222.85186860617250204</ymin>
-      <xmax>1357940.48216329189017415</xmax>
-      <ymax>5990134.88419293519109488</ymax>
+      <xmin>1310612.85031342436559498</xmin>
+      <ymin>5969418.01127560902386904</ymin>
+      <xmax>1311419.12625329080037773</xmax>
+      <ymax>5971027.72835781518369913</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -117,6 +127,16 @@
   <projectModels/>
   <legend updateDrawingOrder="true">
     <legendgroup name="CALC" checked="Qt::Checked" open="true">
+      <legendlayer name="Rasrkogel" showFeatureCount="0" checked="Qt::Checked" drawingOrder="-1" open="true">
+        <filegroup hidden="false" open="true">
+          <legendlayerfile isInOverview="0" visible="1" layerid="Rasrkogel_3f682b6f_b612_440e_aa86_0fe895f9e1e5"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer name="Rauhenkopf-Arbiskopf" showFeatureCount="0" checked="Qt::Checked" drawingOrder="-1" open="true">
+        <filegroup hidden="false" open="true">
+          <legendlayerfile isInOverview="0" visible="1" layerid="Rauhenkopf_Arbiskopf_74da1c90_ee0c_40a1_99d7_1a5bf66a1a82"/>
+        </filegroup>
+      </legendlayer>
       <legendlayer name="segments" showFeatureCount="0" checked="Qt::Unchecked" drawingOrder="-1" open="false">
         <filegroup hidden="false" open="false">
           <legendlayerfile isInOverview="0" visible="0" layerid="output_84dd9592_546d_420e_bb2c_744e50026a75"/>
@@ -879,6 +899,534 @@
         <rasterresampler maxOversampling="2"/>
       </pipe>
       <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer simplifyAlgorithm="0" geometry="Line" autoRefreshTime="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" type="vector" minScale="1e+08" labelsEnabled="0" maxScale="0" styleCategories="AllStyleCategories" simplifyMaxScale="1" refreshOnNotifyEnabled="0" hasScaleBasedVisibilityFlag="0" readOnly="0" wkbType="MultiLineStringZ" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyLocal="1">
+      <extent>
+        <xmin>11.75170199999999987</xmin>
+        <ymin>47.16911699999999996</ymin>
+        <xmax>11.81644599999999912</xmax>
+        <ymax>47.23283500000000146</ymax>
+      </extent>
+      <id>Rasrkogel_3f682b6f_b612_440e_aa86_0fe895f9e1e5</id>
+      <datasource>C:/Users/Kay/Google Drive/TRACKS/Rasrkogel.kml|layername=Rasrkogel</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Rasrkogel</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type>dataset</type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 forceraster="0" enableorderby="0" symbollevels="0" type="singleSymbol">
+        <symbols>
+          <symbol clip_to_extent="1" name="0" force_rhr="0" alpha="1" type="line">
+            <layer pass="0" class="SimpleLine" locked="0" enabled="1">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="141,90,153,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="0.26"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="ring_filter" v="0"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" name="name" type="QString"/>
+                  <Option name="properties"/>
+                  <Option value="collection" name="type" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="Name">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="description">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="timestamp">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="begin">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="end">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="altitudeMode">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="tessellate">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="extrude">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="visibility">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="drawOrder">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="icon">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias index="0" field="Name" name=""/>
+        <alias index="1" field="description" name=""/>
+        <alias index="2" field="timestamp" name=""/>
+        <alias index="3" field="begin" name=""/>
+        <alias index="4" field="end" name=""/>
+        <alias index="5" field="altitudeMode" name=""/>
+        <alias index="6" field="tessellate" name=""/>
+        <alias index="7" field="extrude" name=""/>
+        <alias index="8" field="visibility" name=""/>
+        <alias index="9" field="drawOrder" name=""/>
+        <alias index="10" field="icon" name=""/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults>
+        <default field="Name" applyOnUpdate="0" expression=""/>
+        <default field="description" applyOnUpdate="0" expression=""/>
+        <default field="timestamp" applyOnUpdate="0" expression=""/>
+        <default field="begin" applyOnUpdate="0" expression=""/>
+        <default field="end" applyOnUpdate="0" expression=""/>
+        <default field="altitudeMode" applyOnUpdate="0" expression=""/>
+        <default field="tessellate" applyOnUpdate="0" expression=""/>
+        <default field="extrude" applyOnUpdate="0" expression=""/>
+        <default field="visibility" applyOnUpdate="0" expression=""/>
+        <default field="drawOrder" applyOnUpdate="0" expression=""/>
+        <default field="icon" applyOnUpdate="0" expression=""/>
+      </defaults>
+      <constraints>
+        <constraint field="Name" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="description" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="timestamp" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="begin" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="end" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="altitudeMode" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="tessellate" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="extrude" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="visibility" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="drawOrder" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="icon" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint desc="" field="Name" exp=""/>
+        <constraint desc="" field="description" exp=""/>
+        <constraint desc="" field="timestamp" exp=""/>
+        <constraint desc="" field="begin" exp=""/>
+        <constraint desc="" field="end" exp=""/>
+        <constraint desc="" field="altitudeMode" exp=""/>
+        <constraint desc="" field="tessellate" exp=""/>
+        <constraint desc="" field="extrude" exp=""/>
+        <constraint desc="" field="visibility" exp=""/>
+        <constraint desc="" field="drawOrder" exp=""/>
+        <constraint desc="" field="icon" exp=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+      </attributeactions>
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+    <maplayer simplifyAlgorithm="0" geometry="Line" autoRefreshTime="0" refreshOnNotifyMessage="" autoRefreshEnabled="0" type="vector" minScale="1e+08" labelsEnabled="0" maxScale="0" styleCategories="AllStyleCategories" simplifyMaxScale="1" refreshOnNotifyEnabled="0" hasScaleBasedVisibilityFlag="0" readOnly="0" wkbType="MultiLineStringZ" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyLocal="1">
+      <extent>
+        <xmin>11.81811300000000031</xmin>
+        <ymin>47.21879200000000054</ymin>
+        <xmax>11.82954999999999934</xmax>
+        <ymax>47.23478800000000177</ymax>
+      </extent>
+      <id>Rauhenkopf_Arbiskopf_74da1c90_ee0c_40a1_99d7_1a5bf66a1a82</id>
+      <datasource>C:/Users/Kay/Google Drive/TRACKS/Rauhenkopf-Arbiskopf.kml|layername=Rauhenkopf-Arbiskopf</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Rauhenkopf-Arbiskopf</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type>dataset</type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 forceraster="0" enableorderby="0" symbollevels="0" type="singleSymbol">
+        <symbols>
+          <symbol clip_to_extent="1" name="0" force_rhr="0" alpha="1" type="line">
+            <layer pass="0" class="SimpleLine" locked="0" enabled="1">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="114,155,111,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="0.26"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="ring_filter" v="0"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" name="name" type="QString"/>
+                  <Option name="properties"/>
+                  <Option value="collection" name="type" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="Name">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="description">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="timestamp">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="begin">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="end">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="altitudeMode">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="tessellate">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="extrude">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="visibility">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="drawOrder">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="icon">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias index="0" field="Name" name=""/>
+        <alias index="1" field="description" name=""/>
+        <alias index="2" field="timestamp" name=""/>
+        <alias index="3" field="begin" name=""/>
+        <alias index="4" field="end" name=""/>
+        <alias index="5" field="altitudeMode" name=""/>
+        <alias index="6" field="tessellate" name=""/>
+        <alias index="7" field="extrude" name=""/>
+        <alias index="8" field="visibility" name=""/>
+        <alias index="9" field="drawOrder" name=""/>
+        <alias index="10" field="icon" name=""/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults>
+        <default field="Name" applyOnUpdate="0" expression=""/>
+        <default field="description" applyOnUpdate="0" expression=""/>
+        <default field="timestamp" applyOnUpdate="0" expression=""/>
+        <default field="begin" applyOnUpdate="0" expression=""/>
+        <default field="end" applyOnUpdate="0" expression=""/>
+        <default field="altitudeMode" applyOnUpdate="0" expression=""/>
+        <default field="tessellate" applyOnUpdate="0" expression=""/>
+        <default field="extrude" applyOnUpdate="0" expression=""/>
+        <default field="visibility" applyOnUpdate="0" expression=""/>
+        <default field="drawOrder" applyOnUpdate="0" expression=""/>
+        <default field="icon" applyOnUpdate="0" expression=""/>
+      </defaults>
+      <constraints>
+        <constraint field="Name" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="description" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="timestamp" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="begin" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="end" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="altitudeMode" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="tessellate" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="extrude" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="visibility" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="drawOrder" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+        <constraint field="icon" unique_strength="0" exp_strength="0" notnull_strength="0" constraints="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint desc="" field="Name" exp=""/>
+        <constraint desc="" field="description" exp=""/>
+        <constraint desc="" field="timestamp" exp=""/>
+        <constraint desc="" field="begin" exp=""/>
+        <constraint desc="" field="end" exp=""/>
+        <constraint desc="" field="altitudeMode" exp=""/>
+        <constraint desc="" field="tessellate" exp=""/>
+        <constraint desc="" field="extrude" exp=""/>
+        <constraint desc="" field="visibility" exp=""/>
+        <constraint desc="" field="drawOrder" exp=""/>
+        <constraint desc="" field="icon" exp=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+      </attributeactions>
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
     </maplayer>
     <maplayer refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" minScale="1e+08" autoRefreshTime="0" autoRefreshEnabled="0" maxScale="0" hasScaleBasedVisibilityFlag="0" type="raster" styleCategories="AllStyleCategories">
       <extent>
@@ -2246,15 +2794,6 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <property key="dualview/previewExpressions">
           <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
         </property>
         <property key="embeddedWidgets/count" value="0"/>
         <property key="variableNames"/>
@@ -2457,7 +2996,7 @@ def my_form_open(dialog, layer, feature):
       <attributeactions>
         <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
       </attributeactions>
-      <attributetableconfig sortOrder="1" actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;">
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;">
         <columns>
           <column hidden="0" width="273" name="OGC_FID" type="field"/>
           <column hidden="0" width="377" name="name" type="field"/>
@@ -2542,6 +3081,8 @@ def my_form_open(dialog, layer, feature):
     <layer id="DGM_Tirol_5m_epsg31254_5f098f6d_a3af_4f40_9aee_8fbcdc6c8527"/>
     <layer id="output_84dd9592_546d_420e_bb2c_744e50026a75"/>
     <layer id="gdi_base_summer_cf071aec_e3d5_4eba_baf9_745106b93215"/>
+    <layer id="Rauhenkopf_Arbiskopf_74da1c90_ee0c_40a1_99d7_1a5bf66a1a82"/>
+    <layer id="Rasrkogel_3f682b6f_b612_440e_aa86_0fe895f9e1e5"/>
   </layerorder>
   <properties>
     <DefaultStyles>
