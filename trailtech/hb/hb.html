@@ -21,10 +21,73 @@
        width: 100%;
        height: 100%;
     }
+
+
+	/* Popover styling */
+
+	a {
+	  text-decoration: none;
+	}
+	.popover__title {
+	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  font-size: 24px;
+	  line-height: 36px;
+	  text-decoration: none;
+	  color: white;
+	  text-align: left;
+	  padding: 15px 0;
+	}
+
+	.popover__wrapper {
+	  position: absolute;
+	  right: 0;
+	  top:0;
+	  margin-top: 0rem;
+	  margin-right: 4rem;
+	  display: inline-block;
+	}
+	.popover__content { 
+	  opacity: 0;
+	  visibility: hidden;
+	  position: absolute;
+	  right: 0;
+	  transform: translate(0, 10px);
+	  background-color: #bfbfbf;
+	  padding: 1.5rem;
+	  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	  width: auto;
+	}
+	.popover__content:before {
+	  position: absolute;
+	  z-index: -1;
+	  content: "";
+	  right: calc(50% - 10px);
+	  top: -8px;
+	  border-style: solid;
+	  border-width: 0 10px 10px 10px;
+	  border-color: transparent transparent #bfbfbf transparent;
+	  transition-duration: 0.3s;
+	  transition-property: transform;
+	}
+	.popover__wrapper:hover .popover__content {
+	  z-index: 10;
+	  opacity: 1;
+	  visibility: visible;
+	  transform: translate(0, -20px);
+	  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+	}
   </style>
 </head>
 <body>
   <div id="map"></div>
+  	<div class="popover__wrapper">
+	  <a href="#">
+		<h2 class="popover__title">Legende</h2>
+	  </a>
+	  <div class="popover__content">
+		<img src="http://tiroltrailhead.com/trailtech/hb/legende.jpg" width="300">
+	  </div>
+	</div>
   <script>
       var map = L.map('map').setView([47.04417099924193, 12.806376095397468], 15.5);
        L.tileLayer('/trailtech/hb/{z}/{x}/{y}.jpg', {
