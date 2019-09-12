@@ -22,7 +22,6 @@
        height: 100%;
     }
 
-
 	/* Popover styling */
 
 	a {
@@ -35,10 +34,13 @@
 	  text-decoration: none;
 	  color: white;
 	  text-align: left;
-	  padding: 15px 0;
+	  padding: 5px;
+	  background: 5px;
+	  background-color: #0000003b;
 	}
 
 	.popover__wrapper {
+	  z-index: 1000;
 	  position: absolute;
 	  right: 0;
 	  top:0;
@@ -90,7 +92,7 @@
 	</div>
   <script>
       var map = L.map('map').setView([47.04417099924193, 12.806376095397468], 15.5);
-       L.tileLayer('/trailtech/hb/{z}/{x}/{y}.jpg', {
+       L.tileLayer('http://tiroltrailhead.com/trailtech/hb/{z}/{x}/{y}.jpg', {
         minZoom: 14,
         maxZoom: 17,
         tms: false,
