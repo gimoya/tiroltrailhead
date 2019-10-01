@@ -93,10 +93,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>1258951.07757661119103432</xmin>
-      <ymin>5971432.31247164681553841</ymin>
-      <xmax>1264183.15153003484010696</xmax>
-      <ymax>5976820.03872938826680183</ymax>
+      <xmin>1254136.91676305257715285</xmin>
+      <ymin>5976482.09590889513492584</ymin>
+      <xmax>1257557.19825031911022961</xmax>
+      <ymax>5980004.12953110039234161</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -2248,6 +2248,7 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <customproperties>
         <property key="dualview/previewExpressions">
+          <value>COALESCE( "name", '&lt;NULL>' )</value>
           <value>COALESCE( "name", '&lt;NULL>' )</value>
           <value>COALESCE( "name", '&lt;NULL>' )</value>
           <value>COALESCE( "name", '&lt;NULL>' )</value>
