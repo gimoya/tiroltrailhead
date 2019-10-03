@@ -3,38 +3,29 @@ var map = L.map('map', {
   zoom: 13
 });
 
-var attributionTirol = '&copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
-
 /*** Add base maps with controls ***/
 var basemaps = {
     'osm4UMaps': L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
 		maxZoom: 19,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
 	}),
-	'TIRIS-Sommerkarte': L.tileLayer('//wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png', { 
-		maxZoom : 19, attribution : attributionTirol, tileSize : 256 
-	}),
-	'TIRIS-Orthofoto': L.tileLayer('//wmts.kartetirol.at/gdi_ortho/{z}/{x}/{y}.png', { 
-		maxZoom : 19, attribution : attributionTirol, tileSize : 256 
-	}),
-    'TIRIS-Gelände': L.tileLayer.wms('//gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?', {
-        layers: 'Image_Schummerung_Gelaendemodell', 
-		maxZoom: 19, 
-		attribution: attributionTirol
-    }),
+    'Google Hybrid': L.tileLayer('//mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+		maxZoom: 19,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://4umaps.eu" target="_blank">4UMaps.eu</a>'
+	}),	
+	'MTBMap' = L.tileLayer('http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &amp; USGS'
+	});
 };
 
 var overlays = {
-	'TIRIS-Namen': L.tileLayer('//wmts.kartetirol.at/gdi_nomenklatur/{z}/{x}/{y}.png', { 
-		maxZoom : 16, tileSize : 256 
-	}),
 	'Wanderwege': L.tileLayer('https://tile.waymarkedtrails.org/slopes/{z}/{x}/{y}.png', {
 		maxZoom: 16, attribution: '&copy; <a href="http://www.waymarkedtrails.org" target="_blank">waymarkedtrails.org</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.de" target="_blank">CC BY-SA 3.0 DE</a>'
 	})
 };
 
 L.control.layers(basemaps, overlays).addTo(map);
-basemaps.osm4UMaps.addTo(map);
+basemaps.MTBMap.addTo(map);
 
 
 /*** Set up Elevation Control ***/
@@ -88,7 +79,7 @@ function getColor(description) { // ..used inside styleLines function. will colo
 
 function styleLines(feature) {	// deafult style used for constructor of json
     return {
-		color: 'red',
+		color: getColor(feature.properties.description),
 		weight: 3,
 		opacity: 0.8,
 		lineJoin: 'round',  //miter | round | bevel 
@@ -154,7 +145,7 @@ function doClickStuff(e) {
 
 /*** Add Trails ***/
 
-$.getJSON('bbb_tracks.geojson', function(json) {
+$.getJSON('trails_elba.geojson', function(json) {
 	trailsLayer = L.geoJson(json, {
 		
 		style: 	styleLines,
