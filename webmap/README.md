@@ -4,7 +4,7 @@ tiroltrailhead web map
 ***An Openlayers Webmap*** 🗺️ ***for MTB-Trail Riding Enthusiasts*** 🚵 ***in Tirol / Austria***
 _______________________________________________________________________
 
-The PROJECT 👷️ is hosted at tiroltrailhead.com/webmap/map.html 🖥
+The PROJECT 👷️ is hosted at tiroltrailhead.com/webmap/trails.html 🖥
 
 To access the Webmap you need a password. You can request the password by writing an e-mail to webmap@tiroltrailhead.com.
 
