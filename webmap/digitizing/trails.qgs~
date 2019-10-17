@@ -24,12 +24,12 @@
     </layer-tree-group>
     <layer-tree-group expanded="1" name="Routen" checked="Qt::Checked">
       <customproperties/>
-    </layer-tree-group>
-    <layer-tree-group expanded="1" name="Trailmap" checked="Qt::Checked">
-      <customproperties/>
       <layer-tree-layer providerKey="ogr" expanded="1" name="Kalkofen" checked="Qt::Checked" source="C:/Users/Kay/Google Drive/TRACKS/Kalkofen.kml|layername=Kalkofen" id="Kalkofen_0fb39bff_c34f_479f_8bf1_9b12721227cc">
         <customproperties/>
       </layer-tree-layer>
+    </layer-tree-group>
+    <layer-tree-group expanded="1" name="Trailmap" checked="Qt::Checked">
+      <customproperties/>
       <layer-tree-layer providerKey="ogr" expanded="0" name="trails_utm_utf8" checked="Qt::Checked" source="./trails_utm_utf8.sqlite" id="trails_utm_utf820141118153222040">
         <customproperties/>
       </layer-tree-layer>
@@ -122,13 +122,14 @@
   <projectModels/>
   <legend updateDrawingOrder="true">
     <legendgroup open="true" name="CALC" checked="Qt::Checked"/>
-    <legendgroup open="true" name="Routen" checked="Qt::Checked"/>
-    <legendgroup open="true" name="Trailmap" checked="Qt::Checked">
+    <legendgroup open="true" name="Routen" checked="Qt::Checked">
       <legendlayer open="true" name="Kalkofen" checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1">
         <filegroup open="true" hidden="false">
           <legendlayerfile visible="1" isInOverview="0" layerid="Kalkofen_0fb39bff_c34f_479f_8bf1_9b12721227cc"/>
         </filegroup>
       </legendlayer>
+    </legendgroup>
+    <legendgroup open="true" name="Trailmap" checked="Qt::Checked">
       <legendlayer open="false" name="trails_utm_utf8" checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1">
         <filegroup open="false" hidden="false">
           <legendlayerfile visible="1" isInOverview="0" layerid="trails_utm_utf820141118153222040"/>
