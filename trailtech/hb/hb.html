@@ -90,14 +90,55 @@
 		<img src="http://tiroltrailhead.com/trailtech/hb/legende.jpg" width="350">
 	  </div>
 	</div>
-  <script>
-      var map = L.map('map').setView([47.04417099924193, 12.806376095397468], 15.5);
-       L.tileLayer('http://tiroltrailhead.com/trailtech/hb/{z}/{x}/{y}.jpg', {
-        minZoom: 14,
-        maxZoom: 17,
-        tms: false,
-        attribution: '<a href="https://trailtech.at">trailtech.at</a>'
-      }).addTo(map);
+  
+  <script type="text/javascript">	
+			
+	function trim(str) {
+		return str.replace(/^\s+|\s+$/g, '');  
+	}
+	
+	var pw_prompt = prompt('Bitte Passwort (NEU!! Anfrage per E-Mail an: webmap@tiroltrailhead.com) eingeben, um auf die **tiroltrailhead web map** zu gelangen..',' ');
+	var pw = 'trailtech_hb9844_studie';
+	// if prompt is cancelled the pw_prompt var will be null!
+	if (pw_prompt == null) {
+		alert('Kein Passwort wurde angegeben, **tiroltrailhead web map** wird nicht geladen...');
+		if (bowser.msie) {
+			document.execCommand('Stop');
+		} else {
+			window.stop();
+		}
+		window.location='http://tiroltrailhead.com/webmap/info.html';
+	}
+	if (trim(pw_prompt) == pw ) {
+		alert('Passwort richtig! Mit dem Klicken auf OK stimmst Du dem TIROLTRAILHEAD Kodex (s. tiroltrailhead.com/webmap/info.html) und dem Haftungsausschluss zu!');
+	} else {
+		alert('Falsches Passwort, **tiroltrailhead web map** wird nicht geladen..');
+		if (bowser.msie) {
+			document.execCommand('Stop');
+		} else {
+			window.stop();
+		}
+		window.location='http://tiroltrailhead.com/webmap/info.html';
+	}
+	
+	/*
+	 * Check Browser and exit if not compatible
+	 * using bowser library
+	 */
+	if (!(bowser.chrome || bowser.firefox || bowser.android || bowser.safari || bowser.ios))
+	{
+		alert('Die Kompatibilität mit diesem Browser fehlt! Bitte Firefox, Chrome, Safari, Android- oder iOS-Browser verwenden!..');	
+		if (bowser.msie) document.execCommand('Stop');
+		window.stop();
+	}
+			
+	var map = L.map('map').setView([47.04417099924193, 12.806376095397468], 15.5);
+		L.tileLayer('http://tiroltrailhead.com/trailtech/hb/{z}/{x}/{y}.jpg', {
+		minZoom: 14,
+		maxZoom: 17,
+		tms: false,
+		attribution: '<a href="https://trailtech.at">trailtech.at</a>'
+	}).addTo(map);
   </script>
 </body>
 </html>
