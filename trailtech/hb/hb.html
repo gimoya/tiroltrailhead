@@ -113,9 +113,6 @@
 		alert('Passwort richtig! ..Plan ladet.');
 	} else {
 		alert('das Passwort ist leider falsch..');
-		if (bowser.msie) {
-			document.execCommand('Stop');
-		} else {
 			window.stop();
 		}
 		window.location='http://trailtech.at';
