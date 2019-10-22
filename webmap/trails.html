@@ -123,7 +123,7 @@
 					<p class="box3">
 						<span class="H2">Basiskarten</span> 	
 						</br><strong>OSM:</strong> Open MTB-Map
-						</br><strong>AV:</strong> &Ouml;sterreichische Alpenvereinskarte
+						</br><strong>AV-Wanderkarte:</strong> &Ouml;sterreichische Alpenvereinskarte
 						</br><strong>Kompass Wanderkarte:</strong> Wanderkarte bis Zoom 16!
 						</br>
 					</p>
@@ -169,7 +169,7 @@
 				<a id="ToggleButton"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
 				<input type="button" class="Basemap" value="oMTB" onclick="map.setBaseLayer(oMTB);">
 				<input type="button" class="Basemap" value="AV" onclick="map.setBaseLayer(AV);"-->
-				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(Kompass);">
+				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(oMTB);">
 				<!--input type="button" class="Basemap" value="AV" onclick="(map.getZoom() > 15) ? alert('AV in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(Kompass);"-->
 			</div>
 			
@@ -284,9 +284,9 @@
 			var AV = new OpenLayers.Layer.XYZ( "AV",
 				"https://maps.bergfex.at/oek/standard/{z}/{x}/{y}.jpg",
 				{
-					sphericalMercator: true,
-					buffer: 0,
-					attribution: "&copy; 2008, 2010 BEV, <a href='http://www.bergfex.at'>bergfex GmbH</a>"
+				sphericalMercator: true,
+				buffer: 0,
+				attribution: "&copy; 2008, 2010 BEV, <a href='http://www.bergfex.at'>bergfex GmbH</a>"
 				});	
 			
 			var oMTB = new OpenLayers.Layer.XYZ("OpenMTBMap", 
