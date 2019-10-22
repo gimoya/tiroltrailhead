@@ -123,8 +123,8 @@
 					<p class="box3">
 						<span class="H2">Basiskarten</span> 	
 						</br><strong>OSM:</strong> Open MTB-Map
-						</br><strong>Satellit:</strong> MAPBOX Satellite Images
-						</br><strong>Wanderkarte:</strong> M 1:50000, bis Zoom 16!
+						</br><strong>AV:</strong> &Ouml;sterreichische Alpenvereinskarte
+						</br><strong>Kompass Wanderkarte:</strong> Wanderkarte bis Zoom 16!
 						</br>
 					</p>
 					<p class="box3">
@@ -167,10 +167,10 @@
 			<div id="input-div">
 				<a id="Overview" onclick="getOverview();"><i class="fa fa-globe fa-4x"></i></<a>
 				<a id="ToggleButton"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
-				<input type="button" class="Basemap" value="OSM" onclick="map.setBaseLayer(osm);">
-				<input type="button" class="Basemap" value="MAPBOX" onclick="map.setBaseLayer(bhyb);"-->
-				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(mapSpecial);">
-				<!--input type="button" class="Basemap" value="OEK50" onclick="(map.getZoom() > 15) ? alert('OEK50 in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(mapSpecial);"-->
+				<input type="button" class="Basemap" value="oMTB" onclick="map.setBaseLayer(oMTB);">
+				<input type="button" class="Basemap" value="AV" onclick="map.setBaseLayer(AV);"-->
+				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(Kompass);">
+				<!--input type="button" class="Basemap" value="AV" onclick="(map.getZoom() > 15) ? alert('AV in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(Kompass);"-->
 			</div>
 			
 			<div id="map"></div>
@@ -250,13 +250,7 @@
 					}
 				}
 			});
-			
-			var bhyb = new OpenLayers.Layer.XYZ("OpenMTBMap", 
-				'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/${z}/${x}/${y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6ImNqdTFuZGVwZTAzOGczeXBwbTQ5N3ZuY3oifQ.p0q2f-xcteyL66n1sjkhJg',		
-				{
-				numZoomLevels: 18,
-				attribution: '&copy; <a href="https://www.mapbox.com">mapbox</a>'
-				});			
+					
 			/*
 			var apiKey = "ApTJzdkyN1DdFKkRAE6QIDtzihNaf6IWJsT-nQ_2eMoO4PN__0Tzhl2-WgJtXFSp";
 			
@@ -285,30 +279,24 @@
 			var mapSpecial = new OpenLayers.Layer.OSM("OpenCyclemapMap",
 			  "http://tile3.opencyclemap.org/landscape/${z}/${x}/${y}.png")
 			
-			var mapSpecial = new OpenLayers.Layer.XYZ( "OEK50",
-				"http://static5.bergfex.at/images/amap/${z}$folder/${z}_${x}_${y}.png",
+			*/
+			
+			var AV = new OpenLayers.Layer.XYZ( "AV",
+				"https://maps.bergfex.at/oek/standard/{z}/{x}/{y}.jpg",
 				{
 					sphericalMercator: true,
 					buffer: 0,
-					attribution: "&copy; 2008, 2010 BEV, <a href='http://www.bergfex.at'>bergfex GmbH</a>",
-					getURL: function(bounds) {
-						var path = OpenLayers.Layer.XYZ.prototype.getURL.apply(this, arguments);
-						var parts = path.split("$folder/");
-						var z = parseInt(parts[0].substr(-2));
-						path = path.replace("$folder", z>=14 ?
-							"/" + parts[1].substr(3, 2 + z-14) : "");
-						return path;
-					}
-				} );	
-			*/
-			var osm = new OpenLayers.Layer.XYZ("OpenMTBMap", 
+					attribution: "&copy; 2008, 2010 BEV, <a href='http://www.bergfex.at'>bergfex GmbH</a>"
+				});	
+			
+			var oMTB = new OpenLayers.Layer.XYZ("OpenMTBMap", 
 				"http://tile.mtbmap.cz/mtbmap_tiles/${z}/${x}/${y}.png",
 				{
 				numZoomLevels: 18,
 				attribution: "&copy; <a href='http://mtbmap.cz/'>MTB Map of Europe</a>"
 				});
 			
-			var mapSpecial = new OpenLayers.Layer.XYZ( "Kompass",
+			var Kompass = new OpenLayers.Layer.XYZ( "Kompass",
 				"http://ec2.cdn.ecmaps.de/WmsGateway.ashx.jpg?Experience=kompass&MapStyle=KOMPASS%20Touristik&TileX=${x}&TileY=${y}&ZoomLevel=${z}",
 				{
 				sphericalMercator: true,
@@ -857,7 +845,7 @@
 			
 			
 			/* ADD LAYERS AND MAPS*/
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, osm, bhyb, mapSpecial]);
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, osm, oMTB, Kompass]);
 			map.raiseLayer(pointLayer, map.layers.length);
 			/*
 			'
