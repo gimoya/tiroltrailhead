@@ -245,7 +245,7 @@
 							pointLayer.setVisibility(true);
 						}	
 						if(map.getZoom() > 16 && this.baseLayer.name == 'Kompass') {
-							map.setBaseLayer(osm);
+							map.setBaseLayer(oMTB);
 						}							
 					}
 				}
@@ -845,7 +845,7 @@
 			
 			
 			/* ADD LAYERS AND MAPS*/
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, osm, oMTB, Kompass]);
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, AV, oMTB, Kompass]);
 			map.raiseLayer(pointLayer, map.layers.length);
 			/*
 			'
