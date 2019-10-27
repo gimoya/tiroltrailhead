@@ -22,8 +22,11 @@
     <layer-tree-group checked="Qt::Checked" expanded="1" name="CALC">
       <customproperties/>
     </layer-tree-group>
-    <layer-tree-group checked="Qt::Unchecked" expanded="0" name="Routen">
+    <layer-tree-group checked="Qt::Checked" expanded="0" name="Routen">
       <customproperties/>
+      <layer-tree-layer checked="Qt::Checked" providerKey="ogr" source="C:/Users/Kay/Google Drive/TRACKS/Proxnalm-Pirchneraste.gpx|layername=tracks" expanded="1" name="Proxnalm-Pirchneraste tracks" id="Proxnalm_Pirchneraste_tracks_4dc7579f_9ef7_4539_bbeb_8013f749770e">
+        <customproperties/>
+      </layer-tree-layer>
       <layer-tree-layer checked="Qt::Checked" providerKey="ogr" source="C:/Users/Kay/Google Drive/TRACKS/Vize_Brgermeister.kml|layername=Paths" expanded="1" name="Vize_Brgermeister Paths" id="Vize_Brgermeister_Paths_0a1cf778_ffe2_4562_b39e_4610f3bb18ad">
         <customproperties/>
       </layer-tree-layer>
@@ -124,6 +127,7 @@
       <item>Eiblschrofen_Paths_1138abc0_02b1_4241_97ac_766c06322a67</item>
       <item>Brgermeister_Paths_b21604d5_865b_4c21_b054_5be06c441f0b</item>
       <item>Vize_Brgermeister_Paths_0a1cf778_ffe2_4562_b39e_4610f3bb18ad</item>
+      <item>Proxnalm_Pirchneraste_tracks_4dc7579f_9ef7_4539_bbeb_8013f749770e</item>
     </custom-order>
   </layer-tree-group>
   <snapping-settings enabled="1" intersection-snapping="1" mode="3" type="1" unit="2" tolerance="0">
@@ -136,6 +140,7 @@
       <layer-setting enabled="0" units="1" type="1" tolerance="12" id="PillerWasserfall_tracks_fdb1740b_77d2_4e66_81fe_62a4d0c5c218"/>
       <layer-setting enabled="0" units="1" type="1" tolerance="12" id="Burgermeister_toSchillerMensi_tracks_fb9c4fff_8147_4e2c_8f1a_979980a2c2dd"/>
       <layer-setting enabled="0" units="1" type="1" tolerance="12" id="Vize_Brgermeister_Paths_0a1cf778_ffe2_4562_b39e_4610f3bb18ad"/>
+      <layer-setting enabled="0" units="1" type="1" tolerance="12" id="Proxnalm_Pirchneraste_tracks_4dc7579f_9ef7_4539_bbeb_8013f749770e"/>
       <layer-setting enabled="0" units="1" type="1" tolerance="12" id="Nonsberg_Hüttegg_Pill_a6000f57_0bf3_40e5_802d_ddc7f112a07c"/>
       <layer-setting enabled="0" units="1" type="1" tolerance="12" id="Brgermeister_Paths_b21604d5_865b_4c21_b054_5be06c441f0b"/>
       <layer-setting enabled="0" units="1" type="1" tolerance="12" id="LeitenwegToSchillerMensi_Paths_bb51f57f_4961_4186_95ab_cbd2becceef0"/>
@@ -147,10 +152,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>1306510.10925451759248972</xmin>
-      <ymin>5994840.12806661892682314</ymin>
-      <xmax>1308920.28754968289285898</xmax>
-      <ymax>5999630.16440639365464449</ymax>
+      <xmin>1289277.37954972800798714</xmin>
+      <ymin>5992671.50087054912000895</ymin>
+      <xmax>1320051.07252751407213509</xmax>
+      <ymax>6014195.91362949553877115</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -171,55 +176,60 @@
   <projectModels/>
   <legend updateDrawingOrder="true">
     <legendgroup checked="Qt::Checked" name="CALC" open="true"/>
-    <legendgroup checked="Qt::Unchecked" name="Routen" open="false">
+    <legendgroup checked="Qt::Checked" name="Routen" open="false">
+      <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="Proxnalm-Pirchneraste tracks" open="true">
+        <filegroup hidden="false" open="true">
+          <legendlayerfile isInOverview="0" layerid="Proxnalm_Pirchneraste_tracks_4dc7579f_9ef7_4539_bbeb_8013f749770e" visible="1"/>
+        </filegroup>
+      </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="Vize_Brgermeister Paths" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="Vize_Brgermeister_Paths_0a1cf778_ffe2_4562_b39e_4610f3bb18ad" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Vize_Brgermeister_Paths_0a1cf778_ffe2_4562_b39e_4610f3bb18ad" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="Brgermeister Paths" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="Brgermeister_Paths_b21604d5_865b_4c21_b054_5be06c441f0b" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Brgermeister_Paths_b21604d5_865b_4c21_b054_5be06c441f0b" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="Eiblschrofen Paths" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="Eiblschrofen_Paths_1138abc0_02b1_4241_97ac_766c06322a67" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Eiblschrofen_Paths_1138abc0_02b1_4241_97ac_766c06322a67" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="SchwazerBerg Paths" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="SchwazerBerg_Paths_5ef99973_cf7d_487b_a3f1_b5a1b45796f6" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="SchwazerBerg_Paths_5ef99973_cf7d_487b_a3f1_b5a1b45796f6" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="LeitenwegToSchillerMensi Paths" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="LeitenwegToSchillerMensi_Paths_bb51f57f_4961_4186_95ab_cbd2becceef0" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="LeitenwegToSchillerMensi_Paths_bb51f57f_4961_4186_95ab_cbd2becceef0" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="Stadt Schwaz - 1.9 km Paths" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="Stadt_Schwaz___1_9_km_Paths_3f0eb11d_f230_4d39_b431_893815a20416" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Stadt_Schwaz___1_9_km_Paths_3f0eb11d_f230_4d39_b431_893815a20416" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="Burgermeister-toSchillerMensi tracks" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="Burgermeister_toSchillerMensi_tracks_fb9c4fff_8147_4e2c_8f1a_979980a2c2dd" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Burgermeister_toSchillerMensi_tracks_fb9c4fff_8147_4e2c_8f1a_979980a2c2dd" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="Nonsberg-Hüttegg-Pill" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="Nonsberg_Hüttegg_Pill_a6000f57_0bf3_40e5_802d_ddc7f112a07c" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Nonsberg_Hüttegg_Pill_a6000f57_0bf3_40e5_802d_ddc7f112a07c" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="PillerWasserfall tracks" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="PillerWasserfall_tracks_fdb1740b_77d2_4e66_81fe_62a4d0c5c218" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="PillerWasserfall_tracks_fdb1740b_77d2_4e66_81fe_62a4d0c5c218" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" showFeatureCount="0" drawingOrder="-1" name="Kalkofen" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="Kalkofen_0fb39bff_c34f_479f_8bf1_9b12721227cc" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Kalkofen_0fb39bff_c34f_479f_8bf1_9b12721227cc" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
@@ -3007,6 +3017,314 @@
       <previewExpression></previewExpression>
       <mapTip></mapTip>
     </maplayer>
+    <maplayer refreshOnNotifyMessage="" autoRefreshEnabled="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0" readOnly="0" minScale="1e+08" simplifyDrawingHints="1" simplifyAlgorithm="0" type="vector" simplifyDrawingTol="1" styleCategories="AllStyleCategories" wkbType="MultiLineStringZ" maxScale="0" geometry="Line" simplifyLocal="1" labelsEnabled="0" autoRefreshTime="0">
+      <extent>
+        <xmin>11.745749</xmin>
+        <ymin>47.33028399999999891</ymin>
+        <xmax>11.76035599999999981</xmax>
+        <ymax>47.33920700000000181</ymax>
+      </extent>
+      <id>Proxnalm_Pirchneraste_tracks_4dc7579f_9ef7_4539_bbeb_8013f749770e</id>
+      <datasource>C:/Users/Kay/Google Drive/TRACKS/Proxnalm-Pirchneraste.gpx|layername=tracks</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Proxnalm-Pirchneraste tracks</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type>dataset</type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="UTF-8">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 enableorderby="0" type="singleSymbol" forceraster="0" symbollevels="0">
+        <symbols>
+          <symbol alpha="1" force_rhr="0" type="line" clip_to_extent="1" name="0">
+            <layer enabled="1" pass="0" locked="0" class="SimpleLine">
+              <prop v="square" k="capstyle"/>
+              <prop v="5;2" k="customdash"/>
+              <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+              <prop v="MM" k="customdash_unit"/>
+              <prop v="0" k="draw_inside_polygon"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="152,125,183,255" k="line_color"/>
+              <prop v="solid" k="line_style"/>
+              <prop v="0.26" k="line_width"/>
+              <prop v="MM" k="line_width_unit"/>
+              <prop v="0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="0" k="ring_filter"/>
+              <prop v="0" k="use_custom_dash"/>
+              <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option value="" type="QString" name="name"/>
+                  <Option name="properties"/>
+                  <Option value="collection" type="QString" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="name">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="cmt">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="desc">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="src">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="link1_href">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="link1_text">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="link1_type">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="link2_href">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="link2_text">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="link2_type">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="number">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="type">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="gpx_style_line">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="locus_rteComputeType">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="locus_rteSimpleRoundabouts">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias field="name" index="0" name=""/>
+        <alias field="cmt" index="1" name=""/>
+        <alias field="desc" index="2" name=""/>
+        <alias field="src" index="3" name=""/>
+        <alias field="link1_href" index="4" name=""/>
+        <alias field="link1_text" index="5" name=""/>
+        <alias field="link1_type" index="6" name=""/>
+        <alias field="link2_href" index="7" name=""/>
+        <alias field="link2_text" index="8" name=""/>
+        <alias field="link2_type" index="9" name=""/>
+        <alias field="number" index="10" name=""/>
+        <alias field="type" index="11" name=""/>
+        <alias field="gpx_style_line" index="12" name=""/>
+        <alias field="locus_rteComputeType" index="13" name=""/>
+        <alias field="locus_rteSimpleRoundabouts" index="14" name=""/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults>
+        <default expression="" field="name" applyOnUpdate="0"/>
+        <default expression="" field="cmt" applyOnUpdate="0"/>
+        <default expression="" field="desc" applyOnUpdate="0"/>
+        <default expression="" field="src" applyOnUpdate="0"/>
+        <default expression="" field="link1_href" applyOnUpdate="0"/>
+        <default expression="" field="link1_text" applyOnUpdate="0"/>
+        <default expression="" field="link1_type" applyOnUpdate="0"/>
+        <default expression="" field="link2_href" applyOnUpdate="0"/>
+        <default expression="" field="link2_text" applyOnUpdate="0"/>
+        <default expression="" field="link2_type" applyOnUpdate="0"/>
+        <default expression="" field="number" applyOnUpdate="0"/>
+        <default expression="" field="type" applyOnUpdate="0"/>
+        <default expression="" field="gpx_style_line" applyOnUpdate="0"/>
+        <default expression="" field="locus_rteComputeType" applyOnUpdate="0"/>
+        <default expression="" field="locus_rteSimpleRoundabouts" applyOnUpdate="0"/>
+      </defaults>
+      <constraints>
+        <constraint notnull_strength="0" field="name" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="cmt" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="desc" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="src" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="link1_href" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="link1_text" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="link1_type" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="link2_href" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="link2_text" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="link2_type" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="number" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="type" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="gpx_style_line" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="locus_rteComputeType" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint notnull_strength="0" field="locus_rteSimpleRoundabouts" exp_strength="0" unique_strength="0" constraints="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint desc="" field="name" exp=""/>
+        <constraint desc="" field="cmt" exp=""/>
+        <constraint desc="" field="desc" exp=""/>
+        <constraint desc="" field="src" exp=""/>
+        <constraint desc="" field="link1_href" exp=""/>
+        <constraint desc="" field="link1_text" exp=""/>
+        <constraint desc="" field="link1_type" exp=""/>
+        <constraint desc="" field="link2_href" exp=""/>
+        <constraint desc="" field="link2_text" exp=""/>
+        <constraint desc="" field="link2_type" exp=""/>
+        <constraint desc="" field="number" exp=""/>
+        <constraint desc="" field="type" exp=""/>
+        <constraint desc="" field="gpx_style_line" exp=""/>
+        <constraint desc="" field="locus_rteComputeType" exp=""/>
+        <constraint desc="" field="locus_rteSimpleRoundabouts" exp=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
     <maplayer refreshOnNotifyMessage="" autoRefreshEnabled="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0" readOnly="0" minScale="1e+08" simplifyDrawingHints="1" simplifyAlgorithm="0" type="vector" simplifyDrawingTol="1" styleCategories="AllStyleCategories" wkbType="LineString" maxScale="0" geometry="Line" simplifyLocal="1" labelsEnabled="0" autoRefreshTime="0">
       <extent>
         <xmin>11.726051</xmin>
@@ -5166,7 +5484,10 @@ def my_form_open(dialog, layer, feature):
         <sizescale/>
       </renderer-v2>
       <customproperties>
-        <property value="COALESCE( &quot;name&quot;, '&lt;NULL>' )" key="dualview/previewExpressions"/>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "name", '&lt;NULL>' )</value>
+          <value>COALESCE( "name", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -5393,7 +5714,7 @@ def my_form_open(dialog, layer, feature):
       <attributeactions>
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
-      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;character&quot;">
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;">
         <columns>
           <column width="273" hidden="0" type="field" name="OGC_FID"/>
           <column width="377" hidden="0" type="field" name="name"/>
@@ -5491,6 +5812,7 @@ def my_form_open(dialog, layer, feature):
     <layer id="Eiblschrofen_Paths_1138abc0_02b1_4241_97ac_766c06322a67"/>
     <layer id="Brgermeister_Paths_b21604d5_865b_4c21_b054_5be06c441f0b"/>
     <layer id="Vize_Brgermeister_Paths_0a1cf778_ffe2_4562_b39e_4610f3bb18ad"/>
+    <layer id="Proxnalm_Pirchneraste_tracks_4dc7579f_9ef7_4539_bbeb_8013f749770e"/>
   </layerorder>
   <properties>
     <DefaultStyles>
@@ -6016,7 +6338,7 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
       </LayerSnappingToleranceUnitList>
       <SnappingMode type="QString">advanced</SnappingMode>
-      <TopologicalEditing type="int">1</TopologicalEditing>
+      <TopologicalEditing type="int">0</TopologicalEditing>
     </Digitizing>
     <Gui>
       <CanvasColorBluePart type="int">255</CanvasColorBluePart>
