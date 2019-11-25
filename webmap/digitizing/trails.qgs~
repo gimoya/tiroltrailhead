@@ -135,30 +135,30 @@
   </layer-tree-group>
   <snapping-settings enabled="1" unit="2" tolerance="0" type="1" mode="3" intersection-snapping="1">
     <individual-layer-settings>
-      <layer-setting id="Kalkofen_0fb39bff_c34f_479f_8bf1_9b12721227cc" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="regions_utm_utf820141118153216780" enabled="0" tolerance="5" units="1" type="1"/>
-      <layer-setting id="PillerWasserfall_tracks_fdb1740b_77d2_4e66_81fe_62a4d0c5c218" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="Eiblschrofen_Paths_1138abc0_02b1_4241_97ac_766c06322a67" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="Nonsberg_Hüttegg_Pill_a6000f57_0bf3_40e5_802d_ddc7f112a07c" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="trails_utm_utf820141118153222040" enabled="1" tolerance="13" units="1" type="1"/>
-      <layer-setting id="LeitenwegToSchillerMensi_Paths_bb51f57f_4961_4186_95ab_cbd2becceef0" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="Proxnalm_Pirchneraste_tracks_4dc7579f_9ef7_4539_bbeb_8013f749770e" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="Stadt_Schwaz___1_9_km_Paths_3f0eb11d_f230_4d39_b431_893815a20416" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="output_84dd9592_546d_420e_bb2c_744e50026a75" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="SchwazerBerg_Paths_5ef99973_cf7d_487b_a3f1_b5a1b45796f6" enabled="0" tolerance="12" units="1" type="1"/>
       <layer-setting id="Brgermeister_Paths_b21604d5_865b_4c21_b054_5be06c441f0b" enabled="0" tolerance="12" units="1" type="1"/>
-      <layer-setting id="Burgermeister_toSchillerMensi_tracks_fb9c4fff_8147_4e2c_8f1a_979980a2c2dd" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="LeitenwegToSchillerMensi_Paths_bb51f57f_4961_4186_95ab_cbd2becceef0" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="PillerWasserfall_tracks_fdb1740b_77d2_4e66_81fe_62a4d0c5c218" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="trails_utm_utf820141118153222040" enabled="1" tolerance="13" units="1" type="1"/>
+      <layer-setting id="SchwazerBerg_Paths_5ef99973_cf7d_487b_a3f1_b5a1b45796f6" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="output_84dd9592_546d_420e_bb2c_744e50026a75" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="regions_utm_utf820141118153216780" enabled="0" tolerance="5" units="1" type="1"/>
+      <layer-setting id="Kalkofen_0fb39bff_c34f_479f_8bf1_9b12721227cc" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="Eiblschrofen_Paths_1138abc0_02b1_4241_97ac_766c06322a67" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="Stadt_Schwaz___1_9_km_Paths_3f0eb11d_f230_4d39_b431_893815a20416" enabled="0" tolerance="12" units="1" type="1"/>
       <layer-setting id="Vize_Brgermeister_Paths_0a1cf778_ffe2_4562_b39e_4610f3bb18ad" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="Nonsberg_Hüttegg_Pill_a6000f57_0bf3_40e5_802d_ddc7f112a07c" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="Proxnalm_Pirchneraste_tracks_4dc7579f_9ef7_4539_bbeb_8013f749770e" enabled="0" tolerance="12" units="1" type="1"/>
+      <layer-setting id="Burgermeister_toSchillerMensi_tracks_fb9c4fff_8147_4e2c_8f1a_979980a2c2dd" enabled="0" tolerance="12" units="1" type="1"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations/>
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>1322362.12384763616137207</xmin>
-      <ymin>5974756.23859338369220495</ymin>
-      <xmax>1335970.39726356673054397</xmax>
-      <ymax>5985708.56820215191692114</ymax>
+      <xmin>1228676.0932537151966244</xmin>
+      <ymin>5957729.03926240559667349</ymin>
+      <xmax>1334697.17240454093553126</xmax>
+      <ymax>5970323.49445127602666616</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -355,7 +355,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -442,7 +442,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -706,7 +706,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1023,7 +1023,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -1121,7 +1121,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1385,7 +1385,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1476,7 +1476,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -1569,7 +1569,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1833,7 +1833,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2097,7 +2097,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2381,7 +2381,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2466,7 +2466,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2568,7 +2568,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2673,7 +2673,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2758,7 +2758,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -3066,7 +3066,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -3374,7 +3374,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -3638,7 +3638,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -3902,7 +3902,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4166,7 +4166,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4248,7 +4248,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4339,7 +4339,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -5032,7 +5032,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5265,7 +5265,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -5727,7 +5727,7 @@ def my_form_open(dialog, layer, feature):
       <attributeactions>
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
-      <attributetableconfig sortOrder="1" actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;">
+      <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;">
         <columns>
           <column width="273" hidden="0" type="field" name="OGC_FID"/>
           <column width="377" hidden="0" type="field" name="name"/>
@@ -6351,7 +6351,7 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
       </LayerSnappingToleranceUnitList>
       <SnappingMode type="QString">advanced</SnappingMode>
-      <TopologicalEditing type="int">0</TopologicalEditing>
+      <TopologicalEditing type="int">1</TopologicalEditing>
     </Digitizing>
     <Gui>
       <CanvasColorBluePart type="int">255</CanvasColorBluePart>
