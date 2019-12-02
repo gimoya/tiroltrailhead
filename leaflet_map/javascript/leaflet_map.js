@@ -178,7 +178,10 @@ $.getJSON('Trails_Z.json', function(json) {
 			var gpxLink = document.createElement("a");
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.innerHTML = "GPX";			
+			gpxLink.innerHTML = "GPX";	
+			gpxLink.onclick = function () { 		
+				$("#paypal").fadeIn("slow");
+			}			
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 							
