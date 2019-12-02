@@ -178,18 +178,21 @@ $.getJSON('Trails_Z.json', function(json) {
 			var gpxLink = document.createElement("a");
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.onclick = function () { 	
-				$("#paypal").fadeIn("slow");
-			}
-			gpxLink.innerHTML = "GPX-Link";				
+			gpxLink.innerHTML = "GPX-Link";	
+			gpxLink.id = "gpx_link";
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
 			console.log(gpxLink.outerHTML);
-			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
-							
+			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'}).on("popupopen", () => {
+				$("#gpx_link").on("click", e => {
+					e.preventDefault();
+					$("#paypal").fadeIn("slow");
+				});
+			});				
 		}
 	}).addTo(map);
 	map.fitBounds(trailsLayer.getBounds(), {maxZoom: 14});
 });
+
 
 
 /*** Map Event Listeners ***/
