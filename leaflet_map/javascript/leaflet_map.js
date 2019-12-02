@@ -178,12 +178,12 @@ $.getJSON('Trails_Z.json', function(json) {
 			var gpxLink = document.createElement("a");
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.innerHTML = feature.properties.name + ".gpx";	
 			gpxLink.onclick = function () { 	
-				alert("coockooo...");
 				$("#paypal").fadeIn("slow");
-			}			
+			}
+			gpxLink.innerHTML = "GPX-Link";				
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
+			console.log(gpxLink.innerHTML);
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 							
 		}
