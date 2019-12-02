@@ -215,3 +215,16 @@ map.on('zoomend', function(e){
 	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
 });
 
+/*** button functions ***/
+$(document).ready(function() {
+	/*
+	* Paypal button disapearing after pressing one of the two buttons..
+	*/
+	$("#no_support").click(function() {
+	  $("#paypal").fadeOut("slow");
+	});
+	$("#goto_paypal").click(function() {
+	  $("#paypal").fadeOut("slow");
+	});				
+});
+
