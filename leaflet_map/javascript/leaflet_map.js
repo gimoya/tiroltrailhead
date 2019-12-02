@@ -207,7 +207,6 @@ map.on("click", function(e){
 		layer.setStyle({opacity: 0.75})
 	});
 	selected.setText(null);
-	
 });
 
 /*** Paypal button disapearing after pressing one of the two buttons.. ***/
