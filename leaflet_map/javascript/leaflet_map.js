@@ -178,8 +178,9 @@ $.getJSON('Trails_Z.json', function(json) {
 			var gpxLink = document.createElement("a");
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.innerHTML = "GPX";	
-			gpxLink.onclick = function () { 		
+			gpxLink.innerHTML = feature.properties.name + ".gpx";	
+			gpxLink.onclick = function () { 	
+				alert("coockooo...");
 				$("#paypal").fadeIn("slow");
 			}			
 			var popupContent = '<h2 class="map-popup">' + feature.properties.name + '</h2></br>' + gpxLink.outerHTML;
@@ -215,16 +216,12 @@ map.on('zoomend', function(e){
 	zoom.innerHTML='<b>ZOOM: </b>' + map.getZoom()
 });
 
-/*** button functions ***/
-$(document).ready(function() {
-	/*
-	* Paypal button disapearing after pressing one of the two buttons..
-	*/
-	$("#no_support").click(function() {
-	  $("#paypal").fadeOut("slow");
-	});
-	$("#goto_paypal").click(function() {
-	  $("#paypal").fadeOut("slow");
-	});				
+
+/*** Paypal button disapearing after pressing one of the two buttons.. ***/
+$("#no_support").click(function() {
+	$("#paypal").fadeOut("slow");
 });
+$("#goto_paypal").click(function() {
+	$("#paypal").fadeOut("slow");
+});				
 
