@@ -55,9 +55,9 @@
     <widget class="QLineEdit" name="risk"/>
    </item>   
    <item row="4" column="0">
-    <widget class="QLabel" name="uphill_name">
+    <widget class="QLabel" name="pain_name">
      <property name="text">
-      <string>Uphill Pain:</string>
+      <string>Pain:</string>
      </property>
     </widget>
    </item>

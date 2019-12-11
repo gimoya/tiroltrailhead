@@ -472,12 +472,11 @@ html, body {
  
  .H1, .H3 {
 	font-family: 'Fredoka One';
-	font-size: 3.3vw;
+	font-size: 3.7vw;
 	border-radius: 10px;
 }
 
 .H3 {
-	font-size: 5ex;
 	margin-bottom: 10px!important;
 	margin-top: 20px!important;
 	padding-top: 5px!important;
@@ -486,6 +485,7 @@ html, body {
 
 .H1 {
 	width: 99%!important; /* 100-0.5*2=99% */
+	font-weight: 500;
 }
 
 .H1 span {
