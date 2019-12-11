@@ -472,7 +472,7 @@ html, body {
  
  .H1, .H3 {
 	font-family: 'Fredoka One';
-	font-size: 5.8ex;
+	font-size: 3.3vw;
 	border-radius: 10px;
 }
 
@@ -530,7 +530,7 @@ html, body {
 }
 
 p.box3 {
-	min-height: 8em;
+	max-height: 50vh;
 	}
 
 #list-wrapper, #explanation p, .H1, .H3 {
@@ -595,6 +595,8 @@ PAYPAL SECTION
   background-color: white;
   border-radius: 5px;
   display: none;
+  font-family:exo;
+  font-size: 5vw;
 }
 
 #svg_container {
@@ -728,6 +730,11 @@ input:focus {
 	cursor: pointer;
 }
 
+input[class="Link"] {
+	margin: 2px;
+	font-weight: 500;
+}
+
 input[class="Select-Button"] {
 	background: none;
 	border: none; 
@@ -747,14 +754,9 @@ input[class="Link"]:focus, input[class="Basemap"]:focus {
 
 input[class="Link"], input[class="Basemap"] {
 	font-family: Exo;
-	font-size: 14px;
 	border: none;
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.8);
-}
-
-input[class="Link"] {
-	margin: 2px;
 }
 
 input[class="Basemap"] {
