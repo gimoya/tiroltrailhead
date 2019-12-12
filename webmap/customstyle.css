@@ -470,31 +470,33 @@ html, body {
  * Map explanations and trails list
  */
  
- .H1, .H3 {
+ .H1 {
 	font-family: 'Fredoka One';
-	font-size: 3.8vw;
+	width: 99%!important; /* 100-0.5*2=99% */
+	font-weight: 500;
+	font-size: 4Vmax;	
 	border-radius: 10px;
 }
 
+/*
 .H3 {
+	font-family: 'Fredoka One';
+	border-radius: 10px;
 	margin-bottom: 10px!important;
 	margin-top: 20px!important;
 	padding-top: 5px!important;
 	height: auto;
 }
 
-.H1 {
-	width: 99%!important; /* 100-0.5*2=99% */
-	font-weight: 500;
-}
 
 .H1 span {
 	vertical-align: top;
 	font-family: Exo;
 	}
+*/
 
 .H2 {
-	font-size:3ex;
+	font-size:15px;
 	font-family: 'Fredoka One';
 }
 
@@ -555,7 +557,7 @@ p.box3 {
 	max-height: 160px;
 	margin: 0px 15px;
 	font-family: 'Fredoka One';
-	font-size: 2.35ex;
+	font-size: 13ex;
 	text-align: center;
 	color: #555250;
 }
@@ -897,7 +899,7 @@ input[class="Link"]:hover, input[class="Basemap"]:hover {
 #kodex-skala-head  
 {
 	font-family: 'Fredoka One';
-	font-size: 2.75em; 
+	font-size: 44px; 
 	text-align: center; 
 	background: white; 
 	border-radius: 5px; 
