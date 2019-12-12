@@ -554,7 +554,7 @@ html, body {
 #trails-list {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	max-height: 160px;
+	max-height: 23vh;
 	margin: 0px 15px;
 	font-family: 'Fredoka One';
 	font-size: 20px;
