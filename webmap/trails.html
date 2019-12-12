@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<html>
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="title" content="TIROLTRAILHEAD Trail-Webmap">
@@ -68,7 +69,7 @@
 			 */
 			if (!(bowser.chrome || bowser.firefox || bowser.android || bowser.safari || bowser.ios))
 			{
-				alert('Die Kompatibilität mit diesem Browser fehlt! Bitte Firefox, Chrome, Safari, Android- oder iOS-Browser verwenden!..');	
+				alert('Die Kompatibilit&auml;t mit diesem Browser fehlt! Bitte Firefox, Chrome, Safari, Android- oder iOS-Browser verwenden!..');	
 				if (bowser.msie) document.execCommand('Stop');
 				window.stop();
 			}
@@ -202,10 +203,10 @@
 		<!-- OPENLAYERS PART -->
 		<!-- I'll load large scripts here, with loading page being called before..-->
 		<!--script src="OpenLayers-2.13.1/lib/OpenLayers.js"></script-->
-		<script src="/"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDXLerCvIjMgDR2ehawd74lt6Fx2xjTnJA"></script>
+		<script src="/scripts/OpenLayers.js"></script>
+		<script src="//maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDXLerCvIjMgDR2ehawd74lt6Fx2xjTnJA"></script>
 		<!-- script src="http://maps.google.com/maps/api/js?v=3.2"></script-->
-		<script src="https://www.google.com/jsapi"></script>
+		<script src="//www.google.com/jsapi"></script>
 		<script type="text/javascript">
 					
 			OpenLayers.Util.onImageLoadError = function() {this.style.display="none";}
