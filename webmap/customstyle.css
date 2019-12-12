@@ -524,33 +524,32 @@ html, body {
 }
 
 #explanation p {
-	/* float: left; 
-	   width: 32.3333%;   for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 OR 99% for full width
-	*/
+	float: left; 
+	width: 49%;   /* for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 OR 99% for full width */
 	margin: 0.5%;
 	padding: 0.3em 0em;
 	border-radius: 10px;
 }
 
-p.box {
-	max-height: 30vh;
-	}
-
-#list-wrapper, #explanation p, .H1, .H3 {
+#explanation p, .H1, .H3 {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
-#list-wrapper p {
-	background: transparent;
-}
-
+/*
 #list-wrapper  {
+	background-color: rgba(255, 255, 255, 0.5);
 	max-height: 180px!important;
 	clear: left;
 	position: relative;
 	margin: 0.5%;
 	border-radius: 10px;
 }
+
+#trails-list p {
+	width: 100%;
+}
+
+*/
 
 #trails-list {
 	overflow-y: scroll;
@@ -567,10 +566,6 @@ p.box {
 	list-style-type: none;
 	font-family: Exo;
 	font-size: initial;
-}
-
-#trails-list p {
-	width: 100%;
 }
 
 #input-div {
@@ -762,12 +757,12 @@ input[class="Basemap"] {
 }
 
 input[class="Link"]:hover, input[class="Basemap"]:hover {
-	background-color: background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.8);
 	cursor: pointer;
 }
 
 input[class="Basemap"]:focus {
-	ackground-color: background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
 
