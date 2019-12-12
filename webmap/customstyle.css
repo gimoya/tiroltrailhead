@@ -29,7 +29,6 @@ div.olLayerDiv {
     display: block;
 	font-family: Exo;
 	background-color: rgba(255, 255, 255, .8);
-	border-radius: 15px 15px 0px 0px;
 	padding: 5px 10px;
 }
 
@@ -53,7 +52,6 @@ div.olControlMousePosition, #click-info {
     font-family: Exo;
     font-size: 12px!important;
 	background-color: rgba(255, 255, 255, 0.8);
-	border-radius: 10px 10px 0px 0px;
 	padding: 5px 10px;
 }
 
@@ -424,7 +422,6 @@ html, body {
 
 
 #featureTooltip {
-    border-radius: 10px;
     width: auto!important;
     height: auto!important;
 
@@ -475,7 +472,6 @@ html, body {
 	width: 99%!important; /* 100-0.5*2=99% */
 	font-weight: 500;
 	font-size: 4.2Vmax;	
-	border-radius: 10px;
 }
 
 /*
@@ -504,7 +500,7 @@ html, body {
 	color: #555250;
 }
 
-#explanation-and-list {	
+#infos-and-list {	
 	position: fixed;
 	width: 90%;
 	top: 0;
@@ -513,48 +509,25 @@ html, body {
 	text-align: center;
 	font-family: Exo;
 	font-size: 15px; 
-	border-radius: 0px 0px 10px 10px;
 	z-index: 900;
 }	
 
-#explanation {
-	margin-bottom:0.5%;
-	float:left;
-	width: 100%;
-}
 
-#explanation p {
+#infos-and-list p {
 	float: left; 
-	width: 49%;   /* for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 OR 99% for full width */
 	margin: 0.5%;
 	padding: 0.3em 0em;
-	border-radius: 10px;
-}
-
-#explanation p, .H1, .H3 {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
-/*
-#list-wrapper  {
-	background-color: rgba(255, 255, 255, 0.5);
-	max-height: 180px!important;
-	clear: left;
-	position: relative;
-	margin: 0.5%;
-	border-radius: 10px;
+#trails-list, #infos {
+	width: 49%;   /* for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 OR 99% for full width */
+	height: 23vh;
 }
-
-#trails-list p {
-	width: 100%;
-}
-
-*/
 
 #trails-list {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	max-height: 23vh;
 	margin: 0px 15px;
 	font-family: 'Fredoka One';
 	font-size: 20px;
@@ -575,7 +548,6 @@ html, body {
 	left: 5%;
 	width: 120px;
 	text-align: center;
-	border-radius: 10px 10px 0px 0px;
 }
 
 /* 
@@ -591,7 +563,6 @@ PAYPAL SECTION
   top: 40%;
   right: 35%;
   background-color: white;
-  border-radius: 5px;
   display: none;
   font-family:exo;
   font-size: 14px;
@@ -699,7 +670,7 @@ button[class="support"] {
   padding: 8px;
   font-size: 18px;
   border: none;
-  border-radius: 5px;
+  
   background-color: rgb(10, 255, 90);
 }
 
@@ -770,7 +741,7 @@ input[class="Basemap"]:focus {
  * output with info for regions and trails 
  */
  
-#input-div, #explanation-and-list , #output-wrapper, #onscreen-trails {
+#input-div, #infos-and-list , #output-wrapper, #onscreen-trails {
 	font-family: Exo;
 	font-size: 13px;
 	font-weight: normal;
@@ -830,7 +801,6 @@ input[class="Basemap"]:focus {
 	top: 0px;
 	left: 0px;
 	z-index: 9999;
-	border-radius: 0px 0px 10px 0px;
 }
 
 #output-info {
@@ -858,7 +828,6 @@ input[class="Basemap"]:focus {
 	max-height: 50%;
 	overflow-y: auto;
 	overflow-x: hidden;
-	border-radius: 0px 0px 0px 10px;
 	padding: 10px;
 	text-align: center;
 }
@@ -872,7 +841,6 @@ input[class="Basemap"]:focus {
 	max-height: 50%;
 	overflow-y: auto;
 	overflow-x: hidden;
-	border-radius: 0px 0px 0px 10px;
 	padding: 10px;
 	text-align: center;
 }
@@ -897,7 +865,7 @@ input[class="Basemap"]:focus {
 	font-size: 44px; 
 	text-align: center; 
 	background: white; 
-	border-radius: 5px; 
+	 
 	padding: 5px;
 	overflow: auto;
 }

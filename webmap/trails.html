@@ -117,43 +117,42 @@
 			<a id="sitelinks-3" alt="menu-region-2" href="/trails.html#zoom=12&amp;lat=47.32885&amp;lon=10.95385&amp;layers=TF0B0TT" alt="Region2"></a>
 		</nav>
 		<div id="container">
-			<div id="explanation-and-list">
-				<div id="explanation">
-					<p class="H1">tir<img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" width="35" style="vertical-align:middle; padding: 2px;">l trailhead</p>
-					<p>
-						<span class="H2">Verwendung</span>
-						</br><strong>Zoom & Pan mit Maus oder Touchpad</strong>
-						</br>Klick auf Trails f&uuml;r Infos und H&ouml;henprofil
-						</br>Klick in Karte gibt Koordinaten & Seeh&ouml;he
-						</br>Hier geht es zu <input type="button" class="Link" value="Infos/Anleitung/Links" onclick="window.open('info.html')">
-						</br>
-						</br>
-						<span class="H2">Basiskarten</span> 	
-						</br><strong>oMTB:</strong> OSM MTB-Map
-						</br><strong>AV:</strong> OEAV-Wanderkarte
-						</br><strong>Kompass:</strong> Kompass Wanderkarte
-						</br>
-					</p>
-					<p id="trails-list">
-						<span id="newest_trail"></span>
-						<span id="outputListIbk">INNSBRUCK</span>
-						<span id="outputListUnterland">ACHENSEE-SCHWAZ-W&Ouml;RGL</span>
-						<span id="outputListImst">LANDECK-IMST-PITZTAL</span>
-						<span id="outputListKufstein">KUFSTEIN & KAISER GEBIRGE</span>
-						<span id="outputListKarwendel">KARWENDEL</span>
-						<span id="outputListMieminger">MIEMINGER & WETTERSTEIN GEBIRGE</span>
-						<span id="outputListOsttirol">OSTTIROL</span>
-						<span id="outputListSellrain">SELLRAIN</span>
-						<span id="outputListStubai">STUBAITAL</span>
-						<span id="outputListOetztal">VORDERES &Ouml;TZTAL & OCHSENGARTEN</span>
-						<span id="outputListWipptalBrenner">WIPPTAL, BRENNER & STERZING</span>
-						<span id="outputListZillertal">ZILLERTAL</span>						
-						<!-- hitwebcounter Code START -->
-						<a href="http://www.hitwebcounter.com/links.php" target="_blank">
-							<img src="http://hitwebcounter.com/counter/counter.php?page=5756788&style=0038&nbdigits=7&type=page&initCount=100" style="border:none; margin-bottom: 20px;">
-						</a> 
-					</p>
-				</div>
+			<div id="infos-and-list">
+				<p class="H1">tir<img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" width="35" style="vertical-align:middle; padding: 2px;">l trailhead</p>
+				<p id="Infos">
+					<span class="H2">Verwendung</span>
+					<br><strong>Zoom & Pan mit Maus oder Touchpad</strong>
+					<br>Klick auf Trails f&uuml;r Infos und H&ouml;henprofil
+					<br>Klick in Karte gibt Koordinaten & Seeh&ouml;he
+					<br>Hier geht es zu <input type="button" class="Link" value="Infos/Anleitung/Links" onclick="window.open('info.html')">
+					<br>
+					<br>
+					<span class="H2">Basiskarten</span> 	
+					<br><strong>oMTB:</strong> OSM MTB-Map
+					<br><strong>AV:</strong> OEAV-Wanderkarte
+					<br><strong>Kompass:</strong> Kompass Wanderkarte
+					<br>
+					<br>
+					<span id="newest_trail"></span>
+				</p>
+				<p id="trails-list">
+					<span id="outputListIbk">Innsbruck Trails</span>
+					<span id="outputListUnterland">Achensee-Schwaz-W&öuml;rgl Trails</span>
+					<span id="outputListImst">Landeck-Imst-Pitztal Trails</span>
+					<span id="outputListKufstein">Kufstein & Kaiser Trails</span>
+					<span id="outputListKarwendel">Karwendel Trails</span>
+					<span id="outputListMieminger">Mieminger & Wetterstein Trails</span>
+					<span id="outputListOsttirol">Osttirol Trails</span>
+					<span id="outputListSellrain">Sellrain Trails</span>
+					<span id="outputListStubai">Stubaital Trails</span>
+					<span id="outputListOetztal">Vorderes &Ouml;tztal & Ochsengarten Trails</span>
+					<span id="outputListWipptalBrenner">Wipptal, Brenner & Sterzing Trails</span>
+					<span id="outputListZillertal">Zillertal Trails</span>						
+					<!-- hitwebcounter Code START -->
+					<a href="http://www.hitwebcounter.com/links.php" target="_blank">
+						<img src="http://hitwebcounter.com/counter/counter.php?page=5756788&style=0038&nbdigits=7&type=page&initCount=100" style="border:none; margin-bottom: 20px;">
+					</a> 
+				</p>
 			</div>
 
 			<div id="input-div">
@@ -874,8 +873,8 @@
 					}
 					// then, use output to display the list in html...
 					document.getElementById("onscreen-trails").innerHTML = 
-						'<div id="onscreen-trails-inner">Trails im Bild</br></div>..' + 
-						output.join("</br>..");	
+						'<div id="onscreen-trails-inner">Trails im Bild<br></div>..' + 
+						output.join("<br>..");	
 					$("#onscreen-trails").fadeIn("slow");	
 				} else {
 					$("#onscreen-trails").fadeOut("slow");
@@ -976,7 +975,7 @@
 							}
 						}
 						var msg = "WGS84: "+ parseFloat(lonlat.lat.toFixed(2)) + " N, " + parseFloat(lonlat.lon.toFixed(2)) + 
-						          " E</br>Seeh&ouml;he: " + parseFloat(elevArr[0].toFixed(0)) + " m";
+						          " E<br>Seeh&ouml;he: " + parseFloat(elevArr[0].toFixed(0)) + " m";
 						document.getElementById("click-info").innerHTML = msg;
 					});
                 }
