@@ -524,8 +524,9 @@ html, body {
 }
 
 #explanation p {
-	float: left; 
-	width: 99%;   /* for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 OR 99% for full width*/
+	/* float: left; 
+	   width: 32.3333%;   for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 OR 99% for full width
+	*/
 	margin: 0.5%;
 	padding: 0.3em 0em;
 	border-radius: 10px;
