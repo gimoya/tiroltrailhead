@@ -119,7 +119,7 @@
 		<div id="container">
 			<div id="explanation-and-list">
 				<div id="explanation">
-					<p class="H1">tir<img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" width="30" style="vertical-align:middle; padding: 5px;">ltrailhead trails</p>
+					<p class="H1">tir<img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" width="30" style="vertical-align:middle; padding: 2px;">ltrailhead trails</p>
 					<p class="box3">
 						<span class="H2">Basiskarten</span> 	
 						</br><strong>OSM:</strong> Open MTB-Map
@@ -183,7 +183,7 @@
 			<div id="click-info"></div>
 			<!-- PAYPAL --> 
 			<div id="paypal">
-				<div>In der Erkundung der Trails und Erstellung der Tracks steckt viel Arbeit.. Wenn Du Dich mit einem kleinen Betrag für den Download bedankst, hilfst Du mit, das Projekt am Laufen zu halten! Danke!
+				<div>In die Erkundung der Trails und Erstellung der Tracks flie&szlig;t viel Arbeit.. Wenn Du Dich mit einem kleinen Betrag f&uuml;r den Download bedankst, hilfst Du mir, das Projekt am Laufen zu halten! Danke!
 				</div>
 			  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin:0;">
 			    <input type="hidden" name="cmd" value="_s-xclick">
@@ -203,7 +203,7 @@
 		<!-- OPENLAYERS PART -->
 		<!-- I'll load large scripts here, with loading page being called before..-->
 		<!--script src="OpenLayers-2.13.1/lib/OpenLayers.js"></script-->
-		<script src="http://dev.openlayers.org/OpenLayers.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.12/OpenLayers.light.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDXLerCvIjMgDR2ehawd74lt6Fx2xjTnJA"></script>
 		<!-- script src="http://maps.google.com/maps/api/js?v=3.2"></script-->
 		<script src="https://www.google.com/jsapi"></script>
@@ -414,7 +414,7 @@
 										
 					// add elevation plot
 					addElevPlot(feature);
-					//map.zoomToExtent(event.feature.geometry.getBounds(), closest=false);						
+					map.zoomToExtent(event.feature.geometry.getBounds(), closest=false);						
 										
 					//  append newline and photo-link...				
 					document.getElementById("topic").appendChild(document.createElement("br"));					
