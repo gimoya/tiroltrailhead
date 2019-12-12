@@ -496,11 +496,11 @@ html, body {
 */
 
 .H2 {
-	font-size:15px;
+	font-size:24px;
 	font-family: 'Fredoka One';
 }
 
-.H1, .H2, .H3 {
+.H1, .H2 {
 	color: #555250;
 }
 
@@ -557,7 +557,7 @@ p.box3 {
 	max-height: 160px;
 	margin: 0px 15px;
 	font-family: 'Fredoka One';
-	font-size: 13ex;
+	font-size: 20px;
 	text-align: center;
 	color: #555250;
 }
