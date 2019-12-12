@@ -909,7 +909,7 @@
 				/* put number of covered trails
 				 * to the HTML
 			 	*/
-				document.getElementById("newest_trail").innerHTML = '<input type="button" class="Link" id="bt_newest_trail" value="NEU: ' + name_newest + '" onclick="selectByAttr(KMLtrails, this.value)"></input>';
+				document.getElementById("newest_trail").innerHTML = '<input type="button" class="Link" id="bt_newest_trail" value="NEU: ' + name_newest + '" onclick="selectByAttr(KMLtrails, ' + name_newest + ')"></input>';
 			});
 			
 			/*
