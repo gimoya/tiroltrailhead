@@ -939,6 +939,29 @@ Newest Trail with animation
     content: "KX";
 }
 
+
+
+
+/*
+ *
+ Media Queries
+ *
+ */
+ 
+/* in landscape layouts with min width 660 or upright orientation, hide elements */
+@media only screen and (min-device-width: 660px) and (orientation:landscape) or (orientation:portrait){
+  	#click-info {
+		display:none;
+	}
+}
+
+@media only screen and (min-device-width: 150px) and (min-device-width: 140px){
+  	#explanation-and-list {
+		display:none;
+	}
+}
+ 
+ 
 /* 
  * only fix I found for rendering marker layer on top of map
  */
