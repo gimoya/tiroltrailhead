@@ -509,7 +509,7 @@ html, body {
 
 #trails-list, #explanation {
 	width: 49%; 
-	min-height: 252px;
+	height: 252px;
 }
 
 #trails-list {
