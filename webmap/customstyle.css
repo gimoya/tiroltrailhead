@@ -956,7 +956,7 @@ Newest Trail with animation
 }
 
 @media only screen and (min-device-width: 150px) and (min-device-width: 140px){
-  	#explanation-and-list {
+  	.hide {
 		display:none;
 	}
 }
