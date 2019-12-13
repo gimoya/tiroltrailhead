@@ -489,21 +489,20 @@ html, body {
 
 #explanation-and-list {	
 	position: fixed;
-	width: 90%;
+	width: 96%;
 	top: 0;
 	right: 5%;
 	padding:0.5%;
 	text-align: center;
 	z-index: 900;
     height: 417px;	
-	background: rgba(255,255,255,0.8);
+	background: none;
 }	
 
 
 #explanation-and-list p {
-	float: left; 
-	margin: 0.5%;
-	padding: 0.5% 0%;
+	float: right; 
+	padding: 1% 0%;
 	background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -954,7 +953,7 @@ Newest Trail with animation
  *
  */
  
-/* in landscape layouts with min width 700, hide elements */
+/* in landscape layouts with min width 700, hide elements
 @media only screen and (min-device-width: 700px) and (orientation:landscape) ) {
 	#trails-list {
 		display: none;
@@ -962,10 +961,11 @@ Newest Trail with animation
 	#explanation {
 		width: 100%;
 	}
-	#.vjslider {
+	.vjslider {
 		display:none;
 	}
 }
+*/
 
 /*
  *
