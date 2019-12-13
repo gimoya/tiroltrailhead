@@ -510,8 +510,8 @@ html, body {
 }
 
 #trails-list, #explanation {
-	width: 49%; 
-	height: 168px;
+	width: 50%; 
+	height: 172px;
 }
 
 #trails-list {
@@ -551,7 +551,7 @@ PAYPAL SECTION
 
 #paypal {
   position: fixed;
-  width: 20%;
+  width: 25%;
   z-index: 9999;
   text-align: center;
   padding: 10px;
@@ -695,6 +695,7 @@ input:focus {
 input[class="Link"] {
 	margin: 2px;
 	font-weight: 500;
+	border-radius: 5px;
 }
 
 input[class="Select-Button"] {
@@ -705,7 +706,7 @@ input[class="Select-Button"] {
 
 input[class="Select-Button"]:hover {
 	text-shadow: 2px 2px 2px rgb(162, 155, 155);
-	color: rgb(5, 5, 142);
+	color: rgba(5, 5, 142, 0.6);
 }
 
 input[class="Link"], input[class="Basemap"] {
