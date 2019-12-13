@@ -890,7 +890,7 @@
 			} else {
 				// if map has center passed from ArgParser, this center will be used
 				// and explanation-and-list DIV should be hidden
-				document.getElementById("explanation-and-list").style.display = "none";
+				$("#explanation-and-list").css({display = "none"});
 			};
 			
 			/* 
@@ -955,15 +955,20 @@
                 }, 
 
                 trigger: function(e) {
-					// if screen size < 700, then exit..
-					if ( window.matchMedia("(min-width: 700px)").matches ) {
-						if ( $("#onscreen-trails").is(":visible") )
-							$("#click-info").css("display:none;");
-						return;
-					}
-					// if explanation-and-list is visible, hide it!
+				
+					// when clicking into the map if explanation-and-list, if is visible, should lways be hidden!
 					if ( $("#explanation-and-list").is(":visible") ) {
 						$("#explanation-and-list").fadeOut("slow");
+					}
+					
+					/* 
+					click-info box is not displayed by default, or it is, after pointing in the map happend before..
+					if screen size < 700 and it's visible, then hide it and exit function here..
+					*/			
+					if ( window.matchMedia("(min-width: 700px)").matches ) {
+						if ( $("#click-info").is(":visible") )
+							$("#click-info").css({display:"none"});
+						return;
 					}
 					
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
@@ -984,7 +989,8 @@
 						          " E<br>Seeh&ouml;he: " + parseFloat(elevArr[0].toFixed(0)) + " m";
 						document.getElementById("click-info").innerHTML = msg;
 					});
-					//show div
+					
+					//show click info div
 					$("#click-info").fadeIn("slow");	
                 }
             });
