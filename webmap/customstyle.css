@@ -474,7 +474,7 @@ html, body {
 	font-family: 'Fredoka One';
 	width: 99%!important; /* 100-0.5*2=99% */
 	font-weight: 500;
-	font-size: 4.2Vmax;	
+	font-size: 54px;	
 }
 
 .H2 {
@@ -495,7 +495,7 @@ html, body {
 	text-align: center;
 	font-size: 15px; 
 	z-index: 900;
-    height: 385px;	
+    height: 369px;	
 	background: rgba(255,255,255,0.8);
 }	
 
@@ -509,7 +509,7 @@ html, body {
 
 #trails-list, #explanation {
 	width: 49%; 
-	min-height: 260px;
+	min-height: 252px;
 }
 
 #trails-list {
@@ -797,6 +797,9 @@ Newest Trail with animation
 */
 
 #bt_newest_trail {
+
+	margin-top: 10px;
+	
     -webkit-animation-name: blinker;
     -webkit-animation-timing-function: steps(10, start);
     -webkit-animation-iteration-count: infinite;
