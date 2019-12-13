@@ -418,6 +418,8 @@ html, body {
 	font-family: Exo;
 	font-size: 13px;
 	font-weight: normal;	
+	min-width: 165px;
+	min-height: 165px;
 }
 
 /* 
@@ -950,13 +952,7 @@ Newest Trail with animation
  
 /* in landscape layouts with min width 660 or upright orientation, hide elements */
 @media only screen and (min-device-width: 660px) and (orientation:landscape) or (orientation:portrait){
-  	#click-info, #onscreen-trails.hide {
-		display:none;
-	}
-}
-
-@media only screen and (min-device-width: 150px) and (min-device-width: 140px){
-  	#explanation-and-list.hide {
+  	#click-info.hide, #onscreen-trails.hide {
 		display:none;
 	}
 }

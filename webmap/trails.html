@@ -119,7 +119,7 @@
 			<a id="sitelinks-3" alt="menu-region-2" href="/trails.html#zoom=12&amp;lat=47.32885&amp;lon=10.95385&amp;layers=TF0B0TT" alt="Region2"></a>
 		</nav>
 		<div id="container">
-			<div id="explanation-and-list" class="hide">
+			<div id="explanation-and-list">
 				<p class="H1">tir<img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" width="35" style="vertical-align:middle; padding: 2px;">l trailhead<br>
 				
 				<!-- LightWidget WIDGET Gallery Slider Small --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/226d4b45a69055199967832df5f4ce90.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
@@ -167,7 +167,6 @@
 				<input type="button" class="Basemap" value="oMTB" onclick="map.setBaseLayer(oMTB);">
 				<input type="button" class="Basemap" value="AV" onclick="map.setBaseLayer(AV);">
 				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(Kompass);">
-				<!--input type="button" class="Basemap" value="AV" onclick="(map.getZoom() > 15) ? alert('AV in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(Kompass);"-->
 			</div>
 			
 			<div id="map"></div>
@@ -177,7 +176,7 @@
 				<div id="output-info"><!-- JS-Content--></div>
 			</div>
 			<div id="onscreen-trails" class="hide"></div>
-			<div id="click-info"></div>
+			<div id="click-info"class="hide"></div>
 			<!-- PAYPAL --> 
 			<div id="paypal">
 				<div>In die Erkundung der Trails und Erstellung der Tracks flie&szlig;t viel Arbeit.. Wenn Du Dich mit einem kleinen Betrag f&uuml;r den Download bedankst, hilfst Du mir, das Projekt am Laufen zu halten! Danke!
@@ -858,10 +857,11 @@
 			/*
 			 * function to show trails on current screen
 			 * only do this if explanation-and-list DIV is not visible
+			 * and with larger zoome and above 700px screensize
 			 * otherwise hide onscreen trails
 			 */
 			function showTrailsOnScreen() {				
-				if ( !$("#explanation-and-list").is(":visible") && map.getZoom() > 11) {
+				if ( !$("#explanation-and-list").is(":visible") && map.getZoom() > 11 && window.matchMedia("(max-width: 700px)").matches) ) {
 					var output = [];
 					var features = KMLtrails.features;
 					for (var i=0;i<features.length;i++) {
