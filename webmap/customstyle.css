@@ -500,7 +500,7 @@ html, body {
 	color: #555250;
 }
 
-#infos-and-list {	
+#explanation-and-list {	
 	position: fixed;
 	width: 90%;
 	top: 0;
@@ -513,10 +513,10 @@ html, body {
 }	
 
 
-#infos-and-list p {
+#explanation-and-list p {
 	float: left; 
 	margin: 0.5%;
-	padding: 0.3em 0em;
+	padding: 0.5% 0%;
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -529,16 +529,13 @@ html, body {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	margin: 0px 15px;
-	font-family: 'Fredoka One';
-	font-size: 20px;
-	text-align: center;
 	color: #555250;
 }
 
 #trails-list > * > li  {
 	list-style-type: none;
 	font-family: Exo;
-	font-size: initial;
+	font-size: 14px;
 }
 
 #input-div {
@@ -741,7 +738,7 @@ input[class="Basemap"]:focus {
  * output with info for regions and trails 
  */
  
-#input-div, #infos-and-list , #output-wrapper, #onscreen-trails {
+#input-div, #explanation-and-list , #output-wrapper, #onscreen-trails {
 	font-family: Exo;
 	font-size: 13px;
 	font-weight: normal;
