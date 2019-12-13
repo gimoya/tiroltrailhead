@@ -401,6 +401,13 @@ div.olControlSaveFeaturesItemInactive {
     right: 0px;
 }*/
 
+/* 
+ * special-fonts 
+ */
+@font-face { font-family: Exo; src: url(fonts/Exo-Medium.otf); } 
+@font-face { font-family: Exo-Bold; src: url(fonts/Exo-SemiBold.otf); } 
+
+
 /*
  * body and html
  */
@@ -408,18 +415,14 @@ html, body {
 	height: 100%;
 	width: 100%;
 	position: absolute;
+	font-family: Exo;
+	font-size: 13px;
+	font-weight: normal;	
 }
-
-/* 
- * web-fonts 
- */
-@font-face { font-family: Exo; src: url(fonts/Exo-Medium.otf); } 
-@font-face { font-family: Exo-Bold; src: url(fonts/Exo-SemiBold.otf); } 
 
 /* 
  * Tooltip Popups for Startpoint-Layer
  */
-
 
 #featureTooltip {
     width: auto!important;
@@ -474,23 +477,6 @@ html, body {
 	font-size: 4.2Vmax;	
 }
 
-/*
-.H3 {
-	font-family: 'Fredoka One';
-	border-radius: 10px;
-	margin-bottom: 10px!important;
-	margin-top: 20px!important;
-	padding-top: 5px!important;
-	height: auto;
-}
-
-
-.H1 span {
-	vertical-align: top;
-	font-family: Exo;
-	}
-*/
-
 .H2 {
 	font-size:24px;
 	font-family: 'Fredoka One';
@@ -507,7 +493,6 @@ html, body {
 	right: 5%;
 	padding:0.5%;
 	text-align: center;
-	font-family: Exo;
 	font-size: 15px; 
 	z-index: 900;
 }	
@@ -520,7 +505,7 @@ html, body {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
-#trails-list, #infos {
+#trails-list, #explanation {
 	width: 49%;   /* for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 OR 99% for full width */
 	height: 23vh;
 }
@@ -534,7 +519,6 @@ html, body {
 
 #trails-list > * > li  {
 	list-style-type: none;
-	font-family: Exo;
 	font-size: 14px;
 }
 
@@ -561,7 +545,6 @@ PAYPAL SECTION
   right: 35%;
   background-color: white;
   display: none;
-  font-family:exo;
   font-size: 14px;
 }
 
@@ -663,7 +646,6 @@ PAYPAL SECTION
 }
 
 button[class="support"] {
-  font-family: Exo;
   padding: 8px;
   font-size: 18px;
   border: none;
@@ -705,7 +687,6 @@ input[class="Select-Button"] {
 	background: none;
 	border: none; 
 	font-size: 14px;
-	font-family: Exo;
 }
 
 input[class="Select-Button"]:hover {
@@ -714,7 +695,6 @@ input[class="Select-Button"]:hover {
 }
 
 input[class="Link"], input[class="Basemap"] {
-	font-family: Exo;
 	border: none;
 	border-radius: 5px;
 	background-color: rgba(190, 190, 190, 0.8);
@@ -738,52 +718,8 @@ input[class="Basemap"]:focus {
  * output with info for regions and trails 
  */
  
-#input-div, #explanation-and-list , #output-wrapper, #onscreen-trails {
-	font-family: Exo;
-	font-size: 13px;
-	font-weight: normal;
+#input-div, #output-wrapper, #onscreen-trails {
 	background-color: rgba(241, 241, 241, 0.9);
-}
-	
-#bt_newest_trail {
-    -webkit-animation-name: blinker;
-    -webkit-animation-timing-function: steps(10, start);
-    -webkit-animation-iteration-count: infinite;
-	-webkit-animation-duration: 1.5s;	
-    
-    -moz-animation-name: blinker;
-    -moz-animation-timing-function: steps(10, start);
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 1.5s;	
-    
-    animation-name: blinker;
-    animation-timing-function: steps(10, start);
-    animation-iteration-count: infinite;
-	animation-duration: 1.5s;
-}
-
-@-moz-keyframes blinker {  
-    0% { background-color: white; }
-    50% { background-color: gray; }
-    100% { background-color: darkgray; }
-    50% { background-color: gray; }
-    0% { background-color: white; }
-}
-
-@-webkit-keyframes blinker {  
-    0% { background-color: white; }
-    50% { background-color: gray; }
-    100% { background-color: darkgray; }
-    50% { background-color: gray; }
-    0% { background-color: white; }
-}
-
-@keyframes blinker {  
-    0% { background-color: white; }
-    50% { background-color: gray; }
-    100% { background-color: darkgray; }
-    50% { background-color: gray; }
-    0% { background-color: white; }
 }
 
 #item-chosen, #onscreen-trails-inner {
@@ -802,7 +738,6 @@ input[class="Basemap"]:focus {
 
 #output-info {
 	padding: 10px;
-	font-size: 13px;
 	float: left;
 }
 
@@ -851,6 +786,53 @@ input[class="Basemap"]:focus {
 	line-height:1.3!important;
 	white-space: nowrap;
 }
+
+
+/*
+Newest Trail with animation
+*/
+
+#bt_newest_trail {
+    -webkit-animation-name: blinker;
+    -webkit-animation-timing-function: steps(10, start);
+    -webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 1.5s;	
+    
+    -moz-animation-name: blinker;
+    -moz-animation-timing-function: steps(10, start);
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-duration: 1.5s;	
+    
+    animation-name: blinker;
+    animation-timing-function: steps(10, start);
+    animation-iteration-count: infinite;
+	animation-duration: 1.5s;
+}
+
+@-moz-keyframes blinker {  
+    0% { background-color: white; }
+    50% { background-color: gray; }
+    100% { background-color: darkgray; }
+    50% { background-color: gray; }
+    0% { background-color: white; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { background-color: white; }
+    50% { background-color: gray; }
+    100% { background-color: darkgray; }
+    50% { background-color: gray; }
+    0% { background-color: white; }
+}
+
+@keyframes blinker {  
+    0% { background-color: white; }
+    50% { background-color: gray; }
+    100% { background-color: darkgray; }
+    50% { background-color: gray; }
+    0% { background-color: white; }
+}
+
 
 /* 
  * skala and kodex page CSS 
