@@ -838,16 +838,11 @@
 			}
 			
 			
-			/* ADD LAYERS AND MAPS*/
+			/* ADD LAYERS AND MAPS */
 			map.addLayers([pointLayer, KMLtrails, KMLpolygons, oMTB, Kompass, AV]);
 			map.raiseLayer(pointLayer, map.layers.length);
 			/*
-			'
-			'
-			'
-			'
-			*/
-			
+
 			
 			/*
 			 * function to show trails on current screen
@@ -967,7 +962,7 @@
 					click-info box is not displayed by default, or it is, after pointing in the map happend before..
 					if screen size < 700 and it's visible, then hide it and exit function here..
 					*/			
-					if ( window.matchMedia("(min-width: 700px)").matches ) {
+					if ( window.matchMedia("(max-width: 700px)").matches ) {
 						if ( $("#click-info").is(":visible") )
 							$("#click-info").css({display:"none"});
 						return;
