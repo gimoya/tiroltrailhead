@@ -440,7 +440,6 @@ html, body {
 }
 
 #startpt {
-	font-family: Exo;
 	font-size: 12px;
 	text-align: center;
 	white-space: nowrap;
@@ -495,7 +494,6 @@ html, body {
 	right: 5%;
 	padding:0.5%;
 	text-align: center;
-	font-size: 15px; 
 	z-index: 900;
     height: 387px;	
 	background: rgba(255,255,255,0.8);
@@ -712,8 +710,6 @@ input[class="Link"], input[class="Basemap"] {
 	border: none;
 	border-radius: 5px;
 	background-color: rgba(190, 190, 190, 0.8);
-	font-family:exo;
-	font-size:13px;
 }
 
 input[class="Basemap"] {
@@ -809,8 +805,6 @@ Newest Trail with animation
 */
 
 #bt_newest_trail {
-
-	margin-top: 10px;
 	
     -webkit-animation-name: blinker;
     -webkit-animation-timing-function: steps(10, start);
