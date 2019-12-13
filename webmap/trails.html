@@ -32,8 +32,9 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="scripts/bowser.js"></script>
 		
+		<!-- Landing JS PART -->
+		
 		<script type="text/javascript">	
-			
 			function trim(str) {
 				return str.replace(/^\s+|\s+$/g, '');  
 			}
@@ -107,6 +108,7 @@
 	</head>
   
 	<body style="margin: 0; overflow: hidden;">
+	
 		<!-- LOADING PAGE -->
 		<div class="loader"></div>
 		<!-- LOADING PAGE END -->
@@ -131,7 +133,6 @@
 					<br><strong>oMTB:</strong> OSM MTB-Map
 					<br><strong>AV:</strong> OEAV-Wanderkarte
 					<br><strong>Kompass:</strong> Kompass Wanderkarte
-					<br>
 					<br>
 					<span id="newest_trail">Letztes Update: </span>
 				</p>
@@ -192,11 +193,9 @@
 		</div>
 
 		<!-- OPENLAYERS PART -->
-		<!-- I'll load large scripts here, with loading page being called before..-->
-		<!--script src="OpenLayers-2.13.1/lib/OpenLayers.js"></script-->
+
 		<script src="scripts/OpenLayers.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDXLerCvIjMgDR2ehawd74lt6Fx2xjTnJA"></script>
-		<!-- script src="http://maps.google.com/maps/api/js?v=3.2"></script-->
 		<script src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript">
 					
@@ -559,7 +558,6 @@
 				selectCtrl.unselectAll();		
 				for(var i = 0; i < layer.features.length; i++) {
 					var ft = layer.features[i];
-					log(ft.attributes.name);
 					if(ft.attributes.name == strValue) {
 						selectCtrl.select(ft);
 						map.zoomToExtent(ft.geometry.getBounds(), closest=false);
