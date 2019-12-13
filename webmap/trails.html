@@ -861,7 +861,7 @@
 			 * otherwise hide onscreen trails
 			 */
 			function showTrailsOnScreen() {				
-				if ( !$("#explanation-and-list").is(":visible") && map.getZoom() > 11 && window.matchMedia("(max-width: 700px)").matches) ) {
+				if ( !$("#explanation-and-list").is(":visible") && map.getZoom() > 11 && window.matchMedia("(max-width: 700px)").matches ) {
 					var output = [];
 					var features = KMLtrails.features;
 					for (var i=0;i<features.length;i++) {
