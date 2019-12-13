@@ -958,12 +958,15 @@
                 trigger: function(e) {
 					// if screen size < 700, then exit..
 					if ( window.matchMedia("(min-width: 700px)").matches ) {
+						if ( $("#onscreen-trails").is(":visible") )
+							$("#click-info").css("display:none;");
 						return;
 					}
 					// if explanation-and-list is visible, hide it!
 					if ( $("#explanation-and-list").is(":visible") ) {
 						$("#explanation-and-list").fadeOut("slow");
 					}
+					
                     var lonlat = map.getLonLatFromPixel(e.xy).transform(proj900913, proj4326);
 					var locations = [new google.maps.LatLng(lonlat.lat, lonlat.lon)];
 					//console.log(lonlat);
@@ -982,6 +985,8 @@
 						          " E<br>Seeh&ouml;he: " + parseFloat(elevArr[0].toFixed(0)) + " m";
 						document.getElementById("click-info").innerHTML = msg;
 					});
+					//show div
+					$("#click-info").fadeIn("slow");	
                 }
             });
 			
