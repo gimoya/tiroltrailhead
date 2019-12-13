@@ -495,7 +495,7 @@ html, body {
 	padding:0.5%;
 	text-align: center;
 	z-index: 900;
-    height: 387px;	
+    height: 417px;	
 	background: rgba(255,255,255,0.8);
 }	
 
@@ -509,7 +509,7 @@ html, body {
 
 #trails-list, #explanation {
 	width: 49%; 
-	height: 138px;
+	height: 168px;
 }
 
 #trails-list {
