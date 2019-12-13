@@ -387,7 +387,7 @@
 				featureselected: function(event) {
 							
 				    // hide or display page elements when feature is selected..
-					// output-wrapper will be invisble by default and only displays when selected
+					// output-wrapper will be invisble by default and only displays when trail selected
 					$("#output-wrapper").fadeIn("slow");
 					$("#explanation-and-list").fadeOut("slow");
 					$("#onscreen-trails").fadeOut("slow");
@@ -401,8 +401,11 @@
 					document.getElementById("output-info").innerHTML = desc;
 					
 										
-					// add elevation plot
-					addElevPlot(feature);
+					// add elevation plot if screen > 700px;
+					if ( window.matchMedia("(min-width: 700px)").matches ) {
+						addElevPlot(feature);
+					}
+					
 					map.zoomToExtent(event.feature.geometry.getBounds(), closest=false);						
 										
 					//  append newline and photo-link...				
