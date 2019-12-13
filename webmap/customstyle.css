@@ -495,6 +495,8 @@ html, body {
 	text-align: center;
 	font-size: 15px; 
 	z-index: 900;
+	height: 50%;
+    min-height: 375px;	
 }	
 
 
@@ -506,14 +508,13 @@ html, body {
 }
 
 #trails-list, #explanation {
-	width: 49%;   /* for 3 columns with equal spacing: 3*32.333=97, 6*0.5=3, 96+3=100 OR 99% for full width */
-	height: 23vh;
+	width: 49%; 
+	min-height: 250px;
 }
 
 #trails-list {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	margin: 0px 15px;
 	color: #555250;
 }
 
@@ -522,13 +523,14 @@ html, body {
 	font-size: 14px;
 }
 
-#input-div {
+#control-div {
 	z-index: 2000;
 	position: fixed;
 	bottom: 0;
 	left: 5%;
 	width: 120px;
 	text-align: center;
+	padding-bottom: 5px;
 }
 
 /* 
@@ -718,7 +720,7 @@ input[class="Basemap"]:focus {
  * output with info for regions and trails 
  */
  
-#input-div, #output-wrapper, #onscreen-trails {
+#control-div, #output-wrapper, #onscreen-trails {
 	background-color: rgba(241, 241, 241, 0.9);
 }
 
