@@ -132,11 +132,7 @@
 					<br>Klick auf Trails f&uuml;r Infos und H&ouml;henprofil
 					<br>Klick in Karte gibt Koordinaten & Seeh&ouml;he
 					<br>Hier geht es zu <input type="button" class="Link" value="Infos/Anleitung/Links" onclick="window.open('info.html')">
-					<span class="H2" id="basemaps">Basiskarten</span> 	
-					<br><strong>oMTB:</strong> OSM MTB-Map
-					<br><strong>AV:</strong> OEAV-Wanderkarte
-					<br><strong>Kompass:</strong> Kompass Wanderkarte
-					<br>
+					<br><br>
 					<span id="newest_trail">Letztes Update: </span>
 				</p>
 				<p id="trails-list" class="H2">
@@ -934,7 +930,7 @@
 			map.addControl(selectCtrl);
 			selectCtrl.activate();
 			
-			/* Map Click Control */
+			/* Map Click Control: Coords & Elevation info for click event*/
 	
 			OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {                
                 defaultHandlerOptions: {
@@ -960,6 +956,10 @@
                 }, 
 
                 trigger: function(e) {
+					// if screen size < 700, then exit..
+					if ( window.matchMedia("(min-width: 700px)").matches ) {
+						return;
+					}
 					// if explanation-and-list is visible, hide it!
 					if ( $("#explanation-and-list").is(":visible") ) {
 						$("#explanation-and-list").fadeOut("slow");

@@ -535,6 +535,16 @@ html, body {
 	padding-bottom: 5px;
 }
 
+/*
+Click info Div with coords and elev display:none per default,
+js-event only fires if screen > 700
+*/
+
+#click-info {
+	display:none;
+}
+
+
 /* 
 PAYPAL SECTION 
 */
@@ -948,17 +958,17 @@ Newest Trail with animation
  *
  */
  
-/* in landscape layouts with min width 660 or upright orientation, hide elements */
-@media only screen and (min-device-width: 660px) and (orientation:landscape) or (orientation:portrait) and (min-device-width: 400px) {
-	#onscreen-trails { 
+/* in landscape layouts with min width 700, hide elements */
+@media only screen and (min-device-width: 700px) and (orientation:landscape) ) {
+	#trails-list {
 		display: none;
-		}
+	}
 	#explanation {
 		width: 100%;
-		}
-	#basemaps, .vjslider {
+	}
+	#.vjslider {
 		display:none;
-		}
+	}
 }
 
 /*
