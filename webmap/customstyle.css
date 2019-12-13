@@ -472,8 +472,9 @@ html, body {
  */
  
  .H1 {
+	width: 97%;
+	margin-top:1%!important;
 	font-family: 'Fredoka One';
-	width: 99%!important; /* 100-0.5*2=99% */
 	font-weight: 500;
 	font-size: 54px;	
 }
@@ -489,7 +490,6 @@ html, body {
 
 #explanation-and-list {	
 	position: fixed;
-	width: 100%;
 	top: 0;
 	right: 0;
 	text-align: center;
@@ -501,9 +501,13 @@ html, body {
 
 #explanation-and-list p {
 	float: right; 
-	padding:0.5%;
-	margin:0.5%;
+	padding: 0.5%;
+	margin: 0.5% 1%;
 	background-color: rgba(255, 255, 255, 0.7);
+}
+
+#explanation {
+	font-size: 14px;
 }
 
 #trails-list, #explanation {
@@ -946,35 +950,6 @@ Newest Trail with animation
     content: "KX";
 }
 
-
-/*
- *
- Media Queries
- *
- */
- 
-/* in landscape layouts with min width 700, hide elements
-@media only screen and (min-device-width: 700px) and (orientation:landscape) ) {
-	#trails-list {
-		display: none;
-	}
-	#explanation {
-		width: 100%;
-	}
-	.vjslider {
-		display:none;
-	}
-}
-*/
-
-/*
- *
-Lightweight PLugin
-*
-*/
-.vjslider {
-	margin: 5px;
-}
  
 /* 
  * only fix I found for rendering marker layer on top of map
