@@ -497,7 +497,7 @@ html, body {
 	text-align: center;
 	font-size: 15px; 
 	z-index: 900;
-    height: 369px;	
+    height: 500px;	
 	background: rgba(255,255,255,0.8);
 }	
 
@@ -956,7 +956,15 @@ Newest Trail with animation
 		display:none;
 	}
 }
- 
+
+/*
+ *
+Lightweight PLugin
+*
+*/
+.vjslider {
+	margin: 5px;
+}
  
 /* 
  * only fix I found for rendering marker layer on top of map
