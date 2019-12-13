@@ -495,8 +495,8 @@ html, body {
 	text-align: center;
 	font-size: 15px; 
 	z-index: 900;
-	height: 50%;
-    min-height: 375px;	
+    height: 385px;	
+	background: rgba(255,255,255,0.8);
 }	
 
 
@@ -509,7 +509,7 @@ html, body {
 
 #trails-list, #explanation {
 	width: 49%; 
-	min-height: 250px;
+	min-height: 260px;
 }
 
 #trails-list {
@@ -700,6 +700,8 @@ input[class="Link"], input[class="Basemap"] {
 	border: none;
 	border-radius: 5px;
 	background-color: rgba(190, 190, 190, 0.8);
+	font-family:exo;
+	font-size:13px;
 }
 
 input[class="Basemap"] {
