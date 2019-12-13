@@ -497,7 +497,7 @@ html, body {
 	text-align: center;
 	font-size: 15px; 
 	z-index: 900;
-    height: 500px;	
+    height: 387px;	
 	background: rgba(255,255,255,0.8);
 }	
 
@@ -511,7 +511,7 @@ html, body {
 
 #trails-list, #explanation {
 	width: 49%; 
-	height: 252px;
+	height: 138px;
 }
 
 #trails-list {
