@@ -207,6 +207,7 @@
 				// (Lat1,Lon1,Lat2,Lon2))
 				restrictedExtent: new OpenLayers.Bounds(1170000,5900000,1450000,6070000),
 				controls: [new OpenLayers.Control.Navigation(), 
+						   new OpenLayers.Control.KeyboardDefaults(),
 						   // the permalink itself is not used in map, but we need the anchors which it sets to the window location
 						   // mind to add the permalink after the ArgParser!!
 						   new OpenLayers.Control.ArgParser(),
