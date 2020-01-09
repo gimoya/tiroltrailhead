@@ -206,6 +206,7 @@
 				// restrictedExtent: new OpenLayers.Bounds(1183960,5892930,1443020,6047520),
 				// (Lat1,Lon1,Lat2,Lon2))
 				restrictedExtent: new OpenLayers.Bounds(1170000,5900000,1450000,6070000),
+				
 				controls: [new OpenLayers.Control.Navigation(), 
 						   new OpenLayers.Control.KeyboardDefaults(),
 						   // the permalink itself is not used in map, but we need the anchors which it sets to the window location
@@ -239,6 +240,11 @@
 					}
 				}
 			});
+			
+			// constrain zoom levels
+			map.isValidZoomLevel = function(zoomLevel) {
+				return ((zoomLevel != null) && (zoomLevel >= 10) && (zoomlevel <= 16));
+			}
 			
 			var AV = new OpenLayers.Layer.XYZ( "AV",
 				"https://maps.bergfex.at/oek/standard/${z}/${x}/${y}.jpg",
