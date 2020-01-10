@@ -200,6 +200,8 @@
 			var proj4326 = new OpenLayers.Projection("EPSG:4326");
 			
 			var map = new OpenLayers.Map( 'map', {
+				//constrain zoomlevels by resolution at zoom 10-17
+				//resolutions: [0.02197265625, 0.0439453125, 0.17578125],
 				projection: proj900913,
 				displayProjection: proj4326,
 				// AUSTRIA: restrictedExtent: new OpenLayers.Bounds(1050550.516554,5839177.463709,1912760.195457,6283123.72391),
@@ -222,11 +224,6 @@
 				eventListeners: {
 					"zoomend": function() {
 						var zLevel = map.getZoom();   
-						// constrain zoom levels
-						// https://stackoverflow.com/questions/4240610/min-max-zoom-level-in-openlayers
-						if(zLevel < 10) {
-							map.setZoom(10)
-						}
 						if(zLevel > 11) {
 							KMLpolygons.setVisibility(false);
 						} else {
