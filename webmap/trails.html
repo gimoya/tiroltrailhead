@@ -242,10 +242,11 @@
 			});
 			
 			// constrain zoom levels
-			map.isValidZoomLevel = function(zoomLevel) {
-				return ((zoomLevel != null) && (zoomLevel >= 10) && (zoomlevel <= 16));
-			}
-			
+			// https://stackoverflow.com/questions/4240610/min-max-zoom-level-in-openlayers
+			map.getNumZoomLevels = function(){
+					return 10;
+					};
+					
 			var AV = new OpenLayers.Layer.XYZ( "AV",
 				"https://maps.bergfex.at/oek/standard/${z}/${x}/${y}.jpg",
 				{
