@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8"/>
@@ -201,7 +202,12 @@
 			
 			var map = new OpenLayers.Map( 'map', {
 				//constrain zoomlevels by resolution at zoom 10-17
-				//resolutions: [0.02197265625, 0.0439453125, 0.17578125],
+				/*
+				1) zoom your map to a desired zoom level (I did it via console by running map.zoomTo(x) where x is the zoom level I was interested in)
+				2) via the console log the map.resolution and take note of it
+				3) repeat for all the zoom levels you would like to include
+				*/
+				resolutions: [2.388657133579254, 4.777314267158508, 9.554628534317017, 19.109257068634033, 38.218514137268066, 76.43702827453613, 152.87405654907226],
 				projection: proj900913,
 				displayProjection: proj4326,
 				// AUSTRIA: restrictedExtent: new OpenLayers.Bounds(1050550.516554,5839177.463709,1912760.195457,6283123.72391),
