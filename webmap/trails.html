@@ -222,6 +222,11 @@
 				eventListeners: {
 					"zoomend": function() {
 						var zLevel = map.getZoom();   
+						// constrain zoom levels
+						// https://stackoverflow.com/questions/4240610/min-max-zoom-level-in-openlayers
+						if(zLevel < 10) {
+							map.setZoom(10)
+						}
 						if(zLevel > 11) {
 							KMLpolygons.setVisibility(false);
 						} else {
@@ -241,11 +246,7 @@
 				}
 			});
 			
-			// constrain zoom levels
-			// https://stackoverflow.com/questions/4240610/min-max-zoom-level-in-openlayers
-			map.getNumZoomLevels = function(){
-					return 10;
-					};
+
 					
 			var AV = new OpenLayers.Layer.XYZ( "AV",
 				"https://maps.bergfex.at/oek/standard/${z}/${x}/${y}.jpg",
