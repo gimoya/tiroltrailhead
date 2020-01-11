@@ -201,18 +201,19 @@
 			var proj4326 = new OpenLayers.Projection("EPSG:4326");
 			
 			var map = new OpenLayers.Map( 'map', {
-				//constrain zoomlevels by resolution at zoom 10-17
+				//constrain zoomlevels by resolution at zoom 10-16
 				/*
 				1) zoom your map to a desired zoom level (I did it via console by running map.zoomTo(x) where x is the zoom level I was interested in)
 				2) via the console log the map.resolution and take note of it
 				3) repeat for all the zoom levels you would like to include
 				*/
-				resolutions: [2.388657133579254, 4.777314267158508, 9.554628534317017, 19.109257068634033, 38.218514137268066, 76.43702827453613, 152.87405654907226],
+				// resolutions: [2.388657133579254, 4.777314267158508, 9.554628534317017, 19.109257068634033, 38.218514137268066, 76.43702827453613, 152.87405654907226],
 				projection: proj900913,
 				displayProjection: proj4326,
 				// AUSTRIA: restrictedExtent: new OpenLayers.Bounds(1050550.516554,5839177.463709,1912760.195457,6283123.72391),
 				// restrictedExtent: new OpenLayers.Bounds(1183960,5892930,1443020,6047520),
 				// (Lat1,Lon1,Lat2,Lon2))
+				
 				restrictedExtent: new OpenLayers.Bounds(1170000,5900000,1450000,6070000),
 				
 				controls: [new OpenLayers.Control.Navigation(), 
@@ -222,6 +223,7 @@
 						   new OpenLayers.Control.ArgParser(),
 						   new OpenLayers.Control.Permalink({anchor: true}),
 						   new OpenLayers.Control.Attribution()],
+						   
 				theme: null,
 				/* 
 				 * show different base maps and map items 
