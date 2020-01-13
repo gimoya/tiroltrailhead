@@ -90,7 +90,7 @@
     </layer-tree-layer>
     <layer-tree-group checked="Qt::Checked" name="BASEMAPS" expanded="1">
       <customproperties/>
-      <layer-tree-layer providerKey="wms" checked="Qt::Checked" name="OEK-Bergfex" id="OEK_Bergfex_fc6a3c00_0f69_440c_872f_149a607d08b6" expanded="0" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://maps.bergfex.at/oek/standard/%7Bz%7D/%7Bx%7D/%7By%7D.jpg&amp;zmax=16&amp;zmin=12">
+      <layer-tree-layer providerKey="wms" checked="Qt::Unchecked" name="OEK-Bergfex" id="OEK_Bergfex_fc6a3c00_0f69_440c_872f_149a607d08b6" expanded="0" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://maps.bergfex.at/oek/standard/%7Bz%7D/%7Bx%7D/%7By%7D.jpg&amp;zmax=16&amp;zmin=12">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer providerKey="wms" checked="Qt::Unchecked" name="gdi_nomenklatur" id="gdi_nomenklatur20180511150652199" expanded="0" source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=gdi_nomenklatur&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts">
@@ -99,7 +99,7 @@
       <layer-tree-layer providerKey="gdal" checked="Qt::Unchecked" name="OpenStreetMap" id="OpenStreetMap20161207230225903" expanded="1" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://tile.openstreetmap.org/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>19&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer providerKey="wms" checked="Qt::Unchecked" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR" id="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20180525080834814" expanded="1" source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/jpeg&amp;layers=Image_Aktuell_CIR&amp;layers=Footprint_Aktuell_CIR&amp;layers=Flugjahr_Aktuell_CIR&amp;styles=&amp;styles=&amp;styles=&amp;url=https://gis.tirol.gv.at/arcgis/services/Service_Public/orthofoto/MapServer/WMSServer">
+      <layer-tree-layer providerKey="wms" checked="Qt::Checked" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR" id="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20180525080834814" expanded="1" source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/jpeg&amp;layers=Image_Aktuell_CIR&amp;layers=Footprint_Aktuell_CIR&amp;layers=Flugjahr_Aktuell_CIR&amp;styles=&amp;styles=&amp;styles=&amp;url=https://gis.tirol.gv.at/arcgis/services/Service_Public/orthofoto/MapServer/WMSServer">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer providerKey="wms" checked="Qt::Unchecked" name="gdi_base_summer" id="gdi_base_summer_cf071aec_e3d5_4eba_baf9_745106b93215" expanded="1" source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=gdi_summer&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts">
@@ -111,7 +111,7 @@
       <layer-tree-layer providerKey="gdal" checked="Qt::Unchecked" name="OCM Landscape" id="OCM_Landscape20161207230225880" expanded="1" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://tile.opencyclemap.org/landscape/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer providerKey="gdal" checked="Qt::Unchecked" name="OpenCycleMap" id="OpenCycleMap20161207230225903" expanded="1" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://tile.opencyclemap.org/cycle/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;">
+      <layer-tree-layer providerKey="gdal" checked="Qt::Checked" name="OpenCycleMap" id="OpenCycleMap20161207230225903" expanded="1" source="&lt;GDAL_WMS>&#xa;  &lt;Service name=&quot;TMS&quot;>&#xa;    &lt;ServerUrl>http://tile.opencyclemap.org/cycle/${z}/${x}/${y}.png&lt;/ServerUrl>&#xa;  &lt;/Service>&#xa;  &lt;DataWindow>&#xa;    &lt;UpperLeftX>-20037508.34&lt;/UpperLeftX>&#xa;    &lt;UpperLeftY>20037508.34&lt;/UpperLeftY>&#xa;    &lt;LowerRightX>20037508.34&lt;/LowerRightX>&#xa;    &lt;LowerRightY>-20037508.34&lt;/LowerRightY>&#xa;    &lt;TileLevel>18&lt;/TileLevel>&#xa;    &lt;TileCountX>1&lt;/TileCountX>&#xa;    &lt;TileCountY>1&lt;/TileCountY>&#xa;    &lt;YOrigin>top&lt;/YOrigin>&#xa;  &lt;/DataWindow>&#xa;  &lt;Projection>EPSG:3857&lt;/Projection>&#xa;  &lt;BlockSizeX>256&lt;/BlockSizeX>&#xa;  &lt;BlockSizeY>256&lt;/BlockSizeY>&#xa;  &lt;BandsCount>3&lt;/BandsCount>&#xa;  &lt;Cache />&#xa;&lt;/GDAL_WMS>&#xa;">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -189,10 +189,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>1262760.90474245348013937</xmin>
-      <ymin>5977274.39364961627870798</ymin>
-      <xmax>1264205.06046616029925644</xmax>
-      <ymax>5979603.91350651998072863</ymax>
+      <xmin>1326925.69757903483696282</xmin>
+      <ymin>5975313.7838852172717452</ymin>
+      <xmax>1341224.55932701495476067</xmax>
+      <ymax>5984212.43539974745362997</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -319,9 +319,9 @@
       </filegroup>
     </legendlayer>
     <legendgroup checked="Qt::Checked" open="true" name="BASEMAPS">
-      <legendlayer drawingOrder="-1" checked="Qt::Checked" showFeatureCount="0" open="false" name="OEK-Bergfex">
+      <legendlayer drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0" open="false" name="OEK-Bergfex">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OEK_Bergfex_fc6a3c00_0f69_440c_872f_149a607d08b6" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="OEK_Bergfex_fc6a3c00_0f69_440c_872f_149a607d08b6" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0" open="false" name="gdi_nomenklatur">
@@ -334,9 +334,9 @@
           <legendlayerfile isInOverview="0" layerid="OpenStreetMap20161207230225903" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0" open="true" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR">
+      <legendlayer drawingOrder="-1" checked="Qt::Checked" showFeatureCount="0" open="true" name="Flugjahr_Aktuell_CIR/Footprint_Aktuell_CIR/Image_Aktuell_CIR">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20180525080834814" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="Flugjahr_Aktuell_CIR_Footprint_Aktuell_CIR_Image_Aktuell_CIR20180525080834814" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0" open="true" name="gdi_base_summer">
@@ -354,9 +354,9 @@
           <legendlayerfile isInOverview="0" layerid="OCM_Landscape20161207230225880" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0" open="true" name="OpenCycleMap">
+      <legendlayer drawingOrder="-1" checked="Qt::Checked" showFeatureCount="0" open="true" name="OpenCycleMap">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="OpenCycleMap20161207230225903" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="OpenCycleMap20161207230225903" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
