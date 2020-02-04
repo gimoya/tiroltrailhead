@@ -973,3 +973,8 @@ div[id^="OpenLayers_Layer_Markers"] {
   -webkit-user-select: none; /* Chrome, Safari, and Opera */
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
+
+>/* overrule font-awesome css */
+.fa-4x {
+    font-size: 3.5em!important;
+}
