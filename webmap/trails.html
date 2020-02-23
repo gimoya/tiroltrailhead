@@ -240,15 +240,6 @@
 				}
 			});
 			
-			var StravaBike = new OpenLayers.Layer.XYZ( "StravaBike",
-				"https://anygis.ru/api/v1/Tracks_Strava_Ride/${x}/${y}/${z}",
-				{
-				sphericalMercator: true,
-				buffer: 0,
-				numZoomLevels: 16,
-				attribution: "&copy; 2008, 2010 BEV, <a href='http://www.bergfex.at'>bergfex GmbH</a>"
-				});	
-				
 			var AV = new OpenLayers.Layer.XYZ( "AV",
 				"https://maps.bergfex.at/oek/standard/${z}/${x}/${y}.jpg",
 				{
@@ -818,7 +809,7 @@
 			
 			
 			/* ADD LAYERS AND MAPS */
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, oMTB, Kompass, AV, StravaBike]);
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, oMTB, Kompass, AV]);
 			map.raiseLayer(pointLayer, map.layers.length);
 			/*
 
