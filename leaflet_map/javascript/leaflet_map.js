@@ -32,7 +32,7 @@ var overlays = {
 		maxZoom: 16, attribution: '&copy; <a href="http://www.waymarkedtrails.org" target="_blank">waymarkedtrails.org</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.de" target="_blank">CC BY-SA 3.0 DE</a>'
 	}),
 	'Strava Heatmap': L.tileLayer('https://anygis.ru/api/v1/Tracks_Strava_Ride/{x}/{y}/{z}', {
-		maxZoom: 16, attribution: '&copy; <a href="https://www.strava.com/heatmap" target="_blank">strava.com</a>'
+		maxZoom: 16, opacity: 0.75, attribution: '&copy; <a href="https://www.strava.com/heatmap" target="_blank">strava.com</a>'
 	})
 };
 
