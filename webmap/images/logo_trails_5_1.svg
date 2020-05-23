@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.48.5 r10040"
    sodipodi:docname="logo_trails_5_1.svg"
-   inkscape:export-filename="D:\Projekte\tiroltrailhead\webmap\images\logo_trails_5_3_metall.png"
+   inkscape:export-filename="D:\Projekte\tiroltrailhead\webmap\images\logo_trails_5_3_death.png"
    inkscape:export-xdpi="351.22"
    inkscape:export-ydpi="351.22">
   <defs
@@ -30,19 +30,6 @@
          id="path4864"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccccccccc" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath7894">
-      <g
-         id="g7896"
-         transform="matrix(4.4362803,0,0,5.0142727,-1030.3632,-27112.154)">
-        <path
-           style="fill:none;stroke:#ffffff;stroke-width:30;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1"
-           d="m 1177.0694,5342.1817 c -422.46356,0 -764.66375,342.4851 -764.66375,764.9486 0,88.7962 15.18086,174.1728 43.00344,253.464 l 420.92106,-241.218 1.13917,70.3434 259.72928,-143.5347 -0.5696,67.2107 355.704,-179.7031 421.7754,373.361 2.5631,-3.7023 c 16.5907,-62.6544 25.3464,-128.349 25.3464,-196.221 l 0,-10.8221 c -5.9448,-418.181 -346.7252,-754.1265 -764.9485,-754.1265 z"
-           id="path7898"
-           inkscape:connector-curvature="0" />
-      </g>
     </clipPath>
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
@@ -58,6 +45,20 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 526.18109 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4241">
+      <g
+         transform="matrix(3.5153072,0,0,3.9704602,-715.0181,-20501.204)"
+         id="g4243"
+         style="fill:none;stroke:#fff100;stroke-width:60.32743454;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none">
+        <path
+           inkscape:connector-curvature="0"
+           id="path4245"
+           d="m 1177.0694,5342.1817 c -422.46356,0 -764.66375,342.4851 -764.66375,764.9486 0,88.7962 15.18086,174.1728 43.00344,253.464 l 420.92106,-241.218 1.13917,70.3434 259.72928,-143.5347 -0.5696,67.2107 355.704,-179.7031 421.7754,373.361 2.5631,-3.7023 c 16.5907,-62.6544 25.3464,-128.349 25.3464,-196.221 l 0,-10.8221 c -5.9448,-418.181 -346.7252,-754.1265 -764.9485,-754.1265 z"
+           style="fill:none;stroke:#fff100;stroke-width:60.32743454;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -66,9 +67,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="6.404878"
-     inkscape:cx="102.5"
-     inkscape:cy="148.85686"
+     inkscape:zoom="2.2644663"
+     inkscape:cx="152.07159"
+     inkscape:cy="84.251528"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -76,49 +77,33 @@
      fit-margin-left="5"
      fit-margin-right="5"
      fit-margin-bottom="5"
-     inkscape:window-width="1473"
+     inkscape:window-width="1462"
      inkscape:window-height="841"
-     inkscape:window-x="55"
+     inkscape:window-x="1410"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     showguides="true"
+     showguides="false"
      inkscape:guide-bbox="true">
     <sodipodi:guide
        orientation="1,0"
-       position="-97.840446,217.52875"
+       position="112.38851,141.53445"
        id="guide3907" />
     <sodipodi:guide
        orientation="1,0"
-       position="-97.840446,217.52875"
+       position="81.696954,142.41766"
        id="guide3909" />
     <sodipodi:guide
        orientation="1,0"
-       position="263.59926,5.6994274"
+       position="57.850276,249.18508"
        id="guide3947" />
     <sodipodi:guide
        orientation="1,0"
-       position="322.01855,97.840429"
+       position="57.850276,164.49792"
        id="guide3054" />
     <sodipodi:guide
        orientation="1,0"
-       position="-85.016696,213.72912"
+       position="104.88123,74.852074"
        id="guide3117" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="167.77285,68.4787"
-       id="guide3969" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="36.571429,54.144696"
-       id="guide3971" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="114.70185,38.80459"
-       id="guide3973" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="201.38033,207.07977"
-       id="guide3975" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -147,8 +132,8 @@
        inkscape:export-filename="C:\Users\Kay\tiroltrailhead\images\logo_trails_5_1.png" />
     <g
        id="g3956"
-       transform="matrix(0.02375878,0,0,0.02084329,10.181327,873.6226)"
-       clip-path="url(#clipPath7894)">
+       transform="matrix(0.02743769,0,0,0.02496667,5.4292515,856.14393)"
+       clip-path="url(#clipPath4241)">
       <g
          style="fill:#ffffff;stroke:none"
          id="g4">
@@ -1966,7 +1951,7 @@
     <path
        transform="matrix(0.55264064,0,0,0.55264064,-90.234293,700.5071)"
        sodipodi:type="arc"
-       style="fill:none;stroke:#ffffff;stroke-width:10.31411648;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:none;stroke:#ffffff;stroke-width:12.66645898;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="path2987-1"
        sodipodi:cx="348.75165"
        sodipodi:cy="451.2066"
@@ -1977,17 +1962,17 @@
        sodipodi:end="6.2689704"
        sodipodi:open="true" />
     <path
-       style="color:#000000;fill:none;stroke:#ffffff;stroke-width:5.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       style="color:#000000;fill:none;stroke:#ffffff;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        d="m 30.218044,974.90964 42.195218,-23.82284 0.112712,7.02597 25.986427,-14.34362 -0.05965,6.7088 35.550059,-17.9729 41.73003,37.03425"
        id="path3775"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc" />
     <path
-       style="color:#000000;fill:none;stroke:#ffffff;stroke-width:5.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       d="m 61.5,946.90608 -0.474954,67.09662"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 58,948.65625 -0.125,56.93755 7,-3.7226 0.125,-57.39944 -7,4.18434 z"
        id="path3777"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cccccc" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot3913"
@@ -2012,16 +1997,16 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Courier New;-inkscape-font-specification:Courier New" /></flowRegion><flowPara
          id="flowPara3927">gimooyacojfmvd</flowPara></flowRoot>    <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:42.03863144%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Iron Maiden;-inkscape-font-specification:Iron Maiden"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Iron Maiden;-inkscape-font-specification:Iron Maiden"
        id="text3929"
-       sodipodi:linespacing="42.038631%"
+       sodipodi:linespacing="0%"
        y="0"
        x="162.30219"
        transform="translate(3.4910142e-6,-1.6187781e-5)"><textPath
          xlink:href="#path2987-1"
          id="textPath3933"
-         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:0%;text-anchor:start;fill:#ffffff;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
-         dy="0 -4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0">                                                        Shut up and ride! - tiroltrailhead.com</textPath></text>
+         style="font-size:8px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:0%;letter-spacing:0px;text-anchor:start;fill:#ffffff;font-family:Courier New;-inkscape-font-specification:Courier New Bold"
+         dy="-0.97000003 -4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0">                                                                   Shut up and ride!</textPath></text>
     <text
        xml:space="preserve"
        style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Iron Maiden;-inkscape-font-specification:Iron Maiden"
@@ -2035,30 +2020,30 @@
          x="291"
          y="20" /></text>
     <path
-       style="color:#000000;fill:none;stroke:#ffffff;stroke-width:5.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       d="m 87.616953,938.8484 -0.47495,59.45839"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 81.71875,944.07567 0,45.38487 7.662408,-3.68841 0,-46.25273 z"
        id="path3777-1"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="ccccc" />
     <path
-       style="color:#000000;fill:none;stroke:#ffffff;stroke-width:5.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       d="m 108.40916,926.17295 0.47497,55.74797"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.2422533;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 112.38851,927.05794 -7.60726,3.30244 0.21875,42.04582 7.38851,-3.10979 z"
        id="path3777-4"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="ccccc" />
     <text
        xml:space="preserve"
-       style="font-size:20.65707016px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523%;letter-spacing:1.03285336px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Iron Maiden;-inkscape-font-specification:Iron Maiden"
-       x="63.432529"
-       y="1046.1177"
+       style="font-size:20.65707016px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:129.99999523%;letter-spacing:1.03285336px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial Nova Cond;-inkscape-font-specification:Arial Nova Cond Bold"
+       x="65.143967"
+       y="1041.9894"
        id="text3147"
        sodipodi:linespacing="130%"
-       transform="scale(1.0321245,0.96887535)"><tspan
+       transform="scale(1.0321245,0.96887536)"><tspan
          sodipodi:role="line"
          id="tspan3149"
-         x="63.432529"
-         y="1046.1177"
-         style="font-size:23px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523%;letter-spacing:1.03285336px;fill:#ffffff;stroke:none;font-family:Metal Mania;-inkscape-font-specification:Metal Mania">irol</tspan></text>
+         x="65.143967"
+         y="1041.9894"
+         style="font-size:20.00000003px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523000000000%;letter-spacing:1.03285336000000010px;fill:#ffffff;stroke:none;font-family:Eater of Children;-inkscape-font-specification:Eater of Children">irol</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot3151"
@@ -2083,8 +2068,8 @@
          id="flowPara3165">Trail</flowPara></flowRoot>    <text
        xml:space="preserve"
        style="font-size:20.36676598px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Iron Maiden;-inkscape-font-specification:Iron Maiden"
-       x="87.40519"
-       y="1050.2166"
+       x="86.985451"
+       y="1044.3955"
        id="text3167"
        sodipodi:linespacing="130%"
        inkscape:transform-center-x="11.125711"
@@ -2092,9 +2077,9 @@
        transform="scale(1.0520918,0.9504874)"><tspan
          sodipodi:role="line"
          id="tspan3169"
-         x="87.40519"
-         y="1050.2166"
-         style="font-size:23px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523%;letter-spacing:1.01833832px;fill:#ffffff;font-family:Metal Mania;-inkscape-font-specification:Metal Mania">rail</tspan></text>
+         x="86.985451"
+         y="1044.3955"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523%;letter-spacing:1.01833832px;fill:#ffffff;font-family:Eater of Children;-inkscape-font-specification:Eater of Children">rail</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot3171"
@@ -2109,20 +2094,20 @@
        xml:space="preserve"
        style="font-size:17.38729095px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Metal Mania;-inkscape-font-specification:Metal Mania"
        x="112.13454"
-       y="1095.6552"
+       y="1087.3234"
        id="text3179"
        sodipodi:linespacing="130%"
-       transform="scale(1.1136023,0.89798664)"><tspan
+       transform="scale(1.1136023,0.89798665)"><tspan
          sodipodi:role="line"
          id="tspan3181"
          x="112.13454"
-         y="1095.6552"
-         style="font-size:23px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523%;letter-spacing:0.86936456px;fill:#ffffff;font-family:Metal Mania;-inkscape-font-specification:Metal Mania">Ead</tspan></text>
+         y="1087.3234"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:129.99999523%;letter-spacing:0.86936456px;fill:#ffffff;font-family:Eater of Children;-inkscape-font-specification:Eater of Children">Ead</tspan></text>
     <path
-       style="color:#000000;fill:none;stroke:#ffffff;stroke-width:5.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       d="m 118.97588,928.44751 0.47497,55.74797"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 115.71875,919.625 0,57.0625 7.44161,-4.19525 0,-56.17929 z"
        id="path3777-4-7"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="ccccc" />
   </g>
 </svg>
