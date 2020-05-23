@@ -21,7 +21,6 @@ rm -rf d:/Projekte/tiroltrailhead/webmap/digitizing/gdalwmscache
 
 #push to gh-pages
 
-
 git add -A
 git status
 git commit -m 'batch updates from shell script..'
