@@ -16,8 +16,6 @@ fi
 
 #push to gh-pages
 
-cd ~
-cd tiroltrailhead/
 git add -A
 git status
 git commit -m 'batch updates from shell script..'
