@@ -70,12 +70,12 @@ body{
   height:200px;
   position:absolute;
   top:calc(50vh - 100px);
-  left:calc(50vw - 150px);
+  left:calc(50vw - 200px);
   overflow:hidden;
 }
 .bgvid.inner{
   top:calc(-50vh + 100px);
-  left:calc(-50vw + 150px);
+  left:calc(-50vw + 200px);
   filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
   -webkit-filter:blur(10px);
   -ms-filter: blur(10px);
@@ -134,11 +134,11 @@ body{
 </style>
 
 <div class="vid-container">
-  <video id="bgvideo" class="bgvid" autoplay="autoplay" preload="auto" loop>
+  <video id="bgvideo" class="bgvid" autoplay="autoplay" preload="auto" loop muted>
        <source src="https://thumbs.gfycat.com/ConventionalWeeAplomadofalcon-mobile.mp4" type="video/mp4">
   </video>
   <div class="inner-container">
-    <video id="bgvideo-inner" class="bgvid inner" autoplay="autoplay" preload="auto" loop>
+    <video id="bgvideo-inner" class="bgvid inner" autoplay="autoplay" preload="auto" loop muted>
        <source src="webmap/images/ConventionalWeeAplomadofalcon-mobile.mp4" type="video/mp4">
     </video>	  
     <div class="box">
