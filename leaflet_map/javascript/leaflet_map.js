@@ -1,7 +1,9 @@
 /*** Create map  ***/
 var map = L.map('map', {
   zoom: 13,
-  center: [42.26, 11.4]
+  center: [42.26, 11.4],
+  maxZoom: 18,
+  minZoom: 11
 });
 
 var attributionTirol = '&copy; <a href="https://data.tirol.gv.at" target="_blank">Land Tirol - data.tirol.gv.at</a>, <a href="https://creativecommons.org/licenses/by/3.0/at/legalcode" target="_blank">CC BY 3.0 AT</a>';
