@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<head>
+
+<title>Tirol Trailhead MTB Guiding</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/gimoya/tiroltrailhead/gh-pages/images/icon.png">	
+<!-- For-Mobile-Apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="tirol trailhead, mtb-guiding, bikeguide, mtb-touren in tirol, mtb-touren in südtirol" />
+<meta name="description" content="Tirol Trailhead MTB-Guiding ► Geführte Touren ► Fahrtechnik-Training ► MTB-Camps & Reisen.." />
+
+<script type="application/ld+json">
+{
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "address": {
+            "@type": "PostalAddress",
+           "addressLocality": "Aldrans",
+            "addressRegion": "Tyrol",
+            "postalCode":"A-6071",
+            "streetAddress": "Grubenweg 22"
+      },
+      "description": "VAVOE-certified MTB-Guide and MTB-Coach, offering coaching and guided Tours in Austria, Italy, Swiss and France.",
+      "name": "Tirol Trailhead MTB-Guiding",
+      "telephone": "+43 650 9359 101",
+      "openingHours": "Mo,Tu,We,Th,Fr 10:00-16:00",
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "47.259659",
+            "longitude": "11.400375"
+         },             
+      "sameAs": [ 
+        "https://www.facebook.com/KayCichini",
+        "https://www.instagram.com/tiroltrailhead",
+        "https://www.youtube.com/channel/UCYsdgBSThrQtMsanm9FkaBA"
+        ],
+      "image": "https://gimoya.github.io/tiroltrailhead/images/tab-4.jpg",
+      "logo": "http://gimoya.github.io/tiroltrailhead/images/logo_trails_5_1.png",
+      "priceRange": "40-200 Euro",
+      "url": "http://gimoya.github.io/tiroltrailhead/"
+}
+</script>
+
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<!-- //For-Mobile-Apps -->
+
+<!-- Custom-Stylesheet-Links -->
+<!-- Bootstrap-Core-CSS --> 	<link rel="stylesheet"	href="css/bootstrap.min.css" 	type="text/css" media="all">
+<!-- Index-Page-CSS --> 	<link rel="stylesheet"	href="css/style.css" 		type="text/css" media="all">
+<!-- Flexslider-CSS --> 	<link rel="stylesheet" 	href="css/flexslider.css" 	type="text/css" media="all">
+<!-- Popup-Box-CSS --> 		<link rel="stylesheet" 	href="css/chocolat.css" 		type="text/css" media="all">
+<!-- //Custom-Stylesheet-Links -->
+
+<!-- Web-Fonts -->
+<!-- Fonts --> 		<link href="https://fonts.googleapis.com/css?family=Sigmar+One|Ultra|Cabin+Sketch|Raleway|Open+Sans" rel="stylesheet">
+<!-- //Web-Fonts -->
+
+</head>
+
+
+<!-- Body -->
+<body>
+	<!--Sticky Book Button-->
+	<button onclick="bookFunction()" id="bookBtn" disabled="disabled" title="Join in..">Book a Ride!</button>
+	
+	<!-- Header -->
+		<!-- Navbar -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">TIR<img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" alt="Tirol Trailhead Logo" style="max-height:1em; width:auto; margin-bottom: 0.17em;">L TRAILHEAD</a>
+				</div>
+
+				<div class="collapse navbar-collapse navbar-right" id="navbar">
+					<div class="top-nav">
+
+						<a href="#about" class="hover-effect scroll">
+							<span>
+								<span>ABOUT</span>
+								<span>ABOUT</span>
+								<span></span>
+							</span>
+						</a>
+
+						<!--a href="#gallery" class="hover-effect scroll">
+							<span>
+								<span>GALLERY</span>
+								<span>GALLERY</span>
+								<span></span>
+							</span>
+						</a-->
+
+						<a href="#team" class="hover-effect scroll">
+							<span>
+								<span>GUIDE</span>
+								<span>GUIDE</span>
+								<span></span>
+							</span>
+						</a>
+
+						<a href="#services" class="hover-effect scroll">
+							<span>
+								<span>ANGEBOT</span>
+								<span>ANGEBOT</span>
+								<span></span>
+							</span>
+						</a>
+						
+						<a href="#contact" class="hover-effect scroll">
+							<span>
+								<span>BOOKING</span>
+								<span>BOOKING</span>
+								<span></span>
+							</span>
+						</a>					
+						
+						<!-- Partner NAV bar disabled
+						
+						<a href="#footer" class="hover-effect scroll">
+							<span>
+								<span>PARTNER</span>
+								<span>PARTNER</span>
+								<span></span>
+							</span>
+						</a>
+						
+						-->
+					</div>
+				</div>
+
+			</div>
+		</nav>
+		<!-- //Navbar -->
+
+		<!-- Slider -->
+		<div class="slider">
+			<ul class="rslides" id="slider1">
+				<li>				
+					<img src="images/slide-0.jpg" alt="tirol trailhead">
+					<div class="caption">
+						<h3>Du träumst von Singletracks..</h3>
+					</div>
+				</li>				
+				<li>				
+					<img src="images/slide-1.jpg" alt="tirol trailhead">
+					<div class="caption">
+						<h3>..dann nix wie raus aus der Stadt!</h3>
+					</div>
+				</li>				
+				<li>
+					<img src="images/slide-2.jpg" alt="tirol trailhead">
+					<div class="caption">
+						<h3>..zum Mountainbiken!</h3>
+					</div>
+				</li>							
+				<li>
+					<img src="images/slide-4.jpg" alt="tirol trailhead">
+					<div class="caption">
+						<h3>..entdecke neue Reviere!</h3>
+					</div>
+				</li>
+				<li>
+					<img src="images/slide-5.jpg" alt="tirol trailhead">
+					<div class="caption">
+						<h3>..fordere Dich heraus!</h3>
+					</div>
+				</li>	
+				<li>
+					<img src="images/slide-3.jpg" alt="tirol trailhead">
+					<div class="caption">
+						<h3>..optimiere Deine Fahrtechnik!</h3>
+					</div>	
+				</li>					
+				<li>
+					<img src="images/slide-6.jpg" alt="tirol trailhead">
+					<div class="caption">
+						<h3>..geh auf's Ganze!</h3>
+					</div>
+				</li>				
+				<li>
+					<img src="images/slide-7.jpg" alt="tirol trailhead">
+					<div class="caption">
+						<h3>..und finde den Flow!</h3>
+					</div>
+				</li>				
+			</ul>
+		</div>
+		<!-- //Slider -->
+	</div>
+	<!-- //Header -->
+
+	<!-- About -->
+	<div class="about" id="about">
+		<div class="container">
+
+			<h1>ABOUT</h1>
+		
+		<p class="para"><span style="font-weight: 500;">Kay Cichini, VAVOE zertifizierter Bike-Guide: </span><i>"Schon vor 20 Jahren, als ich noch als XC-Rennfahrer am Weg war, 
+				        wurde mir bald klar, dass unter dem puren Leistungsaspekt viele Facetten des MTB-Sportes zu kurz kommen – vor Allem jene Teile, die mir heute am wichtigsten scheinen: das <b>Naturerlebnis</b>,
+				        die <b>Zeit mit Freunden</b> am Trail, das <b>Erreichen individueller Ziele</b>! Über die vielen Jahre im MTB-Betrieb habe ich mich dann schließlich ganz diesen Inhalten verschrieben! Es geht ganz einfach um das <b>"Abenteuer Mountainbiken"!</b>
+				        Dieses Abenteuer für Euch – dem Einsteiger, der Mountainbike Grundtechniken erlernen will, bis hin zum MTB-Crack, der auf der Suche nach dem ultimativen Trail ist – erlebbar zu machen, ist meine Leidenschaft!..."
+				         </i></p>
+
+			<div class="about-grids">
+				<div class="col-md-3 col-sm-3 about-grid">
+					<h4>Mensch</h4>
+					<p>Der moderne Alltag bringt uns leider oft weit weg vom ursprünglichen, einfachen Leben, nach dem sich insgeheim jeder von uns sehnt.. 
+					   Aber wir, die diese Sehnsucht teilen, ziehen hinaus und plötzlich eröffnen sich Wege...</p>
+				</div>
+				<div class="col-md-3 col-sm-3 about-grid">
+					<h4>Natur</h4>
+					<p>Der Weg, der Berg, der Wald, der Fels.. Sonne, Wind und Regen.. Wir sind dazu geboren, die Elemente mit allen Sinnen
+					   in uns aufzusaugen...</p>
+				</div>
+				<div class="col-md-3 col-sm-3 about-grid">
+					<h4>Abenteuer</h4>
+					<p>Draußen, in unbekannten Gebieten, fordern Dich neue Pfade auf einzigartige Weise...</p>
+				</div>
+				<div class="col-md-3 col-sm-3 about-grid">
+					<h4>Singletracks</h4>
+					<p>Steige und schmale Wege in der freien Natur lassen Dein Herz höher schlagen - hier verbindet sich alles was es zum Glücklichsein braucht: Mensch, Natur, Abenteuer...</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+		</div>
+	</div>
+	<!-- //About -->
+
+	<!-- Agency -->
+	<div class="agency">
+		<div class="container">
+
+			<h2>AWESOMENESS</h2>
+
+			<div class="agency-grids">
+				<div class="col-md-3 col-sm-3 agency-grid">
+					<div class="agency-grid-img">
+						<img src="images/agency-2.png" alt="tirol trailhead">
+					</div>
+					<h4>Top Spot Garantie</h4>
+					<p>Mit 20 Jahren Trail Erfahrung in den Alpen, ist für Dich garantiert, dass Du mit uns nur auf den besten Singletracks unterwegs sein wirst! Die Auswahlkriterien: Ultimativer Fahrspass, unvergessliche Landschaften und einzigartige Naturerlebnisse...
+					   Das Trail-Scouting läuft natürlich das ganze Jahr und neue Top Spots kommen laufend hinzu!</p>
+				</div>
+				<div class="col-md-3 col-sm-3 agency-grid">
+					<div class="agency-grid-img">
+						<img src="images/peaks-symbol.png" alt="tirol trailhead">
+					</div>
+					<h4>Alpine MTB-Touren</h4>
+					<p>Durch die Unterstützung von Bergbahnen und Bike-Shuttles eröffnen sich uns im alpinen Raum unvergessliche Aussichten und schier endlose Abfahrten... In Tirol führen wir dich abseits der bekannten Routen auf die geilsten Naturtrails des Landes</p>
+				</div>
+				<div class="col-md-3 col-sm-3 agency-grid">
+					<div class="agency-grid-img">
+						<img src="images/globe-symbol.png" alt="tirol trailhead">
+					</div>
+					<h4>Top MTB-Regionen</h4>
+					<p>Mit der einzigartigen Insel Elba wird dir ein Top Bike-Gebiet am Toskanischen Archipel geboten! In Tirol und Salzburg, in Kärnten, in Süd-Tirol und im m Trentino, in den schweizer und französischen Alpen und anderen Gebieten, die wir 
+					   wie unsere Westentasche kennen, fahren wir unvergleichliche Singletracks.</p>
+				</div>
+				<div class="col-md-3 col-sm-3 agency-grid">
+					<div class="agency-grid-img">
+						<img src="images/wheelie-symbol.png" alt="tirol trailhead">
+					</div>
+					<h4>Fahrtechniktraining</h4>
+					<p>Oft reichen ein paar einfache Kniffe, um Dich am Trail schneller – und vor Allem sicherer zu machen. Grundlegende, genauso wie spezielle Techniken
+					   kannst Du bei persönlich abgestimmten Fahrtechniktrainings oder speziellen Kursen spielerisch erlernen...</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- //Agency -->
+	<!-- Video -->
+	<div class="video">
+		<button class="btn btn-primary" data-toggle="modal" data-target="#modalvideo">Videos<span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></button>
+		<!-- Tooltip-Content -->
+		<div class="tooltip-content">
+
+			<div class="modal fade features-modal" id="modalvideo" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						</div>
+						<div class="modal-body">
+							<iframe src="https://www.youtube.com/embed/videoseries?list=PLMABvLRnZsuWYwxUshfNcFAQZpwsUSIP1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--script>
+				$('#myModal').modal('');
+			</script-->
+		</div>
+		<!-- //Tooltip-Content -->
+	</div>
+	<!-- //Video -->		
+
+	<!-- Services = 'ANGEBOT' -->
+	<div class="services" id="services">
+		<div class="container">
+
+			<h3>ANGEBOT</h3>
+
+			<div class="grid_3 grid_5">
+				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					<ul id="myTab" class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#guiding" id="guiding-tab" role="tab" data-toggle="tab" aria-controls="guiding" aria-expanded="true">Guiding</a>
+						</li>
+						<li role="presentation">
+							<a href="#shuttle-tours" id="camps-tab" role="tab" data-toggle="tab" aria-controls="shuttle-tours">Gondel-Endurotouren</a>
+						</li>						
+						<li role="presentation">
+							<a href="#fahrtechnik" id="fahrtechnik-tab" role="tab" data-toggle="tab" aria-controls="fahrtechnik">Fahrtechnik</a>
+						</li>
+						<li role="presentation">
+							<a href="#camps" id="camps-tab" role="tab" data-toggle="tab" aria-controls="camps">MTB-Camps</a>
+						</li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+					    <!--Guiding-->
+						<div role="tabpanel" class="tab-pane fade in active" id="guiding" aria-labelledby="guiding-tab">
+							<div class="col-md-5 col-sm-5 tab-image">
+								<img src="images/tab-1.jpg" alt="tirol trailhead">
+							</div>
+							<div class="col-md-7 col-sm-7 tab-info">
+								<h2>Halbtages- und Tagestouren Tirol 2020</h2>
+								<p>In N-Tirol alleine stehen uns mehr als 80 voll ausgearbeitete Halbtages- und Tagestouren mit reinen Trail-Abfahrten aller Schwierigkeitsgrade zu Verfügung! Diese Top-Touren werden unter der Bike-Saison (1. April bis 1. November) auf <a href="#contact">Anfrage</a> angeboten. Die Mindest-Teilnehmerzahl für eine Tour ist 4, wobei die maximale Gruppengröße bei 6 Personen erreicht ist.</p>								
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					    <!--Shuttle Tours-->
+						<div role="tabpanel" class="tab-pane fade" id="shuttle-tours" aria-labelledby="shuttle-tab">
+							<div class="col-md-5 col-sm-5 tab-image">
+								<img src="images/tab-2.JPG" alt="tirol trailhead">
+							</div>
+							<div class="col-md-7 col-sm-7 tab-info">
+								<h2>Gondel-Endurotouren 2020</h2>
+								<p>Ultimative Abfahrtserlebnisse mit geringem Kraftaufwand durch Seilbahn-Unterstützung, z.B. Außerfern Gondel-Runde mit +3000 m Trail-Abfahrt, Nordketten-Überschreitung mit +2000 hm Trail-Abfahrt, Ötztal-Überschreitung mit +2400 hm Enduro-Abfahrt, Kalkkögel-Überschreitung +2000 hm Enduro-Abfahrt, Tuxer Alpen Überschreitung mit +2500 hm Enduro-Abfahrt, u.a.!</p>
+								<p>Anfragen und Buchungen erfolgen über die e-Mail Anfrage an <a href="#contact">tiroltrailhead</a>!</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>						
+						<!--Fahrtechnik-->
+						<div role="tabpanel" class="tab-pane fade" id="fahrtechnik" aria-labelledby="fahrtechnik-tab">
+							<div class="col-md-5 col-sm-5 tab-image">
+								<img src="images/tab-3.jpg" alt="tirol trailhead">
+							</div>
+							<div class="col-md-7 col-sm-7 tab-info">
+								<h2>Fahrtechnik-Trainings Spital am Pyhrn 2020</h2>
+								<p>Über die ganze Saison verteilt, werden auf dem speziellen Bike-Parcours der Bike-Gruppe | Wolfgang Neumüller Fahrtechnik Kurse angeboten, die sich speziell an Biker richten, die die Grundtechniken des Trail-Mountainbikens aufbauen bzw. verinnerlichen wollen - sprich an MTB-Anfänger, bzw. leicht fortgeschrittene Trail-Mountainbiker.
+								<p>Anfragen und Buchungen können über eine e-Mail Anfrage an <a href="#contact">tiroltrailhead</a> oder über e-Mail Anfrage direkt beim Veranstalter <a href="http://bike-gruppe.at/Frames.htm" target="_blank">bike-gruppe.at</a> erfolgen!</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					    <!--Camps-->						
+						<div role="tabpanel" class="tab-pane fade" id="camps" aria-labelledby="camps-tab">
+							<div class="col-md-5 col-sm-5 tab-image">
+								<img src="images/tab-4.jpg" alt="tirol trailhead">
+							</div>
+							<div class="col-md-7 col-sm-7 tab-info">
+								<h2>Trail-Camps und Fernreisen 2020</h2>
+								<p>Das Programm für 2020, mit vielen neuen MTB-Trails, Touren, Camps, etc. findet ihr hier: <a href="http://github.com/gimoya/tiroltrailhead/raw/gh-pages/bikeprogramm_2020.pdf" target="_blank">Programm-Bike-Gruppe-2020</a> Anfragen und Buchungen können über eine e-Mail Anfrage an <a href="#contact">tiroltrailhead</a> oder über <a href="http://bike-gruppe.at/Frames.htm" target="_blank">bike-gruppe.at</a> erfolgen!</p>
+								<p>Um an super MTB-Hotspots zu Biken, findest Du bei den Freunden der <a href="http://bike-gruppe.at/Frames.htm" target="_blank">bike-gruppe.at</a> Deinen perfekten Partner!</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>						
+					</div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+	<!-- //Services -->
+		
+
+	<!-- Gallery -->
+	<!--div class="gallery" id="gallery">
+		<div class="container">
+
+			<h3>GALLERY</h3>
+
+			<div class="gallery-grids">
+				<div class="col-md-6 col-sm-6 gallery-grids-left">
+					<div class="gallery-grid">
+						<a class="example-image-link" href="images/gallery-1-big.jpg" data-lightbox="example-set" data-title="">
+							<div class="grid">
+								<figure class="effect-apollo">
+									<img src="images/gallery-1.jpg" alt="tirol trailhead"/>
+										<figcaption></figcaption>
+								</figure>
+							</div>
+						</a>
+					</div>
+					<div class="gallery-grids-left-sub">
+						<div class="col-md-6 col-sm-6 gallery-grids-left-subl">
+							<div class="gallery-grid">
+								<a class="example-image-link" href="images/gallery-4-big.jpg" data-lightbox="example-set" data-title="">
+									<div class="grid">
+										<figure class="effect-apollo">
+											<img src="images/gallery-4.jpg" alt="tirol trailhead"/>
+												<figcaption></figcaption>
+										</figure>
+									</div>
+								</a>
+							</div>
+							<div class="gallery-grid gallery-grid-sub grid-middle">
+								<a class="example-image-link" href="images/gallery-5-big.jpg" data-lightbox="example-set" data-title="">
+									<div class="grid">
+										<figure class="effect-apollo">
+											<img src="images/gallery-5.jpg" alt="tirol trailhead"/>
+												<figcaption></figcaption>
+										</figure>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 gallery-grids-left-subr">
+							<div class="gallery-grid">
+								<a class="example-image-link" href="images/gallery-7-big.jpg" data-lightbox="example-set" data-title="">
+									<div class="grid">
+										<figure class="effect-apollo">
+											<img src="images/gallery-7.jpg" alt="tirol trailhead"/>
+												<figcaption></figcaption>
+										</figure>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6 gallery-grids-left">
+					<div class="col-md-6 col-sm-6 gallery-grids-right">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="images/gallery-2-big.jpg" data-lightbox="example-set" data-title="">
+								<div class="grid">
+									<figure class="effect-apollo">
+										<img src="images/gallery-2.jpg" alt="tirol trailhead"/>
+											<figcaption></figcaption>
+									</figure>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 gallery-grids-right two">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="images/gallery-3-big.jpg" data-lightbox="example-set" data-title="">
+								<div class="grid">
+									<figure class="effect-apollo">
+										<img src="images/gallery-3.jpg" alt="tirol trailhead"/>
+											<figcaption></figcaption>
+									</figure>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="gallery-grids-right1">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="images/gallery-6-big.jpg" data-lightbox="example-set" data-title="">
+								<div class="grid">
+									<figure class="effect-apollo">
+										<img src="images/gallery-6.jpg" alt="tirol trailhead"/>
+											<figcaption></figcaption>
+									</figure>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 gallery-grids-right gallery-8">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="images/gallery-8-big.jpg" data-lightbox="example-set" data-title="">
+								<div class="grid">
+									<figure class="effect-apollo">
+										<img src="images/gallery-8.jpg" alt="tirol trailhead"/>
+											<figcaption></figcaption>
+									</figure>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 gallery-grids-right gallery-9">
+						<div class="gallery-grid">
+							<a class="example-image-link" href="images/gallery-9-big.jpg" data-lightbox="example-set" data-title="">
+								<div class="grid">
+									<figure class="effect-apollo">
+										<img src="images/gallery-9.jpg" alt="tirol trailhead"/>
+											<figcaption></figcaption>
+									</figure>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+		</div>
+	</div>
+	<!-- //Gallery -->
+
+	<!-- Clients -->
+	<div class="clients">
+		<div class="container">
+
+			<h3>Feedback</h3>
+
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<!--h4>"Barbara, Linz, AT"</h4-->
+							<p>Danke für die erlebnisreichen Tage auf Elba und die Tipps am Trail - mich hat diese Woche bei meinem Mountainbiken wirklich weitergebracht!</p>
+							<div class="client">
+								<h5>Barbara, Linz, AT</h5>
+							</div>
+						</li>						
+						<li>
+							<!--h4>"Angelika, Wien, AT"</h4-->
+							<p>Total feines sorgenfrei Paket und rundum gut organisiert! ...die Trails auf denen wir in den 2 Tagen unterwegs waren, werd ich mein Leben lang nicht vergessen:)</p>
+							<div class="client">
+								<h5>Angie</h5>
+							</div>
+						</li>					
+						<li>
+							<!--h4>"Reini, Niederösterreich, AT"</h4-->
+							<p>Du kennst deine Trails, suchst aber immer nach neuen Herausforderungen, das macht es für alle spannend und abwechslungsreich. Du warst perfekt vorbereitet und situationselastisch auf alle Teilnehmer abgestimmt. Von deiner dynamischen Interpretation der Downhillpassagen habe ich viel Neues erfahren. Immer gerne dabei!</p>
+							<div class="client">
+								<h5>Reinhold, Niederösterreich, AT</h5>
+							</div>
+						</li>	
+						<li>
+							<!--h4>"Koray, Baden-Würtenberg, DE"</h4-->
+							<p>Auf der Suche nach einem Bikespot für ein verlängertes Wochenende bei dem wir auch 1-2 mal eine geführte Tour machen wollten fanden wir mit Kay als Guide genau den richtigen Partner, einer der uns verstand: Maximaler Abfahrtsgenuss auf einzigartigen Trails bei minimalem Bergauf Arbeitsaufwand. Danke für 2 perfekte Tage auf traumhaften Trails, die Hammer Fotos die du von uns gemacht hast, Tipps für die Unterkunft sowie essen und trinken. Das war ein Riesen Ding und wir freuen uns aufs nächste mal. Ride on</p>
+							<div class="client">
+								<h5>Koray, Alex & Andre, Baden-Würtenberg, DE</h5>
+							</div>
+						</li>											
+						<li>
+							<!--h4>"Andreas, Wien, AT"</h4-->
+							<p>Gewissenhafte Auswahl der Touren, abgestimmt auf Fahrkönnen und Wetter. Betreuung, Tips und Tricks am Trail und gemütlich Beisammen nach einem gemeinsamen Tag am Bike. Jede meiner Touren mit Kay war bisher ein Abenteuer und ich freu mich auf weitere Tage in den Bergen, auf den schönsten Trails Europas.</p>
+							<div class="client">
+								<h5>Andreas, Wien, At</h5>
+							</div>
+						</li>
+						<li>
+							<!--h4>"Karl, Wien, AT"</h4-->
+							<p>Auf unseren MTB-Touren erlebte ich modernes Montainbiking und Kay gab sehr gute Tipps zu richtigen Zeit.. Er schaffte es, dass jeder in der Gruppe voll auf seine Kosten kam!</p>
+							<div class="client">
+								<h5>Karl, Wien, AT</h5>
+							</div>
+						</li>
+						<li>
+							<!--h4>"Siegfried, Niederösterreich, AT"</h4-->
+							<p>perfekte Planung... super Trail's... viel gelernt... Spaß ohne Ende... Top Guide... Danke Kay!</p>
+							<div class="client">
+								<h5>Siegfried, Niederösterreich, AT</h5>
+							</div>
+						</li>	
+						<li>
+							<!--h4>"Thomas, Basel, CH"</h4-->
+							<p>Megatage!!!! Riesendank für die sensationellen Touren!</p>
+							<div class="client">
+								<h5>Christoph, Basel, CH</h5>
+							</div>
+						</li>
+						<li>
+							<!--h4>"Thomas, Basel, CH"</h4-->
+							<p>Das waren Wahnsinns-Tage! Vielen Dank, Kay!</p>
+							<div class="client">
+								<h5>Christoph, München, DE</h5>
+							</div>
+						</li>	
+						<li>
+							<!--h4>"Karoline, Innsbruck, AT"</h4-->
+							<p>Hab das Anfänger Technik Training gemacht und kanns nur weiterempfehlen! Kleine Gruppe. Kay ist super auf die Individuellen Bedürfnisse eingegangen und viel Geduld mitgebracht! Hab echt viel Input zum daheim weiter üben mitbekommen!
+Gerne wieder beim nächsten Training!</p>
+							<div class="client">
+								<h5>Karoline, Innsbruck, AT</h5>
+							</div>
+						</li>	
+						<li>
+							<!--h4>"Claudia, St. Pölten, NÖ"</h4-->
+							<p>Habe tolle Inputs beim Technikkurs mit Guide Kay erhalten - jetzt heißt es üben üben üben um es auch permanent am Trail umzusetzen. Ich kann nach zwei Wochen schon deutlich mehr FLOW beim biken spüren - Sicherheit kommt wieder!
+Erstes Mal seit 1 Jahr wieder" 11er" Trails ohne Absteigen und mit jeder Menge Spaß befahren
+... empfehlenswertes Techniktraining</p>
+							<div class="client">
+								<h5>Claudia, St. Pölten, NÖ</h5>
+							</div>
+						</li>										
+					</ul>
+				</div>
+			</section>
+
+		</div>
+	</div>
+	<!-- //Clients -->
+
+	<!-- Instagram -->
+	<div class="about">
+		<div class="container">
+			<h1>Instagram @tiroltrailhead</h1>
+			<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/849a873d96775c96af05fcd31589d0a0.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+			<!-- LightWidget WIDGET ><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/507c6df0bd205465a5f647e148c6220c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe-->
+			<!-- LightWidget WIDGET ><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/13a1cecc0845927dbf9ad3f694355986e0372afb.html" id="lightwidget_13a1cecc08" name="lightwidget_13a1cecc08"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe-->
+			<!-- LightWidget WIDGET ><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/9f3f197c98a15c91b16161d84e6287ae.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe-->
+		</div>
+	</div>
+	<!-- //Instagram -->	
+	
+	<!-- Team -->
+	<div class="team" id="team">
+		<div class="container">
+
+			<h3>GUIDE</h3>
+			
+			<div class="team-grids">
+			
+				<div class="col-md-3 col-sm-3 team-grid">
+					<div class="pic">
+						<div class="stack twisted">	
+							<img src="images/team-4_3.jpg" alt="TIROL TRAILHEAD" class="img-responsive" />
+						</div>
+						<span class="pic-caption top-to-bottom">
+						
+							<h4>Kay Cichini</h4>
+							<h5>VAVOE zertifizierter Bike-Guide</h5>
+							
+							<!== Social-Icons ==>
+							<!== //Social-Icons ==>
+							
+						</span>
+					</div>	
+				</div>
+				
+				<div class="col-md-3 col-sm-3 team-grid">
+					<div class="pic">
+						<div class="stack twisted">	
+							<img src="images/team-4_2.JPG" alt="TIROL TRAILHEAD" class="img-responsive" />
+						</div>
+						<span class="pic-caption top-to-bottom">
+						
+							<h4>..on trail!</h4>
+							
+							<!== Social-Icons ==>
+							<div class="social">
+								<ul class="social-icons">
+									<li><a href="https://www.facebook.com/KayCichini" class="facebook" title="Go to Our Facebook Page"></a></li>
+									<li><a href="https://www.youtube.com/channel/UCYsdgBSThrQtMsanm9FkaBA" class="youtube" title="Go to Our YouTube Channel"></a></li>
+									<!--li><a href="#" class="googleplus" title="Go to Our Google Plus Account"></a></li-->
+									<li><a href="https://www.instagram.com/tiroltrailhead/" class="instagram" title="Go to Our Instagram Account"></a></li>
+								</ul>
+							</div>							
+							<!== //Social-Icons ==>
+							
+						</span>
+					</div>	
+				</div>	
+				
+				<div class="clearfix"> </div>
+			</div>
+		
+		</div>
+	</div>
+	<!-- //Team -->
+	
+	<!-- Contact -->
+	<div class="contact" id="contact">
+		<div class="container">
+
+			<h3>Booking</h3>
+
+			<div class="contact-form">
+				<form action="http://formspree.io@tiroltrailhead.com" method="POST">
+					<input  id="namebox_id" type="text" class="text" name="name" placeholder="Name" required="">
+					<input type="text" class="text" name="email" placeholder="E-Mail" required="">
+					<textarea id="messagebox_id" placeholder="Message" name="message" required=""></textarea>
+					<input type="submit" name="email_submit" class="more_btn" value="Sende E-Mail Anfrage">
+				</form>
+
+				<!-- Social-Icons -->
+				<!--p>Or Login with</p>
+				<div class="social">
+					<ul class="social-icons">
+						<li><a href="#" class="facebook" title="Go to Our Facebook Page"></a></li>
+						<li><a href="#" class="twitter" title="Go to Our Twitter Account"></a></li>
+						<li><a href="#" class="googleplus" title="Go to Our Google Plus Account"></a></li>
+						<li><a href="#" class="instagram" title="Go to Our Instagram Account"></a></li>
+						<li><a href="#" class="youtube" title="Go to Our Youtube Channel"></a></li>
+					</ul>
+				</div-->
+				<!-- //Social-Icons -->
+
+				<!--p>Subscribe to our Newsletter</p>
+				<div class="newsletter">
+					<form action="http://formspree.io/tirol.trailhead@gmail.com" method="POST">
+						<input class="email" type="email" name="email" placeholder="Deine E-Mail Adressse..." required="">
+						<input type="submit" class="submit" name="Newlsetter-Bestellung" value="">
+					</form>
+				</div-->
+
+			</div>
+
+		</div>
+	</div>
+	<!-- //Contact -->
+
+	<!-- Map -->
+	<!--div class="map">
+		<div class="map-hover">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22702.22744502486!2d11.113366067229226!3d44.662878362361056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fc3eca9065c15%3A0x12ec8a03aadae866!2s40019+Sant&#39;Agata+Bolognese+BO%2C+Italy!5e0!3m2!1sen!2sin!4v1451281303075" allowfullscreen></iframe>
+			<div class="map-hover-1"></div>
+		</div>
+	</div-->
+	<!-- //Map -->
+
+	<!-- Footer -->
+	<div class="footer" id="footer">
+		<div class="container">
+			<div class="copyright">
+
+				<p><h2>PARTNER</h2></p>
+				<br/>
+				<a href="http://bike-gruppe.at/Frames.htm" target="_blank"/><img src="images/bikegruppe.png" style="width:35%; height:auto; text-align:center; margin:10px;" alt="www.bike-gruppe.at" title="www.bike-gruppe.at"></img></a>
+				<br/>					
+				<a href="https://www.trailtech.at/" target="_blank"/><img src="images/trailtech.png" style="width:24%; height:auto; text-align:center;" alt="trailtech.at" title="trailtech.at"></img></a>
+				<br/>
+				<a href="https://www.flatsucks.at/" target="_blank"/><img src="images/flatsucks_logo_fs3.png" style="width:24%; height:auto; text-align:center; background-color:#0ab7b6; border-radius:5px; padding:5px; margin:5px;" alt="flatsucks.at" title="flatsucks.at"></img></a>
+				<br/>					
+				<a href="https://www.bike-components.de/" target="_blank"/><img src="images/bike-components.png" style="width:24%; height:auto; text-align:center;" alt="bike-components.de" title="bike-components.de"></img></a>		
+				<br/>
+				<a href="https://www.supertrail-map.com/" target="_blank"/><img src="images/supertrailmap.png" style="width:30%; height:auto; text-align:center;" alt="http://www.supertrail-map.com/" title="supertrail-map.com/"></img></a>		
+				<br/><br/>
+				<a href="http://www.elbagravitypark.it/" target="_blank"/><img src="images/elba_gravity_park.png" style="width:20%; height:auto; text-align:center;" alt="http://www.elbagravitybikerent.it/GravityPark.aspx" title="Elba Gravity Park"></img></a>		
+				<br/><br/>
+				<p>&copy; 2016 tirol trailhead. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank"> W3layouts </a> | <a href="impressum.html">Impressum</a></p>
+			</div>		
+		</div>
+	</div>
+	<!-- //Footer -->
+
+
+
+	<!-- Custom-JavaScript-File-Links -->
+
+	<!-- Supportive-JavaScript --> <script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- Necessary-JS-File-For-Bootstrap --> <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- Banner-Slider-JavaScript -->
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+			$("#slider1").responsiveSlides({
+				auto: true,
+				nav: true,
+				speed: 1000,
+				namespace: "callbacks",
+				pager: true,
+			});
+		});
+	</script>
+	<!-- //Banner-Slider-JavaScript -->
+
+	<!-- Popup-Box-JavaScript -->
+	<script src="js/modernizr.custom.97074.js"></script>
+	<script src="js/jquery.chocolat.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.gallery-grids a').Chocolat();
+		});
+	</script>
+	<!-- //Popup-Box-JavaScript -->
+	
+	<!-- FlexSlider-JavaScript -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		/*$(function(){
+			SyntaxHighlighter.all();
+		});*/
+		$(window).load(function(){
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function(slider){
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+	<!-- //FlexSlider-JavaScript -->
+	
+	<!--Sticky Button Script-->
+	<script>
+		// When the user scrolls down XYpx from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 35) {
+				document.getElementById("bookBtn").style.display = "block";
+			} else {
+				document.getElementById("bookBtn").style.display = "none";
+			}
+		}
+	</script>
+	<!--Sticky Button Script-->
+	<!--Booking Button Script-->
+	<script>
+		var i = 0;
+		var speed = 100;
+		var txt = "Get in touch! Feel free to ask for events, schedules, prices, dates... :) Don't forget to put your name and E-Mail to the boxes above. Hit 'Send!' and then let's go biking!\u000d";
+		
+		function bookFunction() {
+		
+			// focusing the input form box..
+			document.getElementById("messagebox_id").focus();
+			document.getElementById("messagebox_id").select();
+			
+			// animated typing
+
+			if (i < txt.length) {
+				document.getElementById("messagebox_id").value += txt.charAt(i);
+				i++;
+				setTimeout(bookFunction, speed);
+			}
+		}
+		// enable button only after full page load!
+		// and set default transparency to none..
+		$(document).ready(function(){
+			$("#bookBtn").prop("disabled", false);
+			$("#bookBtn").css("opacity", "1");
+		});
+	</script>
+	<!--Booking Button Script-->
+
+	<!-- //Custom-JavaScript-File-Links -->
+
+
+
+</body>
+<!-- //Body -->
+
+</html>
