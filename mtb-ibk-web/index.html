@@ -202,12 +202,8 @@
         map.addLayer(layer_Untersuchungsraum_5);
         function pop___sitephotos_6(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['photo'] !== null ? '<img src="file:///' + String(feature.properties['photo']) + '"\
-						width="250px" height="auto">' : '') + '</td>\
-                    </tr>\
 					<tr>\
-                        <td colspan="2"><img src="http://tiroltrailhead.com/ibk-mtb-web/photos/' + autolinker.link(feature.properties['filename'].toLocaleString()) + '.jpg" width="250px" height="auto"></td>\
+                        <td colspan="2"><img src="http://tiroltrailhead.com/mtb-ibk-web/photos/' + autolinker.link(feature.properties['filename'].toLocaleString()) + '.jpg" width="250px" height="auto"></td>\
                     </tr>\
                         <th scope="row">Beschreibung:</th>\
                         <td>' + (feature.properties['filename'] !== null ? autolinker.link(feature.properties['filename'].toLocaleString()).replace(/.*_/,''): '') + '</td>\
