@@ -109,27 +109,20 @@
             maxNativeZoom: 16
         });
         layer_strava_2;
+
+        function style_trails_4_0() {
+            return {
+                pane: 'pane_trails_4',
+                opacity: 1,
+                color: 'rgba(220,0,0,0.8)',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
 		
-		var selected = null;
-
-		function dehighlight (layer) {   // will be used on mouseout
-		  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-			  // reset style
-			  layer.style_trails_4_0();
-		  }
-		}		
-		
-		function highlight (layer) {	// will be used on mouse over / hover 
-			layer.setStyle({
-				weight: 4,
-				opacity: 0.95
-			});
-			if (!L.Browser.ie && !L.Browser.opera) {
-				layer.bringToFront();
-			}	
-		}		
-
-
         function pop_trails_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -159,29 +152,20 @@
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
 			// highlight:
-			layer.on({		
-				'mouseover': function (e) {
-					highlight(e.target);
-				},
-				'mouseout': function (e) {
-					dehighlight(e.target);
-				},
-			});			
+			layer.on('mouseover', function () {
+				this.setStyle({
+					color: 'rgba(220,0,0,0.9)',
+					weight: 6.0
+				});
+			});
+			layer.on('mouseout', function () {
+				layer_trails_4.resetStyle(this);
+			});		
+			layer.on('click', function () {
+				map.fitBounds(this.getBounds());
+			});
         }
 
-        function style_trails_4_0() {
-            return {
-                pane: 'pane_trails_4',
-                opacity: 1,
-                color: 'rgba(52,2,255,0.6)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'round',
-                weight: 5.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
         map.createPane('pane_trails_4');
         map.getPane('pane_trails_4').style.zIndex = 404;
         map.getPane('pane_trails_4').style['mix-blend-mode'] = 'normal';
@@ -212,7 +196,7 @@
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(178,178,178,1.0)',
+                fillColor: 'rgba(178,178,178,0.9)',
                 interactive: false,
             }
         }
