@@ -203,11 +203,7 @@
         function pop___sitephotos_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['photo'] !== null ? '<img src="file:///' + String(feature.properties['photo']) + '"\
-						width="250px" height="auto">' : '') + '</td>\
-                    </tr>\
-						<th scope="row">PATH:</th>\
-                        <td>https://tiroltrailhead.com/ibk-mtb-web/photos/' + (feature.properties['filename'] !== null ? autolinker.link(feature.properties['filename'].toLocaleString()): '') + '.jpg</td>\
+                        <td>http://tiroltrailhead.com/mtb-ibk-web/photos/' + (feature.properties['filename'] !== null ? autolinker.link(feature.properties['filename'].toLocaleString()): '') + '.jpg</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Beschreibung:</th>\
