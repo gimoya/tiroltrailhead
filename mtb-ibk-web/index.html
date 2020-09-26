@@ -206,7 +206,8 @@
                         <td colspan="2">' + (feature.properties['photo'] !== null ? '<img src="file:///' + String(feature.properties['photo']) + '"\
 						width="250px" height="auto">' : '') + '</td>\
                     </tr>\
-                        <td colspan="2"><img src="https://tiroltrailhead.com/ibk-mtb-web/photos/' + autolinker.link(feature.properties['filename'].toLocaleString()) + '.jpg" width="250px" height="auto"></td>\
+					<tr>\
+                        <td colspan="2"><img src="http://tiroltrailhead.com/ibk-mtb-web/photos/' + autolinker.link(feature.properties['filename'].toLocaleString()) + '.jpg" width="250px" height="auto"></td>\
                     </tr>\
                         <th scope="row">Beschreibung:</th>\
                         <td>' + (feature.properties['filename'] !== null ? autolinker.link(feature.properties['filename'].toLocaleString()).replace(/.*_/,''): '') + '</td>\
@@ -260,7 +261,7 @@
         bounds_group.addLayer(layer___sitephotos_6);
         cluster___sitephotos_6.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/__sitephotos_6.png" /> Fotos': cluster___sitephotos_6,'<img src="legend/Untersuchungsraum_5.png" /> Untersuchungsraum': layer_Untersuchungsraum_5,'<img src="legend/trails_4.png" /> Trails': layer_trails_4, "Strava": layer_strava_2,"AV-Karte": layer_AVKarte_1,"Schummerung Gelaendemodell": layer_Image_Schummerung_Gelaendemodell_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/sitephotos_6.png" /> Fotos': cluster___sitephotos_6,'<img src="legend/Untersuchungsraum_5.png" /> Untersuchungsraum': layer_Untersuchungsraum_5,'<img src="legend/trails_4.png" /> Trails': layer_trails_4, "Strava": layer_strava_2,"AV-Karte": layer_AVKarte_1,"Schummerung Gelaendemodell": layer_Image_Schummerung_Gelaendemodell_0,}).addTo(map);
         setBounds();
         var mapDiv = document.getElementById('map');
         var row = document.createElement('div');
