@@ -109,26 +109,6 @@
             maxNativeZoom: 16
         });
         layer_strava_2;
-		
-		var selected = null;
-
-		function dehighlight (layer) {   // will be used on mouseout
-		  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-			  // reset style
-			  layer.style_trails_4_0();
-		  }
-		}		
-		
-		function highlight (layer) {	// will be used on mouse over / hover 
-			layer.setStyle({
-				weight: 4,
-				opacity: 0.95
-			});
-			if (!L.Browser.ie && !L.Browser.opera) {
-				layer.bringToFront();
-			}	
-		}		
-
 
         function pop_trails_4(feature, layer) {
             var popupContent = '<table>\
@@ -158,15 +138,6 @@
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
-			// highlight:
-			layer.on({		
-				'mouseover': function (e) {
-					highlight(e.target);
-				},
-				'mouseout': function (e) {
-					dehighlight(e.target);
-				},
-			});			
         }
 
         function style_trails_4_0() {
@@ -196,7 +167,6 @@
         });
         bounds_group.addLayer(layer_trails_4);
         map.addLayer(layer_trails_4);
-		
         function pop_Untersuchungsraum_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
