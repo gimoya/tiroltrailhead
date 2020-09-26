@@ -393,7 +393,7 @@
             var sel_Schwierigkeit = document.getElementById('div_Schwierigkeit');
             noUiSlider.create(sel_Schwierigkeit, {
                 connect: true,
-                start: [0, 3],
+                start: [1, 3],
                 step: 1,
                 format: wNumb({
                     decimals: 0,
@@ -542,7 +542,8 @@
             sel_Gefahrenstellen.multiple = true;
             sel_Gefahrenstellen.size = 2;
             sel_Gefahrenstellen.id = "sel_Gefahrenstellen";
-            var Gefahrenstellen_options_str = "<option value='' unselected></option>";
+			var Gefahrenstellen_options_str;
+            //var Gefahrenstellen_options_str = "<option value='' unselected></option>";
             sel_Gefahrenstellen.onchange = function(){filterFunc()};
             Gefahrenstellen_options_str  += '<option value="n">Nein</option>';
             Gefahrenstellen_options_str  += '<option value="y">Ja</option>';
