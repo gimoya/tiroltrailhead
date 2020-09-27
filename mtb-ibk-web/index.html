@@ -29,7 +29,7 @@
 			}
 			
 		#title, .row {
-			background-color: #a0a4a8;
+			background-color: #f1c25b;
 			}
 		.noUi-connect {
 			background: #606468!important;
@@ -281,7 +281,7 @@
 		row.style.position="absolute";
 		row.style.bottom="0";
 		row.style.width="100%";
-        row.style.height = "94%";
+        row.style.height = "90%";
         var col1 = document.createElement('div');
         col1.className="col9";
         col1.id = "mapWindow";
@@ -560,7 +560,7 @@
             //var Gefahrenstellen_options_str = "<option value='' unselected></option>";
             sel_Gefahrenstellen.onchange = function(){filterFunc()};
             Gefahrenstellen_options_str  += '<option value="n">Nein</option>';
-            Gefahrenstellen_options_str  += '<option value="y">Ja</option>';
+            Gefahrenstellen_options_str  += '<option value="j">Ja</option>';
             sel_Gefahrenstellen.innerHTML = Gefahrenstellen_options_str;
             div_Gefahrenstellen.appendChild(sel_Gefahrenstellen);
             var lab_Gefahrenstellen = document.createElement('div');
