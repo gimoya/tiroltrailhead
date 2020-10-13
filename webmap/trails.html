@@ -155,9 +155,9 @@
 			<div id="control-div">
 				<a id="Overview" onclick="getOverview();"><i class="fa fa-globe fa-4x"></i></<a>
 				<a id="ToggleButton"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
-				<input type="button" class="Basemap" value="oMTB" onclick="map.setBaseLayer(oMTB);">
+				<input type="button" class="Basemap" value="OMTB" onclick="map.setBaseLayer(oMTB);">
 				<input type="button" class="Basemap" value="AV" onclick="map.setBaseLayer(AV);">
-				<input type="button" class="Basemap" value="OpenTopoMap" onclick="map.setBaseLayer(OpenTopoMap);">
+				<input type="button" class="Basemap" value="OTopoMap" onclick="map.setBaseLayer(OpenTopoMap);">
 			</div>
 			
 			<div id="map"></div>
@@ -243,23 +243,23 @@
 				sphericalMercator: true,
 				buffer: 0,
 				numZoomLevels: 17,
-				attribution: "&copy; 2008, 2010 BEV, <a href='http://www.bergfex.at'>bergfex GmbH</a>"
+				attribution: "&copy; 2008, 2010 BEV, <a href='http://www.bergfex.at'>&copy; bergfex GmbH</a>"
 				});	
 			
 			var oMTB = new OpenLayers.Layer.XYZ("OpenMTBMap", 
 				"http://tile.mtbmap.cz/mtbmap_tiles/${z}/${x}/${y}.png",
 				{
 				numZoomLevels: 17,
-				attribution: "&copy; <a href='http://mtbmap.cz/'>MTB Map of Europe</a>"
+				attribution: "&copy; <a href='http://mtbmap.cz/'>&copy; MTB Map of Europe</a>"
 				});
 			
 			var OpenTopoMap = new OpenLayers.Layer.XYZ( "OpenTopoMap",
-				"https://${s}.tile.opentopomap.org/${z}/${x}/${y}.png",
+				"https://tile.opentopomap.org/${z}/${x}/${y}.png",
 				{
 				sphericalMercator: true,
 				buffer: 0,
 				numZoomLevels: 16,
-				attribution: "&copy; <a href='https://opentopomap.org/about'>&copy; OpenStreetMap-Mitwirkende, SRTM | Kartendarstellung: &copy; OpenTopoMap (CC-BY-SA)</a>"
+				attribution: "&copy; <a href='https://opentopomap.org/about'>&copy; OpenTopoMap (CC-BY-SA)</a>"
 				});					
 			/* 
 			 * default styles for trails 
