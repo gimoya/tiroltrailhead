@@ -256,7 +256,7 @@
 				attribution: "&copy; <a href='http://mtbmap.cz/'>MTB Map of Europe</a>"
 				});
 			
-			var Open-Topomap = new OpenLayers.Layer.XYZ( "Open-Topomap",
+			var OpenTopomap = new OpenLayers.Layer.XYZ( "OpenTopomap",
 				"https://{s}.tile.opentopomap.org/${z}/${x}/${y}.png",
 				{
 				sphericalMercator: true,
@@ -805,7 +805,7 @@
 			
 			
 			/* ADD LAYERS AND MAPS */
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, oMTB, Kompass, AV]);
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, oMTB, OpenTopomap, AV]);
 			map.raiseLayer(pointLayer, map.layers.length);
 			/*
 
