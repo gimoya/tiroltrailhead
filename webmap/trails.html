@@ -256,17 +256,13 @@
 				attribution: "&copy; <a href='http://mtbmap.cz/'>MTB Map of Europe</a>"
 				});
 			
-			var Kompass = new OpenLayers.Layer.XYZ( "Kompass",
+			var Open-Topomap = new OpenLayers.Layer.XYZ( "Open-Topomap",
 				"https://{s}.tile.opentopomap.org/${z}/${x}/${y}.png",
 				{
 				sphericalMercator: true,
 				buffer: 0,
 				numZoomLevels: 16,
-				attribution: "&copy; <a href='http://www.kompass.de'>Kompass Wanderkarten</a>",
-				getURL: function(bounds) {
-					var path = OpenLayers.Layer.XYZ.prototype.getURL.apply(this, arguments);
-					return path;
-					}
+				attribution: "&copy; <a href='https://opentopomap.org/about'>&copy; OpenStreetMap-Mitwirkende, SRTM | Kartendarstellung: &copy; OpenTopoMap (CC-BY-SA)</a>"
 				});					
 			/* 
 			 * default styles for trails 
