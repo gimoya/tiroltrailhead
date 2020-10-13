@@ -157,7 +157,7 @@
 				<a id="ToggleButton"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
 				<input type="button" class="Basemap" value="oMTB" onclick="map.setBaseLayer(oMTB);">
 				<input type="button" class="Basemap" value="AV" onclick="map.setBaseLayer(AV);">
-				<input type="button" class="Basemap" value="Kompass" onclick="(map.getZoom() > 16) ? alert('Kompass Karte in dieser Zoom-Stufe nicht verf&uuml;gbar..') : map.setBaseLayer(Kompass);">
+				<input type="button" class="Basemap" value="OpenTopoMap" onclick="map.setBaseLayer(OpenTopoMap);">
 			</div>
 			
 			<div id="map"></div>
@@ -232,9 +232,6 @@
 						} else {
 							KMLtrails.setVisibility(true);
 							pointLayer.setVisibility(true);
-						}	
-						if(zLevel > 16 && this.baseLayer.name == 'Kompass') {
-							map.setBaseLayer(oMTB);
 						}							
 					}
 				}
@@ -256,8 +253,8 @@
 				attribution: "&copy; <a href='http://mtbmap.cz/'>MTB Map of Europe</a>"
 				});
 			
-			var OpenTopomap = new OpenLayers.Layer.XYZ( "OpenTopomap",
-				"https://{s}.tile.opentopomap.org/${z}/${x}/${y}.png",
+			var OpenTopoMap = new OpenLayers.Layer.XYZ( "OpenTopoMap",
+				"https://${s}.tile.opentopomap.org/${z}/${x}/${y}.png",
 				{
 				sphericalMercator: true,
 				buffer: 0,
@@ -805,7 +802,7 @@
 			
 			
 			/* ADD LAYERS AND MAPS */
-			map.addLayers([pointLayer, KMLtrails, KMLpolygons, oMTB, OpenTopomap, AV]);
+			map.addLayers([pointLayer, KMLtrails, KMLpolygons, oMTB, OpenTopoMap, AV]);
 			map.raiseLayer(pointLayer, map.layers.length);
 			/*
 
