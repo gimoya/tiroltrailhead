@@ -653,7 +653,7 @@
 							             Math.round(elev, 0),
 										 // tooltip string in 3rd column
 										 // 'Punkt: ' + (i+1) + '\n' +
-										 'Strecke: ' + (distance[i]/1000).toFixed(1) + ' km\n' +
+										 'Strecke: ' + (distance[i]/1000).toFixed(2) + ' km\n' +
 										 'Seeh\u00F6he: ' + elev.toFixed(0) + ' m ']
 							);
 						}
@@ -668,7 +668,7 @@
 						    // use altitude range (max - min) as proportional factor for chart height
 							// and trail length for width
 							height: height,
-							width: ftGeoLength/60+250 < 550 ? ftGeoLength/60+250 : 550,
+							width: ftGeoLength/50+250 < 550 ? ftGeoLength/50+250 : 550,
 							legend: 'none',
 							titleY: 'Seeh\u00F6he (m)',
 							titleX: 'Strecke (km)',
