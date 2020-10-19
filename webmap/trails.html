@@ -661,7 +661,7 @@
 						// Draw the chart using the data within its DIV.
 						$("#elevation-wrapper").fadeIn("slow");
 						var chart = new google.visualization.AreaChart(document.getElementById('elevation_chart'));
-						var height = Math.round((Math.max.apply(null, elevArr)-Math.min.apply(null, elevArr))*0.0375+150, 0);
+						var height = Math.round((Math.max.apply(null, elevArr)-Math.min.apply(null, elevArr))*0.0375+160, 0);
 						var options = {
 							title: 'H\u00F6henprofil \u25B2' + Math.round(gain, 0) + ' hm  \u25BC' + Math.round(loss, 0) + ' hm',
 						    tooltip: { trigger: 'selection' },
