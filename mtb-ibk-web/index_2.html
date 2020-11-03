@@ -116,10 +116,10 @@
             return {
                 pane: 'pane_trails_4',
                 opacity: 1,
-                color: 'rgba(220,0,0,0.8)',
+                color: 'rgba(200,0,130,0.8)',
                 lineCap: 'round',
                 lineJoin: 'round',
-                weight: 3.0,
+                weight: 2.5,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -586,13 +586,7 @@
 			function pop_besstr_filtered_dslvd_0(feature, layer) {
 				var popupContent = '<table>\
 						<tr>\
-							<td colspan="2">' + (feature.properties['ogc_fid'] !== null ? autolinker.link(feature.properties['ogc_fid'].toLocaleString()) : '') + '</td>\
-						</tr>\
-						<tr>\
-							<td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-						</tr>\
-						<tr>\
-							<th scope="row">betriebsar</th>\
+							<th scope="row">Betriebsart</th>\
 							<td>' + (feature.properties['betriebsar'] !== null ? autolinker.link(feature.properties['betriebsar'].toLocaleString()) : '') + '</td>\
 						</tr>\
 					</table>';
@@ -701,7 +695,7 @@
 			L.control.layers(baseMaps,{'<img src="legend/sitephotos_6.png" /> Fotos': cluster___sitephotos_6,
 				'<img src="legend/Untersuchungsraum_5.png" /> Untersuchungsraum': layer_Untersuchungsraum_5,
 				'<img src="legend/trails_4.png" /> Trails': layer_trails_4, 
-				'besstr_filtered_dslvd<br /><table><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Agrargem0.png" /></td><td>Agrargem.</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Gemeindegut1.png" /></td><td>Gemeindegut</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_ÖBF2.png" /></td><td>ÖBF</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_ÖffentlGut3.png" /></td><td>Öffentl. Gut</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Stadt4.png" /></td><td>Stadt</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_GemeindegutAgm5.png" /></td><td>Gemeindegut-Agm.</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Gemeindevermögen6.png" /></td><td>Gemeindevermögen</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_LandTirol7.png" /></td><td>Land Tirol</td></tr></table>': layer_besstr_filtered_dslvd_0,
+				'Besitzstruktur<br /><table><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Agrargem0.png" /></td><td>Agrargem.</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Gemeindegut1.png" /></td><td>Gemeindegut</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_ÖBF2.png" /></td><td>ÖBF</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_ÖffentlGut3.png" /></td><td>Öffentl. Gut</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Stadt4.png" /></td><td>Stadt</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_GemeindegutAgm5.png" /></td><td>Gemeindegut-Agm.</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Gemeindevermögen6.png" /></td><td>Gemeindevermögen</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_LandTirol7.png" /></td><td>Land Tirol</td></tr></table>': layer_besstr_filtered_dslvd_0,
 				"Strava": layer_strava_2,
 				"AV-Karte": layer_AVKarte_1,
 				"Schummerung Gelaendemodell": layer_Image_Schummerung_Gelaendemodell_0,
