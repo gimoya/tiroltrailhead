@@ -272,9 +272,11 @@
         bounds_group.addLayer(layer___sitephotos_6);
         cluster___sitephotos_6.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/sitephotos_6.png" /> Fotos': cluster___sitephotos_6,'<img src="legend/Untersuchungsraum_5.png" /> Untersuchungsraum': layer_Untersuchungsraum_5,'<img src="legend/trails_4.png" /> Trails': layer_trails_4, "Strava": layer_strava_2,"AV-Karte": layer_AVKarte_1,"Schummerung Gelaendemodell": layer_Image_Schummerung_Gelaendemodell_0,}).addTo(map);
         var mapDiv = document.getElementById('map');
-        var row = document.createElement('div');
+        
+		//L.control.layers(baseMaps,{'<img src="legend/sitephotos_6.png" /> Fotos': cluster___sitephotos_6,'<img src="legend/Untersuchungsraum_5.png" /> Untersuchungsraum': layer_Untersuchungsraum_5,'<img src="legend/trails_4.png" /> Trails': layer_trails_4, "Strava": layer_strava_2,"AV-Karte": layer_AVKarte_1,"Schummerung Gelaendemodell": layer_Image_Schummerung_Gelaendemodell_0,}).addTo(map);
+        
+		var row = document.createElement('div');
         row.className="row";
         row.id="all";
 		row.style.width="100%";
@@ -695,8 +697,13 @@
 			bounds_group.addLayer(layer_besstr_filtered_dslvd_0);
 			map.addLayer(layer_besstr_filtered_dslvd_0);
 
-			L.control.layers(baseMaps,{'besstr_filtered_dslvd<br /><table><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Agrargem0.png" /></td><td>Agrargem.</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Gemeindegut1.png" /></td><td>Gemeindegut</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_ÖBF2.png" /></td><td>ÖBF</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_ÖffentlGut3.png" /></td><td>Öffentl. Gut</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Stadt4.png" /></td><td>Stadt</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_GemeindegutAgm5.png" /></td><td>Gemeindegut-Agm.</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Gemeindevermögen6.png" /></td><td>Gemeindevermögen</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_LandTirol7.png" /></td><td>Land Tirol</td></tr></table>': layer_besstr_filtered_dslvd_0,}).addTo(map);
-				
+			L.control.layers(baseMaps,{'<img src="legend/sitephotos_6.png" /> Fotos': cluster___sitephotos_6,
+				'<img src="legend/Untersuchungsraum_5.png" /> Untersuchungsraum': layer_Untersuchungsraum_5,
+				'<img src="legend/trails_4.png" /> Trails': layer_trails_4, 
+				'besstr_filtered_dslvd<br /><table><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Agrargem0.png" /></td><td>Agrargem.</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Gemeindegut1.png" /></td><td>Gemeindegut</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_ÖBF2.png" /></td><td>ÖBF</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_ÖffentlGut3.png" /></td><td>Öffentl. Gut</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Stadt4.png" /></td><td>Stadt</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_GemeindegutAgm5.png" /></td><td>Gemeindegut-Agm.</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_Gemeindevermögen6.png" /></td><td>Gemeindevermögen</td></tr><tr><td style="text-align: center;"><img src="legend/besstr_filtered_dslvd_0_LandTirol7.png" /></td><td>Land Tirol</td></tr></table>': layer_besstr_filtered_dslvd_0,
+				"Strava": layer_strava_2,
+				"AV-Karte": layer_AVKarte_1,"Schummerung Gelaendemodell": layer_Image_Schummerung_Gelaendemodell_0,
+				}).addTo(map);
         </script>
     </body>
 </html>
