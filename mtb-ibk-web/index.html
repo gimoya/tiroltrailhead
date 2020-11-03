@@ -62,7 +62,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:16, minZoom:12
-        }).fitBounds([[47.176,11.245],[47.35,11.661]]);
+        }).fitBounds([[47.176,11.245],[47.35,11.660]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -82,14 +82,14 @@
             info_format: 'text/html',
             opacity: 1,
             identify: false,
-            attribution: '',
+            attribution: 'Land Tirol',
         });
         map.createPane('pane_AVKarte_1');
         map.getPane('pane_AVKarte_1').style.zIndex = 401;
         var layer_AVKarte_1 = L.tileLayer('https://maps.bergfex.at/oek/standard/{z}/{x}/{y}.jpg', {
             pane: 'pane_AVKarte_1',
             opacity: 1.0,
-            attribution: '',
+            attribution: 'bergfex.at',
             minZoom: 12,
             maxZoom: 16,
             minNativeZoom: 12,
@@ -99,14 +99,12 @@
         map.addLayer(layer_AVKarte_1);
         map.createPane('pane_strava_2');
         map.getPane('pane_strava_2').style.zIndex = 402;
-        var layer_strava_2 = L.tileLayer('https://anygis.ru/api/v1/Tracks_Strava_Ride/{x}/{y}/{z}', {
+        var layer_strava_2 = L.tileLayer('//tiroltrailhead.com/strava_tiles_06_2020/{z}/{x}/{y}.png', {
             pane: 'pane_strava_2',
             opacity: 1.0,
-            attribution: '',
-            minZoom: 12,
-            maxZoom: 16,
-            minNativeZoom: 0,
-            maxNativeZoom: 16
+            attribution: 'Strava.com',
+            minZoom: 14,
+            maxZoom: 16
         });
         layer_strava_2;
 
