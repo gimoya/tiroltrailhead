@@ -21,13 +21,12 @@
         }
 		
 		#title {
+			padding: 26px;
 			text-align: center;
-			padding-top: 3.5vh;
 			font-family: sans-serif;
 			font-weight: 700;
-			font-size: 3vh;
-			height: 8%;
-		}
+			font-size: 24px;
+			}
 			
 		#title, .row {
 			background-color: #f1c25b;
@@ -61,8 +60,8 @@
         <script src="data/Untersuchungsraum_5.js"></script>
         <script src="data/sitephotos_6.js"></script>
         <script>
-		var southWest = L.latLng(47.174,11.245),
-			northEast = L.latLng(47.352,11.655),
+		var southWest = L.latLng(47.175,11.245),
+			northEast = L.latLng(47.352,11.660),
 			bounds = L.latLngBounds(southWest, northEast);		
         var map = L.map('map', {
             zoomControl:true, maxZoom:16, minZoom:12,  maxBounds: bounds
