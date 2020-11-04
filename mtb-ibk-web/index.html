@@ -21,15 +21,14 @@
         }
 		
 		#title {
-			padding: 26px;
+			padding-top: 15px;
 			text-align: center;
 			font-family: sans-serif;
 			font-weight: 700;
 			font-size: 24px;
-			}
-			
-		#title, .row {
-			background-color: #f1c25b;
+		}			
+		body {
+			background-color: #cfcfcf;
 			}
 		.noUi-connect {
 			background: #606468!important;
@@ -400,7 +399,7 @@
             lab_Schwierigkeit.className = 'filterlabel';
             document.getElementById("menu").appendChild(lab_Schwierigkeit);
             var reset_Schwierigkeit = document.createElement('div');
-            reset_Schwierigkeit.innerHTML = 'clear filter';
+            reset_Schwierigkeit.innerHTML = 'Filter löschen';
             reset_Schwierigkeit.className = 'filterlabel';
             lab_Schwierigkeit.className = 'filterlabel';
             reset_Schwierigkeit.onclick = function() {
@@ -440,7 +439,7 @@
             lab_FussgeherFreq.className = 'filterlabel';
             document.getElementById("menu").appendChild(lab_FussgeherFreq);
             var reset_FussgeherFreq = document.createElement('div');
-            reset_FussgeherFreq.innerHTML = 'clear filter';
+            reset_FussgeherFreq.innerHTML = 'Filter löschen';
             reset_FussgeherFreq.className = 'filterlabel';
             lab_FussgeherFreq.className = 'filterlabel';
             reset_FussgeherFreq.onclick = function() {
@@ -480,7 +479,7 @@
             lab_Bodenerosion.className = 'filterlabel';
             document.getElementById("menu").appendChild(lab_Bodenerosion);
             var reset_Bodenerosion = document.createElement('div');
-            reset_Bodenerosion.innerHTML = 'clear filter';
+            reset_Bodenerosion.innerHTML = 'Filter löschen';
             reset_Bodenerosion.className = 'filterlabel';
             lab_Bodenerosion.className = 'filterlabel';
             reset_Bodenerosion.onclick = function() {
@@ -520,7 +519,7 @@
             lab_MTBFreq.className = 'filterlabel';
             document.getElementById("menu").appendChild(lab_MTBFreq);
             var reset_MTBFreq = document.createElement('div');
-            reset_MTBFreq.innerHTML = 'clear filter';
+            reset_MTBFreq.innerHTML = 'Filter löschen';
             reset_MTBFreq.className = 'filterlabel';
             lab_MTBFreq.className = 'filterlabel';
             reset_MTBFreq.onclick = function() {
@@ -571,7 +570,7 @@
             lab_Gefahrenstellen.className = 'filterlabel';
             div_Gefahrenstellen.appendChild(lab_Gefahrenstellen);
             var reset_Gefahrenstellen = document.createElement('div');
-            reset_Gefahrenstellen.innerHTML = 'clear filter';
+            reset_Gefahrenstellen.innerHTML = 'Filter löschen';
             reset_Gefahrenstellen.className = 'filterlabel';
             reset_Gefahrenstellen.onclick = function() {
                 var options = document.getElementById("sel_Gefahrenstellen").options;
@@ -601,7 +600,7 @@
 					stroke: false, 
 					fill: true,
 					fillOpacity: 1,
-					fillColor: 'rgba(255,0,55,0.8)',
+					fillColor: 'rgba(255,0,55,0.5)',
 					interactive: true,
 				}
 						break;
@@ -621,7 +620,7 @@
 					stroke: false, 
 					fill: true,
 					fillOpacity: 1,
-					fillColor: 'rgba(148,209,128,0.8)',
+					fillColor: 'rgba(148,209,128,0.6)',
 					interactive: true,
 				}
 						break;
@@ -631,7 +630,7 @@
 					stroke: false, 
 					fill: true,
 					fillOpacity: 1,
-					fillColor: 'rgba(148,209,245,0.7)',
+					fillColor: 'rgba(148,209,245,0.6)',
 					interactive: true,
 				}
 						break;
@@ -641,7 +640,7 @@
 					stroke: false, 
 					fill: true,
 					fillOpacity: 1,
-					fillColor: 'rgba(226,255,1,0.7)',
+					fillColor: 'rgba(226,255,1,0.6)',
 					interactive: true,
 				}
 						break;
@@ -651,7 +650,7 @@
 					stroke: false, 
 					fill: true,
 					fillOpacity: 1,
-					fillColor: 'rgba(255,166,184,0.7)',
+					fillColor: 'rgba(255,166,184,0.5)',
 					interactive: true,
 				}
 						break;
@@ -661,7 +660,7 @@
 					stroke: false, 
 					fill: true,
 					fillOpacity: 1,
-					fillColor: 'rgba(246,209,21,0.6)',
+					fillColor: 'rgba(246,209,21,0.5)',
 					interactive: true,
 				}
 						break;
