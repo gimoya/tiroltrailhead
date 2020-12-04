@@ -28,9 +28,9 @@
         <title>Tirol Fisch | Anlagenerweiterung</title>
     </head>
     <body>
-<div style="vertical-align:middle; font-family:Arial; font-weight:700;font-size:48px;">Tirol Fisch | Anlagenerweiterung</br>Mag. Kay Cichini  <img src="D:\Projekte\tiroltrailhead\biology\img\IngBuero.png" style="height:48px;width:auto;margin-bottom:-2px;"/> Beratende Ing.</div>
+<div style="vertical-align:middle; font-family:Arial; font-weight:700;font-size:48px;">Tirol-Fisch | Anlagenerweiterung</br>Mag. Kay Cichini  <img src="D:\Projekte\tiroltrailhead\biology\img\IngBuero.png" style="height:48px;width:auto;margin-bottom:-2px;"/> Beratende Ing.</div>
         <div id="map">
-        </div>	
+        </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/multi-style-layer.js"></script>
@@ -56,7 +56,6 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-		
         map.createPane('pane_Flugjahr_Aktuell_RGBFootprint_Aktuell_RGBImage_Aktuell_RGB_0');
         map.getPane('pane_Flugjahr_Aktuell_RGBFootprint_Aktuell_RGBImage_Aktuell_RGB_0').style.zIndex = 0;
         var layer_Flugjahr_Aktuell_RGBFootprint_Aktuell_RGBImage_Aktuell_RGB_0 = L.WMS.layer("https://gis.tirol.gv.at/arcgis/services/Service_Public/orthofoto/MapServer/WMSServer", "Image_Aktuell_RGB", {
@@ -69,36 +68,18 @@
             info_format: 'text/html',
             opacity: 1,
             identify: false,
-            attribution: 'tirol.gv.at',			
+			attribution: 'tirol.gv.at',	
             minZoom: 14,
             maxZoom: 20,
             minNativeZoom: 12,
             maxNativeZoom: 18
         });
         map.addLayer(layer_Flugjahr_Aktuell_RGBFootprint_Aktuell_RGBImage_Aktuell_RGB_0);
-		
-        map.createPane('pane_Image_Schummerung_Gelaendemodell_0');
-        map.getPane('pane_Image_Schummerung_Gelaendemodell_0').style.zIndex = 1;
-        var layer_Image_Schummerung_Gelaendemodell_0 = L.WMS.layer("https://gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?", "Image_Schummerung_Gelaendemodell", {
-            pane: 'pane_Image_Schummerung_Gelaendemodell_0',       
-            format: 'image/png',
-            uppercase: true,
-            transparent: true,
-            continuousWorld : true,
-            tiled: true,
-            info_format: 'text/html',
-            opacity: 1,
-            identify: false,
-            attribution: 'tirol.gv.at',
-			minZoom: 14,
-            maxZoom: 20,
-            minNativeZoom: 12,
-            maxNativeZoom: 18
-        });
-		//map.addLayer(layer_Image_Schummerung_Gelaendemodell_0);
-		
         function pop_Objekte_1(feature, layer) {
             var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ogc_fid'] !== null ? autolinker.link(feature.properties['ogc_fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['gst'] !== null ? autolinker.link(feature.properties['gst'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -118,28 +99,13 @@
                   return {
                 pane: 'pane_Objekte_1',
                 opacity: 1,
-                color: 'rgba(226,255,1,0.5)',
+                color: 'rgba(226,255,1,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fillOpacity: 0,
-                interactive: false,
-            };
-                }
-                else if (exp_Objekte_1rule1_eval_expression(context)) {
-                  return {
-                pane: 'pane_Objekte_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(133,182,111,0.5)',
-                interactive: false,
+                interactive: true,
             };
                 }
             else {
@@ -147,11 +113,11 @@
             }
         }
         map.createPane('pane_Objekte_1');
-        map.getPane('pane_Objekte_1').style.zIndex = 2;
+        map.getPane('pane_Objekte_1').style.zIndex = 1;
         map.getPane('pane_Objekte_1').style['mix-blend-mode'] = 'normal';
         var layer_Objekte_1 = new L.geoJson(json_Objekte_1, {
             attribution: '',
-            interactive: false,
+            interactive: true,
             dataVar: 'json_Objekte_1',
             layerName: 'layer_Objekte_1',
             pane: 'pane_Objekte_1',
@@ -179,9 +145,9 @@
         }
 
         var pattern_Manahmen_2_0 = new L.StripePattern({
-            weight: 0.5,
-            spaceWeight: 5.0,
-            color: '#000000',
+            weight: 0.26,
+            spaceWeight: 2.0,
+            color: '#729b6f',
             opacity: 1.0,
             spaceOpacity: 0,
             angle: 315
@@ -189,48 +155,18 @@
         pattern_Manahmen_2_0.addTo(map);
         function style_Manahmen_2_0(feature) {
             switch(String(feature.properties['Typ'])) {
-                case 'Bach natürlich':
-                    return {
-                pane: 'pane_Manahmen_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(221,121,171,0.5)',
-                interactive: true,
-            }
-                    break;
                 case 'Bach-/Quellflur/Teichvegetation':
                     return {
                 pane: 'pane_Manahmen_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(172,74,224,0.5)',
-                interactive: true,
-            }
-                    break;
-                case 'Fichtenwald':
-                    return {
-                pane: 'pane_Manahmen_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(47,210,58,0.5)',
+                fillColor: 'rgba(172,74,224,1.0)',
                 interactive: true,
             }
                     break;
@@ -238,14 +174,14 @@
                     return {
                 pane: 'pane_Manahmen_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(181,205,93,0.5)',
+                fillColor: 'rgba(181,205,93,1.0)',
                 interactive: true,
             }
                     break;
@@ -253,14 +189,14 @@
                     return {
                 pane: 'pane_Manahmen_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(17,214,201,0.5)',
+                fillColor: 'rgba(255,166,184,1.0)',
                 interactive: true,
             }
                     break;
@@ -268,14 +204,29 @@
                     return {
                 pane: 'pane_Manahmen_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(50,85,224,0.5)',
+                fillColor: 'rgba(254,246,0,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Extensiv-Grünland':
+                    return {
+                pane: 'pane_Manahmen_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(53,255,100,1.0)',
                 interactive: true,
             }
                     break;
@@ -283,18 +234,18 @@
                     return {
                 pane: 'pane_Manahmen_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(213,180,60,0.5)',
+                fillColor: 'rgba(255,158,23,1.0)',
                 interactive: true,
             }
                     break;
-                default:
+                case 'Projekt':
                     return {
                 pane: 'pane_Manahmen_2',
                 stroke: false,
@@ -303,25 +254,10 @@
                 interactive: true,
             }
                     break;
-                case 'Extensiv-Grünland':
-                    return {
-                pane: 'pane_Manahmen_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(141,90,153,0.5)',
-                interactive: true,
-            }
-                    break;
             }
         }
         map.createPane('pane_Manahmen_2');
-        map.getPane('pane_Manahmen_2').style.zIndex = 4;
+        map.getPane('pane_Manahmen_2').style.zIndex = 3;
         map.getPane('pane_Manahmen_2').style['mix-blend-mode'] = 'normal';
         var layer_Manahmen_2 = new L.geoJson(json_Manahmen_2, {
             attribution: '',
@@ -333,6 +269,7 @@
             style: style_Manahmen_2_0,
         });
         bounds_group.addLayer(layer_Manahmen_2);
+        
         function pop_Kartierung_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -351,29 +288,20 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        var pattern_Kartierung_3_0 = new L.StripePattern({
-            weight: 0.26,
-            spaceWeight: 5.0,
-            color: '#e5712d',
-            opacity: 1.0,
-            spaceOpacity: 0,
-            angle: 315
-        });
-        pattern_Kartierung_3_0.addTo(map);
         function style_Kartierung_3_0(feature) {
             switch(String(feature.properties['Typ'])) {
                 case 'Bach natürlich':
                     return {
                 pane: 'pane_Kartierung_3',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(221,121,171,0.5)',
+                fillColor: 'rgba(165,191,221,1.0)',
                 interactive: true,
             }
                     break;
@@ -381,14 +309,14 @@
                     return {
                 pane: 'pane_Kartierung_3',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(172,74,224,0.5)',
+                fillColor: 'rgba(172,74,224,1.0)',
                 interactive: true,
             }
                     break;
@@ -396,14 +324,14 @@
                     return {
                 pane: 'pane_Kartierung_3',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(47,210,58,0.5)',
+                fillColor: 'rgba(47,210,58,1.0)',
                 interactive: true,
             }
                     break;
@@ -411,14 +339,14 @@
                     return {
                 pane: 'pane_Kartierung_3',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(181,205,93,0.5)',
+                fillColor: 'rgba(181,205,93,1.0)',
                 interactive: true,
             }
                     break;
@@ -426,14 +354,14 @@
                     return {
                 pane: 'pane_Kartierung_3',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(17,214,201,0.5)',
+                fillColor: 'rgba(255,166,184,1.0)',
                 interactive: true,
             }
                     break;
@@ -441,30 +369,36 @@
                     return {
                 pane: 'pane_Kartierung_3',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.5)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(50,85,224,0.5)',
+                fillColor: 'rgba(254,246,0,1.0)',
                 interactive: true,
             }
                     break;
                 default:
                     return {
                 pane: 'pane_Kartierung_3',
-                stroke: false,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
                 fillOpacity: 1,
-                fillPattern: pattern_Kartierung_3_0,
+                fillColor: 'rgba(229,113,45,1.0)',
                 interactive: true,
             }
                     break;
             }
         }
         map.createPane('pane_Kartierung_3');
-        map.getPane('pane_Kartierung_3').style.zIndex = 3;
+        map.getPane('pane_Kartierung_3').style.zIndex = 2;
         map.getPane('pane_Kartierung_3').style['mix-blend-mode'] = 'normal';
         var layer_Kartierung_3 = new L.geoJson(json_Kartierung_3, {
             attribution: '',
@@ -476,7 +410,7 @@
             style: style_Kartierung_3_0,
         });
         bounds_group.addLayer(layer_Kartierung_3);
-		
+		map.addLayer(layer_Kartierung_3);
 		
         function pop_SITEPHOTOS_4(feature, layer) {
             var popupContent = '<table>\
@@ -525,19 +459,19 @@
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,0,0,0.5)',
+                fillColor: 'rgba(0,0,0,1.0)',
                 interactive: true,
             };
                 }
                 else if (exp_SITEPHOTOS_4rule1_eval_expression(context)) {
                   return {
                 pane: 'pane_SITEPHOTOS_4',
-                radius: 3.8,
+                radius: 2.8,
                 stroke: false,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(213,213,213,0.5)',
-                interactive: true,
+                fillColor: 'rgba(213,213,213,1.0)',
+                interactive: true, 
             };
                 }
             else {
@@ -545,7 +479,7 @@
             }
         }
         map.createPane('pane_SITEPHOTOS_4');
-        map.getPane('pane_SITEPHOTOS_4').style.zIndex = 9999;
+        map.getPane('pane_SITEPHOTOS_4').style.zIndex = 999;
         map.getPane('pane_SITEPHOTOS_4').style['mix-blend-mode'] = 'normal';
         var layer_SITEPHOTOS_4 = new L.geoJson.multiStyle(json_SITEPHOTOS_4, {
             attribution: '',
@@ -571,7 +505,12 @@
         bounds_group.addLayer(layer_SITEPHOTOS_4);
         map.addLayer(layer_SITEPHOTOS_4);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'SITEPHOTOS<br /><table><tr><td style="text-align: center;"><img src="legend/SITEPHOTOS_4_151020200.png" /></td><td>15-10-2020</td></tr><tr><td style="text-align: center;"><img src="legend/SITEPHOTOS_4_231120201.png" /></td><td>23-11-2020</td></tr></table>': layer_SITEPHOTOS_4,'Kartierung<br /><table><tr><td style="text-align: center;"><img src="legend/Kartierung_3_Bachnatürlich0.png" /></td><td>Bach natürlich</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_BachQuellflurTeichvegetation1.png" /></td><td>Bach-/Quellflur/Teichvegetation</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_Fichtenwald2.png" /></td><td>Fichtenwald</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_IntensivGrünland3.png" /></td><td>Intensiv-Grünland</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_TechnischesBiotop4.png" /></td><td>Technisches Biotop</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_WaldmantelFeldgehölzHeckeGebüsch5.png" /></td><td>Waldmantel/Feldgehölz/Hecke/Gebüsch</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_6.png" /></td><td></td></tr></table>': layer_Kartierung_3,'Maßnahmen<br /><table><tr><td style="text-align: center;"><img src="legend/Manahmen_2_Bachnatürlich0.png" /></td><td>Bach natürlich</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_BachQuellflurTeichvegetation1.png" /></td><td>Bach-/Quellflur/Teichvegetation</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_Fichtenwald2.png" /></td><td>Fichtenwald</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_IntensivGrünland3.png" /></td><td>Intensiv-Grünland</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_TechnischesBiotop4.png" /></td><td>Technisches Biotop</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_WaldmantelFeldgehölzHeckeGebüsch5.png" /></td><td>Waldmantel/Feldgehölz/Hecke/Gebüsch</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_Bachüberprägt6.png" /></td><td>Bach überprägt</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_ExtensivGrünland8.png" /></td><td>Extensiv-Grünland</td></tr><tr><td style="text-align: center;"></td><td></td></tr></table>': layer_Manahmen_2,'Objekte<br /><table><tr><td style="text-align: center;"><img src="legend/Objekte_1_Gste0.png" /></td><td>Gste</td></tr></table>': layer_Objekte_1,"Tiris-Orthofoto": layer_Flugjahr_Aktuell_RGBFootprint_Aktuell_RGBImage_Aktuell_RGB_0, "Tiris DGM-Schummerung": layer_Image_Schummerung_Gelaendemodell_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{
+		'Fotos<br /><table><tr><td style="text-align: center;"><img src="legend/SITEPHOTOS_4_151020200.png" /></td><td>15-10-2020</td></tr><tr><td style="text-align: center;"><img src="legend/SITEPHOTOS_4_231120201.png" /></td><td>23-11-2020</td></tr></table>': layer_SITEPHOTOS_4,
+		'Kartierung<br /><table><tr><td style="text-align: center;"><img src="legend/Kartierung_3_Bachnatürlich0.png" /></td><td>Bach natürlich</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_BachQuellflurTeichvegetation1.png" /></td><td>Bach-/Quellflur/Teichvegetation</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_Fichtenwald2.png" /></td><td>Fichtenwald</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_IntensivGrünland3.png" /></td><td>Intensiv-Grünland</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_TechnischesBiotop4.png" /></td><td>Technisches Biotop</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_WaldmantelFeldgehölzHeckeGebüsch5.png" /></td><td>Waldmantel/Feldgehölz/Hecke/Gebüsch</td></tr><tr><td style="text-align: center;"><img src="legend/Kartierung_3_6.png" /></td><td></td></tr></table>': layer_Kartierung_3,
+		'Maßnahmen<br /><table><tr><td style="text-align: center;"><img src="legend/Manahmen_2_BachQuellflurTeichvegetation0.png" /></td><td>Bach-/Quellflur/Teichvegetation</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_IntensivGrünland1.png" /></td><td>Intensiv-Grünland</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_TechnischesBiotop2.png" /></td><td>Technisches Biotop</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_WaldmantelFeldgehölzHeckeGebüsch3.png" /></td><td>Waldmantel/Feldgehölz/Hecke/Gebüsch</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_ExtensivGrünland4.png" /></td><td>Extensiv-Grünland</td></tr><tr><td style="text-align: center;"><img src="legend/Manahmen_2_Projekt6.png" /></td><td>Projekt</td></tr></table>': layer_Manahmen_2,
+		'Objekte<br /><table><tr><td style="text-align: center;"><img src="legend/Objekte_1_Gste0.png" /></td><td>Gste</td></tr></table>': layer_Objekte_1,
+		"Tiris Orthofoto": layer_Flugjahr_Aktuell_RGBFootprint_Aktuell_RGBImage_Aktuell_RGB_0,},{collapsed:false}).addTo(map);
         setBounds();
         var i = 0;
         layer_Objekte_1.eachLayer(function(layer) {

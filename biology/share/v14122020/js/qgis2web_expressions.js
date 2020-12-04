@@ -770,19 +770,6 @@ function exp_Objekte_1rule0_eval_expression(context) {
 }
 
 
-function exp_Objekte_1rule1_eval_expression(context) {
-    // 
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return null;
-    } else {
-        return null;
-    }
-}
-
-
 function exp_SITEPHOTOS_4rule0_eval_expression(context) {
     // month(timestamp) = 10
 
