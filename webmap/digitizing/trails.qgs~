@@ -148,10 +148,10 @@
     </layer-tree-group>
     <layer-tree-group expanded="1" name="BASEMAPS" checked="Qt::Checked">
       <customproperties/>
-      <layer-tree-layer source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=gdi_nomenklatur&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" expanded="0" name="gdi_nomenklatur" providerKey="wms" id="gdi_nomenklatur20180511150652199" checked="Qt::Unchecked" legend_exp="">
+      <layer-tree-layer source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://maps.bergfex.at/oek/standard/%7Bz%7D/%7Bx%7D/%7By%7D.jpg&amp;zmax=16&amp;zmin=12" expanded="0" name="OEK-Bergfex" providerKey="wms" id="OEK_Bergfex_fc6a3c00_0f69_440c_872f_149a607d08b6" checked="Qt::Unchecked" legend_exp="">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://maps.bergfex.at/oek/standard/%7Bz%7D/%7Bx%7D/%7By%7D.jpg&amp;zmax=16&amp;zmin=12" expanded="0" name="OEK-Bergfex" providerKey="wms" id="OEK_Bergfex_fc6a3c00_0f69_440c_872f_149a607d08b6" checked="Qt::Unchecked" legend_exp="">
+      <layer-tree-layer source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=gdi_nomenklatur&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" expanded="0" name="gdi_nomenklatur" providerKey="wms" id="gdi_nomenklatur20180511150652199" checked="Qt::Checked" legend_exp="">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/png&amp;layers=gdi_summer&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" expanded="1" name="gdi_base_summer" providerKey="wms" id="gdi_base_summer_cf071aec_e3d5_4eba_baf9_745106b93215" checked="Qt::Checked" legend_exp="">
@@ -218,7 +218,7 @@
       <item>strava_tracks_e4a57c88_9c90_4f82_8bfc_e97fcf8c7f56</item>
     </custom-order>
   </layer-tree-group>
-  <snapping-settings mode="3" tolerance="0" type="1" unit="2" intersection-snapping="1" enabled="1">
+  <snapping-settings mode="3" tolerance="0" type="1" unit="2" intersection-snapping="1" enabled="0">
     <individual-layer-settings>
       <layer-setting units="1" tolerance="12" id="Nonsberg_Hüttegg_Pill_a6000f57_0bf3_40e5_802d_ddc7f112a07c" type="1" enabled="0"/>
       <layer-setting units="1" tolerance="12" id="PillerWasserfall_tracks_fdb1740b_77d2_4e66_81fe_62a4d0c5c218" type="1" enabled="0"/>
@@ -259,10 +259,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>1320167.51899532601237297</xmin>
-      <ymin>6011496.67543010227382183</ymin>
-      <xmax>1327017.61882360465824604</xmax>
-      <ymax>6015456.11603913269937038</ymax>
+      <xmin>1318058.70826807827688754</xmin>
+      <ymin>5973724.04709929786622524</ymin>
+      <xmax>1340849.2812400555703789</xmax>
+      <ymax>5987649.8511150237172842</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -482,14 +482,14 @@
       </legendlayer>
     </legendgroup>
     <legendgroup name="BASEMAPS" checked="Qt::Checked" open="true">
-      <legendlayer showFeatureCount="0" name="gdi_nomenklatur" drawingOrder="-1" checked="Qt::Unchecked" open="false">
-        <filegroup hidden="false" open="false">
-          <legendlayerfile visible="0" isInOverview="0" layerid="gdi_nomenklatur20180511150652199"/>
-        </filegroup>
-      </legendlayer>
       <legendlayer showFeatureCount="0" name="OEK-Bergfex" drawingOrder="-1" checked="Qt::Unchecked" open="false">
         <filegroup hidden="false" open="false">
           <legendlayerfile visible="0" isInOverview="0" layerid="OEK_Bergfex_fc6a3c00_0f69_440c_872f_149a607d08b6"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer showFeatureCount="0" name="gdi_nomenklatur" drawingOrder="-1" checked="Qt::Checked" open="false">
+        <filegroup hidden="false" open="false">
+          <legendlayerfile visible="1" isInOverview="0" layerid="gdi_nomenklatur20180511150652199"/>
         </filegroup>
       </legendlayer>
       <legendlayer showFeatureCount="0" name="gdi_base_summer" drawingOrder="-1" checked="Qt::Checked" open="true">
@@ -11080,6 +11080,7 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <property key="dualview/previewExpressions">
           <value>COALESCE( "name", '&lt;NULL>' )</value>
+          <value>COALESCE( "name", '&lt;NULL>' )</value>
         </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
@@ -11349,7 +11350,7 @@ def my_form_open(dialog, layer, feature):
       <attributeactions>
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
-      <attributetableconfig sortExpression="&quot;id&quot;" sortOrder="1" actionWidgetStyle="dropDown">
+      <attributetableconfig sortExpression="&quot;OGC_FID&quot;" sortOrder="0" actionWidgetStyle="dropDown">
         <columns>
           <column hidden="0" name="OGC_FID" width="116" type="field"/>
           <column hidden="0" name="id" width="125" type="field"/>
