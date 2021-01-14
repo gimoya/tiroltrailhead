@@ -11080,15 +11080,6 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <property key="dualview/previewExpressions">
           <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
-          <value>COALESCE( "name", '&lt;NULL>' )</value>
         </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
