@@ -10,3 +10,6 @@
 [0328/142942.494:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\settings.dat: Zugriff verweigert (0x5)
 [0328/142942.503:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Die Pipe wurde beendet. (0x6D)
 [0328/142942.506:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\settings.dat: Zugriff verweigert (0x5)
+[0114/100130.241:ERROR:file_io_win.cc(180)] CreateFile C:\Program Files (x86)\settings.dat: Zugriff verweigert (0x5)
+[0114/100130.597:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Die Pipe wurde beendet. (0x6D)
+[0114/100130.608:ERROR:file_io_win.cc(180)] CreateFile C:\Program Files (x86)\settings.dat: Zugriff verweigert (0x5)
