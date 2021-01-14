@@ -43,7 +43,7 @@ body a:focus, a:hover {
     font-size: 3ex;
     border: none;
     outline: none;
-    background-color: #fff200;
+    background-color: #be4b00;
 	opacity: 0;
     color: rgba(0,0,0,0.8);
     cursor: pointer;
@@ -124,7 +124,7 @@ a:focus, a:hover {
 /*-- Logo --*/
 
 .navbar-default .navbar-brand {
-	color: #fff200;
+	color: #d45400;
 	font-family: 'Ultra';
 	font-size: 6ex;
 }
@@ -620,7 +620,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	font-family: inherit;
 	font-size: 40px;
 	font-weight: 600;
-	color: #0c7b7b;
+	color: #615807;
 }
 
 .agency h2, .clients h3, .contact h3 {
@@ -643,7 +643,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 .about-grid h4 {
 	font-size: 25px;
-	color: #0161A5;
+	color: #6c6102;
 	margin-bottom: 25px;
 	font-weight: 600;
 }
@@ -684,7 +684,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 
 .agency {
-	background-color: #076161;
+	background-color: #450000;
 }
 
 /*-- //Agency --*/
@@ -693,7 +693,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 /*-- Video --*/
 
 .video {
-	background-color: #076161;
+	background-color: #450000;
 	text-align: center;
 }
 
