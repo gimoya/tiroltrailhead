@@ -1,4 +1,4 @@
-/*--
+color/*--
 	Author: W3Layouts
 	Author URL: http://w3layouts.com
 	License: Creative Commons Attribution 3.0 Unported
@@ -620,7 +620,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	font-family: inherit;
 	font-size: 40px;
 	font-weight: 600;
-	color: #615807;
+	color: #d45400;;
 }
 
 .agency h2, .clients h3, .contact h3 {
@@ -633,7 +633,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 .about p.para {
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: 35px;
 	text-align: justify;
 	padding: 0 20px;
@@ -643,7 +643,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 .about-grid h4 {
 	font-size: 25px;
-	color: #6c6102;
+	color: #bb0000;
 	margin-bottom: 25px;
 	font-weight: 600;
 }
@@ -713,7 +713,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 
 .video span.glyphicon.glyphicon-play-circle {
 	top: -50px;
-	left: -50%;
+	left: -15%;
 	font-size: 60px;
 }
 
@@ -1719,9 +1719,13 @@ ul.social-icons li a.youtube:hover {
 }
 
 @media screen and (max-width:768px) {
+	
+	.callbacks_nav {
+		display: none;	
+	}	
 	.navbar-default .navbar-brand {
 		font-size: 3.5ex;
-		padding-top: 10px!important;
+		padding-top: 13px!important;
 	}
 	.slider .caption {
 		padding-top: 180px;
@@ -2010,9 +2014,6 @@ ul.social-icons li a.youtube:hover {
 	.nav-tabs>li>a {
 		padding: 10px 13px;
 	}
-	.navbar-default .navbar-brand {
-		font-size: 2.5ex;
-	}
 	.video button.btn.btn-primary {
 		padding: 50px 0 0 58px;
 		font-size: 27px;
@@ -2034,7 +2035,8 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:414px) {
 	.slider .caption {
-		padding-top: 100px;
+		padding-top: 70px;
+		font-size: 35px;
 	}
 	.about, .agency, .services, .video, .gallery, .clients, .team, .signup, .contact {
 		padding: 40px 0;
@@ -2081,7 +2083,7 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:384px) {
 	.slider .caption {
-		padding-top: 80px;
+		padding-top: 55px;
 	}
 	.slider .caption h3 {
 		width: 80%;
@@ -2101,7 +2103,9 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:375px) {
 	.navbar-default .navbar-brand {
-		font-size: 2ex;
+	font-size: 2.8ex;
+    padding-top: 15px!important;
+}
 	}
 	.video button.btn.btn-primary {
 		width: 71%;
@@ -2109,9 +2113,7 @@ ul.social-icons li a.youtube:hover {
 	.clients .container {
 		width: 355px;
 	}
-	.video span.glyphicon.glyphicon-play-circle {
-		left: -59%;
-	}
+
 	.copyright p {
 		line-height: 25px;
 	}
@@ -2125,7 +2127,7 @@ ul.social-icons li a.youtube:hover {
 		width: 340px;
 	}
 	.video span.glyphicon.glyphicon-play-circle {
-		left: -55%;
+		left: -20%;
 	}
 	.gallery-grid-sub {
 		margin-top: 274px;
@@ -2149,12 +2151,20 @@ ul.social-icons li a.youtube:hover {
 	}
 }
 
+
 @media screen and (max-width:320px) {
+	.contact h2  {
+		font-size: 25px;
+	}
+	.slider img {
+		width: 400px;
+	}
+	
 	.slider .caption {
 		padding-top: 75px;
 	}
 	.slider .caption h3 {
-		font-size: 22px;
+		font-size: 25px;
 	}
 	.callbacks_nav, .callbacks_nav.next {
 		top: 80%;
@@ -2174,7 +2184,7 @@ ul.social-icons li a.youtube:hover {
 		font-size: 28px; /*changed!*/
 	}
 	.video span.glyphicon.glyphicon-play-circle {
-		left: -60%;
+		left: -40%;
 	}
 	.clients .container {
 		width: 300px;
