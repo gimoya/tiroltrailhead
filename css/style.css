@@ -37,24 +37,24 @@ body a:focus, a:hover {
 #bookBtn {
     display: none;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 0px;
+    right: 0px;
+	margin:20px;
     z-index: 999;
-    font-size: 3ex;
+    font-size: 3.5ex;
     border: none;
     outline: none;
-    background-color: #be4b00;
+    background-color: #be4b00de;
 	opacity: 0;
-    color: rgba(0,0,0,0.8);
+	color: white;
     cursor: pointer;
-    padding: 15px;
+    padding: 8px;
     border-radius: 4px;
     font-family: 'Cabin Sketch';
 }
 
 #bookBtn:hover {
   background-color: #555;
-  color: white;
 }
 
 input[type="button"], input[type="submit"] {
@@ -134,7 +134,7 @@ a:focus, a:hover {
 }
 
 .navbar-brand {
-    padding: 0px!important;
+    padding: 10px!important;
     margin-left: 15px!important;
 }
 
@@ -701,7 +701,6 @@ ul.callbacks_tabs.callbacks1_tabs {
 .video button.btn.btn-primary {
 	background-color: transparent;
 	border: none;
-	padding: 50px 0 0 35px;
 	font-size: 30px;
 	outline: none;
 	border-radius: 0;
@@ -1310,7 +1309,7 @@ ul.social-icons li a.youtube:hover {
 #footer img {
 	width:25%;
 	height: auto;
-	padding:15px;
+	padding:8px;
 }	
 
 .footer {
@@ -1400,11 +1399,10 @@ ul.social-icons li a.youtube:hover {
 	}
 	.navbar-default .navbar-brand {
 		font-size: 5.4ex;
-		padding-top: 7px!important;
+		padding-top: 10px!important;
 	}
 	#footer img { 
 		width:30%;
-		padding:15px;
 	}
 }
 
@@ -1535,9 +1533,7 @@ ul.social-icons li a.youtube:hover {
 		margin: 30px auto;
 		padding: 0 20px;
 	}
-	.video button.btn.btn-primary {
-		padding: 50px 0 0 55px;
-	}
+
 	.gallery-grids-right1 img {
 		height: 310px;
 	}
@@ -1704,7 +1700,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	#footer img { 
 		width:40%;
-		padding:15px;
 	}	
 }
 
@@ -2033,7 +2028,6 @@ ul.social-icons li a.youtube:hover {
 		padding: 10px 13px;
 	}
 	.video button.btn.btn-primary {
-		padding: 50px 0 0 58px;
 		font-size: 27px;
 	}
 	.gallery-grids-left-subl, .gallery-grids-left {
@@ -2076,7 +2070,6 @@ ul.social-icons li a.youtube:hover {
 		font-size: 13px;
 	}
 	.video button.btn.btn-primary {
-		padding: 50px 0 0 0px;
 		font-size: 23px;
 		width: 78%;
 	}
@@ -2174,7 +2167,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	#footer img { 
 		width:60%;
-		padding:15px;
 	}
 }
 
