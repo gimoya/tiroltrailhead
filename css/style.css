@@ -1708,7 +1708,7 @@ ul.social-icons li a.youtube:hover {
 		padding: 0 10px;
 	}
 	.nav-tabs>li>a {
-		padding: 10px 36px;
+		padding: 10px 30px;
 	}
 	.clients .container {
 		width: 780px;
@@ -1734,9 +1734,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	.agency-grid {
 		padding: 0 5px;
-	}
-	.nav-tabs>li>a {
-		padding: 10px 33px;
 	}
 	.clients .container {
 		width: 750px;
@@ -1772,7 +1769,7 @@ ul.social-icons li a.youtube:hover {
 	.about-grid {
 		width: 100%;
 		float: left;
-		padding: 15px 30px;
+		padding: 15px 20px;
 	}
 	.about, .agency {
 		padding-bottom: 35px;
@@ -1843,7 +1840,7 @@ ul.social-icons li a.youtube:hover {
 		padding: 20px 35px;
 	}
 	.nav-tabs>li>a {
-		padding: 10px 25px;
+		padding: 10px 15px;
 		font-size: 15px;
 	}
 	.clients .container {
@@ -1900,6 +1897,13 @@ ul.social-icons li a.youtube:hover {
 		padding: 10px!important;
 	}
 }
+
+@media screen and (max-width: 580px){
+	navbar-brand {
+		padding: 10px!important;
+		font-size: 4ex;
+	}
+
 
 @media screen and (max-width:568px) {
 	.navbar-default {
@@ -1987,6 +1991,12 @@ ul.social-icons li a.youtube:hover {
 	}
 }
 
+@media screen and (max-width: 440px){
+	navbar-brand {
+		padding: 13px!important;
+		font-size: 3.3ex;
+	}
+	
 @media screen and (max-width:480px) {
 	.slider .caption {
 		padding-top: 125px;
@@ -2150,6 +2160,10 @@ ul.social-icons li a.youtube:hover {
 	}
 }
 
+@media screen and (max-width: 440px){
+	navbar-brand {
+		font-size: 2.2ex;
+	}
 
 @media screen and (max-width:320px) {
 	.contact h2  {
