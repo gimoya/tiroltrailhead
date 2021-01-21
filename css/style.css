@@ -637,13 +637,13 @@ ul.callbacks_tabs.callbacks1_tabs {
 	line-height: 35px;
 	text-align: justify;
 	padding: 0 20px;
-	color: #777;
+	color: #888b90;
 	margin-bottom: 40px;
 }
 
 .about-grid h4 {
 	font-size: 25px;
-	color: #450000;
+	color: #d45400;
 	margin-bottom: 25px;
 	font-weight: 1000;
 }
@@ -684,7 +684,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 
 .agency {
-	background-color: #450000;
+	background-color: #6d2600;
 }
 
 /*-- //Agency --*/
@@ -693,8 +693,9 @@ ul.callbacks_tabs.callbacks1_tabs {
 /*-- Video --*/
 
 .video {
-	background-color: #450000;
+	background-color: #6d2600;
 	text-align: center;
+	left:45%;
 }
 
 .video button.btn.btn-primary {
@@ -1305,6 +1306,13 @@ ul.social-icons li a.youtube:hover {
 
 /*-- Footer --*/
 
+
+#footer img {
+	width:25%;
+	height: auto;
+	padding:15px;
+}	
+
 .footer {
 	padding: 50px 0;
 	background-color: #000;
@@ -1391,21 +1399,22 @@ ul.social-icons li a.youtube:hover {
 		padding-top: 305px;
 	}
 	.navbar-default .navbar-brand {
-		font-size: 5ex;
+		font-size: 5.4ex;
+		padding-top: 7px!important;
 	}
-}
-@media screen and (max-width:1120px) {
-	.navbar-default .navbar-brand {
-		font-size: 4ex;
+	#footer img { 
+		width:30%;
+		padding:15px;
 	}
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1050px) {
 	.navbar-default {
 		padding: 20px 0 10px;
 	}
 	.navbar-default .navbar-brand {
-		font-size: 3ex;
+		font-size: 4ex;
+		padding-top: 9px!important;
 	}
 	.hover-effect span {
 		letter-spacing: 2px;
@@ -1500,9 +1509,9 @@ ul.social-icons li a.youtube:hover {
 	.slider .caption {
 		padding-top: 255px;
 	}
-	.callbacks_nav.next {
-		top: 55%;
-	}
+	.callbacks_nav {
+		display: none;	
+	}	
 	.container {
 		width: 100%;
 	}
@@ -1663,10 +1672,8 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:853px) {
 	.navbar-default .navbar-brand {
-		font-size: 2.5ex;
-	}
-	.callbacks_nav, .callbacks_nav.next {
-		top: 52.5%;
+	font-size: 3.3ex;
+    padding-top: 10px!important;
 	}
 	.slider .caption {
 		padding-top: 205px;
@@ -1695,6 +1702,10 @@ ul.social-icons li a.youtube:hover {
 	.team-grid h4 {
 		margin-bottom: 50px;
 	}
+	#footer img { 
+		width:40%;
+		padding:15px;
+	}	
 }
 
 @media screen and (max-width:800px) {
@@ -1720,12 +1731,6 @@ ul.social-icons li a.youtube:hover {
 
 @media screen and (max-width:768px) {
 	
-	.callbacks_nav {
-		display: none;	
-	}	
-	.navbar-default .navbar-brand {
-		font-size: 5.5ex;
-	}
 	.slider .caption {
 		padding-top: 180px;
 	}
@@ -1996,6 +2001,10 @@ ul.social-icons li a.youtube:hover {
 		padding: 13px!important;
 		font-size: 3.3ex;
 	}
+	.video {
+		display: none;
+	}
+}
 	
 @media screen and (max-width:480px) {
 	.slider .caption {
@@ -2041,6 +2050,11 @@ ul.social-icons li a.youtube:hover {
 		padding: 30px 0;
 	}
 }
+
+@media screen and (max-width: 440px){
+	navbar-brand {
+		font-size: 2.2ex;
+	}
 
 @media screen and (max-width:414px) {
 	.slider .caption {
@@ -2158,12 +2172,11 @@ ul.social-icons li a.youtube:hover {
 		padding: 0 0em;
 		margin: 1em 0;
 	}
-}
-
-@media screen and (max-width: 440px){
-	navbar-brand {
-		font-size: 2.2ex;
+	#footer img { 
+		width:60%;
+		padding:15px;
 	}
+}
 
 @media screen and (max-width:320px) {
 	.contact h2  {
@@ -2192,13 +2205,6 @@ ul.social-icons li a.youtube:hover {
 	.about-grid p {
 		line-height: 25px;
 	}
-	.video button.btn.btn-primary {
-		width: 39%; /*changed!*/
-		font-size: 28px; /*changed!*/
-	}
-	.video span.glyphicon.glyphicon-play-circle {
-		left: -40%;
-	}
 	.clients .container {
 		width: 300px;
 	}
@@ -2217,6 +2223,7 @@ ul.social-icons li a.youtube:hover {
 	.footer {
 		padding: 20px 0;
 	}
+	
 }
 
 
