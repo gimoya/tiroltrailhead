@@ -211,7 +211,7 @@
 	<div class="about" id="about">
 		<div class="container">
 
-			<h1>Guiding</h1>
+			<h1>About</h1>
 		
 		<p class="para"><span style="font-weight: 500;">Kay Cichini, VAVOE zertifizierter Bike-Guide: </span><i>"Das Mountainbiken in seiner elementarsten Form, bei der das <b>Naturerlebnis</b>, das Befahren von schönen <b>Trails</b>, die Zeit mit <b>Freunden</b> und das Erreichen von gemeinsamen Zielen im Mittelpunkt stehen, ist meine Leidenschaft! Das 'Abenteuer Mountainbiking' will ich für Euch und jeden meiner Kunden erlebbar machen. Dafür führe ich Euch auf die abwechslunsgreichsten und längsten Trails der Bergwelt Tirols und der angrenzenden Länder! ..mit 100% Zufriedenheits-Garantie!"
 				         </i></p>
@@ -828,6 +828,7 @@ Erstes Mal seit 1 Jahr wieder" 11er" Trails ohne Absteigen und mit jeder Menge S
 			$("#bookBtn").prop("disabled", false);
 			$("#bookBtn").css("opacity", "1");
 		});
+		
 		// When the user scrolls down XYpx from the top of the document, show the button
 		window.onscroll = function() {scrollFunction()};
 
@@ -843,6 +844,13 @@ Erstes Mal seit 1 Jahr wieder" 11er" Trails ohne Absteigen und mit jeder Menge S
 		function bookFunction() {
 			// focusing the contact section..
 			$('html, body').animate({ scrollTop: $('#contact').offset().top }, 'slow');
+			// blinking the div.. 
+			setTimeout(function () {
+				$('#contact h2').fadeTo(100, 0.1, function() { $(this).fadeTo(400, 1.0); });
+			}, 1000);
+			setTimeout(function () {
+				$('#contact h2').fadeTo(100, 0.1, function() { $(this).fadeTo(400, 1.0); });
+			}, 200);			
 		}
 	</script>
 	<!--Sticky Button Script-->
