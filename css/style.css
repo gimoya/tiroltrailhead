@@ -1187,6 +1187,11 @@ ul.social-icons li a.youtube:hover {
 
 /*-- Contact --*/
 
+.contact h4 {
+	color: lightgray;
+}
+	
+
 .contact {
 	background: url("../images/contact.jpg");
 	background-repeat: no-repeat;
