@@ -175,6 +175,29 @@ Innsbruck		13:55 (21')	14:25 (21')
 </div>
 
 <div class="floating-box">
+	<div class="mymap" id="map_B">
+		<script>
+			var map_B = L.map('map_B');
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			}).addTo(map_B);
+
+
+			var gpx_B = 'gps/B__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_B, {async: true},
+				         {polyline_options: {
+					    color: 'green',
+					    opacity: 0.75,
+					    weight: 3,
+					    lineCap: 'round'}},
+				 ).on('loaded', function(e) {
+			  		map_B.fitBounds(e.target.getBounds());
+				 }).addTo(map_B);
+		</script>
+	</div>
+</div>
+
+<div class="floating-box">
 <PRE>
 <h1 style="margin-bottom:0px;">Züge Variante (C)</h1>
 IVB				J Bus
@@ -200,6 +223,29 @@ Innsbruck		12:13 (9')		12:25 (10')
 </div>
 
 <div class="floating-box">
+	<div class="mymap" id="map_C">
+		<script>
+			var map_C = L.map('map_C');
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			}).addTo(map_C);
+
+
+			var gpx_C = 'gps/C__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_C, {async: true},
+				         {polyline_options: {
+					    color: 'green',
+					    opacity: 0.75,
+					    weight: 3,
+					    lineCap: 'round'}},
+				 ).on('loaded', function(e) {
+			  		map_C.fitBounds(e.target.getBounds());
+				 }).addTo(map_C);
+		</script>
+	</div>
+</div>
+
+<div class="floating-box">
 <PRE>
 <h1 style="margin-bottom:0px;">Züge Variante (D)</h1>
 ÖBB-Bhf.			REX
@@ -218,6 +264,29 @@ Innsbruck		?
 </div>
 
 <div class="floating-box">
+	<div class="mymap" id="map_D">
+		<script>
+			var map_E = L.map('map_D');
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			}).addTo(map_D);
+
+
+			var gpx_E = 'gps/D__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_D, {async: true},
+				         {polyline_options: {
+					    color: 'green',
+					    opacity: 0.75,
+					    weight: 3,
+					    lineCap: 'round'}},
+				 ).on('loaded', function(e) {
+			  		map_D.fitBounds(e.target.getBounds());
+				 }).addTo(map_D);
+		</script>
+	</div>
+</div>
+
+<div class="floating-box">
 <PRE>
 <h1 style="margin-bottom:0px;">Züge Variante (E)</h1>
 ÖBB-Bhf.			S6
@@ -233,6 +302,29 @@ Völs			13:53
 Innsbruck		14:01 (8')
 ------------------------------------
 </PRE>
+</div>
+
+	<div class="floating-box">
+	<div class="mymap" id="map_E">
+		<script>
+			var map_E = L.map('map_E');
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			}).addTo(map_E);
+
+
+			var gpx_E = 'gps/E__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_E, {async: true},
+				         {polyline_options: {
+					    color: 'green',
+					    opacity: 0.75,
+					    weight: 3,
+					    lineCap: 'round'}},
+				 ).on('loaded', function(e) {
+			  		map_E.fitBounds(e.target.getBounds());
+				 }).addTo(map_E);
+		</script>
+	</div>
 </div>
 
 <div class="floating-box-low">
