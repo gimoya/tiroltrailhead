@@ -74,20 +74,6 @@ pre, .floating-box, .floating-box-low, .gps-footer {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
 
-
-  <script>
-var map_A = L.map('map_A');
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
-}).addTo(map_A);
-
-
-var gpx_A = 'gps/A__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
-new L.GPX(gpx_A, {async: true}).on('loaded', function(e) {
-  map_A.fitBounds(e.target.getBounds());
-}).addTo(map_A);
-  </script>
-
 <div class="floating-box">
 	<img src="images/poster.png"/>
 </div>
@@ -134,8 +120,20 @@ Innsbruck		11:55 (21')	12:25 (21')
 </div>
 
 <div class="floating-box">
-<div class="mymap" id="map_A">
-</div>
+	<div class="mymap" id="map_A">
+		<script>
+			var map_A = L.map('map_A');
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			}).addTo(map_A);
+
+
+			var gpx_A = 'gps/A__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_A, {async: true}).on('loaded', function(e) {
+			  map_A.fitBounds(e.target.getBounds());
+			}).addTo(map_A);
+		</script>
+	</div>
 </div>
 
 <div class="floating-box">
