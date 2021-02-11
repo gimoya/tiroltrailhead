@@ -129,9 +129,15 @@ Innsbruck		11:55 (21')	12:25 (21')
 
 
 			var gpx_A = 'gps/A__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
-			new L.GPX(gpx_A, {async: true}).on('loaded', function(e) {
-			  map_A.fitBounds(e.target.getBounds());
-			}).addTo(map_A);
+			new L.GPX(gpx_A, {async: true},
+				         {polyline_options: {
+					    color: 'green',
+					    opacity: 0.75,
+					    weight: 3,
+					    lineCap: 'round'}},
+				 ).on('loaded', function(e) {
+			  		map_A.fitBounds(e.target.getBounds());
+				 }).addTo(map_A);
 		</script>
 	</div>
 </div>
