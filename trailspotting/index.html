@@ -94,6 +94,29 @@ train..
 </div>
 
 <div class="floating-box">
+	<div class="mymap" id="map_A">
+		<script>
+			var map_A = L.map('map_A');
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			}).addTo(map_A);
+
+
+			var gpx_A = 'gps/A__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_A, {async: true},
+				         {polyline_options: {
+					    color: 'green',
+					    opacity: 0.75,
+					    weight: 3,
+					    lineCap: 'round'}},
+				 ).on('loaded', function(e) {
+			  		map_A.fitBounds(e.target.getBounds());
+				 }).addTo(map_A);
+		</script>
+	</div>
+</div>
+	
+<div class="floating-box">
 <PRE>
 <h1 style="margin-bottom:0px;">Züge Variante (A)</h1>
 ------------------------------------
@@ -118,26 +141,26 @@ Innsbruck		11:55 (21')	12:25 (21')
 ------------------------------------
 </PRE>
 </div>
-
+	
 <div class="floating-box">
-	<div class="mymap" id="map_A">
+	<div class="mymap" id="map_B">
 		<script>
-			var map_A = L.map('map_A');
+			var map_B = L.map('map_B');
 			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
-			}).addTo(map_A);
+			}).addTo(map_B);
 
 
-			var gpx_A = 'gps/A__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
-			new L.GPX(gpx_A, {async: true},
+			var gpx_B = 'gps/B__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_B, {async: true},
 				         {polyline_options: {
 					    color: 'green',
 					    opacity: 0.75,
 					    weight: 3,
 					    lineCap: 'round'}},
 				 ).on('loaded', function(e) {
-			  		map_A.fitBounds(e.target.getBounds());
-				 }).addTo(map_A);
+			  		map_B.fitBounds(e.target.getBounds());
+				 }).addTo(map_B);
 		</script>
 	</div>
 </div>
@@ -174,25 +197,26 @@ Innsbruck		13:55 (21')	14:25 (21')
 </PRE>
 </div>
 
+
 <div class="floating-box">
-	<div class="mymap" id="map_B">
+	<div class="mymap" id="map_C">
 		<script>
-			var map_B = L.map('map_B');
+			var map_C = L.map('map_C');
 			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
-			}).addTo(map_B);
+			}).addTo(map_C);
 
 
-			var gpx_B = 'gps/B__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
-			new L.GPX(gpx_B, {async: true},
+			var gpx_C = 'gps/C__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_C, {async: true},
 				         {polyline_options: {
 					    color: 'green',
 					    opacity: 0.75,
 					    weight: 3,
 					    lineCap: 'round'}},
 				 ).on('loaded', function(e) {
-			  		map_B.fitBounds(e.target.getBounds());
-				 }).addTo(map_B);
+			  		map_C.fitBounds(e.target.getBounds());
+				 }).addTo(map_C);
 		</script>
 	</div>
 </div>
@@ -221,48 +245,7 @@ Innsbruck		12:13 (9')		12:25 (10')
 ------------------------------------
 </PRE>
 </div>
-
-<div class="floating-box">
-	<div class="mymap" id="map_C">
-		<script>
-			var map_C = L.map('map_C');
-			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
-			}).addTo(map_C);
-
-
-			var gpx_C = 'gps/C__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
-			new L.GPX(gpx_C, {async: true},
-				         {polyline_options: {
-					    color: 'green',
-					    opacity: 0.75,
-					    weight: 3,
-					    lineCap: 'round'}},
-				 ).on('loaded', function(e) {
-			  		map_C.fitBounds(e.target.getBounds());
-				 }).addTo(map_C);
-		</script>
-	</div>
-</div>
-
-<div class="floating-box">
-<PRE>
-<h1 style="margin-bottom:0px;">Züge Variante (D)</h1>
-ÖBB-Bhf.			REX
-------------------------------------
-Innsbruck		10:52
-Stams			11:17 (25')
-------------------------------------
-🚴‍♂️&uarr;900m&rarr;26,9km	ca. 180'				
-------------------------------------
-ÖBB-Bhf.			REX/S4/S5
-------------------------------------
-Telfs			ca. alle 15'
-Innsbruck		?
-------------------------------------
-</PRE>
-</div>
-
+	
 <div class="floating-box">
 	<div class="mymap" id="map_D">
 		<script>
@@ -286,22 +269,25 @@ Innsbruck		?
 	</div>
 </div>
 
+
 <div class="floating-box">
 <PRE>
-<h1 style="margin-bottom:0px;">Züge Variante (E)</h1>
-ÖBB-Bhf.			S6
+<h1 style="margin-bottom:0px;">Züge Variante (D)</h1>
+ÖBB-Bhf.			REX
 ------------------------------------
-Innsbruck		11:08
-Reith			11:39 (31')
+Innsbruck		10:52
+Stams			11:17 (25')
 ------------------------------------
-🚴‍♂️&uarr;730m&rarr;24km	ca. 130'				
+🚴‍♂️&uarr;900m&rarr;26,9km	ca. 180'				
 ------------------------------------
-ÖBB-Bhf.			S5
+ÖBB-Bhf.			REX/S4/S5
 ------------------------------------
-Völs			13:53
-Innsbruck		14:01 (8')
+Telfs			ca. alle 15'
+Innsbruck		?
 ------------------------------------
 </PRE>
+</div>
+	
 </div>
 
 	<div class="floating-box">
@@ -326,6 +312,24 @@ Innsbruck		14:01 (8')
 		</script>
 	</div>
 </div>
+	
+
+<div class="floating-box">
+<PRE>
+<h1 style="margin-bottom:0px;">Züge Variante (E)</h1>
+ÖBB-Bhf.			S6
+------------------------------------
+Innsbruck		11:08
+Reith			11:39 (31')
+------------------------------------
+🚴‍♂️&uarr;730m&rarr;24km	ca. 130'				
+------------------------------------
+ÖBB-Bhf.			S5
+------------------------------------
+Völs			13:53
+Innsbruck		14:01 (8')
+------------------------------------
+</PRE>
 
 <div class="floating-box-low">
 <h3>Alle S-Bahnen und REX fahren wochentags im 60' Takt</h3>
