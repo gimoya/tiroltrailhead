@@ -82,7 +82,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map_A);
 
 
-var gpx_A = '/gps/A__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+var gpx_A = 'gps/A__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
 new L.GPX(gpx_A, {async: true}).on('loaded', function(e) {
   map_A.fitBounds(e.target.getBounds());
 }).addTo(map_A);
