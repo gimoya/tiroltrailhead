@@ -21,9 +21,17 @@ body {
   margin: 10px;
 }
 
-img {
+#poster {
   height: 100%;
   float:left;
+}
+
+#danger {
+poition: absolute;
+left:0;
+bottom:0;
+width:100%;
+z-index: 2;
 }
     
 pre, .floating-box, .floating-box-low, .gps-footer {
@@ -82,7 +90,7 @@ pre, .floating-box, .floating-box-low, .gps-footer {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
 
 <div class="floating-box">
-	<img src="images/poster.png"/>
+	<img id="poster" src="images/poster.png"/>
 </div>
 
 <div class="floating-box">
@@ -354,6 +362,7 @@ Innsbruck		?
 	
 
 <div class="floating-box">
+<img id="danger" src="" />
 <PRE>
 <h1 style="margin-bottom:0px;">Züge Variante (E)</h1>
 ÖBB-Bhf.			S6
