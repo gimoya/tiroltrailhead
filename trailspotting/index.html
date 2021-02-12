@@ -308,7 +308,9 @@ Innsbruck		?
 		<script>
 			var map_E = L.map('map_E');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
-			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
+                          minZoom:11,
+                          maxZoom:16
 			}).addTo(map_E);
 
 			var gpx_E = 'gps/E__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
