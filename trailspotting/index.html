@@ -27,11 +27,11 @@ body {
 }
 
 #danger {
-poition: absolute;
-left:0;
-bottom:0;
-width:100%;
-z-index: 2;
+	position: absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	z-index: 999;
 }
     
 pre, .floating-box, .floating-box-low, .gps-footer {
@@ -281,6 +281,7 @@ Innsbruck		12:13 (9')		12:25 (10')
 </div>
 	
 <div class="floating-box">
+	<img id="danger" src="images/yellow-warning-tape.png" />
 	<div class="mymap" id="map_D">
 		<script>
 			var map_D = L.map('map_D');
@@ -308,10 +309,11 @@ Innsbruck		12:13 (9')		12:25 (10')
 			L.control.scale().addTo(map_D);			
 		</script>
 	</div>
-</div>
+</div>	
 
 
 <div class="floating-box">
+<img id="danger" src="images/yellow-warning-tape.png" />
 <PRE>
 <h1 style="margin-bottom:0px;">Züge Variante (D)</h1>
 ÖBB-Bhf.			REX
@@ -332,7 +334,6 @@ Innsbruck		?
 </div>
 
 	<div class="floating-box">
-<img id="danger" src="images/yellow-warning-tape.png" />
 	<div class="mymap" id="map_E">
 		<script>
 			var map_E = L.map('map_E');
@@ -387,7 +388,7 @@ Innsbruck		14:01 (8')
 <p><a href="gps/B__Trailspotting.gpx">B__Trailspotting.gpx</a></p>
 <p><a href="gps/BB__Trailspotting.gpx">BB__Trailspotting.gpx</a></p>
 <p><a href="gps/C__Trailspotting.gpx">C__Trailspotting.gpx</a></p>
-<p><a href="gps/D__Trailspotting.gpx">D__Trailspotting.gpx</a></p>
+<p><a href="gps/D__Trailspotting.gpx">D__Trailspotting.gpx</a> ⚠ Waldschäden ⚠</p>
 <p><a href="gps/E__Trailspotting.gpx">E__Trailspotting.gpx</a></p>
 
 <div class="strava">
