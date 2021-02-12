@@ -105,7 +105,10 @@ train..
 		<script>
 			var map_A = L.map('map_A');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
-			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
+			  minZoom:10,
+			  maxZoom:16,
+			  maxNativeZoom:15
 			}).addTo(map_A);
 
 			var gpx_A = 'gps/A__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
@@ -117,9 +120,11 @@ train..
 					weight: 2.8,
 					lineCap: 'round'}
 				}).on('loaded', function(e) {
-				map_A.fitBounds(e.target.getBounds());
-				map_A.setMaxBounds(e.target.getBounds());
+				var bds = e.target.getBounds().pad(0.05);
+				map_A.fitBounds(bds);
+				map_A.setMaxBounds(bds);
 			}).addTo(map_A);
+			L.control.scale().addTo(map_A);
 			
 		</script>
 	</div>
@@ -156,7 +161,10 @@ Innsbruck		11:55 (21')	12:25 (21')
 		<script>
 			var map_B = L.map('map_B');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
-			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
+			  minZoom:10,
+			  maxZoom:16,
+			  maxNativeZoom:15
 			}).addTo(map_B);
 
 			var gpx_B = 'gps/B__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
@@ -168,9 +176,11 @@ Innsbruck		11:55 (21')	12:25 (21')
 					weight: 2.8,
 					lineCap: 'round'}
 				}).on('loaded', function(e) {
-				map_B.fitBounds(e.target.getBounds());
-				map_B.setMaxBounds(e.target.getBounds());
+				var bds = e.target.getBounds().pad(0.05);
+				map_B.fitBounds(bds);
+				map_B.setMaxBounds(bds);
 			}).addTo(map_B);
+			L.control.scale().addTo(map_B);
 		</script>
 	</div>
 </div>
@@ -213,7 +223,10 @@ Innsbruck		13:55 (21')	14:25 (21')
 		<script>
 			var map_C = L.map('map_C');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
-			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
+			  minZoom:11,
+			  maxZoom:16,
+			  maxNativeZoom:15
 			}).addTo(map_C);
 
 			var gpx_C = 'gps/C__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
@@ -225,9 +238,11 @@ Innsbruck		13:55 (21')	14:25 (21')
 					weight: 2.8,
 					lineCap: 'round'}
 				}).on('loaded', function(e) {
-				map_C.fitBounds(e.target.getBounds());
-				map_C.setMaxBounds(e.target.getBounds());
+				var bds = e.target.getBounds().pad(0.05);
+				map_C.fitBounds(bds);
+				map_C.setMaxBounds(bds);
 			}).addTo(map_C);
+			L.control.scale().addTo(map_C);
 		</script>
 	</div>
 </div>
@@ -262,7 +277,10 @@ Innsbruck		12:13 (9')		12:25 (10')
 		<script>
 			var map_D = L.map('map_D');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
-			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
+			  minZoom:11,
+			  maxZoom:16,
+			  maxNativeZoom:15
 			}).addTo(map_D);
 
 
@@ -275,9 +293,11 @@ Innsbruck		12:13 (9')		12:25 (10')
 					weight: 2.8,
 					lineCap: 'round'}
 				}).on('loaded', function(e) {
-				map_D.fitBounds(e.target.getBounds());
-				map_D.setMaxBounds(e.target.getBounds());
+				var bds = e.target.getBounds().pad(0.05);
+				map_D.fitBounds(bds);
+				map_D.setMaxBounds(bds);
 			}).addTo(map_D);
+			L.control.scale().addTo(map_D);			
 		</script>
 	</div>
 </div>
@@ -310,7 +330,8 @@ Innsbruck		?
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
 			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
                           minZoom:11,
-                          maxZoom:16
+                          maxZoom:16,
+						  maxNativeZoom:15
 			}).addTo(map_E);
 
 			var gpx_E = 'gps/E__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
@@ -322,9 +343,11 @@ Innsbruck		?
 					weight: 2.8,
 					lineCap: 'round'}
 				}).on('loaded', function(e) {
-				map_E.fitBounds(e.target.getBounds());
-				map_E.setMaxBounds(e.target.getBounds());
+				var bds = e.target.getBounds().pad(0.05);
+				map_E.fitBounds(bds);
+				map_E.setMaxBounds(bds);
 			}).addTo(map_E);
+			L.control.scale().addTo(map_E);
 		</script>
 	</div>
 </div>
