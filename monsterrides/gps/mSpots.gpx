@@ -62,7 +62,7 @@
 <wpt lat="47.219618" lon="11.445286">
 	<ele>1343.06</ele>
 	<time>2021-03-02T10:02:51.968Z</time>
-	<name>Heiligwasserweg, 6080 Innsbruck, Österreich</name>
+	<name>Heiligwasserweg, 6080 Innsbruck, Österreich</name><sym>1</sym>
 	<extensions>
 		<gpxx:WaypointExtension>
 			<gpxx:Address>
@@ -78,7 +78,7 @@
 <wpt lat="47.256284" lon="11.455285">
 	<ele>734.51</ele>
 	<time>2021-03-02T10:00:37.601Z</time>
-	<name>Ampass, 6070, Österreich</name>
+	<name>Ampass, 6070, Österreich</name>	<sym></sym>
 	<extensions>
 		<gpxx:WaypointExtension>
 			<gpxx:Address>
@@ -94,7 +94,7 @@
 <wpt lat="47.255280" lon="11.455671">
 	<ele>769.87</ele>
 	<time>2021-03-02T10:00:24.660Z</time>
-	<name>Pfarrtal 0, 6071 Aldrans, Österreich</name>
+	<name>Pfarrtal 0, 6071 Aldrans, Österreich</name>	<sym></sym>
 	<extensions>
 		<gpxx:WaypointExtension>
 			<gpxx:Address>
@@ -110,7 +110,7 @@
 <wpt lat="47.257531" lon="11.458690">
 	<ele>752.86</ele>
 	<time>2021-03-02T10:00:02.817Z</time>
-	<name>Kirchweg 11a, 6070 Ampass, Österreich</name>
+	<name>Kirchweg 11a, 6070 Ampass, Österreich</name>	<sym></sym>
 	<extensions>
 		<gpxx:WaypointExtension>
 			<gpxx:Address>
@@ -119,22 +119,6 @@
 				<gpxx:State>Tirol</gpxx:State>
 				<gpxx:Country>Österreich</gpxx:Country>
 				<gpxx:PostalCode>6070</gpxx:PostalCode>
-			</gpxx:Address>
-		</gpxx:WaypointExtension>
-	</extensions>
-</wpt>
-<wpt lat="47.072599" lon="11.442679">
-	<ele>1633.89</ele>
-	<time>2021-02-09T11:52:11.508Z</time>
-	<name>Bergeralm, 6150, Österreich</name>
-	<extensions>
-		<gpxx:WaypointExtension>
-			<gpxx:Address>
-				<gpxx:StreetAddress>Bergeralm, 6150, Österreich</gpxx:StreetAddress>
-				<gpxx:City>Innsbruck-Land</gpxx:City>
-				<gpxx:State>Tirol</gpxx:State>
-				<gpxx:Country>Österreich</gpxx:Country>
-				<gpxx:PostalCode>6150</gpxx:PostalCode>
 			</gpxx:Address>
 		</gpxx:WaypointExtension>
 	</extensions>
