@@ -84,28 +84,12 @@ pre, .floating-box, .floating-box-low, .gps-footer {
 </style>
 </head>
 <body>
-<script>
-$(document).ready(function() {
-    $(".fadeIn").each(function() {
-        var src = $(this).data("src");
-        if (src) {
-            var img = new Image();
-            img.style.display = "none";
-            img.onload = function() {
-                $(this).fadeIn(1000);
-            };
-            $(this).append(img);            
-            img.src = src;
-        }
-    });
-});
-</script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
 
 <div class="floating-box">
-	<img class="fadein" id="poster" src="images/poster.png"/>
+	<img id="poster" src="images/poster.png"/>
 </div>
 
 <div class="floating-box">
