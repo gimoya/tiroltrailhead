@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="Locus Map, Android"
+ xmlns="http://www.topografix.com/GPX/1/1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+ xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2"
+ xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+ xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
+ xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
+ xmlns:locus="http://www.locusmap.eu">
+	<metadata>
+		<desc>File with points/tracks from Locus Map/3.20.0</desc>
+	</metadata>
+<wpt lat="47.256683" lon="11.454759">
+	<ele>715.81</ele>
+	<time>2021-03-02T10:00:37.601Z</time>
+	<name>Black Lodge</name>
+	<extensions>
+		<gpxx:WaypointExtension>
+			<gpxx:Address>
+				<gpxx:StreetAddress>Ampass, 6070, Österreich</gpxx:StreetAddress>
+				<gpxx:City>Innsbruck-Land</gpxx:City>
+				<gpxx:State>Tirol</gpxx:State>
+				<gpxx:Country>Österreich</gpxx:Country>
+				<gpxx:PostalCode>6070</gpxx:PostalCode>
+			</gpxx:Address>
+		</gpxx:WaypointExtension>
+	</extensions>
+</wpt>
+<wpt lat="47.232997" lon="11.471005">
+	<ele>1203.25</ele>
+	<time>2021-03-02T10:04:40.971Z</time>
+	<name>Fangschuss</name>
+	<extensions>
+		<gpxx:WaypointExtension>
+			<gpxx:Address>
+				<gpxx:StreetAddress>Almweg, 6073 Sistrans, Österreich</gpxx:StreetAddress>
+				<gpxx:City>Sistrans</gpxx:City>
+				<gpxx:State>Tirol</gpxx:State>
+				<gpxx:Country>Österreich</gpxx:Country>
+				<gpxx:PostalCode>6073</gpxx:PostalCode>
+			</gpxx:Address>
+		</gpxx:WaypointExtension>
+	</extensions>
+</wpt>
+<wpt lat="47.246031" lon="11.448520">
+	<ele>837.08</ele>
+	<time>2021-03-02T10:05:30.281Z</time>
+	<name>Playground</name>
+	<extensions>
+		<gpxx:WaypointExtension>
+			<gpxx:Address>
+				<gpxx:StreetAddress>Hinterrinnweg 16, 6071 Aldrans, Österreich</gpxx:StreetAddress>
+				<gpxx:City>Aldrans</gpxx:City>
+				<gpxx:State>Tirol</gpxx:State>
+				<gpxx:Country>Österreich</gpxx:Country>
+				<gpxx:PostalCode>6071</gpxx:PostalCode>
+			</gpxx:Address>
+		</gpxx:WaypointExtension>
+	</extensions>
+</wpt>
+<wpt lat="47.230622" lon="11.457242">
+	<ele>1123.57</ele>
+	<time>2021-03-02T13:34:37.721Z</time>
+	<name>Sitranser Stolperei</name>
+	<extensions>
+		<gpxx:WaypointExtension>
+			<gpxx:Address>
+				<gpxx:StreetAddress>Almweg, 6073 Sistrans, Österreich</gpxx:StreetAddress>
+				<gpxx:City>Sistrans</gpxx:City>
+				<gpxx:State>Tirol</gpxx:State>
+				<gpxx:Country>Österreich</gpxx:Country>
+				<gpxx:PostalCode>6073</gpxx:PostalCode>
+			</gpxx:Address>
+		</gpxx:WaypointExtension>
+	</extensions>
+</wpt>
+<wpt lat="47.219496" lon="11.445447">
+	<ele>1352.93</ele>
+	<time>2021-03-02T10:02:51.968Z</time>
+	<name>Slippy</name>
+	<extensions>
+		<gpxx:WaypointExtension>
+			<gpxx:Address>
+				<gpxx:StreetAddress>Heiligwasserweg, 6080 Innsbruck, Österreich</gpxx:StreetAddress>
+				<gpxx:City>Innsbruck</gpxx:City>
+				<gpxx:State>Tirol</gpxx:State>
+				<gpxx:Country>Österreich</gpxx:Country>
+				<gpxx:PostalCode>6080</gpxx:PostalCode>
+			</gpxx:Address>
+		</gpxx:WaypointExtension>
+	</extensions>
+</wpt>
+<wpt lat="47.257360" lon="11.458705">
+	<ele>760.93</ele>
+	<time>2021-03-02T10:00:02.817Z</time>
+	<name>Widum</name>
+	<extensions>
+		<gpxx:WaypointExtension>
+			<gpxx:Address>
+				<gpxx:StreetAddress>Kirchweg 11a, 6070 Ampass, Österreich</gpxx:StreetAddress>
+				<gpxx:City>Ampass</gpxx:City>
+				<gpxx:State>Tirol</gpxx:State>
+				<gpxx:Country>Österreich</gpxx:Country>
+				<gpxx:PostalCode>6070</gpxx:PostalCode>
+			</gpxx:Address>
+		</gpxx:WaypointExtension>
+	</extensions>
+</wpt>
+</gpx>
