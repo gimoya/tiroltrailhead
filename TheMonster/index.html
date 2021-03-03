@@ -22,7 +22,7 @@ body {
   margin: 10px;
 }
 
-#poster {
+#poster, #photos, #monster_photo {
   width: 100%;
   float: left;
 }
@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 17px;
   font-family: 'Zilla Slab Highlight', cursive;
   font-weight: 400;
   color: #494844;
@@ -75,6 +75,10 @@ img{
 	opacity: 0;
 }
 
+img#photos {
+	opacity: 1!important;
+}
+
 .leaflet-marker-pane img {
 	opacity: 1!important;
 }
@@ -108,24 +112,22 @@ img{
 </div>
 
 <div class="floating-box">
-<h1>IBK's steilster Scheiss...</h1>
-<h2><span style="white-space: nowrap;">"Slippy" ⚠ mit Fels-Drop!</span></br>
-  <span style="white-space: nowrap;">"Sistranser Stolperei" 🦽 Wurzel-verblockt!</span></br>
-  <span style="white-space: nowrap;">"Fangschuss" 😱 extrem steil!</span></br>
-  <span style="white-space: nowrap;">2Playground" 💀 mit Fels-Drop!</span></br>
-  <span style="white-space: nowrap;">"Widum" ☣ extrem steil!</span></br></br>
-  ..In einer Fahrt? ..fehlerfrei?</br>
-  ..GEHT DAS??
-</h2>
 <h1>Hit ⛧ the Monster!</h1>
+<h1>IBK's steilster Scheiss...</h1>
+<h2><span style="white-space: nowrap;">"Slippy" ⚠ ..nimm den Fels-Drop!</span></br>
+  <span style="white-space: nowrap;">"Sistranser Stolperei" 🦽 ..arg wurzelverblockt!</span></br>
+  <span style="white-space: nowrap;">"Fangschuss" 😱 ..zum in die Hosn gaggn!</span></br>
+  <span style="white-space: nowrap;">"Playground" 💀 ..noch'n Fels-Drop!</span></br>
+  <span style="white-space: nowrap;">"Widum" ☣ ..steiler als steil + North-Shore Drop!</span></br></br>
+  ..Haut rein und schickt eure Äktschn-Fotos an <a href="mailto:themonster@tiroltrailhead.com?subject=Monster%20Shot">themonster@tiroltrailhead.com</a>!
+  <span style="white-space: nowrap;">..Für's geilste Bild gibt's das "Monster-Shirt"</span></br>als Trophäe!
+</h2>
 <div class="gps-footer">
 <h2>&nbsp;&nbsp;..die Spots&nbsp;>>&nbsp;<a href="gps/mSpots.gpx">mSpots.gpx</a>&nbsp;&nbsp;&nbsp;&nbsp;</br>
 &nbsp;&nbsp;..der Track&nbsp;>>&nbsp;<a href="gps/mTrack.gpx">mTrack.gpx</a>&nbsp;&nbsp;&nbsp;&nbsp;</h2>
 TheMonster&nbsp;&copy;&nbsp;<a href="http://www.tiroltrailhead.com">tiroltrailhead.com</a>
 </div>
-
 </div>
-
 <div class="floating-box">
 	<div class="mymap" id="map">
 		<script>
@@ -186,8 +188,16 @@ TheMonster&nbsp;&copy;&nbsp;<a href="http://www.tiroltrailhead.com">tiroltrailhe
 		</script>
 	</div>
 </div>
-
+<div class="floating-box">
+	<img onload="this.className='animate'" id="monster_photo" src="images/monster_photo.jpg"/>
 </div>
+<div class="floating-box">
+	<h2 style="position:absolute;bottom:100px;left:40px;background-color:white;text-align:middle;">Deine Äktschn-Fotos gehen hier her...</h2>
+	<img onload="this.className='animate'" id="photos" src="images/polaroid.png"/>
+</div>
+<div class="floating-box">
+	<h2 style="z-index:99;position:absolute;bottom:100px;left:105px;text-align:middle;">🏆 T-Shirt Trophäe 🤟	</h2>
+	<img onload="this.className='animate'" id="monster_photo" style="transform: rotate(-15deg);"  src="images/monster_shirt.jpg"/>
 </div>
 </body>
 </html>
