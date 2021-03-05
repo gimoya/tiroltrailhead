@@ -117,7 +117,36 @@ img#photos {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
 
-
+<script type="text/javascript">	
+			
+			function trim(str) {
+				return str.replace(/^\s+|\s+$/g, '');  
+			}
+			
+			var pw_prompt = prompt('Friends only (monster@tiroltrailhead.com). Bitte Passwort eingeben: ',' ');
+			var pw = 'mnstr';
+			// if prompt is cancelled the pw_prompt var will be null!
+			if (pw_prompt == null) {
+				alert('Kein Passwort? Du wirst umgeleitet...');
+				if (bowser.msie) {
+					document.execCommand('Stop');
+				} else {
+					window.stop();
+				}
+				window.location='tilt.html';
+			}
+			if (trim(pw_prompt) == pw ) {
+				alert('Passwort richtig!');
+			} else {
+				alert('Falsches Passwort! Du wirst umgeleitet..');
+				if (bowser.msie) {
+					document.execCommand('Stop');
+				} else {
+					window.stop();
+				}
+				window.location='tilt.html';
+			}
+</script>
 <div class="floating-box">
 	<img onload="this.className='animate'" id="poster" src="images/poster.png" />
 </div>
@@ -130,7 +159,7 @@ img#photos {
   <span style="white-space: nowrap;">"Fangschuss" 😱 ..extrem steil</span></br>
   <span style="white-space: nowrap;">"Playground" 💀 ..fieser Fels-Drop</span></br>
   <span style="white-space: nowrap;">"Widum" ☣ ..North-Shore Drop</span></br>
-  <span style="white-space: nowrap;">"Black Lodge" ⛧ ..und es geht noch steiler!</span></br>
+  <span style="white-space: nowrap;">"Black Lodge" ⛧ ..und noch mal steiler!</span></br>
 </h2>
 <h3>
   ..Schnappt euch eure Bergradl und klappert mal diese Spots ab! Knippst ein paar Äktschn-Fotos und schickt sie an <a href="mailto:monster@tiroltrailhead.com?subject=Monster%20Shot">monster@tiroltrailhead.com</a>!
