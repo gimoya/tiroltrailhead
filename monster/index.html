@@ -135,9 +135,9 @@ img#photos {
 		window.location='tilt.html';
 	}
 	if (trim(pw_prompt) == pw ) {
-		alert('Passwort richtig!');
+		//alert('...yes!');
 	} else {
-		alert('Falsches Passwort! Du wirst umgeleitet..');
+		//alert('...nö!');
 		if (bowser.msie) {
 			document.execCommand('Stop');
 		} else {
@@ -145,7 +145,6 @@ img#photos {
 		}
 		window.location='tilt.html';
 	}
-
 </script>
 <div class="floating-box">
 	<img onload="this.className='animate'" id="poster" src="images/poster.png" />
