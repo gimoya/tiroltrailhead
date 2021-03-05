@@ -9,11 +9,11 @@
   <meta name="KC" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  
+  <link rel="shortcut icon" type="image/x-icon" href="images/icon.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto&family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto&family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
 
 <style>
@@ -107,34 +107,61 @@ img#photos {
     src: url("fonts/FloridaShark.otf") format("opentype");
 }
 
-
-
-
 </style>
 </head>
 <body>
+<script src="scripts/bowser.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
 
-
+<script type="text/javascript">	
+			
+	function trim(str) {
+		return str.replace(/^\s+|\s+$/g, '');  
+	}
+	
+	var pw_prompt = prompt('Gib das Passwort ein (PW bitte nicht weitergeben..): ',' ');
+	var pw = 'mnstr';
+	// if prompt is cancelled the pw_prompt var will be null!
+	if (pw_prompt == null) {
+		alert('Kein Passwort? Du wirst umgeleitet...');
+		if (bowser.msie) {
+			document.execCommand('Stop');
+		} else {
+			window.stop();
+		}
+		window.location='tilt.html';
+	}
+	if (trim(pw_prompt) == pw ) {
+		alert('Passwort richtig!');
+	} else {
+		alert('Falsches Passwort! Du wirst umgeleitet..');
+		if (bowser.msie) {
+			document.execCommand('Stop');
+		} else {
+			window.stop();
+		}
+		window.location='tilt.html';
+	}
+</script>
 <div class="floating-box">
 	<img onload="this.className='animate'" id="poster" src="images/poster.png" />
 </div>
 
 <div class="floating-box">
-<h1>Hit The Monster!</h1>
-<h1>IBK's steilster Scheiss...</h1>
-<h2><span style="white-space: nowrap;">"Slippy" ⚠ ..nimm den Fels-Drop!</span></br>
-  <span style="white-space: nowrap;">"Sistranser Stolperei" 🦽 ..Bock auf wurzelverblockt?</span></br>
-  <span style="white-space: nowrap;">"Fangschuss" 😱 ..zum "in die Hosn gaggn"!</span></br>
-  <span style="white-space: nowrap;">"Playground" 💀 ..fieser Fels-Drop!</span></br>
-  <span style="white-space: nowrap;">"Widum" ☣ ..North Shore & Loam!</span></br>
-  <span style="white-space: nowrap;">"Black Lodge" ⛧ ..teuflisch steil!</span></br>
+<h1>Die steilsten SÖM-Trails in einem Stück..</h1>
+<h1>..Hit the monster!</h1>
+<h2><span style="white-space: nowrap;">"Slippy" ⚠ ..mit Fels Drop</span></br>
+  <span style="white-space: nowrap;">"Sistranser Stolperei" 🦽 ..eng & fies</span></br>
+  <span style="white-space: nowrap;">"Fangschuss" 😱 ..extrem steil</span></br>
+  <span style="white-space: nowrap;">"Playground" 💀 ..fieser Fels-Drop</span></br>
+  <span style="white-space: nowrap;">"Widum" ☣ ..North-Shore Drop</span></br>
+  <span style="white-space: nowrap;">"Black Lodge" ⛧ ..und noch mal steiler!</span></br>
 </h2>
 <h3>
-  ..Schnappt euch eure Bikes und Smartphones, klappert die Gravity-Spots ab, macht ein paar Äktschn-Fotos und schickt sie an<a href="mailto:monster@tiroltrailhead.com?subject=Monster%20Shot">monster@tiroltrailhead.com</a>!
-  <span style="white-space: nowrap;">..Für's geilste Bild gibt's ein "The Monster Rides" T-Shirt!</span></br>
+  ..Schnappt euch eure Bergradl und klappert mal diese Spots ab! Knippst ein paar Äktschn-Fotos und schickt sie an <a href="mailto:monster@tiroltrailhead.com?subject=Monster%20Shot">monster@tiroltrailhead.com</a>!
+  <span style="white-space: nowrap;">..Für's geilste Bild gibt's 1x das </span></br>"The Monster Rides" T-Shirt!</br>
 </h3>
 <div class="gps-footer">
 <h2>&nbsp;&nbsp;..die Spots&nbsp;>>&nbsp;<a href="gps/mSpots.gpx">mSpots.gpx</a>&nbsp;&nbsp;&nbsp;&nbsp;</br>
@@ -210,7 +237,7 @@ TheMonster'21&nbsp;&copy;&nbsp;<a href="http://www.tiroltrailhead.com">tiroltrai
 	<img onload="this.className='animate'" id="photos" src="images/polaroid.png"/>
 </div>
 <div class="floating-box">
-	<h3 style="z-index:99;position:absolute;bottom:60px;left:145px;text-align:middle;">🏆 T-Shirt 🤟	</h3>
+	<h3 style="z-index:99;position:absolute;bottom:60px;left:145px;text-align:middle;">🏆 T-Shirt 🤟</h3>
 	<img onload="this.className='animate'" id="monster_photo" style="transform: rotate(-12deg);"  src="images/monster_shirt.jpg"/>
 </div>
 </body>
