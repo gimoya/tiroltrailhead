@@ -59,13 +59,13 @@ h4 {
 font-family: 'FloridaShark';
 color:white;
 font-size:24px;
-fobt-weight:100;
+fobt-weight:400;
 z-index:99;
 position:absolute;
 bottom:5px;
 left:5px;
-padding: 0px;
-Martin:0px;
+padding:0px;
+margin:0px;
 }
 
 .floating-box {
@@ -78,28 +78,25 @@ Martin:0px;
 }
 
 .mymap {
-	height: 100%; 
-	background-color: black;
+ height: 100%; 
+ background-color: black;
 }
 	
 .animate{
  opacity: 1;
  -webkit-transition: opacity 2.5s linear;
+ max-width:100%;
+ max-height:100%;
+ position: absolute;
+ left:0;
+ right:0;
+ bottom:0;
+ top:0;
+ margin:auto;
 }
 
 img {
  opacity: 0;
- max-width: 100%;
-}
-
-img#alex {
- margin:auto;
- position:absolute;
- top:0;
- bottom:0;
- left:0;
- right:0;
- max-height:100%;
 }
 
 .leaflet-marker-pane img {
@@ -247,13 +244,13 @@ img#alex {
 	<img onload="this.className='animate'" id="alex" src="images/IMG-20210307-WA0000.jpg"/>
 </div>
 <div class="floating-box">
-	<h3 style="z-index:99;position:absolute;bottom:100px;left:50px;">Eure Äktschn-Fotos gehen hier her...</h3>
+	<h3 style="z-index:99;position:absolute;bottom:0px;left:50px;">Eure Äktschn-Fotos gehen hier her...</h3>
 	<img onload="this.className='animate'" id="polaroid" src="images/polaroid.png"/>
 </div>
 <div class="floating-box">
 <h2 style="z-index:99;position:absolute;top:0px;left:0px;text-align:left;">🏆 T-Shirt 🤟</h2>
 <img onload="this.className='animate'" id="t-shirt" style="transform: rotate(-5deg);"  src="images/monster_shirt.jpg"/>
-<h3 style="width:100%;z-index:99;position:absolute;bottom:50px;text-align:right;">
+<h3 style="width:100%;z-index:99;position:absolute;bottom:0px;text-align:right;">
 TheMonster'21&nbsp;&copy;&nbsp;<a href="http://www.tiroltrailhead.com">tiroltrailhead.com</a>
 </h3>
 </div>
