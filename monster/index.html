@@ -59,10 +59,13 @@ h4 {
 font-family: 'FloridaShark';
 color:white;
 font-size:24px;
+fobt-weight:100;
 z-index:99;
 position:absolute;
 bottom:5px;
 left:5px;
+padding: 0px;
+Martin:0px;
 }
 
 .floating-box {
@@ -82,17 +85,21 @@ left:5px;
 .animate{
  opacity: 1;
  -webkit-transition: opacity 2.5s linear;
-  width: 100%;
-  float: left;
 }
 
 img {
  opacity: 0;
+ max-width: 100%;
 }
 
 img#alex {
-  height: 100%;
-  width: auto!important;
+ margin:auto;
+ position:absolute;
+ top:0;
+ bottom:0;
+ left:0;
+ right:0;
+ max-height:100%;
 }
 
 .leaflet-marker-pane img {
