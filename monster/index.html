@@ -16,11 +16,6 @@
 
 <style>
 
-b {
- font-weight:400;
-}
-
-
 @font-face {
     font-family: FloridaShark;
     src: url("fonts/FloridaShark.otf") format("opentype");
@@ -49,7 +44,7 @@ h2, h3 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 19px;
 }
 
 h3{
@@ -77,7 +72,6 @@ margin:0px;
   width: 345px;
   height: 460px;
   margin: 10px;  
-  font-family: 'Roboto';
   background-color:#edeaea;
 }
 
@@ -110,9 +104,15 @@ img {
 .leaflet-popup-content-wrapper {
 	background-color:rgba(71,71,71,0.85);
 	color:white;
-	font-family:'FloridaShark';
-	font-size:20px;
-	letter-spacing:2px;
+	font-size:13px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+	text-align:center!important;
+}
+
+.leaflet-popup-content {
+	margin: 10px 10px;
+	line-height:1.2;
 }
 
 .leaflet-popup-tip {
@@ -164,9 +164,10 @@ img {
 
 <div class="floating-box">
 <h1>Die steilsten SÖM-Trails in einem Stück..</h1>
-<h2><span style="white-space: nowrap;">"Slippy" ⚠ ..nimm den Fels Drop!</span></br>
-  <span style="white-space: nowrap;">"Sistranser Stolperei" 🦽 ..eng & fies.</span></br>
-  <span style="white-space: nowrap;">"Fangschuss" 😱 ..Schock.</span></br>
+<h2><span style="white-space: nowrap;">"Ochsensteig" 😎 ..Einrollen:)</span></br>
+  <span style="white-space: nowrap;">"Lamplsboden" 🦽 ..steil, eng & fies;)</span></br>
+  <span style="white-space: nowrap;">"Fangschuss" 😱 ..Schock!</span></br>
+  <span style="white-space: nowrap;">"Runstboden-Kicker" 🤘 ..Fun;)</span></br>
   <span style="white-space: nowrap;">"Playground" 💀 ..Rock Slab!</span></br>
   <span style="white-space: nowrap;">"Widum" ✝️ ..North-Shore & 1A-Loam:)</span></br>
   <span style="white-space: nowrap;">"Black Lodge" ⛧ ..unfahrbar steil?</span></br>
@@ -230,8 +231,8 @@ img {
 			track.addTo(map);
 			spots.addTo(map);
 
-			var southWest = L.latLng(47.299023436166884, 11.48455810180167),
-				northEast = L.latLng(47.190645722063486, 11.36096191039542),
+			var southWest = L.latLng(47.2709131415841, 11.48531341343187),
+				northEast = L.latLng(47.217306206692285, 11.426090238383042),
 				bds = L.latLngBounds(southWest, northEast);
 			map.fitBounds(bds);
 		
@@ -252,11 +253,15 @@ img {
 	<img onload="this.className='animate'" id="widum" src="images/IMG-20210308-WA0001.jpg"/>
 </div>
 <div class="floating-box">
+	<h4 style="bottom:12px; right:25px;color:black;">"Runstweg-Kicker"</h4>
+	<img onload="this.className='animate'" id="Runstweg-Kicker" src="images/Runstweg-Kicker.jpg"/>
+</div>
+<div class="floating-box">
 	<h3 style="z-index:99;position:absolute;bottom:0px;left:50px;">Eure Äktschn-Fotos gehen hier her...</h3>
 	<img onload="this.className='animate'" id="polaroid" src="images/polaroid.png"/>
 </div>
 <div class="floating-box">
-<h2 style="z-index:99;position:absolute;top:0px;left:0px;text-align:left;">🏆 T-Shirt 🤟</h2>
+<h2 style="z-index:99;position:absolute;top:0px;left:0px;text-align:left;">🏆 Best shot wins Shirt 🤟</h2>
 <img onload="this.className='animate'" id="t-shirt" style="transform: rotate(-5deg);"  src="images/monster_shirt.jpg"/>
 <h3 style="width:100%;z-index:99;position:absolute;bottom:0px;text-align:right;">
 TheMonster'21&nbsp;&copy;&nbsp;<a href="http://www.tiroltrailhead.com">tiroltrailhead.com</a>
