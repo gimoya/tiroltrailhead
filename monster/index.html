@@ -58,6 +58,7 @@ h3{
 
 /*
 img captions h4
+position to be set inline!
 */
 h4 {
 font-family: 'FloridaShark';
@@ -66,8 +67,6 @@ font-size:26px;
 font-weight: 400;
 z-index:99;
 position:absolute;
-bottom:5px;
-left:5px;
 padding:0px;
 margin:0px;
 }
@@ -75,10 +74,11 @@ margin:0px;
 .floating-box {
   position:relative;
   float: left;
-  width: 360px;
-  height: 465px;
+  width: 350px;
+  height: 525px;
   margin: 10px;  
   font-family: 'Roboto';
+  background-color:#edeaea;
 }
 
 .mymap {
@@ -97,7 +97,6 @@ margin:0px;
  bottom:0;
  top:0;
  margin:auto;
- background-color:rgba(71,71,71,0.5);
 }
 
 img {
@@ -245,11 +244,11 @@ img {
 	<img onload="this.className='animate'" id="monster_photo" src="images/monster_photo.png"/>
 </div>
 <div class="floating-box">
-	<h4>"Fangschuss"</h4>
+	<h4 "left:10px; bottom:30px;">"Fangschuss"</h4>
 	<img onload="this.className='animate'" id="alex" src="images/IMG-20210307-WA0000.jpg"/>
 </div>
 <div class="floating-box">
-	<h4>"Widum" North Shore</h4>
+	<h4 style="bottom:27px; right:17px;">"Widum" North Shore</h4>
 	<img onload="this.className='animate'" id="widum" src="images/IMG-20210308-WA0001.jpg"/>
 </div>
 <div class="floating-box">
