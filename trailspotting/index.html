@@ -34,7 +34,7 @@ body {
 	z-index: 999;
 }
     
-pre, .floating-box, .floating-box-low, .gps-footer {
+pre, .floating-box, .floating-box-low, .gps-footer, #map-title {
   font-family: 'Special Elite';
   font-size: 18px;
 }
@@ -80,6 +80,17 @@ pre, .floating-box, .floating-box-low, .gps-footer {
     width: 22px!important;
     height: 30px!important;
 	}
+
+#map-title {
+	position:absolute;
+	right:0;
+	padding:10px 10px 0px 10px;
+	z-index:9999;
+	font-size:38px;
+	background-color: rgba(210,210,210,0.65);
+}
+
+
 </style>
 </head>
 <body>
@@ -108,6 +119,7 @@ train..
 
 <div class="floating-box">
 	<div class="mymap" id="map_A">
+	<div id="map-title">A</div>
 		<script>
 			var map_A = L.map('map_A');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
@@ -130,8 +142,37 @@ train..
 				map_A.fitBounds(bds);
 				map_A.setMaxBounds(bds);
 			}).addTo(map_A);
-			L.control.scale().addTo(map_A);
-			
+			L.control.scale().addTo(map_A);	
+		</script>
+	</div>
+</div>
+
+<div class="floating-box">
+	<div class="mymap" id="map_AA">
+	<div id="map-title">AA</div>
+		<script>
+			var map_AA = L.map('map_AA');
+			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
+			  minZoom:10,
+			  maxZoom:15,
+			  maxNativeZoom:15
+			}).addTo(map_AA);
+
+			var gpx_AA = 'gps/AA__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_AA, {
+				async:true, 
+				polyline_options: {
+					color: 'DarkSlateGray',
+					opacity: 0.75,
+					weight: 2.8,
+					lineCap: 'round'}
+				}).on('loaded', function(e) {
+				var bds = e.target.getBounds().pad(0.05);
+				map_AA.fitBounds(bds);
+				map_AA.setMaxBounds(bds);
+			}).addTo(map_AA);
+			L.control.scale().addTo(map_AA);	
 		</script>
 	</div>
 </div>
@@ -164,6 +205,7 @@ Innsbruck		11:25 (17')	12:55 (17')
 	
 <div class="floating-box">
 	<div class="mymap" id="map_B">
+	<div id="map-title">B</div>
 		<script>
 			var map_B = L.map('map_B');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
@@ -226,6 +268,7 @@ Innsbruck		14:55 (17')	15:25 (17')
 
 <div class="floating-box">
 	<div class="mymap" id="map_C">
+		<div id="map-title">C</div>
 		<script>
 			var map_C = L.map('map_C');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
@@ -281,6 +324,7 @@ Innsbruck		12:13 (9')		12:25 (10')
 <div class="floating-box">
 	<img id="danger" src="images/yellow-warning-tape.png" />
 	<div class="mymap" id="map_D">
+		<div id="map-title">D</div>
 		<script>
 			var map_D = L.map('map_D');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
@@ -330,9 +374,9 @@ Innsbruck		?
 </div>
 	
 </div>
-
 	<div class="floating-box">
 	<div class="mymap" id="map_E">
+		<div id="map-title">E</div>
 		<script>
 			var map_E = L.map('map_E');
 			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
@@ -360,6 +404,36 @@ Innsbruck		?
 	</div>
 </div>
 	
+</div>
+	<div class="floating-box">
+	<div class="mymap" id="map_EE">
+		<div id="map-title">EE</div>
+		<script>
+			var map_EE = L.map('map_EE');
+			L.tileLayer('//4umaps.eu/{z}/{x}/{y}.png', {
+			  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
+                          minZoom:11,
+                          maxZoom:15,
+						  maxNativeZoom:15
+			}).addTo(map_EE);
+
+			var gpx_EE = 'gps/EE__Trailspotting.gpx'; // URL to your GPX file or the GPX itself
+			new L.GPX(gpx_EE, {
+				async:true, 
+				polyline_options: {
+					color: 'DarkSlateGray',
+					opacity: 0.75,
+					weight: 2.8,
+					lineCap: 'round'}
+				}).on('loaded', function(e) {
+				var bds = e.target.getBounds().pad(0.05);
+				map_EE.fitBounds(bds);
+				map_EE.setMaxBounds(bds);
+			}).addTo(map_EE);
+			L.control.scale().addTo(map_EE);
+		</script>
+	</div>
+</div>
 
 <div class="floating-box">
 <PRE>
@@ -383,10 +457,12 @@ Innsbruck		14:01 (8')
 <h3>Alle S-Bahnen und REX fahren wochentags im 60' Takt</h3>
 <h1>GPX-Tracks:</h1>
 <p><a href="gps/A__Trailspotting.gpx">A__Trailspotting.gpx</a></p>
+<p><a href="gps/A__Trailspotting.gpx">AA__Trailspotting.gpx</a></p>
 <p><a href="gps/B__Trailspotting.gpx">B__Trailspotting.gpx</a></p>
 <p><a href="gps/C__Trailspotting.gpx">C__Trailspotting.gpx</a></p>
 <p><a href="gps/D__Trailspotting.gpx">D__Trailspotting.gpx</a> ⚠ Waldschäden</p>
 <p><a href="gps/E__Trailspotting.gpx">E__Trailspotting.gpx</a></p>
+<p><a href="gps/E__Trailspotting.gpx">EE__Trailspotting.gpx</a></p>
 
 <div class="strava">
 </br></br></br>
