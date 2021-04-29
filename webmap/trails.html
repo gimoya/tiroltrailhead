@@ -30,8 +30,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Bungee' rel='stylesheet' type='text/css'>		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="scripts/bowser.js"></script>
-		
+		<script src="scripts/bowser.js"></script>		
 		<!-- General JS PART -->
 		
 		<script type="text/javascript">	
@@ -957,8 +956,19 @@
 			
 			var click = new OpenLayers.Control.Click();
 			map.addControl(click);
-			click.activate();
+			click.activate();		
 			
 		</script>
+		
+		<script src='scripts/kofi-overlay-widget.js'></script>
+		<script>
+		  kofiWidgetOverlay.draw('tiroltrailhead', {
+			'type': 'floating-chat',
+			'floating-chat.donateButton.text': 'Donate',
+			'floating-chat.donateButton.background-color': '#00b9fe',
+			'floating-chat.donateButton.text-color': '#fff'
+		  });
+		</script>	
+		
   </body>
 </html>
