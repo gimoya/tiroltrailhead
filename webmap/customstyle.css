@@ -956,10 +956,13 @@ Newest Trail with animation
  
 /* 
  * only fix I found for rendering marker layer on top of map
- */
+*/
+
 div[id^="OpenLayers_Layer_Markers"] {
 	z-index: 726!important;
 }
+
+ 
 
 /*
  * HIDE nav-tags which are just used for GOOGLE Sitelinks algorithm
