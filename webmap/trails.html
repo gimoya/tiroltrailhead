@@ -154,9 +154,9 @@
 			<div id="control-div">
 				<a id="Overview" onclick="getOverview();"><i class="fa fa-globe fa-4x"></i></<a>
 				<a id="ToggleButton"><i class="fa fa-chevron-circle-down fa-4x"></i></a>
-				<input type="button" class="Basemap" value="OSMWindy" onclick="map.setBaseLayer(oWMAP);">
-				<input type="button" class="Basemap" value="OeK" onclick="map.setBaseLayer(AV);">
-				<input type="button" class="Basemap" value="OSMTopo" onclick="map.setBaseLayer(OpenTopoMap);">
+				<input type="button" class="Basemap" value="AV Map" onclick="map.setBaseLayer(AV);"></br> 					
+				<input type="button" class="Basemap" value="OSM-Topo Map" onclick="map.setBaseLayer(oWMAP);"></br>
+				<input type="button" class="Basemap" value="OSM-Tourist Map" onclick="map.setBaseLayer(OpenTopoMap);">
 			</div>
 			
 			<div id="map"></div>
@@ -249,7 +249,7 @@
 				"https://windytiles.mapy.cz/turist-en/${z}-${x}-${y}.png",
 				{
 				numZoomLevels: 17,
-				attribution: "&copy; <a href='https://www.windy.com/'>Windyty</a> &copy; OpenStreetMap contributors"
+				attribution: "&copy; <a href='https://www.windy.com/'>Windy</a> &copy; OpenStreetMap contributors"
 				});
 			
 			var OpenTopoMap = new OpenLayers.Layer.XYZ( "OpenTopoMap",
