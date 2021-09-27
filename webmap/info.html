@@ -4,12 +4,54 @@
 	<title>I N F O  P A G E</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="title" content="Tirol Trailhead Web Map - INFOPAGE"/>
-	<meta name="description" content="Info Seite zur Tirol Trailhead Web Map, Kodex, Skala, etc."/>
+	<meta name="description" content="Info Seite zur Tirol Trailhead Web Map, Kodex, Skala, etc."/>	
 	<link rel="stylesheet" href="customstyle.css" type="text/css" />
 	<link rel="shortcut icon" type="image/x-icon" href="images/icon.png" />
 	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	
+	<script src="scripts/bowser.js"></script>	
+	<script type="text/javascript">	
+		
+		function trim(str) {
+			return str.replace(/^\s+|\s+$/g, '');  
+		}
+		
+		var pw_prompt = prompt('Bitte Passwort (Anfrage per E-Mail an: webmap@tiroltrailhead.com) eingeben, um auf die **tiroltrailhead Trail-Webmap** zu gelangen..',' ');
+		var pw = 'gimme';
+		// if prompt is cancelled the pw_prompt var will be null!
+		if (pw_prompt == null) {
+			alert('Kein Passwort wurde angegeben, **tiroltrailhead Trail-Webmap** wird nicht geladen...');
+			if (bowser.msie) {
+				document.execCommand('Stop');
+			} else {
+				window.stop();
+			}
+			window.location='/tilt.html';
+		}
+		if (trim(pw_prompt) == pw ) {
+			alert('Passwort richtig! Mit dem Klicken auf OK stimmst Du dem TIROLTRAILHEAD Kodex (s. tiroltrailhead.com/webmap/info.html) und dem Haftungsausschluss zu!');
+		} else {
+			alert('Falsches Passwort, **tiroltrailhead Trail-Webmap** wird nicht geladen..');
+			if (bowser.msie) {
+				document.execCommand('Stop');
+			} else {
+				window.stop();
+			}
+			window.location='/tilt.html';
+		}
+	</script>
+	
 	<style>
+	body {
+		margin: 0; 
+		width: 80%; 
+		position: absolute; 
+		left: 10%; 
+		top: 50px; 
+		background-color: #F1EDED; 
+		color: #333C3F;
+	}
 	table {
 		font-family: arial, sans-serif;
 		border-collapse: collapse;
@@ -29,8 +71,9 @@
 	  word-break: break-all;
 	}
 	</style>
+	
 	</head>
-	<body style="margin: 0; width: 80%; position: absolute; left: 10%; top: 50px; background-color: #F1EDED; color: #333C3F;">
+	<body>
    	<div id="kodex-skala-head">
    		<div style="padding-top:5px;">TIROL TRAILHEAD</div>
    		<img src="http://gimoya.github.io/tiroltrailhead/webmap/images/logo_trails_5_1.png" style="vertical-align:middle;height:3em;padding:5px;"></img>
