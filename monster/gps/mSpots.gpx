@@ -8,26 +8,11 @@
  xmlns:gpxtrkx="http://www.garmin.com/xmlschemas/TrackStatsExtension/v1"
  xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v2"
  xmlns:locus="http://www.locusmap.eu">
+
 	<metadata>
 		<desc>File with points/tracks from Locus Map/3.20.0</desc>
 	</metadata>
-<wpt lat="47.230622" lon="11.457242">
-	<ele>1123.57</ele>
-	<time>2021-03-02T13:34:37.721Z</time>
-	<name>Lamplsboden</name>
-	<desc><![CDATA[..unten links raus: extrem steil zum Schluss, aber fahrbahr! ..rechts raus: gemütlicher;)]]></desc>
-	<extensions>
-		<gpxx:WaypointExtension>
-			<gpxx:Address>
-				<gpxx:StreetAddress>Almweg, 6073 Sistrans, Österreich</gpxx:StreetAddress>
-				<gpxx:City>Sistrans</gpxx:City>
-				<gpxx:State>Tirol</gpxx:State>
-				<gpxx:Country>Österreich</gpxx:Country>
-				<gpxx:PostalCode>6073</gpxx:PostalCode>
-			</gpxx:Address>
-		</gpxx:WaypointExtension>
-	</extensions>
-</wpt>
+
 <wpt lat="47.246031" lon="11.448520">
 	<ele>837.08</ele>
 	<time>2021-03-02T10:05:30.281Z</time>
@@ -45,6 +30,7 @@
 		</gpxx:WaypointExtension>
 	</extensions>
 </wpt>
+
 <wpt lat="47.232997" lon="11.471005">
 	<ele>1203.25</ele>
 	<time>2021-03-02T10:04:40.971Z</time>
@@ -62,23 +48,7 @@
 		</gpxx:WaypointExtension>
 	</extensions>
 </wpt>
-<wpt lat="47.226171" lon="11.445324">
-	<ele>1125.75</ele>
-	<time>2021-03-02T10:02:51.968Z</time>
-	<name>Ochsensteig zum Einrollen</name>
-	<desc><![CDATA[.. gemütlicher Start:)]]></desc>
-	<extensions>
-		<gpxx:WaypointExtension>
-			<gpxx:Address>
-				<gpxx:StreetAddress>Heiligwasserweg, 6080 Innsbruck, Österreich</gpxx:StreetAddress>
-				<gpxx:City>Innsbruck</gpxx:City>
-				<gpxx:State>Tirol</gpxx:State>
-				<gpxx:Country>Österreich</gpxx:Country>
-				<gpxx:PostalCode>6080</gpxx:PostalCode>
-			</gpxx:Address>
-		</gpxx:WaypointExtension>
-	</extensions>
-</wpt>
+
 <wpt lat="47.257223" lon="11.458890">
 	<ele>767.58</ele>
 	<time>2021-03-02T10:00:02.817Z</time>
@@ -96,6 +66,7 @@
 		</gpxx:WaypointExtension>
 	</extensions>
 </wpt>
+
 <wpt lat="47.245125" lon="11.450131">
 	<ele>877.09</ele>
 	<time>2021-03-08T15:17:20.208Z</time>
@@ -130,6 +101,7 @@
 		</gpxx:WaypointExtension>
 	</extensions>
 </wpt>
+
 <wpt lat="47.259657" lon="11.450798">
 	<ele>677.78</ele>
 	<time>2021-04-07T20:14:45.669Z</time>
