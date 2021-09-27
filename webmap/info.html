@@ -18,10 +18,10 @@
 		}
 		
 		var pw_prompt = prompt('Bitte Passwort (Anfrage per E-Mail an: webmap@tiroltrailhead.com) eingeben, um auf die **tiroltrailhead Trail-Webmap** zu gelangen..',' ');
-		var pw = 'gimme';
+		var pw = 'hothothot';
 		// if prompt is cancelled the pw_prompt var will be null!
 		if (pw_prompt == null) {
-			alert('Kein Passwort wurde angegeben, **tiroltrailhead Trail-Webmap** wird nicht geladen...');
+			alert('Es wurde kein Passwort wurde angegeben, **tiroltrailhead Trail-Webmap Info** wird nicht geladen...');
 			if (bowser.msie) {
 				document.execCommand('Stop');
 			} else {
@@ -30,9 +30,9 @@
 			window.location='/tilt.html';
 		}
 		if (trim(pw_prompt) == pw ) {
-			alert('Passwort richtig! Mit dem Klicken auf OK stimmst Du dem TIROLTRAILHEAD Kodex (s. tiroltrailhead.com/webmap/info.html) und dem Haftungsausschluss zu!');
+			alert('Passwort richtig!');
 		} else {
-			alert('Falsches Passwort, **tiroltrailhead Trail-Webmap** wird nicht geladen..');
+			alert('Falsches Passwort, **tiroltrailhead Trail-Webmap Info** wird nicht geladen..');
 			if (bowser.msie) {
 				document.execCommand('Stop');
 			} else {
