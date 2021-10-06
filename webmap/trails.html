@@ -822,7 +822,8 @@
 						var ft = features[i];
 						try {
 							if (ft.onScreen()){
-								output.push(ft.attributes.name);
+								// output.push(ft.attributes.name);
+								output.push('<input type="button" class="Link" value="' + ft.attributes.name + '" onclick="selectByAttr(KMLtrails, this.value)"></input>');
 								}
 							}
 						catch(err) {
@@ -831,8 +832,8 @@
 					}
 					// then, use output to display the list in html...
 					document.getElementById("onscreen-trails").innerHTML = 
-						'<div id="onscreen-trails-inner">Trails im Bild<br></div>..' + 
-						output.join("<br>..");	
+						'<div id="onscreen-trails-inner">Trails im Bild<br></div>' + 
+						output.join("<br>");	
 					$("#onscreen-trails").fadeIn("slow");	
 				} else {
 					$("#onscreen-trails").fadeOut("slow");
