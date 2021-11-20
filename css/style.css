@@ -33,10 +33,6 @@ body a:focus, a:hover {
 	text-decoration: none;
 }
 
-div.floating-chat-kofi-popup {
-	overflow:hidden;
-	}
-
 /* Sticky request Button */
 #bookBtn {
     display: none;
