@@ -24,7 +24,7 @@ if (trim(pw_prompt) == pw ) {
 	} else {
 		window.stop();
 	}
-	window.location='http://tiroltrailhead.com/guiding';
+	window.location='http://tiroltrailhead.com/webmap/tilt.html';
 }
 
 
@@ -268,7 +268,7 @@ $.getJSON('z_trails_tschirgant.geojson', function(json) {
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX";			
-			var popupContent = '<div>' + feature.properties.description + '</div>' + gpxLink.outerHTML;
+			var popupContent = '<div>' + feature.properties.description + '</div><div>Track: ☕ ' +  gpxLink.outerHTML + '</div>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 		}
 	}).addTo(map);
