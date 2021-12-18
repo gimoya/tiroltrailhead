@@ -271,7 +271,7 @@ $.getJSON('z_trails_forchet.geojson', function(json) {
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 		}
 	}).addTo(map);
-	map.fitBounds(trails_json.getBounds(), {maxZoom: 14});
+	map.fitBounds(trails_json.getBounds(), {maxZoom: 16});
 });
 
 /*
