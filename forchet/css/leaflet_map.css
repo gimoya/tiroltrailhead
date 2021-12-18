@@ -51,14 +51,21 @@ body{
   cursor: default;
 }
 
+.navbar-brand {
+	font-family: 'Rye', cursive; 
+	font-size:calc(24px + .5vw);
+	letter-spacing: 0.5em;
+}
+
 .navbar-toggle {
   background-color: #fff;
 }
 
 ul.nav.navbar-nav.navbar-right a {
   color: #fff;
-  font-weight: bold;
   transition: color 0.4s;
+  font-family: 'Rye'; 
+  font-size:calc(11px + .4vw);
 }
 
 ul.nav.navbar-nav.navbar-right li a:hover {
@@ -88,7 +95,6 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     padding: 5px;
     text-align: left;
     border-radius: 3px;
-    white-space: nowrap;
 	width: 300px;
 }
 

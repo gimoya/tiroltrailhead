@@ -3,22 +3,22 @@ function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');  
 }
 
-var pw_prompt = prompt('Bitte Passwort eingeben (Anfrage per E-Mail an: kay@tiroltrailhead.com), um auf die **TSCHIRGANT TRAIL MAP** zu gelangen..',' ');
+var pw_prompt = prompt('Bitte Passwort eingeben (Anfrage per E-Mail an: kay@tiroltrailhead.com), um auf die **Forchet TRAIL MAP** zu gelangen..',' ');
 var pw = 'coffee';
 // if prompt is cancelled the pw_prompt var will be null!
 if (pw_prompt == null) {
-	alert('Kein Passwort wurde angegeben, **TSCHIRGANT TRAIL MAP** wird nicht geladen...');
+	alert('Kein Passwort wurde angegeben, **Forchet TRAIL MAP** wird nicht geladen...');
 	if (bowser.msie) {
 		document.execCommand('Stop');
 	} else {
 		window.stop();
 	}
-	window.location='http://tiroltrailhead.com/guiding';
+	window.location='http://tiroltrailhead.com/tilt';
 }
 if (trim(pw_prompt) == pw ) {
 	alert('Passwort richtig!');
 } else {
-	alert('Falsches Passwort, **TSCHIRGANT TRAIL MAP** wird nicht geladen..');
+	alert('Falsches Passwort, **Forchet TRAIL MAP** wird nicht geladen..');
 	if (bowser.msie) {
 		document.execCommand('Stop');
 	} else {
@@ -212,7 +212,7 @@ function doClickStuff(e) {
 map.createPane('ptsPane');
 map.getPane('ptsPane').style.zIndex = 600;
 
-$.getJSON('z_trails_tschirgant.geojson', function(json) {
+$.getJSON('z_trails_forchet.geojson', function(json) {
 	
 	trails_json = L.geoJson(json, {
 		
@@ -284,8 +284,8 @@ jQuery.get('Pois.geojson', function(data) {
 var POIs = data;
 
 var POIs_Icon = L.icon({
-	iconUrl: 'images/marker.svg',
-	iconSize: [16, 28], // size of the icon
+	iconUrl: 'images/pin.png',
+	iconSize: [22, 22], // size of the icon
 	});
 
 for (i = 0; i < POIs.features.length; i++) { 
