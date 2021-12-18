@@ -30,7 +30,6 @@ if (trim(pw_prompt) == pw ) {
 
 /*** Add base maps with controls ***/
 var map = L.map('map', {
-  center: [42.808660, 10.375],
   zoom: 12,
   maxZoom: 18,
   minZoom: 11,
@@ -268,7 +267,7 @@ $.getJSON('z_trails_forchet.geojson', function(json) {
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX";			
-			var popupContent = '<div>' + feature.properties.description + '</div><div>Track: ☕ ' +  gpxLink.outerHTML + '</div>';
+			var popupContent = '<div><strong>' + feature.properties.name + '</strong><div>' + feature.properties.description + '</div><div>Track: ☕ ' +  gpxLink.outerHTML + ' ☕</div>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 		}
 	}).addTo(map);
