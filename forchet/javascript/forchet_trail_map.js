@@ -262,7 +262,7 @@ $.getJSON('z_trails_forchet.geojson', function(json) {
 	
 			/*** add a popup to each feature and.. ***/ 	
 			/*** ..set GPX link ***/
-			var bb = new Blob([togpx(feature)], {type: 'text/plain'});
+			var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});
 			var gpxLink = document.createElement("a");
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
