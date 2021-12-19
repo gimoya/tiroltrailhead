@@ -278,7 +278,7 @@ $.getJSON('z_trails_forchet.geojson', function(json) {
 Points of interest
 */
 
-jQuery.get('Pois.geojson', function(data) {
+jQuery.get('POIs.geojson', function(data) {
 
 var POIs = data;
 
