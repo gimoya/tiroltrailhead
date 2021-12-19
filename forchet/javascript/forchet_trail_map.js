@@ -287,7 +287,8 @@ var POIs = data;
 var POIs_Icon = L.icon({
 	iconUrl: 'images/pin.png',
 	iconSize: [22,22], // size of the icon
-    iconAnchor: [11,22]
+    iconAnchor: [11,22],
+	popupAnchor: [0,-24]
 	});
 
 for (i = 0; i < POIs.features.length; i++) { 
