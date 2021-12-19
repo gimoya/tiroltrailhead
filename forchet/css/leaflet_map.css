@@ -9,9 +9,12 @@ body{
     padding-top:50px;
 }
 
-#topic {
-    font-weight: 900;
-    margin: 0 10 0 0px;
+#pop_cont_name {
+    font-weight: bold;
+}
+
+#pop_cont_descr {
+	font-family: 'Nunito';
 }
 
 
@@ -53,7 +56,7 @@ body{
 
 .navbar-brand {
 	font-family: 'Rye', cursive; 
-	font-size:calc(28px + .5vw);
+	font-size:calc(20px + .5vw);
 	letter-spacing: 0.5em;
 }
 
@@ -79,22 +82,15 @@ ul.nav.navbar-nav.navbar-right li a:hover {
   }
 }
 
-/*** Map popup Title***/
-
-.map-popup {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
 /*** popup contents ***/
 .trailPopupClass .leaflet-popup-content-wrapper, .leaflet-popup-tip {
-    box-shadow: none;
+
 }
 
 .trailPopupClass .leaflet-popup-content-wrapper {
     padding: 5px;
     text-align: left;
-    border-radius: 3px;
+    border-radius: 0px!important;
 	width: 300px;
 }
 

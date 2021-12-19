@@ -243,7 +243,7 @@ $.getJSON('z_trails_forchet.geojson', function(json) {
 					radius: 5,
 					pane: 'ptsPane'
 				})	
-				.bindTooltip(feature.properties.name + ' - End (' + feature.geometry.coordinates[feature.geometry.coordinates.length - 1][2] + ' m)', {
+				.bindTooltip(feature.properties.name + ' - Ende (' + feature.geometry.coordinates[feature.geometry.coordinates.length - 1][2] + ' m)', {
 					permanent: false, 
 					direction: 'right'
 				})
@@ -266,8 +266,8 @@ $.getJSON('z_trails_forchet.geojson', function(json) {
 			var gpxLink = document.createElement("a");
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.innerHTML = "GPX";			
-			var popupContent = '<div><strong>' + feature.properties.name + '</strong><div>' + feature.properties.description + '</div><div>Track: ☕ ' +  gpxLink.outerHTML + ' ☕</div>';
+			gpxLink.innerHTML = "GPX-Download";			
+			var popupContent = '<div id="pop_cont_name">' + feature.properties.name + '</div><div id="pop_cont_descr">' + feature.properties.description + '</div><div id="Track">Track: ☕ ' +  gpxLink.outerHTML + ' ☕</div>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 		}
 	}).addTo(map);
@@ -293,7 +293,7 @@ for (i = 0; i < POIs.features.length; i++) {
 				zIndexOffset: 10000,
 				riseOnHover: true,
 				pane: 'ptsPane'})
-			.bindPopup('<h2>'+POIs.features[i].properties.name+'</h2>'+POIs.features[i].properties.description, 
+			.bindPopup('<div id="pop_cont_name">' + POIs.features[i].properties.name + '</div><div id="pop_cont_descr">' + POIs.features[i].properties.description + '</div>', 
 				{
 					closeButton: true,
 					autoClose: false,
