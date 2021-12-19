@@ -37,6 +37,8 @@ var map = L.map('map', {
   attributionControl: false
 });
 
+var myRenderer = L.canvas({ padding: tolerance: 30 }); 
+
 new L.control.attribution({position: 'bottomright'}).addTo(map);
 new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
@@ -216,6 +218,8 @@ $.getJSON('z_trails_forchet.geojson', function(json) {
 	trails_json = L.geoJson(json, {
 		
 		style: 	styleLines,
+
+                renderer: myRenderer,
 		
 		onEachFeature: function(feature, layer) {
 			
