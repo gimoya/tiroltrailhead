@@ -17,6 +17,10 @@ body{
 	font-family: 'Nunito';
 }
 
+#track {
+	padding-top: 8px;
+}
+
 
 /* font awesome hack */
 .fa {
@@ -36,9 +40,9 @@ body{
 /*** Navigation ***/
 
 .navbar {
-  margin-bottom: 0;
-  padding: 0 15px;
-  background: #86c90d;
+	padding: 0 0 0 15px;
+	background: #1f8002;
+    border-width: 0px;
 }
 
 .navbar-default .navbar-brand,
@@ -67,7 +71,7 @@ body{
 ul.nav.navbar-nav.navbar-right a {
   color: #fff;
   transition: color 0.4s;
-  font-family: 'Rye'; 
+  font-family: inherit; 
   font-size:calc(12px + .4vw);
 }
 

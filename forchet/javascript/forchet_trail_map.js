@@ -267,12 +267,14 @@ $.getJSON('z_trails_forchet.geojson', function(json) {
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX-Download";			
-			var popupContent = '<div id="pop_cont_name">' + feature.properties.name + '</div><div id="pop_cont_descr">' + feature.properties.description + '</div><div id="Track">Track: ☕ ' +  gpxLink.outerHTML + ' ☕</div>';
+			var popupContent = '<div id="pop_cont_name">' + feature.properties.name + '</div><div id="pop_cont_descr">' + feature.properties.description + '</div><div id="Track">☕ ' +  gpxLink.outerHTML + ' ☕</div>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 		}
 	}).addTo(map);
 	map.fitBounds(trails_json.getBounds(), {maxZoom: 16});
 });
+
+
 
 /*
 Points of interest
@@ -284,8 +286,8 @@ var POIs = data;
 
 var POIs_Icon = L.icon({
 	iconUrl: 'images/pin.png',
-	iconSize: [22, 22], // size of the icon
-        iconAnchor: [-11,0]
+	iconSize: [22,22], // size of the icon
+    iconAnchor: [11,22]
 	});
 
 for (i = 0; i < POIs.features.length; i++) { 
