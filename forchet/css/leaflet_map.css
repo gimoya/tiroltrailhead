@@ -57,7 +57,7 @@ body{
 .navbar-brand {
 	font-family: 'Rye', cursive; 
 	font-size:calc(20px + .5vw);
-	letter-spacing: 0.5em;
+	letter-spacing: 0.4em;
 }
 
 .navbar-toggle {
@@ -68,7 +68,7 @@ ul.nav.navbar-nav.navbar-right a {
   color: #fff;
   transition: color 0.4s;
   font-family: 'Rye'; 
-  font-size:calc(13px + .4vw);
+  font-size:calc(12px + .4vw);
 }
 
 ul.nav.navbar-nav.navbar-right li a:hover {
@@ -78,7 +78,7 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 /*** Control font size of title on small screens ***/
 @media screen and (max-width: 400px) {
   .navbar-default .navbar-brand {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 
