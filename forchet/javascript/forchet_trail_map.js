@@ -3,11 +3,11 @@ function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');  
 }
 
-var pw_prompt = prompt('Bitte Passwort eingeben (Anfrage per E-Mail an: kay@tiroltrailhead.com), um auf die **Forchet TRAIL MAP** zu gelangen..',' ');
+var pw_prompt = prompt('Passwort eingeben um auf die SEite **Forchet MTB** zu gelangen..',' ');
 var pw = 'coffee';
 // if prompt is cancelled the pw_prompt var will be null!
 if (pw_prompt == null) {
-	alert('Kein Passwort wurde angegeben, **Forchet TRAIL MAP** wird nicht geladen...');
+	alert('Kein Passwort wurde angegeben! Die Seite wird nicht geladen...');
 	if (bowser.msie) {
 		document.execCommand('Stop');
 	} else {
@@ -16,9 +16,9 @@ if (pw_prompt == null) {
 	window.location='http://tiroltrailhead.com/webmap/tilt';
 }
 if (trim(pw_prompt) == pw ) {
-	alert('Passwort richtig!');
+	alert('Passwort ok!');
 } else {
-	alert('Falsches Passwort, **Forchet TRAIL MAP** wird nicht geladen..');
+	alert('Falsches Passwort! Die Seite wird nicht geladen..');
 	if (bowser.msie) {
 		document.execCommand('Stop');
 	} else {
