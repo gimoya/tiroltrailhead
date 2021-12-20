@@ -40,7 +40,7 @@ body{
 /*** Navigation ***/
 
 .navbar {
-	background: #169e00;
+	background: #378929;
     border-width: 0px;
 }
 
@@ -60,8 +60,7 @@ body{
 .navbar-brand {
 	font-family: 'Rye', cursive; 
 	font-size:calc(20px + .5vw);
-	letter-spacing: 0.4em;
-	padding-left: 15px;
+	letter-spacing: 0.3em;
 }
 
 .navbar-toggle {
