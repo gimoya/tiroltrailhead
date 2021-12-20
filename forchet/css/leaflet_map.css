@@ -94,6 +94,7 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 @media screen and (max-width: 400px) {
   .navbar-default .navbar-brand {
     font-size: 1.2em;
+	padding-top: 19px;
   }
 }
 
