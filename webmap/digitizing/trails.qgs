@@ -9841,7 +9841,8 @@ def my_form_open(dialog, layer, feature):
       <widgets/>
       <previewExpression>name</previewExpression>
       <mapTip>[% name || '&lt;/br>' ||&#xd;
-round($length,-1) || ' m' %]</mapTip>
+round($length,-1) || ' m &lt;/br>' ||&#xd;
+round(sum($length)/1000, 1) || ' km' %] </mapTip>
     </maplayer>
   </projectlayers>
   <layerorder>
