@@ -13,7 +13,7 @@ if (pw_prompt == null) {
 	} else {
 		window.stop();
 	}
-	window.location='tiroltrailhead/webmap/tilt';
+	window.location='webmap/tilt.html';
 }
 if (trim(pw_prompt) == pw ) {
 	alert('Passwort ok!');
@@ -24,7 +24,7 @@ if (trim(pw_prompt) == pw ) {
 	} else {
 		window.stop();
 	}
-	window.location='tiroltrailhead/webmap/tilt.html';
+	window.location='webmap/tilt.html';
 }
 
 
