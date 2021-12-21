@@ -42,6 +42,7 @@ html[xmlns] .slides {display: block;}
 .flexslider .slides {zoom: 1;}
 .carousel li {margin-right: 5px}
 /* Direction Nav */
+.flex-direction-nav {dsiplay:none!important}
 .flex-direction-nav a {width: 30px; height: 30px; margin: -20px 0 0; display: block; background: url(../images/bg_direction_nav.png) no-repeat 0 0; position: absolute; top: 50%; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
 .flex-direction-nav .flex-next {background-position: 100% 0; right: -36px; }
 .flex-direction-nav .flex-prev {left: -36px;}
@@ -84,4 +85,13 @@ margin: 0px 0px 30px;
 		width: 9px;
 		height: 9px;
 	}
+}
+
+
+/* 
+CUSTOM SHIT 
+-->Hide Arrows 
+*/
+.callbacks_nav.next, .callbacks_nav.prev {
+    display: none;
 }
