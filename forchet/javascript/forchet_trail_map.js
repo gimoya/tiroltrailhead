@@ -134,19 +134,9 @@ function highlight (layer) {	// will be used on hover
 	}	
 }
 
-function getColor(description) { // ..used inside styleLines function. will color trails according to description details..
-	var color;
-	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
-	// trails with ? classification (unknown, planned but not yet been there) should be pink
-	if (description.indexOf('?') > -1) {color = "#FF69B4"}
-	// trails with X! classification (been there, and it was shit) should be grey
-	if (description.indexOf('X!') > -1) {color = "#BCBCBC"}	
-	return color
-}
-
 function styleLines(feature) {	// deafult style used for constructor of json
     return {
-		color: getColor(feature.properties.description),
+		color: '#adadad',
 		weight: 3,
 		opacity: 0.8,
 		lineJoin: 'round',  //miter | round | bevel 
