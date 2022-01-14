@@ -136,7 +136,7 @@ function highlight (layer) {	// will be used on hover
 
 function styleLines(feature) {	// deafult style used for constructor of json
     return {
-		color: '#adadad',
+		color: '#FF5F1F',
 		weight: 3,
 		opacity: 0.8,
 		lineJoin: 'round',  //miter | round | bevel 
