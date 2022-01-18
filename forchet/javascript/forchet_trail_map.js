@@ -176,7 +176,7 @@ function doClickStuff(e) {
 	ftr = e.target.feature;
 	
 	select(lyr);
-	lyr.setText('- - - ►             ', { repeat: true, offset: 11, attributes: {fill:  getColor(ftr.properties.description), 'font-weight': 'bold', 'font-size': '12'} });
+	lyr.setText('- - - ►             ', { repeat: true, offset: 11, attributes: {fill:  '#FF5F1F', 'font-weight': 'bold', 'font-size': '12'} });
 	
 	/*** Elevation Control ***/
 		
