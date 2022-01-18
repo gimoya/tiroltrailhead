@@ -3,7 +3,7 @@ function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');  
 }
 
-var pw_prompt = prompt('Passwort eingeben um auf die SEite **Forchet MTB** zu gelangen..',' ');
+var pw_prompt = prompt('Passwort eingeben um auf die Seite **Forchet MTB** zu gelangen..',' ');
 var pw = 'coffee';
 // if prompt is cancelled the pw_prompt var will be null!
 if (pw_prompt == null) {
@@ -49,6 +49,7 @@ var toggle = L.easyButton({
 	onClick: function(control) {
 	  map.removeLayer(mapbox_outdoorLayer);
 	  map.addLayer(mapbox_satelliteLayer);
+	  map.addLayer(overlayLayer);
 	  control.state('basemap-satellite');
 	}
   }, {
@@ -57,6 +58,7 @@ var toggle = L.easyButton({
 	title: 'change basemap to outdoor/terrain',
 	onClick: function(control) {
 	  map.removeLayer(mapbox_satelliteLayer);
+	  map.removeLayer(overlayLayer);
 	  map.addLayer(mapbox_outdoorLayer);
 	  control.state('basemap-outdoor');
 	},
@@ -65,9 +67,10 @@ var toggle = L.easyButton({
 
 toggle.addTo(map);
 
-var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapbox.com">mapbox</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
-var mapbox_satelliteUrl = 'https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
-var mapbox_outdoorUrl = 'https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
+var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapy.cz">MAPY.CZ</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
+var mapbox_satelliteUrl = 'https://mapserver.mapy.cz/ophoto-m/{z}-{x}-{y}';
+var mapbox_outdoorUrl = 'https://mapserver.mapy.cz/turist-m/{z}-{x}-{y}';
+var overlayUrl = 'https://mapserver.mapy.cz/hybrid-trail_bike-m/{z}-{x}-{y}';
 
 var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
   attribution: mapbox_Attr 
@@ -75,7 +78,9 @@ var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
 
 var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
   attribution: mapbox_Attr 
-});		
+});
+
+var overlayLayer = L.tileLayer(overlayUrl);
 
 mapbox_outdoorLayer.addTo(map);	
 
@@ -129,19 +134,9 @@ function highlight (layer) {	// will be used on hover
 	}	
 }
 
-function getColor(description) { // ..used inside styleLines function. will color trails according to description details..
-	var color;
-	color = description.indexOf('K!') > -1 ? "#E53E38" : "#1F5AAA";
-	// trails with ? classification (unknown, planned but not yet been there) should be pink
-	if (description.indexOf('?') > -1) {color = "#FF69B4"}
-	// trails with X! classification (been there, and it was shit) should be grey
-	if (description.indexOf('X!') > -1) {color = "#BCBCBC"}	
-	return color
-}
-
 function styleLines(feature) {	// deafult style used for constructor of json
     return {
-		color: getColor(feature.properties.description),
+		color: '#FF5F1F',
 		weight: 3,
 		opacity: 0.8,
 		lineJoin: 'round',  //miter | round | bevel 
