@@ -26,6 +26,34 @@
 <body>
   <div id="map"></div>
   <script>
+  	/* PW protection */
+	function trim(str) {
+		return str.replace(/^\s+|\s+$/g, '');  
+	}
+
+	var pw_prompt = prompt('Bitte Passwort eingeben!',' ');
+	var pw = 'flachau_vs_mai';
+	// if prompt is cancelled the pw_prompt var will be null!
+	if (pw_prompt == null) {
+		alert('Kein Passwort wurde angegeben! Die Seite wird nicht geladen...');
+		if (bowser.msie) {
+			document.execCommand('Stop');
+		} else {
+			window.stop();
+		}
+		window.location='tilt.html';
+	}
+	if (trim(pw_prompt) == pw ) {
+		alert('Passwort ok!');
+	} else {
+		alert('Falsches Passwort! Die Seite wird nicht geladen..');
+		if (bowser.msie) {
+			document.execCommand('Stop');
+		} else {
+			window.stop();
+		}
+		window.location='tilt.html';
+	}
       var map = L.map('map').setView([47.341361189307506, 13.363221784411909], 17.5);
       L.tileLayer('file:///D%3A/Projekte/tiroltrailhead/FLACHAU-TMS/{z}/{x}/{y}.jpg', {
         minZoom: 15,
