@@ -141,14 +141,14 @@ if ($().quicksand) {
   $("[data-gal='tooltip']").tooltip();
 imgHover();
 lightboxPhoto(); 
-navScroll();
+//navScroll();
 winHeight();
   //============================ nav container sticky =========================================
 
   
 })();
 $(window).resize(function(){
-navScroll();
+//navScroll();
 winHeight();
 });
 //================================ function ========================================
@@ -188,7 +188,7 @@ function lightboxPhoto() {
            // });
 	
 	}
-function navScroll(){
+/*function navScroll(){
  $(window).scroll(function() {
 		   
 var top = $(window).scrollTop();
@@ -228,6 +228,8 @@ $('.btnAbout').css({
 });
 
 }
+*/
+
 function winHeight(){
  //==================================== height header============================
 var wHeight = $(window).height();
