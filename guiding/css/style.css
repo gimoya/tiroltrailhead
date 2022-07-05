@@ -2127,7 +2127,7 @@ ul.social-icons li a.youtube:hover {
 	}
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:376px) {
 	.navbar-default .navbar-brand {
 	font-size: 2.8ex;
     padding-top: 15px!important;
@@ -2180,7 +2180,12 @@ ul.social-icons li a.youtube:hover {
 	}
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:333px) {
+	
+	.navbar-default .navbar-brand {
+	font-size: 2.3ex;
+	}
+	
 	.contact h2  {
 		font-size: 25px;
 	}
@@ -2226,6 +2231,12 @@ ul.social-icons li a.youtube:hover {
 		padding: 20px 0;
 	}
 	
+}
+
+@media screen and (max-width:290px) {
+	.navbar-default .navbar-brand {
+	display: none;
+	}
 }
 
 
