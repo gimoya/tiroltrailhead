@@ -121,7 +121,7 @@
     </layer-tree-group>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="Trailmap">
       <customproperties/>
-      <layer-tree-layer checked="Qt::Checked" expanded="0" name="trails_utm_utf8" providerKey="ogr" id="trails_utm_utf820141118153222040" source="./trails_utm_utf8.sqlite" legend_exp="">
+      <layer-tree-layer checked="Qt::Unchecked" expanded="0" name="trails_utm_utf8" providerKey="ogr" id="trails_utm_utf820141118153222040" source="./trails_utm_utf8.sqlite" legend_exp="">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer checked="Qt::Checked" expanded="1" name="regions_utm_utf8" providerKey="ogr" id="regions_utm_utf820141118153216780" source="./regions_utm_utf8.sqlite" legend_exp="">
@@ -142,7 +142,7 @@
     </layer-tree-group>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="BASEMAPS">
       <customproperties/>
-      <layer-tree-layer checked="Qt::Unchecked" expanded="1" name="local_strava" providerKey="wms" id="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b" source="crs=EPSG:3857&amp;format&amp;tilePixelRatio=1&amp;type=xyz&amp;url=file:///D:/Projekte/tiroltrailhead/strava_tiles_06_2020/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=14&amp;zmin=13" legend_exp="">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" name="local_strava" providerKey="wms" id="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b" source="crs=EPSG:3857&amp;format&amp;tilePixelRatio=1&amp;type=xyz&amp;url=file:///D:/Projekte/tiroltrailhead/strava_tiles_06_2020/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=14&amp;zmin=13" legend_exp="">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer checked="Qt::Unchecked" expanded="0" name="OEK-Bergfex" providerKey="wms" id="OEK_Bergfex_fc6a3c00_0f69_440c_872f_149a607d08b6" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://maps.bergfex.at/oek/standard/%7Bz%7D/%7Bx%7D/%7By%7D.jpg&amp;zmax=16&amp;zmin=12" legend_exp="">
@@ -154,7 +154,7 @@
       <layer-tree-layer checked="Qt::Unchecked" expanded="1" name="gdi_nomenklatur" providerKey="wms" id="gdi_nomenklatur_c3c17d06_6a1d_416c_9f5b_53fce5cf27d0" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=gdi_nomenklatur&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" legend_exp="">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer checked="Qt::Unchecked" expanded="1" name="gdi_base_summer" providerKey="wms" id="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=gdi_base_summer&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" legend_exp="">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" name="gdi_base_summer" providerKey="wms" id="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=gdi_base_summer&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" legend_exp="">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer checked="Qt::Unchecked" expanded="1" name="Image_Schummerung_Gelaendemodell" providerKey="wms" id="Image_Schummerung_Gelaendemodell_d4a9ab07_500c_44a9_9336_6243a905a5ef" source="contextualWMSLegend=0&amp;crs=EPSG:3857&amp;dpiMode=7&amp;featureCount=10&amp;format=image/jpeg&amp;layers=Image_Schummerung_Gelaendemodell&amp;styles=default&amp;url=https://gis.tirol.gv.at/arcgis/services/Service_Public/terrain/MapServer/WMSServer?" legend_exp="">
@@ -233,7 +233,7 @@
       <item>bike_city_innsbruck_legal_559b2c93_b9f5_4536_a66c_bd410f7cdf38</item>
     </custom-order>
   </layer-tree-group>
-  <snapping-settings mode="3" unit="2" type="1" tolerance="0" enabled="1" intersection-snapping="0">
+  <snapping-settings mode="3" unit="2" type="1" tolerance="0" enabled="0" intersection-snapping="0">
     <individual-layer-settings>
       <layer-setting id="JumpGO___copy_001_tracks_1fed863a_4995_4150_bb99_21adb310777c" type="1" units="1" tolerance="12" enabled="0"/>
       <layer-setting id="stadtwaldtrail_upper_tracks_ddf24b30_aeb1_4db7_8370_94dae6db66ee" type="1" units="1" tolerance="12" enabled="0"/>
@@ -274,10 +274,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>1266550.07946721580810845</xmin>
-      <ymin>5987271.91122666373848915</ymin>
-      <xmax>1272862.85921279643662274</xmax>
-      <ymax>5991217.55664506368339062</ymax>
+      <xmin>1270858.28291072626598179</xmin>
+      <ymin>5976356.65331025794148445</ymin>
+      <xmax>1274376.63890228723175824</xmax>
+      <ymax>5978555.71390759572386742</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -455,9 +455,9 @@
       </legendlayer>
     </legendgroup>
     <legendgroup checked="Qt::Checked" name="Trailmap" open="true">
-      <legendlayer checked="Qt::Checked" name="trails_utm_utf8" showFeatureCount="0" drawingOrder="-1" open="false">
+      <legendlayer checked="Qt::Unchecked" name="trails_utm_utf8" showFeatureCount="0" drawingOrder="-1" open="false">
         <filegroup hidden="false" open="false">
-          <legendlayerfile visible="1" layerid="trails_utm_utf820141118153222040" isInOverview="0"/>
+          <legendlayerfile visible="0" layerid="trails_utm_utf820141118153222040" isInOverview="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Checked" name="regions_utm_utf8" showFeatureCount="0" drawingOrder="-1" open="true">
@@ -484,9 +484,9 @@
       </legendlayer>
     </legendgroup>
     <legendgroup checked="Qt::Checked" name="BASEMAPS" open="true">
-      <legendlayer checked="Qt::Unchecked" name="local_strava" showFeatureCount="0" drawingOrder="-1" open="true">
+      <legendlayer checked="Qt::Checked" name="local_strava" showFeatureCount="0" drawingOrder="-1" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile visible="0" layerid="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b" isInOverview="0"/>
+          <legendlayerfile visible="1" layerid="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b" isInOverview="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Unchecked" name="OEK-Bergfex" showFeatureCount="0" drawingOrder="-1" open="false">
@@ -504,9 +504,9 @@
           <legendlayerfile visible="0" layerid="gdi_nomenklatur_c3c17d06_6a1d_416c_9f5b_53fce5cf27d0" isInOverview="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer checked="Qt::Unchecked" name="gdi_base_summer" showFeatureCount="0" drawingOrder="-1" open="true">
+      <legendlayer checked="Qt::Checked" name="gdi_base_summer" showFeatureCount="0" drawingOrder="-1" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile visible="0" layerid="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77" isInOverview="0"/>
+          <legendlayerfile visible="1" layerid="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77" isInOverview="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer checked="Qt::Unchecked" name="Image_Schummerung_Gelaendemodell" showFeatureCount="0" drawingOrder="-1" open="true">
@@ -3386,7 +3386,6 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <customproperties>
         <property key="dualview/previewExpressions">
-          <value>name</value>
           <value>"name"</value>
         </property>
         <property value="0" key="embeddedWidgets/count"/>
@@ -6167,8 +6166,8 @@ def my_form_open(dialog, layer, feature):
       <extent>
         <xmin>11.27466700000000088</xmin>
         <ymin>47.20830999999999733</ymin>
-        <xmax>1270154.27675634366460145</xmax>
-        <ymax>5990774.48514825198799372</ymax>
+        <xmax>11.527741620050449</xmax>
+        <ymax>47.31385600000000125</ymax>
       </extent>
       <id>bike_city_innsbruck_7695ba5f_e243_4d34_bee9_a01c044f0c74</id>
       <datasource>./bike_city_innsbruck.geojson</datasource>
@@ -6614,6 +6613,15 @@ def my_form_open(dialog, layer, feature):
         <type>dataset</type>
         <title></title>
         <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
         <links/>
         <fees></fees>
         <encoding></encoding>
@@ -6630,7 +6638,15 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent/>
+        <extent>
+          <spatial miny="0" minx="0" maxx="0" maxz="0" minz="0" maxy="0" dimensions="2" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
       </resourceMetadata>
       <provider encoding="UTF-8">ogr</provider>
       <vectorjoins/>
@@ -6657,9 +6673,9 @@ def my_form_open(dialog, layer, feature):
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="229,182,54,255"/>
+              <prop k="line_color" v="34,255,2,255"/>
               <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="0.26"/>
+              <prop k="line_width" v="0.66"/>
               <prop k="line_width_unit" v="MM"/>
               <prop k="offset" v="0"/>
               <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
@@ -6680,28 +6696,77 @@ def my_form_open(dialog, layer, feature):
         <rotation/>
         <sizescale/>
       </renderer-v2>
-      <customproperties/>
+      <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>name</value>
+          <value>"name"</value>
+        </property>
+        <property value="0" key="embeddedWidgets/count"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory enabled="0" penAlpha="255" spacing="5" backgroundAlpha="255" lineSizeScale="3x:0,0,0,0,0,0" backgroundColor="#ffffff" minimumSize="0" sizeType="MM" spacingUnit="MM" minScaleDenominator="0" scaleBasedVisibility="0" barWidth="5" penWidth="0" labelPlacementMethod="XHeight" opacity="1" direction="0" rotationOffset="270" width="15" diagramOrientation="Up" penColor="#000000" sizeScale="3x:0,0,0,0,0,0" height="15" showAxis="1" maxScaleDenominator="1e+08" spacingUnitScale="3x:0,0,0,0,0,0" scaleDependency="Area" lineSizeType="MM">
+          <fontProperties description="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0" style=""/>
+          <axisSymbol>
+            <symbol name="" force_rhr="0" type="line" clip_to_extent="1" alpha="1">
+              <layer pass="0" enabled="1" locked="0" class="SimpleLine">
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="35,35,35,255"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="0.26"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="ring_filter" v="0"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option name="name" value="" type="QString"/>
+                    <Option name="properties"/>
+                    <Option name="type" value="collection" type="QString"/>
+                  </Option>
+                </data_defined_properties>
+              </layer>
+            </symbol>
+          </axisSymbol>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings showAll="1" priority="0" placement="2" zIndex="0" obstacle="0" dist="0" linePlacementFlags="18">
+        <properties>
+          <Option type="Map">
+            <Option name="name" value="" type="QString"/>
+            <Option name="properties"/>
+            <Option name="type" value="collection" type="QString"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
-        <activeChecks type="StringList">
-          <Option value="" type="QString"/>
-        </activeChecks>
+        <activeChecks/>
         <checkConfiguration/>
       </geometryOptions>
       <referencedLayers/>
       <referencingLayers/>
       <fieldConfiguration>
         <field name="name">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field name="description">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -6731,7 +6796,11 @@ def my_form_open(dialog, layer, feature):
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
       <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="">
-        <columns/>
+        <columns>
+          <column name="name" type="field" hidden="0" width="-1"/>
+          <column name="description" type="field" hidden="0" width="801"/>
+          <column type="actions" hidden="1" width="-1"/>
+        </columns>
       </attributetableconfig>
       <conditionalstyles>
         <rowstyles/>
@@ -6742,13 +6811,35 @@ def my_form_open(dialog, layer, feature):
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath></editforminitfilepath>
-      <editforminitcode><![CDATA[]]></editforminitcode>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
+      <editable>
+        <field name="description" editable="1"/>
+        <field name="name" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field name="description" labelOnTop="0"/>
+        <field name="name" labelOnTop="0"/>
+      </labelOnTop>
       <widgets/>
-      <previewExpression></previewExpression>
+      <previewExpression>name</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer styleCategories="AllStyleCategories" autoRefreshEnabled="0" refreshOnNotifyMessage="" autoRefreshTime="0" minScale="1e+08" hasScaleBasedVisibilityFlag="0" type="raster" maxScale="0" refreshOnNotifyEnabled="0">
