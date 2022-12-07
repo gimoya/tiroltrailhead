@@ -113,7 +113,10 @@
       <style>
       /* (A) WHOLE PAGE */
       * { box-sizing: border-box; }
-      body { background: #eee; }
+      body { 
+      background: #eee; 
+      overflow:visible;
+      }
        
       /* (B) GALLERY WRAPPER */
       .gallery {
@@ -125,7 +128,7 @@
         /* (B2) OPTIONAL WIDTH RESTRICT */
         max-width: 1000px;
         margin: 0 auto;
-        overflow: hidden;
+        overflow: visible;
       }
       /* (C) GALLERY IMAGES */
       .gallery img {
@@ -151,10 +154,11 @@
       }
       /* (E) OPTIONAL ZOOM ON HOVER */
       .gallery img:hover {
-        z-index: 9;
+        z-index: 99999;
         transform: scale(2);
         /* linear | ease | ease-in | ease-out | ease-in-out */
         transition: transform ease 0.5s;
+      
       }
       /* (F) FULLSCREEN MODE */
       .gallery img.full {
@@ -170,7 +174,8 @@
       }
       </style>
       
-      <div class="gallery" style="margin:50px;">
+      <div style="margin:50px; overflow:visible;">
+      <div class="gallery" ">
         <img src="./data/index/img/92265698_AN-BELLA-TRAIL-1-17-01_ORIG_t1000.jpg" title="Maschinelle und manuelle Herstellung">
         <img src="./data/index/img/92265698_AN-BELLA-TRAIL-1-17-02_ORIG_t800.jpg" title="Verdichtung und abschließende Arbeiten">
         <img src="./data/index/img/Lans_Beteiligung.jpg" title="Manuelle Wartungsarbeiten">
@@ -181,7 +186,7 @@
         <img src="./data/index/img/Singletrack_Bruck.jpg" title="Singletrack für Fortgeschrittene Bsp. 1 ">
       <img src="./data/index/img/Blairwitch_Rough_Singletrack.jpg" title="Singletrack für Fortgeschrittene Bsp. 2">
         <img src="./data/index/img/Lans_Family.jpg" title="Angebot für Familien und Kinder">
-      
+      </div>
       </body>
       
       
