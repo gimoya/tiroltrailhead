@@ -108,90 +108,61 @@
 <div id="narrativebox" class="ef1">
   <div id="narbody">
     <div id="nar_6f45d3c8" class="narcontent">
-      <html>
-      <body>
-      <style>
-      /* (A) WHOLE PAGE */
-      * { box-sizing: border-box; }
-      body { 
-      background: #eee; 
-      overflow:visible;
-      }
-       
-      /* (B) GALLERY WRAPPER */
-      .gallery {
-        /* (B1) GRID LAYOUT - 3 IMAGES PER ROW */
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
-       
-        /* (B2) OPTIONAL WIDTH RESTRICT */
-        max-width: 1000px;
-        margin: 0 auto;
-        overflow: visible;
-      }
-      /* (C) GALLERY IMAGES */
-      .gallery img {
-        /* (C1) DIMENSION */
-        width: 100%;
-        height: 150px; /* optional */
-        padding: 10px;
-       
-        /* (C2) COLORS */
-        border: 1px solid #ddd;
-        background: #fff;
-       
-        /* (C3) IMAGE RESIZE */
-        /* cover | contain | fill | scale-down */
-        object-fit: contain;
-        position: relative;
-      }
-      /* (D) ON SMALL SCREENS - 2 IMAGES PER ROW */
-      @media only screen and (max-width: 600px) {
-        .gallery {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      /* (E) OPTIONAL ZOOM ON HOVER */
-      .gallery img:hover {
-        z-index: 99999;
-        transform: scale(2);
-        /* linear | ease | ease-in | ease-out | ease-in-out */
-        transition: transform ease 0.5s;
+
+<style>	  
+/* (B) GALLERY WRAPPER */
+.gallery {
+  /* (B1) GRID LAYOUT - 1 IMAGES PER ROW */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+ 
+  /* (B2) OPTIONAL WIDTH RESTRICT */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* (C) GALLERY IMAGES */
+.gallery img {
+  /* (C1) DIMENSION */
+  width: 100%;
+  height: 150px; /* optional */
+  padding: 10px;
+ 
+  /* (C2) COLORS */
+  border: 1px solid #ddd;
+  background: #fff;
+ 
+  /* (C3) IMAGE RESIZE */
+  /* cover | contain | fill | scale-down */
+  object-fit: contain;
+  position: relative;
+}
+
+/* (E) OPTIONAL ZOOM ON HOVER */
+.gallery img:hover {
+  z-index: 99999;
+  transform: scale(2);
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  transition: transform ease 0.5s;
+
+}
+</style>	
+
       
-      }
-      /* (F) FULLSCREEN MODE */
-      .gallery img.full {
-        position: fixed;
-        top: 0; left: 0; z-index: 999;
-        width: 100vw; height: 100vh;
-        object-fit: fit;
-        background: rgba(0, 0, 0, 0.7);
-      }
-      .gallery img.full:hover {
-        z-index: 999;
-        transform: none;
-      }
-      </style>
-      
-      <div style="margin:50px; overflow:visible;">
-      <div class="gallery" ">
-        <img src="./data/index/img/92265698_AN-BELLA-TRAIL-1-17-01_ORIG_t1000.jpg" title="Maschinelle und manuelle Herstellung">
-        <img src="./data/index/img/92265698_AN-BELLA-TRAIL-1-17-02_ORIG_t800.jpg" title="Verdichtung und abschließende Arbeiten">
-        <img src="./data/index/img/Lans_Beteiligung.jpg" title="Manuelle Wartungsarbeiten">
-      <img src="./data/index/img/Smooth_Trail_Finsih_Sölden.jpg" title="Baustellenabschnitt eines Flow Trails">
-        <img src="./data/index/img/Lowgartner_Flow.jpg" title="Anfängertauglicher Flow Trail Bsp. 1">
-        <img src="./data/index/img/Trail_smooth_finish.jpg" title="Anfängertauglicher Flow Trail Bsp. 2">
-      <img src="./data/index/img/MassaVecchia-EndOfSeasonParty-28.jpg" title="Jumpline">
-        <img src="./data/index/img/Singletrack_Bruck.jpg" title="Singletrack für Fortgeschrittene Bsp. 1 ">
-      <img src="./data/index/img/Blairwitch_Rough_Singletrack.jpg" title="Singletrack für Fortgeschrittene Bsp. 2">
-        <img src="./data/index/img/Lans_Family.jpg" title="Angebot für Familien und Kinder">
+      <div class="gallery">
+        <img class="narr" src="./data/index/img/92265698_AN-BELLA-TRAIL-1-17-01_ORIG_t1000.jpg" title="Maschinelle und manuelle Herstellung">
+        <img class="narr" src="./data/index/img/92265698_AN-BELLA-TRAIL-1-17-02_ORIG_t800.jpg" title="Verdichtung und abschließende Arbeiten">
+        <img class="narr" src="./data/index/img/Lans_Beteiligung.jpg" title="Manuelle Wartungsarbeiten">
+      <img class="narr" src="./data/index/img/Smooth_Trail_Finsih_Sölden.jpg" title="Baustellenabschnitt eines Flow Trails">
+        <img class="narr" src="./data/index/img/Lowgartner_Flow.jpg" title="Anfängertauglicher Flow Trail Bsp. 1">
+        <img class="narr" src="./data/index/img/Trail_smooth_finish.jpg" title="Anfängertauglicher Flow Trail Bsp. 2">
+      <img class="narr" src="./data/index/img/MassaVecchia-EndOfSeasonParty-28.jpg" title="Jumpline">
+        <img class="narr" src="./data/index/img/Singletrack_Bruck.jpg" title="Singletrack für Fortgeschrittene Bsp. 1 ">
+      <img class="narr" src="./data/index/img/Blairwitch_Rough_Singletrack.jpg" title="Singletrack für Fortgeschrittene Bsp. 2">
+        <img class="narr" src="./data/index/img/Lans_Family.jpg" title="Angebot für Familien und Kinder">
       </div>
-      </body>
-      
-      
-      
-      
+
     </div>
   </div>
   <div id="nextbtn"></div>
