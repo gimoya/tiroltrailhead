@@ -162,7 +162,7 @@ body {
 /* popup */
 #popup {
   position: absolute;
-  margin: 1px 2px;
+  margin: 10px;
   max-width: 480px;
   min-width: 300px;
   z-index: 9999;
@@ -171,17 +171,20 @@ body {
   display: none;
 }
 
-#popupbar {
-  padding-left: 4px;
-  height: 19px;
-  border-bottom: 1px solid lightgray;
-  border-radius: 3px 3px 0 0;
+.action-zoom {
+    display: none;
+}
+
+#logo {
+    z-index: 99999999999;
+    position: absolute;
+	bottom:0;
+	left:0;
 }
 
 #closebtn {
-  color: #ccc;
-  padding: 2px;
-  line-height: 16px;
+  color: rgb(220, 220, 220);
+  background: gray;
   font-size: 16px;
   font-weight: bold;
   width: 16px;
@@ -189,6 +192,8 @@ body {
   text-align: center;
   float: right;
   cursor: pointer;
+  margin: 0px;
+  padding-bottom:1px;
 }
 
 #closebtn:hover {
@@ -210,13 +215,22 @@ body {
   width: 100%;
 }
 
+#qr_coords_table {
+	display: none;
+}
+
+#navigation {
+    top: 0px!important;
+}
+
 #popupbody table caption {
-  background-color: gray;
-  color: white;
-  font-size: small;
-  padding: 1px 1px 1px 6px;
-  text-align: left;
-  vertical-align: bottom;
+    background-color: #1f1f1f;
+    color: white;
+    /* font-size: small; */
+    padding: 4px;
+    text-align: left;
+    vertical-align: bottom;
+    /* width: 100%; */
 }
 
 #popupbody table td {
@@ -233,6 +247,14 @@ body {
 
 #qr_attrs_table tr td:first-child {
   width: 40%;
+}
+
+.action-btn {
+    display: none!important;
+}
+
+.slider, .switch  {
+	display:none!important;
 }
 
 .action-zoom {
