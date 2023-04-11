@@ -49,7 +49,6 @@ var toggle = L.easyButton({
 	onClick: function(control) {
 	  map.removeLayer(mapbox_outdoorLayer);
 	  map.addLayer(mapbox_satelliteLayer);
-	  map.addLayer(overlayLayer);
 	  control.state('basemap-satellite');
 	}
   }, {
@@ -58,7 +57,6 @@ var toggle = L.easyButton({
 	title: 'change basemap to outdoor/terrain',
 	onClick: function(control) {
 	  map.removeLayer(mapbox_satelliteLayer);
-	  map.removeLayer(overlayLayer);
 	  map.addLayer(mapbox_outdoorLayer);
 	  control.state('basemap-outdoor');
 	},
@@ -67,10 +65,9 @@ var toggle = L.easyButton({
 
 toggle.addTo(map);
 
-var mapbox_Attr = 'Tiles &copy; <a href="https://www.mapy.cz">MAPY.CZ</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
-var mapbox_satelliteUrl = 'https://mapserver.mapy.cz/ophoto-m/{z}-{x}-{y}';
-var mapbox_outdoorUrl = 'https://mapserver.mapy.cz/turist-m/{z}-{x}-{y}';
-var overlayUrl = 'https://mapserver.mapy.cz/hybrid-trail_bike-m/{z}-{x}-{y}';
+var mapbox_Attr = 'Tiles &copy; <a href="google.com">Google Maps</a>, <a href="openstreetmap.org">Open Street Maps</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
+var mapbox_satelliteUrl = 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}';
+var mapbox_outdoorUrl = 'http://c.tile.opentopomap.org/{z}/{x}/{y}.png';
 
 var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
   attribution: mapbox_Attr 
@@ -79,8 +76,6 @@ var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
 var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
   attribution: mapbox_Attr 
 });
-
-var overlayLayer = L.tileLayer(overlayUrl);
 
 mapbox_outdoorLayer.addTo(map);	
 
