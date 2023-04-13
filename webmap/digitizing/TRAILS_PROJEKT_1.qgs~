@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Kay" projectname="" saveDateTime="2023-04-13T14:56:43" saveUser="Kay" version="3.22.14-Białowieża">
+<qgis saveUserFull="Kay" projectname="" saveDateTime="2023-04-13T15:55:33" saveUser="Kay" version="3.22.14-Białowieża">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -161,7 +161,7 @@
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer providerKey="wms" checked="Qt::Checked" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://tile.mtbmap.cz/mtbmap_tiles/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=10" name="MTBmap" legend_split_behavior="0" id="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9" expanded="1" legend_exp="" patch_size="-1,-1">
+      <layer-tree-layer providerKey="wms" checked="Qt::Unchecked" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://tile.mtbmap.cz/mtbmap_tiles/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=10" name="MTBmap" legend_split_behavior="0" id="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9" expanded="1" legend_exp="" patch_size="-1,-1">
         <customproperties>
           <Option/>
         </customproperties>
@@ -181,7 +181,7 @@
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer providerKey="wms" checked="Qt::Unchecked" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=gdi_base_summer&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" name="gdi_base_summer" legend_split_behavior="0" id="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77" expanded="1" legend_exp="" patch_size="0,0">
+      <layer-tree-layer providerKey="wms" checked="Qt::Checked" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=gdi_base_summer&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" name="gdi_base_summer" legend_split_behavior="0" id="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77" expanded="1" legend_exp="" patch_size="0,0">
         <customproperties>
           <Option/>
         </customproperties>
@@ -267,24 +267,24 @@
   </layer-tree-group>
   <snapping-settings intersection-snapping="0" self-snapping="0" unit="2" scaleDependencyMode="0" type="1" enabled="0" maxScale="0" tolerance="0" minScale="0" mode="3">
     <individual-layer-settings>
-      <layer-setting type="1" enabled="0" id="PRO_regions_utm_utf8_39c3eef8_ba01_492d_8fe8_dd7c370950af" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="bike_city_innsbruck_legal_559b2c93_b9f5_4536_a66c_bd410f7cdf38" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="bike_city_innsbruck_7695ba5f_e243_4d34_bee9_a01c044f0c74" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="where_s_biberwier_lower_Tracks_9a7ad599_4923_4d91_a35a_1608f66c8b57" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="strava_tracks_a409f56f_9e65_4865_8f46_14ff91a21190" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="strava_tracks_bd6444e3_2bea_4626_8fda_c6a0e0bb8c41" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="strava_tracks_51688460_e81a_4e85_b7ca_add12353968a" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="my_trails_z_epsg3857_0f57985b_1eb8_48bb_85d2_a7ec52282771" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="POIs_7dfe2057_3856_4722_bfd6_124abb6b2817" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="strava_tracks_81f4c535_fa1c_4c7e_ac36_2e9332724f7a" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="where_s_biberwier_upper_Tracks_7c056edf_b231_497b_b5a8_67f1d831138a" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="Sankt_Veit___Hinterberg___5_2_km_Paths_5e8e10bd_e8bc_4f02_913f_6b5d752c5d2b" units="1" maxScale="0" tolerance="12" minScale="0"/>
       <layer-setting type="1" enabled="1" id="trails_utm_utf820141118153222040" units="1" maxScale="0" tolerance="13" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="strava_tracks_f077eba0_a3e8_4351_93b9_89ae0082210a" units="1" maxScale="0" tolerance="12" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="regions_utm_utf820141118153216780" units="1" maxScale="0" tolerance="5" minScale="0"/>
-      <layer-setting type="1" enabled="0" id="strava_tracks_3c9f2038_19d5_4743_8d54_07c9733d585e" units="1" maxScale="0" tolerance="12" minScale="0"/>
       <layer-setting type="1" enabled="0" id="POIs_cb34a2bf_c1da_4bf3_af22_6a4c09f3e7cf" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="bike_city_innsbruck_7695ba5f_e243_4d34_bee9_a01c044f0c74" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="strava_tracks_a409f56f_9e65_4865_8f46_14ff91a21190" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="strava_tracks_81f4c535_fa1c_4c7e_ac36_2e9332724f7a" units="1" maxScale="0" tolerance="12" minScale="0"/>
       <layer-setting type="1" enabled="0" id="strava_tracks_6dfd657f_859f_42c8_8bde_30ce10b9e8cd" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="strava_tracks_f077eba0_a3e8_4351_93b9_89ae0082210a" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="POIs_7dfe2057_3856_4722_bfd6_124abb6b2817" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="strava_tracks_51688460_e81a_4e85_b7ca_add12353968a" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="strava_tracks_bd6444e3_2bea_4626_8fda_c6a0e0bb8c41" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="Sankt_Veit___Hinterberg___5_2_km_Paths_5e8e10bd_e8bc_4f02_913f_6b5d752c5d2b" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="strava_tracks_3c9f2038_19d5_4743_8d54_07c9733d585e" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="regions_utm_utf820141118153216780" units="1" maxScale="0" tolerance="5" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="where_s_biberwier_lower_Tracks_9a7ad599_4923_4d91_a35a_1608f66c8b57" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="bike_city_innsbruck_legal_559b2c93_b9f5_4536_a66c_bd410f7cdf38" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="where_s_biberwier_upper_Tracks_7c056edf_b231_497b_b5a8_67f1d831138a" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="PRO_regions_utm_utf8_39c3eef8_ba01_492d_8fe8_dd7c370950af" units="1" maxScale="0" tolerance="12" minScale="0"/>
+      <layer-setting type="1" enabled="0" id="my_trails_z_epsg3857_0f57985b_1eb8_48bb_85d2_a7ec52282771" units="1" maxScale="0" tolerance="12" minScale="0"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations/>
@@ -292,10 +292,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>1273850.42024665512144566</xmin>
-      <ymin>5946046.72029095888137817</ymin>
-      <xmax>1280408.16239369474351406</xmax>
-      <ymax>5954588.99316226691007614</ymax>
+      <xmin>1270989.4305536428000778</xmin>
+      <ymin>5972771.69230017066001892</ymin>
+      <xmax>1284104.91484772204421461</xmax>
+      <ymax>5989856.23804278671741486</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -440,9 +440,9 @@
           <legendlayerfile visible="0" isInOverview="0" layerid="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" showFeatureCount="0" checked="Qt::Checked" name="MTBmap">
+      <legendlayer drawingOrder="-1" open="true" showFeatureCount="0" checked="Qt::Unchecked" name="MTBmap">
         <filegroup hidden="false" open="true">
-          <legendlayerfile visible="1" isInOverview="0" layerid="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9"/>
+          <legendlayerfile visible="0" isInOverview="0" layerid="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="false" showFeatureCount="0" checked="Qt::Unchecked" name="OEK-Bergfex">
@@ -460,9 +460,9 @@
           <legendlayerfile visible="0" isInOverview="0" layerid="gdi_nomenklatur_c3c17d06_6a1d_416c_9f5b_53fce5cf27d0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" showFeatureCount="0" checked="Qt::Unchecked" name="gdi_base_summer">
+      <legendlayer drawingOrder="-1" open="true" showFeatureCount="0" checked="Qt::Checked" name="gdi_base_summer">
         <filegroup hidden="false" open="true">
-          <legendlayerfile visible="0" isInOverview="0" layerid="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77"/>
+          <legendlayerfile visible="1" isInOverview="0" layerid="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="false" showFeatureCount="0" checked="Qt::Unchecked" name="Image_Schummerung_Gelaendemodell">
@@ -4807,14 +4807,15 @@ def my_form_open(dialog, layer, feature):
       <dataDependencies/>
       <expressionfields>
         <field subType="0" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'LLL', '💎'),&#xd;&#xa;&#x9;&#x9;&#x9;'LL', ''),&#xd;&#xa;&#x9;&#x9;'L', ''),&#xd;&#xa;&#x9;'-', ''&#xd;&#xa;&#x9;),&#xd;&#xa;'💎')" comment="" precision="0" name="Gem" type="10" length="0" typeName="string"/>
-        <field subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1))-&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element&lt;0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;&#x9;" comment="" precision="0" name="Elev_loss" type="6" length="-1" typeName="double precision"/>
+        <field subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1))-&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element&lt;0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)" comment="" precision="0" name="Elev_loss" type="6" length="-1" typeName="double precision"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char , 'FFF', '👍👍👍'),&#xd;&#xa;&#x9;&#x9;&#x9;'FF', '👍👍o'),&#xd;&#xa;&#x9;&#x9;'F', '👍oo'), &#xd;&#xa;&#x9;&#x9;'[👍,o,\\s,?]+'&#xd;&#xa;&#x9;), &#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;&#x9;" comment="" precision="0" name="Flow" type="10" length="0" typeName="string"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char , 'GGG', '🚀🚀🚀'),&#xd;&#xa;&#x9;&#x9;&#x9;'GG', '🚀🚀o'),&#xd;&#xa;&#x9;&#x9;'G', '🚀oo'), &#xd;&#xa;&#x9;&#x9;'[🚀,o,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" comment="" precision="0" name="Gravity" type="10" length="0" typeName="string"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'RRR', '💀💀💀'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;'RR', '💀💀o'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;'R', '💀oo'),&#xd;&#xa;&#x9;&#x9;&#x9;'[-,'']', 'ooo'), &#xd;&#xa;&#x9;&#x9;'[💀, o, ?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#x9;&#xd;&#xa;&#x9;" comment="" precision="0" name="Risk" type="10" length="0" typeName="string"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'TTT', '🔸🔸🔸'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;'TT', '🔸🔸o'),&#xd;&#xa;&#x9;&#x9;&#x9;'T', '🔸oo'), &#xd;&#xa;&#x9;&#x9;'[🔸,o,?]+'),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" comment="" precision="0" name="Tech" type="10" length="0" typeName="string"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'XXX', '👎👎👎x'),&#xd;&#xa;&#x9;&#x9;&#x9;'XX', '👎👎o'),&#xd;&#xa;&#x9;&#x9;'X', '👎oo'), &#xd;&#xa;&#x9;&#x9;'[👎,o,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" comment="" precision="0" name="Flow_Killer" type="10" length="0" typeName="string"/>
-        <field subType="0" expression="left(geom_to_wkt($geometry,1),100)" comment="" precision="0" name="Z_Check" type="10" length="0" typeName="string"/>
-        <field subType="0" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(  Trail_Char , '!', '🚳'),&#xd;&#xa;&#x9;'🚳'&#xd;&#xa;)" comment="" precision="0" name="Verbot" type="10" length="0" typeName="string"/>
+        <field subType="0" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(  Trail_Char , 'K!', '🚳'),&#xd;&#xa;&#x9;'🚳'&#xd;&#xa;)" comment="" precision="0" name="Verbot" type="10" length="0" typeName="string"/>
+        <field subType="0" expression="concat(&#xd;&#xa;'&lt;pre style=&quot;tab-size:3;&quot;>',&#xd;&#xa;'&lt;p/>Flow:&#x9;&#x9;' || Flow  ||' | ' || Flow_Killer,&#xd;&#xa;'&lt;br/>Tech:&#x9;&#x9;' || Tech,&#xd;&#xa;'&lt;br/>Gravity:&#x9;' || Gravity,&#xd;&#xa;'&lt;br/>Risk:&#x9;&#x9;' || Risk || Verbot,&#xd;&#xa;'&lt;p>Länge:&#x9;&#x9;' || round($length/1000,1) || ' km',&#xd;&#xa;'&lt;br/>Aufstieg:&#x9;' || if(Elev_gain=0, '0', Elev_gain) || ' hm',&#xd;&#xa;'&lt;br/>Abfahrt:&#x9;&#x9;' || if(Elev_loss=0, '0', Elev_loss)  || ' hm',&#xd;&#xa;'&lt;br/>Holy Trail:&#x9;' || Gem || Verbot,&#xd;&#xa;'&lt;/pre>'&#xd;&#xa;)" comment="" precision="0" name="copy_Descr" type="10" length="0" typeName="string"/>
+        <field subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1))-&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element>0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)" comment="" precision="0" name="Elev_gain" type="6" length="-1" typeName="double precision"/>
       </expressionfields>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -4846,18 +4847,18 @@ def my_form_open(dialog, layer, feature):
             <layer pass="0" locked="0" enabled="1" class="SimpleLine">
               <Option type="Map">
                 <Option type="QString" name="align_dash_pattern" value="0"/>
-                <Option type="QString" name="capstyle" value="round"/>
-                <Option type="QString" name="customdash" value="0.66;2"/>
+                <Option type="QString" name="capstyle" value="square"/>
+                <Option type="QString" name="customdash" value="5;2"/>
                 <Option type="QString" name="customdash_map_unit_scale" value="3x:0,0,0,0,0,0"/>
                 <Option type="QString" name="customdash_unit" value="MM"/>
                 <Option type="QString" name="dash_pattern_offset" value="0"/>
                 <Option type="QString" name="dash_pattern_offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
                 <Option type="QString" name="dash_pattern_offset_unit" value="MM"/>
                 <Option type="QString" name="draw_inside_polygon" value="0"/>
-                <Option type="QString" name="joinstyle" value="round"/>
-                <Option type="QString" name="line_color" value="219,30,42,255"/>
+                <Option type="QString" name="joinstyle" value="bevel"/>
+                <Option type="QString" name="line_color" value="245,5,245,152"/>
                 <Option type="QString" name="line_style" value="solid"/>
-                <Option type="QString" name="line_width" value="0.66"/>
+                <Option type="QString" name="line_width" value="0.8"/>
                 <Option type="QString" name="line_width_unit" value="MM"/>
                 <Option type="QString" name="offset" value="0"/>
                 <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
@@ -4870,22 +4871,22 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" name="trim_distance_start_map_unit_scale" value="3x:0,0,0,0,0,0"/>
                 <Option type="QString" name="trim_distance_start_unit" value="MM"/>
                 <Option type="QString" name="tweak_dash_pattern_on_corners" value="0"/>
-                <Option type="QString" name="use_custom_dash" value="1"/>
+                <Option type="QString" name="use_custom_dash" value="0"/>
                 <Option type="QString" name="width_map_unit_scale" value="3x:0,0,0,0,0,0"/>
               </Option>
               <prop v="0" k="align_dash_pattern"/>
-              <prop v="round" k="capstyle"/>
-              <prop v="0.66;2" k="customdash"/>
+              <prop v="square" k="capstyle"/>
+              <prop v="5;2" k="customdash"/>
               <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
               <prop v="MM" k="customdash_unit"/>
               <prop v="0" k="dash_pattern_offset"/>
               <prop v="3x:0,0,0,0,0,0" k="dash_pattern_offset_map_unit_scale"/>
               <prop v="MM" k="dash_pattern_offset_unit"/>
               <prop v="0" k="draw_inside_polygon"/>
-              <prop v="round" k="joinstyle"/>
-              <prop v="219,30,42,255" k="line_color"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="245,5,245,152" k="line_color"/>
               <prop v="solid" k="line_style"/>
-              <prop v="0.66" k="line_width"/>
+              <prop v="0.8" k="line_width"/>
               <prop v="MM" k="line_width_unit"/>
               <prop v="0" k="offset"/>
               <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
@@ -4898,7 +4899,7 @@ def my_form_open(dialog, layer, feature):
               <prop v="3x:0,0,0,0,0,0" k="trim_distance_start_map_unit_scale"/>
               <prop v="MM" k="trim_distance_start_unit"/>
               <prop v="0" k="tweak_dash_pattern_on_corners"/>
-              <prop v="1" k="use_custom_dash"/>
+              <prop v="0" k="use_custom_dash"/>
               <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
               <data_defined_properties>
                 <Option type="Map">
@@ -4908,6 +4909,303 @@ def my_form_open(dialog, layer, feature):
                 </Option>
               </data_defined_properties>
             </layer>
+            <layer pass="0" locked="0" enabled="1" class="MarkerLine">
+              <Option type="Map">
+                <Option type="QString" name="average_angle_length" value="4"/>
+                <Option type="QString" name="average_angle_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="average_angle_unit" value="MM"/>
+                <Option type="QString" name="interval" value="30"/>
+                <Option type="QString" name="interval_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="interval_unit" value="MM"/>
+                <Option type="QString" name="offset" value="0"/>
+                <Option type="QString" name="offset_along_line" value="0"/>
+                <Option type="QString" name="offset_along_line_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="offset_along_line_unit" value="MM"/>
+                <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="offset_unit" value="MM"/>
+                <Option type="QString" name="placement" value="interval"/>
+                <Option type="QString" name="ring_filter" value="0"/>
+                <Option type="QString" name="rotate" value="1"/>
+              </Option>
+              <prop v="4" k="average_angle_length"/>
+              <prop v="3x:0,0,0,0,0,0" k="average_angle_map_unit_scale"/>
+              <prop v="MM" k="average_angle_unit"/>
+              <prop v="30" k="interval"/>
+              <prop v="3x:0,0,0,0,0,0" k="interval_map_unit_scale"/>
+              <prop v="MM" k="interval_unit"/>
+              <prop v="0" k="offset"/>
+              <prop v="0" k="offset_along_line"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_along_line_map_unit_scale"/>
+              <prop v="MM" k="offset_along_line_unit"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="interval" k="placement"/>
+              <prop v="0" k="ring_filter"/>
+              <prop v="1" k="rotate"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" name="name" value=""/>
+                  <Option name="properties"/>
+                  <Option type="QString" name="type" value="collection"/>
+                </Option>
+              </data_defined_properties>
+              <symbol alpha="1" force_rhr="0" type="marker" name="@0@1" clip_to_extent="1">
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option type="QString" name="name" value=""/>
+                    <Option name="properties"/>
+                    <Option type="QString" name="type" value="collection"/>
+                  </Option>
+                </data_defined_properties>
+                <layer pass="0" locked="0" enabled="1" class="SimpleMarker">
+                  <Option type="Map">
+                    <Option type="QString" name="angle" value="0"/>
+                    <Option type="QString" name="cap_style" value="square"/>
+                    <Option type="QString" name="color" value="244,245,245,255"/>
+                    <Option type="QString" name="horizontal_anchor_point" value="1"/>
+                    <Option type="QString" name="joinstyle" value="bevel"/>
+                    <Option type="QString" name="name" value="arrowhead"/>
+                    <Option type="QString" name="offset" value="0,0"/>
+                    <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="offset_unit" value="MM"/>
+                    <Option type="QString" name="outline_color" value="245,5,245,152"/>
+                    <Option type="QString" name="outline_style" value="solid"/>
+                    <Option type="QString" name="outline_width" value="0.5"/>
+                    <Option type="QString" name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="outline_width_unit" value="MM"/>
+                    <Option type="QString" name="scale_method" value="area"/>
+                    <Option type="QString" name="size" value="3.5"/>
+                    <Option type="QString" name="size_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="size_unit" value="MM"/>
+                    <Option type="QString" name="vertical_anchor_point" value="1"/>
+                  </Option>
+                  <prop v="0" k="angle"/>
+                  <prop v="square" k="cap_style"/>
+                  <prop v="244,245,245,255" k="color"/>
+                  <prop v="1" k="horizontal_anchor_point"/>
+                  <prop v="bevel" k="joinstyle"/>
+                  <prop v="arrowhead" k="name"/>
+                  <prop v="0,0" k="offset"/>
+                  <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                  <prop v="MM" k="offset_unit"/>
+                  <prop v="245,5,245,152" k="outline_color"/>
+                  <prop v="solid" k="outline_style"/>
+                  <prop v="0.5" k="outline_width"/>
+                  <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+                  <prop v="MM" k="outline_width_unit"/>
+                  <prop v="area" k="scale_method"/>
+                  <prop v="3.5" k="size"/>
+                  <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+                  <prop v="MM" k="size_unit"/>
+                  <prop v="1" k="vertical_anchor_point"/>
+                  <data_defined_properties>
+                    <Option type="Map">
+                      <Option type="QString" name="name" value=""/>
+                      <Option name="properties"/>
+                      <Option type="QString" name="type" value="collection"/>
+                    </Option>
+                  </data_defined_properties>
+                </layer>
+              </symbol>
+            </layer>
+            <layer pass="0" locked="0" enabled="1" class="MarkerLine">
+              <Option type="Map">
+                <Option type="QString" name="average_angle_length" value="4"/>
+                <Option type="QString" name="average_angle_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="average_angle_unit" value="MM"/>
+                <Option type="QString" name="interval" value="3"/>
+                <Option type="QString" name="interval_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="interval_unit" value="MM"/>
+                <Option type="QString" name="offset" value="0"/>
+                <Option type="QString" name="offset_along_line" value="0"/>
+                <Option type="QString" name="offset_along_line_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="offset_along_line_unit" value="MM"/>
+                <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="offset_unit" value="MM"/>
+                <Option type="QString" name="placement" value="firstvertex"/>
+                <Option type="QString" name="ring_filter" value="0"/>
+                <Option type="QString" name="rotate" value="1"/>
+              </Option>
+              <prop v="4" k="average_angle_length"/>
+              <prop v="3x:0,0,0,0,0,0" k="average_angle_map_unit_scale"/>
+              <prop v="MM" k="average_angle_unit"/>
+              <prop v="3" k="interval"/>
+              <prop v="3x:0,0,0,0,0,0" k="interval_map_unit_scale"/>
+              <prop v="MM" k="interval_unit"/>
+              <prop v="0" k="offset"/>
+              <prop v="0" k="offset_along_line"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_along_line_map_unit_scale"/>
+              <prop v="MM" k="offset_along_line_unit"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="firstvertex" k="placement"/>
+              <prop v="0" k="ring_filter"/>
+              <prop v="1" k="rotate"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" name="name" value=""/>
+                  <Option name="properties"/>
+                  <Option type="QString" name="type" value="collection"/>
+                </Option>
+              </data_defined_properties>
+              <symbol alpha="1" force_rhr="0" type="marker" name="@0@2" clip_to_extent="1">
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option type="QString" name="name" value=""/>
+                    <Option name="properties"/>
+                    <Option type="QString" name="type" value="collection"/>
+                  </Option>
+                </data_defined_properties>
+                <layer pass="0" locked="0" enabled="1" class="SimpleMarker">
+                  <Option type="Map">
+                    <Option type="QString" name="angle" value="0"/>
+                    <Option type="QString" name="cap_style" value="square"/>
+                    <Option type="QString" name="color" value="0,255,55,255"/>
+                    <Option type="QString" name="horizontal_anchor_point" value="1"/>
+                    <Option type="QString" name="joinstyle" value="bevel"/>
+                    <Option type="QString" name="name" value="circle"/>
+                    <Option type="QString" name="offset" value="0,0"/>
+                    <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="offset_unit" value="MM"/>
+                    <Option type="QString" name="outline_color" value="0,0,0,255"/>
+                    <Option type="QString" name="outline_style" value="solid"/>
+                    <Option type="QString" name="outline_width" value="0"/>
+                    <Option type="QString" name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="outline_width_unit" value="MM"/>
+                    <Option type="QString" name="scale_method" value="diameter"/>
+                    <Option type="QString" name="size" value="3"/>
+                    <Option type="QString" name="size_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="size_unit" value="MM"/>
+                    <Option type="QString" name="vertical_anchor_point" value="1"/>
+                  </Option>
+                  <prop v="0" k="angle"/>
+                  <prop v="square" k="cap_style"/>
+                  <prop v="0,255,55,255" k="color"/>
+                  <prop v="1" k="horizontal_anchor_point"/>
+                  <prop v="bevel" k="joinstyle"/>
+                  <prop v="circle" k="name"/>
+                  <prop v="0,0" k="offset"/>
+                  <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                  <prop v="MM" k="offset_unit"/>
+                  <prop v="0,0,0,255" k="outline_color"/>
+                  <prop v="solid" k="outline_style"/>
+                  <prop v="0" k="outline_width"/>
+                  <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+                  <prop v="MM" k="outline_width_unit"/>
+                  <prop v="diameter" k="scale_method"/>
+                  <prop v="3" k="size"/>
+                  <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+                  <prop v="MM" k="size_unit"/>
+                  <prop v="1" k="vertical_anchor_point"/>
+                  <data_defined_properties>
+                    <Option type="Map">
+                      <Option type="QString" name="name" value=""/>
+                      <Option name="properties"/>
+                      <Option type="QString" name="type" value="collection"/>
+                    </Option>
+                  </data_defined_properties>
+                </layer>
+              </symbol>
+            </layer>
+            <layer pass="0" locked="0" enabled="1" class="MarkerLine">
+              <Option type="Map">
+                <Option type="QString" name="average_angle_length" value="4"/>
+                <Option type="QString" name="average_angle_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="average_angle_unit" value="MM"/>
+                <Option type="QString" name="interval" value="3"/>
+                <Option type="QString" name="interval_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="interval_unit" value="MM"/>
+                <Option type="QString" name="offset" value="0"/>
+                <Option type="QString" name="offset_along_line" value="0"/>
+                <Option type="QString" name="offset_along_line_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="offset_along_line_unit" value="MM"/>
+                <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                <Option type="QString" name="offset_unit" value="MM"/>
+                <Option type="QString" name="placement" value="lastvertex"/>
+                <Option type="QString" name="ring_filter" value="0"/>
+                <Option type="QString" name="rotate" value="1"/>
+              </Option>
+              <prop v="4" k="average_angle_length"/>
+              <prop v="3x:0,0,0,0,0,0" k="average_angle_map_unit_scale"/>
+              <prop v="MM" k="average_angle_unit"/>
+              <prop v="3" k="interval"/>
+              <prop v="3x:0,0,0,0,0,0" k="interval_map_unit_scale"/>
+              <prop v="MM" k="interval_unit"/>
+              <prop v="0" k="offset"/>
+              <prop v="0" k="offset_along_line"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_along_line_map_unit_scale"/>
+              <prop v="MM" k="offset_along_line_unit"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="lastvertex" k="placement"/>
+              <prop v="0" k="ring_filter"/>
+              <prop v="1" k="rotate"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" name="name" value=""/>
+                  <Option name="properties"/>
+                  <Option type="QString" name="type" value="collection"/>
+                </Option>
+              </data_defined_properties>
+              <symbol alpha="1" force_rhr="0" type="marker" name="@0@3" clip_to_extent="1">
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option type="QString" name="name" value=""/>
+                    <Option name="properties"/>
+                    <Option type="QString" name="type" value="collection"/>
+                  </Option>
+                </data_defined_properties>
+                <layer pass="0" locked="0" enabled="1" class="SimpleMarker">
+                  <Option type="Map">
+                    <Option type="QString" name="angle" value="0"/>
+                    <Option type="QString" name="cap_style" value="square"/>
+                    <Option type="QString" name="color" value="255,0,0,255"/>
+                    <Option type="QString" name="horizontal_anchor_point" value="1"/>
+                    <Option type="QString" name="joinstyle" value="bevel"/>
+                    <Option type="QString" name="name" value="circle"/>
+                    <Option type="QString" name="offset" value="0,0"/>
+                    <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="offset_unit" value="MM"/>
+                    <Option type="QString" name="outline_color" value="0,0,0,255"/>
+                    <Option type="QString" name="outline_style" value="solid"/>
+                    <Option type="QString" name="outline_width" value="0"/>
+                    <Option type="QString" name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="outline_width_unit" value="MM"/>
+                    <Option type="QString" name="scale_method" value="diameter"/>
+                    <Option type="QString" name="size" value="3"/>
+                    <Option type="QString" name="size_map_unit_scale" value="3x:0,0,0,0,0,0"/>
+                    <Option type="QString" name="size_unit" value="MM"/>
+                    <Option type="QString" name="vertical_anchor_point" value="1"/>
+                  </Option>
+                  <prop v="0" k="angle"/>
+                  <prop v="square" k="cap_style"/>
+                  <prop v="255,0,0,255" k="color"/>
+                  <prop v="1" k="horizontal_anchor_point"/>
+                  <prop v="bevel" k="joinstyle"/>
+                  <prop v="circle" k="name"/>
+                  <prop v="0,0" k="offset"/>
+                  <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                  <prop v="MM" k="offset_unit"/>
+                  <prop v="0,0,0,255" k="outline_color"/>
+                  <prop v="solid" k="outline_style"/>
+                  <prop v="0" k="outline_width"/>
+                  <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+                  <prop v="MM" k="outline_width_unit"/>
+                  <prop v="diameter" k="scale_method"/>
+                  <prop v="3" k="size"/>
+                  <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+                  <prop v="MM" k="size_unit"/>
+                  <prop v="1" k="vertical_anchor_point"/>
+                  <data_defined_properties>
+                    <Option type="Map">
+                      <Option type="QString" name="name" value=""/>
+                      <Option name="properties"/>
+                      <Option type="QString" name="type" value="collection"/>
+                    </Option>
+                  </data_defined_properties>
+                </layer>
+              </symbol>
+            </layer>
           </symbol>
         </symbols>
         <rotation/>
@@ -4915,9 +5213,9 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <labeling type="simple">
         <settings calloutType="simple">
-          <text-style fontWeight="50" textColor="50,50,50,255" allowHtml="0" previewBkgrdColor="255,255,255,255" capitalization="0" fontSizeUnit="Point" textOpacity="1" fontSize="10" useSubstitutions="0" multilineHeight="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" blendMode="0" fontItalic="0" namedStyle="Regular" textOrientation="horizontal" fontStrikeout="0" fieldName="Text_Descr" fontFamily="Open Sans" isExpression="1" fontUnderline="0" fontLetterSpacing="0" legendString="Aa" fontKerning="1" fontWordSpacing="0">
+          <text-style fontWeight="50" textColor="50,50,50,255" allowHtml="0" previewBkgrdColor="255,255,255,255" capitalization="0" fontSizeUnit="Point" textOpacity="1" fontSize="8" useSubstitutions="0" multilineHeight="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" blendMode="0" fontItalic="0" namedStyle="Standard" textOrientation="horizontal" fontStrikeout="0" fieldName="name || ' \n ' ||Trail_Char" fontFamily="Arial" isExpression="1" fontUnderline="0" fontLetterSpacing="0" legendString="Aa" fontKerning="1" fontWordSpacing="0">
             <families/>
-            <text-buffer bufferNoFill="1" bufferSizeUnits="MM" bufferColor="250,250,250,255" bufferDraw="0" bufferJoinStyle="128" bufferOpacity="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferBlendMode="0" bufferSize="1"/>
+            <text-buffer bufferNoFill="1" bufferSizeUnits="MM" bufferColor="250,250,250,255" bufferDraw="1" bufferJoinStyle="128" bufferOpacity="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferBlendMode="0" bufferSize="0.5"/>
             <text-mask maskSizeUnits="MM" maskSize="0" maskJoinStyle="128" maskEnabled="0" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskType="0" maskOpacity="1" maskedSymbolLayers=""/>
             <background shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetY="0" shapeRadiiX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeRotation="0" shapeJoinStyle="64" shapeRotationType="0" shapeBlendMode="0" shapeRadiiY="0" shapeSizeUnit="Point" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeFillColor="255,255,255,255" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeOpacity="1" shapeSizeType="0" shapeOffsetX="0" shapeType="0" shapeBorderWidth="0" shapeBorderWidthUnit="Point" shapeOffsetUnit="Point" shapeSizeX="0" shapeSVGFile="" shapeDraw="0" shapeRadiiUnit="Point" shapeSizeY="0" shapeBorderColor="128,128,128,255">
               <symbol alpha="1" force_rhr="0" type="marker" name="markerSymbol" clip_to_extent="1">
@@ -5031,8 +5329,8 @@ def my_form_open(dialog, layer, feature):
             </dd_properties>
             <substitutions/>
           </text-style>
-          <text-format autoWrapLength="0" wrapChar="" decimals="3" leftDirectionSymbol="&lt;" rightDirectionSymbol=">" addDirectionSymbol="0" useMaxLineLengthForAutoWrap="1" multilineAlign="0" plussign="0" reverseDirectionSymbol="0" placeDirectionSymbol="0" formatNumbers="0"/>
-          <placement rotationAngle="0" polygonPlacementFlags="2" yOffset="0" lineAnchorType="0" centroidWhole="0" maxCurvedCharAngleOut="-25" geometryGenerator="" layerType="LineGeometry" overrunDistanceUnit="MM" offsetType="0" priority="5" fitInPolygonOnly="0" overrunDistanceMapUnitScale="3x:0,0,0,0,0,0" preserveRotation="1" geometryGeneratorType="PointGeometry" distMapUnitScale="3x:0,0,0,0,0,0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" lineAnchorPercent="0.5" placement="2" repeatDistanceUnits="MM" geometryGeneratorEnabled="0" distUnits="MM" lineAnchorClipping="0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" xOffset="0" offsetUnits="MM" maxCurvedCharAngleIn="25" quadOffset="4" overrunDistance="0" placementFlags="10" repeatDistance="0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" centroidInside="0" dist="0" rotationUnit="AngleDegrees"/>
+          <text-format autoWrapLength="0" wrapChar="" decimals="3" leftDirectionSymbol="&lt;" rightDirectionSymbol=">" addDirectionSymbol="0" useMaxLineLengthForAutoWrap="1" multilineAlign="1" plussign="0" reverseDirectionSymbol="0" placeDirectionSymbol="0" formatNumbers="0"/>
+          <placement rotationAngle="0" polygonPlacementFlags="2" yOffset="0" lineAnchorType="0" centroidWhole="0" maxCurvedCharAngleOut="-25" geometryGenerator="" layerType="LineGeometry" overrunDistanceUnit="MM" offsetType="0" priority="5" fitInPolygonOnly="0" overrunDistanceMapUnitScale="3x:0,0,0,0,0,0" preserveRotation="1" geometryGeneratorType="PointGeometry" distMapUnitScale="3x:0,0,0,0,0,0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" lineAnchorPercent="0.5" placement="4" repeatDistanceUnits="MM" geometryGeneratorEnabled="0" distUnits="MM" lineAnchorClipping="0" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" xOffset="0" offsetUnits="MM" maxCurvedCharAngleIn="25" quadOffset="4" overrunDistance="0" placementFlags="10" repeatDistance="0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" centroidInside="0" dist="0" rotationUnit="AngleDegrees"/>
           <rendering minFeatureSize="0" maxNumLabels="2000" labelPerPart="0" scaleMax="0" unplacedVisibility="0" fontMaxPixelSize="10000" obstacle="1" displayAll="0" scaleMin="0" upsidedownLabels="0" drawLabels="1" scaleVisibility="0" limitNumLabels="0" fontLimitPixelSize="0" mergeLines="0" obstacleFactor="1" obstacleType="1" fontMinPixelSize="3" zIndex="0"/>
           <dd_properties>
             <Option type="Map">
@@ -5070,7 +5368,9 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <Option type="Map">
           <Option type="List" name="dualview/previewExpressions">
+            <Option type="QString" value="trails_utm_utf8_character"/>
             <Option type="QString" value="&quot;trails_utm_utf8_character&quot;"/>
+            <Option type="QString" value="trails_utm_utf8_character"/>
           </Option>
           <Option type="int" name="embeddedWidgets/count" value="0"/>
           <Option name="variableNames"/>
@@ -5181,7 +5481,10 @@ def my_form_open(dialog, layer, feature):
         <field configurationFlags="None" name="name">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -5198,7 +5501,10 @@ def my_form_open(dialog, layer, feature):
         <field configurationFlags="None" name="Trail_Char">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -5254,13 +5560,6 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="Z_Check">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
         <field configurationFlags="None" name="Verbot">
           <editWidget type="TextEdit">
             <config>
@@ -5268,6 +5567,23 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" name="IsMultiline" value="false"/>
                 <Option type="bool" name="UseHtml" value="false"/>
               </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="copy_Descr">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="Elev_gain">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
             </config>
           </editWidget>
         </field>
@@ -5283,12 +5599,13 @@ def my_form_open(dialog, layer, feature):
         <alias field="Risk" name="" index="7"/>
         <alias field="Tech" name="" index="8"/>
         <alias field="Flow_Killer" name="" index="9"/>
-        <alias field="Z_Check" name="" index="10"/>
-        <alias field="Verbot" name="" index="11"/>
+        <alias field="Verbot" name="" index="10"/>
+        <alias field="copy_Descr" name="" index="11"/>
+        <alias field="Elev_gain" name="" index="12"/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="name" expression=""/>
-        <default applyOnUpdate="0" field="description" expression=""/>
+        <default applyOnUpdate="1" field="description" expression="copy_Descr"/>
         <default applyOnUpdate="0" field="Trail_Char" expression=""/>
         <default applyOnUpdate="0" field="Gem" expression=""/>
         <default applyOnUpdate="0" field="Elev_loss" expression=""/>
@@ -5297,13 +5614,14 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="Risk" expression=""/>
         <default applyOnUpdate="0" field="Tech" expression=""/>
         <default applyOnUpdate="0" field="Flow_Killer" expression=""/>
-        <default applyOnUpdate="0" field="Z_Check" expression=""/>
         <default applyOnUpdate="0" field="Verbot" expression=""/>
+        <default applyOnUpdate="0" field="copy_Descr" expression=""/>
+        <default applyOnUpdate="0" field="Elev_gain" expression=""/>
       </defaults>
       <constraints>
         <constraint unique_strength="0" field="name" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="description" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="Trail_Char" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="Trail_Char" constraints="1" notnull_strength="2" exp_strength="0"/>
         <constraint unique_strength="0" field="Gem" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="Elev_loss" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="Flow" constraints="0" notnull_strength="0" exp_strength="0"/>
@@ -5311,8 +5629,9 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="Risk" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="Tech" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="Flow_Killer" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="Z_Check" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="Verbot" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="copy_Descr" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="Elev_gain" constraints="0" notnull_strength="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint field="name" desc="" exp=""/>
@@ -5325,19 +5644,21 @@ def my_form_open(dialog, layer, feature):
         <constraint field="Risk" desc="" exp=""/>
         <constraint field="Tech" desc="" exp=""/>
         <constraint field="Flow_Killer" desc="" exp=""/>
-        <constraint field="Z_Check" desc="" exp=""/>
         <constraint field="Verbot" desc="" exp=""/>
+        <constraint field="copy_Descr" desc="" exp=""/>
+        <constraint field="Elev_gain" desc="" exp=""/>
       </constraintExpressions>
       <expressionfields>
         <field subType="0" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'LLL', '💎'),&#xd;&#xa;&#x9;&#x9;&#x9;'LL', ''),&#xd;&#xa;&#x9;&#x9;'L', ''),&#xd;&#xa;&#x9;'-', ''&#xd;&#xa;&#x9;),&#xd;&#xa;'💎')" comment="" precision="0" name="Gem" type="10" length="0" typeName="string"/>
-        <field subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1))-&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element&lt;0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;&#x9;" comment="" precision="0" name="Elev_loss" type="6" length="-1" typeName="double precision"/>
+        <field subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1))-&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element&lt;0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)" comment="" precision="0" name="Elev_loss" type="6" length="-1" typeName="double precision"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char , 'FFF', '👍👍👍'),&#xd;&#xa;&#x9;&#x9;&#x9;'FF', '👍👍o'),&#xd;&#xa;&#x9;&#x9;'F', '👍oo'), &#xd;&#xa;&#x9;&#x9;'[👍,o,\\s,?]+'&#xd;&#xa;&#x9;), &#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;&#x9;" comment="" precision="0" name="Flow" type="10" length="0" typeName="string"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char , 'GGG', '🚀🚀🚀'),&#xd;&#xa;&#x9;&#x9;&#x9;'GG', '🚀🚀o'),&#xd;&#xa;&#x9;&#x9;'G', '🚀oo'), &#xd;&#xa;&#x9;&#x9;'[🚀,o,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" comment="" precision="0" name="Gravity" type="10" length="0" typeName="string"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'RRR', '💀💀💀'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;'RR', '💀💀o'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;'R', '💀oo'),&#xd;&#xa;&#x9;&#x9;&#x9;'[-,'']', 'ooo'), &#xd;&#xa;&#x9;&#x9;'[💀, o, ?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#x9;&#xd;&#xa;&#x9;" comment="" precision="0" name="Risk" type="10" length="0" typeName="string"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'TTT', '🔸🔸🔸'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;'TT', '🔸🔸o'),&#xd;&#xa;&#x9;&#x9;&#x9;'T', '🔸oo'), &#xd;&#xa;&#x9;&#x9;'[🔸,o,?]+'),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" comment="" precision="0" name="Tech" type="10" length="0" typeName="string"/>
         <field subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'XXX', '👎👎👎x'),&#xd;&#xa;&#x9;&#x9;&#x9;'XX', '👎👎o'),&#xd;&#xa;&#x9;&#x9;'X', '👎oo'), &#xd;&#xa;&#x9;&#x9;'[👎,o,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" comment="" precision="0" name="Flow_Killer" type="10" length="0" typeName="string"/>
-        <field subType="0" expression="left(geom_to_wkt($geometry,1),100)" comment="" precision="0" name="Z_Check" type="10" length="0" typeName="string"/>
-        <field subType="0" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(  Trail_Char , '!', '🚳'),&#xd;&#xa;&#x9;'🚳'&#xd;&#xa;)" comment="" precision="0" name="Verbot" type="10" length="0" typeName="string"/>
+        <field subType="0" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(  Trail_Char , 'K!', '🚳'),&#xd;&#xa;&#x9;'🚳'&#xd;&#xa;)" comment="" precision="0" name="Verbot" type="10" length="0" typeName="string"/>
+        <field subType="0" expression="concat(&#xd;&#xa;'&lt;pre style=&quot;tab-size:3;&quot;>',&#xd;&#xa;'&lt;p/>Flow:&#x9;&#x9;' || Flow  ||' | ' || Flow_Killer,&#xd;&#xa;'&lt;br/>Tech:&#x9;&#x9;' || Tech,&#xd;&#xa;'&lt;br/>Gravity:&#x9;' || Gravity,&#xd;&#xa;'&lt;br/>Risk:&#x9;&#x9;' || Risk || Verbot,&#xd;&#xa;'&lt;p>Länge:&#x9;&#x9;' || round($length/1000,1) || ' km',&#xd;&#xa;'&lt;br/>Aufstieg:&#x9;' || if(Elev_gain=0, '0', Elev_gain) || ' hm',&#xd;&#xa;'&lt;br/>Abfahrt:&#x9;&#x9;' || if(Elev_loss=0, '0', Elev_loss)  || ' hm',&#xd;&#xa;'&lt;br/>Holy Trail:&#x9;' || Gem || Verbot,&#xd;&#xa;'&lt;/pre>'&#xd;&#xa;)" comment="" precision="0" name="copy_Descr" type="10" length="0" typeName="string"/>
+        <field subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1))-&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element>0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)" comment="" precision="0" name="Elev_gain" type="6" length="-1" typeName="double precision"/>
       </expressionfields>
       <attributeactions>
         <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
@@ -5376,7 +5697,7 @@ def my_form_open(dialog, layer, feature):
           <actionScope id="Feature"/>
         </actionsetting>
       </attributeactions>
-      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="1" sortExpression="&quot;copy_Description&quot;">
+      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="1" sortExpression="&quot;Verbot&quot;">
         <columns>
           <column hidden="0" width="378" type="field" name="name"/>
           <column hidden="0" width="177" type="field" name="description"/>
@@ -5388,8 +5709,9 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="Tech"/>
           <column hidden="0" width="-1" type="field" name="Risk"/>
           <column hidden="0" width="-1" type="field" name="Flow_Killer"/>
-          <column hidden="0" width="-1" type="field" name="Z_Check"/>
           <column hidden="0" width="-1" type="field" name="Verbot"/>
+          <column hidden="0" width="-1" type="field" name="copy_Descr"/>
+          <column hidden="0" width="-1" type="field" name="Elev_gain"/>
           <column hidden="1" width="-1" type="actions"/>
         </columns>
       </attributetableconfig>
@@ -5420,7 +5742,11 @@ def my_form_open(dialog, layer, feature):
     control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
+      <editorlayout>tablayout</editorlayout>
+      <attributeEditorForm>
+        <attributeEditorField name="name" index="0" showLabel="1"/>
+        <attributeEditorField name="Trail_Char" index="2" showLabel="1"/>
+      </attributeEditorForm>
       <editable>
         <field name="Elev_gain" editable="0"/>
         <field name="Elev_loss" editable="0"/>
@@ -5438,6 +5764,7 @@ def my_form_open(dialog, layer, feature):
         <field name="Typ" editable="0"/>
         <field name="Verbot" editable="0"/>
         <field name="Z_Check" editable="0"/>
+        <field name="copy_Descr" editable="0"/>
         <field name="copy_Description" editable="0"/>
         <field name="description" editable="1"/>
         <field name="name" editable="1"/>
@@ -5465,6 +5792,7 @@ def my_form_open(dialog, layer, feature):
         <field name="Typ" labelOnTop="0"/>
         <field name="Verbot" labelOnTop="0"/>
         <field name="Z_Check" labelOnTop="0"/>
+        <field name="copy_Descr" labelOnTop="0"/>
         <field name="copy_Description" labelOnTop="0"/>
         <field name="description" labelOnTop="0"/>
         <field name="name" labelOnTop="0"/>
@@ -5492,6 +5820,7 @@ def my_form_open(dialog, layer, feature):
         <field name="Typ" reuseLastValue="0"/>
         <field name="Verbot" reuseLastValue="0"/>
         <field name="Z_Check" reuseLastValue="0"/>
+        <field name="copy_Descr" reuseLastValue="0"/>
         <field name="copy_Description" reuseLastValue="0"/>
         <field name="description" reuseLastValue="0"/>
         <field name="name" reuseLastValue="0"/>
@@ -11628,7 +11957,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent ymax="5954588.99316226691007614" ymin="5946046.72029095888137817" xmin="1270166.22134032030589879" xmax="1284092.36130002955906093">
+    <DefaultViewExtent ymax="5989856.23804278671741486" ymin="5972771.69230017066001892" xmin="1263621.03274097316898406" xmax="1291473.31266039167530835">
       <spatialrefsys>
         <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
         <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
