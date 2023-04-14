@@ -3,7 +3,7 @@ function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');  
 }
 
-var pw_prompt = prompt('Passwort eingeben um auf die Seite **Tirol Legacy Trails** zu gelangen..',' ');
+var pw_prompt = prompt('Passwort eingeben um auf die Seite **Legacy Trails Tirol** zu gelangen..',' ');
 var pw = 'coffee';
 // if prompt is cancelled the pw_prompt var will be null!
 if (pw_prompt == null) {
@@ -65,7 +65,7 @@ var toggle = L.easyButton({
 
 toggle.addTo(map);
 
-var mapbox_Attr = 'Tiles &copy; <a href="google.com">Google Maps</a>, <a href="openstreetmap.org">Open Street Maps</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
+var mapbox_Attr = 'Tiles &copy; <a href="google.com">Google Maps</a>, <a href="openstreetmap.org">OSM</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
 var mapbox_satelliteUrl = 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}';
 var mapbox_outdoorUrl = 'http://c.tile.opentopomap.org/{z}/{x}/{y}.png';
 

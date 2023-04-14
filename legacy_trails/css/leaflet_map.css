@@ -7,10 +7,12 @@ html, body, #map {
 
 body{
     padding-top:50px;
+	min-width: 340px; 
 }
 
 #pop_cont_name {
     font-weight: bold;
+    padding-bottom: 6px;
 }
 
 #pop_cont_descr {
@@ -60,7 +62,8 @@ body{
 .navbar-brand {
 	font-family: 'Rye', cursive; 
 	font-size:calc(20px + .5vw);
-	letter-spacing: 0.3em;
+	letter-spacing: 0.2em;
+	white-space: nowrap; 
 }
 
 .navbar-toggle {
@@ -91,9 +94,16 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 }
 
 /*** Control font size of title on small screens ***/
+@media screen and (max-width: 480px) {
+  .navbar-default .navbar-brand {
+    font-size: 1.1em;
+	padding-top: 19px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .navbar-default .navbar-brand {
-    font-size: 1.2em;
+    font-size: 1em;
 	padding-top: 19px;
   }
 }

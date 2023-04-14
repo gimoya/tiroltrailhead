@@ -3,7 +3,7 @@ read yesno
 if [ "$yesno" = "y" ] 
 then
 	cd ~
-	cd d:/Projekte/tiroltrailhead/tirol_legacy_trails
+	cd d:/Projekte/tiroltrailhead/legacy_trails
 	ogr2ogr my_trails_z.geojson my_trails_z_epsg3857.geojson -s_srs EPSG:900913 -t_srs EPSG:4326
 	echo -e "\n  ..reprojection to WGS84 done!\n---\n"
 else 
