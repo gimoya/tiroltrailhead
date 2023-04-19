@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Kay" projectname="" saveUser="Kay" version="3.22.14-Białowieża" saveDateTime="2023-04-19T13:11:46">
+<qgis saveUserFull="Kay" projectname="" saveUser="Kay" version="3.22.14-Białowieża" saveDateTime="2023-04-19T14:21:08">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -156,12 +156,12 @@
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b" legend_split_behavior="0" source="crs=EPSG:3857&amp;format&amp;tilePixelRatio=1&amp;type=xyz&amp;url=file:///D:/Projekte/tiroltrailhead/strava_tiles_06_2020/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=14&amp;zmin=13" legend_exp="" providerKey="wms" name="local_strava" checked="Qt::Checked" expanded="1" patch_size="0,0">
+      <layer-tree-layer id="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b" legend_split_behavior="0" source="crs=EPSG:3857&amp;format&amp;tilePixelRatio=1&amp;type=xyz&amp;url=file:///D:/Projekte/tiroltrailhead/strava_tiles_06_2020/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=14&amp;zmin=13" legend_exp="" providerKey="wms" name="local_strava" checked="Qt::Unchecked" expanded="1" patch_size="0,0">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9" legend_split_behavior="0" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://tile.mtbmap.cz/mtbmap_tiles/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=10" legend_exp="" providerKey="wms" name="MTBmap" checked="Qt::Unchecked" expanded="1" patch_size="-1,-1">
+      <layer-tree-layer id="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9" legend_split_behavior="0" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://tile.mtbmap.cz/mtbmap_tiles/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=10" legend_exp="" providerKey="wms" name="MTBmap" checked="Qt::Checked" expanded="1" patch_size="-1,-1">
         <customproperties>
           <Option/>
         </customproperties>
@@ -181,7 +181,7 @@
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77" legend_split_behavior="0" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=gdi_base_summer&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" legend_exp="" providerKey="wms" name="gdi_base_summer" checked="Qt::Checked" expanded="1" patch_size="0,0">
+      <layer-tree-layer id="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77" legend_split_behavior="0" source="crs=EPSG:3857&amp;dpiMode=7&amp;format=image/png&amp;layers=gdi_base_summer&amp;styles=default&amp;tileMatrixSet=GoogleMapsCompatible&amp;url=http://wmts.kartetirol.at/wmts" legend_exp="" providerKey="wms" name="gdi_base_summer" checked="Qt::Unchecked" expanded="1" patch_size="0,0">
         <customproperties>
           <Option/>
         </customproperties>
@@ -265,26 +265,26 @@
       <item>my_trails_z_epsg3857_0f57985b_1eb8_48bb_85d2_a7ec52282771</item>
     </custom-order>
   </layer-tree-group>
-  <snapping-settings mode="3" unit="2" minScale="0" type="1" tolerance="0" intersection-snapping="0" maxScale="0" enabled="0" self-snapping="0" scaleDependencyMode="0">
+  <snapping-settings mode="3" unit="2" minScale="0" type="1" tolerance="0" intersection-snapping="0" maxScale="0" enabled="1" self-snapping="0" scaleDependencyMode="0">
     <individual-layer-settings>
-      <layer-setting id="strava_tracks_81f4c535_fa1c_4c7e_ac36_2e9332724f7a" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="regions_utm_utf820141118153216780" minScale="0" type="1" tolerance="5" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="where_s_biberwier_lower_Tracks_9a7ad599_4923_4d91_a35a_1608f66c8b57" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="strava_tracks_51688460_e81a_4e85_b7ca_add12353968a" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="POIs_cb34a2bf_c1da_4bf3_af22_6a4c09f3e7cf" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="POIs_7dfe2057_3856_4722_bfd6_124abb6b2817" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="strava_tracks_6dfd657f_859f_42c8_8bde_30ce10b9e8cd" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
       <layer-setting id="PRO_regions_utm_utf8_39c3eef8_ba01_492d_8fe8_dd7c370950af" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="strava_tracks_a409f56f_9e65_4865_8f46_14ff91a21190" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
       <layer-setting id="strava_tracks_3c9f2038_19d5_4743_8d54_07c9733d585e" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="where_s_biberwier_upper_Tracks_7c056edf_b231_497b_b5a8_67f1d831138a" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="Sankt_Veit___Hinterberg___5_2_km_Paths_5e8e10bd_e8bc_4f02_913f_6b5d752c5d2b" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="bike_city_innsbruck_legal_559b2c93_b9f5_4536_a66c_bd410f7cdf38" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="trails_utm_utf820141118153222040" minScale="0" type="1" tolerance="13" maxScale="0" enabled="1" units="1"/>
-      <layer-setting id="strava_tracks_f077eba0_a3e8_4351_93b9_89ae0082210a" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="my_trails_z_epsg3857_0f57985b_1eb8_48bb_85d2_a7ec52282771" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
-      <layer-setting id="bike_city_innsbruck_7695ba5f_e243_4d34_bee9_a01c044f0c74" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
       <layer-setting id="strava_tracks_bd6444e3_2bea_4626_8fda_c6a0e0bb8c41" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="POIs_cb34a2bf_c1da_4bf3_af22_6a4c09f3e7cf" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="bike_city_innsbruck_7695ba5f_e243_4d34_bee9_a01c044f0c74" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="where_s_biberwier_lower_Tracks_9a7ad599_4923_4d91_a35a_1608f66c8b57" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="strava_tracks_81f4c535_fa1c_4c7e_ac36_2e9332724f7a" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="trails_utm_utf820141118153222040" minScale="0" type="1" tolerance="13" maxScale="0" enabled="1" units="1"/>
+      <layer-setting id="strava_tracks_51688460_e81a_4e85_b7ca_add12353968a" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="Sankt_Veit___Hinterberg___5_2_km_Paths_5e8e10bd_e8bc_4f02_913f_6b5d752c5d2b" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="strava_tracks_6dfd657f_859f_42c8_8bde_30ce10b9e8cd" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="strava_tracks_f077eba0_a3e8_4351_93b9_89ae0082210a" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="strava_tracks_a409f56f_9e65_4865_8f46_14ff91a21190" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="POIs_7dfe2057_3856_4722_bfd6_124abb6b2817" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="where_s_biberwier_upper_Tracks_7c056edf_b231_497b_b5a8_67f1d831138a" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="regions_utm_utf820141118153216780" minScale="0" type="1" tolerance="5" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="bike_city_innsbruck_legal_559b2c93_b9f5_4536_a66c_bd410f7cdf38" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
+      <layer-setting id="my_trails_z_epsg3857_0f57985b_1eb8_48bb_85d2_a7ec52282771" minScale="0" type="1" tolerance="12" maxScale="0" enabled="0" units="1"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations/>
@@ -292,10 +292,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>1280073.13263641227968037</xmin>
-      <ymin>5977740.62335233297199011</ymin>
-      <xmax>1295504.58234134619124234</xmax>
-      <ymax>5987342.63031151052564383</ymax>
+      <xmin>1296915.90861413138918579</xmin>
+      <ymin>5958943.69733135588467121</ymin>
+      <xmax>1302461.14825401711277664</xmax>
+      <ymax>5962394.14629309810698032</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -435,14 +435,14 @@
           <legendlayerfile isInOverview="0" visible="0" layerid="DGM_Tirol_5m_epsg31254_2006_2019_ce1888eb_c2eb_46d7_b50f_4a1fd451cc03"/>
         </filegroup>
       </legendlayer>
-      <legendlayer showFeatureCount="0" checked="Qt::Checked" name="local_strava" drawingOrder="-1" open="true">
+      <legendlayer showFeatureCount="0" checked="Qt::Unchecked" name="local_strava" drawingOrder="-1" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" visible="1" layerid="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b"/>
+          <legendlayerfile isInOverview="0" visible="0" layerid="local_strava_ead8370f_7e7c_4a06_bfe3_9b6c30cf959b"/>
         </filegroup>
       </legendlayer>
-      <legendlayer showFeatureCount="0" checked="Qt::Unchecked" name="MTBmap" drawingOrder="-1" open="true">
+      <legendlayer showFeatureCount="0" checked="Qt::Checked" name="MTBmap" drawingOrder="-1" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" visible="0" layerid="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9"/>
+          <legendlayerfile isInOverview="0" visible="1" layerid="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9"/>
         </filegroup>
       </legendlayer>
       <legendlayer showFeatureCount="0" checked="Qt::Unchecked" name="OEK-Bergfex" drawingOrder="-1" open="false">
@@ -460,9 +460,9 @@
           <legendlayerfile isInOverview="0" visible="0" layerid="gdi_nomenklatur_c3c17d06_6a1d_416c_9f5b_53fce5cf27d0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer showFeatureCount="0" checked="Qt::Checked" name="gdi_base_summer" drawingOrder="-1" open="true">
+      <legendlayer showFeatureCount="0" checked="Qt::Unchecked" name="gdi_base_summer" drawingOrder="-1" open="true">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" visible="1" layerid="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77"/>
+          <legendlayerfile isInOverview="0" visible="0" layerid="gdi_base_summer_e241b343_3981_46df_9b85_9611375dbb77"/>
         </filegroup>
       </legendlayer>
       <legendlayer showFeatureCount="0" checked="Qt::Unchecked" name="Image_Schummerung_Gelaendemodell" drawingOrder="-1" open="false">
@@ -4813,6 +4813,8 @@ def my_form_open(dialog, layer, feature):
         <field length="-1" precision="0" type="6" subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))-1),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1)) - &#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element>=0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)&#xd;&#xa;&#x9;)&#xd;&#xa;)" typeName="double precision" comment="" name="E_gain"/>
         <field length="-1" precision="0" type="6" subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))-1),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1)) - &#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element&lt;=0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)" typeName="double precision" comment="" name="E_loss"/>
         <field length="0" precision="0" type="10" subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'FFF', '👍👍👍'),&#xd;&#xa;&#x9;&#x9;&#x9;'FF', '👍👍o'),&#xd;&#xa;&#x9;&#x9;'F', '👍oo'), &#xd;&#xa;&#x9;&#x9;'[👍,o,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" typeName="string" comment="" name="Flow"/>
+        <field length="0" precision="0" type="10" subType="0" expression="concat(&#xd;&#xa;'&lt;pre style=&quot;tab-size:3;&quot;>',&#xd;&#xa;'Flow:&#x9;&#x9;', Flow, '|', Flow_Killer,&#xd;&#xa;'&lt;br/>Tech:&#x9;&#x9;', Tech,&#xd;&#xa;'&lt;br/>Gravity: ', Gravity,&#xd;&#xa;'&lt;br/>Risk:&#x9;&#x9;', Risk,&#xd;&#xa;'&lt;br/>&lt;br/>Länge:&#x9;', round($length/1000,1), ' km',&#xd;&#xa;'&lt;br/>Up:&#x9;&#x9;', E_gain, ' hm',&#xd;&#xa;'&lt;br/>Down:&#x9;&#x9;', E_loss, ' hm',&#xd;&#xa;if(length(Gem) > 0, '&lt;br/>Holy&lt;br/>Trail:&#x9;' || Gem, ''),&#xd;&#xa;if (length(Verbot) > 0, '&lt;br/>Verbot:&#x9;' || Verbot, ''), '&lt;/pre>'&#xd;&#xa;)" typeName="string" comment="" name="Virt_Trail_Text"/>
+        <field length="10" precision="0" type="2" subType="0" expression="to_int(regexp_substr(name, '[(](.*)[)]'))" typeName="integer" comment="" name="ID"/>
       </expressionfields>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -5569,6 +5571,20 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field name="Virt_Trail_Text" configurationFlags="None">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ID" configurationFlags="None">
+          <editWidget type="Range">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
       </fieldConfiguration>
       <aliases>
         <alias field="name" name="" index="0"/>
@@ -5583,6 +5599,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="E_gain" name="" index="9"/>
         <alias field="E_loss" name="" index="10"/>
         <alias field="Flow" name="" index="11"/>
+        <alias field="Virt_Trail_Text" name="" index="12"/>
+        <alias field="ID" name="" index="13"/>
       </aliases>
       <defaults>
         <default field="name" expression="" applyOnUpdate="0"/>
@@ -5597,6 +5615,8 @@ def my_form_open(dialog, layer, feature):
         <default field="E_gain" expression="" applyOnUpdate="0"/>
         <default field="E_loss" expression="" applyOnUpdate="0"/>
         <default field="Flow" expression="" applyOnUpdate="0"/>
+        <default field="Virt_Trail_Text" expression="" applyOnUpdate="0"/>
+        <default field="ID" expression="" applyOnUpdate="0"/>
       </defaults>
       <constraints>
         <constraint field="name" unique_strength="0" exp_strength="0" constraints="0" notnull_strength="0"/>
@@ -5611,6 +5631,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="E_gain" unique_strength="0" exp_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="E_loss" unique_strength="0" exp_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="Flow" unique_strength="0" exp_strength="0" constraints="0" notnull_strength="0"/>
+        <constraint field="Virt_Trail_Text" unique_strength="0" exp_strength="0" constraints="0" notnull_strength="0"/>
+        <constraint field="ID" unique_strength="0" exp_strength="0" constraints="0" notnull_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint field="name" desc="" exp=""/>
@@ -5625,6 +5647,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="E_gain" desc="" exp=""/>
         <constraint field="E_loss" desc="" exp=""/>
         <constraint field="Flow" desc="" exp=""/>
+        <constraint field="Virt_Trail_Text" desc="" exp=""/>
+        <constraint field="ID" desc="" exp=""/>
       </constraintExpressions>
       <expressionfields>
         <field length="0" precision="0" type="10" subType="0" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'LLL', '💎'),&#xd;&#xa;&#x9;&#x9;&#x9;'LL', ''),&#xd;&#xa;&#x9;&#x9;'L', ''),&#xd;&#xa;&#x9;'-', ''&#xd;&#xa;&#x9;),&#xd;&#xa;'💎')" typeName="string" comment="" name="Gem"/>
@@ -5636,6 +5660,8 @@ def my_form_open(dialog, layer, feature):
         <field length="-1" precision="0" type="6" subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))-1),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1)) - &#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element>=0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)&#xd;&#xa;&#x9;)&#xd;&#xa;)" typeName="double precision" comment="" name="E_gain"/>
         <field length="-1" precision="0" type="6" subType="0" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))-1),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1)) - &#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element&lt;=0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)" typeName="double precision" comment="" name="E_loss"/>
         <field length="0" precision="0" type="10" subType="0" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'FFF', '👍👍👍'),&#xd;&#xa;&#x9;&#x9;&#x9;'FF', '👍👍o'),&#xd;&#xa;&#x9;&#x9;'F', '👍oo'), &#xd;&#xa;&#x9;&#x9;'[👍,o,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" typeName="string" comment="" name="Flow"/>
+        <field length="0" precision="0" type="10" subType="0" expression="concat(&#xd;&#xa;'&lt;pre style=&quot;tab-size:3;&quot;>',&#xd;&#xa;'Flow:&#x9;&#x9;', Flow, '|', Flow_Killer,&#xd;&#xa;'&lt;br/>Tech:&#x9;&#x9;', Tech,&#xd;&#xa;'&lt;br/>Gravity: ', Gravity,&#xd;&#xa;'&lt;br/>Risk:&#x9;&#x9;', Risk,&#xd;&#xa;'&lt;br/>&lt;br/>Länge:&#x9;', round($length/1000,1), ' km',&#xd;&#xa;'&lt;br/>Up:&#x9;&#x9;', E_gain, ' hm',&#xd;&#xa;'&lt;br/>Down:&#x9;&#x9;', E_loss, ' hm',&#xd;&#xa;if(length(Gem) > 0, '&lt;br/>Holy&lt;br/>Trail:&#x9;' || Gem, ''),&#xd;&#xa;if (length(Verbot) > 0, '&lt;br/>Verbot:&#x9;' || Verbot, ''), '&lt;/pre>'&#xd;&#xa;)" typeName="string" comment="" name="Virt_Trail_Text"/>
+        <field length="10" precision="0" type="2" subType="0" expression="to_int(regexp_substr(name, '[(](.*)[)]'))" typeName="integer" comment="" name="ID"/>
       </expressionfields>
       <attributeactions>
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
@@ -5674,8 +5700,9 @@ def my_form_open(dialog, layer, feature):
           <actionScope id="Canvas"/>
         </actionsetting>
       </attributeactions>
-      <attributetableconfig sortExpression="&quot;name&quot;" sortOrder="0" actionWidgetStyle="dropDown">
+      <attributetableconfig sortExpression="&quot;ID&quot;" sortOrder="1" actionWidgetStyle="dropDown">
         <columns>
+          <column width="125" type="field" hidden="0" name="ID"/>
           <column width="179" type="field" hidden="0" name="name"/>
           <column width="110" type="field" hidden="0" name="Trail_Char"/>
           <column width="43" type="field" hidden="0" name="Gem"/>
@@ -5688,6 +5715,7 @@ def my_form_open(dialog, layer, feature):
           <column width="81" type="field" hidden="0" name="E_gain"/>
           <column width="67" type="field" hidden="0" name="E_loss"/>
           <column width="-1" type="field" hidden="0" name="Trail_Text"/>
+          <column width="-1" type="field" hidden="0" name="Virt_Trail_Text"/>
           <column width="-1" type="actions" hidden="1"/>
         </columns>
       </attributetableconfig>
@@ -5734,6 +5762,7 @@ def my_form_open(dialog, layer, feature):
         <field name="Flow_Killer" editable="0"/>
         <field name="Gem" editable="0"/>
         <field name="Gravity" editable="0"/>
+        <field name="ID" editable="0"/>
         <field name="Leng_Verbot" editable="0"/>
         <field name="Länge" editable="1"/>
         <field name="Länge_3D" editable="0"/>
@@ -5770,6 +5799,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="Flow_Killer"/>
         <field labelOnTop="0" name="Gem"/>
         <field labelOnTop="0" name="Gravity"/>
+        <field labelOnTop="0" name="ID"/>
         <field labelOnTop="0" name="Leng_Verbot"/>
         <field labelOnTop="0" name="Länge"/>
         <field labelOnTop="0" name="Länge_3D"/>
@@ -5806,6 +5836,7 @@ def my_form_open(dialog, layer, feature):
         <field reuseLastValue="0" name="Flow_Killer"/>
         <field reuseLastValue="0" name="Gem"/>
         <field reuseLastValue="0" name="Gravity"/>
+        <field reuseLastValue="0" name="ID"/>
         <field reuseLastValue="0" name="Leng_Verbot"/>
         <field reuseLastValue="0" name="Länge"/>
         <field reuseLastValue="0" name="Länge_3D"/>
@@ -11356,7 +11387,7 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
       </LayerSnappingToleranceUnitList>
       <SnappingMode type="QString">advanced</SnappingMode>
-      <TopologicalEditing type="int">0</TopologicalEditing>
+      <TopologicalEditing type="int">1</TopologicalEditing>
     </Digitizing>
     <Gui>
       <CanvasColorBluePart type="int">255</CanvasColorBluePart>
@@ -12024,7 +12055,7 @@ def closeProject():
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent xmin="1279961.96558188181370497" xmax="1295615.74939587665721774" ymax="5987342.63031151052564383" ymin="5977740.62335233297199011">
+    <DefaultViewExtent xmin="1296875.96110632875934243" xmax="1302501.09576181974261999" ymax="5962394.14629309810698032" ymin="5958943.69733135588467121">
       <spatialrefsys>
         <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
         <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
