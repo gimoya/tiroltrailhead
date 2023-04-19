@@ -259,7 +259,7 @@ $.getJSON('my_trails_z.geojson', function(json) {
 			gpxLink.href = window.URL.createObjectURL(bb);		
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX-Download";			
-			var popupContent = '<div id="pop_cont_name">' + feature.properties.name + '</div><div id="pop_cont_descr">' + feature.properties.description + '</div><div id="Track">☕ ' +  gpxLink.outerHTML + ' ☕</div>';
+			var popupContent = '<div id="pop_cont_name">' + feature.properties.name + '</div><div id="pop_cont_descr">' + feature.properties.Trail_Text + '</div><div id="Track">☕ ' +  gpxLink.outerHTML + ' ☕</div>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 		}
 	}).addTo(map);
