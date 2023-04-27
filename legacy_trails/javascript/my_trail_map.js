@@ -3,8 +3,9 @@ function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');  
 }
 
+/*
 var pw_prompt = prompt('Passwort eingeben um auf die Seite **Legacy Trails Tirol** zu gelangen..',' ');
-var pw = 'coffee';
+var pw = 'willspareacoffee';
 // if prompt is cancelled the pw_prompt var will be null!
 if (pw_prompt == null) {
 	alert('Kein Passwort wurde angegeben! Die Seite wird nicht geladen...');
@@ -26,7 +27,7 @@ if (trim(pw_prompt) == pw ) {
 	}
 	window.location='tilt.html';
 }
-
+*/
 
 /*** Add base maps with controls ***/
 var map = L.map('map', {
@@ -45,7 +46,7 @@ var toggle = L.easyButton({
   states: [{
 	stateName: 'basemap-outdoor',
 	icon: '<span class="custom-control">T</span>',
-	title: 'change basemap back to satellite',		
+	title: 'Basemap umschalten',		
 	onClick: function(control) {
 	  map.removeLayer(mapbox_outdoorLayer);
 	  map.addLayer(mapbox_satelliteLayer);
@@ -54,7 +55,7 @@ var toggle = L.easyButton({
   }, {
 	stateName: 'basemap-satellite',
 	icon: '<span class="custom-control">S</span>',
-	title: 'change basemap to outdoor/terrain',
+	title: 'Basemap umschalten',
 	onClick: function(control) {
 	  map.removeLayer(mapbox_satelliteLayer);
 	  map.addLayer(mapbox_outdoorLayer);
@@ -62,8 +63,20 @@ var toggle = L.easyButton({
 	},
   }]
 });	
-
 toggle.addTo(map);
+
+var centerView = L.easyButton({
+  position: 'topright',
+  states: [{
+	stateName: 'centerView',
+	icon: '<span class="custom-control">◾</span>',
+	title: 'Center View',		
+	onClick: function(control) {
+	map.fitBounds(trails_json.getBounds(), {maxZoom: 16});
+	}
+  }]
+});	
+centerView.addTo(map);
 
 var mapbox_Attr = 'Tiles &copy; <a href="google.com">Google Maps</a>, <a href="openstreetmap.org">OSM</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
 var mapbox_satelliteUrl = 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}';
@@ -111,7 +124,7 @@ var el = L.control.elevation({
 
 L.control.locate({
     strings: {
-        title: "Show me my location!"
+        title: "Show my location!"
     },
 	position: 'topright'
 }).addTo(map);	
@@ -208,9 +221,16 @@ $.getJSON('my_trails_z.geojson', function(json) {
 		style: 	styleLines,
 		
 		onEachFeature: function(feature, layer) {
+			
+			
+			console.log(feature.geometry.coordinates.length);
 					
-			var stPt = [ feature.geometry.coordinates[0][1], feature.geometry.coordinates[0][0],  ]; // need to flip xy-coords!
-			var endPt = [ feature.geometry.coordinates[feature.geometry.coordinates.length - 1][1], feature.geometry.coordinates[feature.geometry.coordinates.length - 1][0] ];
+			var stPt = [feature.geometry.coordinates[0][1], 
+						feature.geometry.coordinates[0][0],  
+						]; // need to flip xy-coords!
+			var endPt = [feature.geometry.coordinates[feature.geometry.coordinates.length - 1][1],
+						feature.geometry.coordinates[feature.geometry.coordinates.length - 1][0], 
+						];
 			
 	
 			// Add Start and End Markers to each Feature 
@@ -221,7 +241,7 @@ $.getJSON('my_trails_z.geojson', function(json) {
 					radius: 5,
 					pane: 'ptsPane'
 				})
-				.bindTooltip(feature.properties.name + ' - Start (' + feature.geometry.coordinates[0][2] + ' m)', {
+				.bindTooltip(feature.properties.name + ' - Start (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)', {
 					permanent: false, 
 					direction: 'right'
 				})
@@ -234,7 +254,7 @@ $.getJSON('my_trails_z.geojson', function(json) {
 					radius: 5,
 					pane: 'ptsPane'
 				})	
-				.bindTooltip(feature.properties.name + ' - Ende (' + feature.geometry.coordinates[0][2] + ' m)', {
+				.bindTooltip(feature.properties.name + ' - Ende (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)', {
 					permanent: false, 
 					direction: 'right'
 				})
