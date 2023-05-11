@@ -36,6 +36,12 @@ var map = L.map('map', {
   minZoom: 11,
   zoomControl: false,
   attributionControl: false
+	/*
+	click tolerance radius not working 
+	throws error _renderer not defined
+	https://github.com/makinacorpus/Leaflet.TextPath/issues/87
+	renderer: L.canvas({ tolerance: 5 })
+	*/
 });
 
 new L.control.attribution({position: 'bottomright'}).addTo(map);
@@ -210,7 +216,7 @@ function doClickStuff(e) {
 
 /*** Add Trails ***/
 
-/* Start/End pts in different pane ontop pf trails */ 
+/* Start/End pts in different pane ontop of trails */ 
 map.createPane('ptsPane');
 map.getPane('ptsPane').style.zIndex = 600;
 
@@ -221,9 +227,6 @@ $.getJSON('my_trails_z.geojson', function(json) {
 		style: 	styleLines,
 		
 		onEachFeature: function(feature, layer) {
-			
-			
-			console.log(feature.geometry.coordinates.length);
 					
 			var stPt = [feature.geometry.coordinates[0][1], 
 						feature.geometry.coordinates[0][0],  
@@ -238,10 +241,11 @@ $.getJSON('my_trails_z.geojson', function(json) {
 					color: 'darkslategrey',
 					fillColor: 'lightgreen',	
 					fillOpacity: 1,				
-					radius: 5,
+					radius: 3.5,
+					weight:1.5,
 					pane: 'ptsPane'
 				})
-				.bindTooltip(feature.properties.name + ' - Start (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)', {
+				.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Start (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)y</div>', {
 					permanent: false, 
 					direction: 'right'
 				})
@@ -251,10 +255,11 @@ $.getJSON('my_trails_z.geojson', function(json) {
 					color: 'darkslategrey',
 					fillColor: 'pink',
 					fillOpacity: 1,
-					radius: 5,
+					radius: 3.5,
+					weight:1.5,	
 					pane: 'ptsPane'
 				})	
-				.bindTooltip(feature.properties.name + ' - Ende (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)', {
+				.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Ende (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)</div>', {
 					permanent: false, 
 					direction: 'right'
 				})
@@ -274,12 +279,19 @@ $.getJSON('my_trails_z.geojson', function(json) {
 	
 			/*** add a popup to each feature and.. ***/ 	
 			/*** ..set GPX link ***/
-			var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});
-			var gpxLink = document.createElement("a");
-			gpxLink.href = window.URL.createObjectURL(bb);		
+			// var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});
+			// bb_url = window.URL.createObjectURL(bb);	
+			var gpxLink = document.createElement("a");	
 			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.innerHTML = "GPX-Download";			
-			var popupContent = '<div id="pop_cont_name">' + feature.properties.name + '</div><div id="pop_cont_descr">' + feature.properties.Trail_Text + '</div><div id="Track">☕ ' +  gpxLink.outerHTML + ' ☕</div>';
+			gpxLink.innerHTML = "GPX-Download";	
+			gpxLink.href = "#";
+			gpxLink.onclick = function() {
+				//window.open(bb_url);
+				window.open("https://ko-fi.com/tiroltrailhead", '_blank');
+			}
+			var popupContent = '<p><div id="pop_cont_name">' + feature.properties.name 
+			+ '</div></p><div id="pop_cont_text">' + feature.properties.Trail_Text 
+			+ '</div><div id="gpx_track">☕ ' +  gpxLink.outerHTML + ' ☕</div>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 		}
 	}).addTo(map);
@@ -290,7 +302,7 @@ $.getJSON('my_trails_z.geojson', function(json) {
 
 /*
 Points of interest
-*/
+
 
 jQuery.get('POIs.geojson', function(data) {
 
@@ -319,6 +331,8 @@ for (i = 0; i < POIs.features.length; i++) {
 			.addTo(map);
 	}
 });
+
+*/
 
 /*** Map Event Listeners ***/
 
