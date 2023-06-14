@@ -38,19 +38,36 @@ body{
   src: url("../fonts/Rye-Regular.ttf") format("truetype");
 }
 
-#pop_cont_name {
+.pop_cont_name {
     font-weight: bold;
 	font-size:1.7em;
 }
 
-#pop_cont_text {
+.pop_cont_text {
 }
 
-#gpx_track {
+.pop_gpx_text {
 	font-size:1.5em;
 	padding-top: 8px;
+	vertical-align: middle;
 }
 
+.pop_gpx_text:hover + .kofi_reminder  {
+    display: block;
+}
+
+.kofi_reminder {
+	display:none;
+	font-size:1.5em;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:75%;
+	background-color:rgb(200,200,200);
+	padding:10px;
+}
+	
 
 /* font awesome hack */
 .fa {
@@ -143,4 +160,51 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     text-align: left;
     border-radius: 0px!important;
 	width: 300px;
+}	
+
+.leaflet-popup-content {
+	line-height:1;
 }
+
+
+/*** KO-FI Styles ***/
+.kofi_img {
+  animation: shake 1s;
+  animation-iteration-count: infinite;
+}
+
+.kofi_button {
+	font-size:2em;
+	text-align:center;
+	
+}
+
+#kofi_img_div {
+  height: 36px;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+#kofi_img_float {
+  position:absolute; 
+  bottom:20px; 
+  left:20px; 
+  border:0px; 
+  height:36px;
+  z-index:9999999;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+

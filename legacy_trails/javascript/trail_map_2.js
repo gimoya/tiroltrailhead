@@ -1,17 +1,18 @@
-/* PW protection 
+/* PW protection */
 function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');  
 }
 
+/*
 var pw_prompt = prompt('Passwort eingeben um auf die Seite **Legacy Trails Tirol** zu gelangen..',' ');
-var pw = 'spareacoffee';
+var pw = 'willspareacoffee';
 // if prompt is cancelled the pw_prompt var will be null!
 if (pw_prompt == null) {
 	alert('Kein Passwort wurde angegeben! Die Seite wird nicht geladen...');
 	if (bowser.msie) {
 		document.execCommand('Stop');
 	} else {
-		window.stop();s
+		window.stop();
 	}
 	window.location='tilt.html';
 }
@@ -51,7 +52,7 @@ var toggle = L.easyButton({
   states: [{
 	stateName: 'basemap-outdoor',
 	icon: '<span class="custom-control">T</span>',
-	title: 'Hintergrundkarte umschalten',		
+	title: 'Basemap umschalten',		
 	onClick: function(control) {
 	  map.removeLayer(mapbox_outdoorLayer);
 	  map.addLayer(mapbox_satelliteLayer);
@@ -60,7 +61,7 @@ var toggle = L.easyButton({
   }, {
 	stateName: 'basemap-satellite',
 	icon: '<span class="custom-control">S</span>',
-	title: 'Hintergrundkarte umschalten',
+	title: 'Basemap umschalten',
 	onClick: function(control) {
 	  map.removeLayer(mapbox_satelliteLayer);
 	  map.addLayer(mapbox_outdoorLayer);
@@ -84,17 +85,15 @@ var centerView = L.easyButton({
 centerView.addTo(map);
 
 var mapbox_Attr = 'Tiles &copy; <a href="google.com">Google Maps</a>, <a href="openstreetmap.org">OSM</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
-var mapbox_satelliteUrl = '//mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}';
-var mapbox_outdoorUrl = '//c.tile.opentopomap.org/{z}/{x}/{y}.png';
+var mapbox_satelliteUrl = 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}';
+var mapbox_outdoorUrl = 'http://c.tile.opentopomap.org/{z}/{x}/{y}.png';
 
 var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
   attribution: mapbox_Attr 
 });
 
 var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
-  attribution: mapbox_Attr,
-  maxZoom: 20,
-  maxNativeZoom: 17  
+  attribution: mapbox_Attr 
 });
 
 mapbox_outdoorLayer.addTo(map);	
@@ -246,7 +245,7 @@ $.getJSON('my_trails_z.geojson', function(json) {
 					weight:1.5,
 					pane: 'ptsPane'
 				})
-				.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Start (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)</div>', {
+				.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Start (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)y</div>', {
 					permanent: false, 
 					direction: 'right'
 				})
@@ -280,29 +279,23 @@ $.getJSON('my_trails_z.geojson', function(json) {
 	
 			/*** add a popup to each feature and.. ***/ 	
 			/*** ..set GPX link ***/
-			var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});	
+			// var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});
+			// bb_url = window.URL.createObjectURL(bb);	
 			var gpxLink = document.createElement("a");	
 			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.innerHTML = "GPX Download";	
-			gpxLink.href =  window.URL.createObjectURL(bb);
-			
-			var popupContent = 
-			'<p><div class="pop_cont_name">' + feature.properties.name + '</div></p>'
-			+ '<div class="pop_cont_text">' + feature.properties.Trail_Text + '</div>' 
-			+ '<div class="pop_gpx_text">' +  gpxLink.outerHTML + '</div>'
-			+ '<div class="kofi_reminder"><br/><br/><br/><br/><br/><br/><br/><p>💓 Halte das Projekt am Leben! 🚴</p>'
-			+ '<p>⚠ Die Downloads auf Legacy Trails Tirol sind gratis - der Unterhalt der Webseite ist es leider nicht!</p>'
-			+ '<p>💲 Mit einem kleinen Beitrag für die GPX-Downloads hilfst Du, die Seite am Leben zu halten!'
-			+ '</p></div>'
-			+ '<div class="kofi_button"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
-			+	'<img id="kofi_img_div" class="kofi_img" src="/images/kofi_s_logo_nolabel.png"/>'
-			+   '<span style="margin-left:15px;">Drück mich!</span>' 	
-			+ '</div>'
-			
+			gpxLink.innerHTML = "GPX-Download";	
+			gpxLink.href = "#";
+			gpxLink.onclick = function() {
+				//window.open(bb_url);
+				window.open("https://ko-fi.com/tiroltrailhead", '_blank');
+			}
+			var popupContent = '<p><div id="pop_cont_name">' + feature.properties.name 
+			+ '</div></p><div id="pop_cont_text">' + feature.properties.Trail_Text 
+			+ '</div><div id="gpx_track">☕ ' +  gpxLink.outerHTML + ' ☕</div>';
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
 		}
 	}).addTo(map);
-	map.fitBounds(trails_json.getBounds(), {maxZoom: 15});
+	map.fitBounds(trails_json.getBounds(), {maxZoom: 16});
 });
 
 
