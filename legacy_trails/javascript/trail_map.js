@@ -291,7 +291,7 @@ $.getJSON('my_trails_z.geojson', function(json) {
 			+ '<div class="pop_gpx_text">' +  gpxLink.outerHTML + '</div>'
 			+ '<div class="kofi_reminder"><br/><br/><br/><br/><br/><br/><br/><p>💓 Halte das Projekt am Leben! 🚴</p>'
 			+ '<p>⚠ Die Downloads auf Legacy Trails Tirol sind gratis - der Unterhalt der Webseite ist es leider nicht!</p>'
-			+ '<p>💲 Mit einem kleinen Beitrag für die GPX-Downloads hilfst Du, die Seite am Leben zu halten!'
+			+ '<p>💲 Mit einem kleinen Beitrag für deinen GPX-Download hilfst Du, die Seite am Leben zu halten!'
 			+ '</p></div>'
 			+ '<div class="kofi_button"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
 			+	'<img id="kofi_img_div" class="kofi_img" src="https://tiroltrailhead.com/legacy_trails/images/kofi_s_logo_nolabel.png"/>'
