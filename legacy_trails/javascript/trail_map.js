@@ -1,10 +1,10 @@
-/* PW protection 
+/* PW protection */
 function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');  
 }
 
 var pw_prompt = prompt('Passwort eingeben um auf die Seite **Legacy Trails Tirol** zu gelangen..',' ');
-var pw = 'spareacoffee';
+var pw = 'coffee';
 // if prompt is cancelled the pw_prompt var will be null!
 if (pw_prompt == null) {
 	alert('Kein Passwort wurde angegeben! Die Seite wird nicht geladen...');
@@ -26,7 +26,6 @@ if (trim(pw_prompt) == pw ) {
 	}
 	window.location='tilt.html';
 }
-*/
 
 /*** Add base maps with controls ***/
 var map = L.map('map', {
