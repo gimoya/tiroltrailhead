@@ -40,7 +40,7 @@ body{
 
 .pop_cont_name {
     font-weight: bold;
-	font-size:1.7em;
+	font-size:2em;
 }
 
 .pop_cont_text {
@@ -50,6 +50,7 @@ body{
 	font-size:1.5em;
 	padding-top: 8px;
 	vertical-align: middle;
+	padding-left:39px;
 }
 
 .pop_gpx_text:hover + .kofi_reminder  {
@@ -87,7 +88,7 @@ body{
 /*** Navigation ***/
 
 .navbar {
-	background: #378929;
+	background: #cdb50a;
     border-width: 0px;
 }
 
@@ -176,7 +177,6 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 .kofi_button {
 	font-size:2em;
 	text-align:center;
-	
 }
 
 #kofi_img_div {
