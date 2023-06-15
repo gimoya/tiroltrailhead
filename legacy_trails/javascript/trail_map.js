@@ -282,20 +282,20 @@ $.getJSON('my_trails_z.geojson', function(json) {
 			var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});	
 			var gpxLink = document.createElement("a");	
 			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.innerHTML = "GPX-Download";	
+			gpxLink.innerHTML = "🤝 GPX-Download 🚩";	
 			gpxLink.href =  window.URL.createObjectURL(bb);
 			
 			var popupContent = 
 			'<p><div class="pop_cont_name">' + feature.properties.name + '</div></p>'
 			+ '<div class="pop_cont_text">' + feature.properties.Trail_Text + '</div>' 
 			+ '<div class="pop_gpx_text">' +  gpxLink.outerHTML + '</div>'
-			+ '<div class="kofi_reminder"><br/><br/><br/><br/><br/><br/><br/><p>💓 Halte das Projekt am Leben! 🚴</p>'
-			+ '<p>⚠ Die Downloads auf Legacy Trails Tirol sind gratis - der Unterhalt der Webseite ist es leider nicht!</p>'
+			+ '<div class="kofi_reminder"><p>💓 Halte das Projekt am Leben! 🚴</p>'
+			+ '<p>⚠ Die Downloads auf Legacy Trails Tirol sind gratis - der Unterhalt dieser Webseite ist es leider nicht!</p>'
 			+ '<p>💲 Mit einem kleinen Beitrag für deinen GPX-Download hilfst Du, die Seite am Leben zu halten!'
 			+ '</p></div>'
-			+ '<div class="kofi_button"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
+			+ '<div class="kofi_button" title="Unterstütze diese Seite!"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
 			+	'<img id="kofi_img_div" class="kofi_img" src="https://tiroltrailhead.com/legacy_trails/images/kofi_s_logo_nolabel.png"/>'
-			+   '<span style="margin-left:15px;">Click to Support!</span>' 	
+			+   '<span style="margin-left:12px;">Click to Support!</span>' 	
 			+ '</div>'
 			
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});

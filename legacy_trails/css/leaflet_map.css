@@ -47,9 +47,8 @@ body{
 }
 
 .pop_gpx_text {
-	font-size:1.5em;
-	padding-top: 8px;
-	vertical-align: middle;
+	font-size:1.75em;
+	padding-bottom: 8px;
 	padding-left:39px;
 }
 
@@ -59,14 +58,14 @@ body{
 
 .kofi_reminder {
 	display:none;
-	font-size:1.5em;
+	font-size:1.75em;
 	position:absolute;
 	top:0px;
 	left:0px;
 	width:100%;
-	height:75%;
+	height:70%;
 	background-color:rgb(200,200,200);
-	padding:10px;
+	padding: 70px 10px 0px 20px;
 }
 	
 
@@ -177,12 +176,13 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 .kofi_button {
 	font-size:2em;
 	text-align:center;
+	background-color: #cdb50a80;
+	
 }
 
 #kofi_img_div {
-  height: 36px;
-  margin-top: 7px;
-  margin-left: 5px;
+    height: 36px;
+    margin: 6px 0px 6px 0px;
 }
 
 #kofi_img_float {
