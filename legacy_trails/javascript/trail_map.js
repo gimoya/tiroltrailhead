@@ -280,10 +280,12 @@ $.getJSON('my_trails_z.geojson', function(json) {
 			/*** add a popup to each feature and.. ***/ 	
 			/*** ..set GPX link ***/
 			var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});	
-			var gpxLink = document.createElement("a");	
+			var gpxLink = document.createElement("a");
+			// gpxLink.onclick = show_kofi_reminder;		DOESNT WORK!!!???	
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX-Download";	
 			gpxLink.href =  window.URL.createObjectURL(bb);
+
 			
 			var popupContent = 
 			'<p><div class="pop_cont_name">' + feature.properties.name + '</div></p>'
@@ -306,6 +308,11 @@ $.getJSON('my_trails_z.geojson', function(json) {
 	map.fitBounds(trails_json.getBounds(), {maxZoom: 15});
 });
 
+/* DOESN'T WORK ...
+function show_kofi_reminder() {
+	console.log('hi')
+}
+*/
 
 
 /*
