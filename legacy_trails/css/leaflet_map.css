@@ -47,25 +47,29 @@ body{
 }
 
 .pop_gpx_text {
-	font-size:1.75em;
-	padding-bottom: 8px;
+	font-size:1.7em;
+	padding: 10px;
 	text-align: center;
 }
 
-.pop_gpx_text:hover + .kofi_reminder  {
-    display: block;
+.pop_gpx_text > a:focus + .kofi_reminder {
+display: block;
+}
+
+.pop_gpx_text > a:active + .kofi_reminder {
+  display: none;
 }
 
 .kofi_reminder {
 	display:none;
-	font-size:1.75em;
+	font-size:1em;
 	position:absolute;
-	bottom:30%;
+	bottom:17%;
 	left:0px;
 	width:100%;
-	height:70%;
+	height:83%;
 	background-color:rgb(200,200,200);
-	padding: 55px 10px 5px 20px;
+	padding: 20px;
 }
 	
 
@@ -199,7 +203,7 @@ leaflet-pane leaflet-tooltip-pane {
   left:20px; 
   border:0px; 
   height:36px;
-  z-index:9999999;
+  z-index:99999;
 }
 
 @keyframes shake {
