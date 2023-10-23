@@ -52,17 +52,9 @@ body{
 	text-align: center;
 }
 
-.pop_gpx_text > a:focus + .kofi_reminder {
-display: block;
-}
-
-.pop_gpx_text > a:active + .kofi_reminder {
-  display: none;
-}
-
 .kofi_reminder {
 	display:none;
-	font-size:1em;
+	font-size:1.5em;
 	position:absolute;
 	bottom:15%;
 	left:0px;
@@ -71,7 +63,15 @@ display: block;
 	background-color:rgb(200,200,200);
 	padding: 8px;
 }
-	
+
+.kofi_reminder:active {
+	display:block; 
+}
+
+.pop_gpx_text:focus + #hidden_div {
+	display: block; 
+}
+
 
 /* font awesome hack */
 .fa {
