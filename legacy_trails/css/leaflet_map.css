@@ -3,12 +3,19 @@
 html, body, #map {
     height: 100%;
     width: 100vw;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body{
     padding-top:50px;
 	min-width: 340px; 
 }
+
 
 
 .leaflet-control-locate, .leaflet-bar button {
@@ -64,12 +71,17 @@ body{
 	padding: 8px;
 }
 
-.kofi_reminder:active {
-	display:block; 
+
+.pop_gpx_text:focus + .kofi_reminder {
+display: block;
 }
 
-.pop_gpx_text:focus + #hidden_div {
-	display: block; 
+.pop_gpx_text a:focus + .kofi_reminder {
+display: block;
+}
+
+.kofi_reminder:active {
+	display:block; 
 }
 
 

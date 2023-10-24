@@ -1,4 +1,4 @@
-/* PW protection */
+/* PW protection 
 function trim(str) {
 	return str.replace(/^\s+|\s+$/g, '');  
 }
@@ -26,6 +26,7 @@ if (trim(pw_prompt) == pw ) {
 	}
 	window.location='tilt.html';
 }
+*/
 
 /*** Add base maps with controls ***/
 var map = L.map('map', {
@@ -284,12 +285,13 @@ $.getJSON('my_trails_z.geojson', function(json) {
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX-Download";	
 			gpxLink.href =  window.URL.createObjectURL(bb);
+			gpxLink.tabIndex = "0";
 			  
 			var popupContent = 
 			'<p><div class="pop_cont_name">' + feature.properties.name + '</div></p>'
 			+ '<div class="pop_cont_text">' + feature.properties.Trail_Text + '</div>' 
-			+ '<div tabindex="1" class="pop_gpx_text">🤝 ' +  gpxLink.outerHTML + ' 🚩</div>'
-			+ '<div class="kofi_reminder" id="hidden_div">'
+			+ '<div tabindex="0" class="pop_gpx_text">🤝 ' +  gpxLink.outerHTML + ' 🚩</div>'
+			+ '<div class="kofi_reminder">'
 				+ '<p>🚴 Dein GPX-Track wird heruntergeladen..</p>'
 				+ '<p>💓 Bitte halte das Projekt am Leben!</p>'
 				+ '<p>⚠ Die Downloads auf Legacy Trails Tirol sind gratis - der Betrieb dieser Webseite ist es leider nicht!💲</p>'
