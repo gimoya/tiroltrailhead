@@ -307,7 +307,7 @@ $.getJSON('my_trails_z.geojson', function(json) {
 					+ '<p>Mit einem kleinen Beitrag für deinen GPX-Download hilfst Du, die Seite am Leben zu halten!</p>'
 					+ '<div class="kofi_button" title="Unterstütze diese Seite!"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
 					+	'<img id="kofi_img_div" class="kofi_img" src="https://tiroltrailhead.com/legacy_trails/images/kofi_s_logo_nolabel.png"/>'
-					+   '<span style="margin-left:14px;">Support!</span>' 	
+					+   '<span style="margin-left:14px;">Click to Support!</span>' 	
 					+ '</div>'
 				+ '</div>'
 			+ '</div>'

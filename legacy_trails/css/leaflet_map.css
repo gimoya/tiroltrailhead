@@ -16,7 +16,9 @@ body{
 	min-width: 340px; 
 }
 
-
+.leaflet-control-attribution {
+	font-size: 1.4em;
+}
 
 .leaflet-control-locate, .leaflet-bar button {
 	font-size:12px;
@@ -50,9 +52,6 @@ body{
 	font-size:2em;
 }
 
-.pop_cont_text {
-}
-
 .pop_gpx_text {
 	font-size:1.7em;
 	padding: 10px;
@@ -62,7 +61,7 @@ body{
 }
 
 .kofi_reminder {
-	display:none;
+	visibility:hidden;
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -72,12 +71,8 @@ body{
 	padding: 8px;
 }
 
-.pop_gpx_text > a:focus + .kofi_reminder {
-  display: block;
-}
-
-.kofi_reminder:active {
-	display:block;
+.pop_gpx_text > a:focus + .kofi_reminder, .pop_gpx_text > a:active + .kofi_reminder {
+  visibility: visible;
 }
 
 
