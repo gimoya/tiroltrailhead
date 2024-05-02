@@ -284,12 +284,15 @@ $.getJSON('my_trails_z.geojson', function(json) {
 			var gpxLink = document.createElement("a");
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX-Download";	
-			gpxLink.href =  window.URL.createObjectURL(bb);
-			
+
 			/* setting onClick here does nothing? */
 			gpxLink.onClick = function() {
 				document.getElementsByClassName("kofi_reminder")[0].style.visibility = 'visible';
 			};
+			/* set dwonload blob via href attribute */
+			gpxLink.href =  window.URL.createObjectURL(bb);
+			
+
 	
 			/*
 			var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});	
