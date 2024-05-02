@@ -71,11 +71,6 @@ body{
 	padding: 8px;
 }
 
-.pop_gpx_text > a:focus + .kofi_reminder, .pop_gpx_text > a:active + .kofi_reminder {
-  visibility: visible;
-}
-
-
 /* font awesome hack */
 .fa {
     line-height: 30px!important;
