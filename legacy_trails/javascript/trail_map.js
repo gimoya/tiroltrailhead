@@ -284,30 +284,15 @@ $.getJSON('my_trails_z.geojson', function(json) {
 			var gpxLink = document.createElement("a");
 			gpxLink.download = feature.properties.name + ".gpx";
 			gpxLink.innerHTML = "GPX-Download";	
-
-			/* setting onClick here does nothing? */
-			gpxLink.onClick = function() {
-				document.getElementsByClassName("kofi_reminder")[0].style.visibility = 'visible';
-			};
+			gpxLink.id = "gpxLink_ID";
+			
 			/* set dwonload blob via href attribute */
 			gpxLink.href =  window.URL.createObjectURL(bb);
-			
-
-	
-			/*
-			var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});	
-			var gpxButton = document.createElement("BUTTON");
-			gpxButton.innerHTML = "GPX-Download";	
-			gpxButton.setAttribute("href", window.URL.createObjectURL(bb));
-			gpxButton.setAttribute("target", '_blank');		
-			gpxButton.setAttribute("download", feature.properties.name + '.gpx');			
-			*/
 			
 			var popupContent = 
 			'<p><div class="pop_cont_name">' + feature.properties.name + '</div></p>'
 			+ '<div class="pop_cont_text">' + feature.properties.Trail_Text + '</div>' 
-			+ '<div class="pop_gpx_text">🤝 ' +  gpxLink.outerHTML + ' 🚩'
-			/*+ '<div class="pop_gpx_text">🤝 ' +  gpxButton.outerHTML + ' 🚩</div>'*/
+			+ '<div class="pop_gpx_text">🤝 ' +  gpxLink.outerHTML + ' 🚩'+ '</div>'
 				+ '<div class="kofi_reminder">'
 					+ '<p>🚴 Dein GPX-Track wird heruntergeladen..</p>'
 					+ '<p>💓 Bitte halte das Projekt am Leben!</p>'
@@ -316,7 +301,6 @@ $.getJSON('my_trails_z.geojson', function(json) {
 					+ '<div class="kofi_button" title="Unterstütze diese Seite!"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
 					+	'<img id="kofi_img_div" class="kofi_img" src="https://tiroltrailhead.com/legacy_trails/images/kofi_s_logo_nolabel.png"/>'
 					+   '<span style="margin-left:14px;">Click to Support!</span>' 	
-					+ '</div>'
 				+ '</div>'
 			+ '</div>'
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
@@ -325,7 +309,18 @@ $.getJSON('my_trails_z.geojson', function(json) {
 	map.fitBounds(trails_json.getBounds(), {maxZoom: 15});
 });
 
-				
+/*** Add event listener for click events on document ***/
+
+document.addEventListener('click', function(event) {
+  if (event.target === document.getElementById('gpxLink_ID')) {
+    var kofiReminder = document.querySelector('.kofi_reminder');
+    if (kofiReminder) {
+      kofiReminder.style.visibility = 'visible';
+	  kofiReminder.style.opacity = 1;
+    }
+  }
+});
+
 /*
 Points of interest
 
