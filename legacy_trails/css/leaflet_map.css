@@ -62,7 +62,7 @@ body{
 
 .kofi_reminder {
 	padding: 8px;
-	font-size:2em;
+	font-size:1.8em;
 	transition:1s;
 	opacity:0;
 	visibility:hidden;
@@ -117,7 +117,7 @@ body{
 }
 
 .navbar-toggle {
-	background-color: #fff!important;
+    background-color: #fff!important;
     position: relative;
     float: right;
     padding: 9px 10px;
