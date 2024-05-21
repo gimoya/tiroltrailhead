@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Kay" projectname="" version="3.28.11-Firenze" saveUser="Kay" saveDateTime="2024-05-21T13:34:09">
+<qgis saveUserFull="Kay" projectname="" version="3.28.11-Firenze" saveUser="Kay" saveDateTime="2024-05-21T14:08:19">
   <homePath path=""/>
   <title></title>
   <transaction mode="Disabled"/>
@@ -299,10 +299,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>1287632.15167321427725255</xmin>
-      <ymin>5940109.33435045462101698</ymin>
-      <xmax>1383240.83486325270496309</xmax>
-      <ymax>6018845.89697746466845274</ymax>
+      <xmin>1277407.22447760589420795</xmin>
+      <ymin>5977386.94021388236433268</ymin>
+      <xmax>1281342.72893249150365591</xmax>
+      <ymax>5977731.77384463418275118</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -7620,7 +7620,7 @@ def my_form_open(dialog, layer, feature):
       <defaults>
         <default applyOnUpdate="0" expression="" field="name"/>
         <default applyOnUpdate="0" expression="" field="Trail_Char"/>
-        <default applyOnUpdate="1" expression="concat(&#xd;&#xa;&#x9;'&lt;pre style=&quot;tab-size:3;&quot;>' ||&#xd;&#xa;&#x9;'Flow:&#x9;&#x9;', Flow, '|', Flow_Killer ||&#xd;&#xa;&#x9;'&lt;br/>Tech:&#x9;&#x9;', Tech ||&#xd;&#xa;&#x9;'&lt;br/>Gravity: ', Gravity ||&#xd;&#xa;&#x9;'&lt;br/>Risk:&#x9;&#x9;', Risk ||&#xd;&#xa;&#x9;if (length(Status) > 0, '&lt;br/>Status:&#x9;' || Status, '') ||&#xd;&#xa;&#x9;'&lt;br/>&lt;br/>Länge:&#x9;', round($length/1000,1), ' km' ||&#xd;&#xa;&#x9;'&lt;br/>Uphill:&#x9;', ele_gain, ' hm' ||&#xd;&#xa;&#x9;'&lt;br/>Downhill:', ele_loss, ' hm' || '&lt;br/>' ||&#xd;&#xa;&#x9;if(length(Gem) > 0, '&lt;br/>Holy Trail:&#x9;' || Gem, '') ||&#xd;&#xa;&#x9;if(length(Verbot)>0, '&lt;br/>Verbot:&#x9;' || Verbot, '') ||&#xd;&#xa;&#x9;if(length(Wanderer)>0, '&lt;br/>Fussgeher:&#x9;' || Wanderer, '')&#x9;|| &#xd;&#xa;&#x9;'&lt;/pre>'&#xd;&#xa;)" field="Trail_Text"/>
+        <default applyOnUpdate="1" expression="concat(&#xd;&#xa;&#x9;'&lt;pre style=&quot;tab-size:3;&quot;>' ||&#xd;&#xa;&#x9;'Flow:&#x9;&#x9;&#x9;', Flow, '|', Flow_Killer ||&#xd;&#xa;&#x9;'&lt;br/>Tech:&#x9;&#x9;&#x9;', Tech ||&#xd;&#xa;&#x9;'&lt;br/>Gravity:&#x9;&#x9;', Gravity ||&#xd;&#xa;&#x9;'&lt;br/>Risk:&#x9;&#x9;&#x9;', Risk ||&#xd;&#xa;&#x9;if (length(Status) > 0, '&lt;br/>Status:&#x9;&#x9;' || Status, '') ||&#xd;&#xa;&#x9;'&lt;br/>&lt;br/>Länge:&#x9;&#x9;', round($length/1000,1), ' km' ||&#xd;&#xa;&#x9;'&lt;br/>Uphill:&#x9;&#x9;', ele_gain, ' hm' ||&#xd;&#xa;&#x9;'&lt;br/>Downhill:&#x9;', ele_loss, ' hm' || '&lt;br/>' ||&#xd;&#xa;&#x9;if(length(Gem) > 0, '&lt;br/>Holy Trail:&#x9;' || Gem, '') ||&#xd;&#xa;&#x9;if(length(Verbot)>0, '&lt;br/>Verbot:&#x9;&#x9;' || Verbot, '') ||&#xd;&#xa;&#x9;if(length(Wanderer)>0, '&lt;br/>Fussgeher:&#x9;' || Wanderer, '')&#x9;|| &#xd;&#xa;&#x9;'&lt;/pre>'&#xd;&#xa;)" field="Trail_Text"/>
         <default applyOnUpdate="1" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))-1),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1)) - &#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element>=0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" field="ele_gain"/>
         <default applyOnUpdate="1" expression="with_variable('my_num',&#xd;&#xa;&#x9;array_sum(&#xd;&#xa;&#x9;&#x9;array_filter(&#xd;&#xa;&#x9;&#x9;&#x9;array_foreach(generate_series(1,num_geometries(nodes_to_points($geometry))-1),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element+1)) - &#xd;&#xa;&#x9;&#x9;&#x9;&#x9;z(geometry_n( nodes_to_points($geometry), @element))&#xd;&#xa;&#x9;&#x9;&#x9;), @element&lt;=0&#xd;&#xa;&#x9;&#x9;)&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(@my_num IS NULL, 0,&#xd;&#xa;&#x9;round(@my_num,0)*-1&#xd;&#xa;&#x9;)&#xd;&#xa;)" field="ele_loss"/>
         <default applyOnUpdate="1" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'LLL', '💎'),&#xd;&#xa;&#x9;&#x9;&#x9;'LL', ''),&#xd;&#xa;&#x9;&#x9;'L', ''),&#xd;&#xa;&#x9;'-', ''&#xd;&#xa;&#x9;),&#xd;&#xa;'💎')" field="Gem"/>
@@ -7628,7 +7628,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="1" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'RRR', '💀💀💀'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;&#x9;'RR', '💀💀o'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;'R', '💀oo'),&#xd;&#xa;&#x9;&#x9;&#x9;'[-,'']', 'ooo'), &#xd;&#xa;&#x9;&#x9;'[💀, o, ?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#x9;&#xd;&#xa;&#x9;" field="Risk"/>
         <default applyOnUpdate="1" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'TTT', '🔶'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;'TT', '🔶🔶o'),&#xd;&#xa;&#x9;&#x9;&#x9;'T', '🔶oo'), &#xd;&#xa;&#x9;&#x9;'[🔶,o,?]+'),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" field="Tech"/>
         <default applyOnUpdate="1" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'XXX', '👎👎👎'),&#xd;&#xa;&#x9;&#x9;&#x9;'XX', '👎👎o'),&#xd;&#xa;&#x9;&#x9;'X', '👎oo'), &#xd;&#xa;&#x9;&#x9;'[👎,o,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" field="Flow_Killer"/>
-        <default applyOnUpdate="1" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'KKK', '👨‍👦👨‍👦👨‍👦👨‍👦'),&#xd;&#xa;&#x9;&#x9;&#x9;'XX', '👨‍👦👨‍👦'),&#xd;&#xa;&#x9;&#x9;&#x9;'X', '👨‍👦'), &#xd;&#xa;&#x9;&#x9;&#x9;'[👨‍👦,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" field="Wanderer"/>
+        <default applyOnUpdate="1" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'KKK', '👨‍👦👨‍👦👨‍👦'),&#xd;&#xa;&#x9;&#x9;&#x9;'KK', '👨‍👦👨‍👦'),&#xd;&#xa;&#x9;&#x9;&#x9;'K', '👨‍👦'), &#xd;&#xa;&#x9;&#x9;&#x9;'[👨‍👦,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" field="Wanderer"/>
         <default applyOnUpdate="1" expression="regexp_substr(&#xd;&#xa;&#x9;regexp_replace(  Trail_Char , 'K!', '🚳'),&#xd;&#xa;&#x9;'🚳'&#xd;&#xa;)" field="Verbot"/>
         <default applyOnUpdate="1" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'FFF', '👍👍👍'),&#xd;&#xa;&#x9;&#x9;&#x9;'FF', '👍👍o'),&#xd;&#xa;&#x9;&#x9;'F', '👍oo'), &#xd;&#xa;&#x9;&#x9;'[👍,o,?]+'&#xd;&#xa;&#x9;),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" field="Flow"/>
         <default applyOnUpdate="1" expression="with_variable('my_string', &#xd;&#xa;&#x9;regexp_substr(&#xd;&#xa;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;regexp_replace(&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;regexp_replace( Trail_Char, 'BBB', '❌❌❌'),&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;'BB', '❌❌o'),&#xd;&#xa;&#x9;&#x9;&#x9;'B', '❌oo'), &#xd;&#xa;&#x9;&#x9;'[❌,o,?]+'),&#xd;&#xa;&#x9;if(length(@my_string)=0, &#xd;&#xa;&#x9;&#x9;'ooo',&#xd;&#xa;&#x9;&#x9;@my_string&#xd;&#xa;&#x9;)&#xd;&#xa;)&#xd;&#xa;" field="Status"/>
@@ -7713,7 +7713,7 @@ def my_form_open(dialog, layer, feature):
           <actionScope id="Feature"/>
         </actionsetting>
       </attributeactions>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;ID&quot;" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;name&quot;" sortOrder="1">
         <columns>
           <column hidden="0" width="44" name="ID" type="field"/>
           <column hidden="0" width="171" name="name" type="field"/>
@@ -15876,7 +15876,7 @@ def closeProject():
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent xmax="1402643.77351057413034141" ymax="6018845.89697746466845274" ymin="5940109.33435045462101698" xmin="1268229.21302589285187423">
+    <DefaultViewExtent xmax="1281342.72893249150365591" ymax="5978712.01523780263960361" ymin="5976406.69882071390748024" xmin="1277407.22447760589420795">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
         <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
