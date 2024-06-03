@@ -228,44 +228,48 @@ $.getJSON('my_trails_z.geojson', function(json) {
 		style: 	styleLines,
 		
 		onEachFeature: function(feature, layer) {
+			
+			if(feature.geometry.coordinates.length > 0) {
 					
-			var stPt = [feature.geometry.coordinates[0][1], 
-						feature.geometry.coordinates[0][0],  
-						]; // need to flip xy-coords!
-			var endPt = [feature.geometry.coordinates[feature.geometry.coordinates.length - 1][1],
-						feature.geometry.coordinates[feature.geometry.coordinates.length - 1][0], 
-						];
-			
-	
-			// Add Start and End Markers to each Feature 
-			new L.circleMarker(stPt, {
-					color: 'darkslategrey',
-					fillColor: 'lightgreen',	
-					fillOpacity: 1,				
-					radius: 3.5,
-					weight:1.5,
-					pane: 'ptsPane'
-				})
-				.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Start (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)</div>', {
-					permanent: false, 
-					direction: 'right'
-				})
-				.addTo(map);
-			
-			new L.circleMarker(endPt, {
-					color: 'darkslategrey',
-					fillColor: 'pink',
-					fillOpacity: 1,
-					radius: 3.5,
-					weight:1.5,	
-					pane: 'ptsPane'
-				})	
-				.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Ende (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)</div>', {
-					permanent: false, 
-					direction: 'right'
-				})
-				.addTo(map)	
-			
+				var stPt = [feature.geometry.coordinates[0][1], 
+							feature.geometry.coordinates[0][0],  
+							]; // need to flip xy-coords!
+				var endPt = [feature.geometry.coordinates[feature.geometry.coordinates.length - 1][1],
+							feature.geometry.coordinates[feature.geometry.coordinates.length - 1][0], 
+							];
+				
+		
+				// Add Start and End Markers to each Feature 
+				new L.circleMarker(stPt, {
+						color: 'darkslategrey',
+						fillColor: 'lightgreen',	
+						fillOpacity: 1,				
+						radius: 3.5,
+						weight:1.5,
+						pane: 'ptsPane'
+					})
+					.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Start (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)</div>', {
+						permanent: false, 
+						direction: 'right'
+					})
+					.addTo(map);
+				
+				new L.circleMarker(endPt, {
+						color: 'darkslategrey',
+						fillColor: 'pink',
+						fillOpacity: 1,
+						radius: 3.5,
+						weight:1.5,	
+						pane: 'ptsPane'
+					})	
+					.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Ende (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)</div>', {
+						permanent: false, 
+						direction: 'right'
+					})
+					.addTo(map)
+			} else {
+				console.log(feature.properties.name + ':\n' + feature.geometry.coordinates.length);
+			}
 			
 			// on events
 			layer.on({		
