@@ -175,11 +175,6 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 	line-height:1;
 }
 
-/*** tooltips  ***/
-leaflet-pane leaflet-tooltip-pane {
-	font-size:1.7em;
-}
-
 /*** KO-FI Styles ***/
 .kofi_img {
   animation: shake 2s;
@@ -219,5 +214,12 @@ leaflet-pane leaflet-tooltip-pane {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+.pt_labels {
+	font-size: 1.5em;
+	padding-top:0;
+	padding-bottom:0;
 }
 

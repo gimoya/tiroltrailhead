@@ -28,6 +28,11 @@ if (trim(pw_prompt) == pw ) {
 }
 */
 
+/*** increase click tolerance by renderer (will only be set for specific layers) ***/
+const canvasRenderer = L.canvas({
+  tolerance: 2
+});
+
 /*** Add base maps with controls ***/
 var map = L.map('map', {
   zoom: 12,
@@ -35,12 +40,6 @@ var map = L.map('map', {
   minZoom: 11,
   zoomControl: false,
   attributionControl: false
-	/*
-	click tolerance radius not working 
-	throws error _renderer not defined
-	https://github.com/makinacorpus/Leaflet.TextPath/issues/87
-	renderer: L.canvas({ tolerance: 5 })
-	*/
 });
 
 new L.control.attribution({position: 'bottomright'}).addTo(map);
@@ -140,9 +139,10 @@ L.control.locate({
 
 function highlight (layer) {	// will be used on hover
 	layer.setStyle({
-		weight: 4,
+		color: '#E5551B',
+		weight: 4.3,
 		dashArray: '',
-		opacity: 0.95
+		opacity: 0.9
 	});
 	if (!L.Browser.ie && !L.Browser.opera) {
 		layer.bringToFront();
@@ -152,8 +152,8 @@ function highlight (layer) {	// will be used on hover
 function styleLines(feature) {	// deafult style used for constructor of json
     return {
 		color: '#FF5F1F',
-		weight: 3,
-		opacity: 0.8,
+		weight: 3.6,
+		opacity: 0.85,
 		lineJoin: 'round',  //miter | round | bevel 
     };
 }
@@ -215,15 +215,21 @@ function doClickStuff(e) {
 	
 }
 
-/*** Add Trails ***/
-
 /* Start/End pts in different pane ontop of trails */ 
+
 map.createPane('ptsPane');
 map.getPane('ptsPane').style.zIndex = 600;
+
+
+/*** Add Trails ***/
 
 $.getJSON('my_trails_z.geojson', function(json) {
 	
 	trails_json = L.geoJson(json, {
+		
+		/* throws error! and messes up canvas... 
+		renderer: canvasRenderer,
+		*/
 		
 		style: 	styleLines,
 		
@@ -248,9 +254,10 @@ $.getJSON('my_trails_z.geojson', function(json) {
 						weight:1.5,
 						pane: 'ptsPane'
 					})
-					.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Start (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)</div>', {
+					.bindTooltip('<div id="pop_cont_name"><strong>Start:</strong> ' + feature.properties.name + '</br><strong>Seehöhe:</strong> ' + Math.round(feature.geometry.coordinates[0][2]) + ' m</div>', {
 						permanent: false, 
-						direction: 'right'
+						direction: 'right',
+						className: "pt_labels"
 					})
 					.addTo(map);
 				
@@ -262,9 +269,10 @@ $.getJSON('my_trails_z.geojson', function(json) {
 						weight:1.5,	
 						pane: 'ptsPane'
 					})	
-					.bindTooltip('<div id="pop_cont_name">' + feature.properties.name + ' - Ende (' + Math.round(feature.geometry.coordinates[0][2]) + ' m)</div>', {
+					.bindTooltip('<div id="pop_cont_name"><strong>Ende:</strong> ' + feature.properties.name + '</br><strong>Seehöhe:</strong> ' + Math.round(feature.geometry.coordinates[0][2]) + ' m</div>', {
 						permanent: false, 
-						direction: 'right'
+						direction: 'right',
+						className: "pt_labels"
 					})
 					.addTo(map)
 			} else {
