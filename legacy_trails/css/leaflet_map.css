@@ -92,7 +92,7 @@ body{
 /*** Navigation ***/
 
 .navbar {
-	background: #cdb50a;
+	background: #02b6f7b8;
     border-width: 0px;
 }
 
@@ -222,4 +222,22 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 	padding-top:0;
 	padding-bottom:0;
 }
+
+#gallery {
+
+}
+
+.close-btn {
+		color: black;
+		padding: 5px 10px;
+		background: #ccc;
+		cursor: hand;
+		position: relative;
+		right: 10px;
+		top: 0;
+	}
+.close-btn:hover {
+		background: #aaa;
+}
+
 

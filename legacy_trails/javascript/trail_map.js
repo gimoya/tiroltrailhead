@@ -28,6 +28,11 @@ if (trim(pw_prompt) == pw ) {
 }
 */
 
+function show_gallery () {
+		$(this).fadeIn('slow');
+}
+
+
 /*** increase click tolerance by renderer (will only be set for specific layers) ***/
 const canvasRenderer = L.canvas({
   tolerance: 2
@@ -382,4 +387,3 @@ map.on("click", function(e){
 	if (selected!== null) selected.setText(null);
 	
 });
-

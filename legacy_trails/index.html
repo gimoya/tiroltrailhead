@@ -38,7 +38,7 @@
 		  <nav class="navbar navbar-default navbar-fixed-top noselect">
 			<div class="navbar-header">
 			  <button type="button" class="navbar-toggle glyphicon glyphicon-menu-hamburger" data-toggle="collapse" data-target="#navbar"></button>
-			  <a class="navbar-brand" href="#">🌲LEGACY Trails Tirol💎</a>
+			  <a class="navbar-brand noselect" href="#">🌲LEGACY Trails Tirol💎</a>
 			</div>
 			<div class="collapse navbar-collapse noselect" id="navbar">
 			  <ul class="nav navbar-nav navbar-right noselect">
@@ -46,18 +46,26 @@
 				<li><a href="https://youtu.be/Bm4lwxJjiNE">Sei kein Arsch!</a></li>
 				<li><a href="https://www.tiroltrailhead.com/guiding">Guiding</a></li>
 				<li><a href="https://instagram.com/tiroltrailhead">Instagram</a></li>
+				<!--li><a href="#gallery" onclick="show_gallery();return false;">Instagram</a></li-->
 			  </ul>
 			</div>
 		  </nav>
 		</header>
-
 		
+		<!-- GALLERY 
+		<section id="gallery">
+			<div class="close-btn" title="Click to close" onclick="$(this).parent().fadeOut('slow');">X</div>
+			gallery
+		</section>
+		<!-- Gallery end -->
 		
 		<!-- container % script for map -->
 		<section id="map">
+
 			<!-- display error message -->
 			<span id="errorMsg"></span>
 		</section>
+		
 		<script type="text/javascript" src="javascript/trail_map.js"></script>
 		
 		<!-- KO-FI SCRIPTS --> 	
