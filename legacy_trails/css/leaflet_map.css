@@ -61,8 +61,9 @@ body{
 }
 
 .kofi_reminder {
-	padding: 8px;
-	font-size:1.8em;
+	padding: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size:2em;
 	transition:1s;
 	opacity:0;
 	visibility:hidden;
