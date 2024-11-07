@@ -274,7 +274,7 @@ $.getJSON('my_trails_z.geojson', function(json) {
 						weight:1.5,	
 						pane: 'ptsPane'
 					})	
-					.bindTooltip('<div id="pop_cont_name"><strong>Ende:</strong> ' + feature.properties.name + '</br><strong>Seehöhe:</strong> ' + Math.round(feature.geometry.coordinates[0][2]) + ' m</div>', {
+					.bindTooltip('<div id="pop_cont_name"><strong>Ende:</strong> ' + feature.properties.name + '</br><strong>Seehöhe:</strong> ' + Math.round(feature.geometry.coordinates[feature.geometry.coordinates.length - 1][2]) + ' m</div>', {
 						permanent: false, 
 						direction: 'right',
 						className: "pt_labels"
