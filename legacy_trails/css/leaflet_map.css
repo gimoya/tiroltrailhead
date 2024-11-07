@@ -25,6 +25,20 @@ body{
 	font-family:unset;
 }
 
+.leaflet-popup-content {
+    line-height:1;
+}
+
+.leaflet-popup-content p {
+    margin: 1em 0;
+}
+
+.leaflet-touch .leaflet-bar button {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
 .easy-button-button .button-state {
     display: block;
     width: 100%;
@@ -35,11 +49,6 @@ body{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
-.leaflet-touch .leaflet-bar button {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
 }
 
 @font-face {
@@ -154,12 +163,8 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     padding: 5px;
     text-align: left;
     border-radius: 0px!important;
-	width: 300px;
+    width: 300px;
 }	
-
-.leaflet-popup-content {
-	line-height:1;
-}
 
 /*** KO-FI Styles ***/
 .kofi_reminder {
@@ -183,12 +188,9 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 }
 
 .kofi_button {
-  margin-top: -5px;	
-  padding: 5px;
-  font-size:2em;
-  text-align:center;
-  border-style: hidden;
-  background-color: #e0d692;
+    font-size: 2em;
+    text-align: center;
+    padding: 3px;
 }
 
 .kofi_button:hover {
