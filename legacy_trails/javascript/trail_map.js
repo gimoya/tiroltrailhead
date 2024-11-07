@@ -315,9 +315,10 @@ $.getJSON('my_trails_z.geojson', function(json) {
 					+ '<p>💲 Die Downloads auf dieser Seite sind gratis, aber der Betrieb dieser <strong>Webseite kostet Geld!</strong></p>'
 					+ '<p>🤝 Für den GPX-Download kannst Du dich <strong>mit einem freien Beitrag</strong> erkenntlich zeigen!</p>'
 					+ '<p>💓 Bitte hilf mit, das Projekt am Leben zu halten!</p>'
-					+ '<div class="kofi_button" title="Unterstütze diese Seite!"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
-					+	'<img id="kofi_img_div" class="kofi_img" src="https://tiroltrailhead.com/legacy_trails/images/kofi_s_logo_nolabel.png"/>'
-					+   '<span style="margin-left:14px;">Support!👋</span>' 	
+					+ '<div class="kofi_button"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
+					+ 	'<img id="kofi_img_div" class="kofi_img" src="https://tiroltrailhead.com/legacy_trails/images/kofi_s_logo_nolabel.png">'
+					+	'<button type="button">Support!👋</button></a>'
+					+ '</div>'
 				+ '</div>'
 			+ '</div>'
 			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
