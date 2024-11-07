@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Kay Cichini" saveDateTime="2024-09-19T14:19:39" version="3.34.7-Prizren" saveUser="kayci_76pke" projectname="">
+<qgis saveUserFull="Kay Cichini" saveDateTime="2024-09-19T14:38:12" version="3.34.7-Prizren" saveUser="kayci_76pke" projectname="">
   <homePath path=""/>
   <title></title>
   <transaction mode="Disabled"/>
@@ -96,12 +96,12 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer providerKey="wms" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://proxy.nakarte.me/https/heatmap-external-a.strava.com/tiles-auth/run/blue/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=17&amp;zmin=0&amp;http-header:referer=" id="_39f2ff87_d452_4aa1_a448_931a14c44d1f" legend_split_behavior="0" name="Strava Run Proxy" checked="Qt::Unchecked" expanded="1" legend_exp="" patch_size="-1,-1">
+      <layer-tree-layer providerKey="wms" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=https://proxy.nakarte.me/https/heatmap-external-a.strava.com/tiles-auth/run/blue/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=17&amp;zmin=0&amp;http-header:referer=" id="_39f2ff87_d452_4aa1_a448_931a14c44d1f" legend_split_behavior="0" name="Strava Run Proxy" checked="Qt::Checked" expanded="1" legend_exp="" patch_size="-1,-1">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer providerKey="wms" source="crs=EPSG:3857&amp;format&amp;tilePixelRatio=1&amp;type=xyz&amp;url=https://proxy.nakarte.me/https/heatmap-external-a.strava.com/tiles-auth/ride/hot/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=0&amp;http-header:referer=OpenStreetMap%20contributors,%20under%20ODbL" id="_c9818a9b_6770_4999_a646_fa19eb267385" legend_split_behavior="0" name="Strava Ride Proxy" checked="Qt::Checked" expanded="1" legend_exp="" patch_size="-1,-1">
+      <layer-tree-layer providerKey="wms" source="crs=EPSG:3857&amp;format&amp;tilePixelRatio=1&amp;type=xyz&amp;url=https://proxy.nakarte.me/https/heatmap-external-a.strava.com/tiles-auth/ride/hot/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=0&amp;http-header:referer=OpenStreetMap%20contributors,%20under%20ODbL" id="_c9818a9b_6770_4999_a646_fa19eb267385" legend_split_behavior="0" name="Strava Ride Proxy" checked="Qt::Unchecked" expanded="1" legend_exp="" patch_size="-1,-1">
         <customproperties>
           <Option/>
         </customproperties>
@@ -257,10 +257,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>1274219.27466948586516082</xmin>
-      <ymin>5978998.42092261929064989</ymin>
-      <xmax>1277016.12868233048357069</xmax>
-      <ymax>5980738.72680365759879351</ymax>
+      <xmin>1272750.37800938845612109</xmin>
+      <ymin>5976665.05931245815008879</ymin>
+      <xmax>1280520.99110943102277815</xmax>
+      <ymax>5981500.22182546649128199</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -346,14 +346,14 @@
       </legendlayer>
     </legendgroup>
     <legendgroup open="true" name="BASEMAPS" checked="Qt::Checked">
-      <legendlayer showFeatureCount="0" open="true" drawingOrder="-1" name="Strava Run Proxy" checked="Qt::Unchecked">
+      <legendlayer showFeatureCount="0" open="true" drawingOrder="-1" name="Strava Run Proxy" checked="Qt::Checked">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="_39f2ff87_d452_4aa1_a448_931a14c44d1f" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="_39f2ff87_d452_4aa1_a448_931a14c44d1f" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer showFeatureCount="0" open="true" drawingOrder="-1" name="Strava Ride Proxy" checked="Qt::Checked">
+      <legendlayer showFeatureCount="0" open="true" drawingOrder="-1" name="Strava Ride Proxy" checked="Qt::Unchecked">
         <filegroup hidden="false" open="true">
-          <legendlayerfile isInOverview="0" layerid="_c9818a9b_6770_4999_a646_fa19eb267385" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="_c9818a9b_6770_4999_a646_fa19eb267385" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer showFeatureCount="0" open="true" drawingOrder="-1" name="Google Hybrid" checked="Qt::Unchecked">
@@ -7924,7 +7924,7 @@ def my_form_open(dialog, layer, feature):
           <actionScope id="Feature"/>
         </actionsetting>
       </attributeactions>
-      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="1" sortExpression="&quot;TFs&quot;">
+      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="1" sortExpression="&quot;ID&quot;">
         <columns>
           <column hidden="0" name="fid" width="85" type="field"/>
           <column hidden="0" name="ID" width="44" type="field"/>
@@ -12706,7 +12706,7 @@ def closeProject():
   <Sensors/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent ymin="5978962.27622134517878294" xmax="1277016.12868233048357069" ymax="5980774.87150493171066046" xmin="1274219.27466948586516082">
+    <DefaultViewExtent ymin="5976564.63702086452394724" xmax="1280520.99110943102277815" ymax="5981600.64411706011742353" xmin="1272750.37800938845612109">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
         <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
