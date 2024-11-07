@@ -1,4 +1,3 @@
-cd ~
 cd C:/GitHub/tiroltrailhead
 
 echo -e "\n---\n  Pull from Remote??\n  Hit y/n + [Enter]:"
