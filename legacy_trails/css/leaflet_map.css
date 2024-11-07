@@ -193,7 +193,7 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     padding: 3px;
 }
 
-.kofi_button:hover {
+.kofi_button button:hover {
    background-color: #cdb50a80;
    transition: color 0.4s;
 }
