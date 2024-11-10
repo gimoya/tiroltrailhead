@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveDateTime="2024-11-07T10:21:33" version="3.34.7-Prizren" saveUserFull="Kay Cichini" saveUser="kayci_76pke" projectname="">
+<qgis saveDateTime="2024-11-07T11:31:21" version="3.34.7-Prizren" saveUserFull="Kay Cichini" saveUser="kayci_76pke" projectname="">
   <homePath path=""/>
   <title></title>
   <transaction mode="Disabled"/>
@@ -116,17 +116,7 @@
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer legend_exp="" name="DGM_TIROL_5m_epsg3857" source="../../../../OPEN_DATA_GIS/Tirol/DGM-5m-Tirol/DGM_TIROL_5m_epsg3857.tif" legend_split_behavior="0" checked="Qt::Unchecked" patch_size="-1,-1" providerKey="gdal" expanded="0" id="DGM_TIROL_5m_epsg3857_228b9b0e_1ed1_44a6_8ffa_aeae9b80880c">
-        <customproperties>
-          <Option/>
-        </customproperties>
-      </layer-tree-layer>
       <layer-tree-layer legend_exp="" name="Strava All" source="crs=EPSG:3857&amp;format&amp;tilePixelRatio=1&amp;type=xyz&amp;url=https://heatmap-external-a.strava.com/tiles-auth/all/red/%7Bz%7D/%7Bx%7D/%7By%7D.png?Key-Pair-Id%3DAPKAIDPUN4QMG7VUQPSA%26Policy%3DeyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHBzOi8vaGVhdG1hcC1leHRlcm5hbC0qLnN0cmF2YS5jb20vKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTcxOTQ3MzUzMH0sIkRhdGVHcmVhdGVyVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzE4MjQ5NTMwfX19XX0_%26Signature%3Dl3DEGr7xNAkU8iulP6xYsHIMCzbz1asxOvvRFvChZwJtxcYvHHZrHJAB~vLhkX46sLWqspRGEcwQ1iHrgYzFfjivt6dWvi3juYfWWaQNqTs-f~7RBV9Mkr5BmJPaVveCBuVvZzbj7DKrf4-EjWPAiy3xDfma9u2v2ORPm1XrAzsBeqqDMOxtjWjRXaiOc2qFWem-eNhRs50SHP5KZatqqezHjEk960h2jgCePNT81j9aWnk2L80qIclPkq81NxhsA6odtV-aMY~jXLwiA1Q2jB~gI7jpL1Wp-tvfQvwCbxrBt4HM7qttVNAHtlrwnEmmHpN5x3Bjqd3o9GrEN1Q5fQ__&amp;zmax=17&amp;zmin=0&amp;http-header:referer=" legend_split_behavior="0" checked="Qt::Unchecked" patch_size="-1,-1" providerKey="wms" expanded="1" id="Strava_All_470e33f5_a606_4554_b82a_4e53fc3fb6fc">
-        <customproperties>
-          <Option/>
-        </customproperties>
-      </layer-tree-layer>
-      <layer-tree-layer legend_exp="" name="DGM_Tirol_5m_epsg31254_2006_2019" source="../../../../OPEN_DATA_GIS/Tirol/DGM-5m-Tirol/DGM_Tirol_5m_epsg31254_2006_2019.tif" legend_split_behavior="0" checked="Qt::Unchecked" patch_size="-1,-1" providerKey="gdal" expanded="0" id="DGM_Tirol_5m_epsg31254_2006_2019_ce1888eb_c2eb_46d7_b50f_4a1fd451cc03">
         <customproperties>
           <Option/>
         </customproperties>
@@ -220,9 +210,7 @@
       <item>N47E010_d5ec5fbe_7434_4744_9177_2e1c294508cf</item>
       <item>bike_city_innsbruck_7695ba5f_e243_4d34_bee9_a01c044f0c74</item>
       <item>bike_city_innsbruck_legal_559b2c93_b9f5_4536_a66c_bd410f7cdf38</item>
-      <item>DGM_Tirol_5m_epsg31254_2006_2019_ce1888eb_c2eb_46d7_b50f_4a1fd451cc03</item>
       <item>MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9</item>
-      <item>DGM_TIROL_5m_epsg3857_228b9b0e_1ed1_44a6_8ffa_aeae9b80880c</item>
       <item>OEK_BEV_35be981f_167a_420e_b375_ba6b46db5e23</item>
       <item>my_trails_z_epsg3857_52ea0a69_5be4_48a5_b45b_4827ebcfacee</item>
       <item>Strava_All_470e33f5_a606_4554_b82a_4e53fc3fb6fc</item>
@@ -366,19 +354,9 @@
           <legendlayerfile layerid="DGM_Tirol_5m_epsg3857_2006_2020_04749b27_6dc1_48b7_b60f_683244526591" visible="0" isInOverview="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer open="false" name="DGM_TIROL_5m_epsg3857" drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0">
-        <filegroup open="false" hidden="false">
-          <legendlayerfile layerid="DGM_TIROL_5m_epsg3857_228b9b0e_1ed1_44a6_8ffa_aeae9b80880c" visible="0" isInOverview="0"/>
-        </filegroup>
-      </legendlayer>
       <legendlayer open="true" name="Strava All" drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile layerid="Strava_All_470e33f5_a606_4554_b82a_4e53fc3fb6fc" visible="0" isInOverview="0"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer open="false" name="DGM_Tirol_5m_epsg31254_2006_2019" drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0">
-        <filegroup open="false" hidden="false">
-          <legendlayerfile layerid="DGM_Tirol_5m_epsg31254_2006_2019_ce1888eb_c2eb_46d7_b50f_4a1fd451cc03" visible="0" isInOverview="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer open="false" name="DGM_Tirol_5m_epsg31254_2006_2020" drawingOrder="-1" checked="Qt::Unchecked" showFeatureCount="0">
@@ -515,454 +493,6 @@
     <paintEffect/>
   </main-annotation-layer>
   <projectlayers>
-    <maplayer minScale="1e+08" legendPlaceholderImage="" refreshOnNotifyEnabled="0" hasScaleBasedVisibilityFlag="0" type="raster" styleCategories="AllStyleCategories" maxScale="0" autoRefreshMode="Disabled" refreshOnNotifyMessage="" autoRefreshTime="0">
-      <extent>
-        <xmin>1122601.4982269590254873</xmin>
-        <ymin>5875881.80329952482134104</ymin>
-        <xmax>1454676.6230833507142961</xmax>
-        <ymax>6072574.77242169249802828</ymax>
-      </extent>
-      <wgs84extent>
-        <xmin>10.08450083832751076</xmin>
-        <ymin>46.59293390725697748</ymin>
-        <xmax>13.06758243967146349</xmax>
-        <ymax>47.79353428202372811</ymax>
-      </wgs84extent>
-      <id>DGM_TIROL_5m_epsg3857_228b9b0e_1ed1_44a6_8ffa_aeae9b80880c</id>
-      <datasource>../../../../OPEN_DATA_GIS/Tirol/DGM-5m-Tirol/DGM_TIROL_5m_epsg3857.tif</datasource>
-      <keywordList>
-        <value/>
-      </keywordList>
-      <layername>DGM_TIROL_5m_epsg3857</layername>
-      <srs>
-        <spatialrefsys nativeFormat="Wkt">
-          <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
-          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
-          <srsid>3857</srsid>
-          <srid>3857</srid>
-          <authid>EPSG:3857</authid>
-          <description>WGS 84 / Pseudo-Mercator</description>
-          <projectionacronym>merc</projectionacronym>
-          <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
-          <geographicflag>false</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <resourceMetadata>
-        <identifier/>
-        <parentidentifier/>
-        <language/>
-        <type/>
-        <title/>
-        <abstract/>
-        <links/>
-        <dates/>
-        <fees/>
-        <encoding/>
-        <crs>
-          <spatialrefsys nativeFormat="Wkt">
-            <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Web mapping and visualisation."],AREA["World between 85.06°S and 85.06°N."],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
-            <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
-            <srsid>3857</srsid>
-            <srid>3857</srid>
-            <authid>EPSG:3857</authid>
-            <description>WGS 84 / Pseudo-Mercator</description>
-            <projectionacronym>merc</projectionacronym>
-            <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
-            <geographicflag>false</geographicflag>
-          </spatialrefsys>
-        </crs>
-        <extent/>
-      </resourceMetadata>
-      <provider>gdal</provider>
-      <noData>
-        <noDataList bandNo="1" useSrcNoData="1"/>
-      </noData>
-      <map-layer-style-manager current="default">
-        <map-layer-style name="default"/>
-      </map-layer-style-manager>
-      <metadataUrls/>
-      <flags>
-        <Identifiable>1</Identifiable>
-        <Removable>1</Removable>
-        <Searchable>0</Searchable>
-        <Private>0</Private>
-      </flags>
-      <temporal enabled="0" fetchMode="0" mode="0">
-        <fixedRange>
-          <start/>
-          <end/>
-        </fixedRange>
-      </temporal>
-      <elevation enabled="0" zoffset="0" symbology="Line" band="1" zscale="1">
-        <data-defined-properties>
-          <Option type="Map">
-            <Option name="name" type="QString" value=""/>
-            <Option name="properties"/>
-            <Option name="type" type="QString" value="collection"/>
-          </Option>
-        </data-defined-properties>
-        <profileLineSymbol>
-          <symbol name="" type="line" is_animated="0" clip_to_extent="1" alpha="1" force_rhr="0" frame_rate="10">
-            <data_defined_properties>
-              <Option type="Map">
-                <Option name="name" type="QString" value=""/>
-                <Option name="properties"/>
-                <Option name="type" type="QString" value="collection"/>
-              </Option>
-            </data_defined_properties>
-            <layer locked="0" enabled="1" pass="0" class="SimpleLine" id="{396d6234-8970-4436-884e-035379d5d82d}">
-              <Option type="Map">
-                <Option name="align_dash_pattern" type="QString" value="0"/>
-                <Option name="capstyle" type="QString" value="square"/>
-                <Option name="customdash" type="QString" value="5;2"/>
-                <Option name="customdash_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="customdash_unit" type="QString" value="MM"/>
-                <Option name="dash_pattern_offset" type="QString" value="0"/>
-                <Option name="dash_pattern_offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="dash_pattern_offset_unit" type="QString" value="MM"/>
-                <Option name="draw_inside_polygon" type="QString" value="0"/>
-                <Option name="joinstyle" type="QString" value="bevel"/>
-                <Option name="line_color" type="QString" value="243,166,178,255"/>
-                <Option name="line_style" type="QString" value="solid"/>
-                <Option name="line_width" type="QString" value="0.6"/>
-                <Option name="line_width_unit" type="QString" value="MM"/>
-                <Option name="offset" type="QString" value="0"/>
-                <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="offset_unit" type="QString" value="MM"/>
-                <Option name="ring_filter" type="QString" value="0"/>
-                <Option name="trim_distance_end" type="QString" value="0"/>
-                <Option name="trim_distance_end_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="trim_distance_end_unit" type="QString" value="MM"/>
-                <Option name="trim_distance_start" type="QString" value="0"/>
-                <Option name="trim_distance_start_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="trim_distance_start_unit" type="QString" value="MM"/>
-                <Option name="tweak_dash_pattern_on_corners" type="QString" value="0"/>
-                <Option name="use_custom_dash" type="QString" value="0"/>
-                <Option name="width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-              </Option>
-              <data_defined_properties>
-                <Option type="Map">
-                  <Option name="name" type="QString" value=""/>
-                  <Option name="properties"/>
-                  <Option name="type" type="QString" value="collection"/>
-                </Option>
-              </data_defined_properties>
-            </layer>
-          </symbol>
-        </profileLineSymbol>
-        <profileFillSymbol>
-          <symbol name="" type="fill" is_animated="0" clip_to_extent="1" alpha="1" force_rhr="0" frame_rate="10">
-            <data_defined_properties>
-              <Option type="Map">
-                <Option name="name" type="QString" value=""/>
-                <Option name="properties"/>
-                <Option name="type" type="QString" value="collection"/>
-              </Option>
-            </data_defined_properties>
-            <layer locked="0" enabled="1" pass="0" class="SimpleFill" id="{4878b45f-2e3f-445d-807c-c5091d8e3049}">
-              <Option type="Map">
-                <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="color" type="QString" value="243,166,178,255"/>
-                <Option name="joinstyle" type="QString" value="bevel"/>
-                <Option name="offset" type="QString" value="0,0"/>
-                <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="offset_unit" type="QString" value="MM"/>
-                <Option name="outline_color" type="QString" value="35,35,35,255"/>
-                <Option name="outline_style" type="QString" value="no"/>
-                <Option name="outline_width" type="QString" value="0.26"/>
-                <Option name="outline_width_unit" type="QString" value="MM"/>
-                <Option name="style" type="QString" value="solid"/>
-              </Option>
-              <data_defined_properties>
-                <Option type="Map">
-                  <Option name="name" type="QString" value=""/>
-                  <Option name="properties"/>
-                  <Option name="type" type="QString" value="collection"/>
-                </Option>
-              </data_defined_properties>
-            </layer>
-          </symbol>
-        </profileFillSymbol>
-      </elevation>
-      <customproperties>
-        <Option type="Map">
-          <Option name="identify/format" type="QString" value="Value"/>
-          <Option name="qgis2web/Interactive" type="bool" value="true"/>
-          <Option name="qgis2web/Visible" type="bool" value="true"/>
-        </Option>
-      </customproperties>
-      <mapTip enabled="1"/>
-      <pipe-data-defined-properties>
-        <Option type="Map">
-          <Option name="name" type="QString" value=""/>
-          <Option name="properties"/>
-          <Option name="type" type="QString" value="collection"/>
-        </Option>
-      </pipe-data-defined-properties>
-      <pipe>
-        <provider>
-          <resampling enabled="false" maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" zoomedInResamplingMethod="nearestNeighbour"/>
-        </provider>
-        <rasterrenderer gradient="BlackToWhite" opacity="1" type="singlebandgray" nodataColor="" alphaBand="-1" grayBand="1">
-          <rasterTransparency/>
-          <minMaxOrigin>
-            <limits>MinMax</limits>
-            <extent>WholeRaster</extent>
-            <statAccuracy>Estimated</statAccuracy>
-            <cumulativeCutLower>0.02</cumulativeCutLower>
-            <cumulativeCutUpper>0.98</cumulativeCutUpper>
-            <stdDevFactor>2</stdDevFactor>
-          </minMaxOrigin>
-          <contrastEnhancement>
-            <minValue>460.510009765625</minValue>
-            <maxValue>3711.2841796875</maxValue>
-            <algorithm>StretchToMinimumMaximum</algorithm>
-          </contrastEnhancement>
-          <rampLegendSettings orientation="2" useContinuousLegend="1" prefix="" minimumLabel="" maximumLabel="" direction="0" suffix="">
-            <numericFormat id="basic">
-              <Option type="Map">
-                <Option name="decimal_separator" type="invalid"/>
-                <Option name="decimals" type="int" value="6"/>
-                <Option name="rounding_type" type="int" value="0"/>
-                <Option name="show_plus" type="bool" value="false"/>
-                <Option name="show_thousand_separator" type="bool" value="true"/>
-                <Option name="show_trailing_zeros" type="bool" value="false"/>
-                <Option name="thousand_separator" type="invalid"/>
-              </Option>
-            </numericFormat>
-          </rampLegendSettings>
-        </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation invertColors="0" grayscaleMode="0" colorizeOn="0" saturation="0" colorizeGreen="128" colorizeStrength="100" colorizeBlue="128" colorizeRed="255"/>
-        <rasterresampler maxOversampling="2"/>
-        <resamplingStage>resamplingFilter</resamplingStage>
-      </pipe>
-      <blendMode>0</blendMode>
-    </maplayer>
-    <maplayer minScale="1e+08" legendPlaceholderImage="" refreshOnNotifyEnabled="0" hasScaleBasedVisibilityFlag="0" type="raster" styleCategories="AllStyleCategories" maxScale="0" autoRefreshMode="Disabled" refreshOnNotifyMessage="" autoRefreshTime="0">
-      <extent>
-        <xmin>-18617.5</xmin>
-        <ymin>164997.5</ymin>
-        <xmax>205002.5</xmax>
-        <ymax>295002.5</ymax>
-      </extent>
-      <wgs84extent>
-        <xmin>10.08450083832751254</xmin>
-        <ymin>46.59295239010682366</ymin>
-        <xmax>13.06755737852685506</xmax>
-        <ymax>47.79353018665847941</ymax>
-      </wgs84extent>
-      <id>DGM_Tirol_5m_epsg31254_2006_2019_ce1888eb_c2eb_46d7_b50f_4a1fd451cc03</id>
-      <datasource>../../../../OPEN_DATA_GIS/Tirol/DGM-5m-Tirol/DGM_Tirol_5m_epsg31254_2006_2019.tif</datasource>
-      <keywordList>
-        <value/>
-      </keywordList>
-      <layername>DGM_Tirol_5m_epsg31254_2006_2019</layername>
-      <srs>
-        <spatialrefsys nativeFormat="Wkt">
-          <wkt>PROJCRS["MGI / Austria GK West",BASEGEOGCRS["MGI",DATUM["Militar-Geographische Institut",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4312]],CONVERSION["Austria Gauss-Kruger West",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",10.3333333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",1,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",-5000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (X)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (Y)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Austria west of 11°50'E of Greenwich (29°30'E of Ferro)."],BBOX[46.77,9.53,47.61,11.84]],ID["EPSG",31254]]</wkt>
-          <proj4>+proj=tmerc +lat_0=0 +lon_0=10.3333333333333 +k=1 +x_0=0 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +units=m +no_defs</proj4>
-          <srsid>2607</srsid>
-          <srid>31254</srid>
-          <authid>EPSG:31254</authid>
-          <description>MGI / Austria GK West</description>
-          <projectionacronym>tmerc</projectionacronym>
-          <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
-          <geographicflag>false</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <resourceMetadata>
-        <identifier/>
-        <parentidentifier/>
-        <language/>
-        <type/>
-        <title/>
-        <abstract/>
-        <links/>
-        <dates/>
-        <fees/>
-        <encoding/>
-        <crs>
-          <spatialrefsys nativeFormat="Wkt">
-            <wkt>PROJCRS["MGI / Austria GK West",BASEGEOGCRS["MGI",DATUM["Militar-Geographische Institut",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4312]],CONVERSION["Austria Gauss-Kruger West",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",10.3333333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",1,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",-5000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["northing (X)",north,ORDER[1],LENGTHUNIT["metre",1]],AXIS["easting (Y)",east,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Engineering survey, topographic mapping."],AREA["Austria west of 11°50'E of Greenwich (29°30'E of Ferro)."],BBOX[46.77,9.53,47.61,11.84]],ID["EPSG",31254]]</wkt>
-            <proj4>+proj=tmerc +lat_0=0 +lon_0=10.3333333333333 +k=1 +x_0=0 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +units=m +no_defs</proj4>
-            <srsid>2607</srsid>
-            <srid>31254</srid>
-            <authid>EPSG:31254</authid>
-            <description>MGI / Austria GK West</description>
-            <projectionacronym>tmerc</projectionacronym>
-            <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
-            <geographicflag>false</geographicflag>
-          </spatialrefsys>
-        </crs>
-        <extent/>
-      </resourceMetadata>
-      <provider>gdal</provider>
-      <noData>
-        <noDataList bandNo="1" useSrcNoData="1"/>
-      </noData>
-      <map-layer-style-manager current="default">
-        <map-layer-style name="default"/>
-      </map-layer-style-manager>
-      <metadataUrls/>
-      <flags>
-        <Identifiable>1</Identifiable>
-        <Removable>1</Removable>
-        <Searchable>0</Searchable>
-        <Private>0</Private>
-      </flags>
-      <temporal enabled="0" fetchMode="0" mode="0">
-        <fixedRange>
-          <start/>
-          <end/>
-        </fixedRange>
-      </temporal>
-      <elevation enabled="0" zoffset="0" symbology="Line" band="1" zscale="1">
-        <data-defined-properties>
-          <Option type="Map">
-            <Option name="name" type="QString" value=""/>
-            <Option name="properties"/>
-            <Option name="type" type="QString" value="collection"/>
-          </Option>
-        </data-defined-properties>
-        <profileLineSymbol>
-          <symbol name="" type="line" is_animated="0" clip_to_extent="1" alpha="1" force_rhr="0" frame_rate="10">
-            <data_defined_properties>
-              <Option type="Map">
-                <Option name="name" type="QString" value=""/>
-                <Option name="properties"/>
-                <Option name="type" type="QString" value="collection"/>
-              </Option>
-            </data_defined_properties>
-            <layer locked="0" enabled="1" pass="0" class="SimpleLine" id="{afd8d41a-9e67-4ac3-8fe2-b72c970180c9}">
-              <Option type="Map">
-                <Option name="align_dash_pattern" type="QString" value="0"/>
-                <Option name="capstyle" type="QString" value="square"/>
-                <Option name="customdash" type="QString" value="5;2"/>
-                <Option name="customdash_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="customdash_unit" type="QString" value="MM"/>
-                <Option name="dash_pattern_offset" type="QString" value="0"/>
-                <Option name="dash_pattern_offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="dash_pattern_offset_unit" type="QString" value="MM"/>
-                <Option name="draw_inside_polygon" type="QString" value="0"/>
-                <Option name="joinstyle" type="QString" value="bevel"/>
-                <Option name="line_color" type="QString" value="213,180,60,255"/>
-                <Option name="line_style" type="QString" value="solid"/>
-                <Option name="line_width" type="QString" value="0.6"/>
-                <Option name="line_width_unit" type="QString" value="MM"/>
-                <Option name="offset" type="QString" value="0"/>
-                <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="offset_unit" type="QString" value="MM"/>
-                <Option name="ring_filter" type="QString" value="0"/>
-                <Option name="trim_distance_end" type="QString" value="0"/>
-                <Option name="trim_distance_end_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="trim_distance_end_unit" type="QString" value="MM"/>
-                <Option name="trim_distance_start" type="QString" value="0"/>
-                <Option name="trim_distance_start_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="trim_distance_start_unit" type="QString" value="MM"/>
-                <Option name="tweak_dash_pattern_on_corners" type="QString" value="0"/>
-                <Option name="use_custom_dash" type="QString" value="0"/>
-                <Option name="width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-              </Option>
-              <data_defined_properties>
-                <Option type="Map">
-                  <Option name="name" type="QString" value=""/>
-                  <Option name="properties"/>
-                  <Option name="type" type="QString" value="collection"/>
-                </Option>
-              </data_defined_properties>
-            </layer>
-          </symbol>
-        </profileLineSymbol>
-        <profileFillSymbol>
-          <symbol name="" type="fill" is_animated="0" clip_to_extent="1" alpha="1" force_rhr="0" frame_rate="10">
-            <data_defined_properties>
-              <Option type="Map">
-                <Option name="name" type="QString" value=""/>
-                <Option name="properties"/>
-                <Option name="type" type="QString" value="collection"/>
-              </Option>
-            </data_defined_properties>
-            <layer locked="0" enabled="1" pass="0" class="SimpleFill" id="{388d8aa8-dd6c-4203-8f6a-f881eef4c6a3}">
-              <Option type="Map">
-                <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="color" type="QString" value="213,180,60,255"/>
-                <Option name="joinstyle" type="QString" value="bevel"/>
-                <Option name="offset" type="QString" value="0,0"/>
-                <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="offset_unit" type="QString" value="MM"/>
-                <Option name="outline_color" type="QString" value="35,35,35,255"/>
-                <Option name="outline_style" type="QString" value="no"/>
-                <Option name="outline_width" type="QString" value="0.26"/>
-                <Option name="outline_width_unit" type="QString" value="MM"/>
-                <Option name="style" type="QString" value="solid"/>
-              </Option>
-              <data_defined_properties>
-                <Option type="Map">
-                  <Option name="name" type="QString" value=""/>
-                  <Option name="properties"/>
-                  <Option name="type" type="QString" value="collection"/>
-                </Option>
-              </data_defined_properties>
-            </layer>
-          </symbol>
-        </profileFillSymbol>
-      </elevation>
-      <customproperties>
-        <Option type="Map">
-          <Option name="identify/format" type="QString" value="Value"/>
-          <Option name="qgis2web/Interactive" type="bool" value="true"/>
-          <Option name="qgis2web/Visible" type="bool" value="true"/>
-        </Option>
-      </customproperties>
-      <mapTip enabled="1"/>
-      <pipe-data-defined-properties>
-        <Option type="Map">
-          <Option name="name" type="QString" value=""/>
-          <Option name="properties"/>
-          <Option name="type" type="QString" value="collection"/>
-        </Option>
-      </pipe-data-defined-properties>
-      <pipe>
-        <provider>
-          <resampling enabled="false" maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" zoomedInResamplingMethod="nearestNeighbour"/>
-        </provider>
-        <rasterrenderer gradient="BlackToWhite" opacity="1" type="singlebandgray" nodataColor="" alphaBand="-1" grayBand="1">
-          <rasterTransparency/>
-          <minMaxOrigin>
-            <limits>MinMax</limits>
-            <extent>WholeRaster</extent>
-            <statAccuracy>Estimated</statAccuracy>
-            <cumulativeCutLower>0.02</cumulativeCutLower>
-            <cumulativeCutUpper>0.98</cumulativeCutUpper>
-            <stdDevFactor>2</stdDevFactor>
-          </minMaxOrigin>
-          <contrastEnhancement>
-            <minValue>460.34600830078</minValue>
-            <maxValue>3796.001953125</maxValue>
-            <algorithm>StretchToMinimumMaximum</algorithm>
-          </contrastEnhancement>
-          <rampLegendSettings orientation="2" useContinuousLegend="1" prefix="" minimumLabel="" maximumLabel="" direction="0" suffix="">
-            <numericFormat id="basic">
-              <Option type="Map">
-                <Option name="decimal_separator" type="invalid"/>
-                <Option name="decimals" type="int" value="6"/>
-                <Option name="rounding_type" type="int" value="0"/>
-                <Option name="show_plus" type="bool" value="false"/>
-                <Option name="show_thousand_separator" type="bool" value="true"/>
-                <Option name="show_trailing_zeros" type="bool" value="false"/>
-                <Option name="thousand_separator" type="invalid"/>
-              </Option>
-            </numericFormat>
-          </rampLegendSettings>
-        </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation invertColors="0" grayscaleMode="0" colorizeOn="0" saturation="0" colorizeGreen="128" colorizeStrength="100" colorizeBlue="128" colorizeRed="255"/>
-        <rasterresampler maxOversampling="2"/>
-        <resamplingStage>resamplingFilter</resamplingStage>
-      </pipe>
-      <blendMode>0</blendMode>
-    </maplayer>
     <maplayer minScale="1e+08" legendPlaceholderImage="" refreshOnNotifyEnabled="0" type="raster" hasScaleBasedVisibilityFlag="0" styleCategories="AllStyleCategories" maxScale="0" autoRefreshMode="Disabled" refreshOnNotifyMessage="" autoRefreshTime="0">
       <extent>
         <xmin>-22687.5</xmin>
@@ -6868,6 +6398,18 @@ def my_form_open(dialog, layer, feature):
       <blendMode>0</blendMode>
     </maplayer>
     <maplayer minScale="100000000" simplifyDrawingHints="1" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" autoRefreshMode="Disabled" readOnly="0" legendPlaceholderImage="" styleCategories="AllStyleCategories" geometry="Line" type="vector" wkbType="LineStringZ" labelsEnabled="1" simplifyMaxScale="1" symbologyReferenceScale="-1" maxScale="0" simplifyLocal="1" simplifyAlgorithm="0" autoRefreshTime="0">
+      <extent>
+        <xmin>1177020.875</xmin>
+        <ymin>5925933.5</ymin>
+        <xmax>1358969.25</xmax>
+        <ymax>6039148.5</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>10.57335841740232674</xmin>
+        <ymin>46.90102334141267448</ymin>
+        <xmax>12.20782847923444514</xmax>
+        <ymax>47.59141777910846827</ymax>
+      </wgs84extent>
       <id>my_trails_z_epsg3857_52ea0a69_5be4_48a5_b45b_4827ebcfacee</id>
       <datasource>../../legacy_trails/my_trails_z_epsg3857.gpkg|layername=my_trails_z_epsg3857</datasource>
       <keywordList>
@@ -11571,9 +11113,7 @@ def my_form_open(dialog, layer, feature):
     <layer id="N47E010_d5ec5fbe_7434_4744_9177_2e1c294508cf"/>
     <layer id="bike_city_innsbruck_7695ba5f_e243_4d34_bee9_a01c044f0c74"/>
     <layer id="bike_city_innsbruck_legal_559b2c93_b9f5_4536_a66c_bd410f7cdf38"/>
-    <layer id="DGM_Tirol_5m_epsg31254_2006_2019_ce1888eb_c2eb_46d7_b50f_4a1fd451cc03"/>
     <layer id="MTBmap_8c060587_8e49_48d0_babb_31ab996c83a9"/>
-    <layer id="DGM_TIROL_5m_epsg3857_228b9b0e_1ed1_44a6_8ffa_aeae9b80880c"/>
     <layer id="OEK_BEV_35be981f_167a_420e_b375_ba6b46db5e23"/>
     <layer id="my_trails_z_epsg3857_52ea0a69_5be4_48a5_b45b_4827ebcfacee"/>
     <layer id="Strava_All_470e33f5_a606_4554_b82a_4e53fc3fb6fc"/>
