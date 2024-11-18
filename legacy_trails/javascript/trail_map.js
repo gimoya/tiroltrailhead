@@ -38,7 +38,8 @@ const canvasRenderer = L.canvas({
   tolerance: 2
 });
 
-/*** Add base maps with controls ***/
+
+/*** Set Up Map ***/
 var map = L.map('map', {
   zoom: 12,
   maxZoom: 18,
@@ -46,6 +47,35 @@ var map = L.map('map', {
   zoomControl: false,
   attributionControl: false
 });
+
+/*** Set Up Base Map Layers ***/
+
+var mapbox_Attr = 'Tiles &copy; <a href="google.com">Google Maps</a>, <a href="openstreetmap.org">OSM</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
+var mapbox_satelliteUrl = '//mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}';
+var mapbox_outdoorUrl = '//c.tile.opentopomap.org/{z}/{x}/{y}.png';
+
+
+var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
+  attribution: mapbox_Attr 
+});
+
+var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
+  attribution: mapbox_Attr,
+  maxZoom: 20,
+  maxNativeZoom: 17  
+});
+
+/*** Setting Default Base Map ***/
+
+mapbox_outdoorLayer.addTo(map);	
+
+/*** Strava TMS not working ***/
+var strava_proxyUrl = 'https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/ride/red/{z}/{x}/{y}.png?px=256';
+var strava_Layer = L.tileLayer(strava_proxyUrl, {
+    tms: true
+}).addTo(map);
+
+/*** Map Selection and Zoom Controls ***/
 
 new L.control.attribution({position: 'bottomright'}).addTo(map);
 new L.Control.Zoom({ position: 'topright' }).addTo(map);
@@ -69,10 +99,22 @@ var toggle = L.easyButton({
 	  map.removeLayer(mapbox_satelliteLayer);
 	  map.addLayer(mapbox_outdoorLayer);
 	  control.state('basemap-outdoor');
-	},
+	}
   }]
 });	
+
 toggle.addTo(map);
+
+/*** Add Location Control ***/
+
+L.control.locate({
+    strings: {
+        title: "Show my location!"
+    },
+	position: 'topright'
+}).addTo(map);	
+
+/*** Add Center View Control ***/
 
 var centerView = L.easyButton({
   position: 'topright',
@@ -85,26 +127,10 @@ var centerView = L.easyButton({
 	}
   }]
 });	
+
 centerView.addTo(map);
 
-var mapbox_Attr = 'Tiles &copy; <a href="google.com">Google Maps</a>, <a href="openstreetmap.org">OSM</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
-var mapbox_satelliteUrl = '//mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}';
-var mapbox_outdoorUrl = '//c.tile.opentopomap.org/{z}/{x}/{y}.png';
-
-var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
-  attribution: mapbox_Attr 
-});
-
-var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
-  attribution: mapbox_Attr,
-  maxZoom: 20,
-  maxNativeZoom: 17  
-});
-
-mapbox_outdoorLayer.addTo(map);	
-
-
-/*** Set up Elevation Control ***/
+/*** Set Up Elevation Control ***/
 
 var el = L.control.elevation({
 			position: "bottomright",
@@ -129,16 +155,6 @@ var el = L.control.elevation({
 			collapsed: false,  //collapsed mode, show chart on click or mouseover
 			imperial: false    //display imperial units instead of metric
 	});
-	
-	
-// add location control
-
-L.control.locate({
-    strings: {
-        title: "Show my location!"
-    },
-	position: 'topright'
-}).addTo(map);	
 		
 /*** Trail Style-Helper Functions ***/
 
