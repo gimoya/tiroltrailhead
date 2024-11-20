@@ -28,10 +28,6 @@ if (trim(pw_prompt) == pw ) {
 }
 */
 
-function show_gallery () {
-		$(this).fadeIn('slow');
-}
-
 
 /*** increase click tolerance by renderer (will only be set for specific layers) ***/
 const canvasRenderer = L.canvas({
@@ -69,17 +65,39 @@ var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
 
 mapbox_outdoorLayer.addTo(map);	
 
-/*** Strava TMS not working ***/
+/*** Strava TMS not working 
 var strava_proxyUrl = 'https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/ride/red/{z}/{x}/{y}.png?px=256';
 var strava_Layer = L.tileLayer(strava_proxyUrl, {
     tms: true
 }).addTo(map);
+***/
+
 
 /*** Map Selection and Zoom Controls ***/
 
+/* Source Map Attribution */
 new L.control.attribution({position: 'bottomright'}).addTo(map);
+
+/* Zoom */
 new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
+/*** Add Center View Control ***/
+
+var centerView = L.easyButton({
+  position: 'topright',
+  states: [{
+	stateName: 'centerView',
+	icon: '<span class="custom-control">◾</span>',
+	title: 'Center View',		
+	onClick: function(control) {
+	map.fitBounds(trails_json.getBounds(), {maxZoom: 16});
+	}
+  }]
+});	
+
+centerView.addTo(map);
+
+/* Base Map Toggle */
 var toggle = L.easyButton({
   position: 'topright',
   states: [{
@@ -101,7 +119,7 @@ var toggle = L.easyButton({
 	  control.state('basemap-outdoor');
 	}
   }]
-});	
+});
 
 toggle.addTo(map);
 
@@ -109,26 +127,10 @@ toggle.addTo(map);
 
 L.control.locate({
     strings: {
-        title: "Show my location!"
+        title: "Zeige GPS-Standort"
     },
 	position: 'topright'
 }).addTo(map);	
-
-/*** Add Center View Control ***/
-
-var centerView = L.easyButton({
-  position: 'topright',
-  states: [{
-	stateName: 'centerView',
-	icon: '<span class="custom-control">◾</span>',
-	title: 'Center View',		
-	onClick: function(control) {
-	map.fitBounds(trails_json.getBounds(), {maxZoom: 16});
-	}
-  }]
-});	
-
-centerView.addTo(map);
 
 /*** Set Up Elevation Control ***/
 
@@ -155,7 +157,28 @@ var el = L.control.elevation({
 			collapsed: false,  //collapsed mode, show chart on click or mouseover
 			imperial: false    //display imperial units instead of metric
 	});
-		
+
+
+
+var legend = L.easyButton({
+  position: 'bottomright',
+  states: [{
+	stateName: 'legende',
+	icon: '<span class="custom-control">L</span>',
+	title: 'Legende anzeigen',		
+	onClick: function(){
+				/*** Legend Toggle ***/
+				
+				$( document ).ready(function() {
+						legend_div = $('#Legend-Div');
+						legend_div.slideToggle(200);	
+				});
+			}	
+	}]
+  });	
+
+legend.addTo(map);
+
 /*** Trail Style-Helper Functions ***/
 
 function highlight (layer) {	// will be used on hover
