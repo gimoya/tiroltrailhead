@@ -28,6 +28,11 @@ body{
 	border-color:lightgrey;
 }
 
+#Legend-Div > th, td {
+	padding-right:10px;
+}
+
+
 
 .leaflet-control-attribution {
    font-size: 1.4em;
