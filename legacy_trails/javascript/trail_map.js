@@ -66,11 +66,12 @@ var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
 mapbox_outdoorLayer.addTo(map);	
 
 /*** Strava TMS not working 
-var strava_proxyUrl = 'https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/ride/red/{z}/{x}/{y}.png?px=256';
+var strava_proxyUrl = 'https://proxy.nakarte.me/https/heatmap-external-a.strava.com/tiles-auth/ride/hot/{z}/{x}/{y}.png';
 var strava_Layer = L.tileLayer(strava_proxyUrl, {
     tms: true
 }).addTo(map);
 ***/
+
 
 
 /*** Map Selection and Zoom Controls ***/
