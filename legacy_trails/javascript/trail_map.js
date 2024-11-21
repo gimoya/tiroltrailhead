@@ -415,6 +415,7 @@ for (i = 0; i < POIs.features.length; i++) {
 /*** Map Event Listeners ***/
 
 map.on("click", function(e){
+	/*** Remove Elevation Profile when map is clicked ***/
 	if (typeof el !== 'undefined') {
 		// the variable is defined
 		el.clear();
@@ -425,5 +426,6 @@ map.on("click", function(e){
 		layer.setStyle({opacity: 0.75})
 	});
 	if (selected!== null) selected.setText(null);
-	
+	/*** make Legend disappear ***/
+	$("#Legend-Div").fadeOut();
 });

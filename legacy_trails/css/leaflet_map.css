@@ -20,19 +20,16 @@ body{
 	display: none;
 	z-index:99999;
     position: absolute;
-    height: 60%;
+    height: 40%;
+	width:60%;
 	padding:20px;
     overflow-y: scroll;
 	background-color: white;
-	border-width: 15px;
-	border-color:lightgrey;
 }
 
 #Legend-Div > th, td {
 	padding-right:10px;
 }
-
-
 
 .leaflet-control-attribution {
    font-size: 1.4em;
