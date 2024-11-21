@@ -12,23 +12,23 @@ html, body, #map {
 }
 
 body{
-    padding-top:50px;
+    padding-top: 50px;
     min-width: 340px; 
 }
 
 #Legend-Div {
 	display: none;
-	z-index:99999;
+	z-index: 99999;
     position: absolute;
     height: 40%;
-	width:60%;
-	padding:20px;
+	width: 80%;
+	padding: 20px;
     overflow-y: scroll;
 	background-color: white;
 }
 
 #Legend-Div > th, td {
-	padding-right:10px;
+	padding-right: 10px;
 }
 
 .leaflet-control-attribution {
@@ -36,8 +36,8 @@ body{
 }
 
 .leaflet-control-locate, .leaflet-bar button {
-   font-size:12px;
-   font-family:unset;
+   font-size: 12px;
+   font-family: unset;
 }
 
 .leaflet-popup-tip {
