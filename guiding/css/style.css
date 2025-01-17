@@ -1,9 +1,20 @@
-color/*--
+/*--
 	Author: W3Layouts
 	Author URL: http://w3layouts.com
 	License: Creative Commons Attribution 3.0 Unported
 	License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+
+/* COLOR SCHEME OVERRIDE */
+.about h1, .agency h2, .services h3, .gallery h3, .team h3, .about-grid h4, .navbar-default .navbar-brand, .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+	color: #428bca!important;
+}
+
+.agency, .video {
+	background-color: #337bb9 !important;
+}
+/* COLOR SCHEME OVERRIDE */
 
 
 
@@ -621,7 +632,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	font-family: inherit;
 	font-size: 40px;
 	font-weight: 600;
-	color: #d45400;;
+	color: #d45400;
 }
 
 .agency h2, .clients h3, .contact h3 {
