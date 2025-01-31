@@ -51,7 +51,7 @@ body a:focus, a:hover {
     position: fixed;
     bottom: 0px;
     right: 0px;
-	margin:20px;
+	margin:0px;
     z-index: 999;
     font-size: 3.5ex;
     border: none;
@@ -60,7 +60,7 @@ body a:focus, a:hover {
 	opacity: 0;
 	color: white;
     cursor: pointer;
-    padding: 8px;
+    padding: 5px;
     border-radius: 4px;
     font-family: 'Cabin Sketch';
 }
@@ -925,6 +925,10 @@ figure.effect-apollo:hover figcaption::before {
 
 /*-- Clients --*/
 
+.clients .container {
+	width: 80%;
+}
+
 .clients {
 	background: url("../images/clients.jpg");
 	background-repeat: no-repeat;
@@ -939,7 +943,7 @@ figure.effect-apollo:hover figcaption::before {
 
 .clients h4 {
 	font-size: 30px;
-	font-weight: 300;
+	font-weight: 200;
 	margin-bottom: 40px;
 }
 
@@ -1328,10 +1332,10 @@ ul.social-icons li a.youtube:hover {
 /*-- Footer --*/
 
 
-#footer img {
+#footer  img {
 	width:25%;
 	height: auto;
-	padding:8px;
+	padding:12px;
 }	
 
 .footer {
@@ -1424,7 +1428,7 @@ ul.social-icons li a.youtube:hover {
 		padding-top: 10px!important;
 	}
 	#footer img { 
-		width:30%;
+		width:25%;
 	}
 }
 
@@ -1499,9 +1503,6 @@ ul.social-icons li a.youtube:hover {
 		font-size: 15px;
 		padding: 0;
 	}
-	.clients .container {
-		width: 950px;
-	}
 	.pic-caption {
 		padding: 3em 1em 0;
 	}
@@ -1555,12 +1556,8 @@ ul.social-icons li a.youtube:hover {
 		margin: 30px auto;
 		padding: 0 20px;
 	}
-
 	.gallery-grids-right1 img {
 		height: 310px;
-	}
-	.clients .container {
-		width: 930px;
 	}
 	.clients p {
 		line-height: 30px;
@@ -1613,9 +1610,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	.nav-tabs>li>a {
 		padding: 10px 53px;
-	}
-	.clients .container {
-		width: 900px;
 	}
 	.contact-form p {
 		margin: 30px 0 20px;
@@ -1679,9 +1673,6 @@ ul.social-icons li a.youtube:hover {
 	.tab-info p {
 		padding-top: 15px;
 	}
-	.clients .container {
-		width: 840px;
-	}
 	.team-grid h4 {
 		font-size: 24px;
 		margin-bottom: 20px;
@@ -1708,9 +1699,6 @@ ul.social-icons li a.youtube:hover {
 	.nav-tabs>li>a {
 		padding: 10px 42px;
 	}
-	.clients .container {
-		width: 835px;
-	}
 	.team-grid {
 		width: 50%;
 	}
@@ -1721,7 +1709,7 @@ ul.social-icons li a.youtube:hover {
 		margin-bottom: 50px;
 	}
 	#footer img { 
-		width:40%;
+		width:50%;
 	}	
 }
 
@@ -1738,9 +1726,6 @@ ul.social-icons li a.youtube:hover {
 	.nav-tabs>li>a {
 		padding: 10px 30px;
 	}
-	.clients .container {
-		width: 780px;
-	}
 	.client {
 		margin-right: 30px;
 	}
@@ -1756,9 +1741,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	.agency-grid {
 		padding: 0 5px;
-	}
-	.clients .container {
-		width: 750px;
 	}
 }
 
@@ -1818,10 +1800,6 @@ ul.social-icons li a.youtube:hover {
 	.video iframe {
 		height: 400px;
 	}
-	
-	.clients .container {
-		width: 715px;
-	}
 	.clients h4 {
 		font-size: 27px;
 		margin-bottom: 20px;
@@ -1865,9 +1843,6 @@ ul.social-icons li a.youtube:hover {
 		padding: 10px 15px;
 		font-size: 15px;
 	}
-	.clients .container {
-		width: 650px;
-	}
 	.clients p {
 		padding: 0 10px;
 	}
@@ -1906,15 +1881,9 @@ ul.social-icons li a.youtube:hover {
 	.team {
 		padding-bottom: 20px;
 	}
-	.clients .container {
-		width: 620px;
-	}
 }
 
 @media screen and (max-width:600px) {
-	.clients .container {
-		width: 580px;
-	}
 	navbar-brand {
 		padding: 10px!important;
 	}
@@ -1964,9 +1933,6 @@ ul.social-icons li a.youtube:hover {
 	.video iframe {
 		height: 300px;
 	}
-	.clients .container {
-		width: 550px;
-	}
 	.client {
 		margin-right: 30px;
 	}
@@ -1998,9 +1964,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	.tab-image {
 		margin-bottom: 30px;
-	}
-	.clients .container {
-		width: 515px;
 	}
 	.pic-caption {
 		padding: 3em 1em 0;
@@ -2056,9 +2019,6 @@ ul.social-icons li a.youtube:hover {
 		padding-left: 0;
 		margin-top: 10px;
 	}
-	.clients .container {
-		width: 435px;
-	}
 	.team-grid h4 {
 		margin-bottom: 25px;
 	}
@@ -2105,9 +2065,6 @@ ul.social-icons li a.youtube:hover {
 	.pic-caption {
 		padding: 5em 1em 0;
 	}
-	.clients .container {
-		width: 395px;
-	}
 	.team-grid {
 		margin-bottom: 15px;
 	}
@@ -2134,24 +2091,17 @@ ul.social-icons li a.youtube:hover {
 		font-size: 20px;
 		width: 70%;
 	}
-	.clients .container {
-		width: 365px;
-	}
+
 }
 
 @media screen and (max-width:376px) {
 	.navbar-default .navbar-brand {
 	font-size: 2.8ex;
     padding-top: 15px!important;
-}
 	}
 	.video button.btn.btn-primary {
 		width: 71%;
 	}
-	.clients .container {
-		width: 355px;
-	}
-
 	.copyright p {
 		line-height: 25px;
 	}
@@ -2160,9 +2110,6 @@ ul.social-icons li a.youtube:hover {
 @media screen and (max-width:360px) {
 	.video button.btn.btn-primary {
 		width: 78%;
-	}
-	.clients .container {
-		width: 340px;
 	}
 	.video span.glyphicon.glyphicon-play-circle {
 		left: -20%;
@@ -2188,7 +2135,7 @@ ul.social-icons li a.youtube:hover {
 		margin: 1em 0;
 	}
 	#footer img { 
-		width:60%;
+		width:50%;
 	}
 }
 
@@ -2200,9 +2147,6 @@ ul.social-icons li a.youtube:hover {
 	
 	.contact h2  {
 		font-size: 25px;
-	}
-	.slider img {
-		width: 400px;
 	}
 	
 	.slider .caption {
@@ -2223,9 +2167,6 @@ ul.social-icons li a.youtube:hover {
 	}
 	.about-grid p {
 		line-height: 25px;
-	}
-	.clients .container {
-		width: 300px;
 	}
 	.client {
 		margin-right: 10px;

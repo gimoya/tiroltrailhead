@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+
+	/* Popover styling */
+
+	a {
+	  text-decoration: none;
+	}
+	.popover__title {
+	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  font-size: 24px;
+	  line-height: 36px;
+	  text-decoration: none;
+	  color: white;
+	  text-align: left;
+	  padding: 5px;
+	  background: 5px;
+	  background-color: #0000003b;
+	}
+
+	.popover__wrapper {
+	  z-index: 1000;
+	  position: absolute;
+	  right: 0;
+	  top:0;
+	  margin-top: 0rem;
+	  margin-right: 4rem;
+	  display: inline-block;
+	}
+	.popover__content { 
+	  opacity: 0;
+	  visibility: hidden;
+	  position: absolute;
+	  right: 0;
+	  transform: translate(0, 10px);
+	  background-color: #bfbfbf;
+	  padding: 1.5rem;
+	  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	  width: auto;
+	}
+	.popover__content:before {
+	  position: absolute;
+	  z-index: -1;
+	  content: "";
+	  right: calc(50% - 10px);
+	  top: -8px;
+	  border-style: solid;
+	  border-width: 0 10px 10px 10px;
+	  border-color: transparent transparent #bfbfbf transparent;
+	  transition-duration: 0.3s;
+	  transition-property: transform;
+	}
+	.popover__wrapper:hover .popover__content {
+	  z-index: 10;
+	  opacity: 1;
+	  visibility: visible;
+	  transform: translate(0, -20px);
+	  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+	}
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  	<div class="popover__wrapper">
+	  <a href="#">
+		<h2 class="popover__title">Legende</h2>
+	  </a>
+	  <div class="popover__content">
+		<img src="http://tiroltrailhead.com/trailtech/hb/legende.jpg" width="350">
+	  </div>
+	</div>
+  
+  <script type="text/javascript">	
+			
+	function trim(str) {
+		return str.replace(/^\s+|\s+$/g, '');  
+	}
+	
+	var pw_prompt = prompt('Bitte Passwort eingeben!',' ');
+	var pw = 'trailtech_hb9844_studie';
+	// if prompt is cancelled the pw_prompt var will be null!
+	if (pw_prompt == null) {
+		alert('Kein Passwort wurde angegeben...');
+		if (bowser.msie) {
+			document.execCommand('Stop');
+		} else {
+			window.stop();
+		}
+		window.location='http://trailtech.at';
+	}
+	if (trim(pw_prompt) == pw ) {
+		alert('Passwort richtig! ..Plan ladet.');
+	} else {
+		alert('das Passwort ist leider falsch..');
+		try {
+			// msie command try
+			document.execCommand('Stop');
+		} 
+		catch(err) {
+			// else do
+			console.log( err.message );
+			window.stop();
+		}
+		window.location='http://trailtech.at';
+	}
+			
+	var map = L.map('map').setView([47.04417099924193, 12.806376095397468], 15.5);
+		L.tileLayer('http://tiroltrailhead.com/trailtech/hb/{z}/{x}/{y}.jpg', {
+		minZoom: 14,
+		maxZoom: 17,
+		tms: false,
+		attribution: '<a href="https://trailtech.at">trailtech.at</a>'
+	}).addTo(map);
+  </script>
+</body>
+</html>
