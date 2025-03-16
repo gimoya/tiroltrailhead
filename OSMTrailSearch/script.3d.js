@@ -521,7 +521,10 @@ class TerrainMap {
                         difficulty: difficulty,
                         type: isMTB ? 'MTB' : 'Hiking',
                         surface: trail.tags.surface || 'Unknown',
-                        length: trail.tags.length ? (trail.tags.length / 1000).toFixed(2) + 'km' : 'Unknown',
+                        length: turf.length({
+                            type: 'LineString',
+                            coordinates: coordinates
+                        }).toFixed(2) + ' km',
                         color: color,
                         highlighted: false
                     },
