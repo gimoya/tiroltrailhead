@@ -97,6 +97,17 @@ class TerrainMap {
                 }
             });
 
+            // Add trails buffer layer
+            this.map.addLayer({
+                'id': 'trails-buffer',
+                'type': 'line',
+                'source': 'trails',
+                'paint': {
+                    'line-width': 30,
+                    'line-opacity': 0.15
+                }
+            });
+
             // Hide loading message
             document.querySelector('.loading').style.display = 'none';
 
@@ -119,9 +130,9 @@ class TerrainMap {
             this.addSearchButton();
 
             // Add click handler for trails
-            this.map.on('click', 'trails', (e) => {
+            this.map.on('click', 'trails-buffer', (e) => {
                 const features = this.map.queryRenderedFeatures(e.point, {
-                    layers: ['trails'],
+                    layers: ['trails-buffer'],
                     radius: 10  // Increased click radius for better sensitivity
                 });
                 
@@ -152,6 +163,15 @@ class TerrainMap {
                         </div>
                     `)
                     .addTo(this.map);
+            });
+
+            // Also add hover state for better UX
+            this.map.on('mouseenter', 'trails-buffer', () => {
+                this.map.getCanvas().style.cursor = 'pointer';
+            });
+
+            this.map.on('mouseleave', 'trails-buffer', () => {
+                this.map.getCanvas().style.cursor = '';
             });
         });
 
@@ -341,8 +361,8 @@ class TerrainMap {
                 'filter': ['==', 'buffer', i],
                 'paint': {
                     'line-color': '#0984e3',
-                    'line-width': i === 0 ? 2 : (this.BUFFER_COUNT - i + 1),
-                    'line-opacity': i === 0 ? 0.8 : 0.3
+                    'line-width': i === 0 ? 3 : (this.BUFFER_COUNT - i + 1),
+                    'line-opacity': i === 0 ? 0.9 : 0.5
                 }
             });
         }
@@ -411,25 +431,27 @@ class TerrainMap {
 
     getDifficultyColor(difficulty, type = 'mtb') {
         const mtbColors = {
-            0: '#4CAF50', // Easy - Green
-            1: '#8BC34A', // Easy/Intermediate - Light Green
-            2: '#FFEB3B', // Intermediate - Yellow
-            3: '#FF9800', // Intermediate/Difficult - Orange
-            4: '#FF5722', // Difficult - Deep Orange
-            5: '#F44336', // Very Difficult - Red
-            6: '#9C27B0'  // Extremely Difficult - Purple
+            0: '#4169E1',  // Royal Blue - Easy
+            1: '#6495ED',  // Cornflower Blue - Easy/Intermediate
+            2: '#9370DB',  // Medium Purple - Intermediate
+            3: '#DA70D6',  // Orchid - Intermediate/Difficult
+            4: '#FF1493',  // Deep Pink - Difficult
+            5: '#DC143C',  // Crimson - Very Difficult
+            6: '#8B0000'   // Dark Red - Extremely Difficult
         };
 
         const sacColors = {
-            'hiking': '#4CAF50',           // T1 - hiking - Green
-            'mountain_hiking': '#8BC34A',   // T2 - mountain hiking - Light Green
-            'demanding_mountain_hiking': '#FFEB3B',  // T3 - demanding mountain hiking - Yellow
-            'alpine_hiking': '#FF9800',     // T4 - alpine hiking - Orange
-            'demanding_alpine_hiking': '#FF5722',  // T5 - demanding alpine hiking - Deep Orange
-            'difficult_alpine_hiking': '#F44336'    // T6 - difficult alpine hiking - Red
+            'hiking': '#90EE90',                    // Light Green - T1
+            'mountain_hiking': '#9ACD32',           // Yellow Green - T2
+            'demanding_mountain_hiking': '#DAA520',  // Goldenrod - T3
+            'alpine_hiking': '#CD853F',             // Peru - T4
+            'demanding_alpine_hiking': '#8B4513',    // Saddle Brown - T5
+            'difficult_alpine_hiking': '#654321'     // Dark Brown - T6
         };
 
-        return type === 'mtb' ? (mtbColors[difficulty] || mtbColors[0]) : (sacColors[difficulty] || sacColors['hiking']);
+        return type === 'mtb' ? 
+            (mtbColors[difficulty] || mtbColors[0]) : 
+            (sacColors[difficulty] || sacColors['hiking']);
     }
 
     async fetchMTBTrails() {
