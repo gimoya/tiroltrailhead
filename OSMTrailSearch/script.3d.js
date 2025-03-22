@@ -360,7 +360,7 @@ class TerrainMap {
                 'source': 'search-area',
                 'filter': ['==', 'buffer', i],
                 'paint': {
-                    'line-color': '#0984e3',
+                    'line-color': 'white',
                     'line-width': i === 0 ? 3 : (this.BUFFER_COUNT - i + 1),
                     'line-opacity': i === 0 ? 0.9 : 0.5
                 }
