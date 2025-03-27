@@ -1,0 +1,7 @@
+# Take the shorter vector of vectors BA and BC (-> name it BS) and 
+# (1) calculate the the vector BF, where F is a point on BS, for which the perpendicular vector
+# starting at point F and ending at the section with the bisector, has the same length as the the given radius.
+# (2) Check if the length of BF that we get for the given Radius is shorter then BS to retain the 
+# original end point of the vector BS! Exit with an error message if this is not the case!
+# (3) Return the section point of the perpendicular vector BF with the bisector as the middle point 
+# of the rounded corner.

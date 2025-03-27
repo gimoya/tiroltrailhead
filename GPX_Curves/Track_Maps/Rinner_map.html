@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_50f5467ef902c3c99fdba2b54dce5468 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_50f5467ef902c3c99fdba2b54dce5468" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_50f5467ef902c3c99fdba2b54dce5468 = L.map(
+                "map_50f5467ef902c3c99fdba2b54dce5468",
+                {
+                    center: [47.240960661157025, 11.496343966942149],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_296e318af3d5d00e209450825a0719fa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_296e318af3d5d00e209450825a0719fa.addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var poly_line_0f26fcece41eb604204817045d97e209 = L.polyline(
+                [[47.23696, 11.49876], [47.2369, 11.49823], [47.23642, 11.49694], [47.23637, 11.49668], [47.23647, 11.49624], [47.23674, 11.49557], [47.23683, 11.49493], [47.237, 11.49447], [47.23707, 11.49394], [47.23707, 11.49354], [47.23704, 11.49335], [47.23704, 11.49335], [47.23709, 11.49332], [47.23715, 11.49338], [47.23715, 11.49338], [47.23744, 11.49415], [47.23766, 11.49459], [47.23777, 11.49502], [47.23779, 11.49543], [47.23773, 11.49595], [47.23776, 11.49638], [47.23786, 11.49661], [47.238, 11.49673], [47.23807, 11.49678], [47.23833, 11.49693], [47.23861, 11.49728], [47.23884, 11.49778], [47.23898, 11.49829], [47.23909, 11.4989], [47.2391, 11.49924], [47.2391, 11.49924], [47.23914, 11.49928], [47.23921, 11.49918], [47.23921, 11.49918], [47.23931, 11.49843], [47.23949, 11.49799], [47.23952, 11.49758], [47.23936, 11.49691], [47.23934, 11.49632], [47.23916, 11.49574], [47.23916, 11.49549], [47.23936, 11.49467], [47.23938, 11.49458], [47.23941, 11.49424], [47.23949, 11.49373], [47.23951, 11.49344], [47.23945, 11.49312], [47.23931, 11.49285], [47.23932, 11.49218], [47.2394, 11.49172], [47.23943, 11.4915], [47.23942, 11.49132], [47.23927, 11.49103], [47.23927, 11.49103], [47.23925, 11.49091], [47.23929, 11.49085], [47.23937, 11.49089], [47.23937, 11.49089], [47.2394, 11.491], [47.23969, 11.49128], [47.2399, 11.49189], [47.23999, 11.49217], [47.2401, 11.4924], [47.24032, 11.49278], [47.24052, 11.49335], [47.24056, 11.49389], [47.24049, 11.49466], [47.24054, 11.49476], [47.24109, 11.49537], [47.24149, 11.49604], [47.24154, 11.49613], [47.24165, 11.49625], [47.24173, 11.49656], [47.24191, 11.49698], [47.24194, 11.4972], [47.24192, 11.4975], [47.24192, 11.4975], [47.24195, 11.49756], [47.24199, 11.49755], [47.24199, 11.49755], [47.24206, 11.49739], [47.24213, 11.497], [47.24212, 11.49633], [47.24208, 11.49588], [47.24208, 11.49512], [47.24199, 11.49448], [47.24192, 11.49435], [47.24193, 11.49424], [47.24231, 11.49363], [47.24251, 11.49358], [47.24274, 11.49369], [47.24283, 11.49392], [47.24289, 11.49438], [47.24289, 11.49484], [47.24308, 11.49531], [47.24313, 11.49553], [47.24322, 11.49572], [47.24324, 11.49628], [47.24336, 11.49702], [47.24391, 11.49835], [47.24427, 11.4988], [47.24437, 11.49889], [47.24454, 11.49904], [47.24467, 11.49924], [47.24515, 11.50016], [47.24543, 11.50066], [47.24573, 11.50114], [47.24587, 11.50142], [47.24606, 11.50203], [47.24624, 11.50229], [47.24634, 11.5024], [47.24643, 11.50245], [47.24652, 11.50259], [47.24731, 11.5032], [47.24746, 11.50333], [47.24764, 11.50347], [47.24775, 11.50358], [47.2478, 11.50367], [47.24783, 11.50369], [47.24803, 11.50381], [47.24812, 11.50392]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var poly_line_6f75b80f207fd52dfd8b03dd1a1af71f = L.polyline(
+                [[47.23704, 11.49335], [47.23709, 11.49332], [47.23715, 11.49338]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var marker_9acab1d680b6ced98957c231891a5743 = L.marker(
+                [47.23704, 11.49335],
+                {
+}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var icon_8de6924fbbe49bd14562a758f93764db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_726e036ee2a2629686b503ffcb666315 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3bcbf26effda9164e58484d673b70311 = $(`<div id="html_3bcbf26effda9164e58484d673b70311" style="width: 100.0%; height: 100.0%;">Hairpin Section H1 Start</div>`)[0];
+                popup_726e036ee2a2629686b503ffcb666315.setContent(html_3bcbf26effda9164e58484d673b70311);
+            
+        
+
+        marker_9acab1d680b6ced98957c231891a5743.bindPopup(popup_726e036ee2a2629686b503ffcb666315)
+        ;
+
+        
+    
+    
+                marker_9acab1d680b6ced98957c231891a5743.setIcon(icon_8de6924fbbe49bd14562a758f93764db);
+            
+    
+            var marker_396933926be43b4e42cccb7a4186337e = L.marker(
+                [47.23715, 11.49338],
+                {
+}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var icon_e176620c3eb0d8e8cc0def65029264b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ca14e6ae2a5d3d41d64a6fa6839bdbd6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2595df746dfeea60d234e5c9f4a947b = $(`<div id="html_a2595df746dfeea60d234e5c9f4a947b" style="width: 100.0%; height: 100.0%;">Hairpin Section H1 End</div>`)[0];
+                popup_ca14e6ae2a5d3d41d64a6fa6839bdbd6.setContent(html_a2595df746dfeea60d234e5c9f4a947b);
+            
+        
+
+        marker_396933926be43b4e42cccb7a4186337e.bindPopup(popup_ca14e6ae2a5d3d41d64a6fa6839bdbd6)
+        ;
+
+        
+    
+    
+                marker_396933926be43b4e42cccb7a4186337e.setIcon(icon_e176620c3eb0d8e8cc0def65029264b4);
+            
+    
+            var poly_line_cbb29e8e129b5dd2ee097d6dda022585 = L.polyline(
+                [[47.2391, 11.49924], [47.23914, 11.49928], [47.23921, 11.49918]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var marker_ed8126217114df03240ea297893aba90 = L.marker(
+                [47.2391, 11.49924],
+                {
+}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var icon_2eed285056a871319e2d806fbfbfc08f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5ea9bd260043eaa241eaeffb3e666c4d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_743bd42b7d4f9995414e8c4104721b0e = $(`<div id="html_743bd42b7d4f9995414e8c4104721b0e" style="width: 100.0%; height: 100.0%;">Hairpin Section H2 Start</div>`)[0];
+                popup_5ea9bd260043eaa241eaeffb3e666c4d.setContent(html_743bd42b7d4f9995414e8c4104721b0e);
+            
+        
+
+        marker_ed8126217114df03240ea297893aba90.bindPopup(popup_5ea9bd260043eaa241eaeffb3e666c4d)
+        ;
+
+        
+    
+    
+                marker_ed8126217114df03240ea297893aba90.setIcon(icon_2eed285056a871319e2d806fbfbfc08f);
+            
+    
+            var marker_cb2b7be5af3a573d04c306f07180abbd = L.marker(
+                [47.23921, 11.49918],
+                {
+}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var icon_48214d0791d1d851c7d898c6e32aa0e0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f6d996b799fcfc7a497685cdaf280ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7cd9860cfa2c87fc3784f9151c989dab = $(`<div id="html_7cd9860cfa2c87fc3784f9151c989dab" style="width: 100.0%; height: 100.0%;">Hairpin Section H2 End</div>`)[0];
+                popup_2f6d996b799fcfc7a497685cdaf280ba.setContent(html_7cd9860cfa2c87fc3784f9151c989dab);
+            
+        
+
+        marker_cb2b7be5af3a573d04c306f07180abbd.bindPopup(popup_2f6d996b799fcfc7a497685cdaf280ba)
+        ;
+
+        
+    
+    
+                marker_cb2b7be5af3a573d04c306f07180abbd.setIcon(icon_48214d0791d1d851c7d898c6e32aa0e0);
+            
+    
+            var poly_line_8e61e85d3fa1b2b4284c81b1072aef31 = L.polyline(
+                [[47.23927, 11.49103], [47.23925, 11.49091], [47.23929, 11.49085], [47.23937, 11.49089]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var marker_8b8c274ed666096d6f63e9806b55b423 = L.marker(
+                [47.23927, 11.49103],
+                {
+}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var icon_103959ab8bc185d42b72d6ba611ce960 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0d49eb70caf14ac6f5c4279128968bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0969751b9f106116d6dade12fc80bcc = $(`<div id="html_e0969751b9f106116d6dade12fc80bcc" style="width: 100.0%; height: 100.0%;">Hairpin Section H3 Start</div>`)[0];
+                popup_b0d49eb70caf14ac6f5c4279128968bd.setContent(html_e0969751b9f106116d6dade12fc80bcc);
+            
+        
+
+        marker_8b8c274ed666096d6f63e9806b55b423.bindPopup(popup_b0d49eb70caf14ac6f5c4279128968bd)
+        ;
+
+        
+    
+    
+                marker_8b8c274ed666096d6f63e9806b55b423.setIcon(icon_103959ab8bc185d42b72d6ba611ce960);
+            
+    
+            var marker_3c99bd11763751942b55b9f577846d60 = L.marker(
+                [47.23937, 11.49089],
+                {
+}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var icon_5f87af8be2931b023dd4b229709dcc95 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d010c46f4a7c7ab34d707fa663120323 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2312d7f99f305fbba29be03447ea0662 = $(`<div id="html_2312d7f99f305fbba29be03447ea0662" style="width: 100.0%; height: 100.0%;">Hairpin Section H3 End</div>`)[0];
+                popup_d010c46f4a7c7ab34d707fa663120323.setContent(html_2312d7f99f305fbba29be03447ea0662);
+            
+        
+
+        marker_3c99bd11763751942b55b9f577846d60.bindPopup(popup_d010c46f4a7c7ab34d707fa663120323)
+        ;
+
+        
+    
+    
+                marker_3c99bd11763751942b55b9f577846d60.setIcon(icon_5f87af8be2931b023dd4b229709dcc95);
+            
+    
+            var poly_line_79e204ac895fb943d404e71bab5c30af = L.polyline(
+                [[47.24192, 11.4975], [47.24195, 11.49756], [47.24199, 11.49755]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var marker_3548c115ffc290ef37a185ccff6302a9 = L.marker(
+                [47.24192, 11.4975],
+                {
+}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var icon_bc5e9af1cf2df73013a888af5fdb26b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_83e911f60ee43c5be6f1c7aeb89b6de1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_667db6daf1baf59a7b209f26e77a625f = $(`<div id="html_667db6daf1baf59a7b209f26e77a625f" style="width: 100.0%; height: 100.0%;">Hairpin Section H4 Start</div>`)[0];
+                popup_83e911f60ee43c5be6f1c7aeb89b6de1.setContent(html_667db6daf1baf59a7b209f26e77a625f);
+            
+        
+
+        marker_3548c115ffc290ef37a185ccff6302a9.bindPopup(popup_83e911f60ee43c5be6f1c7aeb89b6de1)
+        ;
+
+        
+    
+    
+                marker_3548c115ffc290ef37a185ccff6302a9.setIcon(icon_bc5e9af1cf2df73013a888af5fdb26b4);
+            
+    
+            var marker_686b41f5a81ef0eee07562e42e7b8425 = L.marker(
+                [47.24199, 11.49755],
+                {
+}
+            ).addTo(map_50f5467ef902c3c99fdba2b54dce5468);
+        
+    
+            var icon_383c895e644a597cb9657b278bbc67de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec956ebc4603c22b09d21275e6522bb7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4830c83aecbfdb113ab445a68fc75061 = $(`<div id="html_4830c83aecbfdb113ab445a68fc75061" style="width: 100.0%; height: 100.0%;">Hairpin Section H4 End</div>`)[0];
+                popup_ec956ebc4603c22b09d21275e6522bb7.setContent(html_4830c83aecbfdb113ab445a68fc75061);
+            
+        
+
+        marker_686b41f5a81ef0eee07562e42e7b8425.bindPopup(popup_ec956ebc4603c22b09d21275e6522bb7)
+        ;
+
+        
+    
+    
+                marker_686b41f5a81ef0eee07562e42e7b8425.setIcon(icon_383c895e644a597cb9657b278bbc67de);
+            
+    
+            map_50f5467ef902c3c99fdba2b54dce5468.fitBounds(
+                [[47.235195000000004, 11.489543], [47.249295000000004, 11.505227000000001]],
+                {}
+            );
+        
+</script>
+</html>
