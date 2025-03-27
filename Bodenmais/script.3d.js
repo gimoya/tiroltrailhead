@@ -75,28 +75,80 @@ class TerrainMap {
 
             // Add click handler for map
             this.map.on('click', (e) => {
-                // Check if click is on a trail
-                const features = this.map.queryRenderedFeatures(e.point, { layers: ['trail_park_data'] });
+                // Check if click is on any feature
+                const features = this.map.queryRenderedFeatures(e.point, { 
+                    layers: ['polygon_data', 'line_data', 'point_data'] 
+                });
+                
                 if (!features.length) {
-                    // If click is not on a trail, remove popup
+                    // If click is not on a feature, remove popup
                     if (this.currentPopup) {
                         this.currentPopup.remove();
                         this.currentPopup = null;
                     }
                 }
             });
+
+            // Add click handlers for each layer type
+            ['polygon_data', 'line_data', 'point_data'].forEach(layerId => {
+                this.map.on('click', layerId, (e) => {
+                    if (e.features.length > 0) {
+                        // Remove existing popup if any
+                        if (this.currentPopup) {
+                            this.currentPopup.remove();
+                        }
+
+                        const feature = e.features[0];
+                    
+                        // Update the feature in the source
+                        const sourceId = layerId.split('_')[0] + '_data';
+                        const data = this.map.getSource(sourceId)._data;
+                        data.features.forEach(f => {
+                            f.properties.highlighted = f.id === feature.id;
+                        });
+                        this.map.getSource(sourceId).setData(data);
+
+                        // Show popup with proper accessibility
+                        this.currentPopup = new mapboxgl.Popup({
+                            closeButton: true,
+                            closeOnClick: false,
+                            className: 'accessible-popup'
+                        })
+                            .setLngLat(e.lngLat)
+                            .setHTML(`
+                                <div class="pop_cont_name">${(feature.properties.name)}</div>
+                            `)
+                            .addTo(this.map);
+
+                        // Fix accessibility of close button after popup is added
+                        const closeButton = this.currentPopup.getElement().querySelector('.mapboxgl-popup-close-button');
+                        if (closeButton) {
+                            closeButton.removeAttribute('aria-hidden');
+                            closeButton.setAttribute('aria-label', 'Close feature information');
+                        }
+                    }
+                });
+            });
         });
     }
 
     async loadKML() {
         try {
-            const response = await fetch('bodensee_trail_park.kml');
+            const response = await fetch('bodenmais_trail_park.kml');
             const text = await response.text();
             const parser = new DOMParser();
             const kmlDoc = parser.parseFromString(text, 'text/xml');
             
-            // Convert KML to GeoJSON
-            const trailData = {
+            // Create separate feature collections for different geometry types
+            const pointData = {
+                type: 'FeatureCollection',
+                features: []
+            };
+            const lineData = {
+                type: 'FeatureCollection',
+                features: []
+            };
+            const polygonData = {
                 type: 'FeatureCollection',
                 features: []
             };
@@ -120,6 +172,19 @@ class TerrainMap {
                         const [lng, lat] = coord.split(',').map(Number);
                         return [lng, lat];
                     });
+                    lineData.features.push({
+                        type: 'Feature',
+                        geometry: {
+                            type: geometryType,
+                            coordinates: coordinates
+                        },
+                        properties: {
+                            name: name,
+                            styleUrl: styleUrl,
+                            visible: true,
+                            highlighted: false
+                        }
+                    });
                 }
                 
                 // Check for Polygon
@@ -131,6 +196,19 @@ class TerrainMap {
                         const [lng, lat] = coord.split(',').map(Number);
                         return [lng, lat];
                     })];
+                    polygonData.features.push({
+                        type: 'Feature',
+                        geometry: {
+                            type: geometryType,
+                            coordinates: coordinates
+                        },
+                        properties: {
+                            name: name,
+                            styleUrl: styleUrl,
+                            visible: true,
+                            highlighted: false
+                        }
+                    });
                 }
                 
                 // Check for Point
@@ -140,10 +218,7 @@ class TerrainMap {
                     const coordsText = point.getElementsByTagName('coordinates')[0]?.textContent || '';
                     const [lng, lat] = coordsText.split(',').map(Number);
                     coordinates = [lng, lat];
-                }
-
-                if (coordinates) {
-                    trailData.features.push({
+                    pointData.features.push({
                         type: 'Feature',
                         geometry: {
                             type: geometryType,
@@ -159,41 +234,58 @@ class TerrainMap {
                 }
             }
 
-            // Add IDs to features if they don't exist
-            trailData.features = trailData.features.map((feature, index) => ({
-                ...feature,
-                id: index // Add numeric ID to each feature
+            // Add IDs to features
+            pointData.features = pointData.features.map((feature, index) => ({ 
+                ...feature, 
+                id: `point-${index}`,
+                properties: {
+                    ...feature.properties,
+                    id: `point-${index}`
+                }
+            }));
+            lineData.features = lineData.features.map((feature, index) => ({ 
+                ...feature, 
+                id: `line-${index}`,
+                properties: {
+                    ...feature.properties,
+                    id: `line-${index}`
+                }
+            }));
+            polygonData.features = polygonData.features.map((feature, index) => ({ 
+                ...feature, 
+                id: `polygon-${index}`,
+                properties: {
+                    ...feature.properties,
+                    id: `polygon-${index}`
+                }
             }));
 
-            // Add source for trail_park_data
-            this.map.addSource('trail_park_data', {
+            // Add sources for each geometry type
+            this.map.addSource('point_data', {
                 'type': 'geojson',
-                'data': trailData,
-                'generateId': false // We manually set IDs above
+                'data': pointData,
+                'generateId': false
             });
 
-            // Add interactive trail layer (bottom layer)
+            this.map.addSource('line_data', {
+                'type': 'geojson',
+                'data': lineData,
+                'generateId': false
+            });
+
+            this.map.addSource('polygon_data', {
+                'type': 'geojson',
+                'data': polygonData,
+                'generateId': false
+            });
+
+            // Add polygon layer (bottom) - only outlines with hashed pattern
             this.map.addLayer({
-                'id': 'trail_park_data',
-                'type': 'line',
-                'source': 'trail_park_data',
-                'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
-                },
+                'id': 'polygon_data',
+                'type': 'fill',
+                'source': 'polygon_data',
                 'paint': {
-                    'line-color': 'black',
-                    'line-width': [
-                        'case',
-                        ['boolean', ['get', 'highlighted'], false],
-                        20,
-                        ['case',
-                            ['boolean', ['feature-state', 'hover'], false],
-                            20,
-                            15
-                        ]
-                    ],
-                    'line-opacity': [
+                    'fill-opacity': [
                         'case',
                         ['boolean', ['get', 'highlighted'], false],
                         0.5,
@@ -210,106 +302,152 @@ class TerrainMap {
                 }
             });
 
-            // Add background trail layer (top layer)
+            // Add polygon outline layer
             this.map.addLayer({
-                'id': 'trail_park_data-symbol',
+                'id': 'polygon_data-outline',
                 'type': 'line',
-                'source': 'trail_park_data',
+                'source': 'polygon_data',
+                'paint': {
+                    'line-color': [
+                        'match',
+                        ['get', 'name'],
+                        'Phase 1', '#FF5F1F',
+                        'Phase 2', '#3C8E38',
+                        'Phase 3 Öko zone', '#2DC0FB',
+                        'Pumptrack 900 m2', '#2F2FD3',
+                        'Skills trail area', '#BDBDBD',
+                        '#000000'  // default color
+                    ],
+                    'line-width': 2,
+                    'line-opacity': 0.8
+                }
+            });
+
+            // Add line layer with color mapping
+            this.map.addLayer({
+                'id': 'line_data',
+                'type': 'line',
+                'source': 'line_data',
                 'layout': {
                     'line-join': 'round',
                     'line-cap': 'round'
                 },
                 'paint': {
-                    'line-color': '#FF5F1F',
-                    'line-width': 3.6,
-                    'line-opacity': [
+                    'line-color': [
+                        'match',
+                        ['get', 'difficulty'],
+                        'easy', '#3C8E38',     // green
+                        'intermediate', '#FF5F1F', // orange
+                        'advanced', '#000000',    // black
+                        '#FF5F1F'  // default orange
+                    ],
+                    'line-width': [
                         'case',
-                        ['boolean', ['get', 'visible'], false],
-                        0.85,
-                        0
+                        ['boolean', ['get', 'highlighted'], false],
+                        3,
+                        ['case',
+                            ['boolean', ['feature-state', 'hover'], false],
+                            3,
+                            2
+                        ]
                     ]
                 }
             });
 
-            // Add hover effect
-            this.map.on('mousemove', 'trail_park_data', (e) => {
-                if (e.features.length > 0) {
+            // Add hub markers
+            this.map.addLayer({
+                'id': 'point_data',
+                'type': 'symbol',
+                'source': 'point_data',
+                'layout': {
+                    'icon-image': 'fa-map-marker-alt',
+                    'icon-size': 1.5,
+                    'icon-allow-overlap': true,
+                    'text-field': ['get', 'name'],
+                    'text-font': ['Open Sans Bold'],
+                    'text-offset': [0, 1.5],
+                    'text-anchor': 'top',
+                    'text-size': 12
+                },
+                'paint': {
+                    'text-color': '#000000',
+                    'text-halo-color': '#FFFFFF',
+                    'text-halo-width': 2,
+                    'icon-color': '#FF5F1F'
+                }
+            });
+
+            // Add hover effects for each layer type
+            ['polygon_data', 'line_data', 'point_data'].forEach(layerId => {
+                this.map.on('mousemove', layerId, (e) => {
+                    if (e.features.length > 0) {
+                        const feature = e.features[0];
+                        const featureId = feature.properties.id;
+                        
+                        if (this.hoveredTrailId !== null) {
+                            this.map.setFeatureState(
+                                { source: layerId.split('_')[0] + '_data', id: this.hoveredTrailId },
+                                { hover: false }
+                            );
+                        }
+                        
+                        this.hoveredTrailId = featureId;
+                        
+                        this.map.setFeatureState(
+                            { source: layerId.split('_')[0] + '_data', id: featureId },
+                            { hover: true }
+                        );
+                        
+                        this.map.getCanvas().style.cursor = 'pointer';
+                    }
+                });
+
+                this.map.on('mouseleave', layerId, () => {
                     if (this.hoveredTrailId !== null) {
                         this.map.setFeatureState(
-                            { source: 'trail_park_data', id: this.hoveredTrailId },
+                            { source: layerId.split('_')[0] + '_data', id: this.hoveredTrailId },
                             { hover: false }
                         );
                     }
-                    
-                    this.hoveredTrailId = e.features[0].id;
-                    
-                    this.map.setFeatureState(
-                        { source: 'trail_park_data', id: this.hoveredTrailId },
-                        { hover: true }
-                    );
-                    
-                    this.map.getCanvas().style.cursor = 'pointer';
-                }
+                    this.hoveredTrailId = null;
+                    this.map.getCanvas().style.cursor = '';
+                });
             });
 
-            this.map.on('mouseleave', 'trail_park_data', () => {
-                if (this.hoveredTrailId !== null) {
-                    this.map.setFeatureState(
-                        { source: 'trail_park_data', id: this.hoveredTrailId },
-                        { hover: false }
-                    );
-                }
-                this.hoveredTrailId = null;
-                this.map.getCanvas().style.cursor = '';
-            });
+            // Calculate and fit to maximum bounds of all layers
+            const allFeatures = [
+                ...polygonData.features,
+                ...lineData.features,
+                ...pointData.features
+            ];
 
-            // Click handler for trail_park_data
-            this.map.on('click', 'trail_park_data', (e) => {
-                if (e.features.length > 0) {
-                    // Remove existing popup if any
-                    if (this.currentPopup) {
-                        this.currentPopup.remove();
-                    }
-
-                    const feature = e.features[0];
+            if (allFeatures.length > 0) {
+                const bounds = new mapboxgl.LngLatBounds();
                 
-                    // Update the feature in the source
-                    const data = this.map.getSource('trail_park_data')._data;
-                    data.features.forEach(f => {
-                        f.properties.highlighted = f.id === feature.id;
-                    });
-                    this.map.getSource('trail_park_data').setData(data);
-
-                    // Fit bounds to the clicked trail
-                    const coordinates = feature.geometry.coordinates;
-                    const bounds = coordinates.reduce((bounds, coord) => {
-                        return bounds.extend(coord);
-                    }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
-
-                    this.map.fitBounds(bounds, {
-                        padding: 50
-                    });
-
-                    // Show popup with proper accessibility
-                    this.currentPopup = new mapboxgl.Popup({
-                        closeButton: true,
-                        closeOnClick: false,
-                        className: 'accessible-popup'
-                    })
-                        .setLngLat(e.lngLat)
-                        .setHTML(`
-                            <div class="pop_cont_name">${(feature.properties.name)}</div>
-                        `)
-                        .addTo(this.map);
-
-                    // Fix accessibility of close button after popup is added
-                    const closeButton = this.currentPopup.getElement().querySelector('.mapboxgl-popup-close-button');
-                    if (closeButton) {
-                        closeButton.removeAttribute('aria-hidden');
-                        closeButton.setAttribute('aria-label', 'Close trail information');
+                allFeatures.forEach(feature => {
+                    if (feature.geometry.type === 'Point') {
+                        bounds.extend(feature.geometry.coordinates);
+                    } else if (feature.geometry.type === 'LineString') {
+                        feature.geometry.coordinates.forEach(coord => bounds.extend(coord));
+                    } else if (feature.geometry.type === 'Polygon') {
+                        feature.geometry.coordinates[0].forEach(coord => bounds.extend(coord));
                     }
-                }
-            });
+                });
+
+                // Add padding to bounds
+                const padding = 0.02; // 2% padding
+                const latDiff = bounds.getNorth() - bounds.getSouth();
+                const lngDiff = bounds.getEast() - bounds.getWest();
+                
+                bounds.extend([bounds.getWest() - lngDiff * padding, bounds.getSouth() - latDiff * padding]);
+                bounds.extend([bounds.getEast() + lngDiff * padding, bounds.getNorth() + latDiff * padding]);
+
+                // Fit to bounds with animation
+                this.map.fitBounds(bounds, {
+                    padding: 50,
+                    duration: 1000
+                });
+            }
 
         } catch (error) {
             console.error('Error loading KML:', error);

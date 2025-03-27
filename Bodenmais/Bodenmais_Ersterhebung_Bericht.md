@@ -1,16 +1,7 @@
 # Übersicht Grobkonzept
 
-<div style="width: 100%; height: 600px; margin-bottom: 20px; position: relative;">
-    <iframe 
-        src="https://earth.google.com/earth/d/16Ptoq_jCXnowTqUNwumWPmjzPNOYqVek?usp=sharing" 
-        style="width: 100%; height: 100%; border: none;"
-        allow="geolocation"
-        title="Interactive Google Earth Map of Bodenmais Trail Park"
-    ></iframe>
-    <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 4px; font-size: 0.9em;">
-        <p><strong>Browser-Anforderungen:</strong> Für die beste Erfahrung verwenden Sie bitte Chrome oder einen kompatiblen Browser.</p>
-        <p><a href="https://earth.google.com/earth/d/16Ptoq_jCXnowTqUNwumWPmjzPNOYqVek?usp=sharing" target="_blank">Karte in neuem Tab öffnen</a></p>
-    </div>
+<div style="width: 100%; height: 800px; margin-bottom: 20px; position: relative;">
+<iframe src="https://www.google.com/maps/d/embed?mid=1Wyxa-0hdrWPVFoSiv2MWD0jYP4a1pkQ&ehbc=2E312F" width="640" height="780"></iframe>
 </div>
 
 ### **Zusammenfassung des Mountainbike-Trail-Entwicklungsplans**  
