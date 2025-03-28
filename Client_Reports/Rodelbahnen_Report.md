@@ -1,13 +1,13 @@
 # Combined Track Analysis Report
 
 ## Configuration
-- **CURVE_ANGLE_THRESHOLD:** 100° (minimum cumulative turn angle to identify a hairpin section)
+- **CURVE_ANGLE_THRESHOLD:** 100&deg; (minimum cumulative turn angle to identify a hairpin section)
 - **LOOK_AHEAD_DISTANCE:** 20m (maximum distance to look ahead for cumulative turns)
 
 ## Section Types
 - **No-hairpin Sections:** Sections with no hairpin curves, relatively straight sections
 - **Hairpin Sections:** Sections with hairpin curves, where turns in the same direction (left or right) accumulate to exceed the angle threshold within the look-ahead distance
-- **Turn Angles:** Negative values (-180° to 0°) indicate left turns, positive values (0° to 180°) indicate right turns
+- **Turn Angles:** Negative values (-180&deg; to 0&deg;) indicate left turns, positive values (0&deg; to 180&deg;) indicate right turns
 
 ---
 
@@ -27,7 +27,7 @@
 
 
 ### Section Analysis
-| ID | Type | Length (m) | Cum. Turn (°) | Elevation Change (m) | Gradient (%) |
+| ID | Type | Length (m) | Cum. Turn (&deg;) | Elevation Change (m) | Gradient (%) |
 |----|------|------------|---------------|-------------------|------------|
 | N1 | no_hairpin | 89.9 | -60.7 | -4.5 | -5.0 |
 | H1 | hairpin | 7.6 | 105.9 | -3.7 | -48.0 |
@@ -83,7 +83,7 @@
 
 
 ### Section Analysis
-| ID | Type | Length (m) | Cum. Turn (°) | Elevation Change (m) | Gradient (%) |
+| ID | Type | Length (m) | Cum. Turn (&deg;) | Elevation Change (m) | Gradient (%) |
 |----|------|------------|---------------|-------------------|------------|
 | N1 | no_hairpin | 42.9 | 43.7 | -3.6 | -8.4 |
 | H1 | hairpin | 23.8 | -131.3 | -4.7 | -19.6 |
@@ -137,7 +137,7 @@
 
 
 ### Section Analysis
-| ID | Type | Length (m) | Cum. Turn (°) | Elevation Change (m) | Gradient (%) |
+| ID | Type | Length (m) | Cum. Turn (&deg;) | Elevation Change (m) | Gradient (%) |
 |----|------|------------|---------------|-------------------|------------|
 | N1 | no_hairpin | 3035.7 | -118.7 | -429.6 | -14.2 |
 
@@ -159,7 +159,7 @@
 
 
 ### Section Analysis
-| ID | Type | Length (m) | Cum. Turn (°) | Elevation Change (m) | Gradient (%) |
+| ID | Type | Length (m) | Cum. Turn (&deg;) | Elevation Change (m) | Gradient (%) |
 |----|------|------------|---------------|-------------------|------------|
 | N1 | no_hairpin | 440.9 | -3.6 | -57.3 | -13.0 |
 | H1 | hairpin | 14.1 | 137.3 | -3.6 | -25.7 |
@@ -189,7 +189,7 @@
 
 
 ### Section Analysis
-| ID | Type | Length (m) | Cum. Turn (°) | Elevation Change (m) | Gradient (%) |
+| ID | Type | Length (m) | Cum. Turn (&deg;) | Elevation Change (m) | Gradient (%) |
 |----|------|------------|---------------|-------------------|------------|
 | N1 | no_hairpin | 1063.7 | -90.6 | 8.8 | 0.8 |
 | H1 | hairpin | 43.0 | 141.2 | -4.4 | -10.1 |

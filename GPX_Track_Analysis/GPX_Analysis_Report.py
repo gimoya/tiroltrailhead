@@ -365,7 +365,7 @@ def generate_markdown_report(gpx_file: str, edges: List[Edge], sections: List[di
 
 
 ### Section Analysis
-| ID | Type | Length (m) | Cum. Turn (°) | Elevation Change (m) | Gradient (%) |
+| ID | Type | Length (m) | Cum. Turn (&deg;) | Elevation Change (m) | Gradient (%) |
 |----|------|------------|---------------|-------------------|------------|
 """
     
@@ -448,13 +448,13 @@ def main():
     combined_report = f"""# Combined Track Analysis Report
 
 ## Configuration
-- **CURVE_ANGLE_THRESHOLD:** {CURVE_ANGLE_THRESHOLD}° (minimum cumulative turn angle to identify a hairpin section)
+- **CURVE_ANGLE_THRESHOLD:** {CURVE_ANGLE_THRESHOLD}&deg; (minimum cumulative turn angle to identify a hairpin section)
 - **LOOK_AHEAD_DISTANCE:** {LOOK_AHEAD_DISTANCE}m (maximum distance to look ahead for cumulative turns)
 
 ## Section Types
 - **No-hairpin Sections:** Sections with no hairpin curves, relatively straight sections
 - **Hairpin Sections:** Sections with hairpin curves, where turns in the same direction (left or right) accumulate to exceed the angle threshold within the look-ahead distance
-- **Turn Angles:** Negative values (-180° to 0°) indicate left turns, positive values (0° to 180°) indicate right turns
+- **Turn Angles:** Negative values (-180&deg; to 0&deg;) indicate left turns, positive values (0&deg; to 180&deg;) indicate right turns
 
 ---
 
