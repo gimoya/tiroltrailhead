@@ -228,31 +228,39 @@ def create_hairpin_map(sections: List[dict], gpx_file: str) -> str:
     if not sections:
         return "No track sections found"
     
-    # Get points from all sections' edges
-    points = []
-    for section in sections:
-        for edge in section['edges']:
-            points.append((edge.point1.latitude, edge.point1.longitude))
-        # Add the last point of the last edge in each section
-        if section['edges']:
-            points.append((section['edges'][-1].point2.latitude, section['edges'][-1].point2.longitude))
+    # Read original GPX to get track structure
+    with open(gpx_file, 'r') as f:
+        gpx = gpxpy.parse(f)
     
-    # Calculate bounds
-    lats = [p[0] for p in points]
-    lons = [p[1] for p in points]
-    min_lat, max_lat = min(lats), max(lats)
-    min_lon, max_lon = min(lons), max(lons)
+    # Create map
+    all_points = []
+    for track in gpx.tracks:
+        for segment in track.segments:
+            all_points.extend([(p.latitude, p.longitude) for p in segment.points])
     
-    # Calculate center point for the map
-    center_lat = sum(lats) / len(lats)
-    center_lon = sum(lons) / len(lons)
-    
-    # Create map centered on track
+    # Calculate center from all points
+    center_lat = sum(p[0] for p in all_points) / len(all_points)
+    center_lon = sum(p[1] for p in all_points) / len(all_points)
     m = folium.Map(location=[center_lat, center_lon])
-
-    folium.PolyLine(points, weight=2, color='blue', opacity=0.8).add_to(m)
     
-    # Add hairpin section markers and lines
+    # Add each track separately
+    for track in gpx.tracks:
+        track_points = []
+        for segment in track.segments:
+            segment_points = [(p.latitude, p.longitude) for p in segment.points]
+            if segment_points:
+                track_points.append(segment_points)
+        
+        # Add each segment as a separate line
+        for segment_points in track_points:
+            folium.PolyLine(
+                segment_points,
+                weight=2,
+                color='blue',
+                opacity=0.8
+            ).add_to(m)
+    
+    # Add hairpin sections
     hairpin_sections = [section for section in sections if section['type'] == 'hairpin']
     for section in hairpin_sections:
         section_points = []
@@ -269,7 +277,7 @@ def create_hairpin_map(sections: List[dict], gpx_file: str) -> str:
             opacity=0.8
         ).add_to(m)
         
-        # Add markers with section ID
+        # Add markers
         start_point = section['edges'][0].point1
         end_point = section['edges'][-1].point2
         
@@ -285,17 +293,22 @@ def create_hairpin_map(sections: List[dict], gpx_file: str) -> str:
             icon=folium.Icon(color='red', icon='info-sign')
         ).add_to(m)
     
-    # Fit map to track bounds with some padding
-    padding = 0.1  # 10% padding
+    # Calculate bounds
+    lats = [p[0] for p in all_points]
+    lons = [p[1] for p in all_points]
+    min_lat, max_lat = min(lats), max(lats)
+    min_lon, max_lon = min(lons), max(lons)
+    
+    # Fit map to bounds with padding
+    padding = 0.1
     lat_padding = (max_lat - min_lat) * padding
     lon_padding = (max_lon - min_lon) * padding
-    
     m.fit_bounds(
         [[min_lat - lat_padding, min_lon - lon_padding],
          [max_lat + lat_padding, max_lon + lon_padding]]
     )
     
-    # Save map to HTML file
+    # Save map
     maps_dir = "Track_Maps"
     if not os.path.exists(maps_dir):
         os.makedirs(maps_dir)
@@ -384,7 +397,6 @@ def generate_markdown_report(gpx_file: str, edges: List[Edge], sections: List[di
 
 def export_hairpin_points(gpx_file: str, sections: List[dict]):
     """Create a new GPX file with start/end waypoints for hairpin sections"""
-    # Create waypoints folder if it doesn't exist
     waypoints_dir = "Hairpin_Waypoints"
     if not os.path.exists(waypoints_dir):
         os.makedirs(waypoints_dir)
@@ -399,39 +411,40 @@ def export_hairpin_points(gpx_file: str, sections: List[dict]):
         print("No hairpin sections found in the track...")
         return None
     
-    # For each hairpin section, add start and end points
+    # Read original GPX to preserve track structure
+    with open(gpx_file, 'r') as f:
+        original_gpx = gpxpy.parse(f)
+    
+    # Copy all tracks from original GPX
+    for track in original_gpx.tracks:
+        gpx.tracks.append(track)
+    
+    # Add waypoints for hairpin sections
     for i, section in enumerate(hairpin_sections):
-        # Get first edge's point1 (section start)
         first_edge = section['edges'][0]
-        start_point = first_edge.point1
-        
-        # Get last edge's point2 (section end)
         last_edge = section['edges'][-1]
-        end_point = last_edge.point2
         
         # Add start waypoint
         start_waypoint = gpxpy.gpx.GPXWaypoint(
-            latitude=start_point.latitude,
-            longitude=start_point.longitude,
-            elevation=start_point.elevation,
-            name=f'Hairpin Section {i+1} Start'
+            latitude=first_edge.point1.latitude,
+            longitude=first_edge.point1.longitude,
+            elevation=first_edge.point1.elevation,
+            name=f'Hairpin Section {section["id"]} Start'
         )
         gpx.waypoints.append(start_waypoint)
         
         # Add end waypoint
         end_waypoint = gpxpy.gpx.GPXWaypoint(
-            latitude=end_point.latitude,
-            longitude=end_point.longitude,
-            elevation=end_point.elevation,
-            name=f'Hairpin Section {i+1} End'
+            latitude=last_edge.point2.latitude,
+            longitude=last_edge.point2.longitude,
+            elevation=last_edge.point2.elevation,
+            name=f'Hairpin Section {section["id"]} End'
         )
         gpx.waypoints.append(end_waypoint)
     
-    # Create output filename in the waypoints directory
     base_filename = os.path.splitext(os.path.basename(gpx_file))[0]
     output_filename = os.path.join(waypoints_dir, f"{base_filename}_hairpin_sections.gpx")
     
-    # Save to file
     with open(output_filename, 'w') as f:
         f.write(gpx.to_xml())
     
@@ -466,53 +479,24 @@ def main():
         
     for gpx_file in gpx_files:
         print(f"\nProcessing {gpx_file}...")
-
         gpx = gpxpy.parse(open(gpx_file, 'r'))
 
-        # Check how many tracks in one gpx:        
-        # Check how many segments in each track:
-        if gpx.tracks and gpx.tracks[0].segments and gpx.tracks[0].segments[0].points[0]:
-            # Check contents
-            t=0
-            for track in gpx.tracks:
-                t+=1
-                s=0
-                for segment in track.segments:
-                    s+=1
-                print(f"Track {t} has {s} segment(s)")
-        else:
-            #Exit module if gpx track data is faulty
-            print("gpx check failed: gpx file does not contain track or track-segments with track points...")    
-            return
-
-        # Process points and calculate distances between them
-        points = []
-        has_elevation = False
-        has_time = False
-        
-        # Check first point for elevation / time data and set <<has_elevation>> <<has_time>>
-        if gpx.tracks[0].segments[0].points[0].elevation is not None:
-            has_elevation = True
-
-        if gpx.tracks[0].segments[0].points[0].time is not None:
-            has_time = True
-
-        print(f"Check 2: Track {'has' if has_elevation else 'does not have'} elevation data")
-        print(f"Check 3: Track {'has' if has_time else 'does not have'} time data")
-
-        # iterate over each track and its segments
-        # and calculate edges for each track segment
+        # Process all tracks and segments
         all_edges = []
-        for track in gpx.tracks:
-            for segment in track.segments:
+        track_start_indices = []  # Keep track of where each track starts
+        
+        for track_idx, track in enumerate(gpx.tracks):
+            track_start_indices.append(len(all_edges))  # Mark start of new track
+            print(f"Processing Track {track_idx + 1}/{len(gpx.tracks)}")
+            
+            for segment_idx, segment in enumerate(track.segments):
+                print(f"Processing Segment {segment_idx + 1}/{len(track.segments)}")
+                
                 if SMOOTHING:
-                    # Apply Chaikin's corner cutting algorithm
-                    print(f"Smoothing track will be applied, this will result in more hairpin sections being detected! BUT: Elevation and Time Data will be lost!")
                     segment_points = chaikins_corner_cutting(segment.points, refinements=3)
                 else:
                     segment_points = segment.points
                 
-                # 
                 segment_edges = create_edges(segment_points)
                 all_edges.extend(segment_edges)
 
