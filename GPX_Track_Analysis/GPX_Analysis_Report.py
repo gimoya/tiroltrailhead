@@ -9,14 +9,14 @@ import math
 import numpy as np
 
 # Global configuration parameters
-LOOK_AHEAD_DISTANCE = 15     # meters
-CURVE_ANGLE_THRESHOLD = 150  # degrees
+LOOK_AHEAD_DISTANCE = 25     # meters
+CURVE_ANGLE_THRESHOLD = 135  # degrees
 SMOOTHING = False            
 
 @dataclass
 class Edge:
-    point1: 'GPXTrackPoint'
-    point2: 'GPXTrackPoint'
+    point1: float
+    point2: float
     length: float                           # in meters
     elev_diff: float                        # in meters
     time_diff: int                          # seconds
@@ -77,19 +77,19 @@ def calculate_bearing(p1, p2):
     # Normalize to 0-360
     return (bearing + 360) % 360
 
-def create_edges(segment_points) -> List[Edge]:
+def create_edges(point_list) -> List[Edge]:
     # create edges for one segment of a track
     edges = []
     
     # Skip if less than 2 points
-    if len(segment_points) < 2:
+    if len(point_list) < 2:
         print("Only one trackpoint in segment - segment creation will be terminated!..")
         return edges
     
     # Create edges from consecutive points
-    for i in range(len(segment_points) - 1):
-        p1 = segment_points[i]
-        p2 = segment_points[i + 1]
+    for i in range(len(point_list) - 1):
+        p1 = point_list[i]
+        p2 = point_list[i + 1]
         
         # elevation
         if p1.elevation is None or p2.elevation is None:
@@ -223,7 +223,7 @@ def aggregate_sections(edges: List[Edge]) -> List[dict]:
     
     return sections
 
-def create_hairpin_map(sections: List[dict], gpx_file: str) -> str:
+def create_hairpin_map(sections: List[dict], gpx_file: str, track_num: int = None) -> str:
     """Create an HTML map with track and hairpin sections"""
     if not sections:
         return "No track sections found"
@@ -273,16 +273,19 @@ def create_hairpin_map(sections: List[dict], gpx_file: str) -> str:
         start_point = section['edges'][0].point1
         end_point = section['edges'][-1].point2
         
+        # Add track number to marker labels if available
+        marker_prefix = f"Track {track_num} - " if track_num is not None else ""
+        
         folium.Marker(
             [start_point.latitude, start_point.longitude],
-            popup=f'Hairpin Section {section["id"]} Start',
-            icon=folium.Icon(color='green', icon='info-sign')
+            popup=f'{marker_prefix}Hairpin Section {section["id"]} Start',
+            icon=folium.Icon(color='green', icon='flag')
         ).add_to(m)
         
         folium.Marker(
             [end_point.latitude, end_point.longitude],
-            popup=f'Hairpin Section {section["id"]} End',
-            icon=folium.Icon(color='red', icon='info-sign')
+            popup=f'{marker_prefix}Hairpin Section {section["id"]} End',
+            icon=folium.Icon(color='red', icon='flag')
         ).add_to(m)
     
     # Fit map to track bounds with some padding
@@ -301,15 +304,16 @@ def create_hairpin_map(sections: List[dict], gpx_file: str) -> str:
         os.makedirs(maps_dir)
     
     base_filename = os.path.splitext(os.path.basename(gpx_file))[0]
-    map_filename = os.path.join(maps_dir, f"{base_filename}_map.html")
+    track_suffix = f"_track{track_num}" if track_num is not None else ""
+    map_filename = os.path.join(maps_dir, f"{base_filename}{track_suffix}_map.html")
     m.save(map_filename)
     
     return map_filename
 
-def generate_markdown_report(gpx_file: str, edges: List[Edge], sections: List[dict]):
+def generate_markdown_report(gpx_file: str, edges: List[Edge], sections: List[dict], track_num: int = None):
     """Generate markdown report for a GPX file"""
     # Create map visualization
-    map_file = create_hairpin_map(sections, gpx_file)
+    map_file = create_hairpin_map(sections, gpx_file, track_num)
     
     # Calculate statistics
     total_length = sum(edge.length for edge in edges)
@@ -349,10 +353,12 @@ def generate_markdown_report(gpx_file: str, edges: List[Edge], sections: List[di
         elev_str = "N/A"
 
     # Generate report
+    print(f"Track Analysis Report: {gpx_file}")
+    print(f"Map File name: {map_file}")
     report = f"""## Track Analysis Report: {gpx_file}
 
 ### Track Overview
-<iframe src="{map_file}" width="100%" height="400px" frameborder="0"></iframe>
+<iframe src="{os.path.relpath(map_file, '.')}" width="100%" height="400px" frameborder="0"></iframe>
 
 ### Overall Statistics
 - Total Track Length: {total_length:.1f}m
@@ -365,8 +371,8 @@ def generate_markdown_report(gpx_file: str, edges: List[Edge], sections: List[di
 
 
 ### Section Analysis
-| ID | Type | Length (m) | Cum. Turn (&deg;) | Elevation Change (m) | Gradient (%) |
-|----|------|------------|---------------|-------------------|------------|
+| ID | Type | Length (m) | Elevation Change (m) | Gradient (%) |
+|--|------|----------|------------------|------------|
 """
     
     # Add section rows
@@ -378,7 +384,7 @@ def generate_markdown_report(gpx_file: str, edges: List[Edge], sections: List[di
             elev_change = "N/A"
             gradient = "N/A"
             
-        report += f"| {section['id']} | {section['type']} | {section['length']:.1f} | {section['total_angle']:.1f} | {elev_change} | {gradient} |\n"
+        report += f"| {section['id']} | {section['type']} | {section['length']:.1f} | {elev_change} | {gradient} |\n"
     
     return report
 
@@ -469,87 +475,72 @@ def main():
 
         gpx = gpxpy.parse(open(gpx_file, 'r'))
 
-        # Check how many tracks in one gpx:        
-        # Check how many segments in each track:
-        if gpx.tracks and gpx.tracks[0].segments and gpx.tracks[0].segments[0].points[0]:
-            # Check contents
-            t=0
-            for track in gpx.tracks:
-                t+=1
-                s=0
-                for segment in track.segments:
-                    s+=1
-                print(f"Track {t} has {s} segment(s)")
-        else:
-            #Exit module if gpx track data is faulty
-            print("gpx check failed: gpx file does not contain track or track-segments with track points...")    
+        # Check if valid gpx file, with track(s), segment(s) and track points
+        if not (gpx.tracks and gpx.tracks[0].segments and gpx.tracks[0].segments[0].points[0]):
+            print("gpx check failed: gpx file does not contain tracks or track-segments with track points...")    
             return
 
-        # Process points and calculate distances between them
-        points = []
-        has_elevation = False
-        has_time = False
-        
-        # Check first point for elevation / time data and set <<has_elevation>> <<has_time>>
-        if gpx.tracks[0].segments[0].points[0].elevation is not None:
-            has_elevation = True
-
-        if gpx.tracks[0].segments[0].points[0].time is not None:
-            has_time = True
-
-        print(f"Check 2: Track {'has' if has_elevation else 'does not have'} elevation data")
-        print(f"Check 3: Track {'has' if has_time else 'does not have'} time data")
-
-        # iterate over each track and its segments
-        # and calculate edges for each track segment
-        all_edges = []
+        t = 0
         for track in gpx.tracks:
+            t += 1
+            s = 0
+            for segment in track.segments:
+                s += 1
+            print(f"Track {t} has {s} segment(s)")
+
+            # Process points and calculate distances between them
+            points = []
+            has_elevation = False
+            has_time = False
+            
+            # Check first point for elevation / time data
+            if track.segments[0].points[0].elevation is not None:
+                has_elevation = True
+
+            if track.segments[0].points[0].time is not None:
+                has_time = True
+
+            print(f"Check 2: Track {'has' if has_elevation else 'does not have'} elevation data")
+            print(f"Check 3: Track {'has' if has_time else 'does not have'} time data")
+
+            # Process each track independently
+            all_edges = []
             for segment in track.segments:
                 if SMOOTHING:
-                    # Apply Chaikin's corner cutting algorithm
                     print(f"Smoothing track will be applied, this will result in more hairpin sections being detected! BUT: Elevation and Time Data will be lost!")
-                    segment_points = chaikins_corner_cutting(segment.points, refinements=3)
+                    point_list = chaikins_corner_cutting(segment.points, refinements=3)
                 else:
-                    segment_points = segment.points
+                    point_list = segment.points
                 
-                # 
-                segment_edges = create_edges(segment_points)
+                segment_edges = create_edges(point_list)
                 all_edges.extend(segment_edges)
 
-        # check if lengths are correct
-        # Get the true track length for later check
-        true_length_2d = gpx.length_2d()
-        # and compare to summed length of edges
-        total_length = sum(edge.length for edge in all_edges)
-        print(f"gpx length and summed edges length should match:\n{total_length}\n{true_length_2d}") 
+            # Get the true track length for later check
+            true_length_2d = track.length_2d()
+            total_length = sum(edge.length for edge in all_edges)
+            print(f"Track {t} length and summed edges length should match:\n{total_length}\n{true_length_2d}") 
 
-        # Then detect hairpins
-        all_edges = detect_hairpin_curves(all_edges)
-        
-        # Print results
-        print(f"\nTotal edges processed: {len(all_edges)}")
-        hairpin_edges = [e for e in all_edges if e.is_hairpin_edge]
-        print(f"Hairpin edges detected: {len(hairpin_edges)}")
-        
-        # Continue with existing report generation
-        sections = aggregate_sections(all_edges)
+            # Detect hairpins for this track
+            all_edges = detect_hairpin_curves(all_edges)
+            
+            print(f"\nTrack {t} - Total edges processed: {len(all_edges)}")
+            hairpin_edges = [e for e in all_edges if e.is_hairpin_edge]
+            print(f"Track {t} - Hairpin edges detected: {len(hairpin_edges)}")
+            
+            # Generate sections and reports for this track
+            sections = aggregate_sections(all_edges)
+            output_file = export_hairpin_points(f"{gpx_file}_track{t}", sections)
+            print(f"Created hairpin points GPX file for track {t}: {output_file}")
+            
+            report = generate_markdown_report(f"{gpx_file} - Track {t}", all_edges, sections, t)
+            combined_report += report + "\n---\n\n"
+            
+            print(f"Processed: {gpx_file} - Track {t}")
 
-        # After hairpin detection and creation of sections
-        # Export hairpin points
-        output_file = export_hairpin_points(gpx_file, sections)
-        print(f"Created hairpin points GPX file: {output_file}")
-        report = generate_markdown_report(gpx_file, all_edges, sections)
-        
-        # Add to combined report with separator
-        combined_report += report + "\n---\n\n"
-        
-        print(f"Processed: {gpx_file}")
-
-    # Save combined report
-    with open('combined_track_analysis_report.md', 'w') as f:
-        f.write(combined_report)
-    
-    print(f"\nCombined report generated: combined_track_analysis_report.md")
+        print(f"\nCombined report generated: combined_track_analysis_report.md")
+        # Write the combined report to file
+        with open('combined_track_analysis_report.md', 'w', encoding='utf-8') as f:
+            f.write(combined_report)
 
 if __name__ == "__main__":
     main()  
