@@ -44,6 +44,8 @@ new L.Control.downloadButton().addTo(map);
 
 // Function to load and display GPX file
 function loadGPXFile(url) {
+    const markers = []; // Array to store all markers
+    
     fetch(url)
         .then(response => response.text())
         .then(gpxData => {
@@ -71,8 +73,51 @@ function loadGPXFile(url) {
                     const polyline = L.polyline(latlngs, {
                         color: '#0cc0df',
                         weight: 4,
-                        opacity: 0.9
+                        opacity: 0.9,
+                        className: 'animated-track'
                     }).addTo(map);
+                    
+                    // Add moving emoji
+                    const emojiMarker = L.marker(latlngs[0], {
+                        icon: L.divIcon({
+                            className: 'moving-emoji',
+                            html: '🦸‍♀️',
+                            iconSize: [30, 30],
+                            iconAnchor: [15, 15]
+                        })
+                    }).addTo(map);
+
+                    // Animate emoji along the track
+                    let currentIndex = 0;
+                    const animateEmoji = () => {
+                        if (currentIndex < latlngs.length) {
+                            const currentLatLng = L.latLng(latlngs[currentIndex]);
+                            emojiMarker.setLatLng(currentLatLng);
+                            
+                            // Check distance to all markers and trigger rotation if close
+                            markers.forEach(marker => {
+                                const markerLatLng = marker.getLatLng();
+                                const distance = currentLatLng.distanceTo(markerLatLng);
+                                if (distance < 20) { // 20 meters threshold
+                                    const icon = marker.getElement().querySelector('i');
+                                    if (icon) {
+                                        icon.classList.add('rotate', 'gold');
+                                        setTimeout(() => {
+                                            icon.classList.remove('rotate', 'gold');
+                                        }, 1000);
+                                    }
+                                }
+                            });
+                            
+                            currentIndex++;
+                            // Control emoji speed here - lower number = faster, higher number = slower
+                            setTimeout(animateEmoji, 80); // Currently set to 100ms between points
+                        } else {
+                            currentIndex = 0;
+                            animateEmoji();
+                        }
+                    };
+                    animateEmoji();
                     
                     // Add popup to the track
                     polyline.bindPopup(`<div class="trailPopupClass"><div class="pop_cont_name">${trackName}</div></div>`);
@@ -118,8 +163,10 @@ function loadGPXFile(url) {
                             iconAnchor: [15, 35]
                         })
                     }).addTo(map);
-
                 }
+                
+                // Add marker to our array
+                markers.push(marker);
                 
                 // Add popup to the waypoint
                 marker.bindPopup(`
