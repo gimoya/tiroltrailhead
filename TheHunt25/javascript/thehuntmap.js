@@ -46,13 +46,13 @@ function setMapBounds() {
     
     if (width < 768) { // Mobile
         bounds = [
-            [47.2692 - 0.0237, 11.4041 - 0.0237],
-            [47.2692 + 0.0237, 11.4041 + 0.0237]
+            [47.2692 - 0.025, 11.4041 - 0.025],
+            [47.2692 + 0.025, 11.4041 + 0.025]
         ];
     } else if (width < 1024) { // Tablet
         bounds = [
-            [47.2692 - 0.08, 11.4041 - 0.08],
-            [47.2692 + 0.08, 11.4041 + 0.08]
+            [47.2692 - 0.02, 11.4041 - 0.02],
+            [47.2692 + 0.02, 11.4041 + 0.02]
         ];
     }
     
@@ -69,13 +69,15 @@ window.addEventListener('resize', setMapBounds);
 
 // Add OpenStreetMap tiles
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 22,
     attribution: '© CartoDB, OpenStreetMap contributors'
 }).addTo(map);
 
 // Add zoom control to top right
 L.control.zoom({
-    position: 'topright'
+    position: 'topright',
+    maxZoom: 22,
+    zoomDelta: 0.5  // Makes zoom steps smaller (default is 1)
 }).addTo(map);
 
 L.control.locate({
