@@ -216,9 +216,13 @@ ul.nav.navbar-nav.navbar-right a {
     }
     
     .navbar-default .navbar-brand {
-        font-size: 2.5em;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        font-size: 2.3em;
+        padding-bottom:0px;
+    }
+    .release-banner {
+        font-size: 2.1em!important;
+        padding: 10px 10px!important;
+        transform: translate(-50%, -50%) rotate(-60deg)!important;
     }
 }
 
@@ -232,9 +236,8 @@ ul.nav.navbar-nav.navbar-right a {
     }
     
     .navbar-default .navbar-brand {
-        font-size: 2.2em;
-        padding-top: 8px;
-        padding-bottom: 8px;
+        font-size: 2.1em;
+        padding-bottom: 0px;
     }
 }
 
@@ -372,6 +375,41 @@ ul.nav.navbar-nav.navbar-right a {
     100% {
         transform: scale(0.5);
     }
+}
+
+/* Banner for pre-release */
+.release-banner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-28deg);
+    background: linear-gradient(45deg, #ff5050, #edbdbd, #ff5050);
+    background-size: 200% 200%;
+    animation: gradientMove 3s ease infinite;
+    color: white;
+    padding: 20px 100px;
+    font-size: 3.5em;
+    font-family: 'Barriecito', cursive;
+    z-index: 9999;
+    white-space: nowrap;
+    display: none; /* Hidden by default */
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Show banner only before release date */
+body:not(.post-release) .release-banner {
+    display: block;
 }
 
 

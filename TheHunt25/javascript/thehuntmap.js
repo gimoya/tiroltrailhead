@@ -1,7 +1,71 @@
+// Add this at the start of the file, after the map initialization
+// Set release date globally
+const releaseDate = new Date('2025-04-13T14:00:00+01:00');
+
+// Add banner to the page
+const banner = document.createElement('div');
+banner.className = 'release-banner';
+banner.textContent = 'SAVE THE DATE! 13. APRIL, 14:00';
+document.body.appendChild(banner);
+
+// Function to check release date
+function checkReleaseDate() {
+    const currentDate = new Date();
+    
+    console.log('Current date:', currentDate);
+    console.log('Release date:', releaseDate);
+    console.log('Is current date >= release date?', currentDate >= releaseDate);
+    
+    if (currentDate >= releaseDate) {
+        document.body.classList.add('post-release');
+        banner.style.display = 'none'; // Force hide banner
+        console.log('Banner should be hidden');
+    } else {
+        document.body.classList.remove('post-release');
+        banner.style.display = 'block'; // Force show banner
+        console.log('Banner should be shown');
+    }
+}
+
+// Check immediately and set up interval to check every minute
+checkReleaseDate();
+setInterval(checkReleaseDate, 60000);
+
 // Initialize the map
 const map = L.map('map', {
     zoomControl: false  // Disable default zoom control
-}).setView([47.2692, 11.4041], 10); // Centered on Tirol
+})
+
+// Function to set map bounds based on screen size
+function setMapBounds() {
+    const width = window.innerWidth;
+    let bounds = [
+        [47.2692, 11.4041], // Southwest coordinates
+        [47.2692, 11.4041]  // Northeast coordinates
+    ];
+    
+    if (width < 768) { // Mobile
+        bounds = [
+            [47.2692 - 0.0237, 11.4041 - 0.0237],
+            [47.2692 + 0.0237, 11.4041 + 0.0237]
+        ];
+    } else if (width < 1024) { // Tablet
+        bounds = [
+            [47.2692 - 0.08, 11.4041 - 0.08],
+            [47.2692 + 0.08, 11.4041 + 0.08]
+        ];
+    }
+    
+    map.fitBounds(bounds, {
+        padding: [50, 50]
+    });
+}
+
+// Set initial bounds
+setMapBounds();
+
+// Update bounds on window resize
+window.addEventListener('resize', setMapBounds);
 
 // Add OpenStreetMap tiles
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -43,30 +107,41 @@ L.Control.downloadButton = L.Control.extend({
 new L.Control.downloadButton().addTo(map);
 
 // Function to check if current date is before April 13, 2025 14:00 CET
-function getPopupContent(name, desc) {
+function getPopupContent(name, desc, lat, lon) {
     // Set release date to April 13, 2025 14:00 CET
-    const releaseDate = new Date('2025-04-13T14:00:00+01:00');
     const currentDate = new Date();
     
     if (currentDate < releaseDate) {
-        return `
-            <div class="trailPopupClass">
-                <div class="pop_cont_name">${name}</div>
-                <div class="pop_gpx_text">
-                    <pre>🤐 Coming soon! 🚧 
-Die Schnitzel findet ihr hier 
-am 13. April 2025, ab 14:00 Uhr</pre>
+        // Check if this is a start or end marker
+        const isStartOrEnd = name.toLowerCase().includes('start') || name.toLowerCase().includes('end');
+        
+        return {
+            popup: `
+                <div class="trailPopupClass">
+                    <div class="pop_cont_name">${name}</div>
+                    <div class="pop_gpx_text">
+                        <pre>🤐 Coming soon! 🚧 
+Das Schnitzel inkl. genauer 
+Position findet ihr hier 
+am 13. April 2025, 
+ab 14:00 Uhr</pre>
+                    </div>
                 </div>
-            </div>
-        `;
+            `,
+            // Keep original position for start/end markers, use default latitude for others
+            position: isStartOrEnd ? [lat, lon] : [47.29, lon]
+        };
     }
     
-    return `
-        <div class="trailPopupClass">
-            <div class="pop_cont_name">${name}</div>
-            ${desc ? `<div class="pop_gpx_text"><pre>${desc}</pre></div>` : ''}
-        </div>
-    `;
+    return {
+        popup: `
+            <div class="trailPopupClass">
+                <div class="pop_cont_name">${name}</div>
+                ${desc ? `<div class="pop_gpx_text"><pre>${desc}</pre></div>` : ''}
+            </div>
+        `,
+        position: [lat, lon] // Original position
+    };
 }
 
 // Function to load and display GPX file
@@ -159,10 +234,13 @@ function loadGPXFile(url) {
                 const name = waypoint.getElementsByTagName('name')[0]?.textContent || 'Unnamed Waypoint';
                 const desc = waypoint.getElementsByTagName('desc')[0]?.textContent || '';
                 
+                // Get popup content and position based on date
+                const content = getPopupContent(name, desc, lat, lon);
+                
                 // Create marker based on name
                 let marker;
                 if (name.toLowerCase().includes('start')) {
-                    marker = L.marker([lat, lon], {
+                    marker = L.marker(content.position, {
                         icon: L.divIcon({
                             className: 'custom-div-icon',
                             html: "<i class='fas fa-flag start-flag'></i>",
@@ -172,7 +250,7 @@ function loadGPXFile(url) {
                     }).addTo(map);
 
                 } else if (name.toLowerCase().includes('end')) {
-                    marker = L.marker([lat, lon], {
+                    marker = L.marker(content.position, {
                         icon: L.divIcon({
                             className: 'custom-div-icon',
                             html: "<i class='fas fa-flag end-flag'></i>",
@@ -182,7 +260,7 @@ function loadGPXFile(url) {
                     }).addTo(map);
 
                 } else {
-                    marker = L.marker([lat, lon], {
+                    marker = L.marker(content.position, {
                         icon: L.divIcon({
                             className: 'custom-div-icon',
                             html: "<i class='fas fa-hashtag'></i>",
@@ -196,7 +274,11 @@ function loadGPXFile(url) {
                 markers.push(marker);
                 
                 // Add popup to the waypoint using the date check function
-                marker.bindPopup(getPopupContent(name, desc));
+                marker.bindPopup(content.popup, {
+                    offset: [0, -30], // Adjust this to move popup up/down relative to marker
+                    className: 'custom-popup',
+                    closeButton: true
+                });
             }
             
             map.setView([47.276, 11.41], 14);
