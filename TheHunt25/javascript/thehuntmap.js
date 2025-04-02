@@ -42,6 +42,33 @@ L.Control.downloadButton = L.Control.extend({
 
 new L.Control.downloadButton().addTo(map);
 
+// Function to check if current date is before April 13, 2025 14:00 CET
+function getPopupContent(name, desc) {
+    // Set release date to April 13, 2025 14:00 CET
+    const releaseDate = new Date('2025-04-13T14:00:00+01:00');
+    const currentDate = new Date();
+    
+    if (currentDate < releaseDate) {
+        return `
+            <div class="trailPopupClass">
+                <div class="pop_cont_name">${name}</div>
+                <div class="pop_gpx_text">
+                    <pre>🤐 Coming soon! 🚧 
+Die Schnitzel findet ihr hier 
+am 13. April 2025, ab 14:00 Uhr</pre>
+                </div>
+            </div>
+        `;
+    }
+    
+    return `
+        <div class="trailPopupClass">
+            <div class="pop_cont_name">${name}</div>
+            ${desc ? `<div class="pop_gpx_text"><pre>${desc}</pre></div>` : ''}
+        </div>
+    `;
+}
+
 // Function to load and display GPX file
 function loadGPXFile(url) {
     const markers = []; // Array to store all markers
@@ -168,13 +195,8 @@ function loadGPXFile(url) {
                 // Add marker to our array
                 markers.push(marker);
                 
-                // Add popup to the waypoint
-                marker.bindPopup(`
-                    <div class="trailPopupClass">
-                        <div class="pop_cont_name">${name}</div>
-                        ${desc ? `<div class="pop_gpx_text"><pre>${desc}</pre></div>` : ''}
-                    </div>
-                `);
+                // Add popup to the waypoint using the date check function
+                marker.bindPopup(getPopupContent(name, desc));
             }
             
             map.setView([47.276, 11.41], 14);

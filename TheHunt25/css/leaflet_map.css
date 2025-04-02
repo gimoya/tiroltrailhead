@@ -18,7 +18,6 @@ body {
 
 pre {
     font-size: 1.3em!important;
-    overflow-x: hidden!important;
 }
 
 .leaflet-bar button {
@@ -201,8 +200,8 @@ ul.nav.navbar-nav.navbar-right a {
     font-size: 1.3em;
     text-align: left;
     padding: 5px;
-    overflow-y: scroll;
-    overflow-x:none;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 /*** Responsive Design ***/
