@@ -46,8 +46,8 @@ function setMapBounds() {
     
     if (width < 768) { // Mobile
         bounds = [
-            [47.2692 - 0.025, 11.4041 - 0.025],
-            [47.2692 + 0.025, 11.4041 + 0.025]
+            [47.2692 - 0.03, 11.4041 - 0.03],
+            [47.2692 + 0.03, 11.4041 + 0.03]
         ];
     } else if (width < 1024) { // Tablet
         bounds = [
@@ -116,17 +116,16 @@ function getPopupContent(name, desc, lat, lon) {
     if (currentDate < releaseDate) {
         // Check if this is a start or end marker
         const isStartOrEnd = name.toLowerCase().includes('start') || name.toLowerCase().includes('end');
-        
         return {
             popup: `
                 <div class="trailPopupClass">
                     <div class="pop_cont_name">${name}</div>
                     <div class="pop_gpx_text">
-                        <pre>🤐 Coming soon! 🚧 
-Das Schnitzel inkl. genauer 
-Position findet ihr hier 
-am 13. April 2025, 
-ab 14:00 Uhr</pre>
+                        <pre>🤫 Coming soon! 🚧 
+Alle genaueren Infos in der 
+Karte (Position, Schnitzel, etc.) 
+werden am 13. April 2025, 
+um 14:00 Uhr freigeschalten!</pre>
                     </div>
                 </div>
             `,
