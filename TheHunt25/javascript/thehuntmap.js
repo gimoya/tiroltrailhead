@@ -81,8 +81,8 @@ function loadGPXFile(url) {
                     const emojiMarker = L.marker(latlngs[0], {
                         icon: L.divIcon({
                             className: 'moving-emoji',
-                            html: '🦸‍♀️',
-                            iconSize: [30, 30],
+                            html: '🦊',
+                            iconSize: [40, 40],
                             iconAnchor: [15, 15]
                         })
                     }).addTo(map);
