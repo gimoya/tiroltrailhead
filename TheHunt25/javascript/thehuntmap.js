@@ -1,6 +1,6 @@
 // Add this at the start of the file, after the map initialization
 // Set release date globally
-const releaseDate = new Date('2025-04-13T14:00:00+01:00');
+const releaseDate = new Date('2025-04-01T14:00:00+01:00');
 
 // Add banner to the page
 const banner = document.createElement('div');
