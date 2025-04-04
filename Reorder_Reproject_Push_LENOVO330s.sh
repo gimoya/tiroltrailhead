@@ -12,11 +12,11 @@ fi
 
 echo -e "\\n---\\n"
 
-
 #delete gdal cache!
 echo -e "Deleting gdalwmscache before upload!"
 echo -e "\\n---\\n" 
 rm -rf C:/GitHub/tiroltrailhead/webmap/digitizing/gdalwmscache
+read -p "Hit [Enter] to exit..."
 
 #push to gh-pages
 
