@@ -1,12 +1,51 @@
 // Add this at the start of the file, after the map initialization
 // Set release date globally
-const releaseDate = new Date('2025-04-13T14:00:00+01:00');
+const releaseDate = new Date('2025-04-04T14:20:00');
 
-// Add banner to the page
+// Global emoji marker
+let emojiMarker = null;
+
+
+// Initialize the map
+const map = L.map('map', {
+    zoomControl: false  // Disable default zoom control
+})
+
+// Add banners to the page
 const banner = document.createElement('div');
 banner.className = 'release-banner';
-banner.textContent = 'SAVE THE DATE! 13. APRIL, 14:00';
+const countdownSpan = document.createElement('span');
+countdownSpan.className = 'countdown';
+banner.appendChild(countdownSpan);
 document.body.appendChild(banner);
+
+const postReleaseBanner = document.createElement('div');
+postReleaseBanner.className = 'post-release-banner';
+postReleaseBanner.textContent = "IT'S ON!";
+document.body.appendChild(postReleaseBanner);
+
+// Add click event to post-release banner
+postReleaseBanner.addEventListener('click', function() {
+    alert('Schalte das GPS auf deinem Handy ein und drücke den Location-Button (evtl. musst du der Webseite erlauben, deine Position abzurufen!)');
+});
+
+// Function to update countdown
+function updateCountdown() {
+    const currentDate = new Date();
+    const timeLeft = releaseDate - currentDate;
+    
+    if (timeLeft <= 0) {
+        countdownSpan.textContent = '';
+        return;
+    }
+    
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+    countdownSpan.textContent = `Start in: ${days} Tagen, ${hours} Std, ${minutes} Min, ${seconds} Sek`;
+}
 
 // Function to check release date
 function checkReleaseDate() {
@@ -17,24 +56,42 @@ function checkReleaseDate() {
     console.log('Is current date >= release date?', currentDate >= releaseDate);
     
     if (currentDate >= releaseDate) {
-        document.body.classList.add('post-release');
-        banner.style.display = 'none'; // Force hide banner
-        console.log('Banner should be hidden');
+        banner.style.display = 'none';
+        postReleaseBanner.style.display = 'block';
+        console.log('Release date reached - reloading GPX file for correct positions');
+        
+        // Remove only GPX-related layers (markers and polylines)
+        map.eachLayer((layer) => {
+            if (layer instanceof L.Marker || layer instanceof L.Polyline) {
+                map.removeLayer(layer);
+            }
+        });
+        
+        // Reload GPX file to get correct positions
+        loadGPXFile('TheHunt25.gpx');
+        
+        if (emojiMarker) {
+            map.removeLayer(emojiMarker);
+            emojiMarker = null;
+        }
+        console.log('Banner should be hidden now..');
+        
+        // Clear the interval since we've reached the release date
+        clearInterval(releaseCheckInterval);
+        return
+
     } else {
-        document.body.classList.remove('post-release');
-        banner.style.display = 'block'; // Force show banner
+        banner.style.display = 'block';
+        postReleaseBanner.style.display = 'none';
         console.log('Banner should be shown');
     }
+    
+    updateCountdown(); // Always update countdown
 }
 
-// Check immediately and set up interval to check every minute
+// Start checking release date
+let releaseCheckInterval = setInterval(checkReleaseDate, 1000);
 checkReleaseDate();
-setInterval(checkReleaseDate, 60000);
-
-// Initialize the map
-const map = L.map('map', {
-    zoomControl: false  // Disable default zoom control
-})
 
 // Function to set map bounds based on screen size
 function setMapBounds() {
@@ -46,8 +103,8 @@ function setMapBounds() {
     
     if (width < 768) { // Mobile
         bounds = [
-            [47.2692 - 0.03, 11.4041 - 0.03],
-            [47.2692 + 0.03, 11.4041 + 0.03]
+            [47.2692 - 0.029, 11.4041 - 0.029],
+            [47.2692 + 0.029, 11.4041 + 0.029]
         ];
     } else if (width < 1024) { // Tablet
         bounds = [
@@ -116,16 +173,17 @@ function getPopupContent(name, desc, lat, lon) {
     if (currentDate < releaseDate) {
         // Check if this is a start or end marker
         const isStartOrEnd = name.toLowerCase().includes('start') || name.toLowerCase().includes('end');
+        
         return {
             popup: `
                 <div class="trailPopupClass">
                     <div class="pop_cont_name">${name}</div>
                     <div class="pop_gpx_text">
-                        <pre>🤫 Coming soon! 🚧 
-Alle genaueren Infos in der 
-Karte (Position, Schnitzel, etc.) 
-werden am 13. April 2025, 
-um 14:00 Uhr freigeschalten!</pre>
+                        <pre>🤐 Coming soon! 🚧 
+Das Schnitzel inkl. genauer 
+Position findet ihr hier 
+am 13. April 2025, 
+ab 14:00 Uhr</pre>
                     </div>
                 </div>
             `,
@@ -147,8 +205,7 @@ um 14:00 Uhr freigeschalten!</pre>
 
 // Function to load and display GPX file
 function loadGPXFile(url) {
-    const markers = []; // Array to store all markers
-    
+    const markers = [];
     fetch(url)
         .then(response => response.text())
         .then(gpxData => {
@@ -181,7 +238,7 @@ function loadGPXFile(url) {
                     }).addTo(map);
                     
                     // Add moving emoji
-                    const emojiMarker = L.marker(latlngs[0], {
+                    emojiMarker = L.marker(latlngs[0], {
                         icon: L.divIcon({
                             className: 'moving-emoji',
                             html: '🦊',
@@ -190,12 +247,20 @@ function loadGPXFile(url) {
                         })
                     }).addTo(map);
 
+                    // Set initial visibility based on release date
+                    if (new Date() >= releaseDate) {
+                        emojiMarker.getElement().style.display = 'none';
+                        
+                    }
+
                     // Animate emoji along the track
                     let currentIndex = 0;
                     const animateEmoji = () => {
                         if (currentIndex < latlngs.length) {
                             const currentLatLng = L.latLng(latlngs[currentIndex]);
-                            emojiMarker.setLatLng(currentLatLng);
+                            if (emojiMarker) {
+                                emojiMarker.setLatLng(currentLatLng);
+                            }
                             
                             // Check distance to all markers and trigger rotation if close
                             markers.forEach(marker => {
@@ -283,7 +348,7 @@ function loadGPXFile(url) {
             }
             
             map.setView([47.276, 11.41], 14);
-
+            
         })
         .catch(error => {
             console.error('Error loading GPX file:', error);

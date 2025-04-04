@@ -18,6 +18,8 @@ echo -e "Deleting gdalwmscache before upload!"
 echo -e "\n---\n" 
 rm -rf d:/Projekte/tiroltrailhead/webmap/digitizing/gdalwmscache
 
+read -p "Hit [Enter] to continue..."
+
 #push to gh-pages
 
 git add -A
