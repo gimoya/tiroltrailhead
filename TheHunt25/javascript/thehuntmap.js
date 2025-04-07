@@ -168,10 +168,7 @@ const LayerToggle = L.Control.extend({
     }
 });
 
-// Add the control to the map
-new LayerToggle().addTo(map);
-
-// Add zoom control to top right
+// Add zoom control to top right -> positioned in column 1.  
 L.control.zoom({
     position: 'topright',
     maxZoom: 18,
@@ -188,7 +185,11 @@ L.control.locate({
     }
 }).addTo(map);
 
-// Add download button to bottom left
+// Add the basemap control to the map -> positioned in column 2.
+new LayerToggle().addTo(map);
+
+
+// Add download button to bottom left -> positioned in column 3.
 L.Control.downloadButton = L.Control.extend({
     options: {
         position: 'topright'

@@ -281,7 +281,6 @@ ul.nav.navbar-nav.navbar-right a {
     color: #0099ff;
     text-decoration: none;
     display: block;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .download-button i {
@@ -469,23 +468,7 @@ ul.nav.navbar-nav.navbar-right a {
     background: #0aa8c4;
 }
 
-/* Layer control styling */
-.leaflet-control-layers {
-    border-radius: 4px;
-    background: white;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-}
-
 .leaflet-control-layers-toggle {
-    width: 30px;
-    height: 30px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>');
-    background-size: 16px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
     cursor: pointer;
 }
 
