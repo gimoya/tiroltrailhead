@@ -1,10 +1,11 @@
 // Add this at the start of the file, after the map initialization
 // Set release date globally
+/********************************************************* */
 const releaseDate = new Date('2025-04-13T14:00:00');
+/********************************************************* */
 
 // Global emoji marker
 let emojiMarker = null;
-
 
 // Initialize the map
 const map = L.map('map', {
@@ -25,8 +26,20 @@ postReleaseBanner.textContent = "IT'S ON!";
 document.body.appendChild(postReleaseBanner);
 
 // Add click event to post-release banner
+const gpsPopup = document.createElement('div');
+gpsPopup.className = 'gps-instructions-popup';
+gpsPopup.innerHTML = `
+    <p>Schalte das GPS auf deinem Handy ein und drücke den Location-Button (evtl. musst du der Webseite erlauben, deine Position abzurufen!)</p>
+    <button>Verstanden</button>
+`;
+document.body.appendChild(gpsPopup);
+
 postReleaseBanner.addEventListener('click', function() {
-    alert('Schalte das GPS auf deinem Handy ein und drücke den Location-Button (evtl. musst du der Webseite erlauben, deine Position abzurufen!)');
+    gpsPopup.classList.add('active');
+});
+
+gpsPopup.querySelector('button').addEventListener('click', function() {
+    gpsPopup.classList.remove('active');
 });
 
 // Function to update countdown
@@ -68,18 +81,12 @@ function checkReleaseDate() {
         });
         
         // Reload GPX file to get correct positions
-        loadGPXFile('TheHunt25.gpx');
-        
-        if (emojiMarker) {
-            map.removeLayer(emojiMarker);
-            emojiMarker = null;
-        }
-        console.log('Banner should be hidden now..');
+        loadGPXFile('The_Hunt_25_Route.gpx');
+        console.log('Release Banner should be hidden now..');
         
         // Clear the interval since we've reached the release date
         clearInterval(releaseCheckInterval);
-        return
-
+        return;
     } else {
         banner.style.display = 'block';
         postReleaseBanner.style.display = 'none';
@@ -96,26 +103,17 @@ checkReleaseDate();
 // Function to set map bounds based on screen size
 function setMapBounds() {
     const width = window.innerWidth;
-    let bounds = [
-        [47.2692, 11.4041], // Southwest coordinates
-        [47.2692, 11.4041]  // Northeast coordinates
-    ];
+    let zoomLevel = 12; // Default zoom level
     
     if (width < 768) { // Mobile
-        bounds = [
-            [47.2692 - 0.029, 11.4041 - 0.029],
-            [47.2692 + 0.029, 11.4041 + 0.029]
-        ];
+        zoomLevel = 12; // More zoomed out for small screens
     } else if (width < 1024) { // Tablet
-        bounds = [
-            [47.2692 - 0.02, 11.4041 - 0.02],
-            [47.2692 + 0.02, 11.4041 + 0.02]
-        ];
+        zoomLevel = 13; // Medium zoom
+    } else { // Desktop
+        zoomLevel = 14; // More zoomed in for large screens
     }
     
-    map.fitBounds(bounds, {
-        padding: [50, 50]
-    });
+    map.setView([47.276, 11.41], zoomLevel);
 }
 
 // Set initial bounds
@@ -124,16 +122,59 @@ setMapBounds();
 // Update bounds on window resize
 window.addEventListener('resize', setMapBounds);
 
-// Add OpenStreetMap tiles
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-    maxZoom: 22,
+// Add map layers
+const cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+    maxZoom: 18,
     attribution: '© CartoDB, OpenStreetMap contributors'
-}).addTo(map);
+});
+
+const mapboxSatellite = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    maxZoom: 18,
+    tileSize: 512,
+    zoomOffset: -1,
+    attribution: '© Mapbox',
+    accessToken: 'pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ' // You'll need to replace this with your token
+});
+
+// Set default layer
+cartoLight.addTo(map);
+
+// Create custom layer toggle control
+const LayerToggle = L.Control.extend({
+    options: {
+        position: 'topright'
+    },
+
+    onAdd: function(map) {
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+        const button = L.DomUtil.create('a', 'leaflet-control-layers-toggle', container);
+        button.href = '#';
+        button.title = 'Toggle Map Style';
+
+        L.DomEvent
+            .on(button, 'click', L.DomEvent.stopPropagation)
+            .on(button, 'click', L.DomEvent.preventDefault)
+            .on(button, 'click', () => {
+                if (map.hasLayer(cartoLight)) {
+                    map.removeLayer(cartoLight);
+                    map.addLayer(mapboxSatellite);
+                } else {
+                    map.removeLayer(mapboxSatellite);
+                    map.addLayer(cartoLight);
+                }
+            });
+
+        return container;
+    }
+});
+
+// Add the control to the map
+new LayerToggle().addTo(map);
 
 // Add zoom control to top right
 L.control.zoom({
     position: 'topright',
-    maxZoom: 22,
+    maxZoom: 18,
     zoomDelta: 0.5  // Makes zoom steps smaller (default is 1)
 }).addTo(map);
 
@@ -234,10 +275,34 @@ function loadGPXFile(url) {
                         color: '#0cc0df',
                         weight: 4,
                         opacity: 0.9,
-                        className: 'animated-track'
+                        className: 'animated-track' // Remove or keep dash animation as preferred
                     }).addTo(map);
+
+                    // Add directional text symbols using PolylineDecorator
+                    L.polylineDecorator(polyline, {
+                        patterns: [
+                            {
+                                offset: 25,     // Start first arrow 25px from the beginning
+                                repeat: 100,    // Repeat every 100px
+                                symbol: L.Symbol.arrowHead({
+                                    pixelSize: 11,
+                                    polygon: false,
+                                    pathOptions: { 
+                                        stroke: true,
+                                        weight: 2.2,
+                                        color: '#0cc0df' // Match polyline color
+                                    } 
+                                })
+                            }
+                        ]
+                    }).addTo(map);
+
+                    // Remove emoji marker if it exists
+                    if (emojiMarker) {
+                        map.removeLayer(emojiMarker);
+                    }
                     
-                    // Add moving emoji
+                    // Add new moving emoji
                     emojiMarker = L.marker(latlngs[0], {
                         icon: L.divIcon({
                             className: 'moving-emoji',
@@ -247,11 +312,10 @@ function loadGPXFile(url) {
                         })
                     }).addTo(map);
 
-                    // Set initial visibility based on release date
-                    if (new Date() >= releaseDate) {
-                        emojiMarker.getElement().style.display = 'none';
-                        
-                    }
+                    // Set faster animation speed if after release date
+                    const currentDate = new Date();
+                    const animationDelay = currentDate >= releaseDate ? 30 : 120;
+                    console.log('Setting animation delay to:', animationDelay);
 
                     // Animate emoji along the track
                     let currentIndex = 0;
@@ -278,8 +342,7 @@ function loadGPXFile(url) {
                             });
                             
                             currentIndex++;
-                            // Control emoji speed here - lower number = faster, higher number = slower
-                            setTimeout(animateEmoji, 80); // Currently set to 100ms between points
+                            setTimeout(animateEmoji, animationDelay); // Use dynamic delay
                         } else {
                             currentIndex = 0;
                             animateEmoji();
@@ -345,10 +408,7 @@ function loadGPXFile(url) {
                     className: 'custom-popup',
                     closeButton: true
                 });
-            }
-            
-            map.setView([47.276, 11.41], 14);
-            
+            }            
         })
         .catch(error => {
             console.error('Error loading GPX file:', error);
@@ -357,4 +417,4 @@ function loadGPXFile(url) {
 }
 
 // Load the GPX file
-loadGPXFile('TheHunt25.gpx'); 
+loadGPXFile('The_Hunt_25_Route.gpx'); 
