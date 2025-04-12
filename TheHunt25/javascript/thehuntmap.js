@@ -57,7 +57,7 @@ function updateCountdown() {
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
     
-    countdownSpan.textContent = `Start: ${days} Tag(en), ${hours} Stunde(n), ${minutes} Minute(n), ${seconds} Sekunde(n)`;
+    countdownSpan.textContent = `Start: ${days} Tag(e), ${hours} Stunde(n), ${minutes} Minute(n), ${seconds} Sekunde(n)`;
 }
 
 // Function to check release date
