@@ -1,7 +1,7 @@
 // Add this at the start of the file, after the map initialization
 // Set release date globally
 /********************************************************* */
-const releaseDate = new Date('2025-04-13T14:00:00');
+const releaseDate = new Date('2025-04-13T13:00:00');
 /********************************************************* */
 
 // Global emoji marker
