@@ -10,14 +10,9 @@ class TerrainMap {
         this.hoveredTrailId = null;
         this.selectedTrail = null;
         this.currentPopup = null;
-        this.filters = {
-            tech: new Set(),
-            flow: new Set(),
-            trailfeatures: new Set(),
-            exposure: new Set(),
-            wanderer: new Set(),
-            status: new Set()
-        };
+        this.streetViewActive = false;
+        this.streetView = null;
+        this.streetViewLayer = null;
         
         mapboxgl.accessToken = 'pk.eyJ1IjoiZ2ltb3lhIiwiYSI6IkZrTld6NmcifQ.eY6Ymt2kVLvPQ6A2Dt9zAQ';
         this.init();
@@ -60,6 +55,9 @@ class TerrainMap {
                 }
             });
 
+            // Add Street View overlay source and layer
+            this.addStreetViewOverlay();
+
             // Load and add trails
             this.loadTrails();
 
@@ -85,19 +83,123 @@ class TerrainMap {
             // Setup Ko-fi functionality
             this.setupKofi();
 
-            // Add click handler for map
-            this.map.on('click', (e) => {
-                // Check if click is on a trail
-                const features = this.map.queryRenderedFeatures(e.point, { layers: ['trails'] });
-                if (!features.length) {
-                    // If click is not on a trail, remove popup
-                    if (this.currentPopup) {
-                        this.currentPopup.remove();
-                        this.currentPopup = null;
-                    }
+            // Initialize Street View with map's center coordinates
+            const center = this.map.getCenter();
+            this.streetView = new google.maps.StreetViewPanorama(
+                document.getElementById('street-view'),
+                {
+                    position: { lat: center.lat, lng: center.lng },
+                    pov: { heading: 0, pitch: 0 },
+                    zoom: 1,
+                    addressControl: false,
+                    showRoadLabels: false,
+                    zoomControl: false,
+                    panControl: false,
+                    enableCloseButton: false
                 }
+            );
+
+            // Add Street View toggle handler
+            document.getElementById('streetViewToggle').addEventListener('click', () => {
+                this.toggleStreetView();
             });
         });
+    }
+
+    addStreetViewOverlay() {
+        // Add Street View coverage source
+        this.map.addSource('street-view-coverage', {
+            'type': 'vector',
+            'url': 'mapbox://mapbox.mapbox-streets-v8'
+        });
+
+        // Add Street View coverage line layer
+        this.map.addLayer({
+            'id': 'street-view-coverage',
+            'type': 'line',
+            'source': 'street-view-coverage',
+            'source-layer': 'road',
+            'paint': {
+                'line-color': '#00ff00',
+                'line-opacity': 0.6,
+                'line-width': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    10, 4,
+                    15, 8,
+                    20, 12
+                ],
+                'line-blur': 2
+            },
+            'filter': ['==', 'class', 'street']
+        });
+
+        // Add click handler for Street View coverage
+        this.map.on('click', 'street-view-coverage', (e) => {
+            if (e.features.length > 0) {
+                const coordinates = e.lngLat;
+                this.showStreetView(coordinates);
+            }
+        });
+
+        // Add hover effect
+        this.map.on('mousemove', 'street-view-coverage', (e) => {
+            this.map.getCanvas().style.cursor = 'pointer';
+            // Highlight the hovered line with increased opacity
+            this.map.setPaintProperty('street-view-coverage', 'line-opacity', [
+                'case',
+                ['boolean', ['in', ['get', 'id'], ['literal', e.features[0].id]], false],
+                1,
+                0.6
+            ]);
+        });
+
+        this.map.on('mouseleave', 'street-view-coverage', () => {
+            this.map.getCanvas().style.cursor = '';
+            // Reset line opacity
+            this.map.setPaintProperty('street-view-coverage', 'line-opacity', 0.6);
+        });
+    }
+
+    showStreetView(coordinates) {
+        if (!this.streetViewActive) {
+            this.toggleStreetView();
+        }
+        
+        // Check if Street View is available at this location
+        const streetViewService = new google.maps.StreetViewService();
+        streetViewService.getPanorama(
+            { location: { lat: coordinates.lat, lng: coordinates.lng }, radius: 50 },
+            (data, status) => {
+                if (status === 'OK') {
+                    this.streetView.setPano(data.location.pano);
+                    this.streetView.setPov({
+                        heading: 0,
+                        pitch: 0
+                    });
+                } else {
+                    // If no Street View available, show error
+                    alert('No Street View available at this location');
+                    this.toggleStreetView();
+                }
+            }
+        );
+    }
+
+    toggleStreetView() {
+        this.streetViewActive = !this.streetViewActive;
+        
+        // Toggle split screen
+        document.querySelector('.map-container').classList.toggle('split');
+        document.getElementById('street-view').classList.toggle('active');
+        
+        // Toggle Street View coverage layer visibility
+        this.map.setLayoutProperty(
+            'street-view-coverage',
+            'visibility',
+            this.streetViewActive ? 'visible' : 'none'
+        );
     }
 
     async loadTrails() {
@@ -146,11 +248,7 @@ class TerrainMap {
                         ['case',
                             ['boolean', ['feature-state', 'hover'], false],
                             0.5,
-                            ['case',
-                                ['boolean', ['get', 'visible'], false],
-                                0.3,
-                                0
-                            ]
+                            0
                         ]
                     ]
                 }
@@ -168,12 +266,7 @@ class TerrainMap {
                 'paint': {
                     'line-color': '#FF5F1F',
                     'line-width': 3.6,
-                    'line-opacity': [
-                        'case',
-                        ['boolean', ['get', 'visible'], false],
-                        0.85,
-                        0
-                    ]
+                    'line-opacity': 0.85
                 }
             });
 
@@ -219,8 +312,8 @@ class TerrainMap {
 
                     const feature = e.features[0];
                 
-                // Update the feature in the source
-                const data = this.map.getSource('trails')._data;
+                    // Update the feature in the source
+                    const data = this.map.getSource('trails')._data;
                     data.features.forEach(f => {
                         f.properties.highlighted = f.id === feature.id;
                     });
@@ -292,9 +385,6 @@ class TerrainMap {
                     }
                 }
             });
-
-            // Setup filter panel after trails are loaded
-            this.setupFilterPanel();
 
         } catch (error) {
             console.error('Error loading trails:', error);
@@ -441,196 +531,6 @@ class TerrainMap {
 
         document.querySelector('.nav-control-wrapper')
             .appendChild(this.navControl.onAdd(this.map));
-    }
-
-    setupFilterPanel() {
-        const toggleButton = document.querySelector('.filter-toggle');
-        const sidePanel = document.querySelector('.side-panel');
-        const trailData = this.map.getSource('trails')._data;
-
-        // Toggle panel visibility
-        toggleButton.addEventListener('click', () => {
-            sidePanel.classList.toggle('hidden');
-            toggleButton.classList.toggle('active');
-        });
-
-        // Initialize filters with all available values
-        this.filters = {
-            tech: new Set(),
-            flow: new Set(),
-            trailfeatures: new Set(),
-            exposure: new Set(),
-            wanderer: new Set(),
-            status: new Set()
-        };
-
-        // Collect all unique values for each filter
-        trailData.features.forEach(feature => {
-            if (feature.properties.Tech) this.filters.tech.add(feature.properties.Tech);
-            if (feature.properties.Flow) this.filters.flow.add(feature.properties.Flow);
-            if (feature.properties.Features) this.filters.trailfeatures.add(feature.properties.Features);
-            if (feature.properties.Wanderer) this.filters.wanderer.add(feature.properties.Wanderer);
-            if (feature.properties.Status) this.filters.status.add(feature.properties.Status);
-        });
-
-        // Populate filter options
-        this.populateFlowFilters(trailData);
-        this.populateTechnicalFilters(trailData);
-        this.populateTrailfeaturesFilters(trailData);
-        this.populateExposureFilters(trailData); 
-        this.populateWandererFilters(trailData);
-        this.populateStatusFilters(trailData);
-
-        // Add filter change listeners
-        document.querySelectorAll('.filter-option input').forEach(input => {
-            input.addEventListener('change', () => this.applyFilters());
-        });
-
-        // Call applyFilters after setting up the panel to make trails visible initially
-        this.applyFilters();
-    }
-
-    populateFlowFilters(trailData) {
-        const flowRatings = new Set();
-        trailData.features.forEach(feature => {
-            if (feature.properties.Flow) {
-                flowRatings.add(feature.properties.Flow);
-            }
-        });
-
-        const container = document.getElementById('flow-filters');
-        Array.from(flowRatings).sort().forEach(rating => {
-            const option = this.createFilterOption('flow', rating);
-            container.appendChild(option);
-        });
-    }
-
-    populateTechnicalFilters(trailData) {
-        const technicalRatings = new Set();
-        trailData.features.forEach(feature => {
-            if (feature.properties.Tech) {
-                technicalRatings.add(feature.properties.Tech);
-            }
-        });
-
-        const container = document.getElementById('technical-filters');
-        Array.from(technicalRatings).sort().forEach(rating => {
-            const option = this.createFilterOption('tech', rating);
-            container.appendChild(option);
-        });
-    }
-
-    populateTrailfeaturesFilters(trailData) {
-        const featureRatings = new Set();
-        trailData.features.forEach(feature => {
-            if (feature.properties.Features) {
-                featureRatings.add(feature.properties.Features);
-            }
-        });
-
-        const container = document.getElementById('trailfeatures-filters');
-        Array.from(featureRatings).sort().forEach(rating => {
-            const option = this.createFilterOption('trailfeatures', rating);
-            container.appendChild(option);
-        });
-    }
-
-    populateExposureFilters(trailData) {
-        const exposureRatings = new Set();
-        trailData.features.forEach(feature => {
-            if (feature.properties.Trail_Text) {
-                const exposureMatch = feature.properties.Trail_Text.match(/Exposure:\t([^\n]+)/);
-                if (exposureMatch) {
-                    exposureRatings.add(exposureMatch[1].trim());
-                }
-            }
-        });
-
-        const container = document.getElementById('exposure-filters');
-        Array.from(exposureRatings).sort().forEach(rating => {
-            const option = this.createFilterOption('exposure', rating);
-            container.appendChild(option);
-        });
-    }
-
-    populateWandererFilters(trailData) {
-        const wandererRatings = new Set();
-        trailData.features.forEach(feature => {
-            if (feature.properties.Wanderer) {
-                wandererRatings.add(feature.properties.Wanderer);
-            }
-        });
-
-        const container = document.getElementById('wanderer-filters');
-        Array.from(wandererRatings).sort().forEach(rating => {
-            const option = this.createFilterOption('wanderer', rating);
-            container.appendChild(option);
-        });
-    }
-
-    populateStatusFilters(trailData) {
-        const statusRatings = new Set();
-        trailData.features.forEach(feature => {
-            if (feature.properties.Status) {
-                statusRatings.add(feature.properties.Status);
-            }
-        });
-
-        const container = document.getElementById('status-filters');
-        Array.from(statusRatings).sort().forEach(rating => {
-            const option = this.createFilterOption('status', rating);
-            container.appendChild(option);
-        });
-    }
-
-    createFilterOption(type, value) {
-        const div = document.createElement('div');
-        div.className = 'filter-option';
-        
-        const input = document.createElement('input');
-        input.type = 'checkbox';
-        input.id = `${type}-${value}`;
-        input.value = value;
-        input.checked = false; // Set to unchecked by default
-        
-        const label = document.createElement('label');
-        label.htmlFor = `${type}-${value}`;
-        label.textContent = value;
-        
-        // Add change event listener to update filters
-        input.addEventListener('change', () => {
-            if (input.checked) {
-                this.filters[type].add(value);
-            } else {
-                this.filters[type].delete(value);
-            }
-            this.applyFilters();
-        });
-        
-        div.appendChild(input);
-        div.appendChild(label);
-        return div;
-    }
-
-    applyFilters() {
-        const features = this.map.getSource('trails')._data.features;
-        features.forEach(feature => {
-            const props = feature.properties;
-            const exposureMatch = props.Trail_Text ? props.Trail_Text.match(/Exposure:\t([^\n]+)/) : null;
-            const exposure = exposureMatch ? exposureMatch[1].trim() : null;
-            
-            const visible = (
-                (this.filters.tech.size === 0 || this.filters.tech.has(props.Tech)) &&
-                (this.filters.flow.size === 0 || this.filters.flow.has(props.Flow)) &&
-                (this.filters.trailfeatures.size === 0 || this.filters.trailfeatures.has(props.Features)) &&
-                (this.filters.exposure.size === 0 || this.filters.exposure.has(exposure)) &&
-                (this.filters.wanderer.size === 0 || this.filters.wanderer.has(props.Wanderer)) &&
-                (this.filters.status.size === 0 || this.filters.status.has(props.Status))
-            );
-            feature.properties.visible = visible;
-        });
-
-        this.map.getSource('trails').setData(this.map.getSource('trails')._data);
     }
 }
 

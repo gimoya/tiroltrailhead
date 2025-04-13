@@ -2,8 +2,7 @@
 
 #map {
     height: 100vh;
-    width: calc(100% - 320px);
-    float: left;
+    width: 100%;
     cursor: default;
 }
 
@@ -16,30 +15,6 @@
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.side-panel {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 320px;
-    height: 100vh;
-    background: rgba(26, 26, 26, 0.95); /* More transparent for 3D view */
-    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Rest of your original styles remain the same */
-.panel-header {
-    padding: 20px;
-    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Add 3D controls */
