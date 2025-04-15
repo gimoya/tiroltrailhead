@@ -29,12 +29,6 @@ if (trim(pw_prompt) == pw ) {
 */
 
 
-/*** increase click tolerance by renderer (will only be set for specific layers) ***/
-const canvasRenderer = L.canvas({
-  tolerance: 2
-});
-
-
 /*** Set Up Map ***/
 var map = L.map('map', {
   zoom: 12,
@@ -48,14 +42,13 @@ var map = L.map('map', {
 
 var mapbox_Attr = 'Tiles &copy; <a href="google.com">Google Maps</a>, <a href="openstreetmap.org">OSM</a> | Design &copy; <a href="http://www.tiroltrailhead.com/guiding">Tirol Trailhead</a>';  
 var mapbox_satelliteUrl = '//mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}';
-var mapbox_outdoorUrl = '//c.tile.opentopomap.org/{z}/{x}/{y}.png';
-
+var mapy_cz_windyUrl = 'https://windytiles.mapy.cz/turist-en/{z}-{x}-{y}.png';
 
 var mapbox_satelliteLayer = L.tileLayer(mapbox_satelliteUrl, {
   attribution: mapbox_Attr 
 });
 
-var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
+var mapy_cz_windyLayer = L.tileLayer(mapy_cz_windyUrl, {
   attribution: mapbox_Attr,
   maxZoom: 20,
   maxNativeZoom: 17  
@@ -63,7 +56,7 @@ var mapbox_outdoorLayer = L.tileLayer(mapbox_outdoorUrl, {
 
 /*** Setting Default Base Map ***/
 
-mapbox_outdoorLayer.addTo(map);	
+mapy_cz_windyLayer.addTo(map);	
 
 /*** Strava TMS not working 
 var strava_proxyUrl = 'https://proxy.nakarte.me/https/heatmap-external-a.strava.com/tiles-auth/ride/hot/{z}/{x}/{y}.png';
@@ -106,7 +99,7 @@ var toggle = L.easyButton({
 	icon: '<span class="custom-control">T</span>',
 	title: 'Hintergrundkarte umschalten',		
 	onClick: function(control) {
-	  map.removeLayer(mapbox_outdoorLayer);
+	  map.removeLayer(mapy_cz_windyLayer);
 	  map.addLayer(mapbox_satelliteLayer);
 	  control.state('basemap-satellite');
 	}
@@ -116,7 +109,7 @@ var toggle = L.easyButton({
 	title: 'Hintergrundkarte umschalten',
 	onClick: function(control) {
 	  map.removeLayer(mapbox_satelliteLayer);
-	  map.addLayer(mapbox_outdoorLayer);
+	  map.addLayer(mapy_cz_windyLayer);
 	  control.state('basemap-outdoor');
 	}
   }]
@@ -165,44 +158,161 @@ var legend = L.easyButton({
   position: 'bottomright',
   states: [{
 	stateName: 'legende',
-	icon: '<span class="custom-control">L</span>',
+	icon: '<i class="fas fa-info-circle"></i>',
 	title: 'Legende anzeigen',		
 	onClick: function(){
-				/*** Legend Toggle ***/
-				
-				$( document ).ready(function() {
-						legend_div = $('#Legend-Div');
-						legend_div.slideToggle(200);	
+		$( document ).ready(function() {
+			info_div = $('#info-div');
+			legend_content = $('#info-div .legend-content');
+			
+			if (info_div.is(':visible')) {
+				// If info div is visible, scroll to legend
+				info_div.animate({
+					scrollTop: legend_content.offset().top - info_div.offset().top
+				}, 500);
+			} else {
+				// If info div is hidden, show it and scroll to legend
+				info_div.slideDown(200, function() {
+					info_div.animate({
+						scrollTop: legend_content.offset().top - info_div.offset().top
+					}, 500);
+					// After animation complete, invalidate map size and fit bounds
+					map.invalidateSize();
+					if (selected) {
+						map.fitBounds(selected.getBounds());
+					} else {
+						map.fitBounds(trails_json.getBounds());
+					}
 				});
-			}	
-	}]
-  });	
+			}
+		});
+	}	
+  }]
+});	
 
 legend.addTo(map);
 
+// Add close button handler
+$( document ).ready(function() {
+    $('.close-info').on('click', function() {
+        $('#info-div').slideUp(200, function() {
+            map.invalidateSize();
+        });
+    });
+});
+
+// Add function to update trails in view
+function updateTrailsInView() {
+    if (!trails_json) return;
+    
+    var bounds = map.getBounds();
+    var trailsInView = [];
+    
+    trails_json.eachLayer(function(layer) {
+        if (bounds.intersects(layer.getBounds())) {
+            trailsInView.push({
+                feature: layer.feature,
+                layer: layer
+            });
+        }
+    });
+    
+    var content = '<h2>Trail Liste</h2>';
+    
+    if (trailsInView.length === 0) {
+        content += '<div class="trail-item no-trails">..keine Trails in diesem Kartenauschnitt!</div>';
+    } else {
+        trailsInView.forEach(function(trail) {
+            content += `
+                <div class="trail-item" data-trail-name="${trail.feature.properties.name}">
+                    <h3>${trail.feature.properties.name}</h3>
+                    <p>${trail.feature.properties.Trail_Text}</p>
+                </div>
+            `;
+        });
+    }
+    
+    $('.trails-list').html(content);
+    
+    // Add click handlers to trail items
+    $('.trail-item').on('click', function() {
+        var trailName = $(this).data('trail-name');
+        if (trailName) {  // Only process clicks on actual trails, not the "no trails" message
+            trails_json.eachLayer(function(layer) {
+                if (layer.feature.properties.name === trailName) {
+                    map.fitBounds(layer.getBounds());
+                    // Trigger click on the trail to select it
+                    if (layer._clickLayer) {
+                        layer._clickLayer.fire('click');
+                    }
+                }
+            });
+        }
+    });
+}
+
+// Add scroll to trails functionality
+$( document ).ready(function() {
+    $('.scroll-to-trails').on('click', function() {
+        var trailsList = $('.trails-list');
+        if (trailsList.length) {
+            $('#info-div').animate({
+                scrollTop: trailsList.offset().top - $('#info-div').offset().top
+            }, 500);
+        }
+    });
+});
+
+// Add event listeners for map movement
+map.on('moveend', updateTrailsInView);
+map.on('zoomend', updateTrailsInView);
+
+// Initial update
+updateTrailsInView();
+
 /*** Trail Style-Helper Functions ***/
 
+function findMatchingLayer(clickLayer, trailsLayer) {
+    var matchingLayer = null;
+    trailsLayer.eachLayer(function(layer) {
+        if (layer.feature.properties.name === clickLayer.feature.properties.name) {
+            matchingLayer = layer;
+        }
+    });
+    return matchingLayer;
+}
+
 function highlight (layer) {	// will be used on hover
-	layer.setStyle({
-		color: '#E5551B',
-		weight: 4.3,
-		dashArray: '',
-		opacity: 0.9
-	});
-	if (!L.Browser.ie && !L.Browser.opera) {
-		layer.bringToFront();
-	}	
+    var mainLayer = findMatchingLayer(layer, trails_json);
+    if (mainLayer) {
+        mainLayer.setStyle({
+            weight: 4,       // wider line
+            dashArray: '',
+            opacity: 0.95      // slightly more opaque
+        });
+        if (!L.Browser.ie && !L.Browser.opera) {
+            mainLayer.bringToFront();
+        }
+    }
 }
 
 function styleLines(feature) {	// deafult style used for constructor of json
     return {
 		color: '#FF5F1F',
-		weight: 3.6,
-		opacity: 0.85,
+		weight: 3,
+		opacity: 0.8,
 		lineJoin: 'round',  //miter | round | bevel 
     };
 }
 
+function styleClickLayer(feature) {	// style for click layer
+    return {
+		color: '#000000',
+		weight: 8,  // double the width
+		opacity: 0.4, // semi-transparent
+		lineJoin: 'round',
+    };
+}
 
 /*** Map and Json Layer Event Listeners and Helper Functions ***/
 			
@@ -213,51 +323,63 @@ var trails_json;
 var selected = null;
 
 function dehighlight (layer) { 	// will be used inside select function
-  if (selected === null || selected._leaflet_id !== layer._leaflet_id) {
-	  trails_json.resetStyle(layer);
-	  layer.setText(null);
-  }
+    if (selected === null || (selected && selected.feature.properties.name !== layer.feature.properties.name)) {
+        var mainLayer = findMatchingLayer(layer, trails_json);
+        if (mainLayer) {
+            trails_json.resetStyle(mainLayer);
+            mainLayer.setText(null);
+        }
+    }
 }
 
 function select (layer) {  // ..use inside onClick Function doClickStuff() to select and style clicked feature 
-  if (selected !== null) {
-	var previous = selected;
-  }
-	map.fitBounds(layer.getBounds());
-	selected = layer;
-	if (previous) {
-	  dehighlight(previous);
-	}
+    if (selected !== null) {
+        var previous = selected;
+    }
+    var mainLayer = findMatchingLayer(layer, trails_json);
+    if (mainLayer) {
+        map.fitBounds(mainLayer.getBounds());
+        selected = mainLayer;
+        if (previous) {
+            dehighlight(previous);
+        }
+    }
 }
 
 function doClickStuff(e) {
-	
-	lyr = e.target;
-	ftr = e.target.feature;
-	
-	select(lyr);
-	lyr.setText('- - - ►             ', { repeat: true, offset: 11, attributes: {fill:  '#FF5F1F', 'font-weight': 'bold', 'font-size': '12'} });
-	
-	/*** Elevation Control ***/
-		
-	if (typeof el !== 'undefined') {
-		// the variable is defined
-		el.clear();
-		map.removeControl(el);
-	};	
-	
-	L.DomEvent.stopPropagation(e);
-    el.addData(ftr, lyr);
-    map.addControl(el);	
-	
-	/*** make all non-selected trails opaque, after resetting styles (ftr selected before)***/ 
-	
-	trails_json.eachLayer(function(layer){ if(selected._leaflet_id !== layer._leaflet_id) {
-		dehighlight(layer);
-		layer.setStyle({opacity: 0.4})
-		}
-	});
-	
+    lyr = e.target;
+    ftr = e.target.feature;
+    
+    var mainLayer = findMatchingLayer(lyr, trails_json);
+    if (mainLayer) {
+        select(lyr);
+        mainLayer.setText('- - - ►             ', { repeat: true, offset: 11, attributes: {fill:  '#FF5F1F', 'font-weight': 'bold', 'font-size': '12'} });
+        
+        /*** Elevation Control ***/
+        if (typeof el !== 'undefined') {
+            el.clear();
+            map.removeControl(el);
+        };	
+        
+        L.DomEvent.stopPropagation(e);
+        el.addData(ftr, mainLayer);
+        map.addControl(el);	
+        
+        /*** make all non-selected trails opaque, after resetting styles (ftr selected before)***/ 
+        trails_json.eachLayer(function(layer){ 
+            if(selected && selected.feature.properties.name !== layer.feature.properties.name) {
+                dehighlight(layer);
+                layer.setStyle({opacity: 0.4})
+            }
+        });
+
+        // Open popup at click location
+        var popup = mainLayer.getPopup();
+        if (popup) {
+            popup.setLatLng(e.latlng);
+            popup.openOn(map);
+        }
+    }
 }
 
 /* Start/End pts in different pane ontop of trails */ 
@@ -270,100 +392,104 @@ map.getPane('ptsPane').style.zIndex = 600;
 
 $.getJSON('my_trails_z.geojson', function(json) {
 	
-	trails_json = L.geoJson(json, {
-		
-		/* throws error! and messes up canvas... 
-		renderer: canvasRenderer,
-		*/
-		
-		style: 	styleLines,
-		
-		onEachFeature: function(feature, layer) {
-			
-			if(feature.geometry.coordinates.length > 0) {
-					
-				var stPt = [feature.geometry.coordinates[0][1], 
-							feature.geometry.coordinates[0][0],  
-							]; // need to flip xy-coords!
-				var endPt = [feature.geometry.coordinates[feature.geometry.coordinates.length - 1][1],
-							feature.geometry.coordinates[feature.geometry.coordinates.length - 1][0], 
-							];
-				
-		
-				// Add Start and End Markers to each Feature 
-				new L.circleMarker(stPt, {
-						color: 'darkslategrey',
-						fillColor: 'lightgreen',	
-						fillOpacity: 1,				
-						radius: 3.5,
-						weight:1.5,
-						pane: 'ptsPane'
-					})
-					.bindTooltip('<div id="pop_cont_name"><strong>Start:</strong> ' + feature.properties.name + '</br><strong>Seehöhe:</strong> ' + Math.round(feature.geometry.coordinates[0][2]) + ' m</div>', {
-						permanent: false, 
-						direction: 'right',
-						className: "pt_labels"
-					})
-					.addTo(map);
-				
-				new L.circleMarker(endPt, {
-						color: 'darkslategrey',
-						fillColor: 'pink',
-						fillOpacity: 1,
-						radius: 3.5,
-						weight:1.5,	
-						pane: 'ptsPane'
-					})	
-					.bindTooltip('<div id="pop_cont_name"><strong>Ende:</strong> ' + feature.properties.name + '</br><strong>Seehöhe:</strong> ' + Math.round(feature.geometry.coordinates[feature.geometry.coordinates.length - 1][2]) + ' m</div>', {
-						permanent: false, 
-						direction: 'right',
-						className: "pt_labels"
-					})
-					.addTo(map)
-			} else {
-				console.log(feature.properties.name + ':\n' + feature.geometry.coordinates.length);
-			}
-			
-			// on events
-			layer.on({		
-				'mouseover': function (e) {
-					highlight(e.target);
-				},
-				'mouseout': function (e) {
-					dehighlight(e.target);
-				},
-				'click': doClickStuff
-			});			
-	
-			/*** add a popup to each feature and.. ***/ 	
-			/*** ..set GPX link ***/
-			var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});	
-			var gpxLink = document.createElement("a");
-			gpxLink.download = feature.properties.name + ".gpx";
-			gpxLink.innerHTML = "GPX-Download";	
-			gpxLink.id = "gpxLink_ID";
-			
-			/* set dwonload blob via href attribute */
-			gpxLink.href =  window.URL.createObjectURL(bb);
-			
-			var popupContent = 
-			'<p><div class="pop_cont_name">' + feature.properties.name + '</div></p>'
-			+ '<div class="pop_cont_text">' + feature.properties.Trail_Text + '</div>' 
-			+ '<div class="pop_gpx_text">🤝 ' +  gpxLink.outerHTML + ' 🚩'+ '</div>'
-				+ '<div class="kofi_reminder">'
-					+ '<p>🚴 Dein GPX-Track wird heruntergeladen..</p>'
-					+ '<p>💲 Die Downloads auf dieser Seite sind gratis, aber der Betrieb dieser <strong>Webseite kostet Geld!</strong></p>'
-					+ '<p>🤝 Für den GPX-Download kannst Du dich <strong>mit einem freien Beitrag</strong> erkenntlich zeigen!</p>'
-					+ '<p>💓 Bitte hilf mit, das Projekt am Leben zu halten!</p>'
-					+ '<div class="kofi_button"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
-					+ 	'<img id="kofi_img_div" class="kofi_img" src="https://tiroltrailhead.com/legacy_trails/images/kofi_s_logo_nolabel.png">'
-					+	'<button type="button">Support!👋</button></a>'
-					+ '</div>'
-				+ '</div>'
-			+ '</div>'
-			layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
-		}
+	// Create click layer first (will be underneath)
+	var click_layer = L.geoJson(json, {
+		style: styleClickLayer,
+		interactive: true,
 	}).addTo(map);
+	
+	// Create main layer on top
+	trails_json = L.geoJson(json, {
+		style: styleLines,
+		interactive: false, // disable interaction on main layer
+	}).addTo(map);
+	
+	// Add event handlers to click layer
+	click_layer.eachLayer(function(layer) {
+		layer.on({
+			'mouseover': function (e) {
+				if (selected === null || (selected && selected.feature.properties.name !== e.target.feature.properties.name)) {
+					highlight(e.target);
+				}
+			},
+			'mouseout': function (e) {
+				if (selected === null || (selected && selected.feature.properties.name !== e.target.feature.properties.name)) {
+					dehighlight(e.target);
+				}
+			},
+			'click': doClickStuff
+		});
+	});
+	
+	// Add start/end markers and popups to main layer
+	trails_json.eachLayer(function(layer) {
+		var feature = layer.feature;
+		
+		if(feature.geometry.coordinates.length > 0) {
+			var stPt = [feature.geometry.coordinates[0][1], 
+						feature.geometry.coordinates[0][0]]; 
+			var endPt = [feature.geometry.coordinates[feature.geometry.coordinates.length - 1][1],
+						feature.geometry.coordinates[feature.geometry.coordinates.length - 1][0]];
+			
+			// Add Start and End Markers
+			new L.circleMarker(stPt, {
+				color: 'darkslategrey',
+				fillColor: 'lightgreen',	
+				fillOpacity: 1,				
+				radius: 3.5,
+				weight:1.5,
+				pane: 'ptsPane'
+			})
+			.bindTooltip('<div id="pop_cont_name"><strong>Start:</strong> ' + feature.properties.name + '</br><strong>Seehöhe:</strong> ' + Math.round(feature.geometry.coordinates[0][2]) + ' m</div>', {
+				permanent: false, 
+				direction: 'right',
+				className: "pt_labels"
+			})
+			.addTo(map);
+			
+			new L.circleMarker(endPt, {
+				color: 'darkslategrey',
+				fillColor: 'pink',
+				fillOpacity: 1,
+				radius: 3.5,
+				weight:1.5,	
+				pane: 'ptsPane'
+			})	
+			.bindTooltip('<div id="pop_cont_name"><strong>Ende:</strong> ' + feature.properties.name + '</br><strong>Seehöhe:</strong> ' + Math.round(feature.geometry.coordinates[feature.geometry.coordinates.length - 1][2]) + ' m</div>', {
+				permanent: false, 
+				direction: 'right',
+				className: "pt_labels"
+			})
+			.addTo(map);
+		}
+		
+		// Add popup to main layer
+		var bb = new Blob([togpx(feature)], {type: 'application/gpx+xml'});	
+		var gpxLink = document.createElement("a");
+		gpxLink.download = feature.properties.name + ".gpx";
+		gpxLink.innerHTML = "GPX-Download";	
+		gpxLink.id = "gpxLink_ID";
+		gpxLink.href = window.URL.createObjectURL(bb);
+		
+		var popupContent = 
+		'<p><div class="pop_cont_name">' + feature.properties.name + '</div></p>'
+		+ '<div class="pop_cont_text">' + feature.properties.Trail_Text + '</div>' 
+		+ '<div class="pop_gpx_text">🤝 ' +  gpxLink.outerHTML + ' 🚩'+ '</div>'
+		+ '<div class="kofi_reminder">'
+		+ '<p>🚴 Dein GPX-Track wird heruntergeladen..</p>'
+		+ '<p>💲 Die Downloads auf dieser Seite sind gratis, aber der Betrieb dieser <strong>Webseite kostet Geld!</strong></p>'
+		+ '<p>🤝 Für den GPX-Download kannst Du dich <strong>mit einem freien Beitrag</strong> erkenntlich zeigen!</p>'
+		+ '<p>💓 Bitte hilf mit, das Projekt am Leben zu halten!</p>'
+		+ '<div class="kofi_button"><a href="https://ko-fi.com/C1C74GQ0I" target="_blank">'
+		+ 	'<img id="kofi_img_div" class="kofi_img" src="https://tiroltrailhead.com/legacy_trails/images/kofi_s_logo_nolabel.png">'
+		+	'<button type="button">Support!👋</button></a>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>';
+		
+		layer.bindPopup(popupContent, {closeOnClick: true, className: 'trailPopupClass'});
+	});
+	
 	map.fitBounds(trails_json.getBounds(), {maxZoom: 15});
 });
 
@@ -427,6 +553,8 @@ map.on("click", function(e){
 		layer.setStyle({opacity: 0.75})
 	});
 	if (selected!== null) selected.setText(null);
-	/*** make Legend disappear ***/
-	$("#Legend-Div").fadeOut();
+	/*** make info panel disappear ***/
+	$("#info-div").slideUp(200, function() {
+		map.invalidateSize();
+	});
 });

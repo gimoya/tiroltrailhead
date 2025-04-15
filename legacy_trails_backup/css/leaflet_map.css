@@ -14,37 +14,20 @@ html, body, #map {
 body{
     padding-top: 50px;
     min-width: 340px; 
-    display: flex;
-    flex-direction: column;
 }
 
-header {
-    flex: 0 0 auto;
+#Legend-Div {
+	display: none;
+	z-index: 99999;
+    position: absolute;
+    height: 40%;
+	width: 80%;
+	padding: 20px;
+    overflow-y: scroll;
+	background-color: white;
 }
 
-main {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    overflow: hidden;
-}
-
-#info-div {
-    flex: 0 0 30%;
-    background: white;
-    padding: 20px;
-    overflow-y: auto;
-    border-right: 1px solid #ddd;
-    transition: all 0.3s ease;
-    max-width: 400px;
-    padding-bottom: 60px;
-    position: relative;
-    z-index: 1000;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-#info-div > th, td {
+#Legend-Div > th, td {
 	padding-right: 10px;
 }
 
@@ -125,7 +108,6 @@ main {
 .navbar {
     background: #02b6f7b8;
     border-width: 0px;
-    margin-bottom: 0;
 }
 
 .navbar-default .navbar-brand,
@@ -286,128 +268,20 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 }
 
 #gallery {
-    display: none;
+
 }
 
-#map {
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    position: relative;
+.close-btn {
+		color: black;
+		padding: 5px 10px;
+		background: #ccc;
+		cursor: hand;
+		position: relative;
+		right: 10px;
+		top: 0;
+	}
+.close-btn:hover {
+		background: #aaa;
 }
 
-/* Responsive behavior */
-@media (max-width: 768px) and (orientation: portrait) {
-    main {
-        flex-direction: column;
-        height: calc(100vh - 50px); /* Account for navbar */
-    }
-    
-    #info-div {
-        flex: 0 0 auto;
-        max-height: 30vh;
-        max-width: 100%;
-        border-right: none;
-        border-top: 1px solid #ddd;
-        overflow-y: auto;
-        order: 2; /* Force info to appear after map */
-    }
-    
-    #map {
-        flex: 1;
-        height: 70vh;
-        order: 1; /* Force map to appear before info */
-    }
-}
-
-/* Landscape mode */
-@media (max-width: 768px) and (orientation: landscape) {
-    main {
-        flex-direction: row;
-        height: calc(100vh - 50px);
-    }
-    
-    #info-div {
-        flex: 0 0 30vw; /* 30% of viewport width */
-        max-height: none;
-        border-right: 1px solid #ddd;
-        border-top: none;
-    }
-    
-    #map {
-        flex: 1;
-        height: 100%;
-    }
-}
-
-.trails-in-view {
-    margin-top: 35px;
-    margin-bottom: 15px;
-}
-
-.trails-list {
-    margin-top: 20px;
-}
-
-
-.trail-item {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    border-radius: 5px;
-}
-
-.trail-item:last-child {
-    border-bottom: none;
-}
-
-.trail-item:hover {
-    background-color: #e6f3ff;
-}
-
-.trail-item:active {
-    background-color: #cce6ff;
-}
-
-.trail-item h3 {
-    font-size: 16px;
-    color: #FF5F1F;
-}
-
-.trail-item p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-}
-
-.trail-item.no-trails {
-    color: #666;
-    font-style: italic;
-    cursor: default;
-    background-color: transparent !important;
-}
-
-.info-div h2 {
-    padding-top: 10px;
-    color: #333;
-}
-
-.info-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.info-buttons button {
-    margin-bottom: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #9d9d9d;
-}
-
-.info-buttons button:hover {
-    color: #171717;
-} 
 
