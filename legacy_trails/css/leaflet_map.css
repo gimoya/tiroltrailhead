@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Trade+Winds&display=swap');
+
 /*** General ***/
 
 html, body, #map {
@@ -11,15 +13,18 @@ html, body, #map {
     user-select: none;
 }
 
-body{
-    padding-top: 50px;
-    min-width: 340px; 
+body {
+    padding-top: 0;
+    min-width: 340px;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    margin: 0;
 }
 
 header {
     flex: 0 0 auto;
+    width: 100%;
 }
 
 main {
@@ -27,6 +32,9 @@ main {
     flex: 1;
     flex-direction: row;
     overflow: hidden;
+    height: calc(100vh - 80px);
+    position: relative;
+    z-index: 1;
 }
 
 #info-div {
@@ -39,9 +47,10 @@ main {
     max-width: 400px;
     padding-bottom: 60px;
     position: relative;
-    z-index: 1000;
+    z-index: 2;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    height: 100%;
 }
 
 #info-div > th, td {
@@ -126,6 +135,12 @@ main {
     background: #02b6f7b8;
     border-width: 0px;
     margin-bottom: 0;
+    padding: 10px 0 20px 0;
+    width: 100%;
+    position: relative;
+    z-index: 1001;
+    min-height: 70px;
+    max-height: 90px;
 }
 
 .navbar-default .navbar-brand,
@@ -134,7 +149,10 @@ main {
 }
 
 .navbar-default .navbar-brand {
-  padding-left: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -142,10 +160,11 @@ main {
 }
 
 .navbar-brand {
-	font-family: 'Rye', cursive; 
-	font-size:calc(20px + .5vw);
-	letter-spacing: 0.2em;
-	white-space: nowrap; 
+    font-family: 'Trade Winds', cursive;
+    font-size: clamp(20px, calc(30px + 1vw), 40px);
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+    line-height: 1.2;
 }
 
 .navbar-toggle {
@@ -164,11 +183,13 @@ main {
 }
 
 ul.nav.navbar-nav.navbar-right a {
-  color: #fff;
-  transition: color 0.4s;
-  font-family: inherit; 
-  font-size:calc(12px + .3vw);
-  margin-right: 10px;
+    color: #fff;
+    transition: color 0.4s;
+    font-family: inherit;
+    font-size: clamp(12px, calc(12px + 0.5vw), 16px);
+    margin-right: 10px;
+    padding: 10px;
+    line-height: 1.2;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -181,18 +202,52 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 }
 
 /*** Control font size of title on small screens ***/
-@media screen and (max-width: 480px) {
-  .navbar-default .navbar-brand {
-    font-size: 1.1em;
-	padding-top: 19px;
-  }
+@media (max-width: 768px) and (orientation: portrait) {
+    .navbar-brand {
+        font-size: clamp(16px, calc(20px + 1vw), 28px);
+    }
+    
+    ul.nav.navbar-nav.navbar-right a {
+        font-size: clamp(11px, calc(11px + 0.5vw), 14px);
+        padding: 8px;
+    }
+    
+    .navbar-default .navbar-brand {
+        padding-bottom: 15px;
+        margin-bottom: 5px;
+    }
+    
+    .navbar {
+        padding: 6px 0 12px 0;
+        min-height: 50px;
+        max-height: 65px;
+    }
+    
+    main {
+        height: calc(100vh - 65px);
+    }
 }
 
-@media screen and (max-width: 400px) {
-  .navbar-default .navbar-brand {
-    font-size: 1em;
-	padding-top: 19px;
-  }
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: clamp(14px, calc(16px + 1vw), 22px);
+        letter-spacing: 0.1em;
+    }
+    
+    .navbar-default .navbar-brand {
+        padding-bottom: 12px;
+        margin-bottom: 4px;
+    }
+    
+    .navbar {
+        padding: 4px 0 10px 0;
+        min-height: 45px;
+        max-height: 55px;
+    }
+    
+    main {
+        height: calc(100vh - 55px);
+    }
 }
 
 /*** popup contents ***/
@@ -294,29 +349,30 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     height: 100%;
     width: 100%;
     position: relative;
+    z-index: 1;
 }
 
 /* Responsive behavior */
 @media (max-width: 768px) and (orientation: portrait) {
     main {
         flex-direction: column;
-        height: calc(100vh - 50px); /* Account for navbar */
+        height: calc(100vh - 80px);
     }
     
     #info-div {
         flex: 0 0 auto;
-        max-height: 30vh;
+        max-height: 45vh;
         max-width: 100%;
         border-right: none;
         border-top: 1px solid #ddd;
         overflow-y: auto;
-        order: 2; /* Force info to appear after map */
+        order: 2;
     }
     
     #map {
         flex: 1;
         height: 70vh;
-        order: 1; /* Force map to appear before info */
+        order: 1;
     }
 }
 
@@ -324,11 +380,11 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 @media (max-width: 768px) and (orientation: landscape) {
     main {
         flex-direction: row;
-        height: calc(100vh - 50px);
+        height: calc(100vh - 80px);
     }
     
     #info-div {
-        flex: 0 0 30vw; /* 30% of viewport width */
+        flex: 0 0 40vw;
         max-height: none;
         border-right: 1px solid #ddd;
         border-top: none;
@@ -410,4 +466,3 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 .info-buttons button:hover {
     color: #171717;
 } 
-
