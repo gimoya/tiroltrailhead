@@ -39,7 +39,7 @@ main {
 
 #info-div {
     position: relative;
-    width: 400px;
+    width: 35%;
     height: 100%;
     background-color: white;
     overflow-y: auto;
@@ -49,14 +49,13 @@ main {
     border-right: 1px solid #ddd;
     color: #02a2dcb8;
     transition: all 0.3s ease;
-    max-width: 400px;
     padding-bottom: 60px;
     border-radius: 5px;
-    /* Always show scrollbar */
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
     transform: translateX(0);
     will-change: transform;
+    font-size: clamp(12px, 1vw, 16px);
 }
 
 #info-div.hidden {
@@ -114,15 +113,17 @@ main {
 
 .pop_cont_name {
     font-weight: bold;
-	font-size:2em;
+    font-size: clamp(16px, 1.5vw, 24px);
+    word-break: break-word;
 }
 
 .pop_gpx_text {
-	font-size: 2em; ;
-	text-align: center;
-	border-radius:3px;
-	background-color:#cdb50a;
-	padding: 10px;
+    font-size: clamp(14px, 1.2vw, 20px);
+    text-align: center;
+    border-radius: 3px;
+    background-color: #cdb50a;
+    padding: 10px;
+    word-break: break-word;
 }
 
 /* font awesome hack */
@@ -146,7 +147,7 @@ main {
     background: #02b6f7b8;
     border-width: 0px;
     margin-bottom: 0;
-    padding: 10px 0 20px 0;
+    padding: 10px 0 25px 0;
     width: 100%;
     position: relative;
     z-index: 1001;
@@ -159,23 +160,20 @@ main {
   color: #fff;
 }
 
-.navbar-default .navbar-brand {
-    padding-left: 15px;
-    padding-top: 15px;
-    padding-bottom: 25px;
-    margin-bottom: 10px;
-}
-
 .navbar-default .navbar-brand:hover {
   cursor: default;
 }
 
 .navbar-brand {
     font-family: 'Trade Winds', cursive;
-    font-size: clamp(20px, calc(30px + 1vw), 40px);
+    font-size: clamp(24px, 3vw, 40px);
     letter-spacing: 0.2em;
     white-space: nowrap;
-    line-height: 1.2;
+    line-height: 1;
+    padding-bottom: 55px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .navbar-toggle {
@@ -215,7 +213,7 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 /*** Control font size of title on small screens ***/
 @media (max-width: 768px) and (orientation: portrait) {
     .navbar-brand {
-        font-size: clamp(16px, calc(20px + 1vw), 28px);
+        font-size: clamp(18px, calc(20px + 1vw), 28px);
     }
     
     ul.nav.navbar-nav.navbar-right a {
@@ -241,7 +239,7 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 
 @media (max-width: 480px) {
     .navbar-brand {
-        font-size: clamp(14px, calc(16px + 1vw), 22px);
+        font-size: clamp(16px, calc(18px + 1vw), 22px);
         letter-spacing: 0.1em;
     }
     
@@ -250,7 +248,6 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     }
     
     .navbar {
-        padding: 4px 0 10px 0;
         min-height: 45px;
         max-height: 55px;
     }
@@ -363,10 +360,36 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 }
 
 /* Responsive behavior */
+
+/***   when in portrait mode (any size), but the info div in a column, the info div should be 100% of the width of the screen ***/
+@media (orientation: portrait) {
+    main {
+        flex-direction: column;
+    }
+    #info-div {
+        height: 35%;
+        width: 100%;
+        font-size: clamp(14px, 2vw, 18px);
+    }
+    .trail-item h3 {
+        font-size: clamp(16px, 2.2vw, 20px);
+    }
+    .trail-item p {
+        font-size: clamp(14px, 2vw, 16px);
+    }
+    .navbar-brand {
+        font-size: clamp(28px, 4vw, 40px);
+    }
+}
+
 @media (max-width: 768px) and (orientation: portrait) {
     main {
         flex-direction: column;
         height: calc(100vh - 80px);
+    }
+
+    .navbar-brand {
+        font-size: clamp(20px, 0vw, 30px);
     }
     
     #info-div {
@@ -406,6 +429,19 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     }
 }
 
+/* Landscape mode */
+@media (max-width: 600px) and (orientation: landscape) {
+    .navbar {
+        padding: 2px 0 4px 0;
+    }
+    .navbar-brand {
+        font-size: clamp(18px, 2.5vw, 20px);
+    }
+    #info-div {
+        font-size: clamp(12px, 1.5vw, 14px);
+    }
+}
+     
 .trails-in-view {
     margin-top: 35px;
     margin-bottom: 15px;
@@ -414,7 +450,6 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 .trails-list {
     margin-top: 20px;
 }
-
 
 .trail-item {
     padding: 10px;
@@ -436,14 +471,16 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 }
 
 .trail-item h3 {
-    font-size: 16px;
+    font-size: clamp(14px, 1.2vw, 18px);
     color: #FF5F1F;
+    word-break: break-word;
 }
 
 .trail-item p {
     margin: 0;
-    font-size: 14px;
+    font-size: clamp(12px, 1vw, 14px);
     color: #666;
+    word-break: break-word;
 }
 
 .trail-item.no-trails {
