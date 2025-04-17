@@ -367,7 +367,7 @@ ul.nav.navbar-nav.navbar-right li a:hover {
         flex-direction: column;
     }
     #info-div {
-        height: 35%;
+        height: 40%;
         width: 100%;
         font-size: clamp(14px, 2vw, 18px);
     }
