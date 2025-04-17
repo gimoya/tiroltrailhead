@@ -166,13 +166,18 @@ var legend = L.easyButton({
 			legend_content = $('#info-div .legend-content');
 			
 			if (info_div.is(':visible')) {
-				// If info div is visible, scroll to legend
-				info_div.animate({
-					scrollTop: legend_content.offset().top - info_div.offset().top
-				}, 500);
+				// If info div is visible, slide it to the left
+				info_div.addClass('hidden');
+				setTimeout(function() {
+					info_div.hide();
+					info_div.removeClass('hidden');
+					map.invalidateSize();
+				}, 300);
 			} else {
 				// If info div is hidden, show it and scroll to legend
-				info_div.slideDown(200, function() {
+				info_div.show().addClass('hidden');
+				setTimeout(function() {
+					info_div.removeClass('hidden');
 					info_div.animate({
 						scrollTop: legend_content.offset().top - info_div.offset().top
 					}, 500);
@@ -183,7 +188,7 @@ var legend = L.easyButton({
 					} else {
 						map.fitBounds(trails_json.getBounds());
 					}
-				});
+				}, 10);
 			}
 		});
 	}	
@@ -207,6 +212,7 @@ function updateTrailsInView() {
     
     var bounds = map.getBounds();
     var trailsInView = [];
+    var content = '';
     
     trails_json.eachLayer(function(layer) {
         if (bounds.intersects(layer.getBounds())) {
@@ -216,8 +222,6 @@ function updateTrailsInView() {
             });
         }
     });
-    
-    var content = '<h2>Trail Liste</h2>';
     
     if (trailsInView.length === 0) {
         content += '<div class="trail-item no-trails">..keine Trails in diesem Kartenauschnitt!</div>';
@@ -232,7 +236,10 @@ function updateTrailsInView() {
         });
     }
     
-    $('.trails-list').html(content);
+    // Remove existing trail items but keep the h2
+    $('.trails-list .trail-item').remove();
+    // Append new content after the h2
+    $('.trails-list h2').after(content);
     
     // Add click handlers to trail items
     $('.trail-item').on('click', function() {
@@ -257,7 +264,7 @@ $( document ).ready(function() {
         var trailsList = $('.trails-list');
         if (trailsList.length) {
             $('#info-div').animate({
-                scrollTop: trailsList.offset().top - $('#info-div').offset().top
+                scrollTop: trailsList.offset().top - $('#info-div').offset().top - 25
             }, 500);
         }
     });
