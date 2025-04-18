@@ -263,6 +263,12 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     }
 }
 
+@media (max-width: 420px) and (orientation: portrait) {
+    .navbar-brand {
+        font-size: clamp(15px, 2.7vw, 20px);
+    }
+}
+
 /*** popup contents ***/
 
 .elevation.lime-theme.leaflet-control {
