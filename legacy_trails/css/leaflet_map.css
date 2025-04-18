@@ -243,7 +243,7 @@ ul.nav.navbar-nav.navbar-right li a:hover {
 @media (max-width: 480px) and (orientation: portrait) {
     .navbar-brand {
         --navbar-brand-height: 45px;
-        font-size: clamp(24px, 4vw, 32px);
+        font-size: clamp(20px, 3.5vw, 28px);
     }
     main {
         height: calc(100vh - var(--navbar-brand-height));
