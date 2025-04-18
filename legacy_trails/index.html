@@ -6,21 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#02b6f7b8">
 
-  <script>
-    // Check if device is a small mobile
-    function isSmallMobile() {
-      return window.innerWidth <= 480 && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-    
-    // Add orientation lock meta tag if on small mobile
-    if (isSmallMobile()) {
-      const meta = document.createElement('meta');
-      meta.name = 'screen-orientation';
-      meta.content = 'portrait-primary';
-      document.head.appendChild(meta);
-    }
-  </script>
-
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
