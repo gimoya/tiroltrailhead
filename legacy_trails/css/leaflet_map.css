@@ -179,6 +179,10 @@ main {
     line-height: 30px!important;
 }
 
+.fa-info-circle {
+    color: #313131;  /* or any color you want */
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

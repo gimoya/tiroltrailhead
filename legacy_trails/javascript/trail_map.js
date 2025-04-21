@@ -55,8 +55,7 @@ var mapy_cz_windyLayer = L.tileLayer(mapy_cz_windyUrl, {
 });
 
 /*** Setting Default Base Map ***/
-
-mapy_cz_windyLayer.addTo(map);	
+mapbox_satelliteLayer.addTo(map);	
 
 /*** Strava TMS not working 
 var strava_proxyUrl = 'https://proxy.nakarte.me/https/heatmap-external-a.strava.com/tiles-auth/ride/hot/{z}/{x}/{y}.png';
@@ -81,7 +80,7 @@ var centerView = L.easyButton({
   position: 'topright',
   states: [{
 	stateName: 'centerView',
-	icon: '<span class="custom-control">◾</span>',
+	icon: '<i class="fas fa-compress"></i>',
 	title: 'Center View',		
 	onClick: function(control) {
 	map.fitBounds(trails_json.getBounds(), {maxZoom: 16});
@@ -95,22 +94,22 @@ centerView.addTo(map);
 var toggle = L.easyButton({
   position: 'topright',
   states: [{
-	stateName: 'basemap-outdoor',
-	icon: '<span class="custom-control">T</span>',
-	title: 'Hintergrundkarte umschalten',		
-	onClick: function(control) {
-	  map.removeLayer(mapy_cz_windyLayer);
-	  map.addLayer(mapbox_satelliteLayer);
-	  control.state('basemap-satellite');
-	}
-  }, {
 	stateName: 'basemap-satellite',
 	icon: '<span class="custom-control">S</span>',
-	title: 'Hintergrundkarte umschalten',
+	title: 'Hintergrundkarte Luftbild/Topo',
 	onClick: function(control) {
 	  map.removeLayer(mapbox_satelliteLayer);
 	  map.addLayer(mapy_cz_windyLayer);
 	  control.state('basemap-outdoor');
+	}
+  }, {
+	stateName: 'basemap-outdoor',
+	icon: '<span class="custom-control">T</span>',
+	title: 'Hintergrundkarte Topo/Luftbild',		
+	onClick: function(control) {
+	  map.removeLayer(mapy_cz_windyLayer);
+	  map.addLayer(mapbox_satelliteLayer);
+	  control.state('basemap-satellite');
 	}
   }]
 });
@@ -155,10 +154,10 @@ var el = L.control.elevation({
 
 
 var legend = L.easyButton({
-  position: 'bottomright',
+  position: 'topright',
   states: [{
 	stateName: 'legende',
-	icon: '<i class="fas fa-info-circle"></i>',
+	icon: '<i class="fas fa-info-circle fa-lg"></i>',
 	title: 'Legende anzeigen',		
 	onClick: function(){
 		$( document ).ready(function() {
