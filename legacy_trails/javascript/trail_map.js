@@ -397,6 +397,8 @@ map.getPane('ptsPane').style.zIndex = 600;
 /*** Add Trails ***/
 
 $.getJSON('my_trails_z.geojson', function(json) {
+	// Filter out trails where HIDE = 1
+	json.features = json.features.filter(feature => feature.properties.HIDE !== 1);
 	
 	// Create click layer first (will be underneath)
 	var click_layer = L.geoJson(json, {
