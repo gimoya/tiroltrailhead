@@ -180,13 +180,7 @@ var legend = L.easyButton({
 					info_div.animate({
 						scrollTop: legend_content.offset().top - info_div.offset().top
 					}, 500);
-					// After animation complete, invalidate map size and fit bounds
 					map.invalidateSize();
-					if (selected) {
-						map.fitBounds(selected.getBounds());
-					} else {
-						map.fitBounds(trails_json.getBounds());
-					}
 				}, 10);
 			}
 		});
