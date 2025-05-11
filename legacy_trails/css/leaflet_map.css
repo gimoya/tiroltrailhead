@@ -475,13 +475,13 @@ main {
         min-width: 300px;
         top: 18vh;
         left: 10px;
-        font-size: clamp(14px, 2vw, 18px);
+        font-size: clamp(14px, 2vw, 16px);
     }
     .trail-item h3 {
         font-size: clamp(18px, 2.2vw, 22px);
     }
     .trail-item p {
-        font-size: clamp(14px, 2vw, 16px);
+        font-size: clamp(14px, 2vw, 14px);
     }
 }
      
