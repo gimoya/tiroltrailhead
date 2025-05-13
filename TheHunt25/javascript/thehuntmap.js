@@ -189,7 +189,7 @@ L.control.locate({
 new LayerToggle().addTo(map);
 
 
-// Add download button to bottom left -> positioned in column 3.
+/* Add download button to bottom left -> positioned in column 3.
 L.Control.downloadButton = L.Control.extend({
     options: {
         position: 'topright'
@@ -203,7 +203,7 @@ L.Control.downloadButton = L.Control.extend({
         button.download = 'The_Hunt_25_Route.gpx';
         return container;
     }
-});
+});*/
 
 new L.Control.downloadButton().addTo(map);
 
