@@ -199,8 +199,8 @@ L.Control.downloadButton = L.Control.extend({
         const button = L.DomUtil.create('a', 'download-button', container);
         button.innerHTML = '<i class="fas fa-download fa-lg"></i>';
         button.title = 'Download GPX';
-        button.href = 'TheHunt25.gpx';
-        button.download = 'TheHunt25.gpx';
+        button.href = 'The_Hunt_25_Route.gpx';
+        button.download = 'The_Hunt_25_Route.gpx';
         return container;
     }
 });
