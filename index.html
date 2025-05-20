@@ -1,167 +1,124 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<title>Tirol Trailhead</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="MTB-Guiding || Biology" />
-
-<head>
-
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/site.webmanifest">
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-<!-- BOOTSTRAP -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">		
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
-<!-- BOOTSTRAP -->
-
-<script language="javascript">
-$(document).ready(function() {
-    function checkWidth() {
-        var windowSize = $(window).width();	
-	if (windowSize <= 500) { 
-	    $('#mobile').removeClass('btn btn-info disabled').addClass('btn btn-info active');  
-	    $('#desktop').removeClass('btn btn-info active').addClass('btn btn-info disabled'); 
-	} else {
-	    $('#desktop').removeClass('btn btn-info disabled').addClass('btn btn-info active');  
-	    $('#mobile').removeClass('btn btn-info active').addClass('btn btn-info disabled'); 	
-	}
-	if (windowSize <= 800) { 
-	    $('#bgvideo').css('display', 'none');
-	    $('#bgvideo-inner').css('display', 'none');	
-	    $('.vid-container').css('background', 'url(lago_.jpg) no-repeat center center fixed'); 
-	} else {
-	    $('#bgvideo').css('display', 'inherit');
-	    $('#bgvideo-inner').css('display', 'inherit');
-	    $('.vid-container').css('background-image', 'none');
-    	}	
+  <meta charset="UTF-8">
+  <title>Tirol Trailhead</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MTB-Guiding || Consulting">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    // Execute on load
-    checkWidth();
-    // Bind event listener
-    $(window).resize(checkWidth);	
-});
-</script>
-
-<style type="text/css">
-body {
-  padding:0;
-  margin:0;
-  background-color: black;
-  text-align: center;
-  font-size: 35px;
-}
-
-.vid-container{
-  position:relative;
-  height:100vh;
-  overflow:hidden;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.bgvid{
-  position:absolute;
-  left:0;
-  top:0;
-  width:100vw;
-  min-height: 100%;
-}
-.inner-container{
-  width:400px;
-  height:200px;
-  position:absolute;
-  top:calc(50vh - 100px);
-  left:calc(50vw - 200px);
-  overflow:hidden;
-}
-.bgvid.inner{
-  top:calc(-50vh + 100px);
-  left:calc(-50vw + 200px);
-  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
-  -webkit-filter:blur(10px);
-  -ms-filter: blur(10px);
-  -o-filter: blur(10px);
-  filter:blur(10px);
-}
-.box{
-  position:absolute;
-  height:100%;
-  width:100%;
-  font-family: Gill Sans, sans-serif;
-  font-variant: small-caps;
-  color:#fff;
-  background:rgba(0,0,0,0.13);
-
-}
-
-.box input{
-  display:block;
-  width:100%;
-  margin:20px auto;
-  padding:15px;
-  background:rgba(0,0,0,0.2);
-  color:#fff;
-  border:0;
-}
-.box input:focus,.box input:active,.box button:focus,.box button:active{
-  outline:none;
-}
-.box button{
-  background:#2ecc71;
-  border:0;
-  color:#fff;
-  padding:10px;
-  font-size:20px;
-  width:330px;
-  margin:20px auto;
-  display:block;
-  cursor:pointer;
-}
-.box button:active{
-  background:#27ae60;
-}
-.box p{
-  font-size:14px;
-  text-align:center;
-}
-.box p span{
-  cursor:pointer;
-  color:#666;
-}
-
-h4 {
-padding-bottom: 15px;
-}
-
-</style>
-
-<div class="vid-container">
-  <video id="bgvideo" class="bgvid" autoplay="autoplay" preload="auto" loop muted>
-       <source src="riverrun.mp4" type="video/mp4">
+    body {
+      min-height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background: #111;
+      color: #fff;
+      font-family: 'Oswald', Arial, sans-serif;
+      letter-spacing: 0.25em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bg-video, .bg-image {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      width: 100vw;
+      max-width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0 0 0.5em 0;
+      text-shadow: 0 2px 16px #000;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 500px;
+      margin: 2.5em auto 0 auto;
+    }
+    .btn {
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 0;
+      padding: 1.2em 3em;
+      font-size: 1.2rem;
+      font-family: inherit;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 16px #0008;
+      text-transform: uppercase;
+      outline: none;
+      display: inline-block;
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+    .btn:hover, .btn:focus {
+      background: #fff;
+      color: #111;
+    }
+    @media (orientation: landscape) and (min-width: 600px) {
+      .btn-group {
+        flex-direction: row;
+        gap: 2.5rem;
+        max-width: none;
+        width: auto;
+      }
+      .btn {
+        width: 220px;
+        max-width: none;
+      }
+    }
+    @media (max-width: 800px) {
+      .bg-video { display: none; }
+      .bg-image { display: block; }
+    }
+    @media (min-width: 801px) {
+      .bg-video { display: block; }
+      .bg-image { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <video class="bg-video" autoplay loop muted playsinline>
+    <source src="riverrun.mp4" type="video/mp4">
   </video>
-  <div class="inner-container">
-    <video id="bgvideo-inner" class="bgvid inner" autoplay="autoplay" preload="auto" loop muted>
-       <source src="riverrun.mp4" type="video/mp4">
-    </video>	  
-    <div class="box">
-      <h1>Kay Cichini</h1>
-	  <h4>Tirol Trailhead</h4>
-  <div class="text-center">	    
-  <div class="btn-group btn-group-lg">
-      <a href="/guiding" id="guiding" data-toggle="tooltip" data-placement="top" title="MTB-Guiding" type="button" class="btn btn-success active">MTB-Guide
-</a>
-      <a href="https://kaycichini.carrd.co/" id="biology" data-toggle="tooltip" data-placement="top" title="Biologie" type="button" class="btn btn-success active">Planer & GIS-Experte 
-</a>
-</div>
+  <img class="bg-image" src="lago_.jpg" alt="" />
+  <div class="content">
+    <h1>Tirol Trailhead</h1>
+    <div class="btn-group">
+      <a class="btn" href="https://consulting.tiroltrailhead.com">Consulting</a>
+      <a class="btn" href="https://guiding.tiroltrailhead.com">Guiding</a>
     </div>
-	  </div>
   </div>
-</div>
+</body>
+</html> 
