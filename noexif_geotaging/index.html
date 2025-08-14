@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simple Geotag Imagery</title>
+  <title>Noexif Geotagging Media</title>
   
   <!-- External CSS -->
   <link rel="stylesheet" href="css/styles.css">
@@ -14,16 +14,14 @@
 <body>
   <div id="map"></div>
   
-  <!-- User Feedback Messages -->
-  <div id="feedback-messages" class="feedback-container"></div>
-  
   <!-- Show Panel Button (appears when panel is hidden) -->
   <button id="show-panel" class="show-panel-btn" title="Show Panel">☰</button>
   
   <!-- Control Panel -->
   <div id="control-panel">
     <div class="panel-header">
-      <h3>Simple Geotag Imagery</h3>
+      <h3>Noexif Geotagging Media</h3>
+      <p class="subtitle">Add Geotags to Media Files Without EXIF Data | <a href="help.html" target="_blank" style="color: #2196f3; text-decoration: none;">help</a></p>
       <button id="hide-panel">✕</button>
     </div>
     
@@ -51,35 +49,28 @@
             <h4>Select Media Files</h4>
             <input type="file" id="media-files-input" multiple accept="image/*,video/*">
             <button id="select-files-btn" class="primary-btn">Choose Media Files</button>
-            <div id="files-info" class="info-text"></div>
           </div>
           
           <div class="file-input-section">
             <h4>Load Walking Track (GPX)</h4>
             <input type="file" id="gpx-file-input" accept=".gpx">
             <button id="select-gpx-btn" class="primary-btn">Choose GPX File</button>
-            <button id="clear-track-btn" class="secondary-btn">Clear Track</button>
-            <div id="gpx-info" class="info-text"></div>
+            <button id="clear-track-btn" class="secondary-btn" style="display: none;">Clear Track</button>
           </div>
         </div>
         
-        <hr class="section-divider">
+        <!-- Unified Activity Log - no header, taller -->
+        <div id="unified-activity-log" class="unified-log"></div>
         
-        <p>Click on the map to set coordinates for media files</p>
-        <div id="file-list">
+        <div id="file-list" title="Select media files & click on the map to set coordinates (and elevation if available from GPX track points)">
           <!-- File list will be populated here -->
-        </div>
-        <div id="coordinate-display">
-          <p>Selected coordinates: <span id="selected-coords">None</span></p>
         </div>
       </div>
       
       <div id="view-mode" class="mode-content">
-        <button id="show-media-btn" class="primary-btn">Show Media Pins</button>
-        <button id="clear-media-btn" class="secondary-btn">Clear All Pins</button>
-        <button id="download-all-btn" class="primary-btn download-btn">Download All Geotagged Photos</button>
+        <button id="download-all-btn" class="primary-btn download-btn">Download All Noexif Geotagging Media Photos</button>
         <div id="media-stats">
-          <p>Files with coordinates: <span id="coord-count">0</span></p>
+          <p>Total files: <span id="total-count">0</span> | With coordinates: <span id="coord-count">0</span> | With elevation: <span id="elevation-count">0</span></p>
         </div>
       </div>
     </div>

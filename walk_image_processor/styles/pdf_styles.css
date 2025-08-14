@@ -1,0 +1,90 @@
+/* PDF Generation Styles for Walk Image Processor */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #333;
+    font-size: 12pt;
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 16pt;
+}
+
+h2, h3 {
+    color: #34495e;
+    margin-top: 30px;
+    font-size: 14pt;
+}
+
+.walk-image {
+    max-width: 80%; 
+    max-height: 220mm;              /* Default for portrait images */
+    page-break-inside: avoid;       /* Prevent image splitting */
+    break-inside: avoid;            /* Modern CSS equivalent */
+    width: auto;                    /* Maintain aspect ratio */
+    height: auto;                   /* Maintain aspect ratio */
+    object-fit: contain;            /* Ensure image fits within bounds */
+    margin: 25pt auto 10px auto;    /* top auto bottom auto - 10px gap to caption */
+    display: block;                 /* Ensure block display for margin auto */
+    text-align: center;             /* Center any inline content */
+}
+
+/* Smart scaling for landscape images - allow 2 per page */
+.walk-image[style*="landscape"],
+.walk-image.landscape {
+    max-height: 110mm;              /* Landscape: allows 2 per page */
+}
+
+/* Smart scaling for portrait images - single per page */
+.walk-image[style*="portrait"],
+.walk-image.portrait {
+    max-height: 230mm;              /* Portrait: single per page */
+}
+
+.image-container {
+    text-align: center;
+    margin: 0 auto;                 /* Remove top/bottom margins, keep horizontal centering */
+    display: block;
+}
+
+em {
+    font-style: italic;
+    color: #34495e;
+    margin: 0 auto 40px auto;       /* 0px top margin (10px gap from image), 40px bottom margin to next image */
+    display: block;
+    text-align: center;
+    font-size: 12pt;
+    text-decoration: none;
+    border-radius: 0;
+    max-width: 80%;                  /* Match image width */
+    width: fit-content;              /* Allow natural width up to max-width */
+    padding: 0 10px;                 /* Small padding for readability */
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #ecf0f1;
+    margin: 30px 0;
+}
+
+strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Page break controls - multiple approaches for reliability */
+.page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    margin-top: 20px;
+    height: 0;
+    overflow: hidden;
+}

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walk Image Processor - Hilfe</title>
+    <link rel="stylesheet" href="../styles/help_styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>🚶 Walk Image Processor</h1>
+        <p>Automatische Wegdokumentation mit GPS-Koordinaten</p>
+    </div>
+    
+    <nav class="nav">
+        <ul>
+            <li><a href="#schnellstart">Schnellstart</a></li>
+            <li><a href="#workflow">Workflow</a></li>
+            <li><a href="#dateinamen">Dateinamen</a></li>
+            <li><a href="#befehle">Befehle</a></li>
+            <li><a href="#beispiele">Beispiele</a></li>
+            <li><a href="#probleme">Probleme</a></li>
+        </ul>
+    </nav>
+    
+    <div class="section" id="schnellstart">
+        <h2>🚀 Schnellstart</h2>
+        
+        <div class="success">
+            <strong>Perfekter Workflow für Ihre Wegdokumentation:</strong>
+            <ol class="step-list">
+                <li>Navigieren Sie zu Ihrem Bilder-Ordner</li>
+                <li>Öffnen Sie die Eingabeaufforderung in diesem Ordner</li>
+                <li>Führen Sie <code>wip</code> aus</li>
+                <li>Erhalten Sie eine professionelle Wegdokumentation</li>
+            </ol>
+        </div>
+        
+        <h3>Basis-Befehl</h3>
+        <div class="code-block">
+# Einfachste Verwendung
+wip
+
+# Mit benutzerdefinierten Einstellungen
+wip -t "Meine Wanderung" -d "15-03-2025" -l "Alpenregion"
+        </div>
+    </div>
+    
+    <div class="section" id="workflow">
+        <h2>📋 Detaillierter Workflow</h2>
+        
+        <h3>1. Vorbereitung der Bilder</h3>
+        <div class="example">
+            <strong>Ihre Bilder können verschiedene Formate haben:</strong><br>
+            <span class="filename-example">001_startpunkt___13.202000_47.316875___.jpg</span> (mit Zeitstempel + Koordinaten)<br>
+            <span class="filename-example">landschaft___13.205002_47.315930___.jpg</span> (mit Koordinaten)<br>
+            <span class="filename-example">gipfel___13.207121_47.316326___.png</span> (mit Koordinaten)<br>
+            <span class="filename-example">overview.jpg</span> (ohne Zeitstempel/Koordinaten - wird trotzdem verarbeitet)
+        </div>
+        
+        <h3>2. Navigation zum Bildordner</h3>
+        <div class="code-block">
+# Windows Explorer: Shift + Rechtsklick → "Eingabeaufforderung hier öffnen"
+# Oder über cd-Befehl:
+cd "C:\Pfad\zu\Ihren\Bildern"
+        </div>
+        
+        <h3>3. Dokumentation erstellen</h3>
+        <div class="code-block">
+# Basis-Erstellung
+wip
+
+# Erweiterte Optionen
+wip -t "Gernkogel Begehung" -d "06-08-2025" -l "Gernkogel, Österreich" -o "gernkogel_bericht.md"
+        </div>
+        
+        <h3>4. Workflow für PDF-Export</h3>
+        <div class="info">
+            <strong>Modularer Workflow für professionelle Berichte:</strong>
+            <ul class="step-list">
+                <li><strong>Markdown generieren:</strong> <code>wip</code> erstellt eine .md Datei mit Ihren Bildern</li>
+                <li><strong>HTML wird glzt. generiert:</strong> mit <code>wip</code> wird glzt. mit .md Datei eine .html Datei erstellt. Diese Datei dient zur Überprüfung der Formatierung die vom pdf-style.css vorgegeben ist.</li>
+                <li><strong>Manuell bearbeiten:</strong> Öffnen Sie die .md Datei in Ihrem Editor und passen Sie den Inhalt an! (Achtung: der Inhalt der .html Datei wird erst beim PDF-Export aktualisert!)</li>
+                <li><strong>PDF exportieren:</strong> <code>wip -p</code> liest die aktuelle .md, generiert HTML neu und konvertiert zu PDF</li>
+            </ul>
+        </div>
+        
+        <div class="success">
+            <strong>Vorteile des modularen Workflows:</strong>
+            <ul>
+                <li>✅ Markdown für einfache Bearbeitung</li>
+                <li>✅ PDF für finale Präsentation und Druck</li>
+                <li>✅ Professionelle Formatierung durch CSS-Styles</li>
+                <li>✅ HTML wird automatisch aus aktuellem Markdown generiert</li>
+                <li>✅ Alle manuellen Änderungen werden im PDF berücksichtigt</li>
+            </ul>
+        </div>
+
+    </div>
+    
+    <div class="section" id="dateinamen">
+        <h2>📸 Dateinamen-Schema</h2>
+        
+        <h3>Unterstützte Formate</h3>
+        <div class="code-block">
+<span style="color: #3498db;">[beliebiger_name]</span><span style="color: #e74c3c;">___[longitude]_[latitude]___</span><span style="color: #3498db;">.[extension]</span>
+        </div>
+        
+        <div class="example">
+            <strong>Schema-Erklärung:</strong><br>
+            🔵 <strong>Beliebig:</strong> Dateiname und Dateierweiterung<br>
+            🔴 <strong>Koordinaten (optional):</strong> <code>___longitude_latitude___</code><br><br>
+            
+            <strong>Koordinaten-Format (falls vorhanden):</strong><br>
+            • <strong>Longitude:</strong> -180.0 bis +180.0 (Ost/West)<br>
+            • <strong>Latitude:</strong> -90.0 bis +90.0 (Nord/Süd)<br>
+            • <strong>Trennzeichen:</strong> Genau drei Unterstriche <code>___</code> vor und nach den Koordinaten<br>
+            • <strong>Koordinaten-Trenner:</strong> Ein Unterstrich <code>_</code> zwischen Longitude und Latitude
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>✅ Korrekte Beispiele</h4>
+                <span class="filename-example"><span style="color: #3498db;">001_start</span><span style="color: #e74c3c;">___13.202000_47.316875___</span><span style="color: #3498db;">.jpg</span></span> (mit Koordinaten)<br>
+                <span class="filename-example"><span style="color: #3498db;">aussicht</span><span style="color: #e74c3c;">___13.205002_47.315930___</span><span style="color: #3498db;">.png</span></span> (mit Koordinaten)<br>
+                <span class="filename-example"><span style="color: #3498db;">geotagged_bruecke</span><span style="color: #e74c3c;">___13.207121_47.316326___</span><span style="color: #3498db;">.jpg</span></span> (mit Koordinaten)<br>
+                <span class="filename-example"><span style="color: #3498db;">overview.jpg</span></span> (ohne Koordinaten - wird trotzdem verarbeitet)
+            </div>
+            
+            <div class="feature-card">
+                <h4>❌ Falsche Beispiele</h4>
+                <span class="filename-example">foto<span style="color: #e74c3c;">___999.999_999.999___</span>.jpg</span> (ungültige Koordinaten)<br>
+                <span class="filename-example">start<span style="color: #e74c3c;">_13.202_47.316</span>.jpg</span> (falsches Trennzeichen-Schema)<br>
+                <span class="filename-example">bild<span style="color: #e74c3c;">___13.202_47.316</span>.jpg</span> (fehlende Unterstriche vor/nach Koordinaten)
+            </div>
+        </div>
+        
+        <h3>Automatische Bildunterschriften</h3>
+        <div class="example">
+            <strong>Das System generiert automatisch Bildunterschriften:</strong><br>
+            <code>geotagged_vlcsnap-2025-08-06-13h15m45s450___13.205002_47.315930___.jpg</code><br>
+            → <em>"Aufnahme - Koordinaten: 13.205002°E, 47.315930°N"</em>
+        </div>
+        
+        <h3>Verarbeitung aller Bilder</h3>
+        <div class="info">
+            <strong>Alle Bilder werden verarbeitet:</strong> Das System verarbeitet jetzt alle Bilder im Ordner, unabhängig davon, ob sie Zeitstempel oder Koordinaten haben.
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>✅ Bilder MIT Zeitstempel</h4>
+                <div class="code-block">Bilder mit Datum/Zeit im Dateinamen</div>
+                <strong>Vollständige Verarbeitung:</strong><br>
+                • <strong>Sortierung:</strong> Chronologisch nach Aufnahmezeit<br>
+                • <strong>Caption:</strong> Mit Zeitstempel und Elevation<br>
+                • <strong>Koordinaten:</strong> Falls verfügbar<br>
+                • <strong>Distanz:</strong> Berechnung möglich
+            </div>
+            
+            <div class="feature-card">
+                <h4>✅ Bilder OHNE Zeitstempel</h4>
+                <div class="code-block">Bilder ohne Datum/Zeit im Dateinamen</div>
+                <strong>Basis-Verarbeitung:</strong><br>
+                • <strong>Sortierung:</strong> Werden zuerst angezeigt<br>
+                • <strong>Caption:</strong> Aus Dateinamen generiert<br>
+                • <strong>Koordinaten:</strong> Falls verfügbar<br>
+                • <strong>Distanz:</strong> Nicht in Berechnung einbezogen
+            </div>
+        </div>
+        
+        <div class="warning">
+            <strong>Wichtige Hinweise zur Bildverarbeitung:</strong>
+            <ul>
+                <li><strong>Alle Bilder:</strong> Werden in die Dokumentation aufgenommen</li>
+                <li><strong>Sortierung:</strong> Bilder ohne Zeitstempel erscheinen zuerst</li>
+                <li><strong>Bilder mit Zeitstempel:</strong> Werden chronologisch sortiert</li>
+                <li><strong>Koordinaten:</strong> Bleiben optional (für Distanzberechnung)</li>
+                <li><strong>Caption-Generierung:</strong> Funktioniert für alle Bildtypen</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section" id="befehle">
+        <h2>🔧 Befehlsoptionen</h2>
+        
+        <h3>📋 Alle Parameter mit Beispielen</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>📝 -t</h4>
+                <div class="code-block">wip -t "Alpenwanderung 2025"
+wip -t "Meine Bergtour"</div>
+                <strong>Titel des Dokuments</strong><br>
+                Standard: "Wegdokumentation"
+            </div>
+            
+            <div class="feature-card">
+                <h4>📅 -d</h4>
+                <div class="code-block">wip -d "15-03-2025"
+wip -d "06-08-2025"</div>
+                <strong>Datum im Format DD-MM-YYYY</strong><br>
+                Standard: aktuelles Datum
+            </div>
+            
+            <div class="feature-card">
+                <h4>📍 -l</h4>
+                <div class="code-block">wip -l "Berchtesgadener Alpen"
+wip -l "Gernkogel, Österreich"</div>
+                <strong>Standort/Gebiet der Wanderung</strong><br>
+                Standard: "Wandergebiet"
+            </div>
+            
+            <div class="feature-card">
+                <h4>📄 -o</h4>
+                <div class="code-block">wip -o "mein_bericht.md"
+wip -o "gernkogel_dokumentation.md"</div>
+                <strong>Ausgabe-Markdown-Datei</strong><br>
+                Standard: "walk_documentation.md"
+            </div>
+            
+            <div class="feature-card">
+                <h4>🎨 -T</h4>
+                <div class="code-block">wip -T scientific
+wip -T simple
+wip -T "C:\mein_template.md"</div>
+                <strong>Template-Format auswählen</strong><br>
+                Werte: default, scientific, simple, Dateipfad
+            </div>
+            
+            <div class="feature-card">
+                <h4>🗜️ -c</h4>
+                <div class="code-block">wip -c
+wip -c -q 90</div>
+                <strong>Bildkomprimierung aktivieren</strong><br>
+                Reduziert Bildgröße, erstellt .backup Dateien
+            </div>
+            
+            <div class="feature-card">
+                <h4>📏 -m</h4>
+                <div class="code-block">wip -m 1.5
+wip -m 3.0 -c</div>
+                <strong>Maximale Bildgröße in MB</strong><br>
+                Standard: 2.0, Bereich: 0.5-10.0
+            </div>
+            
+            <div class="feature-card">
+                <h4>⚡ -q</h4>
+                <div class="code-block">wip -q 95
+wip -q 75 -c</div>
+                <strong>JPEG-Qualität nach Komprimierung</strong><br>
+                Standard: 85, Bereich: 1-100
+            </div>
+            
+            <div class="feature-card">
+                <h4>🔍 --dry-run</h4>
+                <div class="code-block">wip --dry-run
+wip --dry-run -t "Test"</div>
+                <strong>Testlauf ohne Dateierstellung</strong><br>
+                Zeigt Bildordnung und Verarbeitung
+            </div>
+            
+            <div class="feature-card">
+                <h4>📖 --help, -h</h4>
+                <div class="code-block">wip --help
+wip -h</div>
+                <strong>Kurze Kommandozeilen-Hilfe anzeigen</strong><br>
+                Kompakte Parameter-Übersicht
+            </div>
+            
+            <div class="feature-card">
+                <h4>🌐 --help-browser</h4>
+                <div class="code-block">wip --help-browser</div>
+                <strong>Ausführliche Hilfe im Browser öffnen</strong><br>
+                Öffnet diese Hilfeseite
+            </div>
+            
+            <div class="feature-card">
+                <h4>📄 -p</h4>
+                <div class="code-block">wip -p
+wip -p -i my_file.md</div>
+                <strong>Markdown zu PDF konvertieren</strong><br>
+                Konvertiert bestehende Markdown-Datei zu PDF über wkhtmltopdf
+            </div>
+            
+            <div class="feature-card">
+                <h4>📥 -i</h4>
+                <div class="code-block">wip -i "mein_bericht.md"</div>
+                <strong>Eingabe-Markdown-Datei für PDF</strong><br>
+                Standard: verwendet -o Wert oder "walk_documentation.md"
+            </div>
+        </div>
+        
+        <h3>💡 Parameter-Kombinationen</h3>
+        <div class="warning">
+            <strong>Wichtige Hinweise:</strong>
+            <ul>
+                <li><strong>Reihenfolge:</strong> Parameter können in beliebiger Reihenfolge verwendet werden</li>
+                <li><strong>Kurzform:</strong> Alle Parameter verwenden das -x Format</li>
+                <li><strong>Anführungszeichen:</strong> Verwenden Sie " " bei Leerzeichen in Werten</li>
+                <li><strong>Pfade:</strong> Verwenden Sie absolute oder relative Pfade für -T</li>
+                <li><strong>PDF-Modus:</strong> -p überschreibt alle anderen Parameter</li>
+            </ul>
+        </div>
+        
+        <h3>🚀 Häufige Kommando-Kombinationen</h3>
+        <div class="example">
+            <h4>Standard-Dokumentation erstellen:</h4>
+            <div class="code-block">wip -t "Meine Wanderung" -l "Alpenregion"</div>
+            
+            <h4>Wissenschaftliche Dokumentation mit Komprimierung:</h4>
+            <div class="code-block">wip -T scientific -t "Forschungswanderung" -l "Nationalpark" -c -q 95</div>
+            
+            <h4>Minimale Dokumentation für schnelle Berichte:</h4>
+            <div class="code-block">wip -T simple -t "Kurzer Rundgang" -o "quick_report.md"</div>
+            
+            <h4>PDF-Export nach Bearbeitung:</h4>
+            <div class="code-block"># 1. Markdown erstellen
+wip -t "Meine Wanderung" -l "Alpen"
+
+# 2. Markdown bearbeiten (manuell)
+
+# 3. Zu PDF konvertieren
+wip -p -i "walk_documentation.md"</div>
+        </div>
+    </div>
+    
+    <div class="section" id="templates">
+        <h2>🎨 Template-System</h2>
+        
+        <h3>📋 Verfügbare Templates</h3>
+        <div class="info">
+            <strong>Standard-Template:</strong> Das System kommt mit einem vorkonfigurierten <code>default.md</code> Template im <code>templates/</code> Ordner.
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>📄 default.md</h4>
+                <div class="code-block">Standard-Template (wird automatisch verwendet)</div>
+                <strong>Vollständige Wegdokumentation</strong><br>
+                Enthält alle wichtigen Elemente:
+                <ul>
+                    <li>Zusammenfassung und Statistiken</li>
+                    <li>Methodikbeschreibung</li>
+                    <li>Foto-Dokumentation</li>
+                    <li>Schlussfolgerungen</li>
+                    <li>Koordinaten-Anhänge</li>
+                </ul>
+            </div>
+            </div>
+            
+        <h3>🔧 Eigenes Template verwenden</h3>
+        <div class="example">
+            <strong>Benutzerdefinierte Templates:</strong> Sie können eigene Template-Dateien erstellen und mit dem <code>-T</code> Parameter verwenden.
+            <div class="code-block">wip -T "C:\Pfad\zu\meinem_template.md"</div>
+            <strong>Beispiel:</strong>
+            <div class="code-block">wip -T "C:\Templates\mein_wanderbericht.md"</div>
+        </div>
+        
+        <h3>💡 Template-Variablen</h3>
+        <div class="warning">
+            <strong>Verfügbare Platzhalter in Templates:</strong>
+            <ul>
+                <li><code>{title}</code> - Dokument-Titel</li>
+                <li><code>{date}</code> - Datum (DD-MM-YYYY)</li>
+                <li><code>{location}</code> - Standort/Gebiet</li>
+                <li><code>{content}</code> - Generierte Foto-Dokumentation</li>
+                <li><code>{total_images}</code> - Anzahl Bilder</li>
+                <li><code>{total_distance}</code> - Gesamtdistanz in km</li>
+                <li><code>{coordinates_list}</code> - Koordinaten-Liste</li>
+                <li><code>{coordinate_bounds}</code> - Min/Max Koordinaten</li>
+            </ul>
+        </div>
+        
+        <h3>📁 Template-Ordner</h3>
+        <div class="info">
+            <strong>Installationspfad:</strong> <code>templates/default.md</code><br>
+            <strong>Benutzerdefinierte Templates:</strong> Können überall gespeichert werden, verwenden Sie den vollständigen Pfad mit <code>-T</code>.
+        </div>
+    </div>
+    
+    <div class="section" id="beispiele">
+        <h2>💡 Praktische Beispiele</h2>
+        
+        <h3>Beispiel 1: Einfache Wanderdokumentation</h3>
+        <div class="example">
+            <strong>Situation:</strong> Sie haben Fotos einer Wanderung im Ordner <code>C:\Fotos\Wanderung2025</code><br>
+            <strong>Lösung:</strong>
+            <div class="code-block">
+cd "C:\Fotos\Wanderung2025"
+wip -t "Bergwanderung 2025" -l "Bayerische Alpen"
+            </div>
+        </div>
+        
+        <h3>Beispiel 2: Gernkogel Projekt</h3>
+        <div class="example">
+            <strong>Ihre Gernkogel Bilder:</strong>
+            <div class="code-block">
+# Navigation zu Ihren Bildern
+cd "C:\MYDATA\Projekte\Gernkogel\Fotos-Gernkogel\geotagged_photos_2025-08-06"
+
+# Dokumentation erstellen
+wip -t "Begehungsbericht Gernkogel" -d "06-08-2025" -l "Gernkogel, Österreich" -o "Gernkogel_Dokumentation.md"
+            </div>
+        </div>
+        
+        <h3>Beispiel 3: Mehrere Wanderungen verarbeiten</h3>
+        <div class="example">
+            <div class="code-block">
+# Wanderung 1
+cd "C:\Fotos\Tour1"
+wip -t "Alpentour Tag 1" -o "tour1.md"
+
+# Wanderung 2  
+cd "C:\Fotos\Tour2"
+wip -t "Alpentour Tag 2" -o "tour2.md"
+            </div>
+        </div>
+        
+        <h3>Beispiel 4: PDF-Export Workflow</h3>
+        <div class="example">
+            <strong>Vollständiger Workflow mit PDF-Export:</strong>
+            <div class="code-block">
+# 1. Markdown erstellen und bearbeiten
+wip -t "Gernkogel Begehung" -l "Gernkogel, Österreich" -c
+
+# 2. Markdown manuell bearbeiten (Titel, Beschreibungen, etc.)
+#    Öffnen Sie walk_documentation.md in Ihrem Editor
+
+# 3. Zu PDF konvertieren
+wip -p -i "walk_documentation.md"
+
+# Oder direkt mit Standard-Datei:
+wip -p
+            </div>
+            <div class="info">
+                <strong>Workflow-Erklärung:</strong>
+                <ul>
+                    <li><strong>Schritt 1:</strong> <code>wip</code> generiert Markdown mit Bildern und Koordinaten</li>
+                    <li><strong>Schritt 2:</strong> Sie bearbeiten die .md Datei manuell (Text, Struktur, etc.)</li>
+                    <li><strong>Schritt 3:</strong> <code>wip -p</code> konvertiert zu PDF mit professioneller Formatierung</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section" id="probleme">
+        <h2>🆘 Häufige Probleme und Lösungen</h2>
+        
+        <h3>Problem: "Keine Bilder mit Koordinaten gefunden"</h3>
+        <div class="warning">
+            <strong>Lösung:</strong> Überprüfen Sie das Dateinamen-Format<br>
+            ✅ Korrekt: <span class="filename-example">bild___13.202000_47.316875___.jpg</span><br>
+            ❌ Falsch: <span class="filename-example">bild_13.202_47.316.jpg</span>
+        </div>
+        
+        <h3>Problem: "Kein Startbild gefunden"</h3>
+        <div class="warning">
+            <strong>Lösung:</strong> Ein Bild muss mit <code>001_</code> beginnen<br>
+            Benennen Sie Ihr Startbild um: <span class="filename-example">001_start___koordinaten___.jpg</span>
+        </div>
+        
+        <h3>Problem: "Befehl nicht gefunden"</h3>
+        <div class="warning">
+            <strong>Lösung:</strong> System neu installieren oder PATH prüfen<br>
+            <div class="code-block">
+# Installation prüfen
+dir "C:\Program Files\walk_image_processor"
+
+# PATH prüfen
+echo %PATH%
+            </div>
+        </div>
+        
+        <h3>Problem: PDF-Export funktioniert nicht</h3>
+        <div class="warning">
+            <strong>Lösung:</strong> wkhtmltopdf installieren<br>
+            <div class="code-block">
+# Download von: https://wkhtmltopdf.org/downloads.html
+# Nach Installation neu starten
+# Dann: wip -p funktioniert
+            </div>
+        </div>
+        
+        <h3>Problem: PDF-Formatierung nicht korrekt</h3>
+        <div class="warning">
+            <strong>Lösung:</strong> CSS-Styles werden automatisch angewendet<br>
+            <div class="code-block">
+# Das System kopiert automatisch pdf_styles.css
+# Bilder werden nach Orientierung skaliert (Portrait: 180mm, Landscape: 110mm)
+# Seitenumbrüche vor "Fotodokumentation" und "Anhänge"
+            </div>
+        </div>
+        
+        <h3>System-Informationen</h3>
+        <div class="success">
+            <strong>Installationspfad:</strong> <code>C:\Program Files\walk_image_processor</code><br>
+            <strong>Hauptbefehl:</strong> <code>wip</code> (walk image processor)<br>
+            <strong>Konfiguration:</strong> Keine erforderlich<br>
+            <strong>Unterstützte Formate:</strong> JPG, PNG, GIF, BMP, TIFF<br>
+            <strong>PDF-Export:</strong> Über wkhtmltopdf
+        </div>
+        
+        <h3>CSS-Klassen für PDF-Formatierung</h3>
+        <div class="info">
+            <strong>Automatische Formatierung:</strong> Das System verwendet <code>pdf_styles.css</code> für professionelle PDF-Formatierung.
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>📸 .walk-image</h4>
+                <div class="code-block">Bildformatierung und Skalierung</div>
+                <strong>Automatische Bildanpassung:</strong><br>
+                • <strong>Portrait:</strong> max-height: 230mm (1 pro Seite)<br>
+                • <strong>Landscape:</strong> max-height: 110mm (2 pro Seite)<br>
+                • <strong>Abstand:</strong> 10px zum Caption, 25pt oben<br>
+                • <strong>Seitenumbrüche:</strong> Automatisch verhindert
+            </div>
+            
+            <div class="feature-card">
+                <h4>📝 .image-container</h4>
+                <div class="code-block">Bild-Container-Zentrierung</div>
+                <strong>Horizontale Zentrierung:</strong><br>
+                • <strong>Ausrichtung:</strong> Zentriert alle Bilder<br>
+                • <strong>Breite:</strong> 80% der Seitenbreite<br>
+                • <strong>Abstände:</strong> Keine zusätzlichen Margins
+            </div>
+            
+            <div class="feature-card">
+                <h4>💬 em (Caption)</h4>
+                <div class="code-block">Bildunterschriften-Formatierung</div>
+                <strong>Caption-Styling:</strong><br>
+                • <strong>Abstand:</strong> 0px oben (10px von Bild), 40px unten<br>
+                • <strong>Breite:</strong> 80% (passt zu Bildern)<br>
+                • <strong>Stil:</strong> Kursiv, zentriert, 12pt
+            </div>
+            
+            <div class="feature-card">
+                <h4>📄 .page-break</h4>
+                <div class="code-block">Seitenumbrüche erzwingen</div>
+                <strong>Manuelle Seitenumbrüche:</strong><br>
+                • <strong>Verwendung:</strong> Vor "Fotodokumentation" und "Anhänge"<br>
+                • <strong>CSS:</strong> page-break-before: always<br>
+                • <strong>Abstand:</strong> 20px Margin oben
+            </div>
+        </div>
+        
+        <div class="warning">
+            <strong>Wichtige CSS-Eigenschaften:</strong>
+            <ul>
+                <li><strong>Bildgrößen:</strong> Automatisch nach Orientierung optimiert</li>
+                <li><strong>Abstände:</strong> 10px Bild-Caption, 40px Caption-nächstes Bild</li>
+                <li><strong>Seitenumbrüche:</strong> Automatisch vor wichtigen Sektionen</li>
+                <li><strong>Schriftgrößen:</strong> 12pt Basis, 14pt Überschriften, 16pt Haupttitel</li>
+                <li><strong>Farben:</strong> Professionelle Blau-Grau-Palette (#3498db, #2c3e50)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>📞 Support und Updates</h2>
+        <p>Der Walk Image Processor wurde speziell für die automatisierte Verarbeitung von GPS-getaggten Wanderbildern entwickelt. Es verwendet moderne Algorithmen für die Nähe-basierte Sortierung und generiert professionelle wissenschaftliche Dokumentationen im deutschen Stil.</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>🎯 Hauptfunktionen</h4>
+                <ul>
+                    <li>Automatische Koordinaten-Extraktion</li>
+                    <li>Nähe-basierte Bildsortierung</li>
+                    <li>Professionelle Markdown-Ausgabe</li>
+                    <li>Modularer PDF-Export über wkhtmltopdf</li>
+                    <li>Deutsche Lokalisierung</li>
+                    <li>Intelligente Bildskalierung (Portrait/Landscape)</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h4>⚡ Performance</h4>
+                <ul>
+                    <li>Verarbeitet hunderte Bilder</li>
+                    <li>Präzise Distanzberechnung</li>
+                    <li>Automatische Sektionierung</li>
+                    <li>Markdown für einfache Bearbeitung</li>
+                    <li>PDF mit professioneller Formatierung</li>
+                    <li>Keine Zwischen-HTML-Dateien</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer style="text-align: center; margin-top: 40px; padding: 20px; border-top: 2px solid #34495e; color: #7f8c8d;">
+        <p><strong>Walk Image Processor</strong> | Version 2.0</p>
+        <p>Entwickelt für professionelle Wegdokumentation mit GPS-Koordinaten</p>
+    </footer>
+</body>
+</html>
