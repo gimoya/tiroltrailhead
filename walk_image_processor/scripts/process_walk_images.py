@@ -601,7 +601,6 @@ def convert_markdown_to_pdf(markdown_file: str, output_pdf: str = None) -> bool:
             '--enable-local-file-access',
             '--print-media-type',
             '--no-outline',
-            '--footer-line',
             '--footer-right', '[page] / [topage]',
             '--footer-text', 'Bericht [date]',
             '--footer-font-size', '7',

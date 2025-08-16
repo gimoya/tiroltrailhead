@@ -113,11 +113,3 @@ strong {
     height: 0;
     overflow: hidden;
 }
-
-/* Match h3 elements that start with specific text */
-h3[data-content^="Ergebnisse"],
-h3[data-content^="Fotodokumentation"],
-h3[data-content^="Anhänge"] {
-    page-break-before: always !important;
-    break-before: page !important;
-}
