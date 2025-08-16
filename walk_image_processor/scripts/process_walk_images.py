@@ -469,30 +469,56 @@ def convert_markdown_to_html(markdown_content: str) -> str:
     html_content = re.sub(r'^## (Anhänge)', r'<div style="page-break-before: always; height: 0; overflow: hidden;"></div>\n<h2>\1</h2>', html_content, flags=re.MULTILINE)
     
     # Convert images FIRST (before other conversions) with centering
-    # Add orientation detection for smart scaling
+    # Add orientation detection for smart scaling and ratio calculation
     def add_orientation_class(match):
         img_path = match.group(2)
         try:
             from PIL import Image
             with Image.open(img_path) as img:
                 width, height = img.size
+                ratio = width / height
                 orientation = 'landscape' if width > height else 'portrait'
-                return f'<div class="image-container"><img src="{img_path}" alt="{match.group(1)}" class="walk-image {orientation}"></div>'
+                return f'<figure data-ratio="{ratio:.4f}"><img src="{img_path}" alt="{match.group(1)}" class="walk-image {orientation}">'
         except:
             # Fallback if image analysis fails
-            return f'<div class="image-container"><img src="{img_path}" alt="{match.group(1)}" class="walk-image"></div>'
+            return f'<figure><img src="{img_path}" alt="{match.group(1)}" class="walk-image">'
     
     html_content = re.sub(r'!\[([^\]]*)\]\(([^)]+)\)', add_orientation_class, html_content)
     
-    # Convert headers
-    html_content = re.sub(r'^# (.+)$', r'<h1>\1</h1>', html_content, flags=re.MULTILINE)
-    html_content = re.sub(r'^## (.+)$', r'<h2>\1</h2>', html_content, flags=re.MULTILINE)
-    html_content = re.sub(r'^### (.+)$', r'<h3>\1</h3>', html_content, flags=re.MULTILINE)
+    # Debug: Print a sample of the HTML after image conversion
+    if 'DEBUG_HTML' in os.environ:
+        print("DEBUG: HTML after image conversion:")
+        print(html_content[:1000])
+    
+    # Convert image captions to figcaption IMMEDIATELY after image conversion
+    # Look for the pattern: <img ...> followed by *Abb. X: caption* and close the figure tag
+    # Use a more robust pattern that handles the German caption format
+    # First, let's try to match the pattern more precisely
+    caption_pattern = r'(<img[^>]+>)\s*\n\*Abb\.\s*(\d+):\s*(.+?)\*'
+    if re.search(caption_pattern, html_content, flags=re.DOTALL):
+        html_content = re.sub(caption_pattern, r'\1<figcaption><strong>Abb. \2:</strong> \3</figcaption></figure>', html_content, flags=re.DOTALL)
+    else:
+        # Debug: If no matches found, print what we're looking for
+        if 'DEBUG_HTML' in os.environ:
+            print("DEBUG: No caption pattern matches found!")
+            print("Looking for pattern:", caption_pattern)
+            print("Sample HTML content:")
+            print(html_content[:2000])
+    
+    # Debug: Print a sample of the HTML after caption conversion
+    if 'DEBUG_HTML' in os.environ:
+        print("DEBUG: HTML after caption conversion:")
+        print(html_content[:1000])
+    
+    # Convert headers with data-content attributes for CSS targeting
+    html_content = re.sub(r'^# (.+)$', r'<h1 data-content="\1">\1</h1>', html_content, flags=re.MULTILINE)
+    html_content = re.sub(r'^## (.+)$', r'<h2 data-content="\1">\1</h2>', html_content, flags=re.MULTILINE)
+    html_content = re.sub(r'^### (.+)$', r'<h3 data-content="\1">\1</h3>', html_content, flags=re.MULTILINE)
     
     # Convert bold text
     html_content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', html_content)
     
-    # Convert italic text (captions)
+    # Convert remaining italic text (non-captions)
     html_content = re.sub(r'\*(.+?)\*', r'<em>\1</em>', html_content)
     
     # Convert horizontal rules
@@ -575,6 +601,11 @@ def convert_markdown_to_pdf(markdown_file: str, output_pdf: str = None) -> bool:
             '--enable-local-file-access',
             '--print-media-type',
             '--no-outline',
+            '--footer-line',
+            '--footer-right', '[page] / [topage]',
+            '--footer-text', 'Bericht [date]',
+            '--footer-font-size', '7',
+            '--footer-font-name', 'Courier New',
             html_file,
             output_pdf
         ]
@@ -624,7 +655,7 @@ def main():
     parser.add_argument('-p', '--pdf', action='store_true',
                        help='Convert existing markdown file to PDF (instead of generating markdown)')
     parser.add_argument('-i', '--input', default=None,
-                       help='Input markdown file for PDF conversion (default: uses -o value)')
+                       help='Input markdown file for PDF conversion (must be .md file, default: uses -o value)')
     
     args = parser.parse_args()
     
@@ -644,8 +675,18 @@ def main():
     # PDF conversion mode SECOND - BEFORE any image processing
     if args.pdf:
         input_file = args.input if args.input else args.output
+        
+        # Validate input file extension for -i parameter
+        if args.input and not args.input.endswith('.md'):
+            print(f"ERROR: Input file '{args.input}' must be a markdown file (.md)")
+            print("The -i parameter only accepts markdown files, not HTML or other formats.")
+            return
+        
+        # For backward compatibility, still handle .html/.pdf extensions in output filename
         if not input_file.endswith('.md'):
-            input_file = input_file.replace('.html', '.md').replace('.pdf', '.md')
+            print(f"ERROR: Input file '{input_file}' must be a markdown file (.md)")
+            print("The -i parameter only accepts markdown files")
+            return
         
         if convert_markdown_to_pdf(input_file):
             print(f"\nPDF generation completed successfully!")

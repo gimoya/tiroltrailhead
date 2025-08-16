@@ -14,9 +14,10 @@ header-includes:
 ## Begehungsbericht
 
 **Datum:** {date}  
+**Datum der Begehung:** XX.XX.XXXX  
 **Untersuchungsgebiet:** {location}  
-**Dokumententyp:** Begehungsbericht  
-**Teilnehmende Personen:** P1, P2, ...
+**Dokumentenformat:** Begehungsbericht  
+**Teilnehmende Personen:** P1, P2, ...  
 
 ## Begehungsstatistik
 
@@ -24,17 +25,21 @@ header-includes:
 - **Dokumentierte Strecke:** {total_distance} km (Luftlinie zwischen Aufnahmepunkten)
 - **Koordinatensystem:** WGS84 (GPS)
 
+## Zielsetzung
+
+Zielsetzung der Begehung...
+
 ## Methodik
 
-Die Bildorganisation erfolgte automatisch nach dem Nearest-Neighbor-Prinzip. Ausgehend vom mit "001_" markierten Startbild wird jedes nachfolgende Bild als das geografisch nächstgelegene zum vorherigen ausgewählt. Die Entfernungsberechnung erfolgt mittels Haversine-Formel für präzise GPS-Distanzbestimmung.
+Die Bildorganisation erfolgte automatisch nach chronologischen Kriterien. Alle Bilder werden verarbeitet, wobei Bilder ohne Zeitstempel zuerst angezeigt werden, gefolgt von Bildern mit Zeitstempel in chronologischer Reihenfolge. Die Entfernungsberechnung erfolgt mittels Haversine-Formel für präzise GPS-Distanzbestimmung zwischen aufeinanderfolgenden Aufnahmepunkten.
 
 ## Ergebnis
 
-Die automatische Verarbeitung der GPS-getaggten Bilder ermöglicht eine systematische und reproduzierbare Dokumentation des Wanderwegs. Alle Bilder wurden erfolgreich nach geografischer Nähe sortiert und mit entsprechenden Koordinaten versehen.
+Ergebnisse...
 
 ## Schlussfolgerungen
 
-Die automatische Bildorganisation und GPS-Dokumentation ermöglicht eine objektive und reproduzierbare Erfassung von Wegverläufen. Die generierte Dokumentation dient als Grundlage für weitere Analysen und kann für Wegeplanung und -wartung verwendet werden.
+Schlussfolgerungen...
 
 # Fotodokumentation
 
@@ -49,6 +54,7 @@ Die automatische Bildorganisation und GPS-Dokumentation ermöglicht eine objekti
 ### Anhang B: Technische Metadaten
 
 - **Bildformat:** {file_format}
+- **Dokumentformat:** A4 PDF
 - **Koordinatenquelle:** GPS-Daten in Dateinamen  
-- **Sortieralgorithmus:** Nearest Neighbor  
-- **Dokumenterstellung:** Automatisch generiert
+- **Datumsquelle:** Datum und Uhrzeit in Dateinamen  
+- **Sortieralgorithmus:** Chronologisch

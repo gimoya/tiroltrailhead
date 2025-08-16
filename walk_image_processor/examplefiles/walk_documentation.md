@@ -1,7 +1,7 @@
 ---
 title: "Begehungsbericht"
 author: "Walk Image Processor"
-date: "14-08-2025"
+date: "16-08-2025"
 geometry: "a4paper,margin=2cm"
 fontsize: 12pt
 documentclass: report
@@ -13,7 +13,7 @@ header-includes:
 
 ## Begehungsbericht
 
-**Datum:** 14-08-2025  
+**Datum:** 16-08-2025  
 **Untersuchungsgebiet:** Gebiet  
 **Dokumententyp:** Begehungsbericht  
 **Teilnehmende Personen:** P1, P2, ...
@@ -41,8 +41,8 @@ Die automatische Bildorganisation und GPS-Dokumentation ermöglicht eine objekti
 ![Übersicht, grün - GPX-Track, pink - Variantenvorschlag, rote Kreise - Kontrollpunkte, rotes Polygon - zu meidende Gst, rechts der Piste - Trasse AEP-Cichini](./Übersicht, grün - GPX-Track, pink - Variantenvorschlag, rote Kreise - Kontrollpunkte, rotes Polygon - zu meidende Gst, rechts der Piste - Trasse AEP-Cichini.jpg)
 *Abb. 1: Übersicht, grün - GPX-Track, pink - Variantenvorschlag, rote Kreise - Kontrollpunkte, rotes Polygon - zu meidende Gst, rechts der Piste - Trasse AEP-Cichini*
 
-![Noexif media (Aufnahmezeitpunkt: 13:43, Seehöhe: 896 m)](./noexif_media_202508041343___13.202193_47.316853___elev__896__.jpg)
-*Abb. 2: Noexif media (Aufnahmezeitpunkt: 13:43, Seehöhe: 896 m)*
+![Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, tex (Aufnahmezeitpunkt: 13:43, Seehöhe: 896 m)](./text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, tex_202508041343___13.202193_47.316853___elev__896__.jpg)
+*Abb. 2: Text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, text, tex (Aufnahmezeitpunkt: 13:43, Seehöhe: 896 m)*
 
 ![Noexif media (Aufnahmezeitpunkt: 13:44, Seehöhe: 898 m)](./noexif_media_202508041344___13.202354_47.316826___elev__898__.jpg)
 *Abb. 3: Noexif media (Aufnahmezeitpunkt: 13:44, Seehöhe: 898 m)*

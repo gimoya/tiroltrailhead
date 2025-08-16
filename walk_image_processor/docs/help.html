@@ -279,14 +279,19 @@ wip -h</div>
                 <div class="code-block">wip -p
 wip -p -i my_file.md</div>
                 <strong>Markdown zu PDF konvertieren</strong><br>
-                Konvertiert bestehende Markdown-Datei zu PDF über wkhtmltopdf
+                Konvertiert bestehende Markdown-Datei zu PDF über wkhtmltopdf<br>
+                <strong>Beispiele:</strong><br>
+                wip -p → liest walk_documentation.md<br>
+                wip -o "my_report.md" -p → liest my_report.md<br>
+                wip -p -i "custom.md" → liest custom.md
             </div>
             
             <div class="feature-card">
                 <h4>📥 -i</h4>
                 <div class="code-block">wip -i "mein_bericht.md"</div>
                 <strong>Eingabe-Markdown-Datei für PDF</strong><br>
-                Standard: verwendet -o Wert oder "walk_documentation.md"
+                Standard: verwendet -o Wert oder "walk_documentation.md"<br>
+                <strong>Hinweis:</strong> Nur Markdown-Dateien (.md) können verarbeitet werden. Das System validiert automatisch die Dateiendung.
             </div>
         </div>
         
@@ -431,6 +436,11 @@ wip -p -i "walk_documentation.md"
 
 # Oder direkt mit Standard-Datei:
 wip -p
+
+# Weitere PDF-Konvertierungsbeispiele:
+# wip -p → liest walk_documentation.md
+# wip -o "my_report.md" -p → liest my_report.md  
+# wip -p -i "custom.md" → liest custom.md
             </div>
             <div class="info">
                 <strong>Workflow-Erklärung:</strong>
@@ -489,6 +499,20 @@ echo %PATH%
 # Bilder werden nach Orientierung skaliert (Portrait: 180mm, Landscape: 110mm)
 # Seitenumbrüche vor "Fotodokumentation" und "Anhänge"
             </div>
+        </div>
+        
+        <h3>Problem: Falsche Dateiendung bei -i Parameter</h3>
+        <div class="warning">
+            <strong>Lösung:</strong> Der -i Parameter akzeptiert nur Markdown-Dateien (.md)<br>
+            <div class="code-block">
+# Korrekt:
+wip -p -i "mein_bericht.md"
+
+# Falsch (wird abgelehnt):
+wip -p -i "mein_bericht.html"
+wip -p -i "mein_bericht.pdf"
+            </div>
+            <strong>Automatische Validierung:</strong> Das System prüft die Dateiendung und zeigt eine Fehlermeldung bei falschen Formaten.
         </div>
         
         <h3>System-Informationen</h3>

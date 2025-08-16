@@ -1,40 +1,72 @@
 /* PDF Generation Styles for Walk Image Processor */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', Arial, Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
     color: #333;
-    font-size: 12pt;
+    font-size: 13pt;
+    text-align: justify;
 }
 
 h1 {
     color: #2c3e50;
-    border-bottom: 3px solid #3498db;
+    border-bottom: 3px solid #2c3e50;
     padding-bottom: 15px;
     margin-bottom: 30px;
+    font-size: 20pt;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 30px;
     font-size: 16pt;
 }
 
-h2, h3 {
+h3 {
     color: #34495e;
-    margin-top: 30px;
-    font-size: 14pt;
+    margin: 10px 0px 5px 0px;
+    font-size: 13pt;
+    font-style: italic;
+}
+
+/* Figure wrapper that contains both image and caption */
+figure {
+    max-width: 80%;                  /* Default max-width constraint */
+    margin: 25pt auto 40px auto;    /* Center horizontally with auto left/right */
+    text-align: center;
+    display: block;                  /* Block display for proper centering */
+    width: auto;                     /* Allow figure to size to content */
+    border: 1px solid #2c3e50;
+    border-radius: 4px;              /* Debug border to see centering */
+}
+
+/* Narrow/tall images (ratio < 0.6) get smaller max-width for better page fit */
+figure[data-ratio^="0.5"],
+figure[data-ratio^="0.4"],
+figure[data-ratio^="0.3"] {
+    max-width: 61%;
+}
+
+figure[data-ratio^="1.6"],
+figure[data-ratio^="1.7"],
+figure[data-ratio^="1.5"] {
+    max-width: 90%;
 }
 
 .walk-image {
-    max-width: 80%; 
-    max-height: 220mm;              /* Default for portrait images */
-    page-break-inside: avoid;       /* Prevent image splitting */
-    break-inside: avoid;            /* Modern CSS equivalent */
-    width: auto;                    /* Maintain aspect ratio */
-    height: auto;                   /* Maintain aspect ratio */
-    object-fit: contain;            /* Ensure image fits within bounds */
-    margin: 25pt auto 10px auto;    /* top auto bottom auto - 10px gap to caption */
-    display: block;                 /* Ensure block display for margin auto */
-    text-align: center;             /* Center any inline content */
+    width: 100%;                     /* Fill figure width completely */
+    max-height: 220mm;               /* Default for portrait images */
+    page-break-inside: avoid;        /* Prevent image splitting */
+    break-inside: avoid;             /* Modern CSS equivalent */
+    height: auto;                    /* Let height adjust to maintain ratio */
+    object-fit: contain;             /* Maintain aspect ratio within container */
+    margin: 0 auto;                  /* Center horizontally, no vertical margins */
+    display: block;                  /* Ensure block display for margin auto */
+    text-align: center;              /* Center any inline content */
+    border-radius: 4px 4px 0px 0px;
 }
 
 /* Smart scaling for landscape images - allow 2 per page */
@@ -49,29 +81,22 @@ h2, h3 {
     max-height: 230mm;              /* Portrait: single per page */
 }
 
-.image-container {
-    text-align: center;
-    margin: 0 auto;                 /* Remove top/bottom margins, keep horizontal centering */
-    display: block;
-}
-
-em {
+/* Caption styling - now inherits figure width */
+figcaption, em {
     font-style: italic;
     color: #34495e;
-    margin: 0 auto 40px auto;       /* 0px top margin (10px gap from image), 40px bottom margin to next image */
-    display: block;
-    text-align: center;
-    font-size: 12pt;
+    padding: 8px;
+    text-align: justify;
+    font-size: 11pt;
     text-decoration: none;
     border-radius: 0;
-    max-width: 80%;                  /* Match image width */
-    width: fit-content;              /* Allow natural width up to max-width */
-    padding: 0 10px;                 /* Small padding for readability */
+    display: block;
+    line-height: 1.25;
 }
 
 hr {
     border: none;
-    border-top: 2px solid #ecf0f1;
+    border-top: 2px solid #1f1f1f;
     margin: 30px 0;
 }
 
@@ -87,4 +112,12 @@ strong {
     margin-top: 20px;
     height: 0;
     overflow: hidden;
+}
+
+/* Match h3 elements that start with specific text */
+h3[data-content^="Ergebnisse"],
+h3[data-content^="Fotodokumentation"],
+h3[data-content^="Anhänge"] {
+    page-break-before: always !important;
+    break-before: page !important;
 }
