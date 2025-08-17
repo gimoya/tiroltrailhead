@@ -1,7 +1,7 @@
 ---
 title: "Begehungsbericht"
 author: "Walk Image Processor"
-date: "16-08-2025"
+date: "17-08-2025"
 geometry: "a4paper,margin=2cm"
 fontsize: 12pt
 documentclass: report
@@ -13,7 +13,7 @@ header-includes:
 
 ## Begehungsbericht
 
-**Datum:** 16-08-2025  
+**Datum:** 17-08-2025  
 **Datum der Begehung:** XX.XX.XXXX  
 **Untersuchungsgebiet:** Gebiet  
 **Dokumentenformat:** Begehungsbericht  
