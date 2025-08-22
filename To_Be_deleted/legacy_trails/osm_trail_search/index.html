@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Terrain Map</title>
+    
+    <!-- Mapbox GL JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts - Updated to more modern fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --panel-width-landscape: 320px;
+            --panel-height-portrait: 40vh;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        #map { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            width: 100%; 
+            transition: all 0.3s ease;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .mapboxgl-ctrl-group {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .mapboxgl-ctrl-group button {
+            width: 30px;
+            height: 30px;
+            display: block;
+            padding: 0;
+            outline: none;
+            border: 0;
+            box-sizing: border-box;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .mapboxgl-ctrl-group button:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+
+        /* Side Panel Styles - Updated for responsiveness */
+        .side-panel {
+            position: fixed;
+            background: #ffffff;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        /* Landscape orientation */
+        @media (orientation: landscape) {
+            .side-panel {
+                top: 0;
+                left: 0;
+                width: var(--panel-width-landscape);
+                height: 100vh;
+            }
+
+            .side-panel[style*="display: flex"] + #map {
+                width: calc(100% - var(--panel-width-landscape));
+                margin-left: var(--panel-width-landscape);
+            }
+
+            .trail-list {
+                max-height: calc(100vh - 120px);
+            }
+        }
+
+        /* Portrait orientation */
+        @media (orientation: portrait) {
+            .side-panel {
+                top: calc(100vh - var(--panel-height-portrait));
+                left: 0;
+                width: 100vw;
+                height: var(--panel-height-portrait);
+            }
+
+            .side-panel[style*="display: flex"] + #map {
+                width: 100%;
+                height: calc(100vh - var(--panel-height-portrait));
+                margin-left: 0;
+            }
+
+            .panel-header {
+                padding: 10px !important;
+            }
+
+            .panel-title {
+                font-size: 1.2em !important;
+            }
+
+            .search-container {
+                padding: 8px !important;
+            }
+
+            .trail-list {
+                max-height: calc(var(--panel-height-portrait) - 120px);
+            }
+
+            .trail-item {
+                padding: 10px !important;
+                margin-bottom: 8px !important;
+            }
+
+            .difficulty-badge {
+                font-size: 0.75em !important;
+                padding: 3px 6px !important;
+            }
+
+            .trail-name {
+                font-size: 1em !important;
+            }
+
+            .trail-details {
+                font-size: 0.85em !important;
+            }
+
+            .kofi-button {
+                bottom: calc(var(--panel-height-portrait) + 20px);
+            }
+        }
+
+        .panel-header {
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .panel-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.4em;
+            color: #2d3436;
+        }
+
+        .toggle-button {
+            cursor: pointer;
+            padding: 8px;
+            font-size: 1.4em;
+            color: #2d3436;
+            transition: color 0.2s;
+        }
+
+        .toggle-button:hover {
+            color: #0984e3;
+        }
+
+        .search-container {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #0984e3;
+            box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.1);
+        }
+
+        .trail-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .trail-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #e9ecef;
+        }
+
+        .trail-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-color: #0984e3;
+        }
+
+        .trail-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #2d3436;
+        }
+
+        .trail-details {
+            font-size: 0.9em;
+            color: #636e72;
+            line-height: 1.6;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        /* Mapbox popup styles */
+        .mapboxgl-popup-content {
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .popup-content {
+            max-width: 250px;
+        }
+
+        .popup-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #2d3436;
+        }
+
+        .popup-details {
+            font-size: 0.9em;
+            color: #636e72;
+            line-height: 1.6;
+        }
+
+        /* Scrollbar styling */
+        .trail-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .trail-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .trail-list::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+
+        .trail-list::-webkit-scrollbar-thumb:hover {
+            background: #a1a1a1;
+        }
+        .floatingchat-container-wrap-mobi, 
+        .floatingchat-container-wrap, 
+        .floatingchat-container {
+            right: 0px!important;
+            bottom: 40px!important;
+            width: 50%;
+            left: unset!important;
+        }
+        .floating-chat-kofi-popup-iframe-mobi,
+        .floating-chat-kofi-popup-iframe {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">Loading terrain data...</div>
+    <div id="map"></div>
+     
+    <script src="script.3d.js"></script>
+     <!-- Ko-fi button -->
+     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+     <script>
+       kofiWidgetOverlay.draw('tiroltrailhead', {
+         'type': 'floating-chat',
+         'floating-chat.donateButton.text': 'Support!',
+         'floating-chat.donateButton.background-color': '#ffffff',
+         'floating-chat.donateButton.text-color': '#323842',
+       });
+     </script>
+</body>
+</html> 

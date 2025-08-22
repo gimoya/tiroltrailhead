@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+#map {
+    height: 100vh;
+    width: calc(100% - 320px);
+    float: left;
+    cursor: default;
+}
+
+#map * {
+    cursor: default;
+}
+
+.leaflet-container {
+    cursor: default !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    cursor: default;
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.panel-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00ff00, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0,255,0,0.3);
+}
+
+.toggle-button {
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 1.4em;
+    color: rgba(255,255,255,0.8);
+    transition: color 0.2s;
+}
+
+.toggle-button:hover {
+    color: #00ff00;
+}
+
+.trail-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.trail-item {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 8px;
+}
+
+.trail-item:hover {
+    background: #f8f9fa;
+    transform: translateX(2px);
+}
+
+.trail-item:last-child {
+    border-bottom: none;
+}
+
+.trail-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    color: #2c3e50;
+}
+
+.trail-details {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.search-radius {
+    fill: none;
+    stroke: #00ff00;
+    stroke-width: 2;
+    stroke-opacity: 0.5;
+}
+
+.search-radius-fill {
+    fill: rgba(0, 255, 0, 0.1);
+    stroke: none;
+}
+
+.search-radius-buffer {
+    fill: rgba(0, 255, 0, 0.1);
+    stroke: #00ff00;
+    stroke-width: 1;
+    stroke-opacity: 0.3;
+}
+
+.search-radius-mask {
+    fill: rgba(0, 0, 0, 0.3);
+    stroke: none;
+}
+
+/* Style for the search button */
+.leaflet-control a {
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #2c3e50;
+    text-decoration: none;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+
+.leaflet-control a:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Style for popups */
+.leaflet-popup-content-wrapper {
+    background: rgba(26, 26, 26, 0.9);
+    color: white;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.leaflet-popup-tip {
+    background: rgba(26, 26, 26, 0.9);
+    border-top: 1px solid #00ff00;
+}
+
+.leaflet-popup-content {
+    font-family: 'Inter', sans-serif;
+    margin: 10px;
+}
+
+.leaflet-popup-content strong {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #00ff00;
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Style for the 3D toggle button */
+.leaflet-control-3d {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.leaflet-control-3d a {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: all 0.2s;
+}
+
+.leaflet-control-3d a:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.search-form {
+    padding: 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #00ff00;
+    box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.1);
+}
+
+.search-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: linear-gradient(45deg, #00ff00, #00ffff);
+    border: none;
+    border-radius: 4px;
+    color: #1a1a1a;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.search-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+.trail-path {
+    cursor: pointer !important;
+}
+
+.trail-path:hover {
+    stroke-width: 28px!important;
+    opacity: 0.8;
+}
+
+.trail-path.active {
+    stroke-width: 28px;
+    opacity: 0.8;
+}
