@@ -1,0 +1,7 @@
+<!-- To be added at the end of the HTML script -->
+<script>
+const myImage = new Image(150, 150);
+myImage.src = 'axamer300x300.png';
+myImage.id = 'logo';
+document.body.appendChild(myImage);
+</script>
